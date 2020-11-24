@@ -1,24 +1,21 @@
 import React from "react";
+import { ForceGraph3D } from "react-force-graph";
 import "./App.css";
-import logo from "./logo.svg";
+import { toGraphData } from "./services/madge";
+import { GraphData } from "./types/GraphData";
+
+const Graph = ({ d }: { d: GraphData }) => {
+  return <ForceGraph3D graphData={d} nodeId="id" nodeAutoColorBy="group" />;
+};
 
 function App() {
+  const graphData = toGraphData();
+  console.log(graphData);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <Graph d={graphData} />
+      </main>
     </div>
   );
 }
