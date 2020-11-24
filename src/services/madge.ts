@@ -9,6 +9,7 @@ export const toGraphData = (): GraphData => {
       id: k,
       label: k,
     };
+    nodes.push(node);
     vs.forEach((v) => {
       const link: IGraphLink = {
         source: v,
