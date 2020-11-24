@@ -15,8 +15,8 @@ export const toGraphData = (): GraphData => {
         return;
       }
       const link: IGraphLink = {
-        source: v,
-        target: k,
+        source: k,
+        target: v,
       };
       links.push(link);
     });
