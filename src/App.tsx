@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import "./App.css";
-import { toGraphData } from "./services/madge";
+import { Config } from "./types/Config";
 import { GraphData, IGraphNode } from "./types/GraphData";
 
 const Graph = ({ d }: { d: GraphData }) => {
@@ -28,13 +28,11 @@ const Graph = ({ d }: { d: GraphData }) => {
   );
 };
 
-function App() {
-  const graphData = toGraphData();
-  console.log(graphData);
+function App({ config }: { config: Config }) {
   return (
     <div className="App">
       <main>
-        <Graph d={graphData} />
+        <Graph d={config.data} />
       </main>
     </div>
   );
