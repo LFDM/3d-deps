@@ -1,5 +1,10 @@
-import { GraphData } from "./GraphData";
+type Node = {
+  id: string;
+  path: string;
+  label?: string;
+  dependsOn: string[];
+};
 
 export interface IDependencyAnalyzer {
-  analyze: () => Promise<GraphData>;
+  analyze: () => Promise<Node>;
 }
