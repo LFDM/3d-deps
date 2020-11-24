@@ -4,18 +4,6 @@ import { IDependencyAnalyzer } from "../types/DependencyAnalyzer";
 import { IGraphLink, IGraphNode } from "../types/GraphData";
 import DEPS from "./dependencies.json";
 
-type MadgeAnalyzerConfig = {
-  entry: string | string[];
-
-  baseDir?: string;
-  includeNpm?: boolean;
-  fileExtensions?: string[];
-  excludeRegExp?: string;
-  requireConfig?: string;
-  webpackConfig?: string;
-  tsConfig?: string;
-};
-
 const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
   const nodes: IGraphNode[] = [];
   const links: IGraphLink[] = [];
@@ -37,6 +25,18 @@ const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
     });
   });
   return { nodes, links };
+};
+
+export type MadgeAnalyzerConfig = {
+  entry: string | string[];
+
+  baseDir?: string;
+  includeNpm?: boolean;
+  fileExtensions?: string[];
+  excludeRegExp?: string;
+  requireConfig?: string;
+  webpackConfig?: string;
+  tsConfig?: string;
 };
 
 export class MadgeAnalyzer implements IDependencyAnalyzer {
