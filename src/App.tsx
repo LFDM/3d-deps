@@ -24,6 +24,7 @@ const Graph = ({ d }: { d: GraphData }) => {
       linkDirectionalArrowLength={3.5}
       linkDirectionalArrowRelPos={1}
       nodeLabel={(node) => (node as IGraphNode).id}
+      enableNodeDrag={false}
     />
   );
 };
