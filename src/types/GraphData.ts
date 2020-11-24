@@ -2,6 +2,7 @@ export interface IGraphNode {
   id: string;
   label: string;
   group?: string;
+  color?: string;
 }
 
 export interface IGraphLink {
