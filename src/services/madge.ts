@@ -1,5 +1,5 @@
 import { GraphData, IGraphLink, IGraphNode } from "../types/GraphData";
-import * as DEPS from "./dependencies.json";
+import DEPS from "./dependencies.json";
 
 export const toGraphData = (): GraphData => {
   const nodes: IGraphNode[] = [];
