@@ -3,14 +3,19 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { toGraphData } from "./services/madge";
+import { MadgeAnalyzer } from "./services/madge";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App config={{ data: toGraphData() }} />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+const run = async () => {
+  const data = await new MadgeAnalyzer().analyze().then();
+  ReactDOM.render(
+    <React.StrictMode>
+      <App config={{ data }} />
+    </React.StrictMode>,
+    document.getElementById("root")
+  );
+};
+
+run();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
