@@ -6,7 +6,11 @@ import reportWebVitals from "./reportWebVitals";
 import { MadgeAnalyzer } from "./services/madge";
 
 const run = async () => {
-  const data = await new MadgeAnalyzer().analyze().then();
+  const data = await new MadgeAnalyzer({
+    entry: "...",
+  })
+    .analyze()
+    .then();
   ReactDOM.render(
     <React.StrictMode>
       <App config={{ data }} />
