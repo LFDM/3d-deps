@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import "./App.css";
 import { toGraphData } from "./services/madge";
@@ -11,20 +11,16 @@ const Graph = ({ d }: { d: GraphData }) => {
       setI(Math.floor(Math.random() * d.nodes.length));
     }, 500);
   }, []);
-  const toColor = useCallback(
-    (node: any) => {
-      if (d.nodes[i] === node) {
-        return "red";
-      }
-      return "";
-    },
-    [i, d.nodes]
-  );
   return (
     <ForceGraph3D
       graphData={d}
       nodeId="id"
-      nodeColor={toColor}
+      nodeColor={(node: any) => {
+        if (d.nodes[i] === node) {
+          return "red";
+        }
+        return "";
+      }}
       linkDirectionalArrowLength={3.5}
       linkDirectionalArrowRelPos={1}
       nodeLabel={(node) => (node as IGraphNode).id}
