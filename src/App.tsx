@@ -10,6 +10,8 @@ const Graph = ({ d }: { d: GraphData }) => {
       graphData={d}
       nodeId="id"
       nodeAutoColorBy="group"
+      linkDirectionalArrowLength={3.5}
+      linkDirectionalArrowRelPos={1}
       nodeLabel={(node) => (node as IGraphNode).id}
     />
   );
