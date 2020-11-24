@@ -11,6 +11,9 @@ export const toGraphData = (): GraphData => {
     };
     nodes.push(node);
     vs.forEach((v) => {
+      if (v.includes("node_modules")) {
+        return;
+      }
       const link: IGraphLink = {
         source: v,
         target: k,
