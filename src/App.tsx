@@ -5,6 +5,17 @@ import { Config } from "./types/Config";
 import { GraphData, IGraphNode } from "./types/GraphData";
 
 const Graph = ({ d }: { d: GraphData }) => {
+  // TODO
+  // create lookup containers
+  // - nodes as a tree
+  // - links by source
+  // - links by target
+
+  // onSelect:
+  // - hightlight node
+  // - incoming deps -> 2-3 layers
+  // - outgoing deps -> 2-3 layers
+  // - all links between them, activate particles
   const [i, setI] = useState(0);
   useEffect(() => {
     setInterval(() => {
