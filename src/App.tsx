@@ -32,15 +32,38 @@ const useGraphData = (ds: DependencyNode[]) => {
     const depsById = keyBy(ds, (d) => d.id);
     const graphData = depsToGraphData(ds);
     const nodesById = keyBy(graphData.nodes, (n) => n.id);
-    const tree = graphData.nodes.map((node) => {
-      return {
-        node,
-        children: depsById[node.id].dependsOn.map((c) => nodesById[c]),
+    const asTree: {
+      [id: string]: {
+        node: IGraphNode;
+        dependsOn: { nodes: IGraphNode[]; ids: Set<string> };
+        dependedBy: { nodes: IGraphNode[]; ids: Set<string> };
       };
+    } = {};
+    const getOrCreateTreeNode = (n: IGraphNode) => {
+      if (!asTree[n.id]) {
+        asTree[n.id] = {
+          node: n,
+          dependsOn: {
+            nodes: depsById[n.id].dependsOn.map((c) => nodesById[c]),
+            ids: new Set(depsById[n.id].dependsOn),
+          },
+          dependedBy: { nodes: [], ids: new Set() },
+        };
+      }
+      return asTree[n.id];
+    };
+    graphData.nodes.forEach((n) => {
+      const treeNode = getOrCreateTreeNode(n);
+      treeNode.dependsOn.nodes.forEach((child) => {
+        const childTreeNode = getOrCreateTreeNode(child);
+        childTreeNode.dependedBy.nodes.push(n);
+        childTreeNode.dependedBy.ids.add(n.id);
+      });
     });
+
     return {
       graphData,
-      tree,
+      asTree,
       linksBySource: keyBy(graphData.links, (l) => l.source),
       linksByTarget: keyBy(graphData.links, (l) => l.target),
     };
@@ -54,7 +77,8 @@ const Graph = ({ ds }: { ds: DependencyNode[] }) => {
   // - incoming deps -> 2-3 layers
   // - outgoing deps -> 2-3 layers
   // - all links between them, activate particles
-  const { graphData } = useGraphData(ds);
+  const { graphData, asTree } = useGraphData(ds);
+  console.log(asTree);
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
   return (
     <ForceGraph3D
