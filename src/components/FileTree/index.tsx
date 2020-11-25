@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
+import { useScrollIntoView } from "../../hooks/useScrollIntoView";
 import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
 import * as Icons from "./icons";
@@ -110,11 +111,14 @@ const Tree = React.memo(
     onClick?: () => void;
     isSelected: boolean;
   }) => {
+    const ref = useScrollIntoView<HTMLDivElement>(isSelected, {
+      behavior: "smooth",
+    });
     const Icon = (Icons as any)[
       `${children ? (isOpen ? "Minus" : "Plus") : "Close"}SquareO`
     ];
     return (
-      <Frame>
+      <Frame ref={ref}>
         <Icon
           style={{ ...toggle, opacity: children ? 1 : 0.3 }}
           onClick={() => setOpen(!isOpen)}
