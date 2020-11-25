@@ -1,8 +1,9 @@
 export type Theme = {
+  typography: {
+    backgroundColor: string;
+    color: string;
+  };
   graph: {
-    background: {
-      color: string;
-    };
     nodes: {
       colors: {
         standard: string;
@@ -24,10 +25,11 @@ export type Theme = {
 };
 
 export const THEME: Theme = {
+  typography: {
+    backgroundColor: "#141414",
+    color: "#f4f4f4",
+  },
   graph: {
-    background: {
-      color: "#141414",
-    },
     nodes: {
       colors: {
         standard: "#fcf4b0",

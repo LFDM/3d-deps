@@ -7,7 +7,8 @@ import { Config } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
 
 const Main = styled("main")((p) => ({
-  backgroundColor: p.theme.graph.background.color,
+  backgroundColor: p.theme.typography.backgroundColor,
+  color: p.theme.typography.color,
   width: "100vw",
   height: "100vh",
   overflow: "hidden",

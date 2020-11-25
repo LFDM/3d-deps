@@ -162,7 +162,7 @@ export const Graph = ({ ds }: { ds: DependencyNode[] }) => {
     <ForceGraph3D
       {...dimensions}
       graphData={g.graphData}
-      backgroundColor={theme.graph.background.color}
+      backgroundColor={theme.typography.backgroundColor}
       nodeId="id"
       nodeColor={(node: any) =>
         styles.nodes[node.id]?.color || theme.graph.nodes.colors.standard
