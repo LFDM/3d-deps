@@ -27,6 +27,7 @@ const StyledButton = styled("button")<{
     borderStyle: "solid",
     cursor: "pointer",
     borderColor: "transparent",
+    font: "inherit",
 
     ...(p.variant === "outlined" && {
       borderColor: "currentcolor",
