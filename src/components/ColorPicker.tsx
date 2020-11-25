@@ -2,10 +2,12 @@ import styled from "@emotion/styled";
 import { useRef, useState } from "react";
 import { ChromePicker } from "react-color";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
+import { Button } from "./Button";
 
-const Container = styled("div")((p) => ({
+const Container = styled(Button)((p) => ({
   position: "relative",
-  cursor: "pointer",
+  display: "block",
+  width: "100%",
 }));
 
 const Row = styled("div")((p) => ({
@@ -58,7 +60,7 @@ export const ColorPicker = ({
   useOnClickOutside(ref, () => setOpen(false));
   return (
     <>
-      <Container role="button" onClick={() => setOpen(true)}>
+      <Container variant="standard" onClick={() => setOpen(true)}>
         <Row>
           <label>{label}</label>
           <ColorName>
