@@ -15,6 +15,16 @@ const Main = styled("main")((p) => ({
   width: "100vw",
   height: "100vh",
   overflow: "hidden",
+
+  button: {
+    backgroundColor: "transparent",
+    color: p.theme.typography.color,
+    borderWidth: 2,
+    borderStyle: "solid",
+    cursor: "pointer",
+    borderColor: p.theme.typography.color,
+    padding: p.theme.spacing(0.5),
+  },
 }));
 
 const depsToGraphData = (ds: DependencyNode[]): GraphData["data"] => {
