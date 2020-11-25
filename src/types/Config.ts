@@ -5,6 +5,7 @@ export type Theme = {
   };
   hud: {
     color: string;
+    highlightColor: string;
     backgroundColor: string;
     opacity: number;
   };
@@ -37,6 +38,7 @@ export const THEME: Theme = {
   },
   hud: {
     color: "#f4f4f4",
+    highlightColor: "#ea6161",
     backgroundColor: "#1e1e1e",
     opacity: 0.75,
   },

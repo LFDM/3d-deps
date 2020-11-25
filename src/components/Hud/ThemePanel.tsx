@@ -65,6 +65,20 @@ export const ThemePanel = ({
           }
         />
         <ColorPicker
+          label="Highlight Color"
+          value={theme.hud.highlightColor}
+          defaultValue={originalTheme.hud.highlightColor}
+          onChange={(nextColor) =>
+            onChangeTheme({
+              ...theme,
+              hud: {
+                ...theme.hud,
+                highlightColor: nextColor,
+              },
+            })
+          }
+        />
+        <ColorPicker
           label="Bg Color"
           value={theme.hud.backgroundColor}
           defaultValue={originalTheme.hud.backgroundColor}

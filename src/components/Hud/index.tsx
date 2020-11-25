@@ -46,6 +46,10 @@ const SidebarContainer = styled("div")`
   color: ${(p) => p.theme.hud.color};
   background-color: ${(p) => p.theme.hud.backgroundColor};
   opacity: ${(p) => p.theme.hud.opacity};
+
+  h5 {
+    color: ${(p) => p.theme.hud.highlightColor};
+  }
 `;
 
 type TabName = "theme" | "nodes";
