@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { MadgeAnalyzer } from "./analyzers/madge";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { MadgeAnalyzer } from "./services/madge";
 
 const run = async () => {
   const data = await new MadgeAnalyzer({
