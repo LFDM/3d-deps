@@ -1,4 +1,9 @@
+import styled from "@emotion/styled";
+import React, { useState } from "react";
+import { animated, useSpring } from "react-spring";
 import { TreeNode } from "../../types/GraphData";
+import { useMeasure, usePrevious } from "./helpers";
+import * as Icons from "./icons";
 
 type FileTreeItemFile<T> = {
   key: string;
@@ -59,4 +64,111 @@ export const toFileTree = (ds: TreeNode[]): FileTreeItemDir<TreeNode> => {
   return items[SEPARATOR];
 };
 
-export const FileTree = ({ root }: { root: FileTreeItemDir<TreeNode> }) => {};
+const Frame = styled("div")`
+  position: relative;
+  padding: 4px 0px 0px 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  vertical-align: middle;
+  color: white;
+  fill: white;
+`;
+
+const Title = styled("span")`
+  vertical-align: middle;
+`;
+
+const Content = styled(animated.div)`
+  will-change: transform, opacity, height;
+  margin-left: 6px;
+  padding: 0px 0px 0px 14px;
+  border-left: 1px dashed rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+`;
+
+const toggle: React.CSSProperties = {
+  width: "1em",
+  height: "1em",
+  marginRight: 10,
+  cursor: "pointer",
+  verticalAlign: "middle",
+};
+
+const Tree = React.memo(
+  ({
+    children,
+    label,
+    style,
+    defaultOpen = false,
+  }: {
+    label: React.ReactNode;
+    defaultOpen?: boolean;
+    style?: React.CSSProperties;
+    children?: React.ReactNode;
+  }) => {
+    const [isOpen, setOpen] = useState(defaultOpen);
+    const previous = usePrevious(isOpen);
+    const [bind, { height: viewHeight }] = useMeasure();
+    const { height, opacity, transform } = useSpring({
+      from: { height: 0, opacity: 0, transform: "translate3d(20px,0,0)" },
+      to: {
+        height: isOpen ? viewHeight : 0,
+        opacity: isOpen ? 1 : 0,
+        transform: `translate3d(${isOpen ? 0 : 20}px,0,0)`,
+      },
+    }) as { height: number; opacity: number; transform: string };
+    const Icon = (Icons as any)[
+      `${children ? (isOpen ? "Minus" : "Plus") : "Close"}SquareO`
+    ];
+    return (
+      <Frame>
+        <Icon
+          style={{ ...toggle, opacity: children ? 1 : 0.3 }}
+          onClick={() => setOpen(!isOpen)}
+        />
+        <Title style={style}>{label}</Title>
+        <Content
+          style={{
+            opacity,
+            height: isOpen && previous === isOpen ? "auto" : height,
+          }}
+        >
+          <animated.div style={{ transform }} {...bind} children={children} />
+        </Content>
+      </Frame>
+    );
+  }
+);
+
+export const FileTreeDirectoryContent = ({
+  dir,
+}: {
+  dir: FileTreeItemDir<TreeNode>;
+}) => {
+  return (
+    <>
+      {dir.dirs.map((d) => (
+        <FileTree key={d.key} item={d} />
+      ))}
+      {dir.files.map((d) => (
+        <FileTree key={d.key} item={d} />
+      ))}
+    </>
+  );
+};
+
+export const FileTree = ({
+  item,
+}: {
+  item: FileTreeItem<TreeNode>;
+}): JSX.Element => {
+  if (item.type === "dir") {
+    return (
+      <Tree label={item.label}>
+        <FileTreeDirectoryContent dir={item} />
+      </Tree>
+    );
+  }
+  return <Tree label={item.label} />;
+};

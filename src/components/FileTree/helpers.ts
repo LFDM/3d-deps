@@ -6,7 +6,10 @@ export const usePrevious = <T>(value: T) => {
   return ref.current;
 };
 
-export const useMeasure = () => {
+export const useMeasure = (): [
+  { ref: React.MutableRefObject<any> },
+  { left: number; top: number; width: number; height: number }
+] => {
   const ref = useRef();
   const [bounds, set] = useState({ left: 0, top: 0, width: 0, height: 0 });
   const [ro] = useState(

@@ -1,8 +1,23 @@
 import { sortBy } from "lodash";
 import React, { useMemo } from "react";
 import { GraphData } from "../../types/GraphData";
-import { Button } from "../Button";
-import { toFileTree } from "../FileTree";
+import { FileTreeDirectoryContent, toFileTree } from "../FileTree";
+/*
+
+      {treeNodes.map((t) => (
+        <Button
+          variant="none"
+          key={t.node.id}
+          fullWidth
+          onClick={() =>
+            setSelectedNodeId(t.node.id === selectedNodeId ? null : t.node.id)
+          }
+        >
+          {t.node.label}
+        </Button>
+      ))}
+
+*/
 
 export const NodesPanel = ({
   g,
@@ -17,22 +32,6 @@ export const NodesPanel = ({
     () => sortBy(g.data.nodes, (n) => n.path).map((n) => g.asTree[n.id]),
     [g]
   );
-  const fileTree = toFileTree(treeNodes);
-  console.log(fileTree);
-  return (
-    <>
-      {treeNodes.map((t) => (
-        <Button
-          variant="none"
-          key={t.node.id}
-          fullWidth
-          onClick={() =>
-            setSelectedNodeId(t.node.id === selectedNodeId ? null : t.node.id)
-          }
-        >
-          {t.node.label}
-        </Button>
-      ))}
-    </>
-  );
+  const rootDir = toFileTree(treeNodes);
+  return <FileTreeDirectoryContent dir={rootDir} />;
 };
