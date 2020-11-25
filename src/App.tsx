@@ -1,3 +1,4 @@
+import { keyBy } from "lodash";
 import React, { useEffect, useMemo, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import "./App.css";
@@ -28,25 +29,32 @@ const depsToGraphData = (ds: DependencyNode[]): GraphData => {
 
 const useGraphData = (ds: DependencyNode[]) => {
   return useMemo(() => {
+    const depsById = keyBy(ds, (d) => d.id);
+    const graphData = depsToGraphData(ds);
+    const nodesById = keyBy(graphData.nodes, (n) => n.id);
+    const tree = graphData.nodes.map((node) => {
+      return {
+        node,
+        children: depsById[node.id].dependsOn.map((c) => nodesById[c]),
+      };
+    });
     return {
-      graphData: depsToGraphData(ds),
+      graphData,
+      tree,
+      linksBySource: keyBy(graphData.links, (l) => l.source),
+      linksByTarget: keyBy(graphData.links, (l) => l.target),
     };
   }, [ds]);
 };
 
 const Graph = ({ ds }: { ds: DependencyNode[] }) => {
   // TODO
-  // create lookup containers
-  // - nodes as a tree
-  // - links by source
-  // - links by target
-
   // onSelect:
   // - hightlight node
   // - incoming deps -> 2-3 layers
   // - outgoing deps -> 2-3 layers
   // - all links between them, activate particles
-  const { graphData } = useGraphData(ds);
+  const { graphData, tree } = useGraphData(ds);
   const [i, setI] = useState(0);
   useEffect(() => {
     setInterval(() => {
