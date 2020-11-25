@@ -33,7 +33,7 @@ const SidebarContainer = styled("div")`
   overflow: hidden;
   height: 100%;
   width: 100%;
-  padding: ${(p) => p.theme.spacing(1)}px;
+  padding: ${(p) => p.theme.spacing(2)}px;
   pointer-events: auto;
 `;
 
