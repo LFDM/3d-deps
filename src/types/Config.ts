@@ -44,7 +44,7 @@ export const THEME: Theme = {
       colors: {
         standard: "#fcf4b0",
         selected: "#e8a838",
-        unselected: "black",
+        unselected: "#050505",
         dependency: "#f47560",
         dependent: "#61cdbb",
       },
@@ -54,7 +54,7 @@ export const THEME: Theme = {
         standard: "lightgray",
         dependency: "#f47560",
         dependent: "#61cdbb",
-        unselected: "black",
+        unselected: "#050505",
       },
     },
   },
