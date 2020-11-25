@@ -79,6 +79,9 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   // - all links between them, activate particles
   const { graphData, asTree, linksBySource, linksByTarget } = useGraphData(ds);
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
+
+  // might be better to compute style objects for everything
+  // - and then just use these vars in the respective functions
   return (
     <ForceGraph3D
       graphData={graphData}
