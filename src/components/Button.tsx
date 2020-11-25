@@ -1,7 +1,12 @@
 import styled from "@emotion/styled";
 import React from "react";
 
-export type ButtonVariant = "outlined" | "contained" | "standard" | "none";
+export type ButtonVariant =
+  | "outlined"
+  | "contained"
+  | "standard"
+  | "none"
+  | "icon";
 
 export type ButtonProps = {
   disabled?: boolean;
@@ -31,6 +36,14 @@ const StyledButton = styled("button")<{
       borderWidth: 0,
       padding: 0,
       textAlign: "inherit",
+    }),
+    ...(p.variant === "icon" && {
+      borderRadius: "50%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: 0,
+      textAlign: "center",
     }),
     ...(p.fullWidth && {
       width: "100%",
