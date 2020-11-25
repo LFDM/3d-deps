@@ -1,4 +1,4 @@
-type Node = {
+export type DependencyNode = {
   id: string;
   path: string;
   label?: string;
@@ -6,5 +6,5 @@ type Node = {
 };
 
 export interface IDependencyAnalyzer {
-  analyze: () => Promise<Node>;
+  analyze: () => Promise<DependencyNode[]>;
 }
