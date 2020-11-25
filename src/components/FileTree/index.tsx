@@ -73,10 +73,6 @@ const Frame = styled("div")<{ selected: boolean }>`
   vertical-align: middle;
   color: ${(p) => (p.selected ? p.theme.hud.highlightColor : "inherit")};
   fill: ${(p) => (p.selected ? p.theme.hud.highlightColor : p.theme.hud.color)};
-
-  :hover {
-    background-color: ${(p) => p.theme.typography.backgroundColor};
-  }
 `;
 
 const Title = styled("span")`
