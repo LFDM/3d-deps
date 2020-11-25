@@ -1,77 +1,8 @@
 import { useTheme } from "@emotion/react";
-import { groupBy, keyBy } from "lodash";
-import { nanoid } from "nanoid";
 import React, { useMemo, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { DependencyNode } from "../../types/DependencyAnalyzer";
-import {
-  GraphData,
-  IGraphLink,
-  IGraphNode,
-  TreeNode,
-} from "../../types/GraphData";
-
-const depsToGraphData = (ds: DependencyNode[]): GraphData => {
-  const nodes: IGraphNode[] = [];
-  const links: IGraphLink[] = [];
-  ds.forEach((n) => {
-    const node: IGraphNode = {
-      id: n.id,
-      label: n.label || n.id,
-      path: n.path,
-    };
-    nodes.push(node);
-    n.dependsOn.forEach((v) => {
-      const link: IGraphLink = {
-        id: nanoid(),
-        source: n.id,
-        target: v,
-      };
-      links.push(link);
-    });
-  });
-  return { nodes, links };
-};
-
-const useGraphData = (ds: DependencyNode[]) => {
-  return useMemo(() => {
-    const depsById = keyBy(ds, (d) => d.id);
-    const graphData = depsToGraphData(ds);
-    const nodesById = keyBy(graphData.nodes, (n) => n.id);
-    const asTree: {
-      [id: string]: TreeNode;
-    } = {};
-    const getOrCreateTreeNode = (n: IGraphNode) => {
-      if (!asTree[n.id]) {
-        asTree[n.id] = {
-          node: n,
-          dependsOn: {
-            nodes: depsById[n.id].dependsOn.map((c) => nodesById[c]),
-            ids: new Set(depsById[n.id].dependsOn),
-          },
-          dependedBy: { nodes: [], ids: new Set() },
-        };
-      }
-      return asTree[n.id];
-    };
-    graphData.nodes.forEach((n) => {
-      const treeNode = getOrCreateTreeNode(n);
-      treeNode.dependsOn.nodes.forEach((child) => {
-        const childTreeNode = getOrCreateTreeNode(child);
-        childTreeNode.dependedBy.nodes.push(n);
-        childTreeNode.dependedBy.ids.add(n.id);
-      });
-    });
-
-    return {
-      graphData,
-      asTree,
-      linksBySource: groupBy(graphData.links, (l) => l.source),
-      linksByTarget: groupBy(graphData.links, (l) => l.target),
-    };
-  }, [ds]);
-};
+import { GraphData, IGraphNode } from "../../types/GraphData";
 
 type NodeStyle = Partial<{
   color: string;
@@ -101,7 +32,7 @@ const addLinkStyle = (styles: Styles, linkId: string, s: LinkStyle) => {
   styles.links[linkId] = { ...v, ...s };
 };
 
-export const Graph = ({ ds }: { ds: DependencyNode[] }) => {
+export const Graph = ({ g }: { g: GraphData }) => {
   // TODO
   // onSelect:
   // - hightlight node
@@ -110,7 +41,6 @@ export const Graph = ({ ds }: { ds: DependencyNode[] }) => {
   // - all links between them, activate particles
   const theme = useTheme();
   const dimensions = useWindowSize();
-  const g = useGraphData(ds);
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
 
   const styles = useMemo(() => {
@@ -132,7 +62,7 @@ export const Graph = ({ ds }: { ds: DependencyNode[] }) => {
         addNodeStyle(ss, n.id, { color: nodeColors.dependency });
       });
 
-      g.graphData.nodes.forEach((n) => {
+      g.data.nodes.forEach((n) => {
         if (!ss.nodes[n.id]?.color) {
           addNodeStyle(ss, n.id, { color: nodeColors.unselected });
           (g.linksBySource[n.id] || []).forEach((l) =>
@@ -162,7 +92,7 @@ export const Graph = ({ ds }: { ds: DependencyNode[] }) => {
   return (
     <ForceGraph3D
       {...dimensions}
-      graphData={g.graphData}
+      graphData={g.data}
       backgroundColor={theme.typography.backgroundColor}
       nodeId="id"
       nodeColor={(node: any) =>

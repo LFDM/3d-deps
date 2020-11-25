@@ -14,8 +14,13 @@ export interface IGraphLink {
 }
 
 export type GraphData = {
-  nodes: IGraphNode[];
-  links: IGraphLink[];
+  data: {
+    nodes: IGraphNode[];
+    links: IGraphLink[];
+  };
+  asTree: { [id: string]: TreeNode };
+  linksBySource: { [id: string]: IGraphLink[] };
+  linksByTarget: { [id: string]: IGraphLink[] };
 };
 
 export type TreeNode = {
