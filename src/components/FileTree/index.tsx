@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useState } from "react";
+import React from "react";
 import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
 import * as Icons from "./icons";
@@ -98,16 +98,17 @@ const Tree = React.memo(
     children,
     label,
     style,
-    defaultOpen = false,
+    isOpen,
+    setOpen,
     onClick,
   }: {
     label: React.ReactNode;
-    defaultOpen?: boolean;
+    isOpen: boolean;
+    setOpen: (nextOpen: boolean) => void;
     style?: React.CSSProperties;
     children?: React.ReactNode;
     onClick?: () => void;
   }) => {
-    const [isOpen, setOpen] = useState(defaultOpen);
     const Icon = (Icons as any)[
       `${children ? (isOpen ? "Minus" : "Plus") : "Close"}SquareO`
     ];
@@ -135,17 +136,34 @@ const Tree = React.memo(
 export const FileTreeDirectoryContent = ({
   dir,
   onSelect,
+  openNodes,
+  setOpenNodes,
 }: {
   dir: FileTreeItemDir<TreeNode>;
   onSelect: (t: TreeNode) => void;
+
+  openNodes: { [key: string]: boolean };
+  setOpenNodes: (nextV: { [key: string]: boolean }) => void;
 }) => {
   return (
     <>
       {dir.dirs.map((d) => (
-        <FileTree key={d.key} item={d} onSelect={onSelect} />
+        <FileTree
+          key={d.key}
+          item={d}
+          onSelect={onSelect}
+          openNodes={openNodes}
+          setOpenNodes={setOpenNodes}
+        />
       ))}
       {dir.files.map((d) => (
-        <FileTree key={d.key} item={d} onSelect={onSelect} />
+        <FileTree
+          key={d.key}
+          item={d}
+          onSelect={onSelect}
+          openNodes={openNodes}
+          setOpenNodes={setOpenNodes}
+        />
       ))}
     </>
   );
@@ -154,16 +172,39 @@ export const FileTreeDirectoryContent = ({
 export const FileTree = ({
   item,
   onSelect,
+  openNodes,
+  setOpenNodes,
 }: {
   item: FileTreeItem<TreeNode>;
   onSelect: (t: TreeNode) => void;
+
+  openNodes: { [key: string]: boolean };
+  setOpenNodes: (nextV: { [key: string]: boolean }) => void;
 }): JSX.Element => {
+  const isOpen = !!openNodes[item.key];
+  const setOpen = (open: boolean) =>
+    setOpenNodes({
+      ...openNodes,
+      [item.key]: open,
+    });
   if (item.type === "dir") {
     return (
-      <Tree label={item.label}>
-        <FileTreeDirectoryContent dir={item} onSelect={onSelect} />
+      <Tree label={item.label} isOpen={isOpen} setOpen={setOpen}>
+        <FileTreeDirectoryContent
+          dir={item}
+          onSelect={onSelect}
+          openNodes={openNodes}
+          setOpenNodes={setOpenNodes}
+        />
       </Tree>
     );
   }
-  return <Tree label={item.label} onClick={() => onSelect(item.data)} />;
+  return (
+    <Tree
+      label={item.label}
+      onClick={() => onSelect(item.data)}
+      isOpen={isOpen}
+      setOpen={setOpen}
+    />
+  );
 };

@@ -1,5 +1,5 @@
 import { sortBy } from "lodash";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { GraphData } from "../../types/GraphData";
 import { FileTreeDirectoryContent, toFileTree } from "../FileTree";
 
@@ -12,11 +12,12 @@ export const NodesPanel = ({
   selectedNodeId: string | null;
   setSelectedNodeId: (v: string | null) => void;
 }) => {
-  const treeNodes = useMemo(
-    () => sortBy(g.data.nodes, (n) => n.path).map((n) => g.asTree[n.id]),
-    [g]
-  );
-  const rootDir = toFileTree(treeNodes);
+  const [openNodes, setOpenNodes] = useState<{ [key: string]: boolean }>({});
+  const { rootDir, treeNodes } = useMemo(() => {
+    const tn = sortBy(g.data.nodes, (n) => n.path).map((n) => g.asTree[n.id]);
+    return { treeNodes: tn, rootDir: toFileTree(tn) };
+  }, [g]);
+
   return (
     <FileTreeDirectoryContent
       dir={rootDir}
@@ -24,6 +25,8 @@ export const NodesPanel = ({
         const nodeId = t.node.id;
         return setSelectedNodeId(selectedNodeId === nodeId ? null : nodeId);
       }}
+      openNodes={openNodes}
+      setOpenNodes={setOpenNodes}
     />
   );
 };
