@@ -10,32 +10,20 @@ export type ButtonProps = {
 };
 
 const StyledButton = styled("button")<{ variant: ButtonVariant }>((p) => {
-  if (p.variant === "outlined") {
-    return {
-      "&&": {
+  return {
+    "&&": {
+      borderWidth: 2,
+      padding: p.theme.spacing(0.5),
+      ...(p.variant === "outlined" && {
         borderColor: p.theme.typography.color,
-        borderWidth: 2,
-        padding: p.theme.spacing(0.5),
-      },
-    };
-  }
-  if (p.variant === "contained") {
-    return {
-      "&&": {
-        borderWidth: 2,
-        padding: p.theme.spacing(0.5),
-      },
-    };
-  }
-  if (p.variant === "standard") {
-    return {
-      "&&": {
-        borderWidth: 2,
-        padding: p.theme.spacing(0.5),
-      },
-    };
-  }
-  return {};
+      }),
+
+      ...(p.variant === "none" && {
+        borderWidth: 0,
+        padding: 0,
+      }),
+    },
+  };
 });
 
 export const Button: React.FC<ButtonProps> = (props) => {
