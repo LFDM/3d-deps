@@ -83,11 +83,43 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
 
   const styles = useMemo(() => {
-    const ss = {
+    const ss: {
+      nodes: {
+        [id: string]: {
+          color?: string;
+        };
+      };
+      links: {
+        [id: string]: {
+          color?: string;
+          particles?: number;
+        };
+      };
+    } = {
       nodes: {},
-      link: {},
+      links: {},
     };
-  }, [g, selectedNodeId]);
+    if (selectedNodeId) {
+      const treeNode = g.asTree[selectedNodeId];
+      treeNode.dependsOn.nodes.forEach((n) => {
+        ss.nodes[n.id] = { color: theme.graph.colors.dependent };
+      });
+      treeNode.dependedBy.nodes.forEach((n) => {
+        ss.nodes[n.id] = { color: theme.graph.colors.dependency };
+      });
+
+      const sourceLinks = g.linksBySource[selectedNodeId] || [];
+      sourceLinks.forEach((l) => {
+        ss.links[l.id] = { particles: 7 };
+      });
+      const targetLinks = g.linksByTarget[selectedNodeId] || [];
+      targetLinks.forEach((l) => {
+        ss.links[l.id] = { particles: 7 };
+      });
+    }
+
+    return ss;
+  }, [g, selectedNodeId, theme]);
 
   // might be better to compute style objects for everything
   // - and then just use these vars in the respective functions
@@ -96,32 +128,10 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       graphData={g.graphData}
       nodeId="id"
       nodeColor={(node: any) => {
-        if (node.id === selectedNodeId) {
-          return theme.graph.colors.selection;
-        }
-        if (selectedNodeId) {
-          const treeNode = g.asTree[selectedNodeId];
-          if (treeNode.dependsOn.ids.has(node.id)) {
-            return theme.graph.colors.dependent;
-          }
-          if (treeNode.dependedBy.ids.has(node.id)) {
-            return theme.graph.colors.dependency;
-          }
-        }
-        return theme.graph.colors.standard;
+        return styles.nodes[node.id]?.color || theme.graph.colors.standard;
       }}
       linkDirectionalParticles={(link: any) => {
-        if (selectedNodeId) {
-          const sourced = g.linksBySource[selectedNodeId] || [];
-          if (sourced.includes(link)) {
-            return 7;
-          }
-          const targetted = g.linksByTarget[selectedNodeId] || [];
-          if (targetted.includes(link)) {
-            return 7;
-          }
-        }
-        return 0;
+        return styles.links[link.id]?.particles || 0;
       }}
       linkDirectionalArrowLength={3.5}
       linkDirectionalArrowRelPos={1}
