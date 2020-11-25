@@ -35,6 +35,28 @@ const SidebarContainer = styled("div")`
   pointer-events: auto;
 `;
 
+const ColorPicker = ({
+  value,
+  onChange,
+  label,
+}: {
+  label: React.ReactNode;
+  value: string;
+  onChange: (nextValue: string) => void;
+}) => {
+  return (
+    <div>
+      <div>
+        <label>{label}</label>
+      </div>
+      <ChromePicker
+        color={value}
+        onChangeComplete={(nextColor) => onChange(nextColor.hex)}
+      />
+    </div>
+  );
+};
+
 export const Sidebar = ({
   onChangeTheme,
 }: {
@@ -43,34 +65,37 @@ export const Sidebar = ({
   const theme = useTheme();
   return (
     <SidebarContainer>
-      <ChromePicker
-        color={theme.typography.color}
-        onChangeComplete={(nextColor) =>
+      <ColorPicker
+        label="Color"
+        value={theme.typography.color}
+        onChange={(nextColor) =>
           onChangeTheme({
             ...theme,
             typography: {
               ...theme.typography,
-              color: nextColor.hex,
+              color: nextColor,
             },
           })
         }
       />
-      <ChromePicker
-        color={theme.typography.backgroundColor}
-        onChangeComplete={(nextColor) =>
+      <ColorPicker
+        label="Bg Color"
+        value={theme.typography.backgroundColor}
+        onChange={(nextColor) =>
           onChangeTheme({
             ...theme,
             typography: {
               ...theme.typography,
-              backgroundColor: nextColor.hex,
+              backgroundColor: nextColor,
             },
           })
         }
       />
 
-      <ChromePicker
-        color={theme.graph.nodes.colors.dependency}
-        onChangeComplete={(nextColor) =>
+      <ColorPicker
+        label="Dependency"
+        value={theme.graph.nodes.colors.dependency}
+        onChange={(nextColor) =>
           onChangeTheme({
             ...theme,
             graph: {
@@ -79,7 +104,7 @@ export const Sidebar = ({
                 ...theme.graph.nodes,
                 colors: {
                   ...theme.graph.nodes.colors,
-                  dependency: nextColor.hex,
+                  dependency: nextColor,
                 },
               },
             },
