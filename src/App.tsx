@@ -5,6 +5,7 @@ import { nanoid } from "nanoid";
 import React, { useMemo, useState } from "react";
 import { Graph } from "./components/Graph";
 import { Hud } from "./components/Hud";
+import { ConfigContext } from "./hooks/useConfig";
 import { Config } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
 import { GraphData, IGraphLink, IGraphNode, TreeNode } from "./types/GraphData";
@@ -102,21 +103,23 @@ function App({ config, ds }: { config: Config; ds: DependencyNode[] }) {
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
   const g = useGraphData(ds);
   return (
-    <ThemeProvider theme={theme}>
-      <Main>
-        <Hud
-          g={g}
-          onChangeTheme={setTheme}
-          selectedNodeId={selectedNodeId}
-          setSelectedNodeId={setSelectedNodeId}
-        />
-        <Graph
-          g={g}
-          selectedNodeId={selectedNodeId}
-          setSelectedNodeId={setSelectedNodeId}
-        />
-      </Main>
-    </ThemeProvider>
+    <ConfigContext.Provider value={config}>
+      <ThemeProvider theme={theme}>
+        <Main>
+          <Hud
+            g={g}
+            onChangeTheme={setTheme}
+            selectedNodeId={selectedNodeId}
+            setSelectedNodeId={setSelectedNodeId}
+          />
+          <Graph
+            g={g}
+            selectedNodeId={selectedNodeId}
+            setSelectedNodeId={setSelectedNodeId}
+          />
+        </Main>
+      </ThemeProvider>
+    </ConfigContext.Provider>
   );
 }
 
