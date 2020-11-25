@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { GraphData, IGraphNode } from "../../types/GraphData";
@@ -50,6 +50,8 @@ export const Graph = ({
   const theme = useTheme();
   const dimensions = useWindowSize();
 
+  const ref = useRef();
+
   const styles = useMemo(() => {
     const ss: Styles = {
       nodes: {},
@@ -96,8 +98,18 @@ export const Graph = ({
 
   // might be better to compute style objects for everything
   // - and then just use these vars in the respective functions
+
+  useEffect(() => {
+    setTimeout(() => {
+      const r: any = ref.current;
+      r.cameraPosition({ x: 0 }, { x: -200 });
+    }, 0);
+  }, []);
+
   return (
     <ForceGraph3D
+      ref={ref}
+      controlType="trackball"
       {...dimensions}
       graphData={g.data}
       backgroundColor={theme.typography.backgroundColor}
