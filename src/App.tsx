@@ -18,15 +18,16 @@ const Main = styled("main")((p) => ({
 
   "*": {
     scrollbarWidth: "thin",
-    scrollbarColor: `${p.theme.typography.backgroundColor} lightgray`,
+    scrollbarColor: `${p.theme.hud.backgroundColor} lightgray`,
 
     "::-webkit-scrollbar": {
       width: p.theme.spacing(0.5),
     },
 
     "::-webkit-scrollbar-track": {
-      background: p.theme.typography.backgroundColor,
-      border: `1px solid ${p.theme.typography.backgroundColor}`,
+      background: p.theme.hud.backgroundColor,
+      border: `1px solid ${p.theme.hud.backgroundColor}`,
+      opacity: p.theme.hud.opacity,
     },
     "::-webkit-scrollbar-thumb": {
       borderRadius: 2,

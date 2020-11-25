@@ -3,6 +3,10 @@ export type Theme = {
     backgroundColor: string;
     color: string;
   };
+  hud: {
+    backgroundColor: string;
+    opacity: number;
+  };
   spacing: (multiplier?: number) => number;
   graph: {
     nodes: {
@@ -29,6 +33,10 @@ export const THEME: Theme = {
   typography: {
     backgroundColor: "#141414",
     color: "#f4f4f4",
+  },
+  hud: {
+    backgroundColor: "#1e1e1e",
+    opacity: 0.75,
   },
   spacing: (multiplier = 1) => multiplier * 8,
   graph: {
