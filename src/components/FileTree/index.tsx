@@ -1,4 +1,4 @@
-import { TreeNode } from "../types/GraphData";
+import { TreeNode } from "../../types/GraphData";
 
 type FileTreeItemFile<T> = {
   key: string;
@@ -58,3 +58,5 @@ export const toFileTree = (ds: TreeNode[]): FileTreeItemDir<TreeNode> => {
   });
   return items[SEPARATOR];
 };
+
+export const FileTree = ({ root }: { root: FileTreeItemDir<TreeNode> }) => {};
