@@ -62,8 +62,18 @@ export const Sidebar = ({ onChangeTheme, ...other }: Props) => {
   return (
     <SidebarContainer>
       <Tabs>
-        <Button onClick={() => setTab("nodes")}>Nodes</Button>
-        <Button onClick={() => setTab("theme")}>Theme</Button>
+        <Button
+          variant={tab === "nodes" ? "outlined" : "standard"}
+          onClick={() => setTab("nodes")}
+        >
+          Nodes
+        </Button>
+        <Button
+          variant={tab === "theme" ? "outlined" : "standard"}
+          onClick={() => setTab("theme")}
+        >
+          Theme
+        </Button>
       </Tabs>
       {tab === "nodes" && (
         <Tab>
