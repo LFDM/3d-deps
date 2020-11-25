@@ -21,7 +21,7 @@ type FileTreeItemDir<T> = {
 
 type FileTreeItem<T> = FileTreeItemDir<T> | FileTreeItemFile<T>;
 
-const SEPARATOR = "/";
+export const SEPARATOR = "/";
 
 export const toFileTree = (ds: TreeNode[]): FileTreeItemDir<TreeNode> => {
   const items: { [path: string]: FileTreeItemDir<TreeNode> } = {

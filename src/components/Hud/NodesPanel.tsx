@@ -1,7 +1,7 @@
 import { sortBy } from "lodash";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { GraphData } from "../../types/GraphData";
-import { FileTreeDirectoryContent, toFileTree } from "../FileTree";
+import { FileTreeDirectoryContent, SEPARATOR, toFileTree } from "../FileTree";
 
 export const NodesPanel = ({
   g,
@@ -13,10 +13,27 @@ export const NodesPanel = ({
   setSelectedNodeId: (v: string | null) => void;
 }) => {
   const [openNodes, setOpenNodes] = useState<{ [key: string]: boolean }>({});
-  const { rootDir, treeNodes } = useMemo(() => {
+  const { rootDir } = useMemo(() => {
     const tn = sortBy(g.data.nodes, (n) => n.path).map((n) => g.asTree[n.id]);
     return { treeNodes: tn, rootDir: toFileTree(tn) };
   }, [g]);
+
+  useEffect(() => {
+    if (selectedNodeId) {
+      const treeNode = g.asTree[selectedNodeId];
+      if (!treeNode) {
+        return;
+      }
+      const { path } = treeNode.node;
+      const parts = path.split(SEPARATOR);
+      const toOpen: { [key: string]: boolean } = {};
+      for (let i = 0; i < parts.length; i++) {
+        const key = parts.slice(0, i + 1).join(SEPARATOR);
+        toOpen[key] = true;
+      }
+      setOpenNodes((x) => ({ ...x, ...toOpen }));
+    }
+  }, [selectedNodeId, g]);
 
   return (
     <FileTreeDirectoryContent
