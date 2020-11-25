@@ -75,7 +75,7 @@ export const ColorPicker = ({
                   onChange(defaultValue);
                 }}
               >
-                <RefreshCcw size={14} />
+                <RefreshCcw size={12} />
               </Button>
             )}
             <Swatch value={value} />
