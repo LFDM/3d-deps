@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import React, { useState } from "react";
 import { Theme } from "../../types/Config";
 import { GraphData } from "../../types/GraphData";
+import { Button } from "../Button";
 import { NodesPanel } from "./NodesPanel";
 import { ThemePanel } from "./ThemePanel";
 
@@ -61,8 +62,8 @@ export const Sidebar = ({ onChangeTheme, ...other }: Props) => {
   return (
     <SidebarContainer>
       <Tabs>
-        <button onClick={() => setTab("nodes")}>Nodes</button>
-        <button onClick={() => setTab("theme")}>Theme</button>
+        <Button onClick={() => setTab("nodes")}>Nodes</Button>
+        <Button onClick={() => setTab("theme")}>Theme</Button>
       </Tabs>
       {tab === "nodes" && (
         <Tab>
