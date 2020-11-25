@@ -2,6 +2,7 @@ import { useTheme } from "@emotion/react";
 import { groupBy, keyBy } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useMemo, useState } from "react";
+import { ForceGraph3D } from "react-force-graph";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { DependencyNode } from "../../types/DependencyAnalyzer";
 import { GraphData, IGraphLink, IGraphNode } from "../../types/GraphData";
