@@ -1,7 +1,8 @@
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
-import { ChromePicker } from "react-color";
+import React from "react";
 import { Theme } from "../../types/Config";
+import { ColorPicker } from "../ColorPicker";
 
 const Container = styled("div")`
   background: transparent;
@@ -34,28 +35,6 @@ const SidebarContainer = styled("div")`
   padding: ${(p) => p.theme.spacing(1)}px;
   pointer-events: auto;
 `;
-
-const ColorPicker = ({
-  value,
-  onChange,
-  label,
-}: {
-  label: React.ReactNode;
-  value: string;
-  onChange: (nextValue: string) => void;
-}) => {
-  return (
-    <div>
-      <div>
-        <label>{label}</label>
-      </div>
-      <ChromePicker
-        color={value}
-        onChangeComplete={(nextColor) => onChange(nextColor.hex)}
-      />
-    </div>
-  );
-};
 
 export const Sidebar = ({
   onChangeTheme,
