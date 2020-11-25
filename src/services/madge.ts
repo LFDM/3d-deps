@@ -1,10 +1,13 @@
 // @ts-ignore
 import * as madge from "madge";
-import { IDependencyAnalyzer } from "../types/DependencyAnalyzer";
+import {
+  DependencyNode,
+  IDependencyAnalyzer,
+} from "../types/DependencyAnalyzer";
 import { IGraphLink, IGraphNode } from "../types/GraphData";
 import DEPS from "./dependencies.json";
 
-const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
+const dependenciesToGraphDataOld = (deps: { [key: string]: string[] }) => {
   const nodes: IGraphNode[] = [];
   const links: IGraphLink[] = [];
   Object.entries(deps).forEach(([k, vs]) => {
@@ -25,6 +28,20 @@ const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
     });
   });
   return { nodes, links };
+};
+
+const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
+  const nodes: DependencyNode[] = [];
+  Object.entries(deps).forEach(([k, vs]) => {
+    const node: DependencyNode = {
+      id: k,
+      path: k,
+      label: k,
+      dependsOn: vs.filter((v) => v.includes("node_modules")),
+    };
+    nodes.push(node);
+  });
+  return nodes;
 };
 
 export type MadgeAnalyzerConfig = {
