@@ -4,7 +4,6 @@ import { groupBy, keyBy } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useMemo, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
-import "./App.css";
 import { useWindowSize } from "./hooks/useWindowSize";
 import { Config, Theme } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
@@ -196,11 +195,9 @@ const Main = styled("main")((p) => ({
 function App({ config, ds }: { config: Config; ds: DependencyNode[] }) {
   return (
     <ThemeProvider theme={config.theme}>
-      <div className="App">
-        <Main>
-          <Graph ds={ds} theme={config.theme} />
-        </Main>
-      </div>
+      <Main>
+        <Graph ds={ds} theme={config.theme} />
+      </Main>
     </ThemeProvider>
   );
 }
