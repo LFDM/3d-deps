@@ -17,6 +17,11 @@ const Main = styled("main")((p) => ({
   height: "100vh",
   overflow: "hidden",
 
+  h5: {
+    marginTop: p.theme.spacing(),
+    marginBottom: p.theme.spacing(),
+  },
+
   "*": {
     scrollbarWidth: "thin",
     scrollbarColor: `${p.theme.hud.backgroundColor} lightgray`,
