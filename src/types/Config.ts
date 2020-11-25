@@ -51,7 +51,7 @@ export const THEME: Theme = {
     },
     links: {
       colors: {
-        standard: "lightgray",
+        standard: "#d3d3d3",
         dependency: "#f47560",
         dependent: "#61cdbb",
         unselected: "#050505",
