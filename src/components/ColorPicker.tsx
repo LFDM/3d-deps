@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ChromePicker } from "react-color";
+import { useOnClickOutside } from "../hooks/useOnClickOutside";
 
 const Container = styled("div")((p) => ({
   position: "relative",
@@ -49,6 +50,8 @@ export const ColorPicker = ({
   onChange: (nextValue: string) => void;
 }) => {
   const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  useOnClickOutside(ref, () => setOpen(false));
   return (
     <>
       <Container role="button" onClick={() => setOpen(true)}>
@@ -60,12 +63,11 @@ export const ColorPicker = ({
           </ColorName>
         </Row>
         {open && (
-          <PickerContainer>
+          <PickerContainer ref={ref}>
             <ChromePicker
               color={value}
               onChangeComplete={(nextColor) => {
                 onChange(nextColor.hex);
-                setOpen(false);
               }}
             />
           </PickerContainer>
