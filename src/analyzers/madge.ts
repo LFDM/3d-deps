@@ -1,5 +1,5 @@
-// @ts-ignore
-import * as madge from "madge";
+// // @ts-ignore
+// import * as madge from "madge";
 import {
   DependencyNode,
   IDependencyAnalyzer,
@@ -13,7 +13,7 @@ const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
       id: k,
       path: k,
       label: k,
-      dependsOn: vs.filter((v) => v.includes("node_modules")),
+      dependsOn: vs.filter((v) => !v.includes("node_modules")),
     };
     nodes.push(node);
   });
@@ -39,11 +39,11 @@ export class MadgeAnalyzer implements IDependencyAnalyzer {
   }
 
   async analyze() {
-    if (process.env.NODE_ENV === "development") {
-      return dependenciesToGraphData(DEPS);
-    }
-    const { entry, ...config } = this.config;
-    const deps = await madge(entry, config).then((r: any) => r.obj());
-    return dependenciesToGraphData(deps);
+    // if (process.env.NODE_ENV === "development") {
+    return dependenciesToGraphData(DEPS);
+    // }
+    // const { entry, ...config } = this.config;
+    // const deps = await madge(entry, config).then((r: any) => r.obj());
+    // return dependenciesToGraphData(deps);
   }
 }
