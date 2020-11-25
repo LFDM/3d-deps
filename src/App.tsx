@@ -25,6 +25,24 @@ const Main = styled("main")((p) => ({
     borderColor: p.theme.typography.color,
     padding: p.theme.spacing(0.5),
   },
+
+  "*": {
+    scrollbarWidth: "thin",
+    scrollbarColor: "gray lightgray",
+
+    "::-webkit-scrollbar": {
+      width: p.theme.spacing(0.5),
+    },
+
+    "::-webkit-scrollbar-track": {
+      background: "gray",
+      border: `1px solid ${p.theme.typography.backgroundColor}`,
+    },
+    "::-webkit-scrollbar-thumb": {
+      borderRadius: 2,
+      background: "lightgray",
+    },
+  },
 }));
 
 const depsToGraphData = (ds: DependencyNode[]): GraphData["data"] => {
