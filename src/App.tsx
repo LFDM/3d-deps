@@ -1,3 +1,5 @@
+import { ThemeProvider } from "@emotion/react";
+import styled from "@emotion/styled";
 import { groupBy, keyBy } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useMemo, useState } from "react";
@@ -187,13 +189,19 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   );
 };
 
+const Main = styled("main")((p) => ({
+  backgroundColor: p.theme.graph.background.color,
+}));
+
 function App({ config, ds }: { config: Config; ds: DependencyNode[] }) {
   return (
-    <div className="App">
-      <main>
-        <Graph ds={ds} theme={config.theme} />
-      </main>
-    </div>
+    <ThemeProvider theme={config.theme}>
+      <div className="App">
+        <Main>
+          <Graph ds={ds} theme={config.theme} />
+        </Main>
+      </div>
+    </ThemeProvider>
   );
 }
 
