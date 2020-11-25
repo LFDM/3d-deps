@@ -1,8 +1,11 @@
 export type Theme = {
-  colors: {
-    selection: string;
-    dependent: string;
-    dependency: string;
+  graph: {
+    colors: {
+      standard: string;
+      selection: string;
+      dependent: string;
+      dependency: string;
+    };
   };
 };
 export type Config = {

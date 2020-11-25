@@ -78,7 +78,6 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   // - outgoing deps -> 2-3 layers
   // - all links between them, activate particles
   const { graphData, asTree, linksBySource, linksByTarget } = useGraphData(ds);
-  console.log(asTree);
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
   return (
     <ForceGraph3D
@@ -86,18 +85,18 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       nodeId="id"
       nodeColor={(node: any) => {
         if (node.id === selectedNodeId) {
-          return theme.colors.selection;
+          return theme.graph.colors.selection;
         }
         if (selectedNodeId) {
           const treeNode = asTree[selectedNodeId];
           if (treeNode.dependsOn.ids.has(node.id)) {
-            return theme.colors.dependent;
+            return theme.graph.colors.dependent;
           }
           if (treeNode.dependedBy.ids.has(node.id)) {
-            return theme.colors.dependency;
+            return theme.graph.colors.dependency;
           }
         }
-        return "";
+        return theme.graph.colors.standard;
       }}
       linkDirectionalParticles={(link: any) => {
         if (selectedNodeId) {
