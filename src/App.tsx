@@ -16,15 +16,6 @@ const Main = styled("main")((p) => ({
   height: "100vh",
   overflow: "hidden",
 
-  button: {
-    backgroundColor: "transparent",
-    color: p.theme.typography.color,
-    borderWidth: 0,
-    borderStyle: "solid",
-    cursor: "pointer",
-    borderColor: "transparent",
-  },
-
   "*": {
     scrollbarWidth: "thin",
     scrollbarColor: "gray lightgray",
