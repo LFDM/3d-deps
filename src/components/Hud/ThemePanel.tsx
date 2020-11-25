@@ -18,7 +18,7 @@ export const ThemePanel = ({
   return (
     <>
       <Section>
-        <h5>General</h5>
+        <h4>General</h4>
         <ColorPicker
           label="Color"
           value={theme.typography.color}
@@ -49,7 +49,7 @@ export const ThemePanel = ({
         />
       </Section>
       <Section>
-        <h5>HUD</h5>
+        <h4>HUD</h4>
         <ColorPicker
           label="Color"
           value={theme.hud.color}
@@ -94,7 +94,7 @@ export const ThemePanel = ({
         />
       </Section>
       <Section>
-        <h5>Graph Nodes</h5>
+        <h4>Graph Nodes</h4>
         <ColorPicker
           label="Standard"
           value={theme.graph.nodes.colors.standard}
@@ -197,7 +197,7 @@ export const ThemePanel = ({
         />
       </Section>
       <Section>
-        <h5>Graph Links</h5>
+        <h4>Graph Links</h4>
         <ColorPicker
           label="Standard"
           value={theme.graph.links.colors.standard}

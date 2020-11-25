@@ -47,6 +47,7 @@ const SidebarContainer = styled("div")`
   background-color: ${(p) => p.theme.hud.backgroundColor};
   opacity: ${(p) => p.theme.hud.opacity};
 
+  h4,
   h5 {
     color: ${(p) => p.theme.hud.highlightColor};
   }

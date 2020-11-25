@@ -17,6 +17,13 @@ const Main = styled("main")((p) => ({
   height: "100vh",
   overflow: "hidden",
 
+  font: "400 14px Arial",
+
+  h4: {
+    marginTop: p.theme.spacing(),
+    marginBottom: p.theme.spacing(),
+  },
+
   h5: {
     marginTop: p.theme.spacing(),
     marginBottom: p.theme.spacing(),
