@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import React, { useState } from "react";
 import { animated, useSpring } from "react-spring";
 import { TreeNode } from "../../types/GraphData";
+import { Button } from "../Button";
 import { useMeasure, usePrevious } from "./helpers";
 import * as Icons from "./icons";
 
@@ -101,11 +102,13 @@ const Tree = React.memo(
     label,
     style,
     defaultOpen = false,
+    onClick,
   }: {
     label: React.ReactNode;
     defaultOpen?: boolean;
     style?: React.CSSProperties;
     children?: React.ReactNode;
+    onClick?: () => void;
   }) => {
     const [isOpen, setOpen] = useState(defaultOpen);
     const previous = usePrevious(isOpen);
@@ -127,7 +130,15 @@ const Tree = React.memo(
           style={{ ...toggle, opacity: children ? 1 : 0.3 }}
           onClick={() => setOpen(!isOpen)}
         />
-        <Title style={style}>{label}</Title>
+        <Title style={style}>
+          {onClick ? (
+            <Button variant="none" onClick={onClick}>
+              {label}
+            </Button>
+          ) : (
+            label
+          )}
+        </Title>
         <Content
           style={{
             opacity,
@@ -143,16 +154,18 @@ const Tree = React.memo(
 
 export const FileTreeDirectoryContent = ({
   dir,
+  onSelect,
 }: {
   dir: FileTreeItemDir<TreeNode>;
+  onSelect: (t: TreeNode) => void;
 }) => {
   return (
     <>
       {dir.dirs.map((d) => (
-        <FileTree key={d.key} item={d} />
+        <FileTree key={d.key} item={d} onSelect={onSelect} />
       ))}
       {dir.files.map((d) => (
-        <FileTree key={d.key} item={d} />
+        <FileTree key={d.key} item={d} onSelect={onSelect} />
       ))}
     </>
   );
@@ -160,15 +173,17 @@ export const FileTreeDirectoryContent = ({
 
 export const FileTree = ({
   item,
+  onSelect,
 }: {
   item: FileTreeItem<TreeNode>;
+  onSelect: (t: TreeNode) => void;
 }): JSX.Element => {
   if (item.type === "dir") {
     return (
       <Tree label={item.label}>
-        <FileTreeDirectoryContent dir={item} />
+        <FileTreeDirectoryContent dir={item} onSelect={onSelect} />
       </Tree>
     );
   }
-  return <Tree label={item.label} />;
+  return <Tree label={item.label} onClick={() => onSelect(item.data)} />;
 };

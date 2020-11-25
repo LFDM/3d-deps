@@ -33,5 +33,13 @@ export const NodesPanel = ({
     [g]
   );
   const rootDir = toFileTree(treeNodes);
-  return <FileTreeDirectoryContent dir={rootDir} />;
+  return (
+    <FileTreeDirectoryContent
+      dir={rootDir}
+      onSelect={(t) => {
+        const nodeId = t.node.id;
+        return setSelectedNodeId(selectedNodeId === nodeId ? null : nodeId);
+      }}
+    />
+  );
 };
