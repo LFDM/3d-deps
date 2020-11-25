@@ -2,7 +2,7 @@ import { groupBy, keyBy } from "lodash";
 import React, { useMemo, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import "./App.css";
-import { Config } from "./types/Config";
+import { Config, Theme } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
 import { GraphData, IGraphLink, IGraphNode } from "./types/GraphData";
 
@@ -70,7 +70,7 @@ const useGraphData = (ds: DependencyNode[]) => {
   }, [ds]);
 };
 
-const Graph = ({ ds }: { ds: DependencyNode[] }) => {
+const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   // TODO
   // onSelect:
   // - hightlight node
@@ -86,15 +86,15 @@ const Graph = ({ ds }: { ds: DependencyNode[] }) => {
       nodeId="id"
       nodeColor={(node: any) => {
         if (node.id === selectedNodeId) {
-          return "lightblue";
+          return theme.colors.selection;
         }
         if (selectedNodeId) {
           const treeNode = asTree[selectedNodeId];
           if (treeNode.dependsOn.ids.has(node.id)) {
-            return "green";
+            return theme.colors.dependent;
           }
           if (treeNode.dependedBy.ids.has(node.id)) {
-            return "red";
+            return theme.colors.dependency;
           }
         }
         return "";
@@ -127,7 +127,7 @@ function App({ config, ds }: { config: Config; ds: DependencyNode[] }) {
   return (
     <div className="App">
       <main>
-        <Graph ds={ds} />
+        <Graph ds={ds} theme={config.theme} />
       </main>
     </div>
   );
