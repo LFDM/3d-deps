@@ -30,6 +30,7 @@ const StyledButton = styled("button")<{
     ...(p.variant === "none" && {
       borderWidth: 0,
       padding: 0,
+      textAlign: "inherit",
     }),
     ...(p.fullWidth && {
       width: "100%",
