@@ -1,4 +1,4 @@
-import { keyBy } from "lodash";
+import { groupBy, keyBy } from "lodash";
 import React, { useMemo, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import "./App.css";
@@ -64,8 +64,8 @@ const useGraphData = (ds: DependencyNode[]) => {
     return {
       graphData,
       asTree,
-      linksBySource: keyBy(graphData.links, (l) => l.source),
-      linksByTarget: keyBy(graphData.links, (l) => l.target),
+      linksBySource: groupBy(graphData.links, (l) => l.source),
+      linksByTarget: groupBy(graphData.links, (l) => l.target),
     };
   }, [ds]);
 };
@@ -77,7 +77,7 @@ const Graph = ({ ds }: { ds: DependencyNode[] }) => {
   // - incoming deps -> 2-3 layers
   // - outgoing deps -> 2-3 layers
   // - all links between them, activate particles
-  const { graphData, asTree } = useGraphData(ds);
+  const { graphData, asTree, linksBySource, linksByTarget } = useGraphData(ds);
   console.log(asTree);
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
   return (
@@ -98,6 +98,19 @@ const Graph = ({ ds }: { ds: DependencyNode[] }) => {
           }
         }
         return "";
+      }}
+      linkDirectionalParticles={(link: any) => {
+        if (selectedNodeId) {
+          const sourced = linksBySource[selectedNodeId] || [];
+          if (sourced.includes(link)) {
+            return 7;
+          }
+          const targetted = linksByTarget[selectedNodeId] || [];
+          if (targetted.includes(link)) {
+            return 7;
+          }
+        }
+        return 0;
       }}
       linkDirectionalArrowLength={3.5}
       linkDirectionalArrowRelPos={1}
