@@ -118,7 +118,7 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
     const nodeColors = theme.graph.nodes.colors;
     if (selectedNodeId) {
       addNodeStyle(ss, selectedNodeId, {
-        color: nodeColors.selection,
+        color: nodeColors.selected,
       });
       const treeNode = g.asTree[selectedNodeId];
       treeNode.dependsOn.nodes.forEach((n) => {
@@ -130,7 +130,7 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
 
       g.graphData.nodes.forEach((n) => {
         if (!ss.nodes[n.id]?.color) {
-          addNodeStyle(ss, n.id, { color: "black" });
+          addNodeStyle(ss, n.id, { color: nodeColors.unselected });
         }
       });
 
@@ -162,9 +162,11 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       linkDirectionalArrowLength={3.5}
       linkDirectionalArrowRelPos={1}
       linkDirectionalArrowColor={(link: any) =>
-        styles.links[link.id]?.color || "red"
+        styles.links[link.id]?.color || theme.graph.links.colors.standard
       }
-      linkColor={(link: any) => styles.links[link.id]?.color || "red"}
+      linkColor={(link: any) =>
+        styles.links[link.id]?.color || theme.graph.links.colors.standard
+      }
       nodeLabel={(node) => (node as IGraphNode).label}
       enableNodeDrag={false}
       onNodeClick={(node) =>

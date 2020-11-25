@@ -11,7 +11,15 @@ const THEME: Theme = {
     nodes: {
       colors: {
         standard: "#fcf4b0",
-        selection: "#e8a838",
+        selected: "#e8a838",
+        unselected: "black",
+        dependency: "#f47560",
+        dependent: "#61cdbb",
+      },
+    },
+    links: {
+      colors: {
+        standard: "lightgray",
         dependency: "#f47560",
         dependent: "#61cdbb",
       },

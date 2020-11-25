@@ -3,7 +3,15 @@ export type Theme = {
     nodes: {
       colors: {
         standard: string;
-        selection: string;
+        selected: string;
+        unselected: string;
+        dependent: string;
+        dependency: string;
+      };
+    };
+    links: {
+      colors: {
+        standard: string;
         dependent: string;
         dependency: string;
       };
