@@ -1,4 +1,6 @@
+import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
+import { ChromePicker } from "react-color";
 import { Theme } from "../../types/Config";
 
 const Container = styled("div")`
@@ -31,6 +33,7 @@ const SidebarContainer = styled("div")`
   height: 100%;
   width: 100%;
   padding: ${(p) => p.theme.spacing(1)}px;
+  pointer-events: auto;
 `;
 
 export const Sidebar = ({
@@ -38,7 +41,54 @@ export const Sidebar = ({
 }: {
   onChangeTheme: (nextTheme: Theme) => void;
 }) => {
-  return <SidebarContainer>Theme</SidebarContainer>;
+  const theme = useTheme();
+  return (
+    <SidebarContainer>
+      <ChromePicker
+        color={theme.typography.color}
+        onChangeComplete={(nextColor) =>
+          onChangeTheme({
+            ...theme,
+            typography: {
+              ...theme.typography,
+              color: nextColor.hex,
+            },
+          })
+        }
+      />
+      <ChromePicker
+        color={theme.typography.backgroundColor}
+        onChangeComplete={(nextColor) =>
+          onChangeTheme({
+            ...theme,
+            typography: {
+              ...theme.typography,
+              backgroundColor: nextColor.hex,
+            },
+          })
+        }
+      />
+
+      <ChromePicker
+        color={theme.graph.nodes.colors.dependency}
+        onChangeComplete={(nextColor) =>
+          onChangeTheme({
+            ...theme,
+            graph: {
+              ...theme.graph,
+              nodes: {
+                ...theme.graph.nodes,
+                colors: {
+                  ...theme.graph.nodes.colors,
+                  dependency: nextColor.hex,
+                },
+              },
+            },
+          })
+        }
+      />
+    </SidebarContainer>
+  );
 };
 
 export const Hud = ({
