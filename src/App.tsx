@@ -81,6 +81,15 @@ type LinkStyle = Partial<{
   particles: number;
 }>;
 
+type Styles = {
+  nodes: {
+    [id: string]: NodeStyle;
+  };
+  links: {
+    [id: string]: LinkStyle;
+  };
+};
+
 const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   // TODO
   // onSelect:
@@ -92,14 +101,7 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
 
   const styles = useMemo(() => {
-    const ss: {
-      nodes: {
-        [id: string]: NodeStyle;
-      };
-      links: {
-        [id: string]: LinkStyle;
-      };
-    } = {
+    const ss: Styles = {
       nodes: {},
       links: {},
     };
@@ -154,6 +156,8 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       }
       linkDirectionalArrowLength={3.5}
       linkDirectionalArrowRelPos={1}
+      linkColor={}
+      linkDirectionalArrowColor={"black"}
       nodeLabel={(node) => (node as IGraphNode).label}
       enableNodeDrag={false}
       onNodeClick={(node) =>
