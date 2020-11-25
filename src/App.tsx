@@ -88,6 +88,15 @@ const Graph = ({ ds }: { ds: DependencyNode[] }) => {
         if (node.id === selectedNodeId) {
           return "lightblue";
         }
+        if (selectedNodeId) {
+          const treeNode = asTree[selectedNodeId];
+          if (treeNode.dependsOn.ids.has(node.id)) {
+            return "green";
+          }
+          if (treeNode.dependedBy.ids.has(node.id)) {
+            return "red";
+          }
+        }
         return "";
       }}
       linkDirectionalArrowLength={3.5}
