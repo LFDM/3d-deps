@@ -11,7 +11,6 @@ const Container = styled("div")`
   position: fixed;
   top: 0;
   left: 0;
-  color: white;
   pointer-events: none;
 `;
 
