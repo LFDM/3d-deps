@@ -15,22 +15,25 @@ const StyledButton = styled("button")<{
   fullWidth?: boolean;
 }>((p) => {
   return {
-    "&&": {
-      borderWidth: 2,
-      padding: p.theme.spacing(0.5),
+    borderWidth: 2,
+    padding: p.theme.spacing(0.5),
+    backgroundColor: "transparent",
+    color: p.theme.typography.color,
+    borderStyle: "solid",
+    cursor: "pointer",
+    borderColor: "transparent",
 
-      ...(p.variant === "outlined" && {
-        borderColor: p.theme.typography.color,
-      }),
+    ...(p.variant === "outlined" && {
+      borderColor: p.theme.typography.color,
+    }),
 
-      ...(p.variant === "none" && {
-        borderWidth: 0,
-        padding: 0,
-      }),
-      ...(p.fullWidth && {
-        width: "100%",
-      }),
-    },
+    ...(p.variant === "none" && {
+      borderWidth: 0,
+      padding: 0,
+    }),
+    ...(p.fullWidth && {
+      width: "100%",
+    }),
   };
 });
 
