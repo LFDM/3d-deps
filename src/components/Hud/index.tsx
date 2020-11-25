@@ -49,12 +49,69 @@ const Tabs = styled("div")((p) => ({
   borderBottom: `1px solid lightgray`,
 }));
 
-export const Sidebar = ({
+const ThemePanel = ({
   onChangeTheme,
 }: {
   onChangeTheme: (nextTheme: Theme) => void;
 }) => {
   const theme = useTheme();
+  return (
+    <>
+      <ColorPicker
+        label="Color"
+        value={theme.typography.color}
+        onChange={(nextColor) =>
+          onChangeTheme({
+            ...theme,
+            typography: {
+              ...theme.typography,
+              color: nextColor,
+            },
+          })
+        }
+      />
+      <ColorPicker
+        label="Bg Color"
+        value={theme.typography.backgroundColor}
+        onChange={(nextColor) =>
+          onChangeTheme({
+            ...theme,
+            typography: {
+              ...theme.typography,
+              backgroundColor: nextColor,
+            },
+          })
+        }
+      />
+
+      <ColorPicker
+        label="Dependency"
+        value={theme.graph.nodes.colors.dependency}
+        onChange={(nextColor) =>
+          onChangeTheme({
+            ...theme,
+            graph: {
+              ...theme.graph,
+              nodes: {
+                ...theme.graph.nodes,
+                colors: {
+                  ...theme.graph.nodes.colors,
+                  dependency: nextColor,
+                },
+              },
+            },
+          })
+        }
+      />
+    </>
+  );
+};
+
+export const Sidebar = ({
+  onChangeTheme,
+}: {
+  onChangeTheme: (nextTheme: Theme) => void;
+}) => {
   const [tab, setTab] = useState<TabName>("nodes");
   return (
     <SidebarContainer>
@@ -65,52 +122,7 @@ export const Sidebar = ({
       {tab === "nodes" && <Tab>nodes</Tab>}
       {tab === "theme" && (
         <Tab>
-          <ColorPicker
-            label="Color"
-            value={theme.typography.color}
-            onChange={(nextColor) =>
-              onChangeTheme({
-                ...theme,
-                typography: {
-                  ...theme.typography,
-                  color: nextColor,
-                },
-              })
-            }
-          />
-          <ColorPicker
-            label="Bg Color"
-            value={theme.typography.backgroundColor}
-            onChange={(nextColor) =>
-              onChangeTheme({
-                ...theme,
-                typography: {
-                  ...theme.typography,
-                  backgroundColor: nextColor,
-                },
-              })
-            }
-          />
-
-          <ColorPicker
-            label="Dependency"
-            value={theme.graph.nodes.colors.dependency}
-            onChange={(nextColor) =>
-              onChangeTheme({
-                ...theme,
-                graph: {
-                  ...theme.graph,
-                  nodes: {
-                    ...theme.graph.nodes,
-                    colors: {
-                      ...theme.graph.nodes.colors,
-                      dependency: nextColor,
-                    },
-                  },
-                },
-              })
-            }
-          />
+          <ThemePanel onChangeTheme={onChangeTheme} />
         </Tab>
       )}
     </SidebarContainer>
