@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { useRef, useState } from "react";
 import { ChromePicker } from "react-color";
+import { RefreshCcw } from "react-feather";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
 import { Button } from "./Button";
 
@@ -48,11 +49,13 @@ const PickerContainer = styled("div")((p) => ({
 
 export const ColorPicker = ({
   value,
+  defaultValue,
   onChange,
   label,
 }: {
   label: React.ReactNode;
   value: string;
+  defaultValue: string;
   onChange: (nextValue: string) => void;
 }) => {
   const [open, setOpen] = useState(false);
@@ -64,6 +67,11 @@ export const ColorPicker = ({
         <Row>
           <label>{label}</label>
           <ColorName>
+            {value !== defaultValue && (
+              <Button variant="icon" onClick={() => onChange(defaultValue)}>
+                <RefreshCcw size={14} />
+              </Button>
+            )}
             <Swatch value={value} />
             <ColorValue>{value}</ColorValue>
           </ColorName>

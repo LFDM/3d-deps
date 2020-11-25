@@ -1,5 +1,6 @@
 import { Theme, useTheme } from "@emotion/react";
 import React from "react";
+import { useConfig } from "../../hooks/useConfig";
 import { ColorPicker } from "../ColorPicker";
 
 export const ThemePanel = ({
@@ -8,11 +9,13 @@ export const ThemePanel = ({
   onChangeTheme: (nextTheme: Theme) => void;
 }) => {
   const theme = useTheme();
+  const originalTheme = useConfig().theme;
   return (
     <>
       <ColorPicker
         label="Color"
         value={theme.typography.color}
+        defaultValue={originalTheme.typography.color}
         onChange={(nextColor) =>
           onChangeTheme({
             ...theme,
@@ -26,6 +29,7 @@ export const ThemePanel = ({
       <ColorPicker
         label="Bg Color"
         value={theme.typography.backgroundColor}
+        defaultValue={originalTheme.typography.backgroundColor}
         onChange={(nextColor) =>
           onChangeTheme({
             ...theme,
@@ -40,6 +44,7 @@ export const ThemePanel = ({
       <ColorPicker
         label="Dependency"
         value={theme.graph.nodes.colors.dependency}
+        defaultValue={originalTheme.graph.nodes.colors.dependency}
         onChange={(nextColor) =>
           onChangeTheme({
             ...theme,
