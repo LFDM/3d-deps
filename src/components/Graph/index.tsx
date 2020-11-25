@@ -83,11 +83,11 @@ export const Graph = ({
 
       const sourceLinks = g.linksBySource[selectedNodeId] || [];
       sourceLinks.forEach((l) => {
-        addLinkStyle(ss, l.id, { particles: 7 });
+        addLinkStyle(ss, l.id, { particles: 7, color: linkColors.dependent });
       });
       const targetLinks = g.linksByTarget[selectedNodeId] || [];
       targetLinks.forEach((l) => {
-        addLinkStyle(ss, l.id, { particles: 7 });
+        addLinkStyle(ss, l.id, { particles: 7, color: linkColors.dependency });
       });
     }
 
