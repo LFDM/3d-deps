@@ -1,11 +1,11 @@
-import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider, useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import { groupBy, keyBy } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useMemo, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import { useWindowSize } from "./hooks/useWindowSize";
-import { Config, Theme } from "./types/Config";
+import { Config } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
 import { GraphData, IGraphLink, IGraphNode } from "./types/GraphData";
 
@@ -102,13 +102,14 @@ const addLinkStyle = (styles: Styles, linkId: string, s: LinkStyle) => {
   styles.links[linkId] = { ...v, ...s };
 };
 
-const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
+const Graph = ({ ds }: { ds: DependencyNode[] }) => {
   // TODO
   // onSelect:
   // - hightlight node
   // - incoming deps -> 2-3 layers
   // - outgoing deps -> 2-3 layers
   // - all links between them, activate particles
+  const theme = useTheme();
   const dimensions = useWindowSize();
   const g = useGraphData(ds);
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
@@ -196,10 +197,11 @@ const Main = styled("main")((p) => ({
 }));
 
 function App({ config, ds }: { config: Config; ds: DependencyNode[] }) {
+  const [theme, setTheme] = useState(config.theme);
   return (
-    <ThemeProvider theme={config.theme}>
+    <ThemeProvider theme={theme}>
       <Main>
-        <Graph ds={ds} theme={config.theme} />
+        <Graph ds={ds} />
       </Main>
     </ThemeProvider>
   );
