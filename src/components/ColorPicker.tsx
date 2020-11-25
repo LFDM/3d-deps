@@ -68,7 +68,13 @@ export const ColorPicker = ({
           <label>{label}</label>
           <ColorName>
             {value !== defaultValue && (
-              <Button variant="icon" onClick={() => onChange(defaultValue)}>
+              <Button
+                variant="icon"
+                onClick={(ev) => {
+                  ev.stopPropagation();
+                  onChange(defaultValue);
+                }}
+              >
                 <RefreshCcw size={14} />
               </Button>
             )}
