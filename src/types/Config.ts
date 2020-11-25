@@ -47,7 +47,7 @@ export const THEME: Theme = {
     nodes: {
       colors: {
         standard: "#fcf4b0",
-        selected: "#e8a838",
+        selected: "#A992EE",
         unselected: "#050505",
         dependency: "#f47560",
         dependent: "#61cdbb",
