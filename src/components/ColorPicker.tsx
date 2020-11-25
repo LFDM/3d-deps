@@ -27,6 +27,10 @@ const ColorName = styled("div")((p) => ({
   },
 }));
 
+const ColorValue = styled("div")`
+  font-family: monospace;
+`;
+
 const Swatch = styled("div")<{ value: string }>((p) => ({
   width: p.theme.spacing(2),
   height: p.theme.spacing(2),
@@ -59,7 +63,7 @@ export const ColorPicker = ({
           <label>{label}</label>
           <ColorName>
             <Swatch value={value} />
-            <div>{value}</div>
+            <ColorValue>{value}</ColorValue>
           </ColorName>
         </Row>
         {open && (
