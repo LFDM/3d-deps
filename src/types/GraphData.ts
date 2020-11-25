@@ -7,6 +7,7 @@ export interface IGraphNode {
 }
 
 export interface IGraphLink {
+  id: string;
   source: string;
   target: string;
   value?: number;
