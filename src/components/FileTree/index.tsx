@@ -64,19 +64,22 @@ export const toFileTree = (ds: TreeNode[]): FileTreeItemDir<TreeNode> => {
   return items[SEPARATOR];
 };
 
-const Frame = styled("div")`
+const Frame = styled("div")<{ selected: boolean }>`
   position: relative;
   padding: 4px 0px 0px 0px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x: hidden;
   vertical-align: middle;
-  color: white;
-  fill: white;
+  color: ${(p) => (p.selected ? p.theme.hud.highlightColor : "inherit")};
+  fill: ${(p) => (p.selected ? p.theme.hud.highlightColor : p.theme.hud.color)};
+
+  :hover {
+    background-color: ${(p) => p.theme.typography.backgroundColor};
+  }
 `;
 
-const Title = styled("span")<{ selected: boolean }>`
-  color: ${(p) => (p.selected ? p.theme.hud.highlightColor : "inherit")};
+const Title = styled("span")`
   vertical-align: middle;
 `;
 
@@ -118,12 +121,12 @@ const Tree = React.memo(
       `${children ? (isOpen ? "Minus" : "Plus") : "Close"}SquareO`
     ];
     return (
-      <Frame ref={ref}>
+      <Frame ref={ref} selected={isSelected}>
         <Icon
           style={{ ...toggle, opacity: children ? 1 : 0.3 }}
           onClick={() => setOpen(!isOpen)}
         />
-        <Title selected={isSelected}>
+        <Title>
           {onClick ? (
             <Button variant="none" onClick={onClick}>
               {label}
