@@ -90,6 +90,16 @@ type Styles = {
   };
 };
 
+const addNodeStyle = (styles: Styles, nodeId: string, s: NodeStyle) => {
+  const v = (styles.nodes[nodeId] = styles.nodes[nodeId] || {});
+  styles.nodes[nodeId] = { ...v, ...s };
+};
+
+const addLinkStyle = (styles: Styles, linkId: string, s: LinkStyle) => {
+  const v = (styles.links[linkId] = styles.links[linkId] || {});
+  styles.links[linkId] = { ...v, ...s };
+};
+
 const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   // TODO
   // onSelect:
@@ -105,37 +115,29 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       nodes: {},
       links: {},
     };
-    const addNodeStyle = (nodeId: string, s: NodeStyle) => {
-      const v = (ss.nodes[nodeId] = ss.nodes[nodeId] || {});
-      ss.nodes[nodeId] = { ...v, ...s };
-    };
-    const addLinkStyle = (linkId: string, s: LinkStyle) => {
-      const v = (ss.links[linkId] = ss.links[linkId] || {});
-      ss.links[linkId] = { ...v, ...s };
-    };
     if (selectedNodeId) {
-      addNodeStyle(selectedNodeId, { color: theme.graph.colors.selection });
+      addNodeStyle(ss, selectedNodeId, { color: theme.graph.colors.selection });
       const treeNode = g.asTree[selectedNodeId];
       treeNode.dependsOn.nodes.forEach((n) => {
-        addNodeStyle(n.id, { color: theme.graph.colors.dependent });
+        addNodeStyle(ss, n.id, { color: theme.graph.colors.dependent });
       });
       treeNode.dependedBy.nodes.forEach((n) => {
-        addNodeStyle(n.id, { color: theme.graph.colors.dependency });
+        addNodeStyle(ss, n.id, { color: theme.graph.colors.dependency });
       });
 
       g.graphData.nodes.forEach((n) => {
         if (!ss.nodes[n.id]?.color) {
-          addNodeStyle(n.id, { color: "black" });
+          addNodeStyle(ss, n.id, { color: "black" });
         }
       });
 
       const sourceLinks = g.linksBySource[selectedNodeId] || [];
       sourceLinks.forEach((l) => {
-        addLinkStyle(l.id, { particles: 7 });
+        addLinkStyle(ss, l.id, { particles: 7 });
       });
       const targetLinks = g.linksByTarget[selectedNodeId] || [];
       targetLinks.forEach((l) => {
-        addLinkStyle(l.id, { particles: 7 });
+        addLinkStyle(ss, l.id, { particles: 7 });
       });
     }
 
@@ -156,7 +158,6 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       }
       linkDirectionalArrowLength={3.5}
       linkDirectionalArrowRelPos={1}
-      linkColor={}
       linkDirectionalArrowColor={"black"}
       nodeLabel={(node) => (node as IGraphNode).label}
       enableNodeDrag={false}
