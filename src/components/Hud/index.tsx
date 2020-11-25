@@ -1,9 +1,16 @@
-import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import React, { useState } from "react";
 import { Theme } from "../../types/Config";
 import { GraphData } from "../../types/GraphData";
-import { ColorPicker } from "../ColorPicker";
+import { NodesPanel } from "./NodesPanel";
+import { ThemePanel } from "./ThemePanel";
+
+type Props = {
+  g: GraphData;
+  selectedNodeId: string | null;
+  setSelectedNodeId: (v: string | null) => void;
+  onChangeTheme: (nextTheme: Theme) => void;
+};
 
 const Container = styled("div")`
   background: transparent;
@@ -30,7 +37,7 @@ const Centered = styled("div")((p) => ({
 }));
 
 const SidebarContainer = styled("div")`
-  overflow: hidden;
+  overflow: auto;
   height: 100%;
   width: 100%;
   padding: ${(p) => p.theme.spacing(2)}px;
@@ -49,69 +56,7 @@ const Tabs = styled("div")((p) => ({
   borderBottom: `1px solid lightgray`,
 }));
 
-const ThemePanel = ({
-  onChangeTheme,
-}: {
-  onChangeTheme: (nextTheme: Theme) => void;
-}) => {
-  const theme = useTheme();
-  return (
-    <>
-      <ColorPicker
-        label="Color"
-        value={theme.typography.color}
-        onChange={(nextColor) =>
-          onChangeTheme({
-            ...theme,
-            typography: {
-              ...theme.typography,
-              color: nextColor,
-            },
-          })
-        }
-      />
-      <ColorPicker
-        label="Bg Color"
-        value={theme.typography.backgroundColor}
-        onChange={(nextColor) =>
-          onChangeTheme({
-            ...theme,
-            typography: {
-              ...theme.typography,
-              backgroundColor: nextColor,
-            },
-          })
-        }
-      />
-
-      <ColorPicker
-        label="Dependency"
-        value={theme.graph.nodes.colors.dependency}
-        onChange={(nextColor) =>
-          onChangeTheme({
-            ...theme,
-            graph: {
-              ...theme.graph,
-              nodes: {
-                ...theme.graph.nodes,
-                colors: {
-                  ...theme.graph.nodes.colors,
-                  dependency: nextColor,
-                },
-              },
-            },
-          })
-        }
-      />
-    </>
-  );
-};
-
-export const Sidebar = ({
-  onChangeTheme,
-}: {
-  onChangeTheme: (nextTheme: Theme) => void;
-}) => {
+export const Sidebar = ({ onChangeTheme, ...other }: Props) => {
   const [tab, setTab] = useState<TabName>("nodes");
   return (
     <SidebarContainer>
@@ -119,7 +64,11 @@ export const Sidebar = ({
         <button onClick={() => setTab("nodes")}>Nodes</button>
         <button onClick={() => setTab("theme")}>Theme</button>
       </Tabs>
-      {tab === "nodes" && <Tab>nodes</Tab>}
+      {tab === "nodes" && (
+        <Tab>
+          <NodesPanel {...other} />
+        </Tab>
+      )}
       {tab === "theme" && (
         <Tab>
           <ThemePanel onChangeTheme={onChangeTheme} />
@@ -129,21 +78,11 @@ export const Sidebar = ({
   );
 };
 
-export const Hud = ({
-  g,
-  selectedNodeId,
-  setSelectedNodeId,
-  onChangeTheme,
-}: {
-  g: GraphData;
-  selectedNodeId: string | null;
-  setSelectedNodeId: (v: string | null) => void;
-  onChangeTheme: (nextTheme: Theme) => void;
-}) => {
+export const Hud = (props: Props) => {
   return (
     <Container>
       <Grid>
-        <Sidebar onChangeTheme={onChangeTheme} />
+        <Sidebar {...props} />
         <Centered></Centered>
         <div></div>
       </Grid>
