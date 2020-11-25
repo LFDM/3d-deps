@@ -8,6 +8,9 @@ import { Theme } from "./types/Config";
 
 const THEME: Theme = {
   graph: {
+    background: {
+      color: "#141414",
+    },
     nodes: {
       colors: {
         standard: "#fcf4b0",

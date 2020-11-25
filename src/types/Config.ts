@@ -1,5 +1,8 @@
 export type Theme = {
   graph: {
+    background: {
+      color: string;
+    };
     nodes: {
       colors: {
         standard: string;
