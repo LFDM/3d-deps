@@ -2,6 +2,7 @@ import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import { Theme } from "../../types/Config";
+import { GraphData } from "../../types/GraphData";
 import { ColorPicker } from "../ColorPicker";
 
 const Container = styled("div")`
@@ -95,15 +96,21 @@ export const Sidebar = ({
 };
 
 export const Hud = ({
+  g,
+  selectedNodeId,
+  setSelectedNodeId,
   onChangeTheme,
 }: {
+  g: GraphData;
+  selectedNodeId: string | null;
+  setSelectedNodeId: (v: string | null) => void;
   onChangeTheme: (nextTheme: Theme) => void;
 }) => {
   return (
     <Container>
       <Grid>
         <Sidebar onChangeTheme={onChangeTheme} />
-        <Centered>WELCOME!</Centered>
+        <Centered></Centered>
         <div></div>
       </Grid>
     </Container>

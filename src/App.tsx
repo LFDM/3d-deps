@@ -80,11 +80,22 @@ const useGraphData = (ds: DependencyNode[]): GraphData => {
 
 function App({ config, ds }: { config: Config; ds: DependencyNode[] }) {
   const [theme, setTheme] = useState(config.theme);
+  const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
+  const g = useGraphData(ds);
   return (
     <ThemeProvider theme={theme}>
       <Main>
-        <Hud onChangeTheme={setTheme} />
-        <Graph ds={ds} />
+        <Hud
+          g={g}
+          onChangeTheme={setTheme}
+          selectedNodeId={selectedNodeId}
+          setSelectedNodeId={setSelectedNodeId}
+        />
+        <Graph
+          g={g}
+          selectedNodeId={selectedNodeId}
+          setSelectedNodeId={setSelectedNodeId}
+        />
       </Main>
     </ThemeProvider>
   );

@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { GraphData, IGraphNode } from "../../types/GraphData";
@@ -32,7 +32,15 @@ const addLinkStyle = (styles: Styles, linkId: string, s: LinkStyle) => {
   styles.links[linkId] = { ...v, ...s };
 };
 
-export const Graph = ({ g }: { g: GraphData }) => {
+export const Graph = ({
+  g,
+  selectedNodeId,
+  setSelectedNodeId,
+}: {
+  g: GraphData;
+  selectedNodeId: string | null;
+  setSelectedNodeId: (v: string | null) => void;
+}) => {
   // TODO
   // onSelect:
   // - hightlight node
@@ -41,7 +49,6 @@ export const Graph = ({ g }: { g: GraphData }) => {
   // - all links between them, activate particles
   const theme = useTheme();
   const dimensions = useWindowSize();
-  const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
 
   const styles = useMemo(() => {
     const ss: Styles = {
@@ -112,7 +119,7 @@ export const Graph = ({ g }: { g: GraphData }) => {
       nodeLabel={(node) => (node as IGraphNode).label}
       enableNodeDrag={false}
       onNodeClick={(node) =>
-        setSelectedNodeId((s) => (s === node.id! ? null : `${node.id!}`))
+        setSelectedNodeId(selectedNodeId === node.id! ? null : `${node.id!}`)
       }
     />
   );
