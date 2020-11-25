@@ -23,13 +23,13 @@ const StyledButton = styled("button")<{
     borderWidth: 2,
     padding: p.theme.spacing(0.5),
     backgroundColor: "transparent",
-    color: p.theme.typography.color,
+    color: "inherit",
     borderStyle: "solid",
     cursor: "pointer",
     borderColor: "transparent",
 
     ...(p.variant === "outlined" && {
-      borderColor: p.theme.typography.color,
+      borderColor: "currentcolor",
     }),
 
     ...(p.variant === "none" && {
