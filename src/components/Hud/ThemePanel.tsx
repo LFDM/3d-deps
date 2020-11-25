@@ -18,7 +18,7 @@ export const ThemePanel = ({
   return (
     <>
       <Section>
-        <h5>Typography</h5>
+        <h5>General</h5>
         <ColorPicker
           label="Color"
           value={theme.typography.color}
@@ -42,6 +42,37 @@ export const ThemePanel = ({
               ...theme,
               typography: {
                 ...theme.typography,
+                backgroundColor: nextColor,
+              },
+            })
+          }
+        />
+      </Section>
+      <Section>
+        <h5>HUD</h5>
+        <ColorPicker
+          label="Color"
+          value={theme.hud.color}
+          defaultValue={originalTheme.hud.color}
+          onChange={(nextColor) =>
+            onChangeTheme({
+              ...theme,
+              hud: {
+                ...theme.hud,
+                color: nextColor,
+              },
+            })
+          }
+        />
+        <ColorPicker
+          label="Bg Color"
+          value={theme.hud.backgroundColor}
+          defaultValue={originalTheme.hud.backgroundColor}
+          onChange={(nextColor) =>
+            onChangeTheme({
+              ...theme,
+              hud: {
+                ...theme.hud,
                 backgroundColor: nextColor,
               },
             })

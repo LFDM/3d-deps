@@ -43,6 +43,7 @@ const SidebarContainer = styled("div")`
   width: 100%;
   padding: ${(p) => p.theme.spacing(2)}px;
   pointer-events: auto;
+  color: ${(p) => p.theme.hud.color};
   background-color: ${(p) => p.theme.hud.backgroundColor};
   opacity: ${(p) => p.theme.hud.opacity};
 `;
