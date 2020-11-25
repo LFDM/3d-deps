@@ -74,6 +74,7 @@ const useGraphData = (ds: DependencyNode[]) => {
 
 type NodeStyle = Partial<{
   color: string;
+  opacity: number;
 }>;
 type LinkStyle = Partial<{
   color: string;
@@ -111,6 +112,7 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       ss.links[linkId] = { ...v, ...s };
     };
     if (selectedNodeId) {
+      addNodeStyle(selectedNodeId, { color: theme.graph.colors.selection });
       const treeNode = g.asTree[selectedNodeId];
       treeNode.dependsOn.nodes.forEach((n) => {
         addNodeStyle(n.id, { color: theme.graph.colors.dependent });
