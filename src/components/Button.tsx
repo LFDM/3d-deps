@@ -52,5 +52,11 @@ const StyledButton = styled("button")<{
 });
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  return <StyledButton {...props} variant={props.variant || "standard"} />;
+  return (
+    <StyledButton
+      type="button"
+      {...props}
+      variant={props.variant || "standard"}
+    />
+  );
 };
