@@ -26,11 +26,30 @@ const Centered = styled("div")((p) => ({
   width: "100%",
 }));
 
-export const Hud = ({}: { onChangeTheme: (nextTheme: Theme) => void }) => {
+const SidebarContainer = styled("div")`
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  padding: ${(p) => p.theme.spacing(1)}px;
+`;
+
+export const Sidebar = ({
+  onChangeTheme,
+}: {
+  onChangeTheme: (nextTheme: Theme) => void;
+}) => {
+  return <SidebarContainer>Theme</SidebarContainer>;
+};
+
+export const Hud = ({
+  onChangeTheme,
+}: {
+  onChangeTheme: (nextTheme: Theme) => void;
+}) => {
   return (
     <Container>
       <Grid>
-        <div></div>
+        <Sidebar onChangeTheme={onChangeTheme} />
         <Centered>WELCOME!</Centered>
         <div></div>
       </Grid>
