@@ -121,6 +121,12 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
         addNodeStyle(n.id, { color: theme.graph.colors.dependency });
       });
 
+      g.graphData.nodes.forEach((n) => {
+        if (!ss.nodes[n.id]?.color) {
+          addNodeStyle(n.id, { color: "black" });
+        }
+      });
+
       const sourceLinks = g.linksBySource[selectedNodeId] || [];
       sourceLinks.forEach((l) => {
         addLinkStyle(l.id, { particles: 7 });
@@ -140,12 +146,12 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
     <ForceGraph3D
       graphData={g.graphData}
       nodeId="id"
-      nodeColor={(node: any) => {
-        return styles.nodes[node.id]?.color || theme.graph.colors.standard;
-      }}
-      linkDirectionalParticles={(link: any) => {
-        return styles.links[link.id]?.particles || 0;
-      }}
+      nodeColor={(node: any) =>
+        styles.nodes[node.id]?.color || theme.graph.colors.standard
+      }
+      linkDirectionalParticles={(link: any) =>
+        styles.links[link.id]?.particles || 0
+      }
       linkDirectionalArrowLength={3.5}
       linkDirectionalArrowRelPos={1}
       nodeLabel={(node) => (node as IGraphNode).label}
