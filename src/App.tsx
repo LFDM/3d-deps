@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import React, { useMemo, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import "./App.css";
+import { FullScreen } from "./components/FullScreen";
 import { Config, Theme } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
 import { GraphData, IGraphLink, IGraphNode } from "./types/GraphData";
@@ -157,29 +158,35 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   // might be better to compute style objects for everything
   // - and then just use these vars in the respective functions
   return (
-    <ForceGraph3D
-      graphData={g.graphData}
-      nodeId="id"
-      nodeColor={(node: any) =>
-        styles.nodes[node.id]?.color || theme.graph.nodes.colors.standard
-      }
-      linkDirectionalParticles={(link: any) =>
-        styles.links[link.id]?.particles || 0
-      }
-      linkDirectionalArrowLength={3.5}
-      linkDirectionalArrowRelPos={1}
-      linkDirectionalArrowColor={(link: any) =>
-        styles.links[link.id]?.color || theme.graph.links.colors.standard
-      }
-      linkColor={(link: any) =>
-        styles.links[link.id]?.color || theme.graph.links.colors.standard
-      }
-      nodeLabel={(node) => (node as IGraphNode).label}
-      enableNodeDrag={false}
-      onNodeClick={(node) =>
-        setSelectedNodeId((s) => (s === node.id! ? null : `${node.id!}`))
-      }
-    />
+    <FullScreen>
+      {({ width, height }) => (
+        <ForceGraph3D
+          width={width}
+          height={height}
+          graphData={g.graphData}
+          nodeId="id"
+          nodeColor={(node: any) =>
+            styles.nodes[node.id]?.color || theme.graph.nodes.colors.standard
+          }
+          linkDirectionalParticles={(link: any) =>
+            styles.links[link.id]?.particles || 0
+          }
+          linkDirectionalArrowLength={3.5}
+          linkDirectionalArrowRelPos={1}
+          linkDirectionalArrowColor={(link: any) =>
+            styles.links[link.id]?.color || theme.graph.links.colors.standard
+          }
+          linkColor={(link: any) =>
+            styles.links[link.id]?.color || theme.graph.links.colors.standard
+          }
+          nodeLabel={(node) => (node as IGraphNode).label}
+          enableNodeDrag={false}
+          onNodeClick={(node) =>
+            setSelectedNodeId((s) => (s === node.id! ? null : `${node.id!}`))
+          }
+        />
+      )}
+    </FullScreen>
   );
 };
 
