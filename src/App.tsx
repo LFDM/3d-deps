@@ -72,6 +72,14 @@ const useGraphData = (ds: DependencyNode[]) => {
   }, [ds]);
 };
 
+type NodeStyle = Partial<{
+  color: string;
+}>;
+type LinkStyle = Partial<{
+  color: string;
+  particles: number;
+}>;
+
 const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   // TODO
   // onSelect:
@@ -85,36 +93,39 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   const styles = useMemo(() => {
     const ss: {
       nodes: {
-        [id: string]: {
-          color?: string;
-        };
+        [id: string]: NodeStyle;
       };
       links: {
-        [id: string]: {
-          color?: string;
-          particles?: number;
-        };
+        [id: string]: LinkStyle;
       };
     } = {
       nodes: {},
       links: {},
     };
+    const addNodeStyle = (nodeId: string, s: NodeStyle) => {
+      const v = (ss.nodes[nodeId] = ss.nodes[nodeId] || {});
+      ss.nodes[nodeId] = { ...v, ...s };
+    };
+    const addLinkStyle = (linkId: string, s: LinkStyle) => {
+      const v = (ss.links[linkId] = ss.links[linkId] || {});
+      ss.links[linkId] = { ...v, ...s };
+    };
     if (selectedNodeId) {
       const treeNode = g.asTree[selectedNodeId];
       treeNode.dependsOn.nodes.forEach((n) => {
-        ss.nodes[n.id] = { color: theme.graph.colors.dependent };
+        addNodeStyle(n.id, { color: theme.graph.colors.dependent });
       });
       treeNode.dependedBy.nodes.forEach((n) => {
-        ss.nodes[n.id] = { color: theme.graph.colors.dependency };
+        addNodeStyle(n.id, { color: theme.graph.colors.dependency });
       });
 
       const sourceLinks = g.linksBySource[selectedNodeId] || [];
       sourceLinks.forEach((l) => {
-        ss.links[l.id] = { particles: 7 };
+        addLinkStyle(l.id, { particles: 7 });
       });
       const targetLinks = g.linksByTarget[selectedNodeId] || [];
       targetLinks.forEach((l) => {
-        ss.links[l.id] = { particles: 7 };
+        addLinkStyle(l.id, { particles: 7 });
       });
     }
 
