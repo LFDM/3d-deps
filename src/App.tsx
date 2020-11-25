@@ -190,6 +190,9 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
 
 const Main = styled("main")((p) => ({
   backgroundColor: p.theme.graph.background.color,
+  width: "100vw",
+  height: "100vh",
+  overflow: "hidden",
 }));
 
 function App({ config, ds }: { config: Config; ds: DependencyNode[] }) {
