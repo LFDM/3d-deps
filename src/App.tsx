@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import "./App.css";
 import { Config } from "./types/Config";
-import { GraphData, IGraphNode } from "./types/GraphData";
+import { DependencyNode } from "./types/DependencyAnalyzer";
+import { IGraphNode } from "./types/GraphData";
 
-const Graph = ({ d }: { d: GraphData }) => {
+const Graph = ({ ds }: { ds: DependencyNode[] }) => {
   // TODO
   // create lookup containers
   // - nodes as a tree
@@ -40,11 +41,11 @@ const Graph = ({ d }: { d: GraphData }) => {
   );
 };
 
-function App({ config }: { config: Config }) {
+function App({ config, ds }: { config: Config; ds: DependencyNode[] }) {
   return (
     <div className="App">
       <main>
-        <Graph d={config.data} />
+        <Graph ds={ds} />
       </main>
     </div>
   );

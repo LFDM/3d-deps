@@ -6,14 +6,14 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
 const run = async () => {
-  const data = await new MadgeAnalyzer({
+  const ds = await new MadgeAnalyzer({
     entry: "...",
   })
     .analyze()
     .then();
   ReactDOM.render(
     <React.StrictMode>
-      <App config={{ data }} />
+      <App config={{}} ds={ds} />
     </React.StrictMode>,
     document.getElementById("root")
   );
