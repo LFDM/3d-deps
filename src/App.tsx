@@ -1,4 +1,5 @@
 import { groupBy, keyBy } from "lodash";
+import { nanoid } from "nanoid";
 import React, { useMemo, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import "./App.css";
@@ -18,6 +19,7 @@ const depsToGraphData = (ds: DependencyNode[]): GraphData => {
     nodes.push(node);
     n.dependsOn.forEach((v) => {
       const link: IGraphLink = {
+        id: nanoid(),
         source: n.id,
         target: v,
       };
@@ -77,21 +79,28 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
   // - incoming deps -> 2-3 layers
   // - outgoing deps -> 2-3 layers
   // - all links between them, activate particles
-  const { graphData, asTree, linksBySource, linksByTarget } = useGraphData(ds);
+  const g = useGraphData(ds);
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
+
+  const styles = useMemo(() => {
+    const ss = {
+      nodes: {},
+      link: {},
+    };
+  }, [g, selectedNodeId]);
 
   // might be better to compute style objects for everything
   // - and then just use these vars in the respective functions
   return (
     <ForceGraph3D
-      graphData={graphData}
+      graphData={g.graphData}
       nodeId="id"
       nodeColor={(node: any) => {
         if (node.id === selectedNodeId) {
           return theme.graph.colors.selection;
         }
         if (selectedNodeId) {
-          const treeNode = asTree[selectedNodeId];
+          const treeNode = g.asTree[selectedNodeId];
           if (treeNode.dependsOn.ids.has(node.id)) {
             return theme.graph.colors.dependent;
           }
@@ -103,11 +112,11 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       }}
       linkDirectionalParticles={(link: any) => {
         if (selectedNodeId) {
-          const sourced = linksBySource[selectedNodeId] || [];
+          const sourced = g.linksBySource[selectedNodeId] || [];
           if (sourced.includes(link)) {
             return 7;
           }
-          const targetted = linksByTarget[selectedNodeId] || [];
+          const targetted = g.linksByTarget[selectedNodeId] || [];
           if (targetted.includes(link)) {
             return 7;
           }
