@@ -22,6 +22,7 @@ const THEME: Theme = {
         standard: "lightgray",
         dependency: "#f47560",
         dependent: "#61cdbb",
+        unselected: "black",
       },
     },
   },

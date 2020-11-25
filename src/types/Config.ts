@@ -14,6 +14,7 @@ export type Theme = {
         standard: string;
         dependent: string;
         dependency: string;
+        unselected: string;
       };
     };
   };

@@ -116,6 +116,7 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       links: {},
     };
     const nodeColors = theme.graph.nodes.colors;
+    const linkColors = theme.graph.links.colors;
     if (selectedNodeId) {
       addNodeStyle(ss, selectedNodeId, {
         color: nodeColors.selected,
@@ -131,6 +132,12 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       g.graphData.nodes.forEach((n) => {
         if (!ss.nodes[n.id]?.color) {
           addNodeStyle(ss, n.id, { color: nodeColors.unselected });
+          (g.linksBySource[n.id] || []).forEach((l) =>
+            addLinkStyle(ss, l.id, { color: linkColors.unselected })
+          );
+          (g.linksByTarget[n.id] || []).forEach((l) =>
+            addLinkStyle(ss, l.id, { color: linkColors.unselected })
+          );
         }
       });
 
