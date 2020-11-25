@@ -1,5 +1,5 @@
 import { keyBy } from "lodash";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import "./App.css";
 import { Config } from "./types/Config";
@@ -54,20 +54,15 @@ const Graph = ({ ds }: { ds: DependencyNode[] }) => {
   // - incoming deps -> 2-3 layers
   // - outgoing deps -> 2-3 layers
   // - all links between them, activate particles
-  const { graphData, tree } = useGraphData(ds);
-  const [i, setI] = useState(0);
-  useEffect(() => {
-    setInterval(() => {
-      setI(Math.floor(Math.random() * graphData.nodes.length));
-    }, 500);
-  }, []);
+  const { graphData } = useGraphData(ds);
+  const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
   return (
     <ForceGraph3D
       graphData={graphData}
       nodeId="id"
       nodeColor={(node: any) => {
-        if (graphData.nodes[i] === node) {
-          return "red";
+        if (node.id === selectedNodeId) {
+          return "lightblue";
         }
         return "";
       }}
@@ -75,6 +70,9 @@ const Graph = ({ ds }: { ds: DependencyNode[] }) => {
       linkDirectionalArrowRelPos={1}
       nodeLabel={(node) => (node as IGraphNode).label}
       enableNodeDrag={false}
+      onNodeClick={(node) =>
+        setSelectedNodeId((s) => (s === node.id! ? null : `${node.id!}`))
+      }
     />
   );
 };
