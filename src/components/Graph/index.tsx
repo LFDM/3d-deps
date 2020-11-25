@@ -5,7 +5,12 @@ import React, { useMemo, useState } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { DependencyNode } from "../../types/DependencyAnalyzer";
-import { GraphData, IGraphLink, IGraphNode } from "../../types/GraphData";
+import {
+  GraphData,
+  IGraphLink,
+  IGraphNode,
+  TreeNode,
+} from "../../types/GraphData";
 
 const depsToGraphData = (ds: DependencyNode[]): GraphData => {
   const nodes: IGraphNode[] = [];
@@ -35,11 +40,7 @@ const useGraphData = (ds: DependencyNode[]) => {
     const graphData = depsToGraphData(ds);
     const nodesById = keyBy(graphData.nodes, (n) => n.id);
     const asTree: {
-      [id: string]: {
-        node: IGraphNode;
-        dependsOn: { nodes: IGraphNode[]; ids: Set<string> };
-        dependedBy: { nodes: IGraphNode[]; ids: Set<string> };
-      };
+      [id: string]: TreeNode;
     } = {};
     const getOrCreateTreeNode = (n: IGraphNode) => {
       if (!asTree[n.id]) {

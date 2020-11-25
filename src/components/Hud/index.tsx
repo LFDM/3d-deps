@@ -37,6 +37,7 @@ const SidebarContainer = styled("div")`
 `;
 
 export const Sidebar = ({
+  n
   onChangeTheme,
 }: {
   onChangeTheme: (nextTheme: Theme) => void;
