@@ -35,6 +35,10 @@ export const NodesPanel = ({
     }
   }, [selectedNodeId, g]);
 
+  const selectedItemKey = selectedNodeId
+    ? g.asTree[selectedNodeId]?.node.path || null
+    : null;
+
   return (
     <FileTreeDirectoryContent
       dir={rootDir}
@@ -44,6 +48,7 @@ export const NodesPanel = ({
       }}
       openNodes={openNodes}
       setOpenNodes={setOpenNodes}
+      selectedItemKey={selectedItemKey}
     />
   );
 };
