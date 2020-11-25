@@ -21,7 +21,6 @@
     "react-dom": "^17.0.1",
     "react-force-graph": "^1.37.1",
     "react-scripts": "4.0.1",
-    "react-spring": "^8.0.27",
     "three-spritetext": "^1.5.2",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"

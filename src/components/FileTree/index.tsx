@@ -1,9 +1,7 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
-import { animated, useSpring } from "react-spring";
 import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
-import { useMeasure, usePrevious } from "./helpers";
 import * as Icons from "./icons";
 
 type FileTreeItemFile<T> = {
@@ -80,8 +78,7 @@ const Title = styled("span")`
   vertical-align: middle;
 `;
 
-const Content = styled(animated.div)`
-  will-change: transform, opacity, height;
+const Content = styled("div")`
   margin-left: 6px;
   padding: 0px 0px 0px 14px;
   border-left: 1px dashed rgba(255, 255, 255, 0.4);
@@ -111,16 +108,6 @@ const Tree = React.memo(
     onClick?: () => void;
   }) => {
     const [isOpen, setOpen] = useState(defaultOpen);
-    const previous = usePrevious(isOpen);
-    const [bind, { height: viewHeight }] = useMeasure();
-    const { height, opacity, transform } = useSpring({
-      from: { height: 0, opacity: 0, transform: "translate3d(20px,0,0)" },
-      to: {
-        height: isOpen ? viewHeight : 0,
-        opacity: isOpen ? 1 : 0,
-        transform: `translate3d(${isOpen ? 0 : 20}px,0,0)`,
-      },
-    }) as { height: number; opacity: number; transform: string };
     const Icon = (Icons as any)[
       `${children ? (isOpen ? "Minus" : "Plus") : "Close"}SquareO`
     ];
@@ -139,14 +126,7 @@ const Tree = React.memo(
             label
           )}
         </Title>
-        <Content
-          style={{
-            opacity,
-            height: isOpen && previous === isOpen ? "auto" : height,
-          }}
-        >
-          <animated.div style={{ transform }} {...bind} children={children} />
-        </Content>
+        {isOpen && <Content>{children}</Content>}
       </Frame>
     );
   }
