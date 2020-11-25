@@ -8,11 +8,13 @@ import { Theme } from "./types/Config";
 
 const THEME: Theme = {
   graph: {
-    colors: {
-      standard: "#fcf4b0",
-      selection: "#e8a838",
-      dependency: "#f47560",
-      dependent: "#61cdbb",
+    nodes: {
+      colors: {
+        standard: "#fcf4b0",
+        selection: "#e8a838",
+        dependency: "#f47560",
+        dependent: "#61cdbb",
+      },
     },
   },
 };

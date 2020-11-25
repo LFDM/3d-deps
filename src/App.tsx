@@ -115,14 +115,17 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       nodes: {},
       links: {},
     };
+    const nodeColors = theme.graph.nodes.colors;
     if (selectedNodeId) {
-      addNodeStyle(ss, selectedNodeId, { color: theme.graph.colors.selection });
+      addNodeStyle(ss, selectedNodeId, {
+        color: nodeColors.selection,
+      });
       const treeNode = g.asTree[selectedNodeId];
       treeNode.dependsOn.nodes.forEach((n) => {
-        addNodeStyle(ss, n.id, { color: theme.graph.colors.dependent });
+        addNodeStyle(ss, n.id, { color: nodeColors.dependent });
       });
       treeNode.dependedBy.nodes.forEach((n) => {
-        addNodeStyle(ss, n.id, { color: theme.graph.colors.dependency });
+        addNodeStyle(ss, n.id, { color: nodeColors.dependency });
       });
 
       g.graphData.nodes.forEach((n) => {
@@ -151,14 +154,17 @@ const Graph = ({ ds, theme }: { ds: DependencyNode[]; theme: Theme }) => {
       graphData={g.graphData}
       nodeId="id"
       nodeColor={(node: any) =>
-        styles.nodes[node.id]?.color || theme.graph.colors.standard
+        styles.nodes[node.id]?.color || theme.graph.nodes.colors.standard
       }
       linkDirectionalParticles={(link: any) =>
         styles.links[link.id]?.particles || 0
       }
       linkDirectionalArrowLength={3.5}
       linkDirectionalArrowRelPos={1}
-      linkDirectionalArrowColor={"black"}
+      linkDirectionalArrowColor={(link: any) =>
+        styles.links[link.id]?.color || "red"
+      }
+      linkColor={(link: any) => styles.links[link.id]?.color || "red"}
       nodeLabel={(node) => (node as IGraphNode).label}
       enableNodeDrag={false}
       onNodeClick={(node) =>

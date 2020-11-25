@@ -1,10 +1,12 @@
 export type Theme = {
   graph: {
-    colors: {
-      standard: string;
-      selection: string;
-      dependent: string;
-      dependency: string;
+    nodes: {
+      colors: {
+        standard: string;
+        selection: string;
+        dependent: string;
+        dependency: string;
+      };
     };
   };
 };
