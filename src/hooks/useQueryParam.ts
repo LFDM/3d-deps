@@ -17,7 +17,7 @@ export const useQueryParam = (
       (nextValue: string) => {
         const nextUrl = new URL(window.location.toString());
         nextUrl.searchParams.set(param, nextValue);
-        return history.push(nextUrl.toString());
+        return history.push(nextUrl.search);
       },
     ];
   }, [param, location, history]);
