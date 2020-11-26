@@ -5,6 +5,7 @@ import { Theme } from "../../types/Config";
 import { GraphData } from "../../types/GraphData";
 import { Button } from "../Button";
 import { NodesPanel } from "./NodesPanel";
+import { OverlayContextProvider, useOverlayContext } from "./OverlayContext";
 import { ThemePanel } from "./ThemePanel";
 
 type Props = {
@@ -14,7 +15,7 @@ type Props = {
   onChangeTheme: (nextTheme: Theme) => void;
 };
 
-const Container = styled("div")`
+const Container = styled("div")<{ overlayActive: boolean }>`
   background: transparent;
   z-index: 2;
   height: 100vh;
@@ -22,7 +23,7 @@ const Container = styled("div")`
   position: fixed;
   top: 0;
   left: 0;
-  pointer-events: none;
+  pointer-events: ${(p) => (p.overlayActive ? "all" : "none")};
 `;
 
 const Grid = styled("div")((p) => ({
@@ -98,14 +99,23 @@ export const Sidebar = ({ onChangeTheme, ...other }: Props) => {
   );
 };
 
-export const Hud = (props: Props) => {
+const Body = (props: Props) => {
+  const [active] = useOverlayContext();
   return (
-    <Container>
+    <Container overlayActive={active}>
       <Grid>
         <Sidebar {...props} />
         <Centered></Centered>
         <div></div>
       </Grid>
     </Container>
+  );
+};
+
+export const Hud = (props: Props) => {
+  return (
+    <OverlayContextProvider>
+      <Body {...props} />
+    </OverlayContextProvider>
   );
 };
