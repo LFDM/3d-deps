@@ -16,7 +16,7 @@ export const useQueryParam = (
       v,
       (nextValue: string | null) => {
         const nextUrl = new URL(window.location.toString());
-        if (nextValue === null) {
+        if (!nextValue) {
           nextUrl.searchParams.delete(param);
         } else {
           nextUrl.searchParams.set(param, nextValue);
