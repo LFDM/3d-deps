@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { groupBy, keyBy } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useMemo, useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Graph } from "./components/Graph";
 import { Hud } from "./components/Hud";
 import { ConfigContext } from "./hooks/useConfig";
@@ -115,23 +116,25 @@ function App({ config, ds }: { config: Config; ds: DependencyNode[] }) {
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
   const g = useGraphData(ds);
   return (
-    <ConfigContext.Provider value={config}>
-      <ThemeProvider theme={theme}>
-        <Main>
-          <Hud
-            g={g}
-            onChangeTheme={setTheme}
-            selectedNodeId={selectedNodeId}
-            setSelectedNodeId={setSelectedNodeId}
-          />
-          <Graph
-            g={g}
-            selectedNodeId={selectedNodeId}
-            setSelectedNodeId={setSelectedNodeId}
-          />
-        </Main>
-      </ThemeProvider>
-    </ConfigContext.Provider>
+    <Router>
+      <ConfigContext.Provider value={config}>
+        <ThemeProvider theme={theme}>
+          <Main>
+            <Hud
+              g={g}
+              onChangeTheme={setTheme}
+              selectedNodeId={selectedNodeId}
+              setSelectedNodeId={setSelectedNodeId}
+            />
+            <Graph
+              g={g}
+              selectedNodeId={selectedNodeId}
+              setSelectedNodeId={setSelectedNodeId}
+            />
+          </Main>
+        </ThemeProvider>
+      </ConfigContext.Provider>
+    </Router>
   );
 }
 
