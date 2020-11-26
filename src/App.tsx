@@ -7,7 +7,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Graph } from "./components/Graph";
 import { Hud } from "./components/Hud";
 import { ConfigContext } from "./hooks/useConfig";
-import { Config } from "./types/Config";
+import { useQueryParam } from "./hooks/useQueryParam";
+import { Config, Theme } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
 import { GraphData, IGraphLink, IGraphNode, TreeNode } from "./types/GraphData";
 
@@ -111,27 +112,39 @@ const useGraphData = (ds: DependencyNode[]): GraphData => {
   }, [ds]);
 };
 
+const MainApp = ({
+  g,
+  onChangeTheme,
+}: {
+  g: GraphData;
+  onChangeTheme: (nextTheme: Theme) => void;
+}) => {
+  const [selectedNodeId, setSelectedNodeId] = useQueryParam("node");
+  return (
+    <Main>
+      <Hud
+        g={g}
+        onChangeTheme={onChangeTheme}
+        selectedNodeId={selectedNodeId || null}
+        setSelectedNodeId={setSelectedNodeId}
+      />
+      <Graph
+        g={g}
+        selectedNodeId={selectedNodeId || null}
+        setSelectedNodeId={setSelectedNodeId}
+      />
+    </Main>
+  );
+};
+
 function App({ config, ds }: { config: Config; ds: DependencyNode[] }) {
   const [theme, setTheme] = useState(config.theme);
-  const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
   const g = useGraphData(ds);
   return (
     <Router>
       <ConfigContext.Provider value={config}>
         <ThemeProvider theme={theme}>
-          <Main>
-            <Hud
-              g={g}
-              onChangeTheme={setTheme}
-              selectedNodeId={selectedNodeId}
-              setSelectedNodeId={setSelectedNodeId}
-            />
-            <Graph
-              g={g}
-              selectedNodeId={selectedNodeId}
-              setSelectedNodeId={setSelectedNodeId}
-            />
-          </Main>
+          <MainApp g={g} onChangeTheme={setTheme} />
         </ThemeProvider>
       </ConfigContext.Provider>
     </Router>
