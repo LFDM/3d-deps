@@ -14,3 +14,10 @@ export const hexToRgb = (hex: string) => {
       }
     : null;
 };
+
+export const rgbObjToRgba = (
+  { r, g, b }: { r: number; g: number; b: number },
+  opacity: number
+) => {
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+};
