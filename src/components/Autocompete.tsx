@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
 import { Button } from "./Button";
+import { usePopupState } from "./Hud/OverlayContext";
 import { Input } from "./Input";
 
 const Container = styled("div")`
@@ -36,7 +37,7 @@ export const Autocomplete = <T extends any>({
   fullWidth?: boolean;
 }) => {
   const [v, setV] = useState("");
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = usePopupState(false);
 
   const filteredItems = open && v ? filterItems(items, v) : [];
 

@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { ChromePicker } from "react-color";
 import { RefreshCcw } from "react-feather";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
 import { Button } from "./Button";
+import { usePopupState } from "./Hud/OverlayContext";
 
 const Container = styled(Button)((p) => ({
   position: "relative",
@@ -58,7 +59,7 @@ export const ColorPicker = ({
   defaultValue: string;
   onChange: (nextValue: string) => void;
 }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = usePopupState(false);
   const ref = useRef(null);
   useOnClickOutside(ref, () => setOpen(false));
   return (
