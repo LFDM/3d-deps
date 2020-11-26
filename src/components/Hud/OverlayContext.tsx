@@ -10,7 +10,6 @@ export const OverlayContext = React.createContext<{
 
 export const OverlayContextProvider: React.FC = ({ children }) => {
   const [active, setActive] = useState(false);
-  // implement esc handling
   return (
     <OverlayContext.Provider value={{ active, setActive }}>
       {children}
@@ -32,8 +31,8 @@ export const usePopupState = (initialState: boolean = false) => {
     }
   }, []);
   const setOpen = useCallback((nextOpen: boolean) => {
-    _setOpen(nextOpen);
     setActive(nextOpen);
+    _setOpen(nextOpen);
   }, []);
 
   return [open, setOpen] as const;
