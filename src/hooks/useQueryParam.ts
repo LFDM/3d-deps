@@ -4,7 +4,7 @@ import { useHistory, useLocation } from "react-router-dom";
 export const useQueryParam = (
   param: string,
   defaultValue = ""
-): [string, (nextValue: string) => void] => {
+): [string, (nextValue: string | null) => void] => {
   const location = useLocation();
   const history = useHistory();
 
@@ -14,9 +14,13 @@ export const useQueryParam = (
 
     return [
       v,
-      (nextValue: string) => {
+      (nextValue: string | null) => {
         const nextUrl = new URL(window.location.toString());
-        nextUrl.searchParams.set(param, nextValue);
+        if (nextValue === null) {
+          nextUrl.searchParams.delete(param);
+        } else {
+          nextUrl.searchParams.set(param, nextValue);
+        }
         return history.push(nextUrl.search);
       },
     ];
