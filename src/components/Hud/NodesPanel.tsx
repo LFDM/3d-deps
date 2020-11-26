@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { sortBy } from "lodash";
-import React, { useLayoutEffect, useMemo, useState } from "react";
+import React, { SetStateAction, useLayoutEffect, useMemo } from "react";
 import { GraphData } from "../../types/GraphData";
 import { Autocomplete } from "../Autocompete";
 import { FileTreeDirectoryContent, SEPARATOR, toFileTree } from "../FileTree";
@@ -13,12 +13,15 @@ export const NodesPanel = ({
   g,
   selectedNodeId,
   setSelectedNodeId,
+  openNodes,
+  setOpenNodes,
 }: {
   g: GraphData;
   selectedNodeId: string | null;
   setSelectedNodeId: (v: string | null) => void;
+  openNodes: { [key: string]: boolean };
+  setOpenNodes: React.Dispatch<SetStateAction<{ [key: string]: boolean }>>;
 }) => {
-  const [openNodes, setOpenNodes] = useState<{ [key: string]: boolean }>({});
   const { rootDir, treeNodes } = useMemo(() => {
     const tn = sortBy(g.data.nodes, (n) => n.path).map((n) => g.asTree[n.id]);
     return { treeNodes: tn, rootDir: toFileTree(tn) };
