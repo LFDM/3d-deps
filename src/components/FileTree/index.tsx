@@ -1,6 +1,8 @@
+import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import { useScrollIntoView } from "../../hooks/useScrollIntoView";
+import { hexToRgb, rgbObjToRgba } from "../../services/color";
 import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
 import * as Icons from "./icons";
@@ -94,6 +96,16 @@ const toggle: React.CSSProperties = {
   verticalAlign: "middle",
 };
 
+const Row = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+
+  "> :not(:first-child)": {
+    marginLeft: p.theme.spacing(),
+  },
+}));
+
 const Tree = React.memo(
   ({
     children,
@@ -102,6 +114,7 @@ const Tree = React.memo(
     setOpen,
     onClick,
     isSelected,
+    rightSlot,
   }: {
     label: React.ReactNode;
     isOpen: boolean;
@@ -109,6 +122,7 @@ const Tree = React.memo(
     children?: React.ReactNode;
     onClick?: () => void;
     isSelected: boolean;
+    rightSlot?: React.ReactNode;
   }) => {
     const ref = useScrollIntoView<HTMLDivElement>(isSelected, {
       behavior: "smooth",
@@ -118,19 +132,24 @@ const Tree = React.memo(
     ];
     return (
       <Frame ref={ref} selected={isSelected}>
-        <Icon
-          style={{ ...toggle, opacity: children ? 1 : 0.3 }}
-          onClick={() => setOpen(!isOpen)}
-        />
-        <Title>
-          {onClick ? (
-            <Button variant="none" onClick={onClick}>
-              {label}
-            </Button>
-          ) : (
-            label
-          )}
-        </Title>
+        <Row>
+          <div>
+            <Icon
+              style={{ ...toggle, opacity: children ? 1 : 0.3 }}
+              onClick={() => setOpen(!isOpen)}
+            />
+            <Title>
+              {onClick ? (
+                <Button variant="none" onClick={onClick}>
+                  {label}
+                </Button>
+              ) : (
+                label
+              )}
+            </Title>
+          </div>
+          <div>{rightSlot}</div>
+        </Row>
         {isOpen && <Content>{children}</Content>}
       </Frame>
     );
@@ -178,6 +197,26 @@ export const FileTreeDirectoryContent = ({
   );
 };
 
+const Stats = styled("div")((p) => ({
+  display: "grid",
+  gridTemplateColumns: "repeat(2, 1fr)",
+  gridColumnGap: p.theme.spacing(0.5),
+  color: p.theme.hud.color,
+}));
+
+const Pill = styled("div")<{ color: string }>((p) => {
+  const rgb = hexToRgb(p.color);
+  return {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 0,
+    backgroundColor: rgb ? rgbObjToRgba(rgb, 0.7) : p.color,
+    minWidth: p.theme.spacing(2),
+    padding: `0 ${p.theme.spacing(0.25)}px`,
+  };
+});
+
 export const FileTree = ({
   item,
   onSelect,
@@ -192,6 +231,7 @@ export const FileTree = ({
   setOpenNodes: (nextV: { [key: string]: boolean }) => void;
   selectedItemKey: string | null;
 }): JSX.Element => {
+  const theme = useTheme();
   const isOpen = !!openNodes[item.key];
   const setOpen = (open: boolean) =>
     setOpenNodes({
@@ -223,6 +263,16 @@ export const FileTree = ({
       isOpen={isOpen}
       setOpen={setOpen}
       isSelected={item.key === selectedItemKey}
+      rightSlot={
+        <Stats>
+          <Pill color={theme.graph.nodes.colors.dependent}>
+            {item.data.dependsOn.nodes.length}
+          </Pill>
+          <Pill color={theme.graph.nodes.colors.dependency}>
+            {item.data.dependedBy.nodes.length}
+          </Pill>
+        </Stats>
+      }
     />
   );
 };
