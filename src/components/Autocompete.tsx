@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Button } from "./Button";
 import { Input } from "./Input";
 
 const Container = styled("div")`
@@ -24,6 +25,7 @@ export const Autocomplete = <T extends any>({
   itemToKey,
   renderItem,
   filterItems,
+  onSelect,
   fullWidth,
 }: {
   items: T[];
@@ -39,7 +41,10 @@ export const Autocomplete = <T extends any>({
   const filteredItems = open && v ? filterItems(items, v) : [];
 
   return (
-    <Container onFocus={() => setOpen(true)} onBlur={() => setOpen(true)}>
+    <Container
+      onFocus={() => setOpen(true)}
+      onBlur={() => setTimeout(() => setOpen(false), 100)}
+    >
       <Input
         fullWidth={fullWidth}
         value={v}
@@ -49,7 +54,17 @@ export const Autocomplete = <T extends any>({
       {open && v && (
         <Menu>
           {filteredItems.map((item) => (
-            <div key={itemToKey(item)}>{renderItem(item)}</div>
+            <Button
+              fullWidth
+              variant="none"
+              onClick={() => {
+                onSelect(item);
+                setV("");
+              }}
+              key={itemToKey(item)}
+            >
+              {renderItem(item)}
+            </Button>
           ))}
           {!filteredItems.length && (
             <div style={{ textAlign: "center" }}>
