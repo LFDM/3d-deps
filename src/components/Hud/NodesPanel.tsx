@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { sortBy } from "lodash";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useLayoutEffect, useMemo, useState } from "react";
 import { GraphData } from "../../types/GraphData";
 import { Autocomplete } from "../Autocompete";
 import { FileTreeDirectoryContent, SEPARATOR, toFileTree } from "../FileTree";
@@ -24,7 +24,7 @@ export const NodesPanel = ({
     return { treeNodes: tn, rootDir: toFileTree(tn) };
   }, [g]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (selectedNodeId) {
       const treeNode = g.asTree[selectedNodeId];
       if (!treeNode) {
