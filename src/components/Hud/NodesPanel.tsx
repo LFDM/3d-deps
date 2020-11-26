@@ -1,7 +1,14 @@
+import styled from "@emotion/styled";
 import { sortBy } from "lodash";
 import React, { useEffect, useMemo, useState } from "react";
+import { useQueryParam } from "../../hooks/useQueryParam";
 import { GraphData } from "../../types/GraphData";
 import { FileTreeDirectoryContent, SEPARATOR, toFileTree } from "../FileTree";
+import { Input } from "../Input";
+
+const SearchArea = styled("div")((p) => ({
+  marginBottom: p.theme.spacing(),
+}));
 
 export const NodesPanel = ({
   g,
@@ -12,6 +19,8 @@ export const NodesPanel = ({
   selectedNodeId: string | null;
   setSelectedNodeId: (v: string | null) => void;
 }) => {
+  const [q, setQ] = useQueryParam("q", "");
+
   const [openNodes, setOpenNodes] = useState<{ [key: string]: boolean }>({});
   const { rootDir } = useMemo(() => {
     const tn = sortBy(g.data.nodes, (n) => n.path).map((n) => g.asTree[n.id]);
@@ -40,15 +49,25 @@ export const NodesPanel = ({
     : null;
 
   return (
-    <FileTreeDirectoryContent
-      dir={rootDir}
-      onSelect={(t) => {
-        const nodeId = t.node.id;
-        return setSelectedNodeId(selectedNodeId === nodeId ? null : nodeId);
-      }}
-      openNodes={openNodes}
-      setOpenNodes={setOpenNodes}
-      selectedItemKey={selectedItemKey}
-    />
+    <div>
+      <SearchArea>
+        <Input
+          value={q}
+          onChange={(ev) => setQ(ev.target.value)}
+          fullWidth={true}
+          type="search"
+        />
+      </SearchArea>
+      <FileTreeDirectoryContent
+        dir={rootDir}
+        onSelect={(t) => {
+          const nodeId = t.node.id;
+          return setSelectedNodeId(selectedNodeId === nodeId ? null : nodeId);
+        }}
+        openNodes={openNodes}
+        setOpenNodes={setOpenNodes}
+        selectedItemKey={selectedItemKey}
+      />
+    </div>
   );
 };
