@@ -86,7 +86,7 @@ export const ColorPicker = ({
           <PickerContainer ref={ref}>
             <ChromePicker
               color={value}
-              onChangeComplete={(nextColor) => {
+              onChange={(nextColor) => {
                 onChange(nextColor.hex);
               }}
             />
