@@ -52,7 +52,10 @@ export const NodesPanel = ({
           items={treeNodes}
           renderItem={(t) => t.node.path}
           itemToKey={(t) => t.node.id}
-          filterItems={(ts, v) => ts.filter((t) => t.node.path.includes(v))}
+          filterItems={(ts, v) => {
+            const re = new RegExp(v, "i");
+            return ts.filter((t) => re.test(t.node.path));
+          }}
           onSelect={(t) => setSelectedNodeId(t.node.id)}
           fullWidth={true}
         />
