@@ -37,6 +37,7 @@ const Main = styled("main")((p) => ({
 
     "::-webkit-scrollbar": {
       width: p.theme.spacing(0.5),
+      height: p.theme.spacing(0.5),
     },
 
     "::-webkit-scrollbar-track": {
@@ -47,6 +48,10 @@ const Main = styled("main")((p) => ({
     "::-webkit-scrollbar-thumb": {
       borderRadius: 2,
       background: "lightgray",
+    },
+    "::-webkit-scrollbar-corner": {
+      background: p.theme.hud.backgroundColor,
+      opacity: p.theme.hud.opacity,
     },
   },
 }));

@@ -14,6 +14,9 @@ const Menu = styled("div")`
   left: 0;
   padding: 2px;
   z-index: 5;
+  max-width: 100%;
+  max-height: 500px;
+  overflow: auto;
 `;
 
 export const Autocomplete = <T extends any>({
@@ -33,8 +36,10 @@ export const Autocomplete = <T extends any>({
   const [v, setV] = useState("");
   const [open, setOpen] = useState(false);
 
+  const filteredItems = open && v ? filterItems(items, v) : [];
+
   return (
-    <Container onFocus={() => setOpen(true)} onBlur={() => setOpen(false)}>
+    <Container onFocus={() => setOpen(true)} onBlur={() => setOpen(true)}>
       <Input
         fullWidth={fullWidth}
         value={v}
@@ -43,9 +48,14 @@ export const Autocomplete = <T extends any>({
       />
       {open && v && (
         <Menu>
-          {filterItems(items, v).map((item) => (
+          {filteredItems.map((item) => (
             <div key={itemToKey(item)}>{renderItem(item)}</div>
           ))}
+          {!filteredItems.length && (
+            <div style={{ textAlign: "center" }}>
+              <i>No match</i>
+            </div>
+          )}
         </Menu>
       )}
     </Container>
