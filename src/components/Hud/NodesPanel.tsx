@@ -1,10 +1,9 @@
 import styled from "@emotion/styled";
 import { sortBy } from "lodash";
 import React, { useEffect, useMemo, useState } from "react";
-import { useQueryParam } from "../../hooks/useQueryParam";
 import { GraphData } from "../../types/GraphData";
+import { Autocomplete } from "../Autocompete";
 import { FileTreeDirectoryContent, SEPARATOR, toFileTree } from "../FileTree";
-import { Input } from "../Input";
 
 const SearchArea = styled("div")((p) => ({
   marginBottom: p.theme.spacing(),
@@ -19,10 +18,8 @@ export const NodesPanel = ({
   selectedNodeId: string | null;
   setSelectedNodeId: (v: string | null) => void;
 }) => {
-  const [q, setQ] = useQueryParam("q", "");
-
   const [openNodes, setOpenNodes] = useState<{ [key: string]: boolean }>({});
-  const { rootDir } = useMemo(() => {
+  const { rootDir, treeNodes } = useMemo(() => {
     const tn = sortBy(g.data.nodes, (n) => n.path).map((n) => g.asTree[n.id]);
     return { treeNodes: tn, rootDir: toFileTree(tn) };
   }, [g]);
@@ -51,11 +48,13 @@ export const NodesPanel = ({
   return (
     <div>
       <SearchArea>
-        <Input
-          value={q}
-          onChange={(ev) => setQ(ev.target.value)}
+        <Autocomplete
+          items={treeNodes}
+          renderItem={(t) => t.node.path}
+          itemToKey={(t) => t.node.id}
+          filterItems={(ts, v) => ts.filter((t) => t.node.path.includes(v))}
+          onSelect={(t) => setSelectedNodeId(t.node.id)}
           fullWidth={true}
-          type="search"
         />
       </SearchArea>
       <FileTreeDirectoryContent
