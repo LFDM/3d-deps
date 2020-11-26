@@ -14,8 +14,8 @@ const Menu = styled("div")`
   left: 0;
   padding: 2px;
   z-index: 5;
-  max-width: 100%;
-  max-height: 500px;
+  min-width: 100%;
+  max-height: calc(100vh - 100px);
   overflow: auto;
 `;
 
