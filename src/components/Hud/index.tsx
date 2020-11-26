@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
-import React, { useState } from "react";
+import React from "react";
+import { useQueryParam } from "../../hooks/useQueryParam";
 import { Theme } from "../../types/Config";
 import { GraphData } from "../../types/GraphData";
 import { Button } from "../Button";
@@ -66,7 +67,7 @@ const Tabs = styled("div")((p) => ({
 }));
 
 export const Sidebar = ({ onChangeTheme, ...other }: Props) => {
-  const [tab, setTab] = useState<TabName>("nodes");
+  const [tab, setTab] = useQueryParam("tab", "nodes");
   return (
     <SidebarContainer>
       <Tabs>
