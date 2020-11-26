@@ -1,6 +1,7 @@
 import { useTheme } from "@emotion/react";
+import * as d3 from "d3-force";
 import React, { useEffect, useMemo, useRef } from "react";
-import { ForceGraph3D } from "react-force-graph";
+import { ForceGraph2D } from "react-force-graph";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { GraphData, IGraphNode } from "../../types/GraphData";
 
@@ -102,14 +103,25 @@ export const Graph = ({
   useEffect(() => {
     setTimeout(() => {
       const r: any = ref.current;
-      r.cameraPosition({ x: 0 }, { x: -200 });
+      if (r.cameraPosition) {
+        r.cameraPosition({ x: 0 }, { x: -200 });
+      }
+      if (r.d3Force) {
+        r.d3Force(
+          "collision",
+          d3.forceCollide((node) =>
+            Math.sqrt(500 / ((node as IGraphNode).path.split("/").length + 1))
+          )
+        );
+      }
     }, 0);
   }, []);
 
   return (
-    <ForceGraph3D
+    <ForceGraph2D
       ref={ref}
-      controlType="trackball"
+      dagMode="td"
+      dagLevelDistance={100}
       {...dimensions}
       graphData={g.data}
       backgroundColor={theme.typography.backgroundColor}
@@ -133,6 +145,9 @@ export const Graph = ({
       onNodeClick={(node) =>
         setSelectedNodeId(selectedNodeId === node.id! ? null : `${node.id!}`)
       }
+      d3VelocityDecay={0.1}
+      d3AlphaDecay={0.01}
+      d3AlphaMin={0.01}
     />
   );
 };
