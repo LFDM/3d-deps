@@ -37,16 +37,22 @@ const traverseDependencies = (
   treeNodes: { [id: string]: TreeNode },
   current: string,
   mode: "dependsOn" | "dependedBy",
-  result: { [id: string]: number },
+  result: {
+    nodes: { [id: string]: number };
+    links: { [id: string]: number };
+  },
   level: number,
   maxDepth: number
-): { [id: string]: number } => {
+): {
+  nodes: { [id: string]: number };
+  links: { [id: string]: number };
+} => {
   if (level < maxDepth) {
     const treeNode = treeNodes[current];
     treeNode[mode].nodes.forEach((n) => {
       // always use the most direct level!
-      if ((result[n.id] || Infinity) > level) {
-        result[n.id] = level;
+      if ((result.nodes[n.id] || Infinity) > level) {
+        result.nodes[n.id] = level;
       }
       traverseDependencies(treeNodes, n.id, mode, result, level + 1, maxDepth);
     });
@@ -81,6 +87,7 @@ export const Graph = ({
     };
     const nodeColors = theme.graph.nodes.colors;
     const linkColors = theme.graph.links.colors;
+    const emptyContainer = () => ({ nodes: {}, links: {} });
 
     if (selectedNodeId) {
       const dependsOn = graphConfig.dependents.active
@@ -88,24 +95,24 @@ export const Graph = ({
             g.asTree,
             selectedNodeId,
             "dependsOn",
-            {},
+            emptyContainer(),
             0,
             graphConfig.dependents.maxDepth
           )
-        : {};
+        : emptyContainer();
       const dependedBy = graphConfig.dependencies.active
         ? traverseDependencies(
             g.asTree,
             selectedNodeId,
             "dependedBy",
-            {},
+            emptyContainer(),
             0,
             graphConfig.dependencies.maxDepth
           )
-        : {};
+        : emptyContainer();
 
       const dependentColor = tinycolor(nodeColors.dependent);
-      Object.entries(dependsOn).forEach(([nodeId, level]) => {
+      Object.entries(dependsOn.nodes).forEach(([nodeId, level]) => {
         addNodeStyle(ss, nodeId, {
           color: dependentColor
             .clone()
@@ -116,7 +123,7 @@ export const Graph = ({
       });
 
       const dependencyColor = tinycolor(nodeColors.dependency);
-      Object.entries(dependedBy).forEach(([nodeId, level]) => {
+      Object.entries(dependedBy.nodes).forEach(([nodeId, level]) => {
         addNodeStyle(ss, nodeId, {
           color: dependencyColor
             .clone()
