@@ -3,6 +3,8 @@ import React from "react";
 import { useConfig } from "../../hooks/useConfig";
 import { GraphConfig, Theme } from "../../types/Config";
 import { ColorPicker } from "../ColorPicker";
+import { ConfigRow } from "../ConfigRow";
+import { InputSliderWithValue } from "../Input";
 
 const SubSection = styled("div")((p) => ({
   marginBottom: p.theme.spacing(2),
@@ -298,6 +300,78 @@ const GraphSection = ({
   return (
     <>
       <h3>Graph</h3>
+      <SubSection>
+        <h4>Dependencies</h4>
+        <ConfigRow>
+          <div>Active</div>
+          <input
+            type="checkbox"
+            checked={value.dependencies.active}
+            onChange={(ev) =>
+              onChange({
+                ...value,
+                dependencies: {
+                  ...value.dependencies,
+                  active: ev.target.checked,
+                },
+              })
+            }
+          />
+        </ConfigRow>
+        <ConfigRow>
+          <div>Max Depth</div>
+          <InputSliderWithValue
+            min={1}
+            max={10}
+            value={value.dependencies.maxDepth}
+            onChange={(ev) =>
+              onChange({
+                ...value,
+                dependencies: {
+                  ...value.dependencies,
+                  maxDepth: parseInt(ev.target.value, 10),
+                },
+              })
+            }
+          />
+        </ConfigRow>
+      </SubSection>
+      <SubSection>
+        <h4>Dependents</h4>
+        <ConfigRow>
+          <div>Active</div>
+          <input
+            type="checkbox"
+            checked={value.dependents.active}
+            onChange={(ev) =>
+              onChange({
+                ...value,
+                dependents: {
+                  ...value.dependents,
+                  active: ev.target.checked,
+                },
+              })
+            }
+          />
+        </ConfigRow>
+        <ConfigRow>
+          <div>Max Depth</div>
+          <InputSliderWithValue
+            min={1}
+            max={10}
+            value={value.dependents.maxDepth}
+            onChange={(ev) =>
+              onChange({
+                ...value,
+                dependents: {
+                  ...value.dependents,
+                  maxDepth: parseInt(ev.target.value, 10),
+                },
+              })
+            }
+          />
+        </ConfigRow>
+      </SubSection>
     </>
   );
 };
