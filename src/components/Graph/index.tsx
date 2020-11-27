@@ -41,6 +41,7 @@ const traverseDependencies = (
   level: number,
   maxDepth: number
 ): { [id: string]: number } => {
+  console.log(level, maxDepth);
   if (level < maxDepth) {
     const treeNode = treeNodes[current];
     // pass all first, so that we have the most direct connection in our result, then recurse
