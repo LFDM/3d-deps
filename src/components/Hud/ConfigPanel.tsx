@@ -1,17 +1,18 @@
-import { Theme, useTheme } from "@emotion/react";
+import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import { useConfig } from "../../hooks/useConfig";
+import { Config } from "../../types/Config";
 import { ColorPicker } from "../ColorPicker";
 
 const Section = styled("div")((p) => ({
   marginBottom: p.theme.spacing(2),
 }));
 
-export const ThemePanel = ({
-  onChangeTheme,
+export const ConfigPanel = ({
+  onChangeConfig: onChangeConfig,
 }: {
-  onChangeTheme: (nextTheme: Theme) => void;
+  onChangeConfig: (nextConfig: Config) => void;
 }) => {
   const theme = useTheme();
   const originalTheme = useConfig().theme;
@@ -24,7 +25,7 @@ export const ThemePanel = ({
           value={theme.typography.color}
           defaultValue={originalTheme.typography.color}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               typography: {
                 ...theme.typography,
@@ -38,7 +39,7 @@ export const ThemePanel = ({
           value={theme.typography.backgroundColor}
           defaultValue={originalTheme.typography.backgroundColor}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               typography: {
                 ...theme.typography,
@@ -55,7 +56,7 @@ export const ThemePanel = ({
           value={theme.hud.color}
           defaultValue={originalTheme.hud.color}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               hud: {
                 ...theme.hud,
@@ -69,7 +70,7 @@ export const ThemePanel = ({
           value={theme.hud.highlightColor}
           defaultValue={originalTheme.hud.highlightColor}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               hud: {
                 ...theme.hud,
@@ -83,7 +84,7 @@ export const ThemePanel = ({
           value={theme.hud.backgroundColor}
           defaultValue={originalTheme.hud.backgroundColor}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               hud: {
                 ...theme.hud,
@@ -100,7 +101,7 @@ export const ThemePanel = ({
           value={theme.graph.nodes.colors.standard}
           defaultValue={originalTheme.graph.nodes.colors.standard}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               graph: {
                 ...theme.graph,
@@ -120,7 +121,7 @@ export const ThemePanel = ({
           value={theme.graph.nodes.colors.selected}
           defaultValue={originalTheme.graph.nodes.colors.selected}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               graph: {
                 ...theme.graph,
@@ -140,7 +141,7 @@ export const ThemePanel = ({
           value={theme.graph.nodes.colors.unselected}
           defaultValue={originalTheme.graph.nodes.colors.unselected}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               graph: {
                 ...theme.graph,
@@ -160,7 +161,7 @@ export const ThemePanel = ({
           value={theme.graph.nodes.colors.dependency}
           defaultValue={originalTheme.graph.nodes.colors.dependency}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               graph: {
                 ...theme.graph,
@@ -180,7 +181,7 @@ export const ThemePanel = ({
           value={theme.graph.nodes.colors.dependent}
           defaultValue={originalTheme.graph.nodes.colors.dependent}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               graph: {
                 ...theme.graph,
@@ -203,7 +204,7 @@ export const ThemePanel = ({
           value={theme.graph.links.colors.standard}
           defaultValue={originalTheme.graph.links.colors.standard}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               graph: {
                 ...theme.graph,
@@ -223,7 +224,7 @@ export const ThemePanel = ({
           value={theme.graph.links.colors.unselected}
           defaultValue={originalTheme.graph.links.colors.unselected}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               graph: {
                 ...theme.graph,
@@ -243,7 +244,7 @@ export const ThemePanel = ({
           value={theme.graph.links.colors.dependency}
           defaultValue={originalTheme.graph.links.colors.dependency}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               graph: {
                 ...theme.graph,
@@ -263,7 +264,7 @@ export const ThemePanel = ({
           value={theme.graph.links.colors.dependent}
           defaultValue={originalTheme.graph.links.colors.dependent}
           onChange={(nextColor) =>
-            onChangeTheme({
+            onChangeConfig({
               ...theme,
               graph: {
                 ...theme.graph,

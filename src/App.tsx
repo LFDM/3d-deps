@@ -8,7 +8,7 @@ import { Graph } from "./components/Graph";
 import { Hud } from "./components/Hud";
 import { ConfigContext } from "./hooks/useConfig";
 import { useQueryParam } from "./hooks/useQueryParam";
-import { Config, Theme } from "./types/Config";
+import { Config } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
 import { GraphData, IGraphLink, IGraphNode, TreeNode } from "./types/GraphData";
 
@@ -119,17 +119,17 @@ const useGraphData = (ds: DependencyNode[]): GraphData => {
 
 const MainApp = ({
   g,
-  onChangeTheme,
+  onChangeConfig,
 }: {
   g: GraphData;
-  onChangeTheme: (nextTheme: Theme) => void;
+  onChangeConfig: (nextConfig: Config) => void;
 }) => {
   const [selectedNodeId, setSelectedNodeId] = useQueryParam("node");
   return (
     <Main>
       <Hud
         g={g}
-        onChangeTheme={onChangeTheme}
+        onChangeConfig={onChangeConfig}
         selectedNodeId={selectedNodeId || null}
         setSelectedNodeId={setSelectedNodeId}
       />
@@ -142,14 +142,20 @@ const MainApp = ({
   );
 };
 
-function App({ config, ds }: { config: Config; ds: DependencyNode[] }) {
-  const [theme, setTheme] = useState(config.theme);
+function App({
+  config: originalConfig,
+  ds,
+}: {
+  config: Config;
+  ds: DependencyNode[];
+}) {
+  const [config, setConfig] = useState(originalConfig);
   const g = useGraphData(ds);
   return (
     <Router>
       <ConfigContext.Provider value={config}>
-        <ThemeProvider theme={theme}>
-          <MainApp g={g} onChangeTheme={setTheme} />
+        <ThemeProvider theme={config.theme}>
+          <MainApp g={g} onChangeConfig={setConfig} />
         </ThemeProvider>
       </ConfigContext.Provider>
     </Router>
