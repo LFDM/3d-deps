@@ -138,11 +138,14 @@ export const Graph = ({
         });
       });
 
+      const particlesForLevel = (level: number) =>
+        Math.max(0, Math.round(7 - level * 3));
+
       const linkDependentColor = tinycolor(linkColors.dependent);
       Object.entries(dependsOn.links).forEach(([linkId, level]) => {
         addLinkStyle(ss, linkId, {
           color: colorForLevel(linkDependentColor, level),
-          particles: Math.max(0, Math.round(7 - level * 3)),
+          particles: particlesForLevel(level),
         });
       });
 
@@ -150,7 +153,7 @@ export const Graph = ({
       Object.entries(dependedBy.links).forEach(([linkId, level]) => {
         addLinkStyle(ss, linkId, {
           color: colorForLevel(linkDepdendencyColor, level),
-          particles: Math.max(0, Math.round(7 - level * 3)),
+          particles: particlesForLevel(level),
         });
       });
 
