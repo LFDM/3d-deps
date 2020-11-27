@@ -43,7 +43,7 @@ const traverseDependencies = (
   const treeNode = treeNodes[current];
   // pass all first, so that we have the most direct connection in our result, then recurse
   treeNode[mode].nodes.forEach((n) => {
-    if (!result[n.id]) {
+    if (result[n.id] === undefined) {
       result[n.id] = level;
     }
   });
