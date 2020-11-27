@@ -306,16 +306,6 @@ export const ConfigPanel = () => {
   const cfg = useConfig();
   return (
     <>
-      <ThemeSection
-        value={cfg.current.theme}
-        originalValue={cfg.original.theme}
-        onChange={(nextTheme) =>
-          cfg.onChange({
-            ...cfg.current,
-            theme: nextTheme,
-          })
-        }
-      />
       <GraphSection
         value={cfg.current.graph}
         originalValue={cfg.original.graph}
@@ -323,6 +313,16 @@ export const ConfigPanel = () => {
           cfg.onChange({
             ...cfg.current,
             graph: nextGraph,
+          })
+        }
+      />
+      <ThemeSection
+        value={cfg.current.theme}
+        originalValue={cfg.original.theme}
+        onChange={(nextTheme) =>
+          cfg.onChange({
+            ...cfg.current,
+            theme: nextTheme,
           })
         }
       />
