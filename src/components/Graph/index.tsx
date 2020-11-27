@@ -110,7 +110,7 @@ export const Graph = ({
             color: dependentColor
               .clone()
               .setAlpha(Math.max(0.3, 1 - level / 3))
-              .toHexString(),
+              .toRgbString(),
           });
         }
       });
@@ -122,7 +122,7 @@ export const Graph = ({
             color: dependencyColor
               .clone()
               .setAlpha(Math.max(0.3, 1 - level / 3))
-              .toHexString(),
+              .toRgbString(),
           });
         }
       });
