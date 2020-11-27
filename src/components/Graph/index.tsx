@@ -109,7 +109,7 @@ export const Graph = ({
           addNodeStyle(ss, nodeId, {
             color: dependentColor
               .clone()
-              .setAlpha(Math.max(0.3, 1 - level / 3))
+              .setAlpha(Math.max(0.3, 1 - level / 2))
               .toRgbString(),
           });
         }
@@ -121,7 +121,7 @@ export const Graph = ({
           addNodeStyle(ss, nodeId, {
             color: dependencyColor
               .clone()
-              .setAlpha(Math.max(0.3, 1 - level / 3))
+              .setAlpha(Math.max(0.3, 1 - level / 2))
               .toRgbString(),
           });
         }
