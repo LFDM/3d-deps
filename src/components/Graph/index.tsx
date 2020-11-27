@@ -53,7 +53,7 @@ const traverseDependencies = (
   return result;
 };
 
-const MAX_DEPTH = 1;
+const MAX_DEPTH = 3;
 
 export const Graph = ({
   g,
@@ -109,6 +109,7 @@ export const Graph = ({
           addNodeStyle(ss, nodeId, {
             color: dependentColor
               .clone()
+              //.lighten(Math.min(80, level * 1.5 * 10))
               .setAlpha(Math.max(0.3, 1 - level / 2))
               .toRgbString(),
           });
@@ -121,6 +122,7 @@ export const Graph = ({
           addNodeStyle(ss, nodeId, {
             color: dependencyColor
               .clone()
+              //.lighten(Math.min(80, level * 1.5 * 10))
               .setAlpha(Math.max(0.3, 1 - level / 2))
               .toRgbString(),
           });
