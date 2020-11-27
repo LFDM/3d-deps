@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
 import { useQueryParam } from "../../hooks/useQueryParam";
-import { Config } from "../../types/Config";
 import { GraphData } from "../../types/GraphData";
 import { Button } from "../Button";
 import { ConfigPanel } from "./ConfigPanel";
@@ -12,7 +11,6 @@ type Props = {
   g: GraphData;
   selectedNodeId: string | null;
   setSelectedNodeId: (v: string | null) => void;
-  onChangeConfig: (nextConfig: Config) => void;
 };
 
 const Container = styled("div")<{ overlayActive: boolean }>`
@@ -67,7 +65,7 @@ const Tabs = styled("div")((p) => ({
   borderBottom: `1px solid lightgray`,
 }));
 
-export const Sidebar = ({ onChangeConfig, ...other }: Props) => {
+export const Sidebar = (props: Props) => {
   const [tab, setTab] = useQueryParam("tab", "nodes");
   const [openNodes, setOpenNodes] = useState<{ [key: string]: boolean }>({});
   return (
@@ -89,7 +87,7 @@ export const Sidebar = ({ onChangeConfig, ...other }: Props) => {
       {tab === "nodes" && (
         <Tab>
           <NodesPanel
-            {...other}
+            {...props}
             openNodes={openNodes}
             setOpenNodes={setOpenNodes}
           />
@@ -97,7 +95,7 @@ export const Sidebar = ({ onChangeConfig, ...other }: Props) => {
       )}
       {tab === "theme" && (
         <Tab>
-          <ConfigPanel onChangeConfig={onChangeConfig} />
+          <ConfigPanel />
         </Tab>
       )}
     </SidebarContainer>

@@ -117,19 +117,12 @@ const useGraphData = (ds: DependencyNode[]): GraphData => {
   }, [ds]);
 };
 
-const MainApp = ({
-  g,
-  onChangeConfig,
-}: {
-  g: GraphData;
-  onChangeConfig: (nextConfig: Config) => void;
-}) => {
+const MainApp = ({ g }: { g: GraphData }) => {
   const [selectedNodeId, setSelectedNodeId] = useQueryParam("node");
   return (
     <Main>
       <Hud
         g={g}
-        onChangeConfig={onChangeConfig}
         selectedNodeId={selectedNodeId || null}
         setSelectedNodeId={setSelectedNodeId}
       />
@@ -153,9 +146,15 @@ function App({
   const g = useGraphData(ds);
   return (
     <Router>
-      <ConfigContext.Provider value={config}>
+      <ConfigContext.Provider
+        value={{
+          current: config,
+          original: originalConfig,
+          onChange: setConfig,
+        }}
+      >
         <ThemeProvider theme={config.theme}>
-          <MainApp g={g} onChangeConfig={setConfig} />
+          <MainApp g={g} />
         </ThemeProvider>
       </ConfigContext.Provider>
     </Router>
