@@ -2,7 +2,8 @@ import { useTheme } from "@emotion/react";
 import React, { useEffect, useMemo, useRef } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { GraphData, IGraphNode } from "../../types/GraphData";
+import { hexToRgb, rgbObjToRgba } from "../../services/color";
+import { GraphData, IGraphNode, TreeNode } from "../../types/GraphData";
 
 type NodeStyle = Partial<{
   color: string;
@@ -32,6 +33,26 @@ const addLinkStyle = (styles: Styles, linkId: string, s: LinkStyle) => {
   styles.links[linkId] = { ...v, ...s };
 };
 
+const traverseDependencies = (
+  treeNodes: { [id: string]: TreeNode },
+  current: string,
+  mode: "dependsOn" | "dependedBy",
+  result: { [id: string]: number },
+  level: number
+): { [id: string]: number } => {
+  const treeNode = treeNodes[current];
+  // pass all first, so that we have the most direct connection in our result, then recurse
+  treeNode[mode].nodes.forEach((n) => {
+    if (!result[n.id]) {
+      result[n.id] = level;
+    }
+  });
+  treeNode[mode].nodes.forEach((n) => {
+    traverseDependencies(treeNodes, n.id, mode, result, level + 1);
+  });
+  return result;
+};
+
 export const Graph = ({
   g,
   selectedNodeId,
@@ -59,16 +80,45 @@ export const Graph = ({
     };
     const nodeColors = theme.graph.nodes.colors;
     const linkColors = theme.graph.links.colors;
+
     if (selectedNodeId) {
       addNodeStyle(ss, selectedNodeId, {
         color: nodeColors.selected,
       });
-      const treeNode = g.asTree[selectedNodeId];
-      treeNode.dependsOn.nodes.forEach((n) => {
-        addNodeStyle(ss, n.id, { color: nodeColors.dependent });
+
+      const dependsOn = traverseDependencies(
+        g.asTree,
+        selectedNodeId,
+        "dependsOn",
+        {},
+        0
+      );
+      const dependedBy = traverseDependencies(
+        g.asTree,
+        selectedNodeId,
+        "dependedBy",
+        {},
+        0
+      );
+
+      const rgbaDependent = hexToRgb(nodeColors.dependent);
+      Object.entries(dependsOn).forEach(([nodeId, level]) => {
+        if (level === 0) {
+          const color = rgbaDependent
+            ? rgbObjToRgba(rgbaDependent, Math.max(0.3, 1 - level / 3))
+            : nodeColors.dependent;
+          addNodeStyle(ss, nodeId, { color: color });
+        }
       });
-      treeNode.dependedBy.nodes.forEach((n) => {
-        addNodeStyle(ss, n.id, { color: nodeColors.dependency });
+
+      const rgbaDependency = hexToRgb(nodeColors.dependency);
+      Object.entries(dependedBy).forEach(([nodeId, level]) => {
+        if (level === 0) {
+          const color = rgbaDependency
+            ? rgbObjToRgba(rgbaDependency, Math.max(0.3, 1 - level / 3))
+            : nodeColors.dependency;
+          addNodeStyle(ss, nodeId, { color: color });
+        }
       });
 
       g.data.nodes.forEach((n) => {
