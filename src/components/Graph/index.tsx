@@ -116,47 +116,38 @@ export const Graph = ({
           )
         : emptyContainer();
 
+      const colorForLevel = (c: tinycolor.Instance, level: number) =>
+        c
+          .clone()
+          //.lighten(Math.min(80, level * 1.5 * 10))
+          .setAlpha(Math.max(0.3, 1 - level / 2))
+          .toRgbString();
+
       const nodeDependentColor = tinycolor(nodeColors.dependent);
       Object.entries(dependsOn.nodes).forEach(([nodeId, level]) => {
         addNodeStyle(ss, nodeId, {
-          color: nodeDependentColor
-            .clone()
-            //.lighten(Math.min(80, level * 1.5 * 10))
-            .setAlpha(Math.max(0.3, 1 - level / 2))
-            .toRgbString(),
+          color: colorForLevel(nodeDependentColor, level),
         });
       });
 
       const nodeDepdendencyColor = tinycolor(nodeColors.dependency);
       Object.entries(dependedBy.nodes).forEach(([nodeId, level]) => {
         addNodeStyle(ss, nodeId, {
-          color: nodeDepdendencyColor
-            .clone()
-            //.lighten(Math.min(80, level * 1.5 * 10))
-            .setAlpha(Math.max(0.3, 1 - level / 2))
-            .toRgbString(),
+          color: colorForLevel(nodeDepdendencyColor, level),
         });
       });
 
       const linkDependentColor = tinycolor(linkColors.dependent);
       Object.entries(dependsOn.links).forEach(([linkId, level]) => {
         addLinkStyle(ss, linkId, {
-          color: linkDependentColor
-            .clone()
-            //.lighten(Math.min(80, level * 1.5 * 10))
-            .setAlpha(Math.max(0.3, 1 - level / 2))
-            .toRgbString(),
+          color: colorForLevel(linkDependentColor, level),
         });
       });
 
       const linkDepdendencyColor = tinycolor(linkColors.dependency);
       Object.entries(dependedBy.links).forEach(([linkId, level]) => {
         addLinkStyle(ss, linkId, {
-          color: linkDepdendencyColor
-            .clone()
-            //.lighten(Math.min(80, level * 1.5 * 10))
-            .setAlpha(Math.max(0.3, 1 - level / 2))
-            .toRgbString(),
+          color: colorForLevel(linkDepdendencyColor, level),
         });
       });
 
