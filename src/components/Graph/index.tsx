@@ -129,12 +129,12 @@ export const Graph = ({
       g.data.nodes.forEach((n) => {
         if (!ss.nodes[n.id]?.color) {
           addNodeStyle(ss, n.id, { color: nodeColors.unselected });
-          (g.linksBySource[n.id] || []).forEach((l) =>
-            addLinkStyle(ss, l.id, { color: linkColors.unselected })
-          );
-          (g.linksByTarget[n.id] || []).forEach((l) =>
-            addLinkStyle(ss, l.id, { color: linkColors.unselected })
-          );
+          // (g.linksBySource[n.id] || []).forEach((l) =>
+          //   addLinkStyle(ss, l.id, { color: linkColors.unselected })
+          // );
+          // (g.linksByTarget[n.id] || []).forEach((l) =>
+          //   addLinkStyle(ss, l.id, { color: linkColors.unselected })
+          // );
         }
       });
 
@@ -144,14 +144,14 @@ export const Graph = ({
         color: nodeColors.selected,
       });
 
-      const sourceLinks = g.linksBySource[selectedNodeId] || [];
-      sourceLinks.forEach((l) => {
-        addLinkStyle(ss, l.id, { particles: 7, color: linkColors.dependent });
-      });
-      const targetLinks = g.linksByTarget[selectedNodeId] || [];
-      targetLinks.forEach((l) => {
-        addLinkStyle(ss, l.id, { particles: 7, color: linkColors.dependency });
-      });
+      // const sourceLinks = g.linksBySource[selectedNodeId] || [];
+      // sourceLinks.forEach((l) => {
+      //   addLinkStyle(ss, l.id, { particles: 7, color: linkColors.dependent });
+      // });
+      // const targetLinks = g.linksByTarget[selectedNodeId] || [];
+      // targetLinks.forEach((l) => {
+      //   addLinkStyle(ss, l.id, { particles: 7, color: linkColors.dependency });
+      // });
     }
 
     return ss;
