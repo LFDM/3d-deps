@@ -138,6 +138,8 @@ export const Graph = ({
         }
       });
 
+      // color selectedNode last, because circular depdencies might
+      // have colored it already.
       addNodeStyle(ss, selectedNodeId, {
         color: nodeColors.selected,
       });
