@@ -83,10 +83,6 @@ export const Graph = ({
     const linkColors = theme.graph.links.colors;
 
     if (selectedNodeId) {
-      addNodeStyle(ss, selectedNodeId, {
-        color: nodeColors.selected,
-      });
-
       const dependsOn = graphConfig.dependents.active
         ? traverseDependencies(
             g.asTree,
@@ -140,6 +136,10 @@ export const Graph = ({
             addLinkStyle(ss, l.id, { color: linkColors.unselected })
           );
         }
+      });
+
+      addNodeStyle(ss, selectedNodeId, {
+        color: nodeColors.selected,
       });
 
       const sourceLinks = g.linksBySource[selectedNodeId] || [];
