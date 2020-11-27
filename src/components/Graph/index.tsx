@@ -53,6 +53,11 @@ const traverseDependencies = (
       // always use the most direct level!
       if ((result.nodes[n.id] || Infinity) > level) {
         result.nodes[n.id] = level;
+        const links =
+          mode === "dependsOn"
+            ? g.linksBySource[current]?.[n.id]
+            : g.linksByTarget[current]?.[n.id] || [];
+        links.forEach((l) => (result.links[l.id] = level));
       }
       traverseDependencies(g, n.id, mode, result, level + 1, maxDepth);
     });
@@ -111,10 +116,10 @@ export const Graph = ({
           )
         : emptyContainer();
 
-      const dependentColor = tinycolor(nodeColors.dependent);
+      const nodeDependentColor = tinycolor(nodeColors.dependent);
       Object.entries(dependsOn.nodes).forEach(([nodeId, level]) => {
         addNodeStyle(ss, nodeId, {
-          color: dependentColor
+          color: nodeDependentColor
             .clone()
             //.lighten(Math.min(80, level * 1.5 * 10))
             .setAlpha(Math.max(0.3, 1 - level / 2))
@@ -122,10 +127,32 @@ export const Graph = ({
         });
       });
 
-      const dependencyColor = tinycolor(nodeColors.dependency);
+      const nodeDepdendencyColor = tinycolor(nodeColors.dependency);
       Object.entries(dependedBy.nodes).forEach(([nodeId, level]) => {
         addNodeStyle(ss, nodeId, {
-          color: dependencyColor
+          color: nodeDepdendencyColor
+            .clone()
+            //.lighten(Math.min(80, level * 1.5 * 10))
+            .setAlpha(Math.max(0.3, 1 - level / 2))
+            .toRgbString(),
+        });
+      });
+
+      const linkDependentColor = tinycolor(linkColors.dependent);
+      Object.entries(dependsOn.links).forEach(([linkId, level]) => {
+        addLinkStyle(ss, linkId, {
+          color: linkDependentColor
+            .clone()
+            //.lighten(Math.min(80, level * 1.5 * 10))
+            .setAlpha(Math.max(0.3, 1 - level / 2))
+            .toRgbString(),
+        });
+      });
+
+      const linkDepdendencyColor = tinycolor(linkColors.dependency);
+      Object.entries(dependedBy.links).forEach(([linkId, level]) => {
+        addLinkStyle(ss, linkId, {
+          color: linkDepdendencyColor
             .clone()
             //.lighten(Math.min(80, level * 1.5 * 10))
             .setAlpha(Math.max(0.3, 1 - level / 2))
@@ -136,12 +163,16 @@ export const Graph = ({
       g.data.nodes.forEach((n) => {
         if (!ss.nodes[n.id]?.color) {
           addNodeStyle(ss, n.id, { color: nodeColors.unselected });
-          // (g.linksBySource[n.id] || []).forEach((l) =>
-          //   addLinkStyle(ss, l.id, { color: linkColors.unselected })
-          // );
-          // (g.linksByTarget[n.id] || []).forEach((l) =>
-          //   addLinkStyle(ss, l.id, { color: linkColors.unselected })
-          // );
+          Object.entries(g.linksBySource[n.id] || {}).forEach(([_, ls]) =>
+            ls.forEach((l) =>
+              addLinkStyle(ss, l.id, { color: linkColors.unselected })
+            )
+          );
+          Object.entries(g.linksByTarget[n.id] || {}).forEach(([_, ls]) =>
+            ls.forEach((l) =>
+              addLinkStyle(ss, l.id, { color: linkColors.unselected })
+            )
+          );
         }
       });
 
