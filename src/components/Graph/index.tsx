@@ -121,7 +121,7 @@ export const Graph = ({
           // don't clone - let's just mutate. It's throwaway in our case anyway. Save some speed...
           // .clone()
           .setAlpha(Math.max(0.3, 1 - level / 2))
-          //.lighten(Math.min(80, level * 1.5 * 10))
+          //.brighten(Math.min(30, level * 1 * 10))
           .toRgbString();
 
       const nodeDependentColor = tinycolor(nodeColors.dependent);
