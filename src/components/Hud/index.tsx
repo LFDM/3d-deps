@@ -53,7 +53,7 @@ const SidebarContainer = styled("div")`
   }
 `;
 
-type TabName = "theme" | "nodes";
+type TabName = "config" | "nodes";
 
 const Tab = styled("div")();
 const Tabs = styled("div")((p) => ({
@@ -78,10 +78,10 @@ export const Sidebar = (props: Props) => {
           Nodes
         </Button>
         <Button
-          variant={tab === "theme" ? "outlined" : "standard"}
-          onClick={() => setTab("theme")}
+          variant={tab === "config" ? "outlined" : "standard"}
+          onClick={() => setTab("config")}
         >
-          Theme
+          Config
         </Button>
       </Tabs>
       {tab === "nodes" && (
@@ -93,7 +93,7 @@ export const Sidebar = (props: Props) => {
           />
         </Tab>
       )}
-      {tab === "theme" && (
+      {tab === "config" && (
         <Tab>
           <ConfigPanel />
         </Tab>
