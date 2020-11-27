@@ -1,7 +1,7 @@
-import { useTheme } from "@emotion/react";
 import React, { useEffect, useMemo, useRef } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import tinycolor from "tinycolor2";
+import { useConfig } from "../../hooks/useConfig";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { GraphData, IGraphNode, TreeNode } from "../../types/GraphData";
 
@@ -38,22 +38,23 @@ const traverseDependencies = (
   current: string,
   mode: "dependsOn" | "dependedBy",
   result: { [id: string]: number },
-  level: number
+  level: number,
+  maxDepth: number
 ): { [id: string]: number } => {
-  const treeNode = treeNodes[current];
-  // pass all first, so that we have the most direct connection in our result, then recurse
-  treeNode[mode].nodes.forEach((n) => {
-    if (result[n.id] === undefined) {
-      result[n.id] = level;
-    }
-  });
-  treeNode[mode].nodes.forEach((n) => {
-    traverseDependencies(treeNodes, n.id, mode, result, level + 1);
-  });
+  if (level < maxDepth) {
+    const treeNode = treeNodes[current];
+    // pass all first, so that we have the most direct connection in our result, then recurse
+    treeNode[mode].nodes.forEach((n) => {
+      if (result[n.id] === undefined) {
+        result[n.id] = level;
+      }
+    });
+    treeNode[mode].nodes.forEach((n) => {
+      traverseDependencies(treeNodes, n.id, mode, result, level + 1, maxDepth);
+    });
+  }
   return result;
 };
-
-const MAX_DEPTH = 3;
 
 export const Graph = ({
   g,
@@ -70,7 +71,7 @@ export const Graph = ({
   // - incoming deps -> 2-3 layers
   // - outgoing deps -> 2-3 layers
   // - all links between them, activate particles
-  const theme = useTheme();
+  const { theme, graph: graphConfig } = useConfig().current;
   const dimensions = useWindowSize();
 
   const ref = useRef();
@@ -88,45 +89,47 @@ export const Graph = ({
         color: nodeColors.selected,
       });
 
-      const dependsOn = traverseDependencies(
-        g.asTree,
-        selectedNodeId,
-        "dependsOn",
-        {},
-        0
-      );
-      const dependedBy = traverseDependencies(
-        g.asTree,
-        selectedNodeId,
-        "dependedBy",
-        {},
-        0
-      );
+      const dependsOn = graphConfig.dependents.active
+        ? traverseDependencies(
+            g.asTree,
+            selectedNodeId,
+            "dependsOn",
+            {},
+            0,
+            graphConfig.dependents.maxDepth
+          )
+        : {};
+      const dependedBy = graphConfig.dependencies.active
+        ? traverseDependencies(
+            g.asTree,
+            selectedNodeId,
+            "dependedBy",
+            {},
+            0,
+            graphConfig.dependencies.maxDepth
+          )
+        : {};
 
       const dependentColor = tinycolor(nodeColors.dependent);
       Object.entries(dependsOn).forEach(([nodeId, level]) => {
-        if (level < MAX_DEPTH) {
-          addNodeStyle(ss, nodeId, {
-            color: dependentColor
-              .clone()
-              //.lighten(Math.min(80, level * 1.5 * 10))
-              .setAlpha(Math.max(0.3, 1 - level / 2))
-              .toRgbString(),
-          });
-        }
+        addNodeStyle(ss, nodeId, {
+          color: dependentColor
+            .clone()
+            //.lighten(Math.min(80, level * 1.5 * 10))
+            .setAlpha(Math.max(0.3, 1 - level / 2))
+            .toRgbString(),
+        });
       });
 
       const dependencyColor = tinycolor(nodeColors.dependency);
       Object.entries(dependedBy).forEach(([nodeId, level]) => {
-        if (level < MAX_DEPTH) {
-          addNodeStyle(ss, nodeId, {
-            color: dependencyColor
-              .clone()
-              //.lighten(Math.min(80, level * 1.5 * 10))
-              .setAlpha(Math.max(0.3, 1 - level / 2))
-              .toRgbString(),
-          });
-        }
+        addNodeStyle(ss, nodeId, {
+          color: dependencyColor
+            .clone()
+            //.lighten(Math.min(80, level * 1.5 * 10))
+            .setAlpha(Math.max(0.3, 1 - level / 2))
+            .toRgbString(),
+        });
       });
 
       g.data.nodes.forEach((n) => {
@@ -152,7 +155,7 @@ export const Graph = ({
     }
 
     return ss;
-  }, [g, selectedNodeId, theme]);
+  }, [g, selectedNodeId, theme, graphConfig]);
 
   // might be better to compute style objects for everything
   // - and then just use these vars in the respective functions
