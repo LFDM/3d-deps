@@ -145,10 +145,10 @@ export const Graph = ({
         });
       });
 
-      const linkDepdendencyColor = tinycolor(linkColors.dependency);
+      const linkDependencyColor = tinycolor(linkColors.dependency);
       Object.entries(dependedBy.links).forEach(([linkId, level]) => {
         addLinkStyle(ss, linkId, {
-          color: colorForLevel(linkDepdendencyColor, level),
+          color: colorForLevel(linkDependencyColor, level),
         });
       });
 
