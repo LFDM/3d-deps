@@ -1,8 +1,8 @@
 import { useTheme } from "@emotion/react";
 import React, { useEffect, useMemo, useRef } from "react";
 import { ForceGraph3D } from "react-force-graph";
+import tinycolor from "tinycolor2";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { hexToRgb, rgbObjToRgba } from "../../services/color";
 import { GraphData, IGraphNode, TreeNode } from "../../types/GraphData";
 
 type NodeStyle = Partial<{
@@ -101,23 +101,27 @@ export const Graph = ({
         0
       );
 
-      const rgbaDependent = hexToRgb(nodeColors.dependent);
+      const dependentColor = tinycolor(nodeColors.dependent);
       Object.entries(dependsOn).forEach(([nodeId, level]) => {
         if (level === 0) {
-          const color = rgbaDependent
-            ? rgbObjToRgba(rgbaDependent, Math.max(0.3, 1 - level / 3))
-            : nodeColors.dependent;
-          addNodeStyle(ss, nodeId, { color: color });
+          addNodeStyle(ss, nodeId, {
+            color: dependentColor
+              .clone()
+              .setAlpha(Math.max(0.3, 1 - level / 3))
+              .toHexString(),
+          });
         }
       });
 
-      const rgbaDependency = hexToRgb(nodeColors.dependency);
+      const dependencyColor = tinycolor(nodeColors.dependency);
       Object.entries(dependedBy).forEach(([nodeId, level]) => {
         if (level === 0) {
-          const color = rgbaDependency
-            ? rgbObjToRgba(rgbaDependency, Math.max(0.3, 1 - level / 3))
-            : nodeColors.dependency;
-          addNodeStyle(ss, nodeId, { color: color });
+          addNodeStyle(ss, nodeId, {
+            color: dependencyColor
+              .clone()
+              .setAlpha(Math.max(0.3, 1 - level / 3))
+              .toHexString(),
+          });
         }
       });
 

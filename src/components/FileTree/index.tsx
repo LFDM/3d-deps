@@ -1,8 +1,8 @@
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
+import tinycolor from "tinycolor2";
 import { useScrollIntoView } from "../../hooks/useScrollIntoView";
-import { hexToRgb, rgbObjToRgba } from "../../services/color";
 import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
 import * as Icons from "./icons";
@@ -205,13 +205,12 @@ const Stats = styled("div")((p) => ({
 }));
 
 const Pill = styled("div")<{ color: string }>((p) => {
-  const rgb = hexToRgb(p.color);
   return {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 0,
-    backgroundColor: rgb ? rgbObjToRgba(rgb, 0.7) : p.color,
+    backgroundColor: tinycolor(p.color).setAlpha(0.7).toHexString(),
     minWidth: p.theme.spacing(2),
     padding: `0 ${p.theme.spacing(0.25)}px`,
   };
