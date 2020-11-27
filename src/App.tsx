@@ -151,7 +151,6 @@ function App({
 }) {
   const [config, setConfig] = useState(originalConfig);
   const g = useGraphData(ds);
-  console.log(config);
   return (
     <Router>
       <ConfigContext.Provider
