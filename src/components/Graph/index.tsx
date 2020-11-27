@@ -142,6 +142,7 @@ export const Graph = ({
       Object.entries(dependsOn.links).forEach(([linkId, level]) => {
         addLinkStyle(ss, linkId, {
           color: colorForLevel(linkDependentColor, level),
+          particles: Math.max(0, Math.round(7 - level * 3)),
         });
       });
 
@@ -149,6 +150,7 @@ export const Graph = ({
       Object.entries(dependedBy.links).forEach(([linkId, level]) => {
         addLinkStyle(ss, linkId, {
           color: colorForLevel(linkDepdendencyColor, level),
+          particles: Math.max(0, Math.round(7 - level * 3)),
         });
       });
 
