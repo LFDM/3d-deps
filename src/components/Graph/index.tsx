@@ -145,27 +145,32 @@ export const Graph = ({
         });
       });
 
-      const linkDependencyColor = tinycolor(linkColors.dependency);
+      const linkDepdendencyColor = tinycolor(linkColors.dependency);
       Object.entries(dependedBy.links).forEach(([linkId, level]) => {
         addLinkStyle(ss, linkId, {
-          color: colorForLevel(linkDependencyColor, level),
+          color: colorForLevel(linkDepdendencyColor, level),
         });
       });
 
       g.data.nodes.forEach((n) => {
-        if (!ss.nodes[n.id]?.color) {
+        if (
+          dependedBy.nodes[n.id] === undefined &&
+          dependsOn.nodes[n.id] === undefined
+        ) {
           addNodeStyle(ss, n.id, { color: nodeColors.unselected });
-          Object.entries(g.linksBySource[n.id] || {}).forEach(([_, ls]) =>
-            ls.forEach((l) =>
-              addLinkStyle(ss, l.id, { color: linkColors.unselected })
-            )
-          );
-          Object.entries(g.linksByTarget[n.id] || {}).forEach(([_, ls]) =>
-            ls.forEach((l) =>
-              addLinkStyle(ss, l.id, { color: linkColors.unselected })
-            )
-          );
         }
+        // if (!ss.nodes[n.id]?.color) {
+        //   Object.entries(g.linksBySource[n.id] || {}).forEach(([_, ls]) =>
+        //     ls.forEach((l) =>
+        //       addLinkStyle(ss, l.id, { color: linkColors.unselected })
+        //     )
+        //   );
+        //   Object.entries(g.linksByTarget[n.id] || {}).forEach(([_, ls]) =>
+        //     ls.forEach((l) =>
+        //       addLinkStyle(ss, l.id, { color: linkColors.unselected })
+        //     )
+        //   );
+        // }
       });
 
       // color selectedNode last, because circular depdencies might
