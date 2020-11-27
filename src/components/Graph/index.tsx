@@ -3,7 +3,7 @@ import { ForceGraph3D } from "react-force-graph";
 import tinycolor from "tinycolor2";
 import { useConfig } from "../../hooks/useConfig";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { GraphData, IGraphNode, TreeNode } from "../../types/GraphData";
+import { GraphData, IGraphNode } from "../../types/GraphData";
 
 type NodeStyle = Partial<{
   color: string;
@@ -34,7 +34,7 @@ const addLinkStyle = (styles: Styles, linkId: string, s: LinkStyle) => {
 };
 
 const traverseDependencies = (
-  treeNodes: { [id: string]: TreeNode },
+  g: GraphData,
   current: string,
   mode: "dependsOn" | "dependedBy",
   result: {
@@ -48,13 +48,13 @@ const traverseDependencies = (
   links: { [id: string]: number };
 } => {
   if (level < maxDepth) {
-    const treeNode = treeNodes[current];
+    const treeNode = g.asTree[current];
     treeNode[mode].nodes.forEach((n) => {
       // always use the most direct level!
       if ((result.nodes[n.id] || Infinity) > level) {
         result.nodes[n.id] = level;
       }
-      traverseDependencies(treeNodes, n.id, mode, result, level + 1, maxDepth);
+      traverseDependencies(g, n.id, mode, result, level + 1, maxDepth);
     });
   }
   return result;
@@ -92,7 +92,7 @@ export const Graph = ({
     if (selectedNodeId) {
       const dependsOn = graphConfig.dependents.active
         ? traverseDependencies(
-            g.asTree,
+            g,
             selectedNodeId,
             "dependsOn",
             emptyContainer(),
@@ -102,7 +102,7 @@ export const Graph = ({
         : emptyContainer();
       const dependedBy = graphConfig.dependencies.active
         ? traverseDependencies(
-            g.asTree,
+            g,
             selectedNodeId,
             "dependedBy",
             emptyContainer(),
