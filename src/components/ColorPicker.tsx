@@ -4,22 +4,13 @@ import { ChromePicker } from "react-color";
 import { RefreshCcw } from "react-feather";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
 import { Button } from "./Button";
+import { ConfigRow } from "./ConfigRow";
 import { usePopupState } from "./Hud/OverlayContext";
 
 const Container = styled(Button)((p) => ({
   position: "relative",
   display: "block",
   width: "100%",
-}));
-
-const Row = styled("div")((p) => ({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-
-  "> :not(:first-child)": {
-    marginLeft: p.theme.spacing(2),
-  },
 }));
 
 const ColorName = styled("div")((p) => ({
@@ -65,7 +56,7 @@ export const ColorPicker = ({
   return (
     <>
       <Container variant="standard" onClick={() => setOpen(true)}>
-        <Row>
+        <ConfigRow>
           <label>{label}</label>
           <ColorName>
             {value !== defaultValue && (
@@ -82,7 +73,7 @@ export const ColorPicker = ({
             <Swatch value={value} />
             <ColorValue>{value}</ColorValue>
           </ColorName>
-        </Row>
+        </ConfigRow>
         {open && (
           <PickerContainer ref={ref}>
             <ChromePicker
