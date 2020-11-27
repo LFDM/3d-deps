@@ -159,18 +159,14 @@ export const Graph = ({
         ) {
           addNodeStyle(ss, n.id, { color: nodeColors.unselected });
         }
-        // if (!ss.nodes[n.id]?.color) {
-        //   Object.entries(g.linksBySource[n.id] || {}).forEach(([_, ls]) =>
-        //     ls.forEach((l) =>
-        //       addLinkStyle(ss, l.id, { color: linkColors.unselected })
-        //     )
-        //   );
-        //   Object.entries(g.linksByTarget[n.id] || {}).forEach(([_, ls]) =>
-        //     ls.forEach((l) =>
-        //       addLinkStyle(ss, l.id, { color: linkColors.unselected })
-        //     )
-        //   );
-        // }
+      });
+      g.data.links.forEach((l) => {
+        if (
+          dependedBy.links[l.id] === undefined &&
+          dependsOn.links[l.id] === undefined
+        ) {
+          addLinkStyle(ss, l.id, { color: linkColors.unselected });
+        }
       });
 
       // color selectedNode last, because circular depdencies might
