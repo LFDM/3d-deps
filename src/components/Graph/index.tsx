@@ -118,10 +118,9 @@ export const Graph = ({
 
       const colorForLevel = (c: tinycolor.Instance, level: number) =>
         c
-          // don't clone - let's just mutate. It's throwaway in our case anyway. Save some speed...
-          // .clone()
-          .setAlpha(Math.max(0.3, 1 - level / 2))
-          //.brighten(Math.min(30, level * 1 * 10))
+          .clone()
+          // .setAlpha(Math.max(0.3, 1 - level / 2)) // opacity doesn't work - arrowheads don't support it
+          .lighten(Math.min(30, level * 12))
           .toRgbString();
 
       const nodeDependentColor = tinycolor(nodeColors.dependent);
@@ -162,7 +161,9 @@ export const Graph = ({
           dependedBy.nodes[n.id] === undefined &&
           dependsOn.nodes[n.id] === undefined
         ) {
-          addNodeStyle(ss, n.id, { color: nodeColors.unselected });
+          addNodeStyle(ss, n.id, {
+            color: nodeColors.unselected,
+          });
         }
       });
       g.data.links.forEach((l) => {
