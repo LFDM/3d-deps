@@ -41,16 +41,13 @@ const traverseDependencies = (
   level: number,
   maxDepth: number
 ): { [id: string]: number } => {
-  console.log(level, maxDepth);
   if (level < maxDepth) {
     const treeNode = treeNodes[current];
-    // pass all first, so that we have the most direct connection in our result, then recurse
     treeNode[mode].nodes.forEach((n) => {
-      if (result[n.id] === undefined) {
+      // always use the most direct level!
+      if ((result[n.id] || Infinity) > level) {
         result[n.id] = level;
       }
-    });
-    treeNode[mode].nodes.forEach((n) => {
       traverseDependencies(treeNodes, n.id, mode, result, level + 1, maxDepth);
     });
   }
