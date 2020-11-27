@@ -119,6 +119,7 @@ const useGraphData = (ds: DependencyNode[]): GraphData => {
         groupBy(data.links, (l) => l.target),
         (v) => groupBy(v, (l) => l.source)
       ),
+      linksById: keyBy(data.links, (l) => l.id),
     };
   }, [ds]);
 };
