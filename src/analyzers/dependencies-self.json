@@ -1,0 +1,134 @@
+{
+  "App.tsx": [
+    "../node_modules/@emotion/react/types/index.d.ts",
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/lodash/index.d.ts",
+    "../node_modules/@types/react-router-dom/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "../node_modules/nanoid/index.d.ts",
+    "components/Graph/index.tsx",
+    "components/Hud/index.tsx",
+    "hooks/useConfig.tsx",
+    "hooks/useQueryParam.ts",
+    "types/Config.ts",
+    "types/DependencyAnalyzer.ts",
+    "types/GraphData.ts"
+  ],
+  "analyzers/dependencies-self.json": [],
+  "analyzers/madge.ts": [
+    "analyzers/dependencies-self.json",
+    "types/DependencyAnalyzer.ts"
+  ],
+  "components/Autocompete.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "components/Button.tsx",
+    "components/Hud/OverlayContext.tsx",
+    "components/Input.tsx"
+  ],
+  "components/Button.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react/index.d.ts"
+  ],
+  "components/ColorPicker.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react-color/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "../node_modules/react-feather/dist/index.d.ts",
+    "components/Button.tsx",
+    "components/ConfigRow.tsx",
+    "components/Hud/OverlayContext.tsx",
+    "hooks/useOnClickOutside.ts"
+  ],
+  "components/ConfigRow.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts"
+  ],
+  "components/FileTree/icons.tsx": [
+    "../node_modules/@types/react/index.d.ts"
+  ],
+  "components/FileTree/index.tsx": [
+    "../node_modules/@emotion/react/types/index.d.ts",
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "../node_modules/@types/tinycolor2/index.d.ts",
+    "components/Button.tsx",
+    "components/FileTree/icons.tsx",
+    "hooks/useScrollIntoView.ts",
+    "types/GraphData.ts"
+  ],
+  "components/Graph/index.tsx": [
+    "../node_modules/@types/react/index.d.ts",
+    "../node_modules/@types/tinycolor2/index.d.ts",
+    "../node_modules/react-force-graph/dist/react-force-graph.d.ts",
+    "hooks/useConfig.tsx",
+    "hooks/useWindowSize.ts",
+    "types/GraphData.ts"
+  ],
+  "components/Hud/ConfigPanel.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "components/ColorPicker.tsx",
+    "components/ConfigRow.tsx",
+    "components/Input.tsx",
+    "hooks/useConfig.tsx",
+    "types/Config.ts"
+  ],
+  "components/Hud/NodesPanel.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/lodash/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "components/Autocompete.tsx",
+    "components/FileTree/index.tsx",
+    "types/GraphData.ts"
+  ],
+  "components/Hud/OverlayContext.tsx": [
+    "../node_modules/@types/react/index.d.ts"
+  ],
+  "components/Hud/index.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "components/Button.tsx",
+    "components/Hud/ConfigPanel.tsx",
+    "components/Hud/NodesPanel.tsx",
+    "components/Hud/OverlayContext.tsx",
+    "hooks/useQueryParam.ts",
+    "types/GraphData.ts"
+  ],
+  "components/Input.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts"
+  ],
+  "hooks/useConfig.tsx": [
+    "../node_modules/@types/react/index.d.ts",
+    "types/Config.ts"
+  ],
+  "hooks/useOnClickOutside.ts": [
+    "../node_modules/@types/react/index.d.ts"
+  ],
+  "hooks/useQueryParam.ts": [
+    "../node_modules/@types/react-router-dom/index.d.ts",
+    "../node_modules/@types/react/index.d.ts"
+  ],
+  "hooks/useScrollIntoView.ts": [
+    "../node_modules/@types/react/index.d.ts"
+  ],
+  "hooks/useWindowSize.ts": [
+    "../node_modules/@types/react/index.d.ts"
+  ],
+  "index.css": [],
+  "index.tsx": [
+    "../node_modules/@types/react-dom/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "App.tsx",
+    "analyzers/madge.ts",
+    "index.css",
+    "reportWebVitals.ts",
+    "types/Config.ts"
+  ],
+  "reportWebVitals.ts": [
+    "../node_modules/web-vitals/dist/index.d.ts",
+    "../node_modules/web-vitals/dist/index.d.ts"
+  ],
+  "types/Config.ts": [],
+  "types/DependencyAnalyzer.ts": [],
+  "types/GraphData.ts": []
+}

@@ -4,7 +4,12 @@ import {
   DependencyNode,
   IDependencyAnalyzer,
 } from "../types/DependencyAnalyzer";
-import DEPS from "./dependencies-syndexioi.json";
+import DEPS from "./dependencies-self.json";
+// import DEPS from "./dependencies-syndexioi-app.json";
+// import DEPS from "./dependencies-syndexioi-cf.json";
+// import DEPS from "./dependencies-affilimate-app.json";
+// import DEPS from "./dependencies-affilimate-cf.json";
+// import DEPS from "./dependencies-affilimate-cli.json";
 
 const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
   const nodes: DependencyNode[] = [];
