@@ -4,7 +4,7 @@ import {
   DependencyNode,
   IDependencyAnalyzer,
 } from "../types/DependencyAnalyzer";
-import DEPS from "./dependencies.json";
+import DEPS from "./dependencies-syndexioi.json";
 
 const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
   const nodes: DependencyNode[] = [];
