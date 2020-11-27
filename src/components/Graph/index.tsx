@@ -53,6 +53,8 @@ const traverseDependencies = (
   return result;
 };
 
+const MAX_DEPTH = 1;
+
 export const Graph = ({
   g,
   selectedNodeId,
@@ -103,7 +105,7 @@ export const Graph = ({
 
       const dependentColor = tinycolor(nodeColors.dependent);
       Object.entries(dependsOn).forEach(([nodeId, level]) => {
-        if (level === 0) {
+        if (level < MAX_DEPTH) {
           addNodeStyle(ss, nodeId, {
             color: dependentColor
               .clone()
@@ -115,7 +117,7 @@ export const Graph = ({
 
       const dependencyColor = tinycolor(nodeColors.dependency);
       Object.entries(dependedBy).forEach(([nodeId, level]) => {
-        if (level === 0) {
+        if (level < MAX_DEPTH) {
           addNodeStyle(ss, nodeId, {
             color: dependencyColor
               .clone()
