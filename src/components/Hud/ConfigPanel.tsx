@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { useConfig } from "../../hooks/useConfig";
-import { Theme } from "../../types/Config";
+import { GraphConfig, Theme } from "../../types/Config";
 import { ColorPicker } from "../ColorPicker";
 
 const SubSection = styled("div")((p) => ({
@@ -9,27 +9,28 @@ const SubSection = styled("div")((p) => ({
 }));
 
 const ThemeSection = ({
-  theme,
-  originalTheme,
+  value,
+  originalValue,
   onChange,
 }: {
-  theme: Theme;
-  originalTheme: Theme;
-  onChange: (nextTheme: Theme) => void;
+  value: Theme;
+  originalValue: Theme;
+  onChange: (nextValue: Theme) => void;
 }) => {
   return (
     <>
+      <h3>Theme</h3>
       <SubSection>
         <h4>General</h4>
         <ColorPicker
           label="Color"
-          value={theme.typography.color}
-          defaultValue={originalTheme.typography.color}
+          value={value.typography.color}
+          defaultValue={originalValue.typography.color}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               typography: {
-                ...theme.typography,
+                ...value.typography,
                 color: nextColor,
               },
             })
@@ -37,13 +38,13 @@ const ThemeSection = ({
         />
         <ColorPicker
           label="Bg Color"
-          value={theme.typography.backgroundColor}
-          defaultValue={originalTheme.typography.backgroundColor}
+          value={value.typography.backgroundColor}
+          defaultValue={originalValue.typography.backgroundColor}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               typography: {
-                ...theme.typography,
+                ...value.typography,
                 backgroundColor: nextColor,
               },
             })
@@ -54,13 +55,13 @@ const ThemeSection = ({
         <h4>HUD</h4>
         <ColorPicker
           label="Color"
-          value={theme.hud.color}
-          defaultValue={originalTheme.hud.color}
+          value={value.hud.color}
+          defaultValue={originalValue.hud.color}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               hud: {
-                ...theme.hud,
+                ...value.hud,
                 color: nextColor,
               },
             })
@@ -68,13 +69,13 @@ const ThemeSection = ({
         />
         <ColorPicker
           label="Highlight Color"
-          value={theme.hud.highlightColor}
-          defaultValue={originalTheme.hud.highlightColor}
+          value={value.hud.highlightColor}
+          defaultValue={originalValue.hud.highlightColor}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               hud: {
-                ...theme.hud,
+                ...value.hud,
                 highlightColor: nextColor,
               },
             })
@@ -82,13 +83,13 @@ const ThemeSection = ({
         />
         <ColorPicker
           label="Bg Color"
-          value={theme.hud.backgroundColor}
-          defaultValue={originalTheme.hud.backgroundColor}
+          value={value.hud.backgroundColor}
+          defaultValue={originalValue.hud.backgroundColor}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               hud: {
-                ...theme.hud,
+                ...value.hud,
                 backgroundColor: nextColor,
               },
             })
@@ -99,17 +100,17 @@ const ThemeSection = ({
         <h4>Graph Nodes</h4>
         <ColorPicker
           label="Standard"
-          value={theme.graph.nodes.colors.standard}
-          defaultValue={originalTheme.graph.nodes.colors.standard}
+          value={value.graph.nodes.colors.standard}
+          defaultValue={originalValue.graph.nodes.colors.standard}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               graph: {
-                ...theme.graph,
+                ...value.graph,
                 nodes: {
-                  ...theme.graph.nodes,
+                  ...value.graph.nodes,
                   colors: {
-                    ...theme.graph.nodes.colors,
+                    ...value.graph.nodes.colors,
                     standard: nextColor,
                   },
                 },
@@ -119,17 +120,17 @@ const ThemeSection = ({
         />
         <ColorPicker
           label="Selected"
-          value={theme.graph.nodes.colors.selected}
-          defaultValue={originalTheme.graph.nodes.colors.selected}
+          value={value.graph.nodes.colors.selected}
+          defaultValue={originalValue.graph.nodes.colors.selected}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               graph: {
-                ...theme.graph,
+                ...value.graph,
                 nodes: {
-                  ...theme.graph.nodes,
+                  ...value.graph.nodes,
                   colors: {
-                    ...theme.graph.nodes.colors,
+                    ...value.graph.nodes.colors,
                     selected: nextColor,
                   },
                 },
@@ -139,17 +140,17 @@ const ThemeSection = ({
         />
         <ColorPicker
           label="Unselected"
-          value={theme.graph.nodes.colors.unselected}
-          defaultValue={originalTheme.graph.nodes.colors.unselected}
+          value={value.graph.nodes.colors.unselected}
+          defaultValue={originalValue.graph.nodes.colors.unselected}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               graph: {
-                ...theme.graph,
+                ...value.graph,
                 nodes: {
-                  ...theme.graph.nodes,
+                  ...value.graph.nodes,
                   colors: {
-                    ...theme.graph.nodes.colors,
+                    ...value.graph.nodes.colors,
                     unselected: nextColor,
                   },
                 },
@@ -159,17 +160,17 @@ const ThemeSection = ({
         />
         <ColorPicker
           label="Dependency"
-          value={theme.graph.nodes.colors.dependency}
-          defaultValue={originalTheme.graph.nodes.colors.dependency}
+          value={value.graph.nodes.colors.dependency}
+          defaultValue={originalValue.graph.nodes.colors.dependency}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               graph: {
-                ...theme.graph,
+                ...value.graph,
                 nodes: {
-                  ...theme.graph.nodes,
+                  ...value.graph.nodes,
                   colors: {
-                    ...theme.graph.nodes.colors,
+                    ...value.graph.nodes.colors,
                     dependency: nextColor,
                   },
                 },
@@ -179,17 +180,17 @@ const ThemeSection = ({
         />
         <ColorPicker
           label="Dependent"
-          value={theme.graph.nodes.colors.dependent}
-          defaultValue={originalTheme.graph.nodes.colors.dependent}
+          value={value.graph.nodes.colors.dependent}
+          defaultValue={originalValue.graph.nodes.colors.dependent}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               graph: {
-                ...theme.graph,
+                ...value.graph,
                 nodes: {
-                  ...theme.graph.nodes,
+                  ...value.graph.nodes,
                   colors: {
-                    ...theme.graph.nodes.colors,
+                    ...value.graph.nodes.colors,
                     dependent: nextColor,
                   },
                 },
@@ -202,17 +203,17 @@ const ThemeSection = ({
         <h4>Graph Links</h4>
         <ColorPicker
           label="Standard"
-          value={theme.graph.links.colors.standard}
-          defaultValue={originalTheme.graph.links.colors.standard}
+          value={value.graph.links.colors.standard}
+          defaultValue={originalValue.graph.links.colors.standard}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               graph: {
-                ...theme.graph,
+                ...value.graph,
                 links: {
-                  ...theme.graph.links,
+                  ...value.graph.links,
                   colors: {
-                    ...theme.graph.links.colors,
+                    ...value.graph.links.colors,
                     standard: nextColor,
                   },
                 },
@@ -222,17 +223,17 @@ const ThemeSection = ({
         />
         <ColorPicker
           label="Unselected"
-          value={theme.graph.links.colors.unselected}
-          defaultValue={originalTheme.graph.links.colors.unselected}
+          value={value.graph.links.colors.unselected}
+          defaultValue={originalValue.graph.links.colors.unselected}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               graph: {
-                ...theme.graph,
+                ...value.graph,
                 links: {
-                  ...theme.graph.links,
+                  ...value.graph.links,
                   colors: {
-                    ...theme.graph.links.colors,
+                    ...value.graph.links.colors,
                     unselected: nextColor,
                   },
                 },
@@ -242,17 +243,17 @@ const ThemeSection = ({
         />
         <ColorPicker
           label="Dependency"
-          value={theme.graph.links.colors.dependency}
-          defaultValue={originalTheme.graph.links.colors.dependency}
+          value={value.graph.links.colors.dependency}
+          defaultValue={originalValue.graph.links.colors.dependency}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               graph: {
-                ...theme.graph,
+                ...value.graph,
                 links: {
-                  ...theme.graph.links,
+                  ...value.graph.links,
                   colors: {
-                    ...theme.graph.links.colors,
+                    ...value.graph.links.colors,
                     dependency: nextColor,
                   },
                 },
@@ -262,17 +263,17 @@ const ThemeSection = ({
         />
         <ColorPicker
           label="Dependent"
-          value={theme.graph.links.colors.dependent}
-          defaultValue={originalTheme.graph.links.colors.dependent}
+          value={value.graph.links.colors.dependent}
+          defaultValue={originalValue.graph.links.colors.dependent}
           onChange={(nextColor) =>
             onChange({
-              ...theme,
+              ...value,
               graph: {
-                ...theme.graph,
+                ...value.graph,
                 links: {
-                  ...theme.graph.links,
+                  ...value.graph.links,
                   colors: {
-                    ...theme.graph.links.colors,
+                    ...value.graph.links.colors,
                     dependent: nextColor,
                   },
                 },
@@ -285,20 +286,46 @@ const ThemeSection = ({
   );
 };
 
+const GraphSection = ({
+  value,
+  originalValue,
+  onChange,
+}: {
+  value: GraphConfig;
+  originalValue: GraphConfig;
+  onChange: (nextValue: GraphConfig) => void;
+}) => {
+  return (
+    <>
+      <h3>Graph</h3>
+    </>
+  );
+};
+
 export const ConfigPanel = () => {
   const cfg = useConfig();
-  const theme = cfg.current.theme;
-  const originalTheme = cfg.original.theme;
   return (
-    <ThemeSection
-      theme={theme}
-      originalTheme={originalTheme}
-      onChange={(nextTheme) =>
-        cfg.onChange({
-          ...cfg.current,
-          theme: nextTheme,
-        })
-      }
-    />
+    <>
+      <ThemeSection
+        value={cfg.current.theme}
+        originalValue={cfg.original.theme}
+        onChange={(nextTheme) =>
+          cfg.onChange({
+            ...cfg.current,
+            theme: nextTheme,
+          })
+        }
+      />
+      <GraphSection
+        value={cfg.current.graph}
+        originalValue={cfg.original.graph}
+        onChange={(nextGraph) =>
+          cfg.onChange({
+            ...cfg.current,
+            graph: nextGraph,
+          })
+        }
+      />
+    </>
   );
 };
