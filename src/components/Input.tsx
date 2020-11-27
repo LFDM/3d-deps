@@ -7,3 +7,28 @@ export const Input = styled("input")<{ fullWidth?: boolean }>((p) => ({
     width: "100%",
   }),
 }));
+
+const SliderContainer = styled("div")((p) => ({
+  display: "flex",
+  alignItems: "center",
+
+  "> :not(:last-child)": {
+    marginRight: p.theme.spacing(0.5),
+  },
+}));
+export const InputSliderWithValue = (
+  p: Omit<
+    React.DetailedHTMLProps<
+      React.InputHTMLAttributes<HTMLInputElement>,
+      HTMLInputElement
+    >,
+    "type"
+  >
+) => {
+  return (
+    <SliderContainer>
+      <div>{p.value}</div>
+      <input type="range" {...p} />
+    </SliderContainer>
+  );
+};
