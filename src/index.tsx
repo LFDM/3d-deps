@@ -4,7 +4,7 @@ import { MadgeAnalyzer } from "./analyzers/madge";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { THEME } from "./types/Config";
+import { CONFIG } from "./types/Config";
 
 const run = async () => {
   const ds = await new MadgeAnalyzer({
@@ -14,7 +14,7 @@ const run = async () => {
     .then();
   ReactDOM.render(
     <React.StrictMode>
-      <App config={{ theme: THEME }} ds={ds} />
+      <App config={CONFIG} ds={ds} />
     </React.StrictMode>,
     document.getElementById("root")
   );

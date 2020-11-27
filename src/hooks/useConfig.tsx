@@ -1,17 +1,13 @@
 import React, { useContext } from "react";
-import { Config, THEME } from "../types/Config";
+import { CONFIG, Config } from "../types/Config";
 
 export const ConfigContext = React.createContext<{
   current: Config;
   original: Config;
   onChange: (nextConfig: Config) => void;
 }>({
-  current: {
-    theme: THEME,
-  },
-  original: {
-    theme: THEME,
-  },
+  current: CONFIG,
+  original: CONFIG,
   onChange: () => undefined,
 });
 
