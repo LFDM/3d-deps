@@ -139,7 +139,7 @@ export const Graph = ({
       });
 
       const particlesForLevel = (level: number) =>
-        Math.max(0, Math.round(7 - level * 3));
+        Math.max(1, Math.floor(9 - level * 4));
 
       const linkDependentColor = tinycolor(linkColors.dependent);
       Object.entries(dependsOn.links).forEach(([linkId, level]) => {
