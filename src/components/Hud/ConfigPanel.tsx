@@ -303,25 +303,9 @@ const GraphSection = ({
       <SubSection>
         <h4>Dependencies</h4>
         <ConfigRow>
-          <div>Active</div>
-          <input
-            type="checkbox"
-            checked={value.dependencies.active}
-            onChange={(ev) =>
-              onChange({
-                ...value,
-                dependencies: {
-                  ...value.dependencies,
-                  active: ev.target.checked,
-                },
-              })
-            }
-          />
-        </ConfigRow>
-        <ConfigRow>
           <div>Max Depth</div>
           <InputSliderWithValue
-            min={1}
+            min={0}
             max={10}
             value={value.dependencies.maxDepth}
             onChange={(ev) =>
@@ -339,25 +323,9 @@ const GraphSection = ({
       <SubSection>
         <h4>Dependents</h4>
         <ConfigRow>
-          <div>Active</div>
-          <input
-            type="checkbox"
-            checked={value.dependents.active}
-            onChange={(ev) =>
-              onChange({
-                ...value,
-                dependents: {
-                  ...value.dependents,
-                  active: ev.target.checked,
-                },
-              })
-            }
-          />
-        </ConfigRow>
-        <ConfigRow>
           <div>Max Depth</div>
           <InputSliderWithValue
-            min={1}
+            min={0}
             max={10}
             value={value.dependents.maxDepth}
             onChange={(ev) =>

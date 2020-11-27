@@ -33,11 +33,9 @@ export type Theme = {
 
 export type GraphConfig = {
   dependencies: {
-    active: boolean;
     maxDepth: number;
   };
   dependents: {
-    active: boolean;
     maxDepth: number;
   };
 };
@@ -82,11 +80,9 @@ export const CONFIG: Config = {
   },
   graph: {
     dependencies: {
-      active: true,
       maxDepth: 1,
     },
     dependents: {
-      active: true,
       maxDepth: 1,
     },
   },

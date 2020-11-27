@@ -95,26 +95,22 @@ export const Graph = ({
     const emptyContainer = () => ({ nodes: {}, links: {} });
 
     if (selectedNodeId) {
-      const dependsOn = graphConfig.dependents.active
-        ? traverseDependencies(
-            g,
-            selectedNodeId,
-            "dependsOn",
-            emptyContainer(),
-            0,
-            graphConfig.dependents.maxDepth
-          )
-        : emptyContainer();
-      const dependedBy = graphConfig.dependencies.active
-        ? traverseDependencies(
-            g,
-            selectedNodeId,
-            "dependedBy",
-            emptyContainer(),
-            0,
-            graphConfig.dependencies.maxDepth
-          )
-        : emptyContainer();
+      const dependsOn = traverseDependencies(
+        g,
+        selectedNodeId,
+        "dependsOn",
+        emptyContainer(),
+        0,
+        graphConfig.dependents.maxDepth
+      );
+      const dependedBy = traverseDependencies(
+        g,
+        selectedNodeId,
+        "dependedBy",
+        emptyContainer(),
+        0,
+        graphConfig.dependencies.maxDepth
+      );
 
       const colorForLevel = (c: tinycolor.Instance, level: number) =>
         c
