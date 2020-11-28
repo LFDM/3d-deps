@@ -17,6 +17,7 @@ const Title = styled("div")((p) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  fontSize: "1.17rem",
 
   "> :not(:first-child)": {
     marginLeft: p.theme.spacing(),
