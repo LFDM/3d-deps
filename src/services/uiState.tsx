@@ -19,6 +19,7 @@ export type UiState = {
   graph: {
     data: GraphData;
     selectedNodeId: string | null;
+    unselectedNodeId: string | null;
   };
 };
 
@@ -37,12 +38,14 @@ const DEFAULT_STATE: UiState = {
   graph: {
     data: { list: [], byId: {} },
     selectedNodeId: null,
+    unselectedNodeId: null,
   },
 };
 
 export type UiStateActions = {
   setSidebarTab: (tab: TabName) => void;
   setSelectedNodeId: (nodeId: string | null) => void;
+  toggleSelectedNodeId: () => void;
   setHotkeyInfoOpen: (nextState: boolean) => void;
   setSearchOpen: (nextState: boolean) => void;
 };
@@ -52,6 +55,7 @@ const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
   {
     setSidebarTab: () => undefined,
     setSelectedNodeId: () => undefined,
+    toggleSelectedNodeId: () => undefined,
     setHotkeyInfoOpen: () => undefined,
     setSearchOpen: () => undefined,
   },
@@ -67,6 +71,7 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
   const [selectedNodeId, setSelectedNodeId] = useQueryParam("node");
   const [hotkeyInfoOpen, setHotkeyInfoOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [unselectedNodeId, setUnselectedNodeId] = useState<string | null>(null);
 
   // TODO optimize so that only what changes really changes. Right now we're
   // blasing the whole object with every change
@@ -88,16 +93,31 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
         graph: {
           data,
           selectedNodeId: selectedNodeId || null,
+          unselectedNodeId: unselectedNodeId || null,
         },
       },
       {
         setSidebarTab: setTab,
-        setSelectedNodeId,
+        setSelectedNodeId: (nextSelection) => {
+          console.log("s", selectedNodeId, "u", unselectedNodeId);
+          setUnselectedNodeId(nextSelection ? null : selectedNodeId);
+          setSelectedNodeId(nextSelection);
+        },
+        toggleSelectedNodeId: () => {
+          console.log("s", selectedNodeId, "u", unselectedNodeId);
+          if (!selectedNodeId && unselectedNodeId) {
+            setSelectedNodeId(unselectedNodeId);
+          }
+          if (selectedNodeId) {
+            setUnselectedNodeId(selectedNodeId);
+            setSelectedNodeId(null);
+          }
+        },
         setHotkeyInfoOpen,
         setSearchOpen,
       },
     ],
-    [data, tab, selectedNodeId, hotkeyInfoOpen, searchOpen]
+    [data, tab, selectedNodeId, unselectedNodeId, hotkeyInfoOpen, searchOpen]
   );
   return (
     <UiStateContext.Provider value={value}>{children}</UiStateContext.Provider>
