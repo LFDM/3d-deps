@@ -1,4 +1,4 @@
-import styled from "@emotion/styled/types/base";
+import styled from "@emotion/styled";
 import React from "react";
 import { getApplicationKeyMap, KeyMapDisplayOptions } from "react-hotkeys";
 import { useUiState } from "../../services/uiState";
