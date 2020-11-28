@@ -56,10 +56,19 @@ const Main = styled("main")((p) => ({
   },
 }));
 
-const depsToGraphData = (ds: DependencyNode[]): GraphData["data"] => {
+const depsToGraphData = (
+  ds: DependencyNode[],
+  opts?: {
+    excludeByPath?: RegExp;
+  }
+): GraphData["data"] => {
   const nodes: IGraphNode[] = [];
   const links: IGraphLink[] = [];
+  const dsById = keyBy(ds, (d) => d.id);
   ds.forEach((n) => {
+    if (opts?.excludeByPath?.test(n.path)) {
+      return;
+    }
     const node: IGraphNode = {
       id: n.id,
       label: n.label || n.id,
@@ -67,6 +76,14 @@ const depsToGraphData = (ds: DependencyNode[]): GraphData["data"] => {
     };
     nodes.push(node);
     n.dependsOn.forEach((v) => {
+      const otherN = dsById[v];
+      if (!v) {
+        console.log(`No node for ${v} in ${n.id} found`);
+        return;
+      }
+      if (opts?.excludeByPath?.test(otherN.path)) {
+        return;
+      }
       const link: IGraphLink = {
         id: nanoid(),
         source: n.id,
@@ -78,10 +95,13 @@ const depsToGraphData = (ds: DependencyNode[]): GraphData["data"] => {
   return { nodes, links };
 };
 
-const useGraphData = (ds: DependencyNode[]): GraphData => {
+const useGraphData = (
+  ds: DependencyNode[],
+  excludeByPath?: RegExp
+): GraphData => {
   return useMemo(() => {
     const depsById = keyBy(ds, (d) => d.id);
-    const data = depsToGraphData(ds);
+    const data = depsToGraphData(ds, { excludeByPath });
     const nodesById = keyBy(data.nodes, (n) => n.id);
     const asTree: {
       [id: string]: TreeNode;
@@ -121,7 +141,7 @@ const useGraphData = (ds: DependencyNode[]): GraphData => {
       ),
       linksById: keyBy(data.links, (l) => l.id),
     };
-  }, [ds]);
+  }, [ds, excludeByPath]);
 };
 
 const MainApp = ({ g }: { g: GraphData }) => {
@@ -150,7 +170,7 @@ function App({
   ds: DependencyNode[];
 }) {
   const [config, setConfig] = useState(originalConfig);
-  const g = useGraphData(ds);
+  const g = useGraphData(ds, config.graph.excludeByPath);
   return (
     <Router>
       <ConfigContext.Provider

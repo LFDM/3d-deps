@@ -38,6 +38,7 @@ export type GraphConfig = {
   dependents: {
     maxDepth: number;
   };
+  excludeByPath?: RegExp;
 };
 
 export type Config = {
