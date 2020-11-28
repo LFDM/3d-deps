@@ -5,6 +5,8 @@ import ReactModal from "react-modal";
 import tinycolor from "tinycolor2";
 import { CssBaseline } from "../CssBaseline";
 
+ReactModal.setAppElement("#root");
+
 export const DialogTitle = styled("h3")`
   margin-top: 0;
 `;
