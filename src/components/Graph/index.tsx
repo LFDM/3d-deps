@@ -1,4 +1,4 @@
-import { keyBy } from "lodash";
+import { groupBy, keyBy, mapValues } from "lodash";
 import React, { useEffect, useMemo, useRef } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import tinycolor from "tinycolor2";
@@ -87,15 +87,23 @@ const traverseDependencies = (
 
 const useData = (g: GraphData): Data => {
   return useMemo(() => {
+    const nodes = g.data.nodes;
+    const links = g.data.links;
     return {
       ds: {
-        nodes: g.data.nodes,
-        links: g.data.links,
+        nodes,
+        links,
       },
-      nodesById: keyBy(g.data.nodes, (n) => n.id),
-      linksById: g.linksById,
-      linksBySource: g.linksBySource,
-      linksByTarget: g.linksByTarget,
+      nodesById: keyBy(nodes, (n) => n.id),
+      linksById: keyBy(links, (l) => l.id),
+      linksBySource: mapValues(
+        groupBy(links, (l) => l.source),
+        (v) => groupBy(v, (l) => l.target)
+      ),
+      linksByTarget: mapValues(
+        groupBy(links, (l) => l.target),
+        (v) => groupBy(v, (l) => l.source)
+      ),
 
       asTree: g.byId,
     };
