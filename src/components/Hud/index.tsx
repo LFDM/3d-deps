@@ -11,6 +11,7 @@ import { OverlayContextProvider, useOverlayContext } from "./OverlayContext";
 import { SearchModal } from "./SearchModal";
 
 const Container = styled("div")<{ overlayActive: boolean }>`
+  position: relative;
   background: transparent;
   z-index: 2;
   height: 100vh;
@@ -28,7 +29,7 @@ const Container = styled("div")<{ overlayActive: boolean }>`
 
 const Grid = styled("div")((p) => ({
   display: "grid",
-  gridTemplateColumns: "1fr 2fr 1fr",
+  gridTemplateColumns: "1fr 3fr",
   height: "100%",
 }));
 
@@ -110,14 +111,10 @@ export const Sidebar = () => {
   );
 };
 
-const ControlsContainer = styled("div")((p) => ({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "flex-end",
-  flexDirection: "column",
-}));
-
-const ControlButtonsContainer = styled(HudSegment)((p) => ({
+const ControlsContainer = styled(HudSegment)((p) => ({
+  position: "absolute",
+  bottom: 0,
+  right: 0,
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -141,27 +138,24 @@ const Controls = () => {
   ] = useUiState();
   return (
     <ControlsContainer>
-      <div></div>
-      <ControlButtonsContainer>
-        <Button
-          variant={sidebarOpen ? "outlined" : "standard"}
-          onClick={() => toggleSidebar(cfg.current, cfg.onChange)}
-        >
-          Sidebar
-        </Button>
-        <Button
-          variant={searchOpen ? "outlined" : "standard"}
-          onClick={() => setSearchOpen(!searchOpen)}
-        >
-          Search
-        </Button>
-        <Button
-          variant={hotkeyInfoOpen ? "outlined" : "standard"}
-          onClick={() => setHotkeyInfoOpen(!hotkeyInfoOpen)}
-        >
-          Hotkeys
-        </Button>
-      </ControlButtonsContainer>
+      <Button
+        variant={sidebarOpen ? "outlined" : "standard"}
+        onClick={() => toggleSidebar(cfg.current, cfg.onChange)}
+      >
+        Sidebar
+      </Button>
+      <Button
+        variant={searchOpen ? "outlined" : "standard"}
+        onClick={() => setSearchOpen(!searchOpen)}
+      >
+        Search
+      </Button>
+      <Button
+        variant={hotkeyInfoOpen ? "outlined" : "standard"}
+        onClick={() => setHotkeyInfoOpen(!hotkeyInfoOpen)}
+      >
+        Hotkeys
+      </Button>
     </ControlsContainer>
   );
 };
