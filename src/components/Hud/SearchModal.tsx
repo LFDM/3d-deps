@@ -27,7 +27,7 @@ const ListItem = styled("div")<{ excluded: boolean }>((p) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  padding: p.theme.spacing(0.5),
+  padding: `${p.theme.spacing(0.5)}px ${p.theme.spacing(2)}px`,
   opacity: p.excluded ? 0.5 : 1,
   cursor: p.excluded ? "default" : "pointer",
 
@@ -42,7 +42,7 @@ const ListItem = styled("div")<{ excluded: boolean }>((p) => ({
 
 const ListContainer = styled("div")((p) => ({
   borderTop: "1px solid currentcolor",
-  padding: p.theme.spacing(2),
+  padding: `${p.theme.spacing(1)}px 0`,
   overflow: "auto",
   maxHeight: "80vh",
 }));
