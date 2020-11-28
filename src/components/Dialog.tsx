@@ -44,7 +44,8 @@ export const Dialog: React.FC<{
         bottom: "auto",
         marginRight: "-50%",
         transform: center ? "translate(-50%, -50%)" : "translate(-50%, 0)",
-        backgroundColor: theme.hud.backgroundColor,
+        backgroundColor:
+          variant === "plain" ? "transparent" : theme.hud.backgroundColor,
         border: variant === "plain" ? "none" : "1px solid currentcolor",
         color: theme.hud.color,
         width: width || "auto",
