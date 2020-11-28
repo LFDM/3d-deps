@@ -29,3 +29,59 @@ export const toggleSidebar = (
     },
   });
 };
+
+const setGraphDependenciesMaxDepth = (
+  current: Config,
+  onChange: (nextConfig: Config) => void,
+  nextState: number
+) => {
+  return onChange({
+    ...current,
+    graph: {
+      ...current.graph,
+      dependencies: {
+        ...current.graph.dependencies,
+        maxDepth: Math.max(0, Math.min(10, nextState)),
+      },
+    },
+  });
+};
+
+export const incrementGraphDependenciesMaxDepth = (
+  current: Config,
+  onChange: (nextConfig: Config) => void,
+  increment: number
+) =>
+  setGraphDependenciesMaxDepth(
+    current,
+    onChange,
+    current.graph.dependencies.maxDepth + increment
+  );
+
+const setGraphDependentsMaxDepth = (
+  current: Config,
+  onChange: (nextConfig: Config) => void,
+  nextState: number
+) => {
+  return onChange({
+    ...current,
+    graph: {
+      ...current.graph,
+      dependents: {
+        ...current.graph.dependents,
+        maxDepth: Math.max(0, Math.min(10, nextState)),
+      },
+    },
+  });
+};
+
+export const incrementGraphDependentsMaxDepth = (
+  current: Config,
+  onChange: (nextConfig: Config) => void,
+  increment: number
+) =>
+  setGraphDependenciesMaxDepth(
+    current,
+    onChange,
+    current.graph.dependents.maxDepth + increment
+  );
