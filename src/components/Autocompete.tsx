@@ -20,6 +20,7 @@ const Menu = styled("div")`
   max-height: calc(100vh - 100px);
   overflow: auto;
   box-sizing: border-box;
+  border: 2px solid ${(p) => p.theme.hud.color};
 `;
 
 export const Autocomplete = <T extends any>({
