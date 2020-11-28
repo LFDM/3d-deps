@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
+import { useConfig } from "../../hooks/useConfig";
 import { useQueryParam } from "../../hooks/useQueryParam";
 import { GraphData } from "../../types/GraphData";
 import { Button } from "../Button";
@@ -104,10 +105,11 @@ export const Sidebar = (props: Props) => {
 
 const Body = (props: Props) => {
   const [active] = useOverlayContext();
+  const cfg = useConfig();
   return (
     <Container overlayActive={active}>
       <Grid>
-        <Sidebar {...props} />
+        {cfg.current.hud.sidebar ? <Sidebar {...props} /> : <div />}
         <Centered></Centered>
         <div></div>
       </Grid>
