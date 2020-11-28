@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import escapeStringRegexp from "escape-string-regexp";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import tinycolor from "tinycolor2";
-import { useScrollIntoView } from "../../hooks/useScrollIntoView";
 import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
 import { Dialog } from "../Dialog";
@@ -72,12 +71,37 @@ const Item = ({
   n,
   selected,
   onSelect,
+  listRef,
 }: {
   n: TreeNode;
   selected: boolean;
   onSelect: () => void;
+  listRef: React.MutableRefObject<HTMLDivElement | null>;
 }) => {
-  const ref = useScrollIntoView<HTMLDivElement>(selected);
+  const ref = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (selected && listRef.current && ref.current) {
+      const o = listRef.current.getBoundingClientRect();
+      const i = ref.current.getBoundingClientRect();
+      if (
+        o.top <= i.top &&
+        o.left <= i.left &&
+        o.bottom >= i.bottom &&
+        o.right >= i.right
+      ) {
+        console.log("fully visible");
+        return;
+      }
+      let yDiff = 0;
+      if (o.top >= i.top) {
+        yDiff = i.top - o.top;
+      }
+      if (o.bottom <= i.bottom) {
+        yDiff = i.bottom - o.bottom;
+      }
+      listRef.current.scrollBy(0, yDiff);
+    }
+  }, [selected]);
   return (
     <ListItem
       ref={ref}
@@ -109,7 +133,7 @@ export const SearchModal = () => {
     { setSearchOpen, setSelectedNodeId },
   ] = useUiState();
   const [q, setQ] = useState("");
-  const ref = useRef<HTMLDivElement>();
+  const listRef = useRef<HTMLDivElement | null>(null);
   const [selected, setSelected] = useState<TreeNode | null>(null);
   const close = () => {
     setQ("");
@@ -164,10 +188,11 @@ export const SearchModal = () => {
         fullWidth
         autoFocus
       />
-      <ListContainer>
+      <ListContainer ref={listRef}>
         {nodes.map((n) => (
           <Item
             key={n.id}
+            listRef={listRef}
             n={n}
             selected={n === selected}
             onSelect={() => select(n)}
