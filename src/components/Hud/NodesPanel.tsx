@@ -1,13 +1,7 @@
-import styled from "@emotion/styled";
 import { sortBy } from "lodash";
 import React, { SetStateAction, useLayoutEffect, useMemo } from "react";
 import { GraphData } from "../../types/GraphData";
-import { Autocomplete } from "../Autocompete";
 import { FileTreeDirectoryContent, SEPARATOR, toFileTree } from "../FileTree";
-
-const SearchArea = styled("div")((p) => ({
-  marginBottom: p.theme.spacing(),
-}));
 
 export const NodesPanel = ({
   g,
@@ -51,19 +45,6 @@ export const NodesPanel = ({
 
   return (
     <div>
-      <SearchArea>
-        <Autocomplete
-          items={g.list}
-          renderItem={(t) => (t.exclude ? <s>{t.path}</s> : t.path)}
-          itemToKey={(t) => t.id}
-          filterItems={(ts, v) => {
-            const re = new RegExp(v, "i");
-            return ts.filter((t) => re.test(t.path));
-          }}
-          onSelect={(t) => !t.exclude && setSelectedNodeId(t.id)}
-          fullWidth={true}
-        />
-      </SearchArea>
       <FileTreeDirectoryContent
         dir={rootDir}
         onSelect={(t) => {
