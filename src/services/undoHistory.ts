@@ -13,7 +13,7 @@ export class UndoHistory<T> {
     return this.history.present;
   }
 
-  jumpToPast(steps: number) {
+  undo(steps = 1) {
     if (steps === 0) {
       return this.history.present;
     }
@@ -31,7 +31,7 @@ export class UndoHistory<T> {
     return nextEl;
   }
 
-  jumpToFuture(steps: number) {
+  redo(steps = 1) {
     if (steps === 0) {
       return this.history.present;
     }
@@ -47,14 +47,6 @@ export class UndoHistory<T> {
       this.history.present = nextEl;
     }
     return nextEl;
-  }
-
-  undo() {
-    return this.jumpToPast(1);
-  }
-
-  redo() {
-    return this.jumpToFuture(1);
   }
 
   push(el: T) {
