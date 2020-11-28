@@ -86,7 +86,7 @@ const NOOP = (ev?: KeyboardEvent) => console.log(ev?.key);
 export const Hotkeys = () => {
   const [
     state,
-    { setSidebarTab, setSearchOpen, setHotkeyInfoOpen },
+    { setSidebarTab, setSearchOpen, setHotkeyInfoOpen, toggleSelectedNodeId },
   ] = useUiState();
   const cfg = useConfig();
   const {
@@ -117,9 +117,9 @@ export const Hotkeys = () => {
         incrementGraphDependentsMaxDepth(current, onChange, -1),
       "graph.selectedNode.exclude": NOOP,
       "graph.selectedNode.toggleDetails": NOOP,
-      "graph.selectedNode.toggleSelection": NOOP,
+      "graph.selectedNode.toggleSelection": toggleSelectedNodeId,
     };
-  }, [cfg]);
+  }, [cfg, state]);
 
   return (
     <GlobalHotKeys
