@@ -86,5 +86,6 @@ export const CONFIG: Config = {
     dependents: {
       maxDepth: 1,
     },
+    excludeByPath: /(^helpers.ts|^domainTypes|^versions|^services\/firebase)/,
   },
 };
