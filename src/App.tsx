@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
-import { groupBy, keyBy, mapValues, values } from "lodash";
+import { keyBy, values } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useMemo, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -169,15 +169,6 @@ const useGraphData = (
       data,
       byId: byId,
       list: values(byId),
-      linksBySource: mapValues(
-        groupBy(data.links, (l) => l.source),
-        (v) => groupBy(v, (l) => l.target)
-      ),
-      linksByTarget: mapValues(
-        groupBy(data.links, (l) => l.target),
-        (v) => groupBy(v, (l) => l.source)
-      ),
-      linksById: keyBy(data.links, (l) => l.id),
     };
     return graphData;
   }, [ds, excludeByPath]);
