@@ -17,7 +17,7 @@ const Menu = styled("div")`
   padding: 2px;
   z-index: 5;
   min-width: 100%;
-  max-height: calc(100vh - 100px);
+  max-height: 75vh;
   overflow: auto;
   box-sizing: border-box;
   border: 2px solid ${(p) => p.theme.hud.color};
