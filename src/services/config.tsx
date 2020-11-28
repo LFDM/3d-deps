@@ -89,7 +89,7 @@ export const incrementGraphDependentsMaxDepth = (
 export const toggleShowExcludedNodes = (
   current: Config,
   onChange: (nextConfig: Config) => void,
-  nextState: boolean = current.hud.search.showExcludedNodes
+  nextState: boolean = !current.hud.search.showExcludedNodes
 ) => {
   return onChange({
     ...current,
