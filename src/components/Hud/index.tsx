@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
-import { useConfig } from "../../hooks/useConfig";
 import { useQueryParam } from "../../hooks/useQueryParam";
-import { toggleSidebar } from "../../services/config";
+import { toggleSidebar, useConfig } from "../../services/config";
 import { GraphData } from "../../types/GraphData";
 import { Button } from "../Button";
 import { Hotkeys } from "../Hotkeys";
