@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
-import { groupBy, keyBy, mapValues } from "lodash";
+import { groupBy, keyBy, mapValues, values } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useMemo, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -132,12 +132,13 @@ const useGraphData = (
     const depsById = keyBy(filteredDs, (d) => d.id);
     const data = depsToGraphData(filteredDs);
     const nodesById = keyBy(data.nodes, (n) => n.id);
-    const asTree: {
+    const byId: {
       [id: string]: TreeNode;
     } = {};
+    const list: TreeNode[] = [];
     const getOrCreateTreeNode = (n: IGraphNode) => {
-      if (!asTree[n.id]) {
-        asTree[n.id] = {
+      if (!byId[n.id]) {
+        const nextNode: TreeNode = {
           node: n,
           dependsOn: {
             nodes: depsById[n.id].dependsOn.map((c) => nodesById[c]),
@@ -145,8 +146,10 @@ const useGraphData = (
           dependedBy: { nodes: [] },
           exclude: false,
         };
+        byId[n.id] = nextNode;
+        list.push(nextNode);
       }
-      return asTree[n.id];
+      return byId[n.id];
     };
     data.nodes.forEach((n) => {
       const treeNode = getOrCreateTreeNode(n);
@@ -158,7 +161,8 @@ const useGraphData = (
 
     return {
       data,
-      asTree,
+      byId: byId,
+      list: values(byId),
       linksBySource: mapValues(
         groupBy(data.links, (l) => l.source),
         (v) => groupBy(v, (l) => l.target)

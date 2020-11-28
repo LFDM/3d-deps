@@ -18,6 +18,7 @@ export type GraphData = {
     nodes: IGraphNode[];
     links: IGraphLink[];
   };
+  list: TreeNode[];
   byId: { [id: string]: TreeNode };
   linksById: { [id: string]: IGraphLink };
   linksBySource: { [sourceId: string]: { [targetId: string]: IGraphLink[] } };
