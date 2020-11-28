@@ -87,8 +87,23 @@ const traverseDependencies = (
 
 const useData = (g: GraphData): Data => {
   return useMemo(() => {
-    const nodes = g.data.nodes;
-    const links = g.data.links;
+    const nodes: IGraphNode[] = [];
+    const links: IGraphLink[] = g.data.links;
+
+    g.list.forEach((t) => {
+      if (t.exclude) {
+        return;
+      }
+      const node: IGraphNode = {
+        id: t.id,
+        label: t.label,
+        path: t.path,
+      };
+      nodes.push(node);
+
+      // TODO - add links once dependsOn are other treeNodes
+    });
+
     return {
       ds: {
         nodes,
