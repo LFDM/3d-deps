@@ -23,11 +23,16 @@ const CustomInput = styled(Input)((p) => {
 });
 
 // make this a grid so that we can do ellipsis
-const ListItem = styled("div")((p) => ({
+const ListItem = styled("div")<{ excluded: boolean }>((p) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
   padding: p.theme.spacing(0.5),
+  opacity: p.excluded ? 0.5 : 1,
+
+  label: {
+    textDecoration: "line-through",
+  },
 
   "> :not(:first-child)": {
     marginLeft: p.theme.spacing(),
@@ -40,6 +45,12 @@ const ListContainer = styled("div")((p) => ({
   overflow: "auto",
   maxHeight: "80vh",
 }));
+
+const EmptyState = styled("div")`
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+`;
 
 export const SearchModal = () => {
   const [
@@ -75,11 +86,12 @@ export const SearchModal = () => {
       />
       <ListContainer>
         {nodes.map((n) => (
-          <ListItem key={n.id}>
-            <div>{n.label}</div>
+          <ListItem key={n.id} excluded={n.exclude}>
+            <label>{n.label}</label>
             <NodeStats d={n} />
           </ListItem>
         ))}
+        {!nodes.length && <EmptyState>No matches.</EmptyState>}
       </ListContainer>
     </Dialog>
   );
