@@ -235,6 +235,7 @@ export const Graph = () => {
         ) {
           addNodeStyle(ss, n.id, {
             color: nodeColors.unselected,
+            size: 0.5,
           });
         }
       });
