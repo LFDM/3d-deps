@@ -9,9 +9,7 @@ import { CONFIG } from "./types/Config";
 const run = async () => {
   const ds = await new MadgeAnalyzer({
     entry: "...",
-  })
-    .analyze()
-    .then();
+  }).analyze();
   ReactDOM.render(
     <React.StrictMode>
       <App config={CONFIG} ds={ds} />
