@@ -137,10 +137,10 @@ const useData = (g: GraphData): Data => {
   }, [g]);
 };
 
-export const Graph = ({ g }: { g: GraphData }) => {
+export const Graph = () => {
   const [
     {
-      graph: { selectedNodeId },
+      graph: { selectedNodeId, data: g },
     },
     { setSelectedNodeId },
   ] = useUiState();

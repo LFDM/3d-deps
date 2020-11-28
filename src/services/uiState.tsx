@@ -1,5 +1,6 @@
 import React, { useContext, useMemo } from "react";
 import { useQueryParam } from "../hooks/useQueryParam";
+import { GraphData } from "../types/GraphData";
 
 export type TabName = "config" | "nodes";
 
@@ -10,6 +11,7 @@ export type UiState = {
     };
   };
   graph: {
+    data: GraphData;
     selectedNodeId: string | null;
   };
 };
@@ -21,6 +23,7 @@ const DEFAULT_STATE: UiState = {
     },
   },
   graph: {
+    data: { list: [], byId: {} },
     selectedNodeId: null,
   },
 };
@@ -40,7 +43,10 @@ const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
 
 export const useUiState = () => useContext(UiStateContext);
 
-export const UiStateProvider: React.FC = ({ children }) => {
+export const UiStateProvider: React.FC<{ data: GraphData }> = ({
+  data,
+  children,
+}) => {
   const [tab, setTab] = useQueryParam("tab", "nodes");
   const [selectedNodeId, setSelectedNodeId] = useQueryParam("node");
 
@@ -56,6 +62,7 @@ export const UiStateProvider: React.FC = ({ children }) => {
           },
         },
         graph: {
+          data,
           selectedNodeId: selectedNodeId || null,
         },
       },
@@ -64,7 +71,7 @@ export const UiStateProvider: React.FC = ({ children }) => {
         setSelectedNodeId,
       },
     ],
-    [tab, selectedNodeId]
+    [data, tab, selectedNodeId]
   );
   return (
     <UiStateContext.Provider value={value}>{children}</UiStateContext.Provider>

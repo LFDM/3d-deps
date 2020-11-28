@@ -1,19 +1,12 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
-import { useQueryParam } from "../../hooks/useQueryParam";
 import { toggleSidebar, useConfig } from "../../services/config";
-import { GraphData } from "../../types/GraphData";
+import { useUiState } from "../../services/uiState";
 import { Button } from "../Button";
 import { Hotkeys } from "../Hotkeys";
 import { ConfigPanel } from "./ConfigPanel";
 import { NodesPanel } from "./NodesPanel";
 import { OverlayContextProvider, useOverlayContext } from "./OverlayContext";
-
-type Props = {
-  g: GraphData;
-  selectedNodeId: string | null;
-  setSelectedNodeId: (v: string | null) => void;
-};
 
 const Container = styled("div")<{ overlayActive: boolean }>`
   background: transparent;
@@ -70,8 +63,16 @@ const Tabs = styled("div")((p) => ({
   borderBottom: `1px solid lightgray`,
 }));
 
-export const Sidebar = (props: Props) => {
-  const [tab, setTab] = useQueryParam("tab", "nodes");
+export const Sidebar = () => {
+  const [
+    {
+      hud: {
+        sidebar: { tab },
+      },
+      graph: { data: g, selectedNodeId },
+    },
+    { setSidebarTab: setTab, setSelectedNodeId },
+  ] = useUiState();
   const [openNodes, setOpenNodes] = useState<{ [key: string]: boolean }>({});
   return (
     <SidebarContainer>
@@ -92,7 +93,9 @@ export const Sidebar = (props: Props) => {
       {tab === "nodes" && (
         <Tab>
           <NodesPanel
-            {...props}
+            g={g}
+            selectedNodeId={selectedNodeId}
+            setSelectedNodeId={setSelectedNodeId}
             openNodes={openNodes}
             setOpenNodes={setOpenNodes}
           />
@@ -142,13 +145,13 @@ const Controls = () => {
   );
 };
 
-const Body = (props: Props) => {
+const Body = () => {
   const [active] = useOverlayContext();
   const cfg = useConfig();
   return (
     <Container overlayActive={active}>
       <Grid>
-        {cfg.current.hud.sidebar.open ? <Sidebar {...props} /> : <div />}
+        {cfg.current.hud.sidebar.open ? <Sidebar /> : <div />}
         <Centered></Centered>
         <Controls />
       </Grid>
@@ -156,11 +159,11 @@ const Body = (props: Props) => {
   );
 };
 
-export const Hud = (props: Props) => {
+export const Hud = () => {
   return (
     <OverlayContextProvider>
       <Hotkeys />
-      <Body {...props} />
+      <Body />
     </OverlayContextProvider>
   );
 };

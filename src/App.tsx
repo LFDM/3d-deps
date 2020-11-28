@@ -5,7 +5,6 @@ import React, { useMemo, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Graph } from "./components/Graph";
 import { Hud } from "./components/Hud";
-import { useQueryParam } from "./hooks/useQueryParam";
 import { ConfigContext } from "./services/config";
 import { UiStateProvider } from "./services/uiState";
 import { Config } from "./types/Config";
@@ -119,20 +118,6 @@ const useGraphData = (
   );
 };
 
-const MainApp = ({ g }: { g: GraphData }) => {
-  const [selectedNodeId, setSelectedNodeId] = useQueryParam("node");
-  return (
-    <Main>
-      <Hud
-        g={g}
-        selectedNodeId={selectedNodeId || null}
-        setSelectedNodeId={setSelectedNodeId}
-      />
-      <Graph g={g} />
-    </Main>
-  );
-};
-
 function App({
   config: originalConfig,
   ds,
@@ -141,7 +126,7 @@ function App({
   ds: DependencyNode[];
 }) {
   const [config, setConfig] = useState(originalConfig);
-  const g = useGraphData(ds, config.graph.excludeByPath);
+  const data = useGraphData(ds, config.graph.excludeByPath);
   return (
     <Router>
       <ConfigContext.Provider
@@ -152,8 +137,11 @@ function App({
         }}
       >
         <ThemeProvider theme={config.theme}>
-          <UiStateProvider>
-            <MainApp g={g} />
+          <UiStateProvider data={data}>
+            <Main>
+              <Hud />
+              <Graph />
+            </Main>
           </UiStateProvider>
         </ThemeProvider>
       </ConfigContext.Provider>
