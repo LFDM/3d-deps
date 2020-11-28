@@ -11,6 +11,8 @@ export const DialogTitle = styled("h3")`
   margin-top: 0;
 `;
 
+const DialogBody = styled(CssBaseline)((p) => ({}));
+
 export const Dialog: React.FC<{
   open: boolean;
   onClose: () => void;
@@ -61,7 +63,7 @@ export const Dialog: React.FC<{
   }, [theme, width, center, overflow, variant]);
   return (
     <ReactModal style={style} isOpen={open} onRequestClose={onClose}>
-      <CssBaseline>{children}</CssBaseline>
+      <DialogBody>{children}</DialogBody>
     </ReactModal>
   );
 };
