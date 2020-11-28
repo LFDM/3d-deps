@@ -1,4 +1,5 @@
 import { groupBy, keyBy, mapValues } from "lodash";
+import { nanoid } from "nanoid";
 import React, { useEffect, useMemo, useRef } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import tinycolor from "tinycolor2";
@@ -88,7 +89,7 @@ const traverseDependencies = (
 const useData = (g: GraphData): Data => {
   return useMemo(() => {
     const nodes: IGraphNode[] = [];
-    const links: IGraphLink[] = g.data.links;
+    const links: IGraphLink[] = [];
 
     g.list.forEach((t) => {
       if (t.exclude) {
@@ -101,7 +102,17 @@ const useData = (g: GraphData): Data => {
       };
       nodes.push(node);
 
-      // TODO - add links once dependsOn are other treeNodes
+      t.dependsOn.nodes.forEach((otherT) => {
+        if (otherT.exclude) {
+          return;
+        }
+        const link: IGraphLink = {
+          id: nanoid(), // this could probably be a more stable id?
+          source: t.id,
+          target: otherT.id,
+        };
+        links.push(link);
+      });
     });
 
     return {
