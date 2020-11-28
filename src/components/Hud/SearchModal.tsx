@@ -132,10 +132,13 @@ export const SearchModal = () => {
     return g.list.filter((t) => regexp.test(t.path));
   }, [q, g]);
 
+  const selectableNodes = useMemo(() => nodes.filter((n) => !n.exclude), [
+    nodes,
+  ]);
+
   useEffect(() => {
-    const sel = nodes.find((n) => !n.exclude);
-    setSelected(sel || null);
-  }, [nodes]);
+    setSelected(selectableNodes[0] || null);
+  }, [selectableNodes]);
 
   return (
     <Dialog open={searchOpen} onClose={close} width={700} variant="plain">
