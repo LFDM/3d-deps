@@ -123,7 +123,7 @@ export const CONFIG: Config = {
     "hud.sidebar.openNodesPanel": ["alt+n"],
     "hud.sidebar.openConfigPanel": ["alt+c"],
     "hud.search": ["/", "f"],
-    "hud.hotkeyInfo": ["?"],
+    "hud.hotkeyInfo": ["h"], // ? doesn't seem to work
     "graph.dependencies.maxDepth.increase": ["alt+k", "alt+up"],
     "graph.dependencies.maxDepth.decrease": ["alt+j", "alt+down"],
     "graph.dependents.maxDepth.increase": ["alt+shift+k", "alt+shift+up"],
