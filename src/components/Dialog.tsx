@@ -45,7 +45,7 @@ export const Dialog: React.FC<{
         marginRight: "-50%",
         transform: center ? "translate(-50%, -50%)" : "translate(-50%, 0)",
         backgroundColor: theme.hud.backgroundColor,
-        borderColor: "1px solid currentcolor",
+        border: variant === "plain" ? "none" : "1px solid currentcolor",
         color: theme.hud.color,
         width: width || "auto",
         font: theme.typography.color,
@@ -54,7 +54,7 @@ export const Dialog: React.FC<{
       },
     };
     return s;
-  }, [theme, width, center, overflow]);
+  }, [theme, width, center, overflow, variant]);
   return (
     <ReactModal style={style} isOpen={open} onRequestClose={onClose}>
       <CssBaseline>{children}</CssBaseline>
