@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import escapeStringRegexp from "escape-string-regexp";
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { Eye, Settings } from "react-feather";
 import tinycolor from "tinycolor2";
 import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
+import { Button } from "../Button";
 import { Dialog } from "../Dialog";
 import { Input } from "../Input";
 import { NodeStats } from "../NodeStats";
@@ -64,7 +66,7 @@ const ListContainer = styled("div")((p) => ({
   borderTop: "1px solid currentcolor",
   padding: `${p.theme.spacing(1)}px 0`,
   overflow: "auto",
-  maxHeight: "80vh",
+  maxHeight: "70vh",
 }));
 
 const Item = ({
@@ -125,6 +127,23 @@ const Item = ({
   );
 };
 
+const Body = styled("div")((p) => ({
+  border: "1px solid currentcolor",
+  backgroundColor: p.theme.hud.backgroundColor,
+  borderRadius: 4,
+}));
+
+const Controls = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "flex-end",
+  alignItems: "center",
+  padding: p.theme.spacing(0.5),
+
+  "> :not(:first-child)": {
+    marginLeft: p.theme.spacing(),
+  },
+}));
+
 export const SearchModal = () => {
   const [
     {
@@ -168,44 +187,54 @@ export const SearchModal = () => {
 
   return (
     <Dialog open={searchOpen} onClose={close} width={700} variant="plain">
-      <CustomInput
-        // cannot autofocus - if the search is triggered
-        // through a keyboard shortcut, it will be immediately
-        // used as input. setTimeout to the rescue
-        ref={(el) => setTimeout(() => el && el.focus())}
-        onKeyDown={(ev) => {
-          if (ev.key === "Enter" && selected) {
-            select(selected);
-          }
-          let sel: TreeNode | undefined;
-          const i = selected ? selectableNodes.indexOf(selected) : -1;
-          if (ev.key === "ArrowDown") {
-            sel = selectableNodes[i + 1] || selectableNodes[0]; // circle around
-          }
-          if (ev.key === "ArrowUp") {
-            sel =
-              selectableNodes[i - 1] ||
-              selectableNodes[selectableNodes.length - 2];
-          }
-          sel && setSelected(sel);
-        }}
-        type="search"
-        value={q}
-        onChange={(ev) => setQ(ev.target.value)}
-        fullWidth
-      />
-      <ListContainer ref={listRef}>
-        {nodes.map((n) => (
-          <Item
-            key={n.id}
-            listRef={listRef}
-            n={n}
-            selected={n === selected}
-            onSelect={() => select(n)}
-          />
-        ))}
-        {!nodes.length && <EmptyListItem>No matches.</EmptyListItem>}
-      </ListContainer>
+      <Controls>
+        <Button variant="icon">
+          <Eye size={14} />
+        </Button>
+        <Button variant="icon">
+          <Settings size={14} />
+        </Button>
+      </Controls>
+      <Body>
+        <CustomInput
+          // cannot autofocus - if the search is triggered
+          // through a keyboard shortcut, it will be immediately
+          // used as input. setTimeout to the rescue
+          ref={(el) => setTimeout(() => el && el.focus())}
+          onKeyDown={(ev) => {
+            if (ev.key === "Enter" && selected) {
+              select(selected);
+            }
+            let sel: TreeNode | undefined;
+            const i = selected ? selectableNodes.indexOf(selected) : -1;
+            if (ev.key === "ArrowDown") {
+              sel = selectableNodes[i + 1] || selectableNodes[0]; // circle around
+            }
+            if (ev.key === "ArrowUp") {
+              sel =
+                selectableNodes[i - 1] ||
+                selectableNodes[selectableNodes.length - 2];
+            }
+            sel && setSelected(sel);
+          }}
+          type="search"
+          value={q}
+          onChange={(ev) => setQ(ev.target.value)}
+          fullWidth
+        />
+        <ListContainer ref={listRef}>
+          {nodes.map((n) => (
+            <Item
+              key={n.id}
+              listRef={listRef}
+              n={n}
+              selected={n === selected}
+              onSelect={() => select(n)}
+            />
+          ))}
+          {!nodes.length && <EmptyListItem>No matches.</EmptyListItem>}
+        </ListContainer>
+      </Body>
     </Dialog>
   );
 };
