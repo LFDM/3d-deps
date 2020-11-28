@@ -96,5 +96,11 @@ export const Hotkeys = () => {
     };
   }, [cfg]);
 
-  return <GlobalHotKeys keyMap={keyMap as any} handlers={handlers} />;
+  return (
+    <GlobalHotKeys
+      keyMap={keyMap as any}
+      handlers={handlers}
+      allowChanges={true}
+    />
+  );
 };
