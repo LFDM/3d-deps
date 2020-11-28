@@ -43,7 +43,7 @@ export const Dialog: React.FC<{
         right: "auto",
         bottom: "auto",
         marginRight: "-50%",
-        transform: "translate(-50%, -50%)",
+        transform: center ? "translate(-50%, -50%)" : "translate(-50%, 0)",
         backgroundColor: theme.hud.backgroundColor,
         borderColor: "1px solid currentcolor",
         color: theme.hud.color,
