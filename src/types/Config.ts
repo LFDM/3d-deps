@@ -1,5 +1,6 @@
 export type Theme = {
   typography: {
+    font: string;
     backgroundColor: string;
     color: string;
   };
@@ -72,6 +73,7 @@ export type Config = {
 export const CONFIG: Config = {
   theme: {
     typography: {
+      font: "400 14px Arial",
       backgroundColor: "#141414",
       color: "#f4f4f4",
     },

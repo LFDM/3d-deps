@@ -18,7 +18,7 @@ const Main = styled("main")((p) => ({
   height: "100vh",
   overflow: "hidden",
 
-  font: "400 14px Arial",
+  font: p.theme.typography.color,
 
   h4: {
     marginTop: p.theme.spacing(),

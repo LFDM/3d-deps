@@ -35,7 +35,7 @@ export const Dialog: React.FC<{
         borderColor: "currentcolor",
         color: theme.hud.color,
         width: width || "auto",
-        font: "400 14px Arial",
+        font: theme.typography.color,
       },
     };
     return s;
