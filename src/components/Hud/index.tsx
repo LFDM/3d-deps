@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
+import { getApplicationKeyMap, KeyMapDisplayOptions } from "react-hotkeys";
 import { toggleSidebar, useConfig } from "../../services/config";
 import { useUiState } from "../../services/uiState";
 import { Button } from "../Button";
+import { Dialog, DialogTitle } from "../Dialog";
 import { Hotkeys } from "../Hotkeys";
 import { ConfigPanel } from "./ConfigPanel";
 import { NodesPanel } from "./NodesPanel";
@@ -130,6 +132,14 @@ const ControlButtonsContainer = styled(HudSegment)((p) => ({
 const Controls = () => {
   const cfg = useConfig();
   const sidebarOpen = cfg.current.hud.sidebar.open;
+  const [
+    {
+      hud: {
+        hotkeyInfo: { open: hotkeyInfoOpen },
+      },
+    },
+    { setHotkeyInfoOpen },
+  ] = useUiState();
   return (
     <ControlsContainer>
       <div></div>
@@ -139,6 +149,12 @@ const Controls = () => {
           onClick={() => toggleSidebar(cfg.current, cfg.onChange)}
         >
           Sidebar
+        </Button>
+        <Button
+          variant={hotkeyInfoOpen ? "outlined" : "standard"}
+          onClick={() => setHotkeyInfoOpen(!hotkeyInfoOpen)}
+        >
+          Hotkeys
         </Button>
       </ControlButtonsContainer>
     </ControlsContainer>
@@ -159,11 +175,69 @@ const Body = () => {
   );
 };
 
+const HotkeyGrid = styled("div")((p) => ({
+  display: "grid",
+  gridTemplateColumns: "1fr max-content",
+  gridColumnGap: p.theme.spacing(4),
+  gridRowGap: p.theme.spacing(1),
+}));
+
+const HotkeyValues = styled("div")`
+  text-align: right;
+`;
+
+const HotkeyValue = styled("span")`
+  font-family: monospace;
+`;
+
+const HotkeyRow = ({ h }: { h: KeyMapDisplayOptions }) => {
+  console.log(h);
+  return (
+    <>
+      <div>{h.name}</div>
+      <HotkeyValues>
+        {h.sequences.map((s, i) => (
+          <React.Fragment key={i}>
+            {i !== 0 && <span> or </span>}
+            <HotkeyValue>{s.sequence}</HotkeyValue>
+          </React.Fragment>
+        ))}
+      </HotkeyValues>
+    </>
+  );
+};
+
+const HotkeyInfoModal = () => {
+  const [
+    {
+      hud: {
+        hotkeyInfo: { open: hotkeyInfoOpen },
+      },
+    },
+    { setHotkeyInfoOpen },
+  ] = useUiState();
+  const close = () => setHotkeyInfoOpen(false);
+  const hotkeys = getApplicationKeyMap();
+  console.log("HOTKEYS", hotkeys);
+  return (
+    <Dialog open={hotkeyInfoOpen} onClose={close} center>
+      <DialogTitle>Hotkeys</DialogTitle>
+
+      <HotkeyGrid>
+        {Object.entries(hotkeys).map(([id, h]) => (
+          <HotkeyRow key={id} h={h} />
+        ))}
+      </HotkeyGrid>
+    </Dialog>
+  );
+};
+
 export const Hud = () => {
   return (
     <OverlayContextProvider>
       <Hotkeys />
       <Body />
+      <HotkeyInfoModal />
     </OverlayContextProvider>
   );
 };
