@@ -30,7 +30,6 @@ export const NodesPanel = ({
 
   useLayoutEffect(() => {
     if (selectedNodeId) {
-      console.log("RERENDER");
       const treeNode = g.byId[selectedNodeId];
       if (!treeNode) {
         return;
