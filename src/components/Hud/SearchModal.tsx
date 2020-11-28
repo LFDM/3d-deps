@@ -103,6 +103,7 @@ const Item = ({
       }
       listRef.current.scrollBy(0, yDiff);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
   return (
     <ListItem
