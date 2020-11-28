@@ -7,7 +7,7 @@ export const Input = styled("input")<{ fullWidth?: boolean }>((p) => ({
     width: "100%",
   }),
   boxSizing: "border-box",
-  fontSize: 14,
+  font: p.theme.typography.font,
 }));
 
 const SliderContainer = styled("div")((p) => ({
