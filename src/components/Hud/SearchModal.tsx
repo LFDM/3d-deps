@@ -103,12 +103,23 @@ export const SearchModal = () => {
     const sel = nodes.find((n) => !n.exclude);
     setSelected(sel || null);
   }, [nodes]);
+
+  // TODO scroll selection into view
   return (
     <Dialog open={searchOpen} onClose={close} width={700} variant="plain">
       <CustomInput
         onKeyDown={(ev) => {
           if (ev.key === "Enter" && selected) {
             select(selected);
+          }
+          if (ev.key === "ArrowDown") {
+            const i = selected ? nodes.indexOf(selected) : -1;
+            let sel = nodes.slice(i + 1).find((n) => !n.exclude);
+            if (!sel) {
+              // circle around
+              sel = nodes.slice(0, i).find((n) => !n.exclude);
+            }
+            sel && setSelected(sel);
           }
         }}
         type="search"
