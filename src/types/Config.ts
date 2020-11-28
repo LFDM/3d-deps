@@ -52,6 +52,7 @@ export type HotkeyConfig = {
   "hud.sidebar.openNodesPanel": string[];
   "hud.sidebar.openConfigPanel": string[];
   "hud.search": string[];
+  "hud.toggleHotkeyInfo": string[];
   "graph.dependencies.maxDepth.increase": string[];
   "graph.dependencies.maxDepth.decrease": string[];
   "graph.dependents.maxDepth.increase": string[];
@@ -119,6 +120,7 @@ export const CONFIG: Config = {
     "hud.sidebar.openNodesPanel": ["alt+n"],
     "hud.sidebar.openConfigPanel": ["alt+c"],
     "hud.search": ["/", "f"],
+    "hud.toggleHotkeyInfo": ["?"],
     "graph.dependencies.maxDepth.increase": ["ctrl+j", "ctrl+up"],
     "graph.dependencies.maxDepth.decrease": ["ctrl+k", "ctrl+down"],
     "graph.dependents.maxDepth.increase": ["ctrl+alt+k", "ctrl+alt+down"],
