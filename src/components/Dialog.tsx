@@ -41,6 +41,7 @@ export const Dialog: React.FC<{
         width: width || "auto",
         font: theme.typography.color,
         overflow: overflow || "auto",
+        opacity: theme.hud.opacity,
       },
     };
     return s;
