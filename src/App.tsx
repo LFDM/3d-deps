@@ -128,13 +128,17 @@ const depsToGraphData = (ds: DependencyNode[]): GraphData["data"] => {
 };
 
 const depsToTreeNodes = (
-  ds: DependencyNode[]
+  ds: DependencyNode[],
+  opts?: {
+    excludeByPath?: RegExp;
+  }
 ): { list: TreeNodeNew[]; byId: { [id: string]: TreeNodeNew } } => {
   const list: TreeNodeNew[] = [];
   const byId: { [id: string]: TreeNodeNew } = {};
   const dsById = keyBy(ds, (d) => d.id);
   const getOrCreateTreeNode = (d: DependencyNode): TreeNodeNew => {
     if (!byId[d.id]) {
+      const exclude = !!opts?.excludeByPath?.test(d.path);
       const t: TreeNodeNew = {
         id: d.id,
         label: d.label || d.id,
@@ -143,7 +147,7 @@ const depsToTreeNodes = (
         // before we start recursing, preventing issues with circular dependencies
         dependedBy: { nodes: [] },
         dependsOn: { nodes: [] },
-        exclude: false,
+        exclude,
       };
       byId[t.id] = t;
       list.push(t);
