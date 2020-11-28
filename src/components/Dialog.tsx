@@ -17,7 +17,16 @@ export const Dialog: React.FC<{
   width?: string | number;
   center?: boolean;
   overflow?: React.CSSProperties["overflow"];
-}> = ({ open, onClose, width, center, overflow, children }) => {
+  variant?: "standard" | "plain";
+}> = ({
+  open,
+  onClose,
+  width,
+  center,
+  overflow,
+  children,
+  variant = "standard",
+}) => {
   const theme = useTheme();
   const style = useMemo(() => {
     const s: ReactModal.Styles = {
@@ -28,7 +37,7 @@ export const Dialog: React.FC<{
           .toRgbString(),
       },
       content: {
-        padding: theme.spacing(3),
+        padding: variant === "plain" ? 0 : theme.spacing(3),
         top: center ? "50%" : theme.spacing(10),
         left: "50%",
         right: "auto",
@@ -36,7 +45,7 @@ export const Dialog: React.FC<{
         marginRight: "-50%",
         transform: "translate(-50%, -50%)",
         backgroundColor: theme.hud.backgroundColor,
-        borderColor: "currentcolor",
+        borderColor: "1px solid currentcolor",
         color: theme.hud.color,
         width: width || "auto",
         font: theme.typography.color,
