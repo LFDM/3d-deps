@@ -26,6 +26,12 @@ export type GraphData = {
 };
 
 export type TreeNode = {
+  id: string;
+  label: string;
+  path: string;
+  group?: string; // probably don't need this
+  color?: string; // probably don't need this
+
   node: IGraphNode;
   dependsOn: { nodes: IGraphNode[] };
   dependedBy: { nodes: IGraphNode[] };

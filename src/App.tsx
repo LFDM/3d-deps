@@ -139,6 +139,12 @@ const useGraphData = (
     const getOrCreateTreeNode = (n: IGraphNode) => {
       if (!byId[n.id]) {
         const nextNode: TreeNode = {
+          id: n.id,
+          label: n.label,
+          path: n.path,
+          color: n.color,
+          group: n.group,
+
           node: n,
           dependsOn: {
             nodes: depsById[n.id].dependsOn.map((c) => nodesById[c]),

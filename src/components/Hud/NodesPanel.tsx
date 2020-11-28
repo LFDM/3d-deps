@@ -24,7 +24,7 @@ export const NodesPanel = ({
 }) => {
   const { rootDir } = useMemo(() => {
     return {
-      rootDir: toFileTree(sortBy(g.list, (n) => n.node.path)),
+      rootDir: toFileTree(sortBy(g.list, (n) => n.path)),
     };
   }, [g]);
 
@@ -34,7 +34,7 @@ export const NodesPanel = ({
       if (!treeNode) {
         return;
       }
-      const { path } = treeNode.node;
+      const { path } = treeNode;
       const parts = path.split(SEPARATOR);
       const toOpen: { [key: string]: boolean } = {};
       for (let i = 0; i < parts.length; i++) {
@@ -46,7 +46,7 @@ export const NodesPanel = ({
   }, [selectedNodeId, g]);
 
   const selectedItemKey = selectedNodeId
-    ? g.byId[selectedNodeId]?.node.path || null
+    ? g.byId[selectedNodeId]?.path || null
     : null;
 
   return (
@@ -54,20 +54,20 @@ export const NodesPanel = ({
       <SearchArea>
         <Autocomplete
           items={g.list}
-          renderItem={(t) => t.node.path}
-          itemToKey={(t) => t.node.id}
+          renderItem={(t) => t.path}
+          itemToKey={(t) => t.id}
           filterItems={(ts, v) => {
             const re = new RegExp(v, "i");
-            return ts.filter((t) => re.test(t.node.path));
+            return ts.filter((t) => re.test(t.path));
           }}
-          onSelect={(t) => setSelectedNodeId(t.node.id)}
+          onSelect={(t) => setSelectedNodeId(t.id)}
           fullWidth={true}
         />
       </SearchArea>
       <FileTreeDirectoryContent
         dir={rootDir}
         onSelect={(t) => {
-          const nodeId = t.node.id;
+          const nodeId = t.id;
           return setSelectedNodeId(selectedNodeId === nodeId ? null : nodeId);
         }}
         openNodes={openNodes}

@@ -37,7 +37,7 @@ export const toFileTree = (ds: TreeNode[]): FileTreeItemDir<TreeNode> => {
     },
   };
   ds.forEach((d) => {
-    const { path } = d.node;
+    const { path } = d;
     const parts = path.split(SEPARATOR);
     const file = parts.pop();
     let lastDir: FileTreeItemDir<TreeNode> = items[SEPARATOR];
