@@ -114,6 +114,15 @@ const ControlsContainer = styled(HudSegment)((p) => ({
   },
 }));
 
+const ControlButton: React.FC<{
+  active: boolean;
+  onClick: () => void;
+}> = ({ active, onClick, children }) => (
+  <Button variant={active ? "outlined" : "standard"} onClick={onClick}>
+    {children}
+  </Button>
+);
+
 const Controls = () => {
   const cfg = useConfig();
   const sidebarOpen = cfg.current.hud.sidebar.open;
@@ -123,29 +132,33 @@ const Controls = () => {
         hotkeyInfo: { open: hotkeyInfoOpen },
         search: { open: searchOpen },
       },
+      graph: { showDetails },
     },
-    { setHotkeyInfoOpen, setSearchOpen },
+    { setHotkeyInfoOpen, setSearchOpen, toggleDetails },
   ] = useUiState();
   return (
     <ControlsContainer>
-      <Button
-        variant={sidebarOpen ? "outlined" : "standard"}
+      <ControlButton
+        active={sidebarOpen}
         onClick={() => toggleSidebar(cfg.current, cfg.onChange)}
       >
         Sidebar
-      </Button>
-      <Button
-        variant={searchOpen ? "outlined" : "standard"}
+      </ControlButton>
+      <ControlButton active={showDetails} onClick={toggleDetails}>
+        Details
+      </ControlButton>
+      <ControlButton
+        active={searchOpen}
         onClick={() => setSearchOpen(!searchOpen)}
       >
         Search
-      </Button>
-      <Button
-        variant={hotkeyInfoOpen ? "outlined" : "standard"}
+      </ControlButton>
+      <ControlButton
+        active={hotkeyInfoOpen}
         onClick={() => setHotkeyInfoOpen(!hotkeyInfoOpen)}
       >
         Hotkeys
-      </Button>
+      </ControlButton>
     </ControlsContainer>
   );
 };
