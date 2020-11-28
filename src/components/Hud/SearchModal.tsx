@@ -22,23 +22,30 @@ const CustomInput = styled(Input)((p) => {
   };
 });
 
-// make this a grid so that we can do ellipsis
-const ListItem = styled("div")<{ excluded: boolean }>((p) => ({
+const BaseListItem = styled("div")((p) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
   padding: `${p.theme.spacing(0.5)}px ${p.theme.spacing(2)}px`,
+
+  "> :not(:first-child)": {
+    marginLeft: p.theme.spacing(),
+  },
+}));
+
+// make this a grid so that we can do ellipsis
+const ListItem = styled(BaseListItem)<{ excluded: boolean }>((p) => ({
   opacity: p.excluded ? 0.5 : 1,
   cursor: p.excluded ? "default" : "pointer",
 
   "div:first-of-type": {
     textDecoration: p.excluded ? "line-through" : "none",
   },
-
-  "> :not(:first-child)": {
-    marginLeft: p.theme.spacing(),
-  },
 }));
+
+const EmptyListItem = styled(BaseListItem)`
+  font-style: italic;
+`;
 
 const ListContainer = styled("div")((p) => ({
   borderTop: "1px solid currentcolor",
@@ -46,12 +53,6 @@ const ListContainer = styled("div")((p) => ({
   overflow: "auto",
   maxHeight: "80vh",
 }));
-
-const EmptyState = styled("div")`
-  font-style: italic;
-  display: flex;
-  justify-content: center;
-`;
 
 export const SearchModal = () => {
   const [
@@ -105,7 +106,7 @@ export const SearchModal = () => {
             </ListItem>
           );
         })}
-        {!nodes.length && <EmptyState>No matches.</EmptyState>}
+        {!nodes.length && <EmptyListItem>No matches.</EmptyListItem>}
       </ListContainer>
     </Dialog>
   );
