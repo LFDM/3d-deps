@@ -16,7 +16,8 @@ export const Dialog: React.FC<{
   onClose: () => void;
   width?: string | number;
   center?: boolean;
-}> = ({ open, onClose, width, center, children }) => {
+  overflow?: React.CSSProperties["overflow"];
+}> = ({ open, onClose, width, center, overflow, children }) => {
   const theme = useTheme();
   const style = useMemo(() => {
     const s: ReactModal.Styles = {
@@ -39,10 +40,11 @@ export const Dialog: React.FC<{
         color: theme.hud.color,
         width: width || "auto",
         font: theme.typography.color,
+        overflow: overflow || "auto",
       },
     };
     return s;
-  }, [theme, width, center]);
+  }, [theme, width, center, overflow]);
   return (
     <ReactModal style={style} isOpen={open} onRequestClose={onClose}>
       <CssBaseline>{children}</CssBaseline>
