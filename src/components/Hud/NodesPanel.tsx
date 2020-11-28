@@ -22,9 +22,10 @@ export const NodesPanel = ({
   openNodes: { [key: string]: boolean };
   setOpenNodes: React.Dispatch<SetStateAction<{ [key: string]: boolean }>>;
 }) => {
-  const { rootDir, treeNodes } = useMemo(() => {
-    const tn = sortBy(g.data.nodes, (n) => n.path).map((n) => g.byId[n.id]);
-    return { treeNodes: tn, rootDir: toFileTree(tn) };
+  const { rootDir } = useMemo(() => {
+    return {
+      rootDir: toFileTree(sortBy(g.list, (n) => n.node.path)),
+    };
   }, [g]);
 
   useLayoutEffect(() => {
@@ -52,7 +53,7 @@ export const NodesPanel = ({
     <div>
       <SearchArea>
         <Autocomplete
-          items={treeNodes}
+          items={g.list}
           renderItem={(t) => t.node.path}
           itemToKey={(t) => t.node.id}
           filterItems={(ts, v) => {
