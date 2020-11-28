@@ -74,6 +74,11 @@ const toKeyMap = (hotkeys: HotkeyConfig): KeyMap => {
       sequences: hotkeys["graph.selectedNode.toggleDetails"],
       action: "keydown",
     },
+    "graph.selectedNode.toggleSelection": {
+      name: "graph.selectedNode.toggleSelection",
+      sequences: hotkeys["graph.selectedNode.toggleSelection"],
+      action: "keydown",
+    },
   };
 };
 
@@ -113,6 +118,7 @@ export const Hotkeys = () => {
         incrementGraphDependentsMaxDepth(current, onChange, -1),
       "graph.selectedNode.exclude": NOOP,
       "graph.selectedNode.toggleDetails": NOOP,
+      "graph.selectedNode.toggleSelection": NOOP,
     };
   }, [cfg]);
 

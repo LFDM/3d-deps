@@ -59,7 +59,8 @@ export type Hotkey =
   | "graph.dependents.maxDepth.increase"
   | "graph.dependents.maxDepth.decrease"
   | "graph.selectedNode.exclude"
-  | "graph.selectedNode.toggleDetails";
+  | "graph.selectedNode.toggleDetails"
+  | "graph.selectedNode.toggleSelection";
 
 export type HotkeyConfig = { [K in Hotkey]: string[] };
 
@@ -130,5 +131,6 @@ export const CONFIG: Config = {
     "graph.dependents.maxDepth.decrease": ["alt+shift+j", "alt+shift+down"],
     "graph.selectedNode.exclude": ["del"],
     "graph.selectedNode.toggleDetails": ["d"],
+    "graph.selectedNode.toggleSelection": ["s"],
   },
 };
