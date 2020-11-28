@@ -144,6 +144,7 @@ const useGraphData = (
             ids: new Set(depsById[n.id].dependsOn),
           },
           dependedBy: { nodes: [], ids: new Set() },
+          exclude: false,
         };
       }
       return asTree[n.id];
