@@ -9,8 +9,8 @@ export class UndoHistory<T> {
     this.depth = depth;
   }
 
-  getPresent() {
-    return this.history.present;
+  getHistory() {
+    return this.history;
   }
 
   undo(steps = 1) {
