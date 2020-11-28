@@ -12,6 +12,9 @@ export type UiState = {
     hotkeyInfo: {
       open: boolean;
     };
+    search: {
+      open: boolean;
+    };
   };
   graph: {
     data: GraphData;
@@ -27,6 +30,9 @@ const DEFAULT_STATE: UiState = {
     hotkeyInfo: {
       open: false,
     },
+    search: {
+      open: false,
+    },
   },
   graph: {
     data: { list: [], byId: {} },
@@ -38,6 +44,7 @@ export type UiStateActions = {
   setSidebarTab: (tab: TabName) => void;
   setSelectedNodeId: (nodeId: string | null) => void;
   setHotkeyInfoOpen: (nextState: boolean) => void;
+  setSearchOpen: (nextState: boolean) => void;
 };
 
 const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
@@ -46,6 +53,7 @@ const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
     setSidebarTab: () => undefined,
     setSelectedNodeId: () => undefined,
     setHotkeyInfoOpen: () => undefined,
+    setSearchOpen: () => undefined,
   },
 ]);
 
@@ -58,6 +66,7 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
   const [tab, setTab] = useQueryParam("tab", "nodes");
   const [selectedNodeId, setSelectedNodeId] = useQueryParam("node");
   const [hotkeyInfoOpen, setHotkeyInfoOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   // TODO optimize so that only what changes really changes. Right now we're
   // blasing the whole object with every change
@@ -72,6 +81,9 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
           hotkeyInfo: {
             open: hotkeyInfoOpen,
           },
+          search: {
+            open: searchOpen,
+          },
         },
         graph: {
           data,
@@ -82,9 +94,10 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
         setSidebarTab: setTab,
         setSelectedNodeId,
         setHotkeyInfoOpen,
+        setSearchOpen,
       },
     ],
-    [data, tab, selectedNodeId, hotkeyInfoOpen]
+    [data, tab, selectedNodeId, hotkeyInfoOpen, searchOpen]
   );
   return (
     <UiStateContext.Provider value={value}>{children}</UiStateContext.Provider>
