@@ -115,7 +115,6 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
       {
         setSidebarTab: setTab,
         setSelectedNodeId: (nextSelection) => {
-          console.log("s", selectedNodeId, "u", unselectedNodeId);
           setState((s) => ({
             ...s,
             unselectedNodeId: nextSelection ? null : selectedNodeId,
@@ -123,7 +122,6 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
           setSelectedNodeId(nextSelection);
         },
         toggleSelectedNodeId: () => {
-          console.log("s", selectedNodeId, "u", unselectedNodeId);
           if (!selectedNodeId && unselectedNodeId) {
             setSelectedNodeId(unselectedNodeId);
           }
