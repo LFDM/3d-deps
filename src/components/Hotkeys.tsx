@@ -1,6 +1,12 @@
 import { useMemo } from "react";
 import { ExtendedKeyMapOptions, GlobalHotKeys } from "react-hotkeys";
-import { toggleSidebar, useConfig } from "../services/config";
+import {
+  incrementGraphDependenciesMaxDepth,
+  incrementGraphDependentsMaxDepth,
+  toggleSidebar,
+  useConfig,
+} from "../services/config";
+import { useUiState } from "../services/uiState";
 import { Hotkey, HotkeyConfig } from "../types/Config";
 
 type KeyMap = {
@@ -74,22 +80,34 @@ const toKeyMap = (hotkeys: HotkeyConfig): KeyMap => {
 const NOOP = (ev?: KeyboardEvent) => console.log(ev?.key);
 
 export const Hotkeys = () => {
+  const [state, { setSidebarTab }] = useUiState();
   const cfg = useConfig();
   const {
     current: { hotkeys },
   } = cfg;
   const keyMap = useMemo<KeyMap>(() => toKeyMap(hotkeys), [hotkeys]);
   const handlers = useMemo<KeyHandlers>(() => {
+    const { current, onChange } = cfg;
     return {
-      "hud.sidebar.toggle": () => toggleSidebar(cfg.current, cfg.onChange),
-      "hud.sidebar.openNodesPanel": NOOP,
-      "hud.sidebar.openConfigPanel": NOOP,
+      "hud.sidebar.toggle": () => toggleSidebar(current, onChange),
+      "hud.sidebar.openNodesPanel": () => {
+        toggleSidebar(current, onChange, true);
+        setSidebarTab("nodes");
+      },
+      "hud.sidebar.openConfigPanel": () => {
+        toggleSidebar(current, onChange, true);
+        setSidebarTab("config");
+      },
       "hud.search": NOOP,
       "hud.toggleHotkeyInfo": NOOP,
-      "graph.dependencies.maxDepth.increase": NOOP,
-      "graph.dependencies.maxDepth.decrease": NOOP,
-      "graph.dependents.maxDepth.increase": NOOP,
-      "graph.dependents.maxDepth.decrease": NOOP,
+      "graph.dependencies.maxDepth.increase": () =>
+        incrementGraphDependenciesMaxDepth(current, onChange, 1),
+      "graph.dependencies.maxDepth.decrease": () =>
+        incrementGraphDependenciesMaxDepth(current, onChange, -1),
+      "graph.dependents.maxDepth.increase": () =>
+        incrementGraphDependentsMaxDepth(current, onChange, 1),
+      "graph.dependents.maxDepth.decrease": () =>
+        incrementGraphDependentsMaxDepth(current, onChange, -1),
       "graph.selectedNode.exclude": NOOP,
       "graph.selectedNode.toggleDetails": NOOP,
     };
