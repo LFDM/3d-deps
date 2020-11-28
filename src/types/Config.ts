@@ -46,6 +46,9 @@ export type HudConfig = {
   sidebar: {
     open: boolean;
   };
+  search: {
+    showExcludedNodes: boolean;
+  };
 };
 
 export type Hotkey =
@@ -117,6 +120,9 @@ export const CONFIG: Config = {
   hud: {
     sidebar: {
       open: true,
+    },
+    search: {
+      showExcludedNodes: true,
     },
   },
   hotkeys: {
