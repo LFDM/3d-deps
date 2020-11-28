@@ -3,8 +3,8 @@ import { nanoid } from "nanoid";
 import React, { useEffect, useMemo, useRef } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import tinycolor from "tinycolor2";
-import { useConfig } from "../../hooks/useConfig";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import { useConfig } from "../../services/config";
 import {
   GraphData,
   IGraphLink,

@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import { ExtendedKeyMapOptions, GlobalHotKeys } from "react-hotkeys";
-import { useConfig } from "../hooks/useConfig";
-import { toggleSidebar } from "../services/config";
+import { toggleSidebar, useConfig } from "../services/config";
 import { Hotkey, HotkeyConfig } from "../types/Config";
 
 type KeyMap = {

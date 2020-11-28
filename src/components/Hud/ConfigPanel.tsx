@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { useConfig } from "../../hooks/useConfig";
+import { useConfig } from "../../services/config";
 import { GraphConfig, Theme } from "../../types/Config";
 import { ColorPicker } from "../ColorPicker";
 import { ConfigRow } from "../ConfigRow";
