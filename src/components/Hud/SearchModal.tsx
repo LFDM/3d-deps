@@ -13,9 +13,11 @@ const CustomInput = styled(Input)((p) => {
     backgroundColor: p.theme.hud.backgroundColor,
     padding: p.theme.spacing(2),
     border: "none",
+    outline: "none",
 
     ":focus": {
       border: "none",
+      outline: "none",
     },
   };
 });
@@ -37,13 +39,6 @@ const ListContainer = styled("div")((p) => ({
   padding: p.theme.spacing(2),
   overflow: "auto",
   maxHeight: "80vh",
-
-  "> :first-child": {
-    marginTop: p.theme.spacing(0.5),
-  },
-  "> :last-child": {
-    marginTop: p.theme.spacing(0.5),
-  },
 }));
 
 export const SearchModal = () => {
