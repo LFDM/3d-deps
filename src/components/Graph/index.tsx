@@ -111,12 +111,6 @@ export const Graph = ({
   selectedNodeId: string | null;
   setSelectedNodeId: (v: string | null) => void;
 }) => {
-  // TODO
-  // onSelect:
-  // - hightlight node
-  // - incoming deps -> 2-3 layers
-  // - outgoing deps -> 2-3 layers
-  // - all links between them, activate particles
   const data = useData(g);
   const { theme, graph: graphConfig } = useConfig().current;
   const dimensions = useWindowSize();
