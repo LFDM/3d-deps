@@ -3,6 +3,7 @@ import escapeStringRegexp from "escape-string-regexp";
 import { findLast } from "lodash";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import tinycolor from "tinycolor2";
+import { useScrollIntoView } from "../../hooks/useScrollIntoView";
 import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
 import { Dialog } from "../Dialog";
@@ -77,8 +78,10 @@ const Item = ({
   selected: boolean;
   onSelect: () => void;
 }) => {
+  const ref = useScrollIntoView<HTMLDivElement>(selected);
   return (
     <ListItem
+      ref={ref}
       key={n.id}
       excluded={n.exclude}
       selected={selected}
