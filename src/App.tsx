@@ -56,19 +56,48 @@ const Main = styled("main")((p) => ({
   },
 }));
 
-const depsToGraphData = (
+const filterDeps = (
   ds: DependencyNode[],
   opts?: {
     excludeByPath?: RegExp;
   }
-): GraphData["data"] => {
+) => {
+  const dsById = keyBy(ds, (d) => d.id);
+  // try to maintain object integrity if possible
+  let res = ds;
+  if (opts?.excludeByPath) {
+    res = ds.reduce<DependencyNode[]>((m, d) => {
+      if (opts?.excludeByPath?.test(d.path)) {
+        return m;
+      }
+      const dependsOn = d.dependsOn.filter((n) => {
+        const otherD = dsById[n];
+        if (opts?.excludeByPath?.test(otherD.path)) {
+          return false;
+        }
+        return true;
+      });
+
+      m.push(
+        d.dependsOn.length === dependsOn.length
+          ? d
+          : {
+              ...d,
+              dependsOn,
+            }
+      );
+      return m;
+    }, []);
+  }
+
+  return res;
+};
+
+const depsToGraphData = (ds: DependencyNode[]): GraphData["data"] => {
   const nodes: IGraphNode[] = [];
   const links: IGraphLink[] = [];
   const dsById = keyBy(ds, (d) => d.id);
   ds.forEach((n) => {
-    if (opts?.excludeByPath?.test(n.path)) {
-      return;
-    }
     const node: IGraphNode = {
       id: n.id,
       label: n.label || n.id,
@@ -77,11 +106,8 @@ const depsToGraphData = (
     nodes.push(node);
     n.dependsOn.forEach((v) => {
       const otherN = dsById[v];
-      if (!v) {
+      if (!otherN) {
         console.log(`No node for ${v} in ${n.id} found`);
-        return;
-      }
-      if (opts?.excludeByPath?.test(otherN.path)) {
         return;
       }
       const link: IGraphLink = {
@@ -100,8 +126,11 @@ const useGraphData = (
   excludeByPath?: RegExp
 ): GraphData => {
   return useMemo(() => {
-    const depsById = keyBy(ds, (d) => d.id);
-    const data = depsToGraphData(ds, { excludeByPath });
+    const filteredDs = filterDeps(ds, {
+      excludeByPath,
+    });
+    const depsById = keyBy(filteredDs, (d) => d.id);
+    const data = depsToGraphData(filteredDs);
     const nodesById = keyBy(data.nodes, (n) => n.id);
     const asTree: {
       [id: string]: TreeNode;
