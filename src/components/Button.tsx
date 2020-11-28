@@ -29,6 +29,10 @@ const StyledButton = styled("button")<{
     borderColor: "transparent",
     font: "inherit",
 
+    ":focus": {
+      outline: `1px dotted ${p.theme.hud.highlightColor}`,
+    },
+
     ...(p.variant === "outlined" && {
       borderColor: "currentcolor",
     }),
