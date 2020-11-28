@@ -5,7 +5,9 @@ import { useUiState } from "../../services/uiState";
 import { Button } from "../Button";
 import { Hotkeys } from "../Hotkeys";
 import { ConfigPanel } from "./ConfigPanel";
+import { CurrentSelection } from "./CurrentSelection";
 import { HotkeyInfoModal } from "./HotkeyInfoModal";
+import { HudSegment } from "./HudSegment";
 import { NodesPanel } from "./NodesPanel";
 import { OverlayContextProvider, useOverlayContext } from "./OverlayContext";
 import { SearchModal } from "./SearchModal";
@@ -31,14 +33,6 @@ const Grid = styled("div")<{ sidebar: boolean }>((p) => ({
   gridTemplateColumns: `${p.sidebar ? "1fr" : "0"} 3.5fr`,
   height: "100%",
 }));
-
-const HudSegment = styled("div")`
-  overflow: auto;
-  padding: ${(p) => p.theme.spacing(2)}px;
-  pointer-events: auto;
-  color: ${(p) => p.theme.hud.color};
-  opacity: ${(p) => p.theme.hud.opacity};
-`;
 
 const SidebarContainer = styled(HudSegment)<{ open: boolean }>`
   height: 100%;
@@ -164,6 +158,7 @@ const Body = () => {
       <Grid sidebar={cfg.current.hud.sidebar.open}>
         <Sidebar open={cfg.current.hud.sidebar.open} />
         <RightContainer>
+          <CurrentSelection />
           <Controls />
         </RightContainer>
       </Grid>
