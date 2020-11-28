@@ -25,12 +25,12 @@ const DEFAULT_STATE: UiState = {
   },
 };
 
-type Actions = {
+export type UiStateActions = {
   setSidebarTab: (tab: TabName) => void;
   setSelectedNode: (nodeId: string | null) => void;
 };
 
-export const UiStateContext = React.createContext<readonly [UiState, Actions]>([
+const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
   DEFAULT_STATE,
   {
     setSidebarTab: () => undefined,
@@ -47,7 +47,7 @@ export const UiStateProvider: React.FC = ({ children }) => {
   // TODO optimize so that only what changes really changes. Right now we're
   // blasing the whole object with every change
 
-  const value = useMemo<[UiState, Actions]>(
+  const value = useMemo<[UiState, UiStateActions]>(
     () => [
       {
         hud: {
