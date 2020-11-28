@@ -283,6 +283,7 @@ export const Graph = () => {
       graphData={data.ds}
       backgroundColor={theme.typography.backgroundColor}
       nodeId="id"
+      nodeVal={(node: any) => (node.id === selectedNodeId ? 5 : 1)}
       nodeColor={(node: any) =>
         styles.nodes[node.id]?.color || theme.graph.nodes.colors.standard
       }
