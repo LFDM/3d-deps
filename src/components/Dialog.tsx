@@ -1,7 +1,12 @@
 import { useTheme } from "@emotion/react";
+import styled from "@emotion/styled";
 import { useMemo } from "react";
 import ReactModal from "react-modal";
 import tinycolor from "tinycolor2";
+
+export const DialogTitle = styled("h3")`
+  margin-top: 0;
+`;
 
 export const Dialog: React.FC<{
   open: boolean;
@@ -19,7 +24,7 @@ export const Dialog: React.FC<{
           .toRgbString(),
       },
       content: {
-        padding: theme.spacing(2),
+        padding: theme.spacing(3),
         top: center ? "50%" : theme.spacing(10),
         left: "50%",
         right: "auto",
@@ -30,6 +35,7 @@ export const Dialog: React.FC<{
         borderColor: "currentcolor",
         color: theme.hud.color,
         width: width || "auto",
+        font: "400 14px Arial",
       },
     };
     return s;
