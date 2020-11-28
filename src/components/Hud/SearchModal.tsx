@@ -15,7 +15,7 @@ export const SearchModal = () => {
   ] = useUiState();
   const close = () => setSearchOpen(false);
   return (
-    <Dialog open={searchOpen} onClose={close} width={700}>
+    <Dialog open={searchOpen} onClose={close} width={700} overflow="visible">
       <DialogTitle>Search</DialogTitle>
 
       <Autocomplete
