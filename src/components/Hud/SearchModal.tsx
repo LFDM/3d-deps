@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import escapeStringRegexp from "escape-string-regexp";
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import tinycolor from "tinycolor2";
 import { useUiState } from "../../services/uiState";
 import { Dialog } from "../Dialog";
@@ -35,20 +35,25 @@ const BaseListItem = styled("div")((p) => ({
 }));
 
 // make this a grid so that we can do ellipsis
-const ListItem = styled(BaseListItem)<{ excluded: boolean }>((p) => ({
-  opacity: p.excluded ? 0.5 : 1,
-  cursor: p.excluded ? "default" : "pointer",
+const ListItem = styled(BaseListItem)<{ excluded: boolean; selected: boolean }>(
+  (p) => ({
+    opacity: p.excluded ? 0.5 : 1,
+    cursor: p.excluded ? "default" : "pointer",
 
-  "div:first-of-type": {
-    textDecoration: p.excluded ? "line-through" : "none",
-  },
+    "div:first-of-type": {
+      textDecoration: p.excluded ? "line-through" : "none",
+    },
 
-  ":hover": {
-    backgroundColor: p.excluded
-      ? "none"
-      : tinycolor(p.theme.hud.highlightColor).lighten(10).toRgbString(),
-  },
-}));
+    backgroundColor: p.selected ? p.theme.hud.highlightColor : "none",
+
+    ":hover": {
+      backgroundColor:
+        p.excluded || p.selected
+          ? "none"
+          : tinycolor(p.theme.hud.highlightColor).lighten(10).toRgbString(),
+    },
+  })
+);
 
 const EmptyListItem = styled(BaseListItem)`
   font-style: italic;
@@ -72,6 +77,7 @@ export const SearchModal = () => {
     { setSearchOpen, setSelectedNodeId },
   ] = useUiState();
   const [q, setQ] = useState("");
+  const [selected, setSelected] = useState<string | null>(null);
   const close = () => {
     setQ("");
     setSearchOpen(false);
@@ -84,6 +90,11 @@ export const SearchModal = () => {
     const regexp = new RegExp(escapeStringRegexp(q), "i");
     return g.list.filter((t) => regexp.test(t.path));
   }, [q, g]);
+
+  useEffect(() => {
+    const sel = nodes.find((n) => !n.exclude);
+    setSelected(sel?.id || null);
+  }, [nodes]);
   return (
     <Dialog open={searchOpen} onClose={close} width={700} variant="plain">
       <CustomInput
@@ -99,6 +110,7 @@ export const SearchModal = () => {
             <ListItem
               key={n.id}
               excluded={n.exclude}
+              selected={n.id === selected}
               role="button"
               onClick={() => {
                 if (n.exclude) {
