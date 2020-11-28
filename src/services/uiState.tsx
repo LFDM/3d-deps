@@ -27,14 +27,14 @@ const DEFAULT_STATE: UiState = {
 
 export type UiStateActions = {
   setSidebarTab: (tab: TabName) => void;
-  setSelectedNode: (nodeId: string | null) => void;
+  setSelectedNodeId: (nodeId: string | null) => void;
 };
 
 const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
   DEFAULT_STATE,
   {
     setSidebarTab: () => undefined,
-    setSelectedNode: () => undefined,
+    setSelectedNodeId: () => undefined,
   },
 ]);
 
@@ -61,7 +61,7 @@ export const UiStateProvider: React.FC = ({ children }) => {
       },
       {
         setSidebarTab: setTab,
-        setSelectedNode: setSelectedNodeId,
+        setSelectedNodeId,
       },
     ],
     [tab, selectedNodeId]
