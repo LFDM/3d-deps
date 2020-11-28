@@ -2,8 +2,10 @@ import styled from "@emotion/styled";
 import React, { useState } from "react";
 import { useConfig } from "../../hooks/useConfig";
 import { useQueryParam } from "../../hooks/useQueryParam";
+import { toggleSidebar } from "../../services/config";
 import { GraphData } from "../../types/GraphData";
 import { Button } from "../Button";
+import { Hotkeys } from "../Hotkeys";
 import { ConfigPanel } from "./ConfigPanel";
 import { NodesPanel } from "./NodesPanel";
 import { OverlayContextProvider, useOverlayContext } from "./OverlayContext";
@@ -132,18 +134,7 @@ const Controls = () => {
       <ControlButtonsContainer>
         <Button
           variant={sidebarOpen ? "outlined" : "standard"}
-          onClick={() =>
-            cfg.onChange({
-              ...cfg.current,
-              hud: {
-                ...cfg.current.hud,
-                sidebar: {
-                  ...cfg.current.hud.sidebar,
-                  open: !sidebarOpen,
-                },
-              },
-            })
-          }
+          onClick={() => toggleSidebar(cfg.current, cfg.onChange)}
         >
           Sidebar
         </Button>
@@ -169,6 +160,7 @@ const Body = (props: Props) => {
 export const Hud = (props: Props) => {
   return (
     <OverlayContextProvider>
+      <Hotkeys />
       <Body {...props} />
     </OverlayContextProvider>
   );
