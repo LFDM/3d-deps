@@ -3,7 +3,6 @@ import escapeStringRegexp from "escape-string-regexp";
 import { findLast } from "lodash";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import tinycolor from "tinycolor2";
-import { isElementInViewport } from "../../hooks/useScrollIntoView";
 import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
 import { Dialog } from "../Dialog";
@@ -69,6 +68,34 @@ const ListContainer = styled("div")((p) => ({
   maxHeight: "80vh",
 }));
 
+const Item = ({
+  n,
+  selected,
+  onSelect,
+}: {
+  n: TreeNode;
+  selected: boolean;
+  onSelect: () => void;
+}) => {
+  return (
+    <ListItem
+      key={n.id}
+      excluded={n.exclude}
+      selected={selected}
+      role="button"
+      onClick={() => {
+        if (n.exclude) {
+          return;
+        }
+        onSelect();
+      }}
+    >
+      <div>{n.label}</div>
+      <NodeStats d={n} />
+    </ListItem>
+  );
+};
+
 export const SearchModal = () => {
   const [
     {
@@ -107,13 +134,6 @@ export const SearchModal = () => {
     setSelected(sel || null);
   }, [nodes]);
 
-  // TODO scroll selection into view
-  useEffect(() => {
-    if (selected && ref.current && !isElementInViewport(ref.current)) {
-      ref.current.scrollIntoView();
-    }
-  }, [selected]);
-
   return (
     <Dialog open={searchOpen} onClose={close} width={700} variant="plain">
       <CustomInput
@@ -148,30 +168,14 @@ export const SearchModal = () => {
         autoFocus
       />
       <ListContainer>
-        {nodes.map((n) => {
-          return (
-            <ListItem
-              ref={(el) => {
-                if (n === selected && el) {
-                  ref.current = el;
-                }
-              }}
-              key={n.id}
-              excluded={n.exclude}
-              selected={n === selected}
-              role="button"
-              onClick={() => {
-                if (n.exclude) {
-                  return;
-                }
-                select(n);
-              }}
-            >
-              <div>{n.label}</div>
-              <NodeStats d={n} />
-            </ListItem>
-          );
-        })}
+        {nodes.map((n) => (
+          <Item
+            key={n.id}
+            n={n}
+            selected={n === selected}
+            onSelect={() => select(n)}
+          />
+        ))}
         {!nodes.length && <EmptyListItem>No matches.</EmptyListItem>}
       </ListContainer>
     </Dialog>
