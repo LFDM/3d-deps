@@ -47,19 +47,20 @@ export type HudConfig = {
   };
 };
 
-export type HotkeyConfig = {
-  "hud.sidebar.toggle": string[];
-  "hud.sidebar.openNodesPanel": string[];
-  "hud.sidebar.openConfigPanel": string[];
-  "hud.search": string[];
-  "hud.toggleHotkeyInfo": string[];
-  "graph.dependencies.maxDepth.increase": string[];
-  "graph.dependencies.maxDepth.decrease": string[];
-  "graph.dependents.maxDepth.increase": string[];
-  "graph.dependents.maxDepth.decrease": string[];
-  "graph.selectedNode.exclude": string[];
-  "graph.selectedNode.toggleDetails": string[];
-};
+export type Hotkey =
+  | "hud.sidebar.toggle"
+  | "hud.sidebar.openNodesPanel"
+  | "hud.sidebar.openConfigPanel"
+  | "hud.search"
+  | "hud.toggleHotkeyInfo"
+  | "graph.dependencies.maxDepth.increase"
+  | "graph.dependencies.maxDepth.decrease"
+  | "graph.dependents.maxDepth.increase"
+  | "graph.dependents.maxDepth.decrease"
+  | "graph.selectedNode.exclude"
+  | "graph.selectedNode.toggleDetails";
+
+export type HotkeyConfig = { [K in Hotkey]: string[] };
 
 export type Config = {
   theme: Theme;
