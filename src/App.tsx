@@ -55,43 +55,6 @@ const Main = styled("main")((p) => ({
   },
 }));
 
-const filterDeps = (
-  ds: DependencyNode[],
-  opts?: {
-    excludeByPath?: RegExp;
-  }
-) => {
-  const dsById = keyBy(ds, (d) => d.id);
-  // try to maintain object integrity if possible
-  let res = ds;
-  if (opts?.excludeByPath) {
-    res = ds.reduce<DependencyNode[]>((m, d) => {
-      if (opts?.excludeByPath?.test(d.path)) {
-        return m;
-      }
-      const dependsOn = d.dependsOn.filter((n) => {
-        const otherD = dsById[n];
-        if (opts?.excludeByPath?.test(otherD.path)) {
-          return false;
-        }
-        return true;
-      });
-
-      m.push(
-        d.dependsOn.length === dependsOn.length
-          ? d
-          : {
-              ...d,
-              dependsOn,
-            }
-      );
-      return m;
-    }, []);
-  }
-
-  return res;
-};
-
 const depsToGraphData = (
   ds: DependencyNode[],
   opts?: {
