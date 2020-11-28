@@ -89,14 +89,16 @@ const Item = ({
         o.bottom >= i.bottom &&
         o.right >= i.right
       ) {
-        console.log("fully visible");
+        // element is fully visible
         return;
       }
       let yDiff = 0;
       if (o.top >= i.top) {
+        // need to go up
         yDiff = i.top - o.top;
       }
       if (o.bottom <= i.bottom) {
+        // need to go down
         yDiff = i.bottom - o.bottom;
       }
       listRef.current.scrollBy(0, yDiff);
