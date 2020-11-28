@@ -1,9 +1,15 @@
+import { keyBy } from "lodash";
 import React, { useEffect, useMemo, useRef } from "react";
 import { ForceGraph3D } from "react-force-graph";
 import tinycolor from "tinycolor2";
 import { useConfig } from "../../hooks/useConfig";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { GraphData, IGraphNode } from "../../types/GraphData";
+import {
+  GraphData,
+  IGraphLink,
+  IGraphNode,
+  TreeNode,
+} from "../../types/GraphData";
 
 type NodeStyle = Partial<{
   color: string;
@@ -33,8 +39,22 @@ const addLinkStyle = (styles: Styles, linkId: string, s: LinkStyle) => {
   styles.links[linkId] = { ...v, ...s };
 };
 
+type Data = {
+  ds: {
+    nodes: IGraphNode[];
+    links: IGraphLink[];
+  };
+
+  nodesById: { [id: string]: IGraphNode };
+  linksById: { [id: string]: IGraphLink };
+  linksBySource: { [sourceId: string]: { [targetId: string]: IGraphLink[] } };
+  linksByTarget: { [targetId: string]: { [sourceId: string]: IGraphLink[] } };
+
+  asTree: { [id: string]: TreeNode };
+};
+
 const traverseDependencies = (
-  g: GraphData,
+  d: Data,
   current: string,
   mode: "dependsOn" | "dependedBy",
   result: {
@@ -48,21 +68,38 @@ const traverseDependencies = (
   links: { [id: string]: number };
 } => {
   if (level < maxDepth) {
-    const treeNode = g.byId[current];
+    const treeNode = d.asTree[current];
     treeNode[mode].nodes.forEach((n) => {
       // always use the most direct level!
       if ((result.nodes[n.id] || Infinity) > level) {
         result.nodes[n.id] = level;
         const links =
           mode === "dependsOn"
-            ? g.linksBySource[current]?.[n.id]
-            : g.linksByTarget[current]?.[n.id] || [];
+            ? d.linksBySource[current]?.[n.id]
+            : d.linksByTarget[current]?.[n.id] || [];
         links.forEach((l) => (result.links[l.id] = level));
       }
-      traverseDependencies(g, n.id, mode, result, level + 1, maxDepth);
+      traverseDependencies(d, n.id, mode, result, level + 1, maxDepth);
     });
   }
   return result;
+};
+
+const useData = (g: GraphData): Data => {
+  return useMemo(() => {
+    return {
+      ds: {
+        nodes: g.data.nodes,
+        links: g.data.links,
+      },
+      nodesById: keyBy(g.data.nodes, (n) => n.id),
+      linksById: g.linksById,
+      linksBySource: g.linksBySource,
+      linksByTarget: g.linksByTarget,
+
+      asTree: g.byId,
+    };
+  }, [g]);
 };
 
 export const Graph = ({
@@ -80,6 +117,7 @@ export const Graph = ({
   // - incoming deps -> 2-3 layers
   // - outgoing deps -> 2-3 layers
   // - all links between them, activate particles
+  const data = useData(g);
   const { theme, graph: graphConfig } = useConfig().current;
   const dimensions = useWindowSize();
 
@@ -96,7 +134,7 @@ export const Graph = ({
 
     if (selectedNodeId) {
       const dependsOn = traverseDependencies(
-        g,
+        data,
         selectedNodeId,
         "dependsOn",
         emptyContainer(),
@@ -104,7 +142,7 @@ export const Graph = ({
         graphConfig.dependents.maxDepth
       );
       const dependedBy = traverseDependencies(
-        g,
+        data,
         selectedNodeId,
         "dependedBy",
         emptyContainer(),
@@ -152,7 +190,7 @@ export const Graph = ({
         });
       });
 
-      g.data.nodes.forEach((n) => {
+      data.ds.nodes.forEach((n) => {
         if (
           dependedBy.nodes[n.id] === undefined &&
           dependsOn.nodes[n.id] === undefined
@@ -162,7 +200,7 @@ export const Graph = ({
           });
         }
       });
-      g.data.links.forEach((l) => {
+      data.ds.links.forEach((l) => {
         if (
           dependedBy.links[l.id] === undefined &&
           dependsOn.links[l.id] === undefined
@@ -188,7 +226,7 @@ export const Graph = ({
     }
 
     return ss;
-  }, [g, selectedNodeId, theme, graphConfig]);
+  }, [data, selectedNodeId, theme, graphConfig]);
 
   // might be better to compute style objects for everything
   // - and then just use these vars in the respective functions
@@ -205,7 +243,7 @@ export const Graph = ({
       ref={ref}
       controlType="trackball"
       {...dimensions}
-      graphData={g.data}
+      graphData={data.ds}
       backgroundColor={theme.typography.backgroundColor}
       nodeId="id"
       nodeColor={(node: any) =>
