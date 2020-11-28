@@ -39,9 +39,9 @@ const toKeyMap = (hotkeys: HotkeyConfig): KeyMap => {
       sequences: hotkeys["hud.search"],
       action: "keydown",
     },
-    "hud.toggleHotkeyInfo": {
-      name: "hud.toggleHotkeyInfo",
-      sequences: hotkeys["hud.toggleHotkeyInfo"],
+    "hud.hotkeyInfo": {
+      name: "hud.hotkeyInfo",
+      sequences: hotkeys["hud.hotkeyInfo"],
       action: "keydown",
     },
     "graph.dependencies.maxDepth.increase": {
@@ -102,8 +102,7 @@ export const Hotkeys = () => {
         setSidebarTab("config");
       },
       "hud.search": () => setSearchOpen(true),
-      "hud.toggleHotkeyInfo": () =>
-        setHotkeyInfoOpen(!state.hud.hotkeyInfo.open),
+      "hud.hotkeyInfo": () => setHotkeyInfoOpen(true),
       "graph.dependencies.maxDepth.increase": () =>
         incrementGraphDependenciesMaxDepth(current, onChange, 1),
       "graph.dependencies.maxDepth.decrease": () =>
