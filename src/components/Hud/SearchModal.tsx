@@ -215,6 +215,10 @@ export const SearchModal = () => {
           // used as input. setTimeout to the rescue
           ref={(el) => setTimeout(() => el && el.focus())}
           onKeyDown={(ev) => {
+            if (ev.altKey && ev.key === "e") {
+              toggleShowExcludedNodes(cfg.current, cfg.onChange);
+              return;
+            }
             if (ev.key === "Enter" && selected) {
               select(selected);
             }
