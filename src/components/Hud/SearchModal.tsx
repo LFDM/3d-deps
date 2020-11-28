@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 import escapeStringRegexp from "escape-string-regexp";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Eye, Settings } from "react-feather";
+import { Eye, EyeOff, Settings } from "react-feather";
 import tinycolor from "tinycolor2";
+import { toggleShowExcludedNodes, useConfig } from "../../services/config";
 import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
@@ -154,6 +155,14 @@ export const SearchModal = () => {
     },
     { setSearchOpen, setSelectedNodeId },
   ] = useUiState();
+  const cfg = useConfig();
+  const {
+    current: {
+      hud: {
+        search: { showExcludedNodes },
+      },
+    },
+  } = cfg;
   const [q, setQ] = useState("");
   const listRef = useRef<HTMLDivElement | null>(null);
   const [selected, setSelected] = useState<TreeNode | null>(null);
@@ -170,12 +179,13 @@ export const SearchModal = () => {
   };
 
   const nodes = useMemo(() => {
+    const list = showExcludedNodes ? g.list : g.list.filter((n) => !n.exclude);
     if (!q) {
-      return g.list;
+      return list;
     }
     const regexp = new RegExp(escapeStringRegexp(q), "i");
-    return g.list.filter((t) => regexp.test(t.path));
-  }, [q, g]);
+    return list.filter((t) => regexp.test(t.path));
+  }, [q, g, showExcludedNodes]);
 
   const selectableNodes = useMemo(() => nodes.filter((n) => !n.exclude), [
     nodes,
@@ -188,8 +198,11 @@ export const SearchModal = () => {
   return (
     <Dialog open={searchOpen} onClose={close} width={700} variant="plain">
       <Controls>
-        <Button variant="icon">
-          <Eye size={14} />
+        <Button
+          variant="icon"
+          onClick={() => toggleShowExcludedNodes(cfg.current, cfg.onChange)}
+        >
+          {showExcludedNodes ? <Eye size={14} /> : <EyeOff size={14} />}
         </Button>
         <Button variant="icon">
           <Settings size={14} />
