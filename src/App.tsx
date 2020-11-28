@@ -73,8 +73,8 @@ const depsToGraphData = (
         path: d.path,
         // initialize empty, so that we can collect the object
         // before we start recursing, preventing issues with circular dependencies
-        dependedBy: { nodes: [] },
-        dependsOn: { nodes: [] },
+        dependedBy: { nodes: [], countWithoutExcluded: 0 },
+        dependsOn: { nodes: [], countWithoutExcluded: 0 },
         exclude,
       };
       byId[t.id] = t;
@@ -89,6 +89,13 @@ const depsToGraphData = (
         const nextT = getOrCreateTreeNode(nextD);
         t.dependsOn.nodes.push(nextT);
         nextT.dependedBy.nodes.push(t);
+
+        if (!nextT.exclude) {
+          t.dependsOn.countWithoutExcluded++;
+        }
+        if (!t.exclude) {
+          nextT.dependedBy.countWithoutExcluded++;
+        }
       });
     }
     return byId[d.id];
