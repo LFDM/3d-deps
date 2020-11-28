@@ -80,7 +80,7 @@ const toKeyMap = (hotkeys: HotkeyConfig): KeyMap => {
 const NOOP = (ev?: KeyboardEvent) => console.log(ev?.key);
 
 export const Hotkeys = () => {
-  const [state, { setSidebarTab }] = useUiState();
+  const [state, { setSidebarTab, setSearchOpen }] = useUiState();
   const cfg = useConfig();
   const {
     current: { hotkeys },
@@ -98,7 +98,7 @@ export const Hotkeys = () => {
         toggleSidebar(current, onChange, true);
         setSidebarTab("config");
       },
-      "hud.search": NOOP,
+      "hud.search": () => setSearchOpen(true),
       "hud.toggleHotkeyInfo": NOOP,
       "graph.dependencies.maxDepth.increase": () =>
         incrementGraphDependenciesMaxDepth(current, onChange, 1),
