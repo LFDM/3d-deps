@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const CssBaseline = styled("div")((p) => ({
-  font: p.theme.typography.color,
+  font: p.theme.typography.font,
 
   h4: {
     marginTop: p.theme.spacing(),
