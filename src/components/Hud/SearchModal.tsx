@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import escapeStringRegexp from "escape-string-regexp";
-import { findLast } from "lodash";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import tinycolor from "tinycolor2";
 import { useScrollIntoView } from "../../hooks/useScrollIntoView";
@@ -148,22 +147,14 @@ export const SearchModal = () => {
             select(selected);
           }
           let sel: TreeNode | undefined;
-          const i = selected ? nodes.indexOf(selected) : -1;
+          const i = selected ? selectableNodes.indexOf(selected) : -1;
           if (ev.key === "ArrowDown") {
-            let sel = nodes.slice(i + 1).find((n) => !n.exclude);
-            if (!sel) {
-              // circle around
-              sel = nodes.slice(0, i).find((n) => !n.exclude);
-            }
-            sel && setSelected(sel);
+            sel = selectableNodes[i + 1] || selectableNodes[0]; // circle around
           }
           if (ev.key === "ArrowUp") {
-            if (i >= 0) {
-              sel = findLast(nodes.slice(0, i), (n) => !n.exclude);
-            }
-            if (!sel) {
-              sel = findLast(nodes, (n) => !n.exclude);
-            }
+            sel =
+              selectableNodes[i - 1] ||
+              selectableNodes[selectableNodes.length - 2];
           }
           sel && setSelected(sel);
         }}
