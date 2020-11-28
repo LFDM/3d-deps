@@ -17,21 +17,18 @@ export class UndoHistory<T> {
     if (steps === 0) {
       return this.history.present;
     }
-
-    if (!this.history.past.length) {
-      return undefined;
-    }
+    let nextEl: T | undefined;
     for (let i = 0; i < steps; i++) {
+      if (!this.history.past.length) {
+        return nextEl;
+      }
       if (this.history.present !== undefined) {
         this.history.future.unshift(this.history.present);
       }
-      const nextEl = this.history.past.pop();
+      nextEl = this.history.past.pop();
       this.history.present = nextEl;
-      if (!this.history.past.length) {
-        return this.history.present;
-      }
     }
-    return this.history.present;
+    return nextEl;
   }
 
   jumpToFuture(steps: number) {}
