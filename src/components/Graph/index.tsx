@@ -16,6 +16,7 @@ import {
 type NodeStyle = Partial<{
   color: string;
   opacity: number;
+  size: number;
 }>;
 type LinkStyle = Partial<{
   color: string;
@@ -250,6 +251,7 @@ export const Graph = () => {
       // have colored it already.
       addNodeStyle(ss, selectedNodeId, {
         color: nodeColors.selected,
+        size: 5,
       });
 
       // const sourceLinks = g.linksBySource[selectedNodeId] || [];
@@ -283,7 +285,7 @@ export const Graph = () => {
       graphData={data.ds}
       backgroundColor={theme.typography.backgroundColor}
       nodeId="id"
-      nodeVal={(node: any) => (node.id === selectedNodeId ? 5 : 1)}
+      nodeVal={(node: any) => styles.nodes[node.id]?.size || 1}
       nodeColor={(node: any) =>
         styles.nodes[node.id]?.color || theme.graph.nodes.colors.standard
       }
