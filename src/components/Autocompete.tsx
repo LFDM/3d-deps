@@ -30,6 +30,7 @@ export const Autocomplete = <T extends any>({
   filterItems,
   onSelect,
   fullWidth,
+  autoFocus,
 }: {
   items: T[];
   renderItem: (item: T) => React.ReactNode;
@@ -37,6 +38,7 @@ export const Autocomplete = <T extends any>({
   filterItems: (vs: T[], v: string) => T[];
   onSelect: (nextValue: T) => void;
   fullWidth?: boolean;
+  autoFocus?: boolean;
 }) => {
   const [v, setV] = useState("");
   const [open, setOpen] = usePopupState(false);
@@ -53,6 +55,7 @@ export const Autocomplete = <T extends any>({
         value={v}
         onChange={(ev) => setV(ev.target.value)}
         type="search"
+        autoFocus={autoFocus}
       />
       {open && v && (
         <Menu>
