@@ -23,13 +23,13 @@ export const NodesPanel = ({
   setOpenNodes: React.Dispatch<SetStateAction<{ [key: string]: boolean }>>;
 }) => {
   const { rootDir, treeNodes } = useMemo(() => {
-    const tn = sortBy(g.data.nodes, (n) => n.path).map((n) => g.asTree[n.id]);
+    const tn = sortBy(g.data.nodes, (n) => n.path).map((n) => g.byId[n.id]);
     return { treeNodes: tn, rootDir: toFileTree(tn) };
   }, [g]);
 
   useLayoutEffect(() => {
     if (selectedNodeId) {
-      const treeNode = g.asTree[selectedNodeId];
+      const treeNode = g.byId[selectedNodeId];
       if (!treeNode) {
         return;
       }
@@ -45,7 +45,7 @@ export const NodesPanel = ({
   }, [selectedNodeId, g]);
 
   const selectedItemKey = selectedNodeId
-    ? g.asTree[selectedNodeId]?.node.path || null
+    ? g.byId[selectedNodeId]?.node.path || null
     : null;
 
   return (

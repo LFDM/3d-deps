@@ -48,7 +48,7 @@ const traverseDependencies = (
   links: { [id: string]: number };
 } => {
   if (level < maxDepth) {
-    const treeNode = g.asTree[current];
+    const treeNode = g.byId[current];
     treeNode[mode].nodes.forEach((n) => {
       // always use the most direct level!
       if ((result.nodes[n.id] || Infinity) > level) {
