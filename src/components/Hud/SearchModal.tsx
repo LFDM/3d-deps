@@ -220,10 +220,10 @@ export const SearchModal = () => {
             }
             let sel: TreeNode | undefined;
             const i = selected ? selectableNodes.indexOf(selected) : -1;
-            if (ev.key === "ArrowDown") {
+            if (ev.key === "ArrowDown" || (ev.altKey && ev.key === "j")) {
               sel = selectableNodes[i + 1] || selectableNodes[0]; // circle around
             }
-            if (ev.key === "ArrowUp") {
+            if (ev.key === "ArrowUp" || (ev.altKey && ev.key === "k")) {
               sel =
                 selectableNodes[i - 1] ||
                 selectableNodes[selectableNodes.length - 2];
