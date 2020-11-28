@@ -35,7 +35,7 @@ type TreeNodeOld = {
   exclude: boolean;
 };
 
-type TreeNodeNew = {
+export type TreeNodeNew = {
   id: string;
   label: string;
   path: string;
