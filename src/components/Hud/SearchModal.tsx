@@ -216,6 +216,7 @@ export const SearchModal = () => {
           ref={(el) => setTimeout(() => el && el.focus())}
           onKeyDown={(ev) => {
             if (ev.altKey && ev.key === "e") {
+              ev.preventDefault(); // this otherwise triggers a browser window
               toggleShowExcludedNodes(cfg.current, cfg.onChange);
               return;
             }
