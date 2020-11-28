@@ -31,7 +31,7 @@ const ListItem = styled("div")<{ excluded: boolean }>((p) => ({
   opacity: p.excluded ? 0.5 : 1,
   cursor: p.excluded ? "default" : "pointer",
 
-  label: {
+  "div:first-of-type": {
     textDecoration: p.excluded ? "line-through" : "none",
   },
 
@@ -100,7 +100,7 @@ export const SearchModal = () => {
                 close();
               }}
             >
-              <label>{n.label}</label>
+              <div>{n.label}</div>
               <NodeStats d={n} />
             </ListItem>
           );
