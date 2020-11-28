@@ -73,10 +73,20 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
 }) => {
   const [tab, setTab] = useQueryParam("tab", "nodes");
   const [selectedNodeId, setSelectedNodeId] = useQueryParam("node");
-  const [hotkeyInfoOpen, setHotkeyInfoOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [unselectedNodeId, setUnselectedNodeId] = useState<string | null>(null);
-  const [showDetails, setShowDetails] = useState(false);
+  const [
+    { hotkeyInfoOpen, searchOpen, showDetails, unselectedNodeId },
+    setState,
+  ] = useState<{
+    hotkeyInfoOpen: boolean;
+    searchOpen: boolean;
+    showDetails: boolean;
+    unselectedNodeId: string | null;
+  }>({
+    hotkeyInfoOpen: false,
+    searchOpen: false,
+    showDetails: false,
+    unselectedNodeId: null,
+  });
 
   // TODO optimize so that only what changes really changes. Right now we're
   // blasing the whole object with every change
@@ -106,7 +116,10 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
         setSidebarTab: setTab,
         setSelectedNodeId: (nextSelection) => {
           console.log("s", selectedNodeId, "u", unselectedNodeId);
-          setUnselectedNodeId(nextSelection ? null : selectedNodeId);
+          setState((s) => ({
+            ...s,
+            unselectedNodeId: nextSelection ? null : selectedNodeId,
+          }));
           setSelectedNodeId(nextSelection);
         },
         toggleSelectedNodeId: () => {
@@ -115,13 +128,28 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
             setSelectedNodeId(unselectedNodeId);
           }
           if (selectedNodeId) {
-            setUnselectedNodeId(selectedNodeId);
+            setState((s) => ({
+              ...s,
+              unselectedNodeId: selectedNodeId,
+            }));
             setSelectedNodeId(null);
           }
         },
-        setHotkeyInfoOpen,
-        setSearchOpen,
-        toggleDetails: (nextState = !showDetails) => setShowDetails(nextState),
+        setHotkeyInfoOpen: (next) =>
+          setState((s) => ({
+            ...s,
+            hotkeyInfoOpen: next,
+          })),
+        setSearchOpen: (next) =>
+          setState((s) => ({
+            ...s,
+            searchOpen: next,
+          })),
+        toggleDetails: (nextState = !showDetails) =>
+          setState((s) => ({
+            ...s,
+            showDetails: nextState,
+          })),
       },
     ],
     [
