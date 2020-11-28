@@ -26,9 +26,9 @@ const Container = styled("div")<{ overlayActive: boolean }>`
   }
 `;
 
-const Grid = styled("div")((p) => ({
+const Grid = styled("div")<{ sidebar: boolean }>((p) => ({
   display: "grid",
-  gridTemplateColumns: "2fr 5fr",
+  gridTemplateColumns: `${p.sidebar ? "2fr" : "0"} 5fr`,
   height: "100%",
 }));
 
@@ -40,9 +40,10 @@ const HudSegment = styled("div")`
   opacity: ${(p) => p.theme.hud.opacity};
 `;
 
-const SidebarContainer = styled(HudSegment)`
+const SidebarContainer = styled(HudSegment)<{ open: boolean }>`
   height: 100%;
   background-color: ${(p) => p.theme.hud.backgroundColor};
+  ${(p) => !p.open && "padding: 0;"}
 `;
 
 const RightContainer = styled("div")`
@@ -59,7 +60,7 @@ const Tabs = styled("div")((p) => ({
   borderBottom: `1px solid lightgray`,
 }));
 
-export const Sidebar = () => {
+export const Sidebar = ({ open }: { open: boolean }) => {
   const [
     {
       hud: {
@@ -71,7 +72,7 @@ export const Sidebar = () => {
   ] = useUiState();
   const [openNodes, setOpenNodes] = useState<{ [key: string]: boolean }>({});
   return (
-    <SidebarContainer>
+    <SidebarContainer open={open}>
       <Tabs>
         <Button
           variant={tab === "nodes" ? "outlined" : "standard"}
@@ -160,8 +161,8 @@ const Body = () => {
   const cfg = useConfig();
   return (
     <Container overlayActive={active}>
-      <Grid>
-        {cfg.current.hud.sidebar.open && <Sidebar />}
+      <Grid sidebar={cfg.current.hud.sidebar.open}>
+        <Sidebar open={cfg.current.hud.sidebar.open} />
         <RightContainer>
           <Controls />
         </RightContainer>
