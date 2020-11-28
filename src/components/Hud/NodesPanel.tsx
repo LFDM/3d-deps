@@ -54,7 +54,7 @@ export const NodesPanel = ({
       <SearchArea>
         <Autocomplete
           items={g.list}
-          renderItem={(t) => t.path}
+          renderItem={(t) => (t.exclude ? <s>{t.path}</s> : t.path)}
           itemToKey={(t) => t.id}
           filterItems={(ts, v) => {
             const re = new RegExp(v, "i");
