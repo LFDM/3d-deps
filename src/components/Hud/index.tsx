@@ -23,6 +23,11 @@ const Container = styled("div")<{ overlayActive: boolean }>`
   top: 0;
   left: 0;
   pointer-events: ${(p) => (p.overlayActive ? "all" : "none")};
+
+  h4,
+  h5 {
+    color: ${(p) => p.theme.hud.highlightColor};
+  }
 `;
 
 const Grid = styled("div")((p) => ({
@@ -38,20 +43,18 @@ const Centered = styled("div")((p) => ({
   width: "100%",
 }));
 
-const SidebarContainer = styled("div")`
+const HudSegment = styled("div")`
   overflow: auto;
-  height: 100%;
-  width: 100%;
   padding: ${(p) => p.theme.spacing(2)}px;
   pointer-events: auto;
   color: ${(p) => p.theme.hud.color};
-  background-color: ${(p) => p.theme.hud.backgroundColor};
   opacity: ${(p) => p.theme.hud.opacity};
+`;
 
-  h4,
-  h5 {
-    color: ${(p) => p.theme.hud.highlightColor};
-  }
+const SidebarContainer = styled(HudSegment)`
+  height: 100%;
+  width: 100%;
+  background-color: ${(p) => p.theme.hud.backgroundColor};
 `;
 
 type TabName = "config" | "nodes";
@@ -103,15 +106,62 @@ export const Sidebar = (props: Props) => {
   );
 };
 
+const ControlsContainer = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "flex-end",
+  flexDirection: "column",
+}));
+
+const ControlButtonsContainer = styled(HudSegment)((p) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+
+  "> :not(:first-child)": {
+    marginLeft: p.theme.spacing(),
+  },
+}));
+
+const Controls = () => {
+  const cfg = useConfig();
+  const sidebarOpen = cfg.current.hud.sidebar.open;
+  console.log(sidebarOpen);
+  return (
+    <ControlsContainer>
+      <div></div>
+      <ControlButtonsContainer>
+        <Button
+          variant={sidebarOpen ? "outlined" : "standard"}
+          onClick={() =>
+            cfg.onChange({
+              ...cfg.current,
+              hud: {
+                ...cfg.current.hud,
+                sidebar: {
+                  ...cfg.current.hud.sidebar,
+                  open: !sidebarOpen,
+                },
+              },
+            })
+          }
+        >
+          Sidebar
+        </Button>
+      </ControlButtonsContainer>
+    </ControlsContainer>
+  );
+};
+
 const Body = (props: Props) => {
   const [active] = useOverlayContext();
   const cfg = useConfig();
   return (
     <Container overlayActive={active}>
       <Grid>
-        {cfg.current.hud.sidebar ? <Sidebar {...props} /> : <div />}
+        {cfg.current.hud.sidebar.open ? <Sidebar {...props} /> : <div />}
         <Centered></Centered>
-        <div></div>
+        <Controls />
       </Grid>
     </Container>
   );
