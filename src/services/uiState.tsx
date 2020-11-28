@@ -20,6 +20,7 @@ export type UiState = {
     data: GraphData;
     selectedNodeId: string | null;
     unselectedNodeId: string | null;
+    showDetails: boolean;
   };
 };
 
@@ -39,6 +40,7 @@ const DEFAULT_STATE: UiState = {
     data: { list: [], byId: {} },
     selectedNodeId: null,
     unselectedNodeId: null,
+    showDetails: true,
   },
 };
 
@@ -48,6 +50,7 @@ export type UiStateActions = {
   toggleSelectedNodeId: () => void;
   setHotkeyInfoOpen: (nextState: boolean) => void;
   setSearchOpen: (nextState: boolean) => void;
+  toggleDetails: (nextState?: boolean) => void;
 };
 
 const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
@@ -58,6 +61,7 @@ const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
     toggleSelectedNodeId: () => undefined,
     setHotkeyInfoOpen: () => undefined,
     setSearchOpen: () => undefined,
+    toggleDetails: () => undefined,
   },
 ]);
 
@@ -72,6 +76,7 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
   const [hotkeyInfoOpen, setHotkeyInfoOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [unselectedNodeId, setUnselectedNodeId] = useState<string | null>(null);
+  const [showDetails, setShowDetails] = useState(false);
 
   // TODO optimize so that only what changes really changes. Right now we're
   // blasing the whole object with every change
@@ -94,6 +99,7 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
           data,
           selectedNodeId: selectedNodeId || null,
           unselectedNodeId: unselectedNodeId || null,
+          showDetails,
         },
       },
       {
@@ -115,9 +121,18 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
         },
         setHotkeyInfoOpen,
         setSearchOpen,
+        toggleDetails: (nextState = !showDetails) => setShowDetails(nextState),
       },
     ],
-    [data, tab, selectedNodeId, unselectedNodeId, hotkeyInfoOpen, searchOpen]
+    [
+      data,
+      tab,
+      selectedNodeId,
+      unselectedNodeId,
+      hotkeyInfoOpen,
+      searchOpen,
+      showDetails,
+    ]
   );
   return (
     <UiStateContext.Provider value={value}>{children}</UiStateContext.Provider>
