@@ -35,15 +35,18 @@ export const Dialog: React.FC<{
         backgroundColor: tinycolor(theme.typography.backgroundColor)
           .setAlpha(0.7)
           .toRgbString(),
+        display: "flex",
+        justifyContent: "center",
+        alignItems: center ? "center" : "flex-start",
       },
       content: {
+        position: "relative",
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
         padding: variant === "plain" ? 0 : theme.spacing(3),
-        top: center ? "50%" : theme.spacing(10),
-        left: "50%",
-        right: "auto",
-        bottom: "auto",
-        marginRight: "-50%",
-        transform: center ? "translate(-50%, -50%)" : "translate(-50%, 0)",
+        marginTop: center ? 0 : theme.spacing(8),
         backgroundColor:
           variant === "plain" ? "transparent" : theme.hud.backgroundColor,
         border: variant === "plain" ? "none" : "1px solid currentcolor",
