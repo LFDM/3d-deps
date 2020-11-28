@@ -8,6 +8,7 @@ import { ConfigPanel } from "./ConfigPanel";
 import { HotkeyInfoModal } from "./HotkeyInfoModal";
 import { NodesPanel } from "./NodesPanel";
 import { OverlayContextProvider, useOverlayContext } from "./OverlayContext";
+import { SearchModal } from "./SearchModal";
 
 const Container = styled("div")<{ overlayActive: boolean }>`
   background: transparent;
@@ -176,8 +177,9 @@ export const Hud = () => {
   return (
     <OverlayContextProvider>
       <Hotkeys />
-      <Body />
       <HotkeyInfoModal />
+      <SearchModal />
+      <Body />
     </OverlayContextProvider>
   );
 };
