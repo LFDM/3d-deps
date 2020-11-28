@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import escapeStringRegexp from "escape-string-regexp";
 import React, { useMemo, useState } from "react";
+import tinycolor from "tinycolor2";
 import { useUiState } from "../../services/uiState";
 import { Dialog } from "../Dialog";
 import { Input } from "../Input";
@@ -40,6 +41,12 @@ const ListItem = styled(BaseListItem)<{ excluded: boolean }>((p) => ({
 
   "div:first-of-type": {
     textDecoration: p.excluded ? "line-through" : "none",
+  },
+
+  ":hover": {
+    backgroundColor: p.excluded
+      ? "none"
+      : tinycolor(p.theme.hud.highlightColor).lighten(10).toRgbString(),
   },
 }));
 
