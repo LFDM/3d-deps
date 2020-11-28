@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import escapeStringRegexp from "escape-string-regexp";
+import { findLast } from "lodash";
 import React, { useEffect, useMemo, useState } from "react";
 import tinycolor from "tinycolor2";
 import { useUiState } from "../../services/uiState";
@@ -112,8 +113,9 @@ export const SearchModal = () => {
           if (ev.key === "Enter" && selected) {
             select(selected);
           }
+          let sel: TreeNode | undefined;
+          const i = selected ? nodes.indexOf(selected) : -1;
           if (ev.key === "ArrowDown") {
-            const i = selected ? nodes.indexOf(selected) : -1;
             let sel = nodes.slice(i + 1).find((n) => !n.exclude);
             if (!sel) {
               // circle around
@@ -121,6 +123,15 @@ export const SearchModal = () => {
             }
             sel && setSelected(sel);
           }
+          if (ev.key === "ArrowUp") {
+            if (i >= 0) {
+              sel = findLast(nodes.slice(0, i), (n) => !n.exclude);
+            }
+            if (!sel) {
+              sel = findLast(nodes, (n) => !n.exclude);
+            }
+          }
+          sel && setSelected(sel);
         }}
         type="search"
         value={q}
