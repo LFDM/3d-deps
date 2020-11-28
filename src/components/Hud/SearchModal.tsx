@@ -29,6 +29,7 @@ const ListItem = styled("div")<{ excluded: boolean }>((p) => ({
   alignItems: "center",
   padding: p.theme.spacing(0.5),
   opacity: p.excluded ? 0.5 : 1,
+  cursor: p.excluded ? "default" : "pointer",
 
   label: {
     textDecoration: p.excluded ? "line-through" : "none",
@@ -87,7 +88,18 @@ export const SearchModal = () => {
       <ListContainer>
         {nodes.map((n) => {
           return (
-            <ListItem key={n.id} excluded={n.exclude}>
+            <ListItem
+              key={n.id}
+              excluded={n.exclude}
+              role="button"
+              onClick={() => {
+                if (n.exclude) {
+                  return;
+                }
+                setSelectedNodeId(n.id);
+                close();
+              }}
+            >
               <label>{n.label}</label>
               <NodeStats d={n} />
             </ListItem>
