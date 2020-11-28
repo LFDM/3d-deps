@@ -15,7 +15,8 @@ export const useConfig = () => useContext(ConfigContext);
 
 export const toggleSidebar = (
   current: Config,
-  onChange: (nextConfig: Config) => void
+  onChange: (nextConfig: Config) => void,
+  nextState: boolean = !current.hud.sidebar.open
 ) => {
   onChange({
     ...current,
@@ -23,7 +24,7 @@ export const toggleSidebar = (
       ...current.hud,
       sidebar: {
         ...current.hud.sidebar,
-        open: !current.hud.sidebar.open,
+        open: nextState,
       },
     },
   });
