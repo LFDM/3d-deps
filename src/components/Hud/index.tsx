@@ -28,7 +28,7 @@ const Container = styled("div")<{ overlayActive: boolean }>`
 
 const Grid = styled("div")<{ sidebar: boolean }>((p) => ({
   display: "grid",
-  gridTemplateColumns: `${p.sidebar ? "2fr" : "0"} 5fr`,
+  gridTemplateColumns: `${p.sidebar ? "1fr" : "0"} 3.5fr`,
   height: "100%",
 }));
 
