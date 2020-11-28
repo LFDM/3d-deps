@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 import escapeStringRegexp from "escape-string-regexp";
 import { findLast } from "lodash";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import tinycolor from "tinycolor2";
+import { isElementInViewport } from "../../hooks/useScrollIntoView";
 import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
 import { Dialog } from "../Dialog";
@@ -79,6 +80,7 @@ export const SearchModal = () => {
     { setSearchOpen, setSelectedNodeId },
   ] = useUiState();
   const [q, setQ] = useState("");
+  const ref = useRef<HTMLDivElement>();
   const [selected, setSelected] = useState<TreeNode | null>(null);
   const close = () => {
     setQ("");
@@ -106,6 +108,12 @@ export const SearchModal = () => {
   }, [nodes]);
 
   // TODO scroll selection into view
+  useEffect(() => {
+    if (selected && ref.current && !isElementInViewport(ref.current)) {
+      ref.current.scrollIntoView();
+    }
+  }, [selected]);
+
   return (
     <Dialog open={searchOpen} onClose={close} width={700} variant="plain">
       <CustomInput
@@ -143,6 +151,11 @@ export const SearchModal = () => {
         {nodes.map((n) => {
           return (
             <ListItem
+              ref={(el) => {
+                if (n === selected && el) {
+                  ref.current = el;
+                }
+              }}
               key={n.id}
               excluded={n.exclude}
               selected={n === selected}

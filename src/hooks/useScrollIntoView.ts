@@ -7,7 +7,10 @@ type OptionalRect = {
   bottom?: number;
 };
 
-const isElementInViewport = (el: Element, thresholds: OptionalRect = {}) => {
+export const isElementInViewport = (
+  el: Element,
+  thresholds: OptionalRect = {}
+) => {
   const {
     top: elTop,
     left: elLeft,
