@@ -3,6 +3,7 @@ import escapeStringRegexp from "escape-string-regexp";
 import React, { useEffect, useMemo, useState } from "react";
 import tinycolor from "tinycolor2";
 import { useUiState } from "../../services/uiState";
+import { TreeNode } from "../../types/GraphData";
 import { Dialog } from "../Dialog";
 import { Input } from "../Input";
 import { NodeStats } from "../NodeStats";
@@ -77,10 +78,17 @@ export const SearchModal = () => {
     { setSearchOpen, setSelectedNodeId },
   ] = useUiState();
   const [q, setQ] = useState("");
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<TreeNode | null>(null);
   const close = () => {
     setQ("");
     setSearchOpen(false);
+  };
+  const select = (node: TreeNode) => {
+    if (node.exclude) {
+      return;
+    }
+    setSelectedNodeId(node.id);
+    close();
   };
 
   const nodes = useMemo(() => {
@@ -93,11 +101,16 @@ export const SearchModal = () => {
 
   useEffect(() => {
     const sel = nodes.find((n) => !n.exclude);
-    setSelected(sel?.id || null);
+    setSelected(sel || null);
   }, [nodes]);
   return (
     <Dialog open={searchOpen} onClose={close} width={700} variant="plain">
       <CustomInput
+        onKeyDown={(ev) => {
+          if (ev.key === "Enter" && selected) {
+            select(selected);
+          }
+        }}
         type="search"
         value={q}
         onChange={(ev) => setQ(ev.target.value)}
@@ -110,14 +123,13 @@ export const SearchModal = () => {
             <ListItem
               key={n.id}
               excluded={n.exclude}
-              selected={n.id === selected}
+              selected={n === selected}
               role="button"
               onClick={() => {
                 if (n.exclude) {
                   return;
                 }
-                setSelectedNodeId(n.id);
-                close();
+                select(n);
               }}
             >
               <div>{n.label}</div>
