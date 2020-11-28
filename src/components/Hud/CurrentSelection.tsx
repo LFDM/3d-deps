@@ -11,6 +11,7 @@ const Container = styled(HudSegment)((p) => ({
   left: 0,
   display: "flex",
   justifyContent: "center",
+  padding: p.theme.spacing(3),
 
   "> :not(:first-child)": {
     marginLeft: p.theme.spacing(),
