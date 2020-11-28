@@ -19,6 +19,7 @@ const Menu = styled("div")`
   min-width: 100%;
   max-height: calc(100vh - 100px);
   overflow: auto;
+  box-sizing: border-box;
 `;
 
 export const Autocomplete = <T extends any>({
