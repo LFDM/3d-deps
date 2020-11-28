@@ -91,8 +91,8 @@ export const CONFIG: Config = {
           standard: "#fcf4b0",
           selected: "#A992EE",
           unselected: "#050505",
-          dependency: "#f47560",
-          dependent: "#61cdbb",
+          dependency: "#f47560", // #B5503D darker - darker is better. then the color dropoff for indirect nodes could be steeper too
+          dependent: "#61cdbb", // #258374 darker
         },
       },
       links: {
