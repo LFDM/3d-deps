@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { useMemo } from "react";
 import ReactModal from "react-modal";
 import tinycolor from "tinycolor2";
+import { CssBaseline } from "../CssBaseline";
 
 export const DialogTitle = styled("h3")`
   margin-top: 0;
@@ -42,7 +43,7 @@ export const Dialog: React.FC<{
   }, [theme, width, center]);
   return (
     <ReactModal style={style} isOpen={open} onRequestClose={onClose}>
-      {children}
+      <CssBaseline>{children}</CssBaseline>
     </ReactModal>
   );
 };

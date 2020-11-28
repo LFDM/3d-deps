@@ -5,54 +5,19 @@ import React, { useMemo, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Graph } from "./components/Graph";
 import { Hud } from "./components/Hud";
+import { CssBaseline } from "./CssBaseline";
 import { ConfigContext } from "./services/config";
 import { UiStateProvider } from "./services/uiState";
 import { Config } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
 import { GraphData, TreeNode } from "./types/GraphData";
 
-const Main = styled("main")((p) => ({
+const Main = styled(CssBaseline)((p) => ({
   backgroundColor: p.theme.typography.backgroundColor,
   color: p.theme.typography.color,
   width: "100vw",
   height: "100vh",
   overflow: "hidden",
-
-  font: p.theme.typography.color,
-
-  h4: {
-    marginTop: p.theme.spacing(),
-    marginBottom: p.theme.spacing(),
-  },
-
-  h5: {
-    marginTop: p.theme.spacing(),
-    marginBottom: p.theme.spacing(),
-  },
-
-  "*": {
-    scrollbarWidth: "thin",
-    scrollbarColor: `${p.theme.hud.backgroundColor} lightgray`,
-
-    "::-webkit-scrollbar": {
-      width: p.theme.spacing(0.5),
-      height: p.theme.spacing(0.5),
-    },
-
-    "::-webkit-scrollbar-track": {
-      background: p.theme.hud.backgroundColor,
-      border: `1px solid ${p.theme.hud.backgroundColor}`,
-      opacity: p.theme.hud.opacity,
-    },
-    "::-webkit-scrollbar-thumb": {
-      borderRadius: 2,
-      background: "lightgray",
-    },
-    "::-webkit-scrollbar-corner": {
-      background: p.theme.hud.backgroundColor,
-      opacity: p.theme.hud.opacity,
-    },
-  },
 }));
 
 const depsToGraphData = (
@@ -138,7 +103,7 @@ function App({
       >
         <ThemeProvider theme={config.theme}>
           <UiStateProvider data={data}>
-            <Main>
+            <Main as="main">
               <Hud />
               <Graph />
             </Main>
