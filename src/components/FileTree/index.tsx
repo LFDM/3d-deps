@@ -96,10 +96,12 @@ const toggle: React.CSSProperties = {
   verticalAlign: "middle",
 };
 
-const Row = styled("div")((p) => ({
+const Row = styled("div")<{ excluded?: boolean }>((p) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
+
+  opacity: p.excluded ? 0.5 : 1,
 
   "> :not(:first-child)": {
     marginLeft: p.theme.spacing(),
@@ -115,6 +117,7 @@ const Tree = React.memo(
     onClick,
     isSelected,
     rightSlot,
+    excluded,
   }: {
     label: React.ReactNode;
     isOpen: boolean;
@@ -123,6 +126,7 @@ const Tree = React.memo(
     onClick?: () => void;
     isSelected: boolean;
     rightSlot?: React.ReactNode;
+    excluded?: boolean;
   }) => {
     const ref = useScrollIntoView<HTMLDivElement>(isSelected, {
       behavior: "smooth",
@@ -132,17 +136,19 @@ const Tree = React.memo(
     ];
     return (
       <Frame ref={ref} selected={isSelected}>
-        <Row>
+        <Row excluded={excluded}>
           <div>
             <Icon
               style={{ ...toggle, opacity: children ? 1 : 0.3 }}
               onClick={() => setOpen(!isOpen)}
             />
             <Title>
-              {onClick ? (
+              {onClick && !excluded ? (
                 <Button variant="none" onClick={onClick}>
                   {label}
                 </Button>
+              ) : excluded ? (
+                <s>{label}</s>
               ) : (
                 label
               )}
@@ -238,6 +244,7 @@ export const FileTree = ({
       [item.key]: open,
     });
   if (item.type === "dir") {
+    // Mark with strikethrough when all children are excluded
     return (
       <Tree
         label={item.label}
@@ -262,6 +269,7 @@ export const FileTree = ({
       isOpen={isOpen}
       setOpen={setOpen}
       isSelected={item.key === selectedItemKey}
+      excluded={item.data.exclude}
       rightSlot={
         <Stats>
           <Pill color={theme.graph.nodes.colors.dependent}>
