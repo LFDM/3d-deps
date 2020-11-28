@@ -262,21 +262,29 @@ export const FileTree = ({
       </Tree>
     );
   }
+  const d = item.data;
+  // excluded nodes show their full count - to get a sense for how many connections
+  // are excluded by excluding this node
+  // active nodes show their count without them
   return (
     <Tree
       label={item.label}
-      onClick={() => onSelect(item.data)}
+      onClick={() => onSelect(d)}
       isOpen={isOpen}
       setOpen={setOpen}
       isSelected={item.key === selectedItemKey}
-      excluded={item.data.exclude}
+      excluded={d.exclude}
       rightSlot={
         <Stats>
           <Pill color={theme.graph.nodes.colors.dependent}>
-            {item.data.dependsOn.nodes.length}
+            {d.exclude
+              ? d.dependsOn.nodes.length
+              : d.dependsOn.countWithoutExcluded}
           </Pill>
           <Pill color={theme.graph.nodes.colors.dependency}>
-            {item.data.dependedBy.nodes.length}
+            {d.exclude
+              ? d.dependedBy.nodes.length
+              : d.dependedBy.countWithoutExcluded}
           </Pill>
         </Stats>
       }
