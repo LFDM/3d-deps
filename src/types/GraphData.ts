@@ -14,37 +14,18 @@ export interface IGraphLink {
 }
 
 export type GraphData = {
-  data: {
-    nodes: IGraphNode[];
-    links: IGraphLink[];
-  };
   list: TreeNode[];
   byId: { [id: string]: TreeNode };
 };
 
-type TreeNodeOld = {
+export type TreeNode = {
   id: string;
   label: string;
   path: string;
   group?: string; // probably don't need this
   color?: string; // probably don't need this
 
-  node: IGraphNode;
-  dependsOn: { nodes: IGraphNode[] };
-  dependedBy: { nodes: IGraphNode[] };
+  dependsOn: { nodes: TreeNode[] };
+  dependedBy: { nodes: TreeNode[] };
   exclude: boolean;
 };
-
-export type TreeNodeNew = {
-  id: string;
-  label: string;
-  path: string;
-  group?: string; // probably don't need this
-  color?: string; // probably don't need this
-
-  dependsOn: { nodes: TreeNodeNew[] };
-  dependedBy: { nodes: TreeNodeNew[] };
-  exclude: boolean;
-};
-
-export type TreeNode = TreeNodeOld;

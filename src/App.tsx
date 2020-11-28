@@ -1,7 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
-import { keyBy, values } from "lodash";
-import { nanoid } from "nanoid";
+import { keyBy } from "lodash";
 import React, { useMemo, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Graph } from "./components/Graph";
@@ -10,13 +9,7 @@ import { ConfigContext } from "./hooks/useConfig";
 import { useQueryParam } from "./hooks/useQueryParam";
 import { Config } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
-import {
-  GraphData,
-  IGraphLink,
-  IGraphNode,
-  TreeNode,
-  TreeNodeNew,
-} from "./types/GraphData";
+import { GraphData, TreeNode } from "./types/GraphData";
 
 const Main = styled("main")((p) => ({
   backgroundColor: p.theme.typography.backgroundColor,
@@ -99,47 +92,19 @@ const filterDeps = (
   return res;
 };
 
-const depsToGraphData = (ds: DependencyNode[]): GraphData["data"] => {
-  const nodes: IGraphNode[] = [];
-  const links: IGraphLink[] = [];
-  const dsById = keyBy(ds, (d) => d.id);
-  ds.forEach((n) => {
-    const node: IGraphNode = {
-      id: n.id,
-      label: n.label || n.id,
-      path: n.path,
-    };
-    nodes.push(node);
-    n.dependsOn.forEach((v) => {
-      const otherN = dsById[v];
-      if (!otherN) {
-        console.log(`No node for ${v} in ${n.id} found`);
-        return;
-      }
-      const link: IGraphLink = {
-        id: nanoid(),
-        source: n.id,
-        target: v,
-      };
-      links.push(link);
-    });
-  });
-  return { nodes, links };
-};
-
-const depsToTreeNodes = (
+const depsToGraphData = (
   ds: DependencyNode[],
   opts?: {
     excludeByPath?: RegExp;
   }
-): { list: TreeNodeNew[]; byId: { [id: string]: TreeNodeNew } } => {
-  const list: TreeNodeNew[] = [];
-  const byId: { [id: string]: TreeNodeNew } = {};
+): { list: TreeNode[]; byId: { [id: string]: TreeNode } } => {
+  const list: TreeNode[] = [];
+  const byId: { [id: string]: TreeNode } = {};
   const dsById = keyBy(ds, (d) => d.id);
-  const getOrCreateTreeNode = (d: DependencyNode): TreeNodeNew => {
+  const getOrCreateTreeNode = (d: DependencyNode): TreeNode => {
     if (!byId[d.id]) {
       const exclude = !!opts?.excludeByPath?.test(d.path);
-      const t: TreeNodeNew = {
+      const t: TreeNode = {
         id: d.id,
         label: d.label || d.id,
         path: d.path,
@@ -174,53 +139,13 @@ const useGraphData = (
   ds: DependencyNode[],
   excludeByPath?: RegExp
 ): GraphData => {
-  return useMemo(() => {
-    const filteredDs = filterDeps(ds, {
-      excludeByPath,
-    });
-    const depsById = keyBy(filteredDs, (d) => d.id);
-    const data = depsToGraphData(filteredDs);
-    const nodesById = keyBy(data.nodes, (n) => n.id);
-    const byId: {
-      [id: string]: TreeNode;
-    } = {};
-    const list: TreeNode[] = [];
-    const getOrCreateTreeNode = (n: IGraphNode) => {
-      if (!byId[n.id]) {
-        const nextNode: TreeNode = {
-          id: n.id,
-          label: n.label,
-          path: n.path,
-          color: n.color,
-          group: n.group,
-
-          node: n,
-          dependsOn: {
-            nodes: depsById[n.id].dependsOn.map((c) => nodesById[c]),
-          },
-          dependedBy: { nodes: [] },
-          exclude: false,
-        };
-        byId[n.id] = nextNode;
-        list.push(nextNode);
-      }
-      return byId[n.id];
-    };
-    data.nodes.forEach((n) => {
-      const treeNode = getOrCreateTreeNode(n);
-      treeNode.dependsOn.nodes.forEach((child) => {
-        const childTreeNode = getOrCreateTreeNode(child);
-        childTreeNode.dependedBy.nodes.push(n);
-      });
-    });
-
-    const graphData: GraphData = {
-      data,
-      byId: byId,
-      list: values(byId),
-    };
-    return graphData;
-  }, [ds, excludeByPath]);
+  return useMemo(
+    () =>
+      depsToGraphData(ds, {
+        excludeByPath,
+      }),
+    [ds, excludeByPath]
+  );
 };
 
 const MainApp = ({ g }: { g: GraphData }) => {
