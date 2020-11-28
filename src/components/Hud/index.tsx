@@ -134,9 +134,10 @@ const Controls = () => {
     {
       hud: {
         hotkeyInfo: { open: hotkeyInfoOpen },
+        search: { open: searchOpen },
       },
     },
-    { setHotkeyInfoOpen },
+    { setHotkeyInfoOpen, setSearchOpen },
   ] = useUiState();
   return (
     <ControlsContainer>
@@ -147,6 +148,12 @@ const Controls = () => {
           onClick={() => toggleSidebar(cfg.current, cfg.onChange)}
         >
           Sidebar
+        </Button>
+        <Button
+          variant={searchOpen ? "outlined" : "standard"}
+          onClick={() => setSearchOpen(!searchOpen)}
+        >
+          Search
         </Button>
         <Button
           variant={hotkeyInfoOpen ? "outlined" : "standard"}
