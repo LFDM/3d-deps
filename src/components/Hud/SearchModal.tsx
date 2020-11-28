@@ -168,6 +168,10 @@ export const SearchModal = () => {
   return (
     <Dialog open={searchOpen} onClose={close} width={700} variant="plain">
       <CustomInput
+        // cannot autofocus - if the search is triggered
+        // through a keyboard shortcut, it will be immediately
+        // used as input. setTimeout to the rescue
+        ref={(el) => setTimeout(() => el && el.focus())}
         onKeyDown={(ev) => {
           if (ev.key === "Enter" && selected) {
             select(selected);
@@ -188,7 +192,6 @@ export const SearchModal = () => {
         value={q}
         onChange={(ev) => setQ(ev.target.value)}
         fullWidth
-        autoFocus
       />
       <ListContainer ref={listRef}>
         {nodes.map((n) => (
