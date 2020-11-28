@@ -26,7 +26,7 @@ export type GraphData = {
 
 export type TreeNode = {
   node: IGraphNode;
-  dependsOn: { nodes: IGraphNode[]; ids: Set<string> };
-  dependedBy: { nodes: IGraphNode[]; ids: Set<string> };
+  dependsOn: { nodes: IGraphNode[] };
+  dependedBy: { nodes: IGraphNode[] };
   exclude: boolean;
 };

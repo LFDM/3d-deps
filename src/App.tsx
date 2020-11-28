@@ -141,9 +141,8 @@ const useGraphData = (
           node: n,
           dependsOn: {
             nodes: depsById[n.id].dependsOn.map((c) => nodesById[c]),
-            ids: new Set(depsById[n.id].dependsOn),
           },
-          dependedBy: { nodes: [], ids: new Set() },
+          dependedBy: { nodes: [] },
           exclude: false,
         };
       }
@@ -154,7 +153,6 @@ const useGraphData = (
       treeNode.dependsOn.nodes.forEach((child) => {
         const childTreeNode = getOrCreateTreeNode(child);
         childTreeNode.dependedBy.nodes.push(n);
-        childTreeNode.dependedBy.ids.add(n.id);
       });
     });
 
