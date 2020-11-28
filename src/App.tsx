@@ -10,7 +10,13 @@ import { ConfigContext } from "./hooks/useConfig";
 import { useQueryParam } from "./hooks/useQueryParam";
 import { Config } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
-import { GraphData, IGraphLink, IGraphNode, TreeNode } from "./types/GraphData";
+import {
+  GraphData,
+  IGraphLink,
+  IGraphNode,
+  TreeNode,
+  TreeNodeNew,
+} from "./types/GraphData";
 
 const Main = styled("main")((p) => ({
   backgroundColor: p.theme.typography.backgroundColor,
@@ -119,6 +125,45 @@ const depsToGraphData = (ds: DependencyNode[]): GraphData["data"] => {
     });
   });
   return { nodes, links };
+};
+
+const depsToTreeNodes = (
+  ds: DependencyNode[]
+): { list: TreeNodeNew[]; byId: { [id: string]: TreeNodeNew } } => {
+  const list: TreeNodeNew[] = [];
+  const byId: { [id: string]: TreeNodeNew } = {};
+  const dsById = keyBy(ds, (d) => d.id);
+  const getOrCreateTreeNode = (d: DependencyNode): TreeNodeNew => {
+    if (!byId[d.id]) {
+      const t: TreeNodeNew = {
+        id: d.id,
+        label: d.label || d.id,
+        path: d.path,
+        // initialize empty, so that we can collect the object
+        // before we start recursing, preventing issues with circular dependencies
+        dependedBy: { nodes: [] },
+        dependsOn: { nodes: [] },
+        exclude: false,
+      };
+      byId[t.id] = t;
+      list.push(t);
+
+      d.dependsOn.forEach((nextDId) => {
+        const nextD = dsById[nextDId];
+        if (!nextD) {
+          console.log(`No node for ${nextDId} in ${d.id} found`);
+          return;
+        }
+        const nextT = getOrCreateTreeNode(nextD);
+        t.dependsOn.nodes.push(nextT);
+        nextT.dependedBy.nodes.push(t);
+      });
+    }
+    return byId[d.id];
+  };
+  ds.forEach(getOrCreateTreeNode);
+
+  return { list, byId };
 };
 
 const useGraphData = (
