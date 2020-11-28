@@ -126,7 +126,6 @@ const ControlButtonsContainer = styled(HudSegment)((p) => ({
 const Controls = () => {
   const cfg = useConfig();
   const sidebarOpen = cfg.current.hud.sidebar.open;
-  console.log(sidebarOpen);
   return (
     <ControlsContainer>
       <div></div>
