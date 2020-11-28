@@ -1,7 +1,22 @@
-import React from "react";
+import styled from "@emotion/styled";
+import React, { useState } from "react";
 import { useUiState } from "../../services/uiState";
-import { Autocomplete } from "../Autocompete";
-import { Dialog, DialogTitle } from "../Dialog";
+import { Dialog } from "../Dialog";
+import { Input } from "../Input";
+
+const CustomInput = styled(Input)((p) => {
+  return {
+    fontSize: "1.33rem",
+    color: p.theme.hud.color,
+    backgroundColor: p.theme.hud.backgroundColor,
+    padding: p.theme.spacing(2),
+    border: "none",
+
+    ":focus": {
+      border: "none",
+    },
+  };
+});
 
 export const SearchModal = () => {
   const [
@@ -13,26 +28,17 @@ export const SearchModal = () => {
     },
     { setSearchOpen, setSelectedNodeId },
   ] = useUiState();
-  const close = () => setSearchOpen(false);
+  const [q, setQ] = useState("");
+  const close = () => {
+    setQ("");
+    setSearchOpen(false);
+  };
   return (
-    <Dialog open={searchOpen} onClose={close} width={700} overflow="visible">
-      <DialogTitle>Search</DialogTitle>
-
-      <Autocomplete
-        items={g.list}
-        renderItem={(t) => (t.exclude ? <s>{t.path}</s> : t.path)}
-        itemToKey={(t) => t.id}
-        filterItems={(ts, v) => {
-          const re = new RegExp(v, "i");
-          return ts.filter((t) => re.test(t.path));
-        }}
-        onSelect={(t) => {
-          if (t.exclude) {
-            return;
-          }
-          setSelectedNodeId(t.id);
-          close();
-        }}
+    <Dialog open={searchOpen} onClose={close} width={700} variant="plain">
+      <CustomInput
+        type="search"
+        value={q}
+        onChange={(ev) => setQ(ev.target.value)}
         fullWidth
         autoFocus
       />
