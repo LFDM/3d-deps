@@ -128,11 +128,7 @@ const MainApp = ({ g }: { g: GraphData }) => {
         selectedNodeId={selectedNodeId || null}
         setSelectedNodeId={setSelectedNodeId}
       />
-      <Graph
-        g={g}
-        selectedNodeId={selectedNodeId || null}
-        setSelectedNodeId={setSelectedNodeId}
-      />
+      <Graph g={g} />
     </Main>
   );
 };
