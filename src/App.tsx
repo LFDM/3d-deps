@@ -165,7 +165,7 @@ const useGraphData = (
       });
     });
 
-    return {
+    const graphData: GraphData = {
       data,
       byId: byId,
       list: values(byId),
@@ -179,6 +179,7 @@ const useGraphData = (
       ),
       linksById: keyBy(data.links, (l) => l.id),
     };
+    return graphData;
   }, [ds, excludeByPath]);
 };
 
