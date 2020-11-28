@@ -31,7 +31,7 @@ const ListItem = styled("div")<{ excluded: boolean }>((p) => ({
   opacity: p.excluded ? 0.5 : 1,
 
   label: {
-    textDecoration: "line-through",
+    textDecoration: p.excluded ? "line-through" : "none",
   },
 
   "> :not(:first-child)": {
@@ -85,12 +85,14 @@ export const SearchModal = () => {
         autoFocus
       />
       <ListContainer>
-        {nodes.map((n) => (
-          <ListItem key={n.id} excluded={n.exclude}>
-            <label>{n.label}</label>
-            <NodeStats d={n} />
-          </ListItem>
-        ))}
+        {nodes.map((n) => {
+          return (
+            <ListItem key={n.id} excluded={n.exclude}>
+              <label>{n.label}</label>
+              <NodeStats d={n} />
+            </ListItem>
+          );
+        })}
         {!nodes.length && <EmptyState>No matches.</EmptyState>}
       </ListContainer>
     </Dialog>
