@@ -5,6 +5,7 @@ import { ForceGraph3D } from "react-force-graph";
 import tinycolor from "tinycolor2";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { useConfig } from "../../services/config";
+import { useUiState } from "../../services/uiState";
 import {
   GraphData,
   IGraphLink,
@@ -76,7 +77,7 @@ const traverseDependencies = (
         result.nodes[n.id] = level;
         const links =
           mode === "dependsOn"
-            ? d.linksBySource[current]?.[n.id]
+            ? d.linksBySource[current]?.[n.id] || []
             : d.linksByTarget[current]?.[n.id] || [];
         links.forEach((l) => (result.links[l.id] = level));
       }
@@ -136,15 +137,14 @@ const useData = (g: GraphData): Data => {
   }, [g]);
 };
 
-export const Graph = ({
-  g,
-  selectedNodeId,
-  setSelectedNodeId,
-}: {
-  g: GraphData;
-  selectedNodeId: string | null;
-  setSelectedNodeId: (v: string | null) => void;
-}) => {
+export const Graph = ({ g }: { g: GraphData }) => {
+  const [
+    {
+      graph: { selectedNodeId },
+    },
+    { setSelectedNodeId },
+  ] = useUiState();
+
   const data = useData(g);
   const { theme, graph: graphConfig } = useConfig().current;
   const dimensions = useWindowSize();
