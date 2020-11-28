@@ -73,6 +73,9 @@ const traverseDependencies = (
     const treeNode = d.asTree[current];
     treeNode[mode].nodes.forEach((n) => {
       // always use the most direct level!
+      if (n.exclude) {
+        return;
+      }
       if ((result.nodes[n.id] || Infinity) > level) {
         result.nodes[n.id] = level;
         const links =
