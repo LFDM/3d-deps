@@ -7,6 +7,7 @@ import { Graph } from "./components/Graph";
 import { Hud } from "./components/Hud";
 import { useQueryParam } from "./hooks/useQueryParam";
 import { ConfigContext } from "./services/config";
+import { UiStateProvider } from "./services/uiState";
 import { Config } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
 import { GraphData, TreeNode } from "./types/GraphData";
@@ -155,7 +156,9 @@ function App({
         }}
       >
         <ThemeProvider theme={config.theme}>
-          <MainApp g={g} />
+          <UiStateProvider>
+            <MainApp g={g} />
+          </UiStateProvider>
         </ThemeProvider>
       </ConfigContext.Provider>
     </Router>
