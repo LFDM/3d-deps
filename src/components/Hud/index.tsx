@@ -53,8 +53,6 @@ const SidebarContainer = styled(HudSegment)`
   background-color: ${(p) => p.theme.hud.backgroundColor};
 `;
 
-type TabName = "config" | "nodes";
-
 const Tab = styled("div")();
 const Tabs = styled("div")((p) => ({
   display: "grid",
