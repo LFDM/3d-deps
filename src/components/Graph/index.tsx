@@ -161,6 +161,12 @@ export const Graph = ({
     const emptyContainer = () => ({ nodes: {}, links: {} });
 
     if (selectedNodeId) {
+      if (!data.nodesById[selectedNodeId]) {
+        console.warn(
+          `Unknown node ${selectedNodeId} encountered - continuing without selection`
+        );
+        return ss;
+      }
       const dependsOn = traverseDependencies(
         data,
         selectedNodeId,
