@@ -80,7 +80,7 @@ export const incrementGraphDependentsMaxDepth = (
   onChange: (nextConfig: Config) => void,
   increment: number
 ) =>
-  setGraphDependenciesMaxDepth(
+  setGraphDependentsMaxDepth(
     current,
     onChange,
     current.graph.dependents.maxDepth + increment
