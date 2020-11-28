@@ -30,6 +30,7 @@ export const NodesPanel = ({
 
   useLayoutEffect(() => {
     if (selectedNodeId) {
+      console.log("RERENDER");
       const treeNode = g.byId[selectedNodeId];
       if (!treeNode) {
         return;
@@ -43,7 +44,7 @@ export const NodesPanel = ({
       }
       setOpenNodes((x) => ({ ...x, ...toOpen }));
     }
-  }, [selectedNodeId, g]);
+  }, [selectedNodeId, g, setOpenNodes]);
 
   const selectedItemKey = selectedNodeId
     ? g.byId[selectedNodeId]?.path || null
