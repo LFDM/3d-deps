@@ -22,7 +22,7 @@ export type GraphData = {
   byId: { [id: string]: TreeNode };
 };
 
-export type TreeNode = {
+type TreeNodeOld = {
   id: string;
   label: string;
   path: string;
@@ -34,3 +34,17 @@ export type TreeNode = {
   dependedBy: { nodes: IGraphNode[] };
   exclude: boolean;
 };
+
+type TreeNodeNew = {
+  id: string;
+  label: string;
+  path: string;
+  group?: string; // probably don't need this
+  color?: string; // probably don't need this
+
+  dependsOn: { nodes: TreeNodeNew[] };
+  dependedBy: { nodes: TreeNodeNew[] };
+  exclude: boolean;
+};
+
+export type TreeNode = TreeNodeOld;
