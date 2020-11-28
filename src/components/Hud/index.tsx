@@ -191,7 +191,6 @@ const HotkeyValue = styled("span")`
 `;
 
 const HotkeyRow = ({ h }: { h: KeyMapDisplayOptions }) => {
-  console.log(h);
   return (
     <>
       <div>{h.name}</div>
@@ -218,7 +217,6 @@ const HotkeyInfoModal = () => {
   ] = useUiState();
   const close = () => setHotkeyInfoOpen(false);
   const hotkeys = getApplicationKeyMap();
-  console.log("HOTKEYS", hotkeys);
   return (
     <Dialog open={hotkeyInfoOpen} onClose={close} center>
       <DialogTitle>Hotkeys</DialogTitle>
