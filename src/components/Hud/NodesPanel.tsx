@@ -60,13 +60,16 @@ export const NodesPanel = ({
             const re = new RegExp(v, "i");
             return ts.filter((t) => re.test(t.path));
           }}
-          onSelect={(t) => setSelectedNodeId(t.id)}
+          onSelect={(t) => !t.exclude && setSelectedNodeId(t.id)}
           fullWidth={true}
         />
       </SearchArea>
       <FileTreeDirectoryContent
         dir={rootDir}
         onSelect={(t) => {
+          if (t.exclude) {
+            return;
+          }
           const nodeId = t.id;
           return setSelectedNodeId(selectedNodeId === nodeId ? null : nodeId);
         }}
