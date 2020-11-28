@@ -11,11 +11,10 @@ import { OverlayContextProvider, useOverlayContext } from "./OverlayContext";
 import { SearchModal } from "./SearchModal";
 
 const Container = styled("div")<{ overlayActive: boolean }>`
-  position: relative;
   background: transparent;
   z-index: 2;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -29,15 +28,8 @@ const Container = styled("div")<{ overlayActive: boolean }>`
 
 const Grid = styled("div")((p) => ({
   display: "grid",
-  gridTemplateColumns: "1fr 3fr",
+  gridTemplateColumns: "2fr 5fr",
   height: "100%",
-}));
-
-const Centered = styled("div")((p) => ({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "100%",
 }));
 
 const HudSegment = styled("div")`
@@ -50,8 +42,11 @@ const HudSegment = styled("div")`
 
 const SidebarContainer = styled(HudSegment)`
   height: 100%;
-  width: 100%;
   background-color: ${(p) => p.theme.hud.backgroundColor};
+`;
+
+const RightContainer = styled("div")`
+  position: relative;
 `;
 
 const Tab = styled("div")();
@@ -166,9 +161,10 @@ const Body = () => {
   return (
     <Container overlayActive={active}>
       <Grid>
-        {cfg.current.hud.sidebar.open ? <Sidebar /> : <div />}
-        <Centered></Centered>
-        <Controls />
+        {cfg.current.hud.sidebar.open && <Sidebar />}
+        <RightContainer>
+          <Controls />
+        </RightContainer>
       </Grid>
     </Container>
   );
