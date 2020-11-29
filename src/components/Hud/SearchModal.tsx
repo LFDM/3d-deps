@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import fuzzysort from "fuzzysort";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Eye, EyeOff, Settings } from "react-feather";
+import tinycolor from "tinycolor2";
 import { toggleShowExcludedNodes, useConfig } from "../../services/config";
 import { scrollElementIntoView } from "../../services/scroll";
 import { useUiState } from "../../services/uiState";
@@ -39,6 +40,13 @@ const ListContainer = styled("div")((p) => ({
   maxHeight: "70vh",
 }));
 
+const ItemLabel = styled("span")`
+  b {
+    color: ${(p) =>
+      tinycolor(p.theme.hud.secondaryColor).brighten(20).toRgbString()};
+  }
+`;
+
 const Item = ({
   n,
   selected,
@@ -59,6 +67,7 @@ const Item = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
+  const l = <ItemLabel dangerouslySetInnerHTML={{ __html: label }} />;
   return (
     <Button
       key={n.id}
@@ -73,7 +82,7 @@ const Item = ({
         onSelect();
       }}
     >
-      {n.exclude ? <s>{n.label}</s> : <span>{n.label}</span>}
+      {n.exclude ? <s>{l}</s> : l}
       <NodeStats d={n} />
     </Button>
   );
