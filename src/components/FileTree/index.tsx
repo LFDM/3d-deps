@@ -1,4 +1,3 @@
-import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import tinycolor from "tinycolor2";
@@ -232,7 +231,6 @@ export const FileTree = ({
   setOpenNodes: (nextV: { [key: string]: boolean }) => void;
   selectedItemKey: string | null;
 }): JSX.Element => {
-  const theme = useTheme();
   const isOpen = !!openNodes[item.key];
   const setOpen = (open: boolean) =>
     setOpenNodes({
