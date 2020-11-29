@@ -1,23 +1,27 @@
 import styled from "@emotion/styled";
 import React from "react";
+import tinycolor from "tinycolor2";
 
 export type ButtonVariant =
   | "outlined"
   | "contained"
   | "standard"
   | "none"
-  | "icon";
+  | "icon"
+  | "listItem";
 
 export type ButtonProps = {
   disabled?: boolean;
   onClick?: (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   variant?: ButtonVariant;
+  selected?: boolean; // for list items
   fullWidth?: boolean;
 };
 
 const StyledButton = styled("button")<{
   variant: ButtonVariant;
   fullWidth?: boolean;
+  selected?: boolean;
 }>((p) => {
   return {
     borderWidth: 2,
@@ -31,6 +35,11 @@ const StyledButton = styled("button")<{
 
     ":focus": {
       outline: `1px dotted ${p.theme.hud.highlightColor}`,
+    },
+
+    ":disabled": {
+      opacity: 0.5,
+      cursor: "default",
     },
 
     ...(p.variant === "outlined" && {
@@ -49,6 +58,27 @@ const StyledButton = styled("button")<{
       justifyContent: "center",
       padding: 0,
       textAlign: "center",
+    }),
+    ...(p.variant === "listItem" && {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: p.theme.spacing(0.5),
+      backgroundColor: p.selected ? p.theme.hud.highlightColor : "transparent",
+
+      ":hover": {
+        backgroundColor: p.selected
+          ? "transparent"
+          : tinycolor(p.theme.hud.highlightColor).lighten(10).toRgbString(),
+      },
+      ":disabled:hover": {
+        backgroundColor: "transparent",
+      },
+
+      "> :not(:first-child)": {
+        marginLeft: p.theme.spacing(),
+      },
     }),
     ...(p.fullWidth && {
       width: "100%",
