@@ -20,7 +20,6 @@ export type UiState = {
   graph: {
     data: GraphData;
     selectedNodeId: string | null;
-    unselectedNodeId: string | null;
     showDetails: boolean;
   };
 };
@@ -40,7 +39,6 @@ const DEFAULT_STATE: UiState = {
   graph: {
     data: { list: [], byId: {} },
     selectedNodeId: null,
-    unselectedNodeId: null,
     showDetails: true,
   },
 };
@@ -79,19 +77,14 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
   const history = useRef(
     new UndoHistory<string>(15, { present: selectedNodeId || undefined })
   );
-  const [
-    { hotkeyInfoOpen, searchOpen, showDetails, unselectedNodeId },
-    setState,
-  ] = useState<{
+  const [{ hotkeyInfoOpen, searchOpen, showDetails }, setState] = useState<{
     hotkeyInfoOpen: boolean;
     searchOpen: boolean;
     showDetails: boolean;
-    unselectedNodeId: string | null;
   }>({
     hotkeyInfoOpen: false,
     searchOpen: false,
     showDetails: false,
-    unselectedNodeId: null,
   });
 
   // TODO optimize so that only what changes really changes. Right now we're
@@ -114,7 +107,6 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
         graph: {
           data,
           selectedNodeId: selectedNodeId || null,
-          unselectedNodeId: unselectedNodeId || null,
           showDetails,
         },
       },
@@ -132,14 +124,11 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
           }
         },
         toggleSelectedNodeId: () => {
-          if (!selectedNodeId && unselectedNodeId) {
-            setSelectedNodeId(unselectedNodeId);
+          const { present } = history.current.getHistory();
+          if (!selectedNodeId && present) {
+            setSelectedNodeId(present);
           }
           if (selectedNodeId) {
-            setState((s) => ({
-              ...s,
-              unselectedNodeId: selectedNodeId,
-            }));
             setSelectedNodeId(null);
           }
         },
@@ -168,15 +157,7 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
         },
       },
     ],
-    [
-      data,
-      tab,
-      selectedNodeId,
-      unselectedNodeId,
-      hotkeyInfoOpen,
-      searchOpen,
-      showDetails,
-    ]
+    [data, tab, selectedNodeId, hotkeyInfoOpen, searchOpen, showDetails]
   );
   return (
     <UiStateContext.Provider value={value}>{children}</UiStateContext.Provider>
