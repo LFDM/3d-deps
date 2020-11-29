@@ -25,7 +25,7 @@ const Container = styled("div")<{ overlayActive: boolean }>`
 
   h4,
   h5 {
-    color: ${(p) => p.theme.hud.highlightColor};
+    color: ${(p) => p.theme.hud.primaryColor};
   }
 `;
 

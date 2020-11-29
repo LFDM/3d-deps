@@ -112,13 +112,13 @@ const Row = styled("div")<{
     marginLeft: p.theme.spacing(),
   },
 
-  backgroundColor: p.selected ? p.theme.hud.highlightColor : "none",
+  backgroundColor: p.selected ? p.theme.hud.primaryColor : "none",
 
   ":hover": {
     backgroundColor:
       p.selected || p.excluded || !p.clickable
         ? "none"
-        : tinycolor(p.theme.hud.highlightColor).lighten(10).toRgbString(),
+        : tinycolor(p.theme.hud.primaryColor).lighten(10).toRgbString(),
   },
 }));
 

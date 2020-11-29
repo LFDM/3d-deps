@@ -37,7 +37,7 @@ const StyledButton = styled("button")<{
     font: "inherit",
 
     ":focus": {
-      outline: `1px dotted ${p.theme.hud.highlightColor}`,
+      outline: `1px dotted ${p.theme.hud.primaryColor}`,
     },
 
     ":disabled": {
@@ -68,12 +68,12 @@ const StyledButton = styled("button")<{
       justifyContent: "space-between",
       alignItems: "center",
       padding: `${p.theme.spacing(0.5)}px ${p.theme.spacing(2)}px`,
-      backgroundColor: p.selected ? p.theme.hud.highlightColor : "transparent",
+      backgroundColor: p.selected ? p.theme.hud.primaryColor : "transparent",
 
       ":hover": {
         backgroundColor: p.selected
           ? "none"
-          : tinycolor(p.theme.hud.highlightColor).lighten(10).toRgbString(),
+          : tinycolor(p.theme.hud.primaryColor).lighten(10).toRgbString(),
       },
       ":disabled:hover": {
         backgroundColor: "transparent",

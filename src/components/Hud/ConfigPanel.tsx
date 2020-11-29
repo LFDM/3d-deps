@@ -82,14 +82,14 @@ const ThemeSection = ({
         />
         <ColorPicker
           label="Highlight Color"
-          value={value.hud.highlightColor}
-          defaultValue={originalValue.hud.highlightColor}
+          value={value.hud.primaryColor}
+          defaultValue={originalValue.hud.primaryColor}
           onChange={(nextColor) =>
             onChange({
               ...value,
               hud: {
                 ...value.hud,
-                highlightColor: nextColor,
+                primaryColor: nextColor,
               },
             })
           }
@@ -334,7 +334,7 @@ const RegExpRow = ({
         {v === originalValue ? (
           <Check size={14} />
         ) : (
-          <CheckCircle size={14} color={theme.hud.highlightColor} />
+          <CheckCircle size={14} color={theme.hud.primaryColor} />
         )}
       </Button>
     </ConfigRow>
