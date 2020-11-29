@@ -127,14 +127,18 @@ export const SearchModal = () => {
     close();
   };
 
+  const searchableNodes = useMemo(
+    () => (showExcludedNodes ? g.list : g.list.filter((n) => !n.exclude)),
+    [g, showExcludedNodes]
+  );
+
   const nodes = useMemo(() => {
-    const list = showExcludedNodes ? g.list : g.list.filter((n) => !n.exclude);
     if (!q) {
-      return list;
+      return searchableNodes;
     }
     const regexp = new RegExp(escapeStringRegexp(q), "i");
-    return list.filter((t) => regexp.test(t.path));
-  }, [q, g, showExcludedNodes]);
+    return searchableNodes.filter((t) => regexp.test(t.path));
+  }, [q, searchableNodes, showExcludedNodes]);
 
   const selectableNodes = useMemo(() => nodes.filter((n) => !n.exclude), [
     nodes,
