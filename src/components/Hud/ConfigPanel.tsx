@@ -295,6 +295,44 @@ const ThemeSection = ({
   );
 };
 
+const RegExpRow = ({
+  value,
+  onConfirm,
+}: {
+  value: RegExp | null;
+  onConfirm: (nextValue: RegExp | null) => void;
+}) => {
+  const originalValue = value ? value.toString().slice(1, -1) : "";
+  const [v, setV] = useState(originalValue);
+  const theme = useTheme();
+  return (
+    <ConfigRow
+      dense
+      as="form"
+      onSubmit={(ev) => {
+        console.log("!SUBMIT");
+        ev.stopPropagation();
+        ev.preventDefault();
+        if (v === originalValue) {
+          return;
+        }
+        onConfirm(v ? new RegExp(v) : null);
+      }}
+    >
+      <div>{"/"}</div>
+      <Input fullWidth value={v} onChange={(ev) => setV(ev.target.value)} />
+      <div>{"/"}</div>
+      <Button variant="icon" disabled={v === originalValue} type="submit">
+        {v === originalValue ? (
+          <Check size={14} />
+        ) : (
+          <CheckCircle size={14} color={theme.hud.highlightColor} />
+        )}
+      </Button>
+    </ConfigRow>
+  );
+};
+
 const GraphSection = ({
   value,
   originalValue,
@@ -307,7 +345,11 @@ const GraphSection = ({
   const originalExclude = value.excludeByPath
     ? value.excludeByPath.toString().slice(1, -1)
     : "";
+  const originalInclude = value.includeByPath
+    ? value.includeByPath.toString().slice(1, -1)
+    : "";
   const [exclude, setExclude] = useState(originalExclude);
+  const [include, setInclude] = useState(originalInclude);
   const theme = useTheme();
   return (
     <>
