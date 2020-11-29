@@ -77,6 +77,7 @@ export class UndoHistory<T> {
     if (this.history.past.length > this.depth) {
       this.history.past.shift();
     }
+    this.notify("push", this.listeners);
   }
 
   listen(listener: HistoryListener<T>) {
