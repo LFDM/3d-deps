@@ -414,9 +414,6 @@ const RegExpRowInline = ({
       onSubmit={(ev) => {
         ev.stopPropagation();
         ev.preventDefault();
-        if (v === originalValue) {
-          return;
-        }
         onConfirm(v ? new RegExp(v) : null);
       }}
     >
