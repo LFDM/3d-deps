@@ -383,6 +383,7 @@ const GraphSection = ({
             min={0}
             max={10}
             value={value.dependencies.maxDepth}
+            blurOnEscape
             onChange={(ev) =>
               onChange({
                 ...value,
@@ -403,6 +404,7 @@ const GraphSection = ({
             min={0}
             max={10}
             value={value.dependents.maxDepth}
+            blurOnEscape
             onChange={(ev) =>
               onChange({
                 ...value,
