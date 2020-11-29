@@ -129,10 +129,10 @@ export const deserializeConfig = (conf: SerializedConfig): Config => {
     graph: {
       ...conf.graph,
       excludeByPath: conf.graph.excludeByPath
-        ? new RegExp(conf.graph.excludeByPath)
+        ? new RegExp(conf.graph.excludeByPath.slice(1, -1))
         : null,
       includeByPath: conf.graph.includeByPath
-        ? new RegExp(conf.graph.includeByPath)
+        ? new RegExp(conf.graph.includeByPath.slice(1, -1))
         : null,
     },
     hud: conf.hud,
