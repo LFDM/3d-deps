@@ -13,6 +13,37 @@ export const DialogTitle = styled("h3")`
 
 const DialogBody = styled(CssBaseline)((p) => ({}));
 
+export const DialogActions = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  marginTop: p.theme.spacing(2),
+
+  "> :not(:first-child)": {
+    marginLeft: p.theme.spacing(),
+  },
+}));
+
+export const DialogActionsLeftSection = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+
+  "> :not(:first-child)": {
+    marginLeft: p.theme.spacing(),
+  },
+}));
+
+export const DialogActionsRightSection = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "flex-end",
+  alignItems: "center",
+
+  "> :not(:first-child)": {
+    marginLeft: p.theme.spacing(),
+  },
+}));
+
 export const Dialog: React.FC<{
   open: boolean;
   onClose: () => void;
