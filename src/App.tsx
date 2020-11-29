@@ -10,7 +10,7 @@ import { CssBaseline } from "./CssBaseline";
 import { ConfigContext } from "./services/config";
 import { Dataset, DatasetProvider, useDatasets } from "./services/dataset";
 import { UiStateProvider } from "./services/uiState";
-import { Config } from "./types/Config";
+import { CONFIG, Config } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
 import { GraphData, TreeNode } from "./types/GraphData";
 
@@ -140,12 +140,45 @@ const AppReady = ({
   );
 };
 
+const InitCanvas: React.FC = ({ children }) => {
+  const t = CONFIG.theme;
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        font: t.typography.font,
+        height: "100vh",
+        width: "100vw",
+        backgroundColor: t.typography.backgroundColor,
+        color: t.typography.color,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
 const AppLoading = ({ name }: { name: string }) => {
-  return <div>{name}</div>;
+  return (
+    <InitCanvas>
+      <div>
+        Loading <b>{name}</b>...
+      </div>
+    </InitCanvas>
+  );
 };
 
 const AppError = ({ name, error }: { name: string; error: string }) => {
-  return null;
+  console.log(error);
+  return (
+    <InitCanvas>
+      <div>
+        Something went wrong while loading <b>{name}</b>!
+      </div>
+    </InitCanvas>
+  );
 };
 
 const AppInit = () => {
