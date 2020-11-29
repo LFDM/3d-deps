@@ -113,10 +113,6 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
       {
         setSidebarTab: setTab,
         setSelectedNodeId: (nextSelection) => {
-          setState((s) => ({
-            ...s,
-            unselectedNodeId: nextSelection ? null : selectedNodeId,
-          }));
           setSelectedNodeId(nextSelection);
           if (nextSelection) {
             history.current.push(nextSelection);
