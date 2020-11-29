@@ -8,6 +8,12 @@ const CLIENT_BUILD = path.join(__dirname, "..", "client_build");
 app.use(express.static(CLIENT_BUILD));
 
 app.get("/", (req, res) => res.redirect("/app"));
+
+app.get("/api/datasets", (req, res) => {
+  console.log("Datasets requested!");
+  res.json([]);
+});
+
 app.get("/app/*", (req, res) => {
   res.sendFile(path.join(CLIENT_BUILD, "index.html"));
 });
