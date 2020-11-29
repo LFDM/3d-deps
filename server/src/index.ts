@@ -1,4 +1,5 @@
 import express from "express";
+import open from "open";
 import * as path from "path";
 
 const app = express();
@@ -18,6 +19,10 @@ app.get("/app/*", (req, res) => {
   res.sendFile(path.join(CLIENT_BUILD, "index.html"));
 });
 
-app.listen(PORT, () =>
-  console.log(`Server running at http://localhost:${PORT}`)
-);
+app.listen(PORT, () => {
+  const url = `http://localhost:${PORT}`;
+  console.log(`Server running at ${url}`);
+  if (!process.env.NO_OPEN) {
+    open(url);
+  }
+});
