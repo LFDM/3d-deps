@@ -5,8 +5,9 @@ export class UndoHistory<T> {
     present: T | undefined;
     future: T[];
   } = { past: [], present: undefined, future: [] };
-  constructor(depth: number = 10) {
+  constructor(depth: number = 10, initialElement?: T) {
     this.depth = depth;
+    this.history.present = initialElement;
   }
 
   getHistory() {
