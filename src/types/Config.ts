@@ -63,7 +63,9 @@ export type Hotkey =
   | "graph.dependents.maxDepth.decrease"
   | "graph.selectedNode.exclude"
   | "graph.selectedNode.toggleDetails"
-  | "graph.selectedNode.toggleSelection";
+  | "graph.selectedNode.toggleSelection"
+  | "graph.selectedNode.history.forward"
+  | "graph.selectedNode.history.backward";
 
 export type HotkeyConfig = { [K in Hotkey]: string[] };
 
@@ -138,5 +140,7 @@ export const CONFIG: Config = {
     "graph.selectedNode.exclude": ["del"],
     "graph.selectedNode.toggleDetails": ["d"],
     "graph.selectedNode.toggleSelection": ["s"],
+    "graph.selectedNode.history.forward": ["j"],
+    "graph.selectedNode.history.backward": ["k"],
   },
 };

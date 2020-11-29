@@ -78,22 +78,21 @@ const toKeyMap = (hs: HotkeyConfig): KeyMap => {
       hs,
       "graph.selectedNode.toggleSelection"
     ),
+    "graph.selectedNode.history.backward": toSequence(
+      hs,
+      "graph.selectedNode.history.backward"
+    ),
+    "graph.selectedNode.history.forward": toSequence(
+      hs,
+      "graph.selectedNode.history.forward"
+    ),
   };
 };
 
 const NOOP = (ev?: KeyboardEvent) => console.log(ev?.key);
 
 export const Hotkeys = () => {
-  const [
-    state,
-    {
-      setSidebarTab,
-      setSearchOpen,
-      setHotkeyInfoOpen,
-      toggleSelectedNodeId,
-      toggleDetails,
-    },
-  ] = useUiState();
+  const [state, as] = useUiState();
   const cfg = useConfig();
   const {
     current: { hotkeys },
@@ -105,14 +104,14 @@ export const Hotkeys = () => {
       "hud.sidebar.toggle": () => toggleSidebar(current, onChange),
       "hud.sidebar.openNodesPanel": () => {
         toggleSidebar(current, onChange, true);
-        setSidebarTab("nodes");
+        as.setSidebarTab("nodes");
       },
       "hud.sidebar.openConfigPanel": () => {
         toggleSidebar(current, onChange, true);
-        setSidebarTab("config");
+        as.setSidebarTab("config");
       },
-      "hud.search": () => setSearchOpen(true),
-      "hud.hotkeyInfo": () => setHotkeyInfoOpen(true),
+      "hud.search": () => as.setSearchOpen(true),
+      "hud.hotkeyInfo": () => as.setHotkeyInfoOpen(true),
       "graph.dependencies.maxDepth.increase": () =>
         incrementGraphDependenciesMaxDepth(current, onChange, 1),
       "graph.dependencies.maxDepth.decrease": () =>
@@ -122,10 +121,12 @@ export const Hotkeys = () => {
       "graph.dependents.maxDepth.decrease": () =>
         incrementGraphDependentsMaxDepth(current, onChange, -1),
       "graph.selectedNode.exclude": NOOP,
-      "graph.selectedNode.toggleDetails": () => toggleDetails(),
-      "graph.selectedNode.toggleSelection": () => toggleSelectedNodeId(),
+      "graph.selectedNode.toggleDetails": () => as.toggleDetails(),
+      "graph.selectedNode.toggleSelection": () => as.toggleSelectedNodeId(),
+      "graph.selectedNode.history.backward": () => as.selectionHistoryMove(-1),
+      "graph.selectedNode.history.forward": () => as.selectionHistoryMove(1),
     };
-  }, [cfg, state]);
+  }, [cfg, state, as]);
 
   return (
     <GlobalHotKeys
