@@ -3,7 +3,7 @@ import open from "open";
 import * as path from "path";
 
 const app = express();
-const PORT = 8000; // read from config file later
+const PORT = process.env.PORT || 8000;
 
 const CLIENT_BUILD = path.join(__dirname, "..", "client_build");
 app.use(express.static(CLIENT_BUILD));
