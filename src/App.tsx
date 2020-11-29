@@ -20,6 +20,20 @@ const Main = styled(CssBaseline)((p) => ({
   overflow: "hidden",
 }));
 
+const shouldExcludeByPath = (
+  path: string,
+  opts: {
+    includeByPath?: RegExp | null;
+    excludeByPath?: RegExp | null;
+  }
+) => {
+  console.log(opts?.includeByPath);
+  if (opts?.includeByPath && !opts.includeByPath.test(path)) {
+    return true;
+  }
+  return !!opts?.excludeByPath?.test(path);
+};
+
 const depsToGraphData = (
   ds: DependencyNode[],
   opts?: {
@@ -32,7 +46,7 @@ const depsToGraphData = (
   const dsById = keyBy(ds, (d) => d.id);
   const getOrCreateTreeNode = (d: DependencyNode): TreeNode => {
     if (!byId[d.id]) {
-      const exclude = !!opts?.excludeByPath?.test(d.path);
+      const exclude = shouldExcludeByPath(d.path, opts || {});
       const t: TreeNode = {
         id: d.id,
         label: d.label || d.id,
