@@ -30,10 +30,17 @@ const DetailsContainer = styled("div")((p) => ({
   paddingRight: p.theme.spacing(3),
 }));
 
+const Tbd = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: 300,
+}));
+
 const Details = ({ d }: { d: TreeNode }) => {
   return (
     <DetailsContainer>
-      <div> DETAILS</div>
+      <Tbd>TBD</Tbd>
     </DetailsContainer>
   );
 };
