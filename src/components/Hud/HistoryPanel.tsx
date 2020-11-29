@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import tinycolor from "tinycolor2";
 import { useUiState } from "../../services/uiState";
+import { TreeNode } from "../../types/GraphData";
+import { Button } from "../Button";
 import { NodeStats } from "../NodeStats";
 
-const Row = styled("div")<{ selected?: boolean; excluded?: boolean }>((p) => ({
+const Row = styled(Button)<{ selected?: boolean; excluded?: boolean }>((p) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
@@ -30,14 +32,39 @@ const Row = styled("div")<{ selected?: boolean; excluded?: boolean }>((p) => ({
 
 const List = styled("div")((p) => ({}));
 
+const Item = ({
+  t,
+  selected,
+  onClick,
+}: {
+  t: TreeNode;
+  selected?: boolean;
+  onClick: () => void;
+}) => {
+  return (
+    <Row
+      selected={selected}
+      excluded={t.exclude}
+      variant="none"
+      fullWidth
+      onClick={() => {
+        !t.exclude && onClick();
+      }}
+    >
+      <div>{t.label}</div>
+      <NodeStats d={t} />
+    </Row>
+  );
+};
+
 export const HistoryPanel = ({}: {}) => {
   const [
     {
       graph: { data, history },
     },
+    { toggleSelectedNodeId, selectionHistoryMove },
   ] = useUiState();
   const { future, present, past } = history.getHistory();
-  console.log(history.getHistory());
   const presentT = present && data.byId[present];
   return (
     <List>
@@ -45,28 +72,30 @@ export const HistoryPanel = ({}: {}) => {
         const t = data.byId[id];
         return (
           t && (
-            <Row key={`${id}-${i}`} excluded={t.exclude}>
-              <div>{t.label}</div>
-              <NodeStats d={t} />
-            </Row>
+            <Item
+              key={`${id}-${i}`}
+              t={t}
+              onClick={() => selectionHistoryMove(0)}
+            />
           )
         );
       })}
       {presentT && (
-        <Row selected={true} excluded={presentT.exclude}>
-          <div>{presentT.label}</div>
-          <NodeStats d={presentT} />
-        </Row>
+        <Item
+          t={presentT}
+          selected={true}
+          onClick={() => toggleSelectedNodeId()}
+        />
       )}
-
       {[...past].reverse().map((id, i) => {
         const t = data.byId[id];
         return (
           t && (
-            <Row key={`${id}-${i}`} excluded={t.exclude}>
-              <div>{t.label}</div>
-              <NodeStats d={t} />
-            </Row>
+            <Item
+              key={`${id}-${i}`}
+              t={t}
+              onClick={() => selectionHistoryMove(0)}
+            />
           )
         );
       })}
