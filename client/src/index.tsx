@@ -5,6 +5,9 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { Dataset } from "./services/dataset";
 
+// TODO use another env var - one that gets mangled by webpack, so
+// that the development code path is removed entirely
+// Maybe we need to do this as a custom build step though...
 const loadDatasets: () => Promise<Dataset[]> = !!process.env
   .REACT_APP_STANDALONE
   ? async () => import("./exampleLoader").then((m) => m.loadDatasets())
