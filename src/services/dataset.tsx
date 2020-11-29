@@ -12,20 +12,19 @@ export type Dataset = {
 };
 
 type LoadingState = {
+  state: "LOADING";
   name: string;
-  loading: true;
 };
 
 type ErrorState = {
   name: string;
-  loading: false;
-  err: string;
+  state: "ERROR";
+  err: any;
 };
 
 type ReadyState = {
   name: string;
-  loading: false;
-  err: null;
+  state: "READY";
   config: Config;
   data: DependencyNode[];
 };
@@ -40,7 +39,7 @@ export const Datasets = React.createContext<{
   datasets: [],
   current: {
     name: "...",
-    loading: true,
+    state: "LOADING",
   },
   selectDataset: () => undefined,
 });
@@ -52,32 +51,31 @@ export const DatasetProvider: React.FC<{ datasets: Dataset[] }> = ({
   const [dataset, selectDataset] = useState<Dataset>(datasets[0]);
   const [state, setState] = useState<State>({
     name: dataset.name,
-    loading: true,
+    state: "LOADING",
   });
   const [d, loading, error] = usePromise(dataset.fetch, [dataset]);
 
   useEffect(() => {
     setState(() => {
       if (loading) {
-        return { name: dataset.name, loading: true };
+        return { name: dataset.name, state: "LOADING" };
       }
       if (error) {
         return {
           name: dataset.name,
-          loading: false,
-          err: error.message || "ERROR",
+          state: "ERROR",
+          err: error.message || "UNKNOWN",
         };
       }
       if (d) {
         return {
           name: dataset.name,
-          loading: false,
-          err: null,
+          state: "READY",
           config: d.config,
           data: d.data,
         };
       }
-      return { name: dataset.name, loading: false, err: "ERROR" };
+      return { name: dataset.name, state: "ERROR", err: "UNKNOWN" };
     });
   }, [d, loading, error, dataset]);
 
