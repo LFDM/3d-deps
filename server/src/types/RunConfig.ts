@@ -1,6 +1,5 @@
+import { Config } from "./Config";
 import { DependencyNode } from "./DependencyAnalyzer";
-
-type Config = any; // TODO - move over from other project.
 
 export type RunConfig = {
   version: number;
