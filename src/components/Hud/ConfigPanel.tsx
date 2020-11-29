@@ -1,6 +1,6 @@
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Check, CheckCircle } from "react-feather";
 import { useConfig } from "../../services/config";
 import { GraphConfig, Theme } from "../../types/Config";
@@ -309,6 +309,7 @@ const RegExpRow = ({
   const originalValue = value ? value.toString().slice(1, -1) : "";
   const [v, setV] = useState(originalValue);
   const theme = useTheme();
+  const ref = useRef<HTMLInputElement>(null);
   return (
     <ConfigRow
       dense
@@ -324,7 +325,13 @@ const RegExpRow = ({
       }}
     >
       <div>{"/"}</div>
-      <Input fullWidth value={v} onChange={(ev) => setV(ev.target.value)} />
+      <Input
+        ref={ref}
+        fullWidth
+        value={v}
+        onChange={(ev) => setV(ev.target.value)}
+        onKeyDown={(ev) => ev.key === "Escape" && ref.current?.blur()}
+      />
       <div>{"/"}</div>
       <Button variant="icon" disabled={v === originalValue} type="submit">
         {v === originalValue ? (
