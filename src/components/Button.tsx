@@ -70,7 +70,7 @@ const StyledButton = styled("button")<{
 
       ":hover": {
         backgroundColor: p.selected
-          ? "transparent"
+          ? "none"
           : tinycolor(p.theme.hud.highlightColor).lighten(10).toRgbString(),
       },
       ":disabled:hover": {
