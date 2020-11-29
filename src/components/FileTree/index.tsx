@@ -1,6 +1,7 @@
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
+import tinycolor from "tinycolor2";
 import { useScrollIntoView } from "../../hooks/useScrollIntoView";
 import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
@@ -68,14 +69,10 @@ export const toFileTree = (ds: TreeNode[]): FileTreeItemDir<TreeNode> => {
 
 const Frame = styled("div")<{ selected: boolean }>`
   position: relative;
-  padding: ${(p) => p.theme.spacing(0.25)}px ${(p) => p.theme.spacing(1)}px
-    ${(p) => p.theme.spacing(0.25)}px 0px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x: hidden;
   vertical-align: middle;
-  background-color: ${(p) =>
-    p.selected ? p.theme.hud.highlightColor : "transparent"};
   fill: ${(p) => p.theme.hud.color};
 `;
 
@@ -98,15 +95,31 @@ const toggle: React.CSSProperties = {
   verticalAlign: "middle",
 };
 
-const Row = styled("div")<{ excluded?: boolean }>((p) => ({
+const Row = styled("div")<{
+  selected?: boolean;
+  excluded?: boolean;
+  clickable?: boolean;
+}>((p) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
 
+  padding: [p.theme.spacing(0.25), p.theme.spacing(1), p.theme.spacing(0.25), 0]
+    .map((x) => `${x}px`)
+    .join(" "),
   opacity: p.excluded ? 0.5 : 1,
 
   "> :not(:first-child)": {
     marginLeft: p.theme.spacing(),
+  },
+
+  backgroundColor: p.selected ? p.theme.hud.highlightColor : "none",
+
+  ":hover": {
+    backgroundColor:
+      p.selected || p.excluded || !p.clickable
+        ? "none"
+        : tinycolor(p.theme.hud.highlightColor).lighten(10).toRgbString(),
   },
 }));
 
@@ -138,7 +151,7 @@ const Tree = React.memo(
     ];
     return (
       <Frame ref={ref} selected={isSelected}>
-        <Row excluded={excluded}>
+        <Row excluded={excluded} selected={isSelected} clickable={!!onClick}>
           <div>
             <Icon
               style={{ ...toggle, opacity: children ? 1 : 0.3 }}
