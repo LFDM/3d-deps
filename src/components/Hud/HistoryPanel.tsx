@@ -75,7 +75,7 @@ export const HistoryPanel = ({}: {}) => {
             <Item
               key={`${id}-${i}`}
               t={t}
-              onClick={() => selectionHistoryMove(0)}
+              onClick={() => selectionHistoryMove(future.length - i)}
             />
           )
         );
@@ -94,7 +94,7 @@ export const HistoryPanel = ({}: {}) => {
             <Item
               key={`${id}-${i}`}
               t={t}
-              onClick={() => selectionHistoryMove(0)}
+              onClick={() => selectionHistoryMove(-(i + 1))}
             />
           )
         );
