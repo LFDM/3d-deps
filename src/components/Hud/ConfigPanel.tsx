@@ -11,11 +11,13 @@ import { ConfigRow } from "../ConfigRow";
 import { Input, InputSliderWithValue } from "../Input";
 
 const Container = styled("div")`
-  padding: 0 ${(p) => p.theme.spacing(2)}px;
-
-  > :not(:first-child) {
-    margin-top: ${(p) => p.theme.spacing(4)}px;
-  }
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  grid-row-gap: ${(p) => p.theme.spacing()}px;
+  height: 100%;
+  grid-template-areas:
+    "body"
+    "footer";
 `;
 
 const SubSection = styled("div")((p) => ({
@@ -428,10 +430,16 @@ const ControlsGrid = styled("div")((p) => ({
   gridColumnGap: p.theme.spacing(3),
 }));
 
-const ControlsSection = () => {
+const FooterContainer = styled("footer")`
+  grid-area: footer;
+  padding: ${(p) => p.theme.spacing(2)}px;
+  border-top: 1px dashed currentcolor;
+`;
+
+const Footer = () => {
   const cfg = useConfig();
   return (
-    <section>
+    <FooterContainer>
       <ControlsGrid>
         <Button
           fullWidth
@@ -454,35 +462,47 @@ const ControlsSection = () => {
           Copy to Clipboard
         </Button>
       </ControlsGrid>
-    </section>
+    </FooterContainer>
   );
 };
+
+const Body = styled("div")`
+  overflow: auto;
+  padding: 0 ${(p) => p.theme.spacing(2)}px;
+  grid-area: "body";
+
+  > :not(:first-child) {
+    margin-top: ${(p) => p.theme.spacing(4)}px;
+  }
+`;
 
 export const ConfigPanel = () => {
   const cfg = useConfig();
   return (
     <Container>
-      <ControlsSection />
-      <GraphSection
-        value={cfg.current.graph}
-        originalValue={cfg.original.graph}
-        onChange={(nextGraph) =>
-          cfg.onChange({
-            ...cfg.current,
-            graph: nextGraph,
-          })
-        }
-      />
-      <ThemeSection
-        value={cfg.current.theme}
-        originalValue={cfg.original.theme}
-        onChange={(nextTheme) =>
-          cfg.onChange({
-            ...cfg.current,
-            theme: nextTheme,
-          })
-        }
-      />
+      <Body>
+        <GraphSection
+          value={cfg.current.graph}
+          originalValue={cfg.original.graph}
+          onChange={(nextGraph) =>
+            cfg.onChange({
+              ...cfg.current,
+              graph: nextGraph,
+            })
+          }
+        />
+        <ThemeSection
+          value={cfg.current.theme}
+          originalValue={cfg.original.theme}
+          onChange={(nextTheme) =>
+            cfg.onChange({
+              ...cfg.current,
+              theme: nextTheme,
+            })
+          }
+        />
+      </Body>
+      <Footer />
     </Container>
   );
 };
