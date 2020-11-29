@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import escapeStringRegexp from "escape-string-regexp";
+import fuzzysort from "fuzzysort";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Eye, EyeOff, Settings } from "react-feather";
 import { toggleShowExcludedNodes, useConfig } from "../../services/config";
@@ -44,11 +44,13 @@ const Item = ({
   selected,
   onSelect,
   listRef,
+  label,
 }: {
   n: TreeNode;
   selected: boolean;
   onSelect: () => void;
   listRef: React.MutableRefObject<HTMLDivElement | null>;
+  label: string; // html!
 }) => {
   const ref = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
@@ -132,17 +134,32 @@ export const SearchModal = () => {
     [g, showExcludedNodes]
   );
 
-  const nodes = useMemo(() => {
+  const nodesWithHighlights = useMemo(() => {
     if (!q) {
-      return searchableNodes;
+      return searchableNodes.map((node) => ({
+        node,
+        highlightedLabel: node.path,
+      }));
     }
-    const regexp = new RegExp(escapeStringRegexp(q), "i");
-    return searchableNodes.filter((t) => regexp.test(t.path));
+    console.time("search");
+    const results = fuzzysort
+      .go<TreeNode>(q, searchableNodes, {
+        key: "path",
+        allowTypo: false,
+      })
+      .map((r) => ({
+        node: r.obj,
+        highlightedLabel: fuzzysort.highlight(r, "<b>", "</b>") || r.obj.path,
+      }));
+
+    console.timeEnd("search");
+    return results;
   }, [q, searchableNodes, showExcludedNodes]);
 
-  const selectableNodes = useMemo(() => nodes.filter((n) => !n.exclude), [
-    nodes,
-  ]);
+  const selectableNodes = useMemo(
+    () => nodesWithHighlights.filter((n) => !n.node.exclude).map((n) => n.node),
+    [nodesWithHighlights]
+  );
 
   useEffect(() => {
     setSelected(selectableNodes[0] || null);
@@ -194,16 +211,17 @@ export const SearchModal = () => {
           fullWidth
         />
         <ListContainer ref={listRef}>
-          {nodes.map((n) => (
+          {nodesWithHighlights.map((n) => (
             <Item
-              key={n.id}
+              key={n.node.id}
               listRef={listRef}
-              n={n}
-              selected={n === selected}
-              onSelect={() => select(n)}
+              n={n.node}
+              selected={n.node === selected}
+              onSelect={() => select(n.node)}
+              label={n.highlightedLabel}
             />
           ))}
-          {!nodes.length && (
+          {!nodesWithHighlights.length && (
             <EmptyListItem variant="listItem" disabled={true}>
               No matches.
             </EmptyListItem>
