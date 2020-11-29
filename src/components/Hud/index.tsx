@@ -69,7 +69,7 @@ export const Sidebar = ({ open }: { open: boolean }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [openNodes, setOpenNodes] = useState<{ [key: string]: boolean }>({});
   return (
-    <SidebarContainer open={open} ref={containerRef}>
+    <SidebarContainer open={open} ref={containerRef} as="nav">
       <Tabs>
         <Button
           variant={tab === "nodes" ? "outlined" : "standard"}
