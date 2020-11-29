@@ -346,6 +346,16 @@ const GraphSection = ({
     <>
       <h3>Graph</h3>
       <SubSection>
+        <h4>Include by path</h4>
+        <RegExpRow
+          value={value.includeByPath || null}
+          onConfirm={(includeByPath) =>
+            onChange({
+              ...value,
+              includeByPath,
+            })
+          }
+        />
         <h4>Exclude by path</h4>
         <RegExpRow
           value={value.excludeByPath || null}
