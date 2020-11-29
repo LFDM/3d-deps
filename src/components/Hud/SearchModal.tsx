@@ -3,6 +3,7 @@ import escapeStringRegexp from "escape-string-regexp";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Eye, EyeOff, Settings } from "react-feather";
 import { toggleShowExcludedNodes, useConfig } from "../../services/config";
+import { scrollElementIntoView } from "../../services/scroll";
 import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
@@ -57,27 +58,7 @@ const Item = ({
   const ref = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
     if (selected && listRef.current && ref.current) {
-      const o = listRef.current.getBoundingClientRect();
-      const i = ref.current.getBoundingClientRect();
-      if (
-        o.top <= i.top &&
-        o.left <= i.left &&
-        o.bottom >= i.bottom &&
-        o.right >= i.right
-      ) {
-        // element is fully visible
-        return;
-      }
-      let yDiff = 0;
-      if (o.top >= i.top) {
-        // need to go up
-        yDiff = i.top - o.top;
-      }
-      if (o.bottom <= i.bottom) {
-        // need to go down
-        yDiff = i.bottom - o.bottom;
-      }
-      listRef.current.scrollBy(0, yDiff);
+      scrollElementIntoView(listRef.current, ref.current);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
