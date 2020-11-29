@@ -6,6 +6,7 @@ import { Button } from "../Button";
 import { Hotkeys } from "../Hotkeys";
 import { ConfigPanel } from "./ConfigPanel";
 import { CurrentSelection } from "./CurrentSelection";
+import { DatasetExplorer } from "./DatasetExplorer";
 import { HistoryPanel } from "./HistoryPanel";
 import { HotkeyInfoModal } from "./HotkeyInfoModal";
 import { HudSegment } from "./HudSegment";
@@ -187,6 +188,7 @@ const Body = () => {
         <RightContainer>
           <CurrentSelection />
           <Controls />
+          <DatasetExplorer />
         </RightContainer>
       </Grid>
     </Container>
