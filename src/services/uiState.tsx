@@ -19,6 +19,7 @@ export type UiState = {
   };
   graph: {
     data: GraphData;
+    history: UndoHistory<string>;
     selectedNodeId: string | null;
     showDetails: boolean;
   };
@@ -38,6 +39,7 @@ const DEFAULT_STATE: UiState = {
   },
   graph: {
     data: { list: [], byId: {} },
+    history: new UndoHistory(0),
     selectedNodeId: null,
     showDetails: true,
   },
@@ -106,6 +108,7 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
         },
         graph: {
           data,
+          history: history.current,
           selectedNodeId: selectedNodeId || null,
           showDetails,
         },
