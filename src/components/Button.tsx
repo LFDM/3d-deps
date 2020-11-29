@@ -18,6 +18,7 @@ export type ButtonProps = {
   fullWidth?: boolean;
   children?: React.ReactNode;
   type?: "button" | "submit" | "reset";
+  onKeyDown?: (ev: React.KeyboardEvent<HTMLButtonElement>) => void;
 };
 
 const StyledButton = styled("button")<{
