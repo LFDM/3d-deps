@@ -314,7 +314,6 @@ const RegExpRow = ({
       dense
       as="form"
       onSubmit={(ev) => {
-        console.log("!SUBMIT");
         ev.stopPropagation();
         ev.preventDefault();
         if (v === originalValue) {
