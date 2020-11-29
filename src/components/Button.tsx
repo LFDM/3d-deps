@@ -17,6 +17,7 @@ export type ButtonProps = {
   selected?: boolean; // for list items
   fullWidth?: boolean;
   children?: React.ReactNode;
+  type?: "button" | "submit" | "reset";
 };
 
 const StyledButton = styled("button")<{
