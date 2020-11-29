@@ -23,6 +23,7 @@ const Main = styled(CssBaseline)((p) => ({
 const depsToGraphData = (
   ds: DependencyNode[],
   opts?: {
+    includeByPath?: RegExp | null;
     excludeByPath?: RegExp | null;
   }
 ): { list: TreeNode[]; byId: { [id: string]: TreeNode } } => {
@@ -72,14 +73,21 @@ const depsToGraphData = (
 
 const useGraphData = (
   ds: DependencyNode[],
-  excludeByPath?: RegExp | null
+  {
+    includeByPath,
+    excludeByPath,
+  }: {
+    includeByPath?: RegExp | null;
+    excludeByPath?: RegExp | null;
+  }
 ): GraphData => {
   return useMemo(
     () =>
       depsToGraphData(ds, {
+        includeByPath,
         excludeByPath,
       }),
-    [ds, excludeByPath]
+    [ds, includeByPath, excludeByPath]
   );
 };
 
@@ -91,7 +99,10 @@ function App({
   ds: DependencyNode[];
 }) {
   const [config, setConfig] = useState(originalConfig);
-  const data = useGraphData(ds, config.graph.excludeByPath);
+  const data = useGraphData(ds, {
+    includeByPath: config.graph.includeByPath,
+    excludeByPath: config.graph.excludeByPath,
+  });
   return (
     <Router>
       <ConfigContext.Provider
