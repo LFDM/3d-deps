@@ -1,5 +1,6 @@
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
+import copy from "copy-to-clipboard";
 import React, { useState } from "react";
 import { Check, CheckCircle } from "react-feather";
 import { useConfig } from "../../services/config";
@@ -421,10 +422,47 @@ const GraphSection = ({
   );
 };
 
+const ControlsGrid = styled("div")((p) => ({
+  display: "grid",
+  gridTemplateColumns: "repeat(2, 1fr)",
+  gridColumnGap: p.theme.spacing(3),
+}));
+
+const ControlsSection = () => {
+  const cfg = useConfig();
+  return (
+    <section>
+      <ControlsGrid>
+        <Button
+          fullWidth
+          variant="outlined"
+          onClick={() => cfg.onChange(cfg.original)}
+        >
+          Reset all
+        </Button>
+        <Button
+          fullWidth
+          variant="outlined"
+          onClick={() => {
+            const json = JSON.stringify(cfg.current, null, 2);
+            console.log(json);
+            copy(json, {
+              format: "text/plain",
+            });
+          }}
+        >
+          Copy to Clipboard
+        </Button>
+      </ControlsGrid>
+    </section>
+  );
+};
+
 export const ConfigPanel = () => {
   const cfg = useConfig();
   return (
     <Container>
+      <ControlsSection />
       <GraphSection
         value={cfg.current.graph}
         originalValue={cfg.original.graph}
