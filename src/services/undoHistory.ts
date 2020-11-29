@@ -15,7 +15,7 @@ export class UndoHistory<T> {
   private history: History<T> = { past: [], present: undefined, future: [] };
   private listeners: HistoryListener<T>[] = [];
 
-  constructor(depth: number = 10, initialState: Partial<History<T>> = {}) {
+  constructor(depth: number = 25, initialState: Partial<History<T>> = {}) {
     this.depth = depth;
     this.history.past = initialState?.past || this.history.past;
     this.history.present = initialState?.present || this.history.present;
