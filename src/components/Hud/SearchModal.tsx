@@ -154,7 +154,7 @@ export const SearchModal = () => {
 
     console.timeEnd("search");
     return results;
-  }, [q, searchableNodes, showExcludedNodes]);
+  }, [q, searchableNodes]);
 
   const selectableNodes = useMemo(
     () => nodesWithHighlights.filter((n) => !n.node.exclude).map((n) => n.node),
