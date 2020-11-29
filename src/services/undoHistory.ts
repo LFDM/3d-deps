@@ -41,6 +41,7 @@ export class UndoHistory<T> {
       nextEl = this.history.past.pop();
       this.history.present = nextEl;
     }
+    nextEl && this.notify("undo", this.listeners, steps);
     return nextEl;
   }
 
@@ -59,6 +60,7 @@ export class UndoHistory<T> {
       nextEl = this.history.future.shift();
       this.history.present = nextEl;
     }
+    nextEl && this.notify("redo", this.listeners, steps);
     return nextEl;
   }
 
