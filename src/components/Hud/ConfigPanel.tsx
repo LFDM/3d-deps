@@ -342,56 +342,20 @@ const GraphSection = ({
   originalValue: GraphConfig;
   onChange: (nextValue: GraphConfig) => void;
 }) => {
-  const originalExclude = value.excludeByPath
-    ? value.excludeByPath.toString().slice(1, -1)
-    : "";
-  const originalInclude = value.includeByPath
-    ? value.includeByPath.toString().slice(1, -1)
-    : "";
-  const [exclude, setExclude] = useState(originalExclude);
-  const [include, setInclude] = useState(originalInclude);
-  const theme = useTheme();
   return (
     <>
       <h3>Graph</h3>
       <SubSection>
         <h4>Exclude by path</h4>
-        <ConfigRow
-          dense
-          as="form"
-          onSubmit={(ev) => {
-            console.log("!SUBMIT");
-            ev.stopPropagation();
-            ev.preventDefault();
-            console.log(exclude, originalExclude);
-            if (exclude === originalExclude) {
-              return;
-            }
+        <RegExpRow
+          value={value.excludeByPath || null}
+          onConfirm={(excludeByPath) =>
             onChange({
               ...value,
-              excludeByPath: exclude ? new RegExp(exclude) : null,
-            });
-          }}
-        >
-          <div>{"/"}</div>
-          <Input
-            fullWidth
-            value={exclude}
-            onChange={(ev) => setExclude(ev.target.value)}
-          />
-          <div>{"/"}</div>
-          <Button
-            variant="icon"
-            disabled={exclude === originalExclude}
-            type="submit"
-          >
-            {exclude === originalExclude ? (
-              <Check size={14} />
-            ) : (
-              <CheckCircle size={14} color={theme.hud.highlightColor} />
-            )}
-          </Button>
-        </ConfigRow>
+              excludeByPath,
+            })
+          }
+        />
       </SubSection>
       <SubSection>
         <h4>Dependencies</h4>
