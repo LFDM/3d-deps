@@ -31,6 +31,22 @@ type ReadyState = {
 
 type State = LoadingState | ErrorState | ReadyState;
 
+const DATASET_CACHE: {
+  [key: string]: {
+    config: Config;
+    data: DependencyNode[];
+  };
+} = {};
+
+const useResolveDataset = (dataset: Dataset) => {
+  return usePromise(
+    async () =>
+      (DATASET_CACHE[dataset.name] =
+        DATASET_CACHE[dataset.name] || (await dataset.fetch())),
+    [dataset]
+  );
+};
+
 export const Datasets = React.createContext<{
   datasets: Dataset[];
   current: State;
@@ -53,7 +69,7 @@ export const DatasetProvider: React.FC<{ datasets: Dataset[] }> = ({
     name: dataset.name,
     state: "LOADING",
   });
-  const [d, loading, error] = usePromise(dataset.fetch, [dataset]);
+  const [d, loading, error] = useResolveDataset(dataset);
 
   useEffect(() => {
     setState(() => {
