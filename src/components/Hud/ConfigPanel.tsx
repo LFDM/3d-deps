@@ -11,6 +11,10 @@ import { Input, InputSliderWithValue } from "../Input";
 
 const Container = styled("div")`
   padding: 0 ${(p) => p.theme.spacing(2)}px;
+
+  > :not(:first-child) {
+    margin-top: ${(p) => p.theme.spacing(4)}px;
+  }
 `;
 
 const SubSection = styled("div")((p) => ({
@@ -27,7 +31,7 @@ const ThemeSection = ({
   onChange: (nextValue: Theme) => void;
 }) => {
   return (
-    <>
+    <section>
       <h3>Theme</h3>
       <SubSection>
         <h4>General</h4>
@@ -291,7 +295,7 @@ const ThemeSection = ({
           }
         />
       </SubSection>
-    </>
+    </section>
   );
 };
 
@@ -343,7 +347,7 @@ const GraphSection = ({
   onChange: (nextValue: GraphConfig) => void;
 }) => {
   return (
-    <>
+    <section>
       <h3>Graph</h3>
       <SubSection>
         <h4>Include by path</h4>
@@ -407,7 +411,7 @@ const GraphSection = ({
           />
         </ConfigRow>
       </SubSection>
-    </>
+    </section>
   );
 };
 
