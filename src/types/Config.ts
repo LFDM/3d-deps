@@ -39,7 +39,8 @@ export type GraphConfig = {
   dependents: {
     maxDepth: number;
   };
-  excludeByPath?: RegExp;
+  excludeByPath?: RegExp | null;
+  includeByPath?: RegExp | null;
 };
 
 export type HudConfig = {
@@ -119,6 +120,7 @@ export const CONFIG: Config = {
       maxDepth: 1,
     },
     excludeByPath: /(^helpers.ts|^domainTypes|^versions|^services\/firebase)/,
+    includeByPath: /(^helpers.ts|^domainTypes|^versions|^services\/firebase)/,
   },
   hud: {
     sidebar: {

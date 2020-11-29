@@ -327,7 +327,7 @@ const GraphSection = ({
             }
             onChange({
               ...value,
-              excludeByPath: exclude ? new RegExp(exclude) : undefined,
+              excludeByPath: exclude ? new RegExp(exclude) : null,
             });
           }}
         >
