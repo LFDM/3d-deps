@@ -41,7 +41,7 @@ const Tbd = styled("div")((p) => ({
 const Details = ({ d }: { d: TreeNode }) => {
   return (
     <DetailsContainer>
-      <Tbd>TBD</Tbd>
+      <Tbd>Details coming soon!</Tbd>
     </DetailsContainer>
   );
 };
