@@ -1,6 +1,7 @@
-import React, { useContext, useMemo, useState } from "react";
+import React, { useContext, useMemo, useRef, useState } from "react";
 import { useQueryParam } from "../hooks/useQueryParam";
 import { GraphData } from "../types/GraphData";
+import { UndoHistory } from "./undoHistory";
 
 export type TabName = "config" | "nodes";
 
@@ -51,6 +52,7 @@ export type UiStateActions = {
   setHotkeyInfoOpen: (nextState: boolean) => void;
   setSearchOpen: (nextState: boolean) => void;
   toggleDetails: (nextState?: boolean) => void;
+  selectionHistoryMove: (steps: number) => void;
 };
 
 const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
@@ -62,6 +64,7 @@ const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
     setHotkeyInfoOpen: () => undefined,
     setSearchOpen: () => undefined,
     toggleDetails: () => undefined,
+    selectionHistoryMove: () => undefined,
   },
 ]);
 
@@ -73,6 +76,9 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
 }) => {
   const [tab, setTab] = useQueryParam("tab", "nodes");
   const [selectedNodeId, setSelectedNodeId] = useQueryParam("node");
+  const history = useRef(
+    new UndoHistory<string>(15, { present: selectedNodeId || undefined })
+  );
   const [
     { hotkeyInfoOpen, searchOpen, showDetails, unselectedNodeId },
     setState,
@@ -120,6 +126,10 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
             unselectedNodeId: nextSelection ? null : selectedNodeId,
           }));
           setSelectedNodeId(nextSelection);
+          if (nextSelection) {
+            history.current.push(nextSelection);
+            console.log(history.current.getHistory().past.length);
+          }
         },
         toggleSelectedNodeId: () => {
           if (!selectedNodeId && unselectedNodeId) {
@@ -148,6 +158,14 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
             ...s,
             showDetails: nextState,
           })),
+        selectionHistoryMove: (steps: number) => {
+          console.log(history.current.getHistory().past.length);
+          const nextSel = history.current.move(steps);
+          console.log("MOVE", steps, nextSel, history.current);
+          if (nextSel) {
+            setSelectedNodeId(nextSel);
+          }
+        },
       },
     ],
     [
