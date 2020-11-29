@@ -1,7 +1,6 @@
 {
   "name": "3d-deps",
   "version": "0.1.0",
-  "main": "index.js",
   "repository": "https://github.com/lfdm/3d-deps.git",
   "author": "LFDM <1986gh@gmail.com> (https://github.com/LFDM)",
   "license": "MIT",
