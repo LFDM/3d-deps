@@ -5,30 +5,41 @@
     "../node_modules/@types/lodash/index.d.ts",
     "../node_modules/@types/react-router-dom/index.d.ts",
     "../node_modules/@types/react/index.d.ts",
-    "../node_modules/nanoid/index.d.ts",
+    "../node_modules/assert-never/index.d.ts",
+    "CssBaseline.tsx",
     "components/Graph/index.tsx",
     "components/Hud/index.tsx",
-    "hooks/useConfig.tsx",
-    "hooks/useQueryParam.ts",
+    "services/config.tsx",
+    "services/dataset.tsx",
+    "services/uiState.tsx",
     "types/Config.ts",
     "types/DependencyAnalyzer.ts",
     "types/GraphData.ts"
   ],
-  "analyzers/dependencies-self.json": [],
-  "analyzers/madge.ts": [
-    "analyzers/dependencies-self.json",
-    "types/DependencyAnalyzer.ts"
+  "CssBaseline.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts"
   ],
-  "components/Autocompete.tsx": [
-    "../node_modules/@emotion/styled/types/index.d.ts",
-    "../node_modules/@types/react/index.d.ts",
-    "components/Button.tsx",
-    "components/Hud/OverlayContext.tsx",
-    "components/Input.tsx"
+  "analyzers/dependencies-affilimate-app.json": [],
+  "analyzers/dependencies-affilimate-cf.json": [],
+  "analyzers/dependencies-affilimate-cli.json": [],
+  "analyzers/dependencies-mui.json": [],
+  "analyzers/dependencies-self.json": [],
+  "analyzers/dependencies-syndexioi-app.json": [],
+  "analyzers/dependencies-syndexioi-cf.json": [],
+  "analyzers/jsonFile.ts": [
+    "analyzers/dependencies-affilimate-app.json",
+    "analyzers/dependencies-affilimate-cf.json",
+    "analyzers/dependencies-affilimate-cli.json",
+    "analyzers/dependencies-mui.json",
+    "analyzers/dependencies-self.json",
+    "analyzers/dependencies-syndexioi-app.json",
+    "analyzers/dependencies-syndexioi-cf.json",
+    "types/DependencyAnalyzer.ts"
   ],
   "components/Button.tsx": [
     "../node_modules/@emotion/styled/types/index.d.ts",
-    "../node_modules/@types/react/index.d.ts"
+    "../node_modules/@types/react/index.d.ts",
+    "../node_modules/@types/tinycolor2/index.d.ts"
   ],
   "components/ColorPicker.tsx": [
     "../node_modules/@emotion/styled/types/index.d.ts",
@@ -43,65 +54,150 @@
   "components/ConfigRow.tsx": [
     "../node_modules/@emotion/styled/types/index.d.ts"
   ],
+  "components/Dialog.tsx": [
+    "../node_modules/@emotion/react/types/index.d.ts",
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react-modal/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "../node_modules/@types/tinycolor2/index.d.ts",
+    "CssBaseline.tsx"
+  ],
   "components/FileTree/icons.tsx": [
     "../node_modules/@types/react/index.d.ts"
   ],
   "components/FileTree/index.tsx": [
-    "../node_modules/@emotion/react/types/index.d.ts",
     "../node_modules/@emotion/styled/types/index.d.ts",
     "../node_modules/@types/react/index.d.ts",
     "../node_modules/@types/tinycolor2/index.d.ts",
     "components/Button.tsx",
     "components/FileTree/icons.tsx",
+    "components/NodeStats.tsx",
     "hooks/useScrollIntoView.ts",
     "types/GraphData.ts"
   ],
   "components/Graph/index.tsx": [
+    "../node_modules/@types/lodash/index.d.ts",
     "../node_modules/@types/react/index.d.ts",
     "../node_modules/@types/tinycolor2/index.d.ts",
+    "../node_modules/nanoid/index.d.ts",
     "../node_modules/react-force-graph/dist/react-force-graph.d.ts",
-    "hooks/useConfig.tsx",
     "hooks/useWindowSize.ts",
+    "services/config.tsx",
+    "services/uiState.tsx",
     "types/GraphData.ts"
   ],
+  "components/Hotkeys.tsx": [
+    "../node_modules/@types/react/index.d.ts",
+    "../node_modules/react-hotkeys/index.d.ts",
+    "services/config.tsx",
+    "services/uiState.tsx",
+    "types/Config.ts"
+  ],
   "components/Hud/ConfigPanel.tsx": [
+    "../node_modules/@emotion/react/types/index.d.ts",
     "../node_modules/@emotion/styled/types/index.d.ts",
     "../node_modules/@types/react/index.d.ts",
+    "../node_modules/react-feather/dist/index.d.ts",
+    "components/Button.tsx",
     "components/ColorPicker.tsx",
     "components/ConfigRow.tsx",
     "components/Input.tsx",
-    "hooks/useConfig.tsx",
+    "services/config.tsx",
     "types/Config.ts"
+  ],
+  "components/Hud/CurrentSelection.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "components/Hud/HudSegment.tsx",
+    "components/NodeStats.tsx",
+    "services/uiState.tsx",
+    "types/GraphData.ts"
+  ],
+  "components/Hud/DatasetExplorer.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "components/Hud/HudSegment.tsx",
+    "components/Select.tsx",
+    "services/dataset.tsx"
+  ],
+  "components/Hud/HistoryPanel.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "components/Button.tsx",
+    "components/NodeStats.tsx",
+    "services/scroll.ts",
+    "services/uiState.tsx",
+    "types/GraphData.ts"
+  ],
+  "components/Hud/HotkeyInfoModal.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "../node_modules/react-hotkeys/index.d.ts",
+    "components/Dialog.tsx",
+    "services/uiState.tsx"
+  ],
+  "components/Hud/HudSegment.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts"
   ],
   "components/Hud/NodesPanel.tsx": [
     "../node_modules/@emotion/styled/types/index.d.ts",
     "../node_modules/@types/lodash/index.d.ts",
     "../node_modules/@types/react/index.d.ts",
-    "components/Autocompete.tsx",
     "components/FileTree/index.tsx",
     "types/GraphData.ts"
   ],
   "components/Hud/OverlayContext.tsx": [
     "../node_modules/@types/react/index.d.ts"
   ],
+  "components/Hud/SearchModal.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react/index.d.ts",
+    "../node_modules/@types/tinycolor2/index.d.ts",
+    "../node_modules/fuzzysort/index.d.ts",
+    "../node_modules/react-feather/dist/index.d.ts",
+    "components/Button.tsx",
+    "components/Dialog.tsx",
+    "components/Input.tsx",
+    "components/NodeStats.tsx",
+    "services/config.tsx",
+    "services/scroll.ts",
+    "services/uiState.tsx",
+    "types/GraphData.ts"
+  ],
   "components/Hud/index.tsx": [
     "../node_modules/@emotion/styled/types/index.d.ts",
     "../node_modules/@types/react/index.d.ts",
     "components/Button.tsx",
+    "components/Hotkeys.tsx",
     "components/Hud/ConfigPanel.tsx",
+    "components/Hud/CurrentSelection.tsx",
+    "components/Hud/DatasetExplorer.tsx",
+    "components/Hud/HistoryPanel.tsx",
+    "components/Hud/HotkeyInfoModal.tsx",
+    "components/Hud/HudSegment.tsx",
     "components/Hud/NodesPanel.tsx",
     "components/Hud/OverlayContext.tsx",
-    "hooks/useQueryParam.ts",
-    "types/GraphData.ts"
+    "components/Hud/SearchModal.tsx",
+    "services/config.tsx",
+    "services/uiState.tsx"
   ],
   "components/Input.tsx": [
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/react/index.d.ts"
+  ],
+  "components/NodeStats.tsx": [
+    "../node_modules/@emotion/react/types/index.d.ts",
+    "../node_modules/@emotion/styled/types/index.d.ts",
+    "../node_modules/@types/tinycolor2/index.d.ts",
+    "types/GraphData.ts"
+  ],
+  "components/Select.tsx": [
     "../node_modules/@emotion/styled/types/index.d.ts"
   ],
-  "hooks/useConfig.tsx": [
-    "../node_modules/@types/react/index.d.ts",
-    "types/Config.ts"
-  ],
   "hooks/useOnClickOutside.ts": [
+    "../node_modules/@types/react/index.d.ts"
+  ],
+  "hooks/usePromise.ts": [
     "../node_modules/@types/react/index.d.ts"
   ],
   "hooks/useQueryParam.ts": [
@@ -119,15 +215,34 @@
     "../node_modules/@types/react-dom/index.d.ts",
     "../node_modules/@types/react/index.d.ts",
     "App.tsx",
-    "analyzers/madge.ts",
+    "analyzers/jsonFile.ts",
     "index.css",
     "reportWebVitals.ts",
+    "services/dataset.tsx",
     "types/Config.ts"
   ],
   "reportWebVitals.ts": [
     "../node_modules/web-vitals/dist/index.d.ts",
     "../node_modules/web-vitals/dist/index.d.ts"
   ],
+  "services/config.tsx": [
+    "../node_modules/@types/react/index.d.ts",
+    "types/Config.ts"
+  ],
+  "services/dataset.tsx": [
+    "../node_modules/@types/react/index.d.ts",
+    "hooks/usePromise.ts",
+    "types/Config.ts",
+    "types/DependencyAnalyzer.ts"
+  ],
+  "services/scroll.ts": [],
+  "services/uiState.tsx": [
+    "../node_modules/@types/react/index.d.ts",
+    "hooks/useQueryParam.ts",
+    "services/undoHistory.ts",
+    "types/GraphData.ts"
+  ],
+  "services/undoHistory.ts": [],
   "types/Config.ts": [],
   "types/DependencyAnalyzer.ts": [],
   "types/GraphData.ts": []
