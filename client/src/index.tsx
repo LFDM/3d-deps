@@ -11,7 +11,17 @@ import { Dataset } from "./services/dataset";
 const loadDatasets: () => Promise<Dataset[]> = !!process.env
   .REACT_APP_STANDALONE
   ? async () => import("./exampleLoader").then((m) => m.loadDatasets())
-  : async () => fetch("/api/datasets").then((r) => r.json());
+  : async () =>
+      fetch("/api/datasets").then(async (r) => {
+        const datasets: { name: string; id: string }[] = await r.json();
+        return datasets.map((d) => ({
+          name: d.name,
+          fetch: async () => {
+            const res = await fetch(`/api/datasets/${d.id}`);
+            return res.json();
+          },
+        }));
+      });
 
 const run = async () => {
   ReactDOM.render(
