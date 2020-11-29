@@ -4,13 +4,8 @@ import {
   DependencyNode,
   IDependencyAnalyzer,
 } from "../types/DependencyAnalyzer";
-// import DEPS from "./dependencies-self.json";
-// import DEPS from "./dependencies-syndexioi-app.json";
-// import DEPS from "./dependencies-syndexioi-cf.json";
-// import DEPS from "./dependencies-affilimate-app.json";
-import DEPS from "./dependencies-affilimate-cf.json";
-// import DEPS from "./dependencies-affilimate-cli.json";
 
+// @ts-ignore
 const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
   const nodes: DependencyNode[] = [];
   Object.entries(deps).forEach(([k, vs]) => {
@@ -45,10 +40,10 @@ export class MadgeAnalyzer implements IDependencyAnalyzer {
 
   async analyze() {
     // if (process.env.NODE_ENV === "development") {
-    return dependenciesToGraphData(DEPS);
     // }
     // const { entry, ...config } = this.config;
     // const deps = await madge(entry, config).then((r: any) => r.obj());
     // return dependenciesToGraphData(deps);
+    return [];
   }
 }
