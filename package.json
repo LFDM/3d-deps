@@ -63,6 +63,7 @@
     "@types/react-color": "^3.0.4",
     "@types/react-modal": "^3.10.6",
     "@types/react-router-dom": "^5.1.6",
-    "@types/tinycolor2": "^1.4.2"
+    "@types/tinycolor2": "^1.4.2",
+    "gh-pages": "^3.1.0"
   }
 }
