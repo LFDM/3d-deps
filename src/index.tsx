@@ -1,10 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { JsonFileAnalyzer } from "./analyzers/jsonFile";
 import { MadgeAnalyzer } from "./analyzers/madge";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import { Dataset } from "./services/dataset";
 import { CONFIG } from "./types/Config";
+
+const toDataset = (key: string): Dataset => ({
+  name: key,
+  fetch: async () => ({
+    config: CONFIG,
+    data: await new JsonFileAnalyzer({ key }).analyze(),
+  }),
+});
 
 const run = async () => {
   await new MadgeAnalyzer({
@@ -14,15 +24,12 @@ const run = async () => {
     <React.StrictMode>
       <App
         ds={[
-          {
-            name: "Affilimate CFs",
-            fetch: async () => ({
-              config: CONFIG,
-              data: await new MadgeAnalyzer({
-                entry: "...",
-              }).analyze(),
-            }),
-          },
+          toDataset("Affilimate CFs"),
+          toDataset("Affilimate CLI"),
+          toDataset("Affilimate App"),
+          toDataset("Syndexioi App"),
+          toDataset("Syndexioi CFs"),
+          toDataset("Self"),
         ]}
       />
     </React.StrictMode>,
