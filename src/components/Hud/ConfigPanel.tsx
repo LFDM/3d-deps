@@ -2,12 +2,18 @@ import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import copy from "copy-to-clipboard";
 import React, { useState } from "react";
-import { Check, CheckCircle } from "react-feather";
+import { Check, CheckCircle, Edit } from "react-feather";
 import { useConfig } from "../../services/config";
 import { GraphConfig, Theme } from "../../types/Config";
 import { Button } from "../Button";
 import { ColorPicker } from "../ColorPicker";
 import { ConfigRow } from "../ConfigRow";
+import {
+  Dialog,
+  DialogActions,
+  DialogActionsLeftSection,
+  DialogActionsRightSection,
+} from "../Dialog";
 import { Input, InputSliderWithValue } from "../Input";
 
 const Container = styled("div")`
@@ -302,7 +308,96 @@ const ThemeSection = ({
   );
 };
 
+const CustomInput = styled(Input)((p) => {
+  return {
+    fontSize: "1.33rem",
+    color: p.theme.hud.color,
+    backgroundColor: p.theme.hud.backgroundColor,
+    padding: `${p.theme.spacing(2)}px 0`,
+    border: "none",
+    outline: "none",
+
+    ":focus": {
+      border: "none",
+      outline: "none",
+    },
+  };
+});
+
+const RegexpValue = styled("code")`
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: smaller;
+`;
+
 const RegExpRow = ({
+  value,
+  onConfirm,
+}: {
+  value: RegExp | null;
+  onConfirm: (nextValue: RegExp | null) => void;
+}) => {
+  const originalValue = value ? value.toString().slice(1, -1) : "";
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [v, setV] = useState(originalValue);
+  return (
+    <>
+      <ConfigRow>
+        <RegexpValue>{`${value?.toString()}`}</RegexpValue>
+        <Button variant="icon" onClick={() => setDialogOpen(true)}>
+          <Edit size={14} />
+        </Button>
+      </ConfigRow>
+      <Dialog
+        key={originalValue}
+        open={dialogOpen}
+        onClose={() => setDialogOpen(false)}
+        width={900}
+      >
+        <form
+          onSubmit={(ev) => {
+            ev.stopPropagation();
+            ev.preventDefault();
+            if (v === originalValue) {
+              return;
+            }
+            onConfirm(v ? new RegExp(v) : null);
+            setDialogOpen(false);
+          }}
+        >
+          <CustomInput
+            fullWidth
+            value={v}
+            onChange={(ev) => setV(ev.target.value)}
+            autoFocus
+          />
+          <DialogActions>
+            <DialogActionsLeftSection>
+              <Button variant="standard" onClick={() => setV(originalValue)}>
+                Reset
+              </Button>
+            </DialogActionsLeftSection>
+            <DialogActionsRightSection>
+              <Button
+                variant="standard"
+                onClick={() => {
+                  setDialogOpen(false);
+                }}
+              >
+                Cancel
+              </Button>
+              <Button variant="outlined" type="submit">
+                Update
+              </Button>
+            </DialogActionsRightSection>
+          </DialogActions>
+        </form>
+      </Dialog>
+    </>
+  );
+};
+
+const RegExpRowInline = ({
   value,
   onConfirm,
 }: {
