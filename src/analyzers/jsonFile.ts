@@ -31,6 +31,7 @@ const FILES: { [name: string]: () => Promise<{ [key: string]: string[] }> } = {
     import("./dependencies-syndexioi-app.json").then((f) => f.default),
   "Syndexioi CFs": () =>
     import("./dependencies-syndexioi-cf.json").then((f) => f.default),
+  "Material UI": () => import("./dependencies-mui.json").then((f) => f.default),
   Self: () => import("./dependencies-self.json").then((f) => f.default),
 };
 

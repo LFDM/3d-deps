@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { JsonFileAnalyzer } from "./analyzers/jsonFile";
-import { MadgeAnalyzer } from "./analyzers/madge";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
@@ -17,9 +16,6 @@ const toDataset = (key: string): Dataset => ({
 });
 
 const run = async () => {
-  await new MadgeAnalyzer({
-    entry: "...",
-  }).analyze();
   ReactDOM.render(
     <React.StrictMode>
       <App
@@ -30,6 +26,7 @@ const run = async () => {
           toDataset("Syndexioi App"),
           toDataset("Syndexioi CFs"),
           toDataset("Self"),
+          toDataset("Material UI"),
         ]}
       />
     </React.StrictMode>,
