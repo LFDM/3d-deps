@@ -209,7 +209,7 @@ function App({ loadDatasets }: { loadDatasets: () => Promise<Dataset[]> }) {
     return <InitCanvas>Failed to load datasets.</InitCanvas>;
   }
   if (!datasets.length) {
-    <InitCanvas>No datasets provided.</InitCanvas>;
+    return <InitCanvas>No datasets provided.</InitCanvas>;
   }
   return (
     <Router>
