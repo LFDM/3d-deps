@@ -103,7 +103,7 @@ const Row = styled("div")<{
   justifyContent: "space-between",
   alignItems: "center",
 
-  padding: [p.theme.spacing(0.25), p.theme.spacing(1), p.theme.spacing(0.25), 0]
+  padding: [p.theme.spacing(0.25), p.theme.spacing(2), p.theme.spacing(0.25), 0]
     .map((x) => `${x}px`)
     .join(" "),
   opacity: p.excluded ? 0.5 : 1,
