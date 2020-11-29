@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import { deserializeConfig } from "./services/config";
 import { Dataset } from "./services/dataset";
 
 // TODO use another env var - one that gets mangled by webpack, so
@@ -18,7 +19,11 @@ const loadDatasets: () => Promise<Dataset[]> = !!process.env
           name: d.name,
           fetch: async () => {
             const res = await fetch(`/api/datasets/${d.id}`);
-            return res.json();
+            const { config, data } = await res.json();
+            return {
+              config: deserializeConfig(config),
+              data,
+            };
           },
         }));
       });
