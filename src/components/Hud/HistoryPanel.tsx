@@ -7,16 +7,14 @@ const Row = styled("div")<{ selected?: boolean; excluded?: boolean }>((p) => ({
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-
+  padding: p.theme.spacing(0.5),
   opacity: p.excluded ? 0.5 : 1,
-
   cursor: p.excluded ? "default" : "pointer",
+  backgroundColor: p.selected ? p.theme.hud.highlightColor : "none",
 
   "div:first-of-type": {
     textDecoration: p.excluded ? "line-through" : "none",
   },
-
-  backgroundColor: p.selected ? p.theme.hud.highlightColor : "none",
 
   ":hover": {
     backgroundColor:
@@ -30,11 +28,7 @@ const Row = styled("div")<{ selected?: boolean; excluded?: boolean }>((p) => ({
   },
 }));
 
-const List = styled("div")((p) => ({
-  "> :not(:first-child)": {
-    marginTop: p.theme.spacing(),
-  },
-}));
+const List = styled("div")((p) => ({}));
 
 export const HistoryPanel = ({}: {}) => {
   const [
