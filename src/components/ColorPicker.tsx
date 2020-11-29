@@ -53,9 +53,18 @@ export const ColorPicker = ({
   const [open, setOpen] = usePopupState(false);
   const ref = useRef(null);
   useOnClickOutside(ref, () => setOpen(false));
+
   return (
     <>
-      <Container variant="standard" onClick={() => setOpen(true)}>
+      <Container
+        variant="standard"
+        onClick={() => setOpen(true)}
+        onKeyDown={(ev) => {
+          if (ev.key === "Escape") {
+            setOpen(false);
+          }
+        }}
+      >
         <ConfigRow>
           <label>{label}</label>
           <ColorName>
