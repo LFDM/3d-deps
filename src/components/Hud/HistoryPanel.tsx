@@ -68,14 +68,14 @@ export const HistoryPanel = ({}: {}) => {
   const presentT = present && data.byId[present];
   return (
     <List>
-      {[...future].reverse().map((id, i) => {
+      {past.map((id, i) => {
         const t = data.byId[id];
         return (
           t && (
             <Item
               key={`${id}-${i}`}
               t={t}
-              onClick={() => selectionHistoryMove(future.length - i)}
+              onClick={() => selectionHistoryMove(-(past.length - i))}
             />
           )
         );
@@ -87,14 +87,14 @@ export const HistoryPanel = ({}: {}) => {
           onClick={() => toggleSelectedNodeId()}
         />
       )}
-      {[...past].reverse().map((id, i) => {
+      {future.map((id, i) => {
         const t = data.byId[id];
         return (
           t && (
             <Item
               key={`${id}-${i}`}
               t={t}
-              onClick={() => selectionHistoryMove(-(i + 1))}
+              onClick={() => selectionHistoryMove(i + 1)}
             />
           )
         );
