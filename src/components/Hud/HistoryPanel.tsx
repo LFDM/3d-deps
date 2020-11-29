@@ -1,36 +1,10 @@
 import styled from "@emotion/styled";
 import React, { useEffect, useRef } from "react";
-import tinycolor from "tinycolor2";
 import { scrollElementIntoView } from "../../services/scroll";
 import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
 import { NodeStats } from "../NodeStats";
-
-const Row = styled(Button)<{ selected?: boolean; excluded?: boolean }>((p) => ({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: p.theme.spacing(0.5),
-  opacity: p.excluded ? 0.5 : 1,
-  cursor: p.excluded ? "default" : "pointer",
-  backgroundColor: p.selected ? p.theme.hud.highlightColor : "none",
-
-  "div:first-of-type": {
-    textDecoration: p.excluded ? "line-through" : "none",
-  },
-
-  ":hover": {
-    backgroundColor:
-      p.excluded || p.selected
-        ? "none"
-        : tinycolor(p.theme.hud.highlightColor).lighten(10).toRgbString(),
-  },
-
-  "> :not(:first-child)": {
-    marginLeft: p.theme.spacing(),
-  },
-}));
 
 const List = styled("div")((p) => ({}));
 
@@ -43,19 +17,19 @@ const Item = React.forwardRef<
   }
 >(({ t, selected, onClick }, ref) => {
   return (
-    <Row
+    <Button
       ref={ref}
       selected={selected}
-      excluded={t.exclude}
-      variant="none"
+      disabled={t.exclude}
+      variant="listItem"
       fullWidth
       onClick={() => {
         !t.exclude && onClick();
       }}
     >
-      <div>{t.label}</div>
+      {t.exclude ? <s>{t.label}</s> : <span>{t.label}</span>}
       <NodeStats d={t} />
-    </Row>
+    </Button>
   );
 });
 
