@@ -16,6 +16,7 @@ export type ButtonProps = {
   variant?: ButtonVariant;
   selected?: boolean; // for list items
   fullWidth?: boolean;
+  children?: React.ReactNode;
 };
 
 const StyledButton = styled("button")<{
@@ -86,12 +87,15 @@ const StyledButton = styled("button")<{
   };
 });
 
-export const Button: React.FC<ButtonProps> = (props) => {
-  return (
-    <StyledButton
-      type="button"
-      {...props}
-      variant={props.variant || "standard"}
-    />
-  );
-};
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (props, ref) => {
+    return (
+      <StyledButton
+        ref={ref}
+        type="button"
+        {...props}
+        variant={props.variant || "standard"}
+      />
+    );
+  }
+);
