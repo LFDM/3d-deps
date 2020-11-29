@@ -2,6 +2,7 @@ import express from "express";
 import open from "open";
 import * as path from "path";
 import yargs from "yargs";
+import { serializeConfig } from "./services/config";
 import { Dataset, RunConfig } from "./types/RunConfig";
 
 const argv = yargs(process.argv)
@@ -78,7 +79,10 @@ app.get("/api/datasets/:id", async (req, res) => {
     res.status(404).json({ message: "DATA_SET_NOT_FOUND" });
   }
   const d = await dataset.fetch();
-  return res.json(d);
+  return res.json({
+    data: d.data,
+    config: serializeConfig(d.config),
+  });
 });
 
 app.get("/app/*", (req, res) => {
