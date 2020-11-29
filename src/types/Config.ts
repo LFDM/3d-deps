@@ -7,6 +7,7 @@ export type Theme = {
   hud: {
     color: string;
     highlightColor: string;
+    secondaryColor: string;
     backgroundColor: string;
     opacity: number;
   };
@@ -89,6 +90,7 @@ export const CONFIG: Config = {
       color: "#f4f4f4",
       highlightColor: "#ea6161",
       backgroundColor: "#1e1e1e",
+      secondaryColor: "#1c5cc2",
       opacity: 0.75,
     },
     spacing: (multiplier = 1) => multiplier * 8,
