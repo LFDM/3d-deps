@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Graph } from "./components/Graph";
 import { Hud } from "./components/Hud";
 import { CssBaseline } from "./CssBaseline";
+import { usePromise } from "./hooks/usePromise";
 import { ConfigContext } from "./services/config";
 import { Dataset, DatasetProvider, useDatasets } from "./services/dataset";
 import { UiStateProvider } from "./services/uiState";
@@ -155,7 +156,7 @@ const InitCanvas: React.FC = ({ children }) => {
         color: t.typography.color,
       }}
     >
-      {children}
+      <div>{children}</div>
     </div>
   );
 };
@@ -163,9 +164,7 @@ const InitCanvas: React.FC = ({ children }) => {
 const AppLoading = ({ name }: { name: string }) => {
   return (
     <InitCanvas>
-      <div>
-        Loading <b>{name}</b>...
-      </div>
+      Loading <b>{name}</b>...
     </InitCanvas>
   );
 };
@@ -174,9 +173,7 @@ const AppError = ({ name, error }: { name: string; error: string }) => {
   console.log(error);
   return (
     <InitCanvas>
-      <div>
-        Something went wrong while loading <b>{name}</b>!
-      </div>
+      Something went wrong while loading <b>{name}</b>!
     </InitCanvas>
   );
 };
@@ -201,11 +198,22 @@ const AppInit = () => {
   }
 };
 
-function App({ ds }: { ds: Dataset[] }) {
+function App({ loadDatasets }: { loadDatasets: () => Promise<Dataset[]> }) {
   // leave router outside so that we can switch datasets through urls later
+  const [datasets, loading, error] = usePromise(loadDatasets);
+  if (loading) {
+    return <InitCanvas>Loading datasets...</InitCanvas>;
+  }
+  if (error || !datasets) {
+    console.log(error);
+    return <InitCanvas>Failed to load datasets.</InitCanvas>;
+  }
+  if (!datasets.length) {
+    <InitCanvas>No datasets provided.</InitCanvas>;
+  }
   return (
     <Router>
-      <DatasetProvider datasets={ds}>
+      <DatasetProvider datasets={datasets}>
         <AppInit />
       </DatasetProvider>
     </Router>

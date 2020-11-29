@@ -1,34 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { JsonFileAnalyzer } from "./analyzers/jsonFile";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { Dataset } from "./services/dataset";
-import { CONFIG } from "./types/Config";
 
-const toDataset = (key: string): Dataset => ({
-  name: key,
-  fetch: async () => ({
-    config: CONFIG,
-    data: await new JsonFileAnalyzer({ key }).analyze(),
-  }),
-});
+console.log(process.env.STANDALONE);
+
+const loadDatasets: () => Promise<Dataset[]> = !!process.env.STANDALONE
+  ? async () => import("./exampleLoader").then((m) => m.loadDatasets())
+  : async () => fetch("/api/datasets").then((r) => r.json());
 
 const run = async () => {
   ReactDOM.render(
     <React.StrictMode>
-      <App
-        ds={[
-          toDataset("Affilimate CFs"),
-          toDataset("Affilimate CLI"),
-          toDataset("Affilimate App"),
-          toDataset("Syndexioi App"),
-          toDataset("Syndexioi CFs"),
-          toDataset("Self"),
-          toDataset("Material UI"),
-        ]}
-      />
+      <App loadDatasets={loadDatasets} />
     </React.StrictMode>,
     document.getElementById("root")
   );
