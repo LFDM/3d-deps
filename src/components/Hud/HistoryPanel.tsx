@@ -6,7 +6,9 @@ import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
 import { NodeStats } from "../NodeStats";
 
-const List = styled("div")((p) => ({}));
+const List = styled("div")((p) => ({
+  paddingBottom: p.theme.spacing(2),
+}));
 
 const Item = React.forwardRef<
   HTMLButtonElement,
