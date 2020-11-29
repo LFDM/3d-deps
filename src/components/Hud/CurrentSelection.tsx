@@ -13,11 +13,12 @@ const Container = styled(HudSegment)((p) => ({
   padding: p.theme.spacing(3),
 }));
 
-const Title = styled("div")((p) => ({
+const Title = styled("div")<{ excluded: boolean }>((p) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   fontSize: "1.17rem",
+  opacity: p.excluded ? 0.2 : "inherit",
 
   "> :not(:first-child)": {
     marginLeft: p.theme.spacing(),
@@ -61,8 +62,8 @@ export const CurrentSelection = () => {
   }
   return (
     <Container>
-      <Title>
-        <div>{d.label}</div>
+      <Title excluded={d.exclude}>
+        <div>{d.exclude ? <s>{d.label}</s> : d.label}</div>
         <NodeStats d={d} />
       </Title>
       {showDetails && <Details d={d} />}
