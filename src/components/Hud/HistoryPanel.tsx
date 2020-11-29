@@ -95,6 +95,7 @@ export const HistoryPanel = ({
       })}
       {presentT && (
         <Item
+          key={presentT.id}
           t={presentT}
           selected={true}
           ref={selectionRef}
