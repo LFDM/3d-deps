@@ -49,6 +49,10 @@ export class UndoHistory<T> {
     return nextEl;
   }
 
+  move(steps: number) {
+    return steps > 0 ? this.redo(steps) : this.undo(steps);
+  }
+
   push(el: T) {
     this.history.future = [];
     if (this.history.present !== undefined) {
