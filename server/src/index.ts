@@ -56,7 +56,6 @@ app.get("/api/datasets", async (req, res) => {
     });
     return;
   }
-  console.log(conf);
   try {
     const datasets = await conf.loadDatasets();
     const datasetsWithId = datasets.map((d) => ({
