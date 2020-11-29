@@ -50,7 +50,7 @@ export class UndoHistory<T> {
   }
 
   move(steps: number) {
-    return steps > 0 ? this.redo(steps) : this.undo(steps);
+    return steps > 0 ? this.redo(steps) : this.undo(Math.abs(steps));
   }
 
   push(el: T) {
