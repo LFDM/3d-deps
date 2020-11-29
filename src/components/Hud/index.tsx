@@ -169,7 +169,7 @@ const Controls = () => {
       >
         Sidebar
       </ControlButton>
-      <ControlButton active={showDetails} onClick={toggleDetails}>
+      <ControlButton active={showDetails} onClick={() => toggleDetails()}>
         Details
       </ControlButton>
       <ControlButton
