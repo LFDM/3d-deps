@@ -33,6 +33,14 @@ const Item = React.forwardRef<
   );
 });
 
+const EmptyState = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: 200,
+  opacity: 0.5,
+}));
+
 export const HistoryPanel = ({
   scrollContainer,
 }: {
@@ -89,6 +97,11 @@ export const HistoryPanel = ({
         );
       })}
       <></>
+      {!present && !future.length && !past.length && (
+        <EmptyState>
+          <em>No selections recorded yet.</em>
+        </EmptyState>
+      )}
     </List>
   );
 };
