@@ -6,6 +6,7 @@ import { FileTreeDirectoryContent, SEPARATOR, toFileTree } from "../FileTree";
 
 const Container = styled("div")`
   padding-left: ${(p) => p.theme.spacing(2)}px;
+  padding-bottom: ${(p) => p.theme.spacing(2)}px;
 `;
 
 export const NodesPanel = ({
