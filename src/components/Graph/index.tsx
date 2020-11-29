@@ -274,7 +274,7 @@ export const Graph = () => {
   useEffect(() => {
     setTimeout(() => {
       const r: any = ref.current;
-      r.cameraPosition({ x: 0 }, { x: -200 });
+      r?.cameraPosition({ x: 0 }, { x: -200 });
     }, 0);
   }, []);
 
