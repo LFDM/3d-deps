@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import escapeStringRegexp from "escape-string-regexp";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Eye, EyeOff, Settings } from "react-feather";
-import tinycolor from "tinycolor2";
 import { toggleShowExcludedNodes, useConfig } from "../../services/config";
 import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
@@ -27,39 +26,13 @@ const CustomInput = styled(Input)((p) => {
   };
 });
 
-const BaseListItem = styled("div")((p) => ({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: `${p.theme.spacing(0.5)}px ${p.theme.spacing(2)}px`,
-
-  "> :not(:first-child)": {
-    marginLeft: p.theme.spacing(),
-  },
+// Maybe do ellipsis inside for ultra long names?
+const Li = styled(Button)((p) => ({
+  paddingLeft: p.theme.spacing(2),
+  paddingRight: p.theme.spacing(2),
 }));
 
-// make this a grid so that we can do ellipsis
-const ListItem = styled(BaseListItem)<{ excluded: boolean; selected: boolean }>(
-  (p) => ({
-    opacity: p.excluded ? 0.5 : 1,
-    cursor: p.excluded ? "default" : "pointer",
-
-    "div:first-of-type": {
-      textDecoration: p.excluded ? "line-through" : "none",
-    },
-
-    backgroundColor: p.selected ? p.theme.hud.highlightColor : "none",
-
-    ":hover": {
-      backgroundColor:
-        p.excluded || p.selected
-          ? "none"
-          : tinycolor(p.theme.hud.highlightColor).lighten(10).toRgbString(),
-    },
-  })
-);
-
-const EmptyListItem = styled(BaseListItem)`
+const EmptyListItem = styled(Li)`
   font-style: italic;
 `;
 
@@ -81,7 +54,7 @@ const Item = ({
   onSelect: () => void;
   listRef: React.MutableRefObject<HTMLDivElement | null>;
 }) => {
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
     if (selected && listRef.current && ref.current) {
       const o = listRef.current.getBoundingClientRect();
@@ -109,12 +82,12 @@ const Item = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
   return (
-    <ListItem
-      ref={ref}
+    <Li
       key={n.id}
-      excluded={n.exclude}
+      ref={ref}
+      variant="listItem"
+      disabled={n.exclude}
       selected={selected}
-      role="button"
       onClick={() => {
         if (n.exclude) {
           return;
@@ -122,9 +95,9 @@ const Item = ({
         onSelect();
       }}
     >
-      <div>{n.label}</div>
+      {n.exclude ? <s>{n.label}</s> : <span>{n.label}</span>}
       <NodeStats d={n} />
-    </ListItem>
+    </Li>
   );
 };
 
@@ -250,7 +223,11 @@ export const SearchModal = () => {
               onSelect={() => select(n)}
             />
           ))}
-          {!nodes.length && <EmptyListItem>No matches.</EmptyListItem>}
+          {!nodes.length && (
+            <EmptyListItem variant="listItem" disabled={true}>
+              No matches.
+            </EmptyListItem>
+          )}
         </ListContainer>
       </Body>
     </Dialog>
