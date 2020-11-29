@@ -68,13 +68,15 @@ export const toFileTree = (ds: TreeNode[]): FileTreeItemDir<TreeNode> => {
 
 const Frame = styled("div")<{ selected: boolean }>`
   position: relative;
-  padding: 4px 0px 0px 0px;
+  padding: ${(p) => p.theme.spacing(0.25)}px ${(p) => p.theme.spacing(1)}px
+    ${(p) => p.theme.spacing(0.25)}px 0px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow-x: hidden;
   vertical-align: middle;
-  color: ${(p) => (p.selected ? p.theme.hud.highlightColor : "inherit")};
-  fill: ${(p) => (p.selected ? p.theme.hud.highlightColor : p.theme.hud.color)};
+  background-color: ${(p) =>
+    p.selected ? p.theme.hud.highlightColor : "transparent"};
+  fill: ${(p) => p.theme.hud.color};
 `;
 
 const Title = styled("span")`

@@ -1,7 +1,12 @@
+import styled from "@emotion/styled";
 import { sortBy } from "lodash";
 import React, { SetStateAction, useLayoutEffect, useMemo } from "react";
 import { GraphData } from "../../types/GraphData";
 import { FileTreeDirectoryContent, SEPARATOR, toFileTree } from "../FileTree";
+
+const Container = styled("div")`
+  padding-left: ${(p) => p.theme.spacing(2)}px;
+`;
 
 export const NodesPanel = ({
   g,
@@ -44,7 +49,7 @@ export const NodesPanel = ({
     : null;
 
   return (
-    <div>
+    <Container>
       <FileTreeDirectoryContent
         dir={rootDir}
         onSelect={(t) => {
@@ -58,6 +63,6 @@ export const NodesPanel = ({
         setOpenNodes={setOpenNodes}
         selectedItemKey={selectedItemKey}
       />
-    </div>
+    </Container>
   );
 };
