@@ -5,9 +5,8 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { Dataset } from "./services/dataset";
 
-console.log(process.env.STANDALONE);
-
-const loadDatasets: () => Promise<Dataset[]> = !!process.env.STANDALONE
+const loadDatasets: () => Promise<Dataset[]> = !!process.env
+  .REACT_APP_STANDALONE
   ? async () => import("./exampleLoader").then((m) => m.loadDatasets())
   : async () => fetch("/api/datasets").then((r) => r.json());
 
