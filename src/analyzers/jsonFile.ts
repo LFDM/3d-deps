@@ -38,7 +38,7 @@ export type JsonFileAnalyzerConfig = {
   key: string;
 };
 
-export class MadgeAnalyzer implements IDependencyAnalyzer {
+export class JsonFileAnalyzer implements IDependencyAnalyzer {
   private config: JsonFileAnalyzerConfig;
   constructor(config: JsonFileAnalyzerConfig) {
     this.config = config;
