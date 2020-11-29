@@ -4,9 +4,17 @@ type History<T> = {
   future: T[];
 };
 
+type HistoryListenerEvent = "listen" | "push" | "undo" | "redo" | "unlisten";
+type HistoryListener<T> = (
+  event: HistoryListenerEvent,
+  d: { steps: number; current: T | undefined; self: UndoHistory<T> }
+) => void;
+
 export class UndoHistory<T> {
   private depth: number;
   private history: History<T> = { past: [], present: undefined, future: [] };
+  private listeners: HistoryListener<T>[] = [];
+
   constructor(depth: number = 10, initialState: Partial<History<T>> = {}) {
     this.depth = depth;
     this.history.past = initialState?.past || this.history.past;
@@ -67,5 +75,32 @@ export class UndoHistory<T> {
     if (this.history.past.length > this.depth) {
       this.history.past.shift();
     }
+  }
+
+  listen(listener: HistoryListener<T>) {
+    this.listeners.push(listener);
+    this.notify("listen", [listener]);
+  }
+
+  unlisten(listener: HistoryListener<T>) {
+    const i = this.listeners.indexOf(listener);
+    if (i !== -1) {
+      this.listeners.splice(i, 1);
+    }
+    this.notify("unlisten", [listener]);
+  }
+
+  private notify(
+    event: HistoryListenerEvent,
+    listeners: HistoryListener<T>[],
+    steps = 0
+  ) {
+    listeners.forEach((listener) =>
+      listener(event, {
+        steps,
+        current: this.history.present,
+        self: this,
+      })
+    );
   }
 }
