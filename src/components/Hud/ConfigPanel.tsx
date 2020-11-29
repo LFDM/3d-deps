@@ -6,6 +6,10 @@ import { ColorPicker } from "../ColorPicker";
 import { ConfigRow } from "../ConfigRow";
 import { InputSliderWithValue } from "../Input";
 
+const Container = styled("div")`
+  padding: 0 ${(p) => p.theme.spacing(2)}px;
+`;
+
 const SubSection = styled("div")((p) => ({
   marginBottom: p.theme.spacing(2),
 }));
@@ -347,7 +351,7 @@ const GraphSection = ({
 export const ConfigPanel = () => {
   const cfg = useConfig();
   return (
-    <>
+    <Container>
       <GraphSection
         value={cfg.current.graph}
         originalValue={cfg.original.graph}
@@ -368,6 +372,6 @@ export const ConfigPanel = () => {
           })
         }
       />
-    </>
+    </Container>
   );
 };
