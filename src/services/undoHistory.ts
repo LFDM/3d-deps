@@ -41,6 +41,8 @@ export class UndoHistory<T> {
       nextEl = this.history.past.pop();
       this.history.present = nextEl;
     }
+    // TODO Interesting question - should this trigger before we return or hidden
+    // behind a setTimeout?
     nextEl && this.notify("undo", this.listeners, steps);
     return nextEl;
   }
