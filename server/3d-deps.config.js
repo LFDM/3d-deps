@@ -80,5 +80,12 @@ module.exports.loadDatasets = async () => {
         data: [],
       }),
     },
+    {
+      name: "3d-deps client",
+      fetch: async () => ({
+        config: CONFIG,
+        data: [],
+      }),
+    },
   ];
 };
