@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
+import assertNever from "assert-never";
 import { keyBy } from "lodash";
 import React, { useMemo, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -7,6 +8,7 @@ import { Graph } from "./components/Graph";
 import { Hud } from "./components/Hud";
 import { CssBaseline } from "./CssBaseline";
 import { ConfigContext } from "./services/config";
+import { Dataset, DatasetProvider, useDatasets } from "./services/dataset";
 import { UiStateProvider } from "./services/uiState";
 import { Config } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
@@ -105,36 +107,74 @@ const useGraphData = (
   );
 };
 
-function App({
+const AppReady = ({
   config: originalConfig,
-  ds,
+  data,
 }: {
+  name: string;
   config: Config;
-  ds: DependencyNode[];
-}) {
+  data: DependencyNode[];
+}) => {
   const [config, setConfig] = useState(originalConfig);
-  const data = useGraphData(ds, {
+  const g = useGraphData(data, {
     includeByPath: config.graph.includeByPath,
     excludeByPath: config.graph.excludeByPath,
   });
   return (
+    <ConfigContext.Provider
+      value={{
+        current: config,
+        original: originalConfig,
+        onChange: setConfig,
+      }}
+    >
+      <ThemeProvider theme={config.theme}>
+        <UiStateProvider data={g}>
+          <Main as="main">
+            <Hud />
+            <Graph />
+          </Main>
+        </UiStateProvider>
+      </ThemeProvider>
+    </ConfigContext.Provider>
+  );
+};
+
+const AppLoading = ({ name }: { name: string }) => {
+  return <div>{name}</div>;
+};
+
+const AppError = ({ name, error }: { name: string; error: string }) => {
+  return null;
+};
+
+const AppInit = () => {
+  const { current } = useDatasets();
+  switch (current.state) {
+    case "LOADING":
+      return <AppLoading name={current.name} />;
+    case "ERROR":
+      return <AppError name={current.name} error={current.err} />;
+    case "READY":
+      return (
+        <AppReady
+          name={current.name}
+          data={current.data}
+          config={current.config}
+        />
+      );
+    default:
+      return assertNever(current);
+  }
+};
+
+function App({ ds }: { ds: Dataset[] }) {
+  // leave router outside so that we can switch datasets through urls later
+  return (
     <Router>
-      <ConfigContext.Provider
-        value={{
-          current: config,
-          original: originalConfig,
-          onChange: setConfig,
-        }}
-      >
-        <ThemeProvider theme={config.theme}>
-          <UiStateProvider data={data}>
-            <Main as="main">
-              <Hud />
-              <Graph />
-            </Main>
-          </UiStateProvider>
-        </ThemeProvider>
-      </ConfigContext.Provider>
+      <DatasetProvider datasets={ds}>
+        <AppInit />
+      </DatasetProvider>
     </Router>
   );
 }

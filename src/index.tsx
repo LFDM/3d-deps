@@ -7,12 +7,24 @@ import reportWebVitals from "./reportWebVitals";
 import { CONFIG } from "./types/Config";
 
 const run = async () => {
-  const ds = await new MadgeAnalyzer({
+  await new MadgeAnalyzer({
     entry: "...",
   }).analyze();
   ReactDOM.render(
     <React.StrictMode>
-      <App config={CONFIG} ds={ds} />
+      <App
+        ds={[
+          {
+            name: "Affilimate CFs",
+            fetch: async () => ({
+              config: CONFIG,
+              data: await new MadgeAnalyzer({
+                entry: "...",
+              }).analyze(),
+            }),
+          },
+        ]}
+      />
     </React.StrictMode>,
     document.getElementById("root")
   );
