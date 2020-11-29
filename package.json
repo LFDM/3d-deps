@@ -1,6 +1,7 @@
 {
   "name": "3d-deps",
   "version": "0.1.0",
+  "homepage": "https://lfdm.github.io/my-app",
   "private": true,
   "dependencies": {
     "@emotion/core": "^11.0.0",
