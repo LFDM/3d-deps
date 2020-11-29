@@ -77,7 +77,7 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
   const [tab, setTab] = useQueryParam("tab", "nodes");
   const [selectedNodeId, setSelectedNodeId] = useQueryParam("node");
   const history = useRef(
-    new UndoHistory<string>(15, { present: selectedNodeId || undefined })
+    new UndoHistory<string>(25, { present: selectedNodeId || undefined })
   );
   const [{ hotkeyInfoOpen, searchOpen, showDetails }, setState] = useState<{
     hotkeyInfoOpen: boolean;
