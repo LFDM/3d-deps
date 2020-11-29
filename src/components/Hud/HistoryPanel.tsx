@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
+import React, { useEffect, useRef } from "react";
 import tinycolor from "tinycolor2";
+import { scrollElementIntoView } from "../../services/scroll";
 import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
@@ -32,17 +34,17 @@ const Row = styled(Button)<{ selected?: boolean; excluded?: boolean }>((p) => ({
 
 const List = styled("div")((p) => ({}));
 
-const Item = ({
-  t,
-  selected,
-  onClick,
-}: {
-  t: TreeNode;
-  selected?: boolean;
-  onClick: () => void;
-}) => {
+const Item = React.forwardRef<
+  HTMLButtonElement,
+  {
+    t: TreeNode;
+    selected?: boolean;
+    onClick: () => void;
+  }
+>(({ t, selected, onClick }, ref) => {
   return (
     <Row
+      ref={ref}
       selected={selected}
       excluded={t.exclude}
       variant="none"
@@ -55,17 +57,28 @@ const Item = ({
       <NodeStats d={t} />
     </Row>
   );
-};
+});
 
-export const HistoryPanel = ({}: {}) => {
+export const HistoryPanel = ({
+  scrollContainer,
+}: {
+  scrollContainer: HTMLElement | null;
+}) => {
   const [
     {
-      graph: { data, history },
+      graph: { data, history, selectedNodeId },
     },
     { toggleSelectedNodeId, selectionHistoryMove },
   ] = useUiState();
   const { future, present, past } = history.getHistory();
   const presentT = present && data.byId[present];
+  const selectionRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (selectedNodeId && scrollContainer && selectionRef.current) {
+      scrollElementIntoView(scrollContainer, selectionRef.current);
+    }
+  }, [selectedNodeId]);
   return (
     <List>
       {past.map((id, i) => {
@@ -84,6 +97,7 @@ export const HistoryPanel = ({}: {}) => {
         <Item
           t={presentT}
           selected={true}
+          ref={selectionRef}
           onClick={() => toggleSelectedNodeId()}
         />
       )}

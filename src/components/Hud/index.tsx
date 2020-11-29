@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { toggleSidebar, useConfig } from "../../services/config";
 import { useUiState } from "../../services/uiState";
 import { Button } from "../Button";
@@ -65,9 +65,10 @@ export const Sidebar = ({ open }: { open: boolean }) => {
     },
     { setSidebarTab: setTab, setSelectedNodeId },
   ] = useUiState();
+  const containerRef = useRef<HTMLDivElement>(null);
   const [openNodes, setOpenNodes] = useState<{ [key: string]: boolean }>({});
   return (
-    <SidebarContainer open={open}>
+    <SidebarContainer open={open} ref={containerRef}>
       <Tabs>
         <Button
           variant={tab === "nodes" ? "outlined" : "standard"}
@@ -101,7 +102,7 @@ export const Sidebar = ({ open }: { open: boolean }) => {
       )}
       {tab === "history" && (
         <Tab>
-          <HistoryPanel />
+          <HistoryPanel scrollContainer={containerRef.current} />
         </Tab>
       )}
       {tab === "config" && (
