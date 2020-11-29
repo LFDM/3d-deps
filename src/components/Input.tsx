@@ -11,37 +11,38 @@ export const StyledInput = styled("input")<{ fullWidth?: boolean }>((p) => ({
   font: p.theme.typography.font,
 }));
 
-export const Input = React.forwardRef<
-  HTMLInputElement,
-  React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > & { blurOnEscape?: boolean; fullWidth?: boolean }
->(({ onKeyDown, blurOnEscape, ...p }, theirRef) => {
-  const ref = useRef<HTMLInputElement | null>();
-  const oKD = blurOnEscape
-    ? (ev: React.KeyboardEvent<HTMLInputElement>) => {
-        ev.key === "Escape" && ref.current?.blur();
-        onKeyDown && onKeyDown(ev);
-      }
-    : onKeyDown;
-  return (
-    <StyledInput
-      {...p}
-      ref={(r) => {
-        ref.current = r;
-        if (theirRef) {
-          if (typeof theirRef === "function") {
-            theirRef(r);
-          } else {
-            theirRef.current = r;
-          }
+export type InputProps = React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+> & { blurOnEscape?: boolean; fullWidth?: boolean };
+
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ onKeyDown, blurOnEscape, ...p }, theirRef) => {
+    const ref = useRef<HTMLInputElement | null>();
+    const oKD = blurOnEscape
+      ? (ev: React.KeyboardEvent<HTMLInputElement>) => {
+          ev.key === "Escape" && ref.current?.blur();
+          onKeyDown && onKeyDown(ev);
         }
-      }}
-      onKeyDown={oKD}
-    />
-  );
-});
+      : onKeyDown;
+    return (
+      <StyledInput
+        {...p}
+        ref={(r) => {
+          ref.current = r;
+          if (theirRef) {
+            if (typeof theirRef === "function") {
+              theirRef(r);
+            } else {
+              theirRef.current = r;
+            }
+          }
+        }}
+        onKeyDown={oKD}
+      />
+    );
+  }
+);
 
 const SliderContainer = styled("div")((p) => ({
   display: "flex",
@@ -51,19 +52,14 @@ const SliderContainer = styled("div")((p) => ({
     marginRight: p.theme.spacing(0.5),
   },
 }));
-export const InputSliderWithValue = (
-  p: Omit<
-    React.DetailedHTMLProps<
-      React.InputHTMLAttributes<HTMLInputElement>,
-      HTMLInputElement
-    >,
-    "type"
-  >
-) => {
+export const InputSliderWithValue = React.forwardRef<
+  HTMLInputElement,
+  Omit<InputProps, "type">
+>((p, ref) => {
   return (
     <SliderContainer>
       <div>{p.value}</div>
-      <input type="range" {...p} />
+      <Input type="range" {...p} ref={ref} />
     </SliderContainer>
   );
-};
+});
