@@ -65,7 +65,7 @@ const StyledButton = styled("button")<{
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      padding: p.theme.spacing(0.5),
+      padding: `${p.theme.spacing(0.5)}px ${p.theme.spacing(2)}px`,
       backgroundColor: p.selected ? p.theme.hud.highlightColor : "transparent",
 
       ":hover": {
