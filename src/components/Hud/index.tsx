@@ -40,14 +40,24 @@ const SidebarContainer = styled(HudSegment)<{ open: boolean }>`
   height: 100%;
   background-color: ${(p) => p.theme.hud.backgroundColor};
   ${(p) => !p.open && "padding: 0;"}
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas:
+    "tabs"
+    "tab";
 `;
 
 const RightContainer = styled("div")`
   position: relative;
 `;
 
-const Tab = styled("div")();
+const Tab = styled("div")((p) => ({
+  gridArea: "tab",
+  overflow: "auto",
+}));
+
 const Tabs = styled("div")((p) => ({
+  gridArea: "tabs",
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
   gridColumnGap: p.theme.spacing(3),
