@@ -51,7 +51,6 @@ const Tabs = styled("div")((p) => ({
   gridTemplateColumns: "repeat(3, 1fr)",
   gridColumnGap: p.theme.spacing(3),
   padding: p.theme.spacing(2),
-  paddingBottom: p.theme.spacing(),
   marginBottom: p.theme.spacing(2),
   borderBottom: `1px solid lightgray`,
 }));
