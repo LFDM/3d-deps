@@ -23,7 +23,7 @@ const Main = styled(CssBaseline)((p) => ({
 const depsToGraphData = (
   ds: DependencyNode[],
   opts?: {
-    excludeByPath?: RegExp;
+    excludeByPath?: RegExp | null;
   }
 ): { list: TreeNode[]; byId: { [id: string]: TreeNode } } => {
   const list: TreeNode[] = [];
@@ -72,7 +72,7 @@ const depsToGraphData = (
 
 const useGraphData = (
   ds: DependencyNode[],
-  excludeByPath?: RegExp
+  excludeByPath?: RegExp | null
 ): GraphData => {
   return useMemo(
     () =>
