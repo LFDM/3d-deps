@@ -54,9 +54,15 @@ app.get("/api/datasets", async (req, res) => {
     return;
   }
   console.log(conf);
-
-  console.log("Datasets requested!");
-  res.json([]);
+  try {
+    const datasets = await conf.loadDatasets();
+    res.json(datasets);
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({
+      message: "FAILED_TO_LOAD_DATASETS",
+    });
+  }
 });
 
 app.get("/app/*", (req, res) => {
