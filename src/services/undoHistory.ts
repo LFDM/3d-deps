@@ -1,13 +1,17 @@
+type History<T> = {
+  past: T[];
+  present: T | undefined;
+  future: T[];
+};
+
 export class UndoHistory<T> {
   private depth: number;
-  private history: {
-    past: T[];
-    present: T | undefined;
-    future: T[];
-  } = { past: [], present: undefined, future: [] };
-  constructor(depth: number = 10, initialElement?: T) {
+  private history: History<T> = { past: [], present: undefined, future: [] };
+  constructor(depth: number = 10, initialState: Partial<History<T>> = {}) {
     this.depth = depth;
-    this.history.present = initialElement;
+    this.history.past = initialState?.past || this.history.past;
+    this.history.present = initialState?.present || this.history.present;
+    this.history.future = initialState?.future || this.history.future;
   }
 
   getHistory() {
