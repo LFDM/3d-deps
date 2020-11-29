@@ -119,8 +119,8 @@ export const CONFIG: Config = {
     dependents: {
       maxDepth: 1,
     },
+    includeByPath: null,
     excludeByPath: /(^helpers.ts|^domainTypes|^versions|^services\/firebase)/,
-    includeByPath: /(^helpers.ts|^domainTypes|^versions|^services\/firebase)/,
   },
   hud: {
     sidebar: {
