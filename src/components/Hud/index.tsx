@@ -122,6 +122,7 @@ const ControlsContainer = styled(HudSegment)((p) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  padding: p.theme.spacing(2),
 
   "> :not(:first-child)": {
     marginLeft: p.theme.spacing(),
