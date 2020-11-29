@@ -55,6 +55,7 @@ export type Hotkey =
   | "hud.sidebar.toggle"
   | "hud.sidebar.openNodesPanel"
   | "hud.sidebar.openConfigPanel"
+  | "hud.sidebar.openHistoryPanel"
   | "hud.search"
   | "hud.hotkeyInfo"
   | "graph.dependencies.maxDepth.increase"
@@ -130,6 +131,7 @@ export const CONFIG: Config = {
   hotkeys: {
     "hud.sidebar.toggle": ["alt+b"],
     "hud.sidebar.openNodesPanel": ["alt+n"],
+    "hud.sidebar.openHistoryPanel": ["alt+h"],
     "hud.sidebar.openConfigPanel": ["alt+c"],
     "hud.search": ["/", "f"],
     "hud.hotkeyInfo": ["shift+/"], // ? doesn't seem to work

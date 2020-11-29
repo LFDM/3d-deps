@@ -47,7 +47,7 @@ const RightContainer = styled("div")`
 const Tab = styled("div")();
 const Tabs = styled("div")((p) => ({
   display: "grid",
-  gridTemplateColumns: "repeat(2, 1fr)",
+  gridTemplateColumns: "repeat(3, 1fr)",
   gridColumnGap: p.theme.spacing(3),
   paddingBottom: p.theme.spacing(),
   marginBottom: p.theme.spacing(2),
@@ -73,6 +73,12 @@ export const Sidebar = ({ open }: { open: boolean }) => {
           onClick={() => setTab("nodes")}
         >
           Nodes
+        </Button>
+        <Button
+          variant={tab === "history" ? "outlined" : "standard"}
+          onClick={() => setTab("history")}
+        >
+          History
         </Button>
         <Button
           variant={tab === "config" ? "outlined" : "standard"}

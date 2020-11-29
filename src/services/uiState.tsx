@@ -3,7 +3,7 @@ import { useQueryParam } from "../hooks/useQueryParam";
 import { GraphData } from "../types/GraphData";
 import { UndoHistory } from "./undoHistory";
 
-export type TabName = "config" | "nodes";
+export type TabName = "nodes" | "history" | "config";
 
 export type UiState = {
   hud: {

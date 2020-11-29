@@ -6,7 +6,7 @@ import {
   toggleSidebar,
   useConfig,
 } from "../services/config";
-import { useUiState } from "../services/uiState";
+import { TabName, useUiState } from "../services/uiState";
 import { Hotkey, HotkeyConfig } from "../types/Config";
 
 type KeyMap = {
@@ -31,6 +31,7 @@ const toSequence = (
 const ALL_HOTKEYS: Hotkey[] = [
   "hud.sidebar.toggle",
   "hud.sidebar.openNodesPanel",
+  "hud.sidebar.openHistoryPanel",
   "hud.sidebar.openConfigPanel",
   "hud.search",
   "hud.hotkeyInfo",
@@ -47,6 +48,10 @@ const toKeyMap = (hs: HotkeyConfig): KeyMap => {
   return {
     "hud.sidebar.toggle": toSequence(hs, "hud.sidebar.toggle"),
     "hud.sidebar.openNodesPanel": toSequence(hs, "hud.sidebar.openNodesPanel"),
+    "hud.sidebar.openHistoryPanel": toSequence(
+      hs,
+      "hud.sidebar.openHistoryPanel"
+    ),
     "hud.sidebar.openConfigPanel": toSequence(
       hs,
       "hud.sidebar.openConfigPanel"
@@ -100,16 +105,15 @@ export const Hotkeys = () => {
   const keyMap = useMemo<KeyMap>(() => toKeyMap(hotkeys), [hotkeys]);
   const handlers = useMemo<KeyHandlers>(() => {
     const { current, onChange } = cfg;
+    const openSideBarTab = (t: TabName) => {
+      toggleSidebar(current, onChange, true);
+      as.setSidebarTab(t);
+    };
     return {
       "hud.sidebar.toggle": () => toggleSidebar(current, onChange),
-      "hud.sidebar.openNodesPanel": () => {
-        toggleSidebar(current, onChange, true);
-        as.setSidebarTab("nodes");
-      },
-      "hud.sidebar.openConfigPanel": () => {
-        toggleSidebar(current, onChange, true);
-        as.setSidebarTab("config");
-      },
+      "hud.sidebar.openNodesPanel": () => openSideBarTab("nodes"),
+      "hud.sidebar.openHistoryPanel": () => openSideBarTab("history"),
+      "hud.sidebar.openConfigPanel": () => openSideBarTab("config"),
       "hud.search": () => as.setSearchOpen(true),
       "hud.hotkeyInfo": () => as.setHotkeyInfoOpen(true),
       "graph.dependencies.maxDepth.increase": () =>
