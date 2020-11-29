@@ -1,10 +1,13 @@
+import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
-import React from "react";
+import React, { useState } from "react";
+import { Check, CheckCircle } from "react-feather";
 import { useConfig } from "../../services/config";
 import { GraphConfig, Theme } from "../../types/Config";
+import { Button } from "../Button";
 import { ColorPicker } from "../ColorPicker";
 import { ConfigRow } from "../ConfigRow";
-import { InputSliderWithValue } from "../Input";
+import { Input, InputSliderWithValue } from "../Input";
 
 const Container = styled("div")`
   padding: 0 ${(p) => p.theme.spacing(2)}px;
@@ -301,9 +304,53 @@ const GraphSection = ({
   originalValue: GraphConfig;
   onChange: (nextValue: GraphConfig) => void;
 }) => {
+  const originalExclude = value.excludeByPath
+    ? value.excludeByPath.toString().slice(1, -1)
+    : "";
+  const [exclude, setExclude] = useState(originalExclude);
+  const theme = useTheme();
   return (
     <>
       <h3>Graph</h3>
+      <SubSection>
+        <h4>Exclude by path</h4>
+        <ConfigRow
+          dense
+          as="form"
+          onSubmit={(ev) => {
+            console.log("!SUBMIT");
+            ev.stopPropagation();
+            ev.preventDefault();
+            console.log(exclude, originalExclude);
+            if (exclude === originalExclude) {
+              return;
+            }
+            onChange({
+              ...value,
+              excludeByPath: exclude ? new RegExp(exclude) : undefined,
+            });
+          }}
+        >
+          <div>{"/"}</div>
+          <Input
+            fullWidth
+            value={exclude}
+            onChange={(ev) => setExclude(ev.target.value)}
+          />
+          <div>{"/"}</div>
+          <Button
+            variant="icon"
+            disabled={exclude === originalExclude}
+            type="submit"
+          >
+            {exclude === originalExclude ? (
+              <Check size={14} />
+            ) : (
+              <CheckCircle size={14} color={theme.hud.highlightColor} />
+            )}
+          </Button>
+        </ConfigRow>
+      </SubSection>
       <SubSection>
         <h4>Dependencies</h4>
         <ConfigRow>
