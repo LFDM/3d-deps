@@ -1,5 +1,5 @@
 import { Config } from "@testing-library/react";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { usePromise } from "../hooks/usePromise";
 import { DependencyNode } from "../types/DependencyAnalyzer";
 
@@ -32,7 +32,7 @@ type ReadyState = {
 
 type State = LoadingState | ErrorState | ReadyState;
 
-export const DatasetsContext = React.createContext<{
+export const Datasets = React.createContext<{
   datasets: Dataset[];
   current: State;
   selectDataset: (nextDataset: Dataset) => void;
@@ -82,10 +82,10 @@ export const DatasetProvider: React.FC<{ datasets: Dataset[] }> = ({
   }, [d, loading, error, dataset]);
 
   return (
-    <DatasetsContext.Provider
-      value={{ current: state, datasets, selectDataset }}
-    >
+    <Datasets.Provider value={{ current: state, datasets, selectDataset }}>
       {children}
-    </DatasetsContext.Provider>
+    </Datasets.Provider>
   );
 };
+
+export const useDatasets = () => useContext(Datasets);
