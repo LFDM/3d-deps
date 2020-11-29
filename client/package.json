@@ -46,7 +46,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy:gh-pages": "yarn build && gh-pages -d build"
+    "deploy:gh-pages": "PUBLIC_URL='https://lfdm.github.io/3d-deps/' yarn build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
