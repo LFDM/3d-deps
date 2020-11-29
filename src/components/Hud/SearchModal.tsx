@@ -28,12 +28,7 @@ const CustomInput = styled(Input)((p) => {
 });
 
 // Maybe do ellipsis inside for ultra long names?
-const Li = styled(Button)((p) => ({
-  paddingLeft: p.theme.spacing(2),
-  paddingRight: p.theme.spacing(2),
-}));
-
-const EmptyListItem = styled(Li)`
+const EmptyListItem = styled(Button)`
   font-style: italic;
 `;
 
@@ -63,7 +58,7 @@ const Item = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
   return (
-    <Li
+    <Button
       key={n.id}
       ref={ref}
       variant="listItem"
@@ -78,7 +73,7 @@ const Item = ({
     >
       {n.exclude ? <s>{n.label}</s> : <span>{n.label}</span>}
       <NodeStats d={n} />
-    </Li>
+    </Button>
   );
 };
 
