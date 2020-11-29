@@ -120,7 +120,6 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
           setSelectedNodeId(nextSelection);
           if (nextSelection) {
             history.current.push(nextSelection);
-            console.log(history.current.getHistory().past.length);
           }
         },
         toggleSelectedNodeId: () => {
@@ -148,9 +147,7 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
             showDetails: nextState,
           })),
         selectionHistoryMove: (steps: number) => {
-          console.log(history.current.getHistory().past.length);
           const nextSel = history.current.move(steps);
-          console.log("MOVE", steps, nextSel, history.current);
           if (nextSel) {
             setSelectedNodeId(nextSel);
           }
