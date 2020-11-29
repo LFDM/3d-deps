@@ -2,7 +2,7 @@ import express from "express";
 import open from "open";
 import * as path from "path";
 import yargs from "yargs";
-import { RunConfig } from "./types/RunConfig";
+import { Dataset, RunConfig } from "./types/RunConfig";
 
 const argv = yargs(process.argv)
   .option("port", {
@@ -31,6 +31,8 @@ app.use(express.static(CLIENT_BUILD));
 
 app.get("/", (req, res) => res.redirect("/app"));
 
+const DATASETS: { [key: string]: Dataset } = {};
+
 app.get("/api/datasets", async (req, res) => {
   const conf = readConfig();
 
@@ -56,13 +58,27 @@ app.get("/api/datasets", async (req, res) => {
   console.log(conf);
   try {
     const datasets = await conf.loadDatasets();
-    res.json(datasets);
+    const datasetsWithId = datasets.map((d) => ({
+      id: Buffer.from(d.name).toString("base64"),
+      d,
+    }));
+    datasetsWithId.forEach((d) => (DATASETS[d.id] = d.d));
+    res.json(datasetsWithId.map((d) => ({ id: d.id, name: d.d.name })));
   } catch (err) {
     console.log(err);
     return res.status(500).json({
       message: "FAILED_TO_LOAD_DATASETS",
     });
   }
+});
+
+app.get("/api/datasets/:id", async (req, res) => {
+  const dataset = DATASETS[req.params.id];
+  if (!dataset) {
+    res.status(404).json({ message: "DATA_SET_NOT_FOUND" });
+  }
+  const d = await dataset.fetch();
+  return res.json(d);
 });
 
 app.get("/app/*", (req, res) => {
