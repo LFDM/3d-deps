@@ -147,7 +147,7 @@ export const CONFIG: Config = {
         colors: {
           standard: "#fcf4b0",
           selected: "#A992EE",
-          unselected: "#313131", //  "#050505" darker, basically black
+          unselected: "#343434", //  "#050505" darker, basically black
           dependency: "#f47560", // #B5503D darker - darker is better. then the color dropoff for indirect nodes could be steeper too
           dependent: "#61cdbb", // #258374 darker
         },
@@ -157,7 +157,7 @@ export const CONFIG: Config = {
           standard: "#d3d3d3",
           dependency: "#f47560",
           dependent: "#61cdbb",
-          unselected: "#313131", //  "#050505" darker, basically black
+          unselected: "#343434", //  "#050505" darker, basically black
         },
       },
     },
