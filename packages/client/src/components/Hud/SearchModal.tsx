@@ -230,9 +230,15 @@ export const SearchModal = () => {
           fullWidth
         />
         <ListContainer ref={listRef}>
-          {nodesWithHighlights.map((n) => (
+          {nodesWithHighlights.map((n, i) => (
             <Item
-              variant="normal"
+              // a dummy approach for fast rendering without dealing with intersection observer
+              // assume that the user is mainly interested in the top results anyway...
+              // TODO
+              // implement this for real with intersection observer.
+              // always attach one at the end and at the beginning of the list,
+              // shift it around once it gets into the viewport
+              variant={i < 30 ? "normal" : "plain"}
               key={n.node.id}
               listRef={listRef}
               n={n.node}
