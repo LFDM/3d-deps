@@ -34,6 +34,7 @@
     "react-force-graph": "^1.37.1",
     "react-helmet": "^6.1.0",
     "react-hotkeys": "^2.0.0",
+    "react-intersection-list": "^0.0.3",
     "react-modal": "^3.12.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
