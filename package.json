@@ -8,7 +8,8 @@
   "scripts": {
     "server": "yarn workspace @3d-deps/server",
     "client": "yarn workspace @3d-deps/client",
-    "config": "yarn workspace @3d-deps/config"
+    "config": "yarn workspace @3d-deps/config",
+    "ex-simple": "yarn workspace @3d-deps/example-simple"
   },
   "dependencies": {
     "typescript": "^4.1.2"
