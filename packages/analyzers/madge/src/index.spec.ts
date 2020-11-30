@@ -32,6 +32,18 @@ describe("analyzer-madge", () => {
       expect(actual).toEqual("node_modules/@emotion/react");
     });
 
+    it("handles unscoped modules, leading directly to an index file", () => {
+      const actual = _toNodeModule("../node_modules/assert-never/index.d.ts");
+      expect(actual).toEqual("node_modules/assert-never");
+    });
+
+    it("handles unscoped modules, leading to a file within", () => {
+      const actual = _toNodeModule(
+        "../node_modules/react-feather/dist/index.d.ts"
+      );
+      expect(actual).toEqual("node_modules/react-feather");
+    });
+
     it("returns null when not a node module", () => {
       const actual = _toNodeModule("hooks/useWindowSize.ts");
       expect(actual).toBe(null);
