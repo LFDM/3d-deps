@@ -9,7 +9,7 @@ const toDataset = (key: string): Dataset => ({
       ...CONFIG,
       graph: {
         ...CONFIG.graph,
-        excludeByPath: /(^node_modules)/,
+        excludeByPath: /([^/]node_modules\/)/,
       },
     },
     data: await new JsonFileAnalyzer({ key }).analyze(),
