@@ -44,6 +44,11 @@ describe("analyzer-madge", () => {
       expect(actual).toEqual("node_modules/react-feather");
     });
 
+    it("handles @types", () => {
+      const actual = _toNodeModule("../node_modules/@types/react/index.d.ts");
+      expect(actual).toEqual("node_modules/react");
+    });
+
     it("returns null when not a node module", () => {
       const actual = _toNodeModule("hooks/useWindowSize.ts");
       expect(actual).toBe(null);
