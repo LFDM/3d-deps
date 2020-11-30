@@ -1,0 +1,8 @@
+{
+  "name": "@3d-deps/config",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "LFDM <1986gh@gmail.com> (https://github.com/LFDM)",
+  "license": "MIT",
+  "private": false
+}
