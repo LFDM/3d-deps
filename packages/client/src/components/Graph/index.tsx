@@ -315,7 +315,7 @@ export const Graph = () => {
           return new Object3D();
         }
         const size = s.size || 1;
-        const sprite = new SpriteText(node.id);
+        const sprite = new SpriteText(node.label);
         sprite.material.depthWrite = false; // make sprite background transparent
         sprite.textHeight = 4;
         sprite.color = s.color || "transparent";
