@@ -1,6 +1,6 @@
+import { Config } from "@3d-deps/config";
 import React, { useContext, useEffect, useState } from "react";
 import { usePromise } from "../hooks/usePromise";
-import { Config } from "../types/Config";
 import { DependencyNode } from "../types/DependencyAnalyzer";
 
 export type Dataset = {

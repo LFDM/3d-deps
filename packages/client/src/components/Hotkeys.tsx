@@ -1,3 +1,4 @@
+import { Hotkey, HotkeyConfig } from "@3d-deps/config";
 import { useMemo } from "react";
 import { ExtendedKeyMapOptions, GlobalHotKeys } from "react-hotkeys";
 import {
@@ -7,7 +8,6 @@ import {
   useConfig,
 } from "../services/config";
 import { TabName, useUiState } from "../services/uiState";
-import { Hotkey, HotkeyConfig } from "../types/Config";
 
 type KeyMap = {
   [K in Hotkey]: Omit<ExtendedKeyMapOptions, "sequence">; // erroneous type definition

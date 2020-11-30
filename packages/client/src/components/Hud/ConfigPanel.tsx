@@ -1,10 +1,10 @@
+import { GraphConfig, Theme } from "@3d-deps/config";
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import copy from "copy-to-clipboard";
 import React, { useState } from "react";
 import { Check, CheckCircle, Edit } from "react-feather";
 import { useConfig } from "../../services/config";
-import { GraphConfig, Theme } from "../../types/Config";
 import { Button } from "../Button";
 import { ColorPicker } from "../ColorPicker";
 import { ConfigRow } from "../ConfigRow";

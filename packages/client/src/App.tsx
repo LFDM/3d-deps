@@ -1,3 +1,4 @@
+import { CONFIG, Config } from "@3d-deps/config";
 import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
 import assertNever from "assert-never";
@@ -11,7 +12,6 @@ import { usePromise } from "./hooks/usePromise";
 import { ConfigContext } from "./services/config";
 import { Dataset, DatasetProvider, useDatasets } from "./services/dataset";
 import { UiStateProvider } from "./services/uiState";
-import { CONFIG, Config } from "./types/Config";
 import { DependencyNode } from "./types/DependencyAnalyzer";
 import { GraphData, TreeNode } from "./types/GraphData";
 

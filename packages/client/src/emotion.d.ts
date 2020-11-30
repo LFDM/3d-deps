@@ -1,5 +1,5 @@
+import { Theme as T } from "@3d-deps/config";
 import "@emotion/react";
-import { Theme as T } from "./types/Config";
 
 declare module "@emotion/react" {
   export interface Theme extends T {}

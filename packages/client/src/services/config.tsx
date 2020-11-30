@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import {
   CONFIG,
   Config,
@@ -6,7 +5,8 @@ import {
   HotkeyConfig,
   HudConfig,
   Theme,
-} from "../types/Config";
+} from "@3d-deps/config";
+import React, { useContext } from "react";
 
 export const ConfigContext = React.createContext<{
   current: Config;
