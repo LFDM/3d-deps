@@ -4,7 +4,7 @@ import {
   HotkeyConfig,
   HudConfig,
   Theme,
-} from "../types/Config";
+} from "@3d-deps/config";
 type Omit<T, K> = { [key in Exclude<keyof T, K>]: T[key] };
 
 // everything can be partial here too

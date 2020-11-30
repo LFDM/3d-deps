@@ -1,4 +1,4 @@
-import { Config } from "./Config";
+import { Config } from "@3d-deps/config";
 import { DependencyNode } from "./DependencyAnalyzer";
 
 export type Dataset = {
