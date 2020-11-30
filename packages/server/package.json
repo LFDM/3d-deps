@@ -17,6 +17,9 @@
     "dev2": "tsc-watch -b --onSuccess 'node dist/index.js'",
     "dev": "nodemon src/index.ts"
   },
+  "bin": {
+    "start": "dist/index.js"
+  },
   "devDependencies": {
     "@types/express": "^4.17.9",
     "@types/node": "^14.14.10",
