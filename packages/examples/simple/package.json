@@ -7,13 +7,12 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "tsc -b && node dist/example.js"
   },
   "dependencies": {
     "@3d-deps/analyzer-madge": "0.1.0",
     "@3d-deps/config": "0.1.0",
     "@3d-deps/server": "0.1.0",
-    "ts-node": "^9.0.0",
     "typescript": "^4.1.2"
   }
 }
