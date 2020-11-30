@@ -13,7 +13,7 @@ const readConfig = (cfgPath: string): RunConfig | null => {
 };
 
 type Server = {
-  start: (port: number, openBrowser?: boolean) => Promise<Express.Application>;
+  start: (port: number | string, openBrowser?: boolean) => Promise<void>;
 };
 
 export const createServer = (configPath: string): Server => {
@@ -88,7 +88,7 @@ export const createServer = (configPath: string): Server => {
             const url = `http://localhost:${port}`;
             console.log(`Server running at ${url}`);
             openBrowser && open(url);
-            resolve(app);
+            resolve();
           });
         } catch (err) {
           reject(err);
