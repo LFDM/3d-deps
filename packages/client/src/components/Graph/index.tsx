@@ -57,6 +57,7 @@ type Data = {
   linksByTarget: { [targetId: string]: { [sourceId: string]: IGraphLink[] } };
 
   asTree: { [id: string]: TreeNode };
+  list: TreeNode[];
 };
 
 const traverseDependencies = (
@@ -140,6 +141,7 @@ const useData = (g: GraphData): Data => {
       ),
 
       asTree: g.byId,
+      list: g.list,
     };
   }, [g]);
 };
