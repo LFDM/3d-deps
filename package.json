@@ -9,7 +9,7 @@
     "server": "yarn workspace @3d-deps/server",
     "client": "yarn workspace @3d-deps/client",
     "cfg": "yarn workspace @3d-deps/config",
-    "ex-simple": "yarn workspace @3d-deps/example-simple",
+    "e-simple": "yarn workspace @3d-deps/example-simple",
     "a-madge": "yarn workspace @3d-deps/analyzer-madge"
   },
   "dependencies": {
