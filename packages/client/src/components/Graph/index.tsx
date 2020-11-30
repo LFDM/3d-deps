@@ -302,7 +302,7 @@ export const Graph = () => {
         styles.links[link.id]?.color || theme.graph.links.colors.standard
       }
       nodeLabel={(node) => (node as IGraphNode).label}
-      enableNodeDrag={false}
+      enableNodeDrag={true}
       onNodeClick={(node) =>
         setSelectedNodeId(selectedNodeId === node.id! ? null : `${node.id!}`)
       }
