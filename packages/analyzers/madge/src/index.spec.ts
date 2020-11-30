@@ -18,9 +18,15 @@ describe("analyzer-madge", () => {
       "hooks/useWindowSize.ts": [],
     };
 
-    it("", () => {
+    it("every link has a node", () => {
       const actual = _madgeTreeToNodes(tree);
-      expect(true).toBeTruthy();
+      const links = actual
+        .map((x) => x.dependsOn)
+        .reduce<string[]>((m, s) => m.concat(s), []);
+      const nodes = actual.map((a) => a.id);
+      for (const link of links) {
+        expect(nodes).toContain(link);
+      }
     });
   });
 

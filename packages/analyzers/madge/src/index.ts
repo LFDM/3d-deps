@@ -58,14 +58,30 @@ export const _toNodeModule = (t: string): string | null => {
 };
 
 export const _madgeTreeToNodes = (tree: MadgeTree): DependencyNode[] => {
-  return Object.entries(tree).map<DependencyNode>(([k, vs]) => {
-    return {
+  const nodes: DependencyNode[] = [];
+  const nodeModules: Set<string> = new Set();
+  Object.entries(tree).forEach(([k, vs]) => {
+    nodes.push({
       id: k,
       path: k,
       label: k,
-      dependsOn: vs,
-    };
+      dependsOn: vs.map((v) => {
+        const nodeModule = _toNodeModule(v);
+        if (nodeModule && !nodeModules.has(nodeModule)) {
+          nodeModules.add(nodeModule);
+          nodes.push({
+            id: nodeModule,
+            path: nodeModule,
+            label: nodeModule,
+            dependsOn: [],
+          });
+          return nodeModule;
+        }
+        return nodeModule || v;
+      }),
+    });
   });
+  return nodes;
 };
 
 export class MadgeAnalyzer implements IDependencyAnalyzer {
