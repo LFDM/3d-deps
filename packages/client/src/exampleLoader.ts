@@ -5,7 +5,13 @@ import { Dataset } from "./services/dataset";
 const toDataset = (key: string): Dataset => ({
   name: key,
   fetch: async () => ({
-    config: CONFIG,
+    config: {
+      ...CONFIG,
+      graph: {
+        ...CONFIG.graph,
+        excludeByPath: /(^node_modules)/,
+      },
+    },
     data: await new JsonFileAnalyzer({ key }).analyze(),
   }),
 });
