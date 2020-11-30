@@ -20,7 +20,7 @@ describe("analyzer-madge", () => {
 
     it("", () => {
       const actual = _madgeTreeToNodes(tree);
-      console.log(actual);
+      expect(true).toBeTruthy();
     });
   });
 
@@ -47,6 +47,11 @@ describe("analyzer-madge", () => {
     it("handles @types", () => {
       const actual = _toNodeModule("../node_modules/@types/react/index.d.ts");
       expect(actual).toEqual("node_modules/react");
+    });
+
+    it("returns null for a random file called node_modules", () => {
+      const actual = _toNodeModule("xxx/node_modules.ts");
+      expect(actual).toEqual(null);
     });
 
     it("returns null when not a node module", () => {
