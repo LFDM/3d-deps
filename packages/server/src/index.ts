@@ -59,7 +59,10 @@ export const createServer = (conf: RunConfig): Server => {
       res.status(404).json({ message: "DATA_SET_NOT_FOUND" });
     }
     try {
+      const start = Date.now();
       const d = await dataset.fetch();
+      const end = Date.now();
+      console.log(`${dataset.name}: Analysis done in ${end - start}ms`);
       return res.json({
         data: d.data,
         config: serializeConfig(d.config),
