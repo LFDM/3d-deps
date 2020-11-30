@@ -131,6 +131,26 @@ const ThemeSection = ({
             })
           }
         />
+
+        <ConfigRow>
+          <label>Opacity</label>
+          <InputSliderWithValue
+            min={20}
+            max={100}
+            value={value.hud.opacity * 100}
+            displayValue={value.hud.opacity}
+            blurOnEscape
+            onChange={(ev) =>
+              onChange({
+                ...value,
+                hud: {
+                  ...value.hud,
+                  opacity: parseFloat(ev.target.value) / 100,
+                },
+              })
+            }
+          />
+        </ConfigRow>
       </SubSection>
       <SubSection>
         <h4>Graph Nodes</h4>

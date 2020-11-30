@@ -54,11 +54,11 @@ const SliderContainer = styled("div")((p) => ({
 }));
 export const InputSliderWithValue = React.forwardRef<
   HTMLInputElement,
-  Omit<InputProps, "type">
->((p, ref) => {
+  Omit<InputProps, "type"> & { displayValue?: number | string }
+>(({ displayValue, ...p }, ref) => {
   return (
     <SliderContainer>
-      <div>{p.value}</div>
+      <div>{displayValue === undefined ? p.value : displayValue}</div>
       <Input type="range" {...p} ref={ref} />
     </SliderContainer>
   );
