@@ -66,7 +66,6 @@ export const createServer = (conf: RunConfig): Server => {
   });
 
   app.get("/app/*", (req, res) => {
-    console.log(CLIENT_BUILD);
     res.sendFile(path.join(CLIENT_BUILD, "index.html"));
   });
 
