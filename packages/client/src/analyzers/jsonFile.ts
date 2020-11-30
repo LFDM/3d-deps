@@ -8,15 +8,23 @@ import {
 
 const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
   const nodes: DependencyNode[] = [];
+  const set: Set<string> = new Set();
   Object.entries(deps).forEach(([k, vs]) => {
     const node: DependencyNode = {
       id: k,
       path: k,
       label: k,
-      dependsOn: vs.filter((v) => !v.includes("node_modules")),
+      dependsOn: vs.filter((v) => {
+        if (v.includes("node_modules")) {
+          set.add(v);
+          return false;
+        }
+        return true;
+      }),
     };
     nodes.push(node);
   });
+  console.log(set);
   return nodes;
 };
 
