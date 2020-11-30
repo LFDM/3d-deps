@@ -4,27 +4,18 @@ import * as path from "path";
 import { serializeConfig } from "./services/config";
 import { Dataset, RunConfig } from "./types/RunConfig";
 
-const readConfig = (cfgPath: string): RunConfig | null => {
-  try {
-    return require(cfgPath);
-  } catch {
-    return null;
-  }
-};
-
-type Server = {
+export type Server = {
   start: (opts: { port?: number; openBrowser?: boolean }) => Promise<void>;
 };
 
 export const createServer = (conf: RunConfig): Server => {
-  const app = express();
+  const DATASETS: { [key: string]: Dataset } = {};
+  const CLIENT_BUILD = path.join(__dirname, "..", "client_build");
 
-  const CLIENT_BUILD = path.join(__dirname, "..", "..", "client_build");
+  const app = express();
   app.use(express.static(CLIENT_BUILD));
 
   app.get("/", (req, res) => res.redirect("/app"));
-
-  const DATASETS: { [key: string]: Dataset } = {};
 
   app.get("/api/datasets", async (req, res) => {
     if (!conf) {
@@ -75,6 +66,7 @@ export const createServer = (conf: RunConfig): Server => {
   });
 
   app.get("/app/*", (req, res) => {
+    console.log(CLIENT_BUILD);
     res.sendFile(path.join(CLIENT_BUILD, "index.html"));
   });
 
