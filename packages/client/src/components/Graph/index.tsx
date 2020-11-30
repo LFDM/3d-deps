@@ -267,9 +267,6 @@ export const Graph = () => {
     return ss;
   }, [data, selectedNodeId, theme, graphConfig]);
 
-  // might be better to compute style objects for everything
-  // - and then just use these vars in the respective functions
-
   useEffect(() => {
     setTimeout(() => {
       const r: any = ref.current;
