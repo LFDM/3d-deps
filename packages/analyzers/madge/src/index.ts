@@ -1,20 +1,8 @@
-import { DependencyNode, IDependencyAnalyzer } from "@3d-deps/analyzer-base";
+import { IDependencyAnalyzer } from "@3d-deps/analyzer-base";
 // @ts-ignore
 import * as madge from "madge";
 
-const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
-  const nodes: DependencyNode[] = [];
-  Object.entries(deps).forEach(([k, vs]) => {
-    const node: DependencyNode = {
-      id: k,
-      path: k,
-      label: k,
-      dependsOn: vs,
-    };
-    nodes.push(node);
-  });
-  return nodes;
-};
+type MadgeTree = { [key: string]: string[] };
 
 export type MadgeAnalyzerConfig = {
   entry: string | string[];
@@ -36,7 +24,16 @@ export class MadgeAnalyzer implements IDependencyAnalyzer {
 
   async analyze() {
     const { entry, ...config } = this.config;
-    const deps = await madge(entry, config).then((r: any) => r.obj());
-    return dependenciesToGraphData(deps);
+    const deps: MadgeTree = await madge(entry, config).then((r: any) =>
+      r.obj()
+    );
+    return Object.entries(deps).map(([k, vs]) => {
+      return {
+        id: k,
+        path: k,
+        label: k,
+        dependsOn: vs,
+      };
+    });
   }
 }
