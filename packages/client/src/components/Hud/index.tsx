@@ -63,7 +63,7 @@ const Tabs = styled("div")((p) => ({
   gridColumnGap: p.theme.spacing(3),
   padding: p.theme.spacing(2),
   marginBottom: p.theme.spacing(2),
-  borderBottom: `1px solid lightgray`,
+  borderBottom: `1px solid currentcolor`,
 }));
 
 export const Sidebar = ({ open }: { open: boolean }) => {
