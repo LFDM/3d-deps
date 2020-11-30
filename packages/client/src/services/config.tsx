@@ -1,4 +1,4 @@
-import { CONFIG, Config } from "@3d-deps/config";
+import { CONFIG, Config, MAX_GRAPH_HIGHLIGHT_DEPTH } from "@3d-deps/config";
 import React, { useContext } from "react";
 
 export const ConfigContext = React.createContext<{
@@ -41,7 +41,7 @@ const setGraphDependenciesMaxDepth = (
       ...current.graph,
       dependencies: {
         ...current.graph.dependencies,
-        maxDepth: Math.max(0, Math.min(10, nextState)),
+        maxDepth: Math.max(0, Math.min(MAX_GRAPH_HIGHLIGHT_DEPTH, nextState)),
       },
     },
   });
@@ -69,7 +69,7 @@ const setGraphDependentsMaxDepth = (
       ...current.graph,
       dependents: {
         ...current.graph.dependents,
-        maxDepth: Math.max(0, Math.min(10, nextState)),
+        maxDepth: Math.max(0, Math.min(MAX_GRAPH_HIGHLIGHT_DEPTH, nextState)),
       },
     },
   });
