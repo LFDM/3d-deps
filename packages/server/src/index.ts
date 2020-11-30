@@ -13,10 +13,10 @@ const readConfig = (cfgPath: string): RunConfig | null => {
 };
 
 type Server = {
-  start: (port: number | string, openBrowser?: boolean) => Promise<void>;
+  start: (opts: { port?: number; openBrowser?: boolean }) => Promise<void>;
 };
 
-export const createServer = (configPath: string): Server => {
+export const createServer = (conf: RunConfig): Server => {
   const app = express();
 
   const CLIENT_BUILD = path.join(__dirname, "..", "..", "client_build");
@@ -27,8 +27,6 @@ export const createServer = (configPath: string): Server => {
   const DATASETS: { [key: string]: Dataset } = {};
 
   app.get("/api/datasets", async (req, res) => {
-    const conf = readConfig(configPath);
-
     if (!conf) {
       res.status(400).json({
         // TODO extract error codes and provide them to the client
@@ -81,7 +79,7 @@ export const createServer = (configPath: string): Server => {
   });
 
   const server: Server = {
-    start: (port, openBrowser) => {
+    start: ({ port = 8000, openBrowser = false }) => {
       return new Promise((resolve, reject) => {
         try {
           app.listen(port, () => {
