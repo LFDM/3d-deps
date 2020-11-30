@@ -2,6 +2,8 @@ import { groupBy, keyBy, mapValues } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useEffect, useMemo, useRef } from "react";
 import { ForceGraph3D } from "react-force-graph";
+import { Object3D } from "three";
+import SpriteText from "three-spritetext";
 import tinycolor from "tinycolor2";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { useConfig } from "../../services/config";
@@ -17,6 +19,7 @@ type NodeStyle = Partial<{
   color: string;
   opacity: number;
   size: number;
+  label: boolean;
 }>;
 type LinkStyle = Partial<{
   color: string;
@@ -199,6 +202,7 @@ export const Graph = () => {
       Object.entries(dependsOn.nodes).forEach(([nodeId, level]) => {
         addNodeStyle(ss, nodeId, {
           color: colorForLevel(nodeDependentColor, level),
+          label: level === 0,
         });
       });
 
@@ -206,6 +210,7 @@ export const Graph = () => {
       Object.entries(dependedBy.nodes).forEach(([nodeId, level]) => {
         addNodeStyle(ss, nodeId, {
           color: colorForLevel(nodeDepdendencyColor, level),
+          label: level === 0,
         });
       });
 
@@ -253,6 +258,7 @@ export const Graph = () => {
       addNodeStyle(ss, selectedNodeId, {
         color: nodeColors.selected,
         size: 5,
+        label: true,
       });
 
       // const sourceLinks = g.linksBySource[selectedNodeId] || [];
@@ -290,6 +296,20 @@ export const Graph = () => {
       nodeColor={(node: any) =>
         styles.nodes[node.id]?.color || theme.graph.nodes.colors.standard
       }
+      nodeThreeObjectExtend={true}
+      nodeThreeObject={(node: any) => {
+        const s = styles.nodes[node.id];
+        if (!s.label) {
+          return new Object3D();
+        }
+        const size = s.size || 1;
+        const sprite = new SpriteText(node.id);
+        sprite.material.depthWrite = false; // make sprite background transparent
+        sprite.textHeight = 4;
+        sprite.color = s.color || "transparent";
+        sprite.translateY(Math.min(1.5, size) * 8);
+        return sprite;
+      }}
       linkDirectionalParticles={(link: any) =>
         styles.links[link.id]?.particles || 0
       }
