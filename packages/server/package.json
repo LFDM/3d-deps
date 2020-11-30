@@ -14,8 +14,8 @@
   },
   "scripts": {
     "build": "tsc -b",
-    "dev": "tsc-watch -b --onSuccess './dist/index.js'",
-    "dev-broken": "nodemon src/index.ts"
+    "dev": "tsc-watch -b --onSuccess 'node ./dist/dev.js'",
+    "dev-broken": "nodemon src/dev.ts"
   },
   "bin": {
     "start": "./dist/cli.js"
