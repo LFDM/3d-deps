@@ -1,6 +1,6 @@
 import { IDependencyAnalyzer } from "@3d-deps/analyzer-base";
 // @ts-ignore
-import * as madge from "madge";
+import madge from "madge";
 
 type MadgeTree = { [key: string]: string[] };
 
