@@ -90,7 +90,7 @@ const ThemeSection = ({
           }
         />
         <ColorPicker
-          label="Highlight Color"
+          label="Primary Color"
           value={value.hud.primaryColor}
           defaultValue={originalValue.hud.primaryColor}
           onChange={(nextColor) =>
@@ -99,6 +99,20 @@ const ThemeSection = ({
               hud: {
                 ...value.hud,
                 primaryColor: nextColor,
+              },
+            })
+          }
+        />
+        <ColorPicker
+          label="Secondary Color"
+          value={value.hud.secondaryColor}
+          defaultValue={originalValue.hud.secondaryColor}
+          onChange={(nextColor) =>
+            onChange({
+              ...value,
+              hud: {
+                ...value.hud,
+                secondaryColor: nextColor,
               },
             })
           }
