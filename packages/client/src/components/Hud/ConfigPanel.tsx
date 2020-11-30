@@ -30,6 +30,43 @@ const SubSection = styled("div")((p) => ({
   marginBottom: p.theme.spacing(2),
 }));
 
+const InputWithConfirm = ({
+  value,
+  onConfirm,
+}: {
+  value: string;
+  onConfirm: (nextValue: string) => void;
+}) => {
+  const originalValue = value;
+  const [v, setV] = useState(originalValue);
+  const theme = useTheme();
+  return (
+    <ConfigRow
+      dense
+      as="form"
+      onSubmit={(ev) => {
+        ev.stopPropagation();
+        ev.preventDefault();
+        onConfirm(v);
+      }}
+    >
+      <Input
+        fullWidth
+        value={v}
+        onChange={(ev) => setV(ev.target.value)}
+        blurOnEscape
+      />
+      <Button variant="icon" disabled={v === originalValue} type="submit">
+        {v === originalValue ? (
+          <Check size={14} />
+        ) : (
+          <CheckCircle size={14} color={theme.hud.primaryColor} />
+        )}
+      </Button>
+    </ConfigRow>
+  );
+};
+
 const ThemeSection = ({
   value,
   originalValue,
@@ -44,6 +81,21 @@ const ThemeSection = ({
       <h3>Theme</h3>
       <SubSection>
         <h4>General</h4>
+        <ConfigRow>
+          <label>Font</label>
+          <InputWithConfirm
+            value={value.typography.font}
+            onConfirm={(nextFont) =>
+              onChange({
+                ...value,
+                typography: {
+                  ...value.typography,
+                  font: nextFont,
+                },
+              })
+            }
+          />
+        </ConfigRow>
         <ColorPicker
           label="Color"
           value={value.typography.color}
@@ -428,45 +480,6 @@ const RegExpRow = ({
         </form>
       </Dialog>
     </>
-  );
-};
-
-const RegExpRowInline = ({
-  value,
-  onConfirm,
-}: {
-  value: RegExp | null;
-  onConfirm: (nextValue: RegExp | null) => void;
-}) => {
-  const originalValue = value ? value.toString().slice(1, -1) : "";
-  const [v, setV] = useState(originalValue);
-  const theme = useTheme();
-  return (
-    <ConfigRow
-      dense
-      as="form"
-      onSubmit={(ev) => {
-        ev.stopPropagation();
-        ev.preventDefault();
-        onConfirm(v ? new RegExp(v) : null);
-      }}
-    >
-      <div>{"/"}</div>
-      <Input
-        fullWidth
-        value={v}
-        onChange={(ev) => setV(ev.target.value)}
-        blurOnEscape
-      />
-      <div>{"/"}</div>
-      <Button variant="icon" disabled={v === originalValue} type="submit">
-        {v === originalValue ? (
-          <Check size={14} />
-        ) : (
-          <CheckCircle size={14} color={theme.hud.primaryColor} />
-        )}
-      </Button>
-    </ConfigRow>
   );
 };
 
