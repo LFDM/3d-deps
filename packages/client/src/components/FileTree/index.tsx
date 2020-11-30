@@ -142,9 +142,7 @@ const Tree = React.memo(
     rightSlot?: React.ReactNode;
     excluded?: boolean;
   }) => {
-    const ref = useScrollIntoView<HTMLDivElement>(isSelected, {
-      behavior: "smooth",
-    });
+    const ref = useScrollIntoView<HTMLDivElement>(isSelected);
     const Icon = (Icons as any)[
       `${children ? (isOpen ? "Minus" : "Plus") : "Close"}SquareO`
     ];
