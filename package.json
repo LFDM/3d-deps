@@ -5,6 +5,10 @@
   "workspaces": [
     "packages/**/*"
   ],
+  "scripts": {
+    "server": "yarn workspace @3d-deps/server",
+    "client": "yarn workspace @3d-deps/client"
+  },
   "dependencies": {
     "typescript": "^4.1.2"
   }
