@@ -396,7 +396,7 @@ const ThemeSection = ({
 
 const CustomInput = styled(Input)((p) => {
   return {
-    fontSize: "1.33rem",
+    fontSize: "1.33em",
     color: p.theme.hud.color,
     backgroundColor: p.theme.hud.backgroundColor,
     padding: `${p.theme.spacing(2)}px 0`,

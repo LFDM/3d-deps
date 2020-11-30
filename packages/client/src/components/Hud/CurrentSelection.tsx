@@ -17,7 +17,7 @@ const Title = styled("div")<{ excluded: boolean }>((p) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  fontSize: "1.17rem",
+  fontSize: "1.33em",
   opacity: p.excluded ? 0.2 : "inherit",
 
   "> :not(:first-child)": {
