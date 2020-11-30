@@ -1,7 +1,7 @@
+import { serializeConfig } from "@3d-deps/config";
 import express from "express";
 import open from "open";
 import * as path from "path";
-import { serializeConfig } from "./services/config";
 import { Dataset, RunConfig } from "./types/RunConfig";
 
 export type Server = {

@@ -1,11 +1,4 @@
-import {
-  CONFIG,
-  Config,
-  GraphConfig,
-  HotkeyConfig,
-  HudConfig,
-  Theme,
-} from "@3d-deps/config";
+import { CONFIG, Config } from "@3d-deps/config";
 import React, { useContext } from "react";
 
 export const ConfigContext = React.createContext<{
@@ -108,34 +101,4 @@ export const toggleShowExcludedNodes = (
       },
     },
   });
-};
-
-export type SerializedConfig = {
-  theme: Omit<Theme, "spacing"> & { spacing: { unit: number } };
-  graph: Omit<GraphConfig, "excludeByPath" | "includeByPath"> & {
-    excludeByPath: string;
-    includeByPath: string;
-  };
-  hud: HudConfig;
-  hotkeys: HotkeyConfig;
-};
-
-export const deserializeConfig = (conf: SerializedConfig): Config => {
-  return {
-    theme: {
-      ...conf.theme,
-      spacing: (multiplier = 1) => conf.theme.spacing.unit * multiplier,
-    },
-    graph: {
-      ...conf.graph,
-      excludeByPath: conf.graph.excludeByPath
-        ? new RegExp(conf.graph.excludeByPath.slice(1, -1))
-        : null,
-      includeByPath: conf.graph.includeByPath
-        ? new RegExp(conf.graph.includeByPath.slice(1, -1))
-        : null,
-    },
-    hud: conf.hud,
-    hotkeys: conf.hotkeys,
-  };
 };

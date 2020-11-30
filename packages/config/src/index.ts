@@ -79,6 +79,52 @@ export type Config = {
   hotkeys: HotkeyConfig;
 };
 
+export type SerializedConfig = {
+  theme: Omit<Theme, "spacing"> & { spacing: { unit: number } };
+  graph: Omit<GraphConfig, "excludeByPath" | "includeByPath"> & {
+    excludeByPath: string;
+    includeByPath: string;
+  };
+  hud: HudConfig;
+  hotkeys: HotkeyConfig;
+};
+
+export const serializeConfig = (conf: Config): SerializedConfig => {
+  return {
+    theme: {
+      ...conf.theme,
+      spacing: { unit: conf.theme.spacing(1) },
+    },
+    graph: {
+      ...conf.graph,
+      excludeByPath: conf.graph.excludeByPath?.toString() || "",
+      includeByPath: conf.graph.includeByPath?.toString() || "",
+    },
+    hud: conf.hud,
+    hotkeys: conf.hotkeys,
+  };
+};
+
+export const deserializeConfig = (conf: SerializedConfig): Config => {
+  return {
+    theme: {
+      ...conf.theme,
+      spacing: (multiplier = 1) => conf.theme.spacing.unit * multiplier,
+    },
+    graph: {
+      ...conf.graph,
+      excludeByPath: conf.graph.excludeByPath
+        ? new RegExp(conf.graph.excludeByPath.slice(1, -1))
+        : null,
+      includeByPath: conf.graph.includeByPath
+        ? new RegExp(conf.graph.includeByPath.slice(1, -1))
+        : null,
+    },
+    hud: conf.hud,
+    hotkeys: conf.hotkeys,
+  };
+};
+
 export const CONFIG: Config = {
   theme: {
     typography: {

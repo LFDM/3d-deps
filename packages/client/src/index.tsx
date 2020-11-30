@@ -1,9 +1,9 @@
+import { deserializeConfig } from "@3d-deps/config";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { deserializeConfig } from "./services/config";
 import { Dataset } from "./services/dataset";
 
 // TODO use another env var - one that gets mangled by webpack, so
