@@ -1,12 +1,10 @@
 {
+  "extends": "../../tsconfig.packages.json",
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
     "rootDir": "./src",
     "outDir": "./dist",
-    "esModuleInterop": true,
-    "strict": true,
-    "skipLibCheck": true
   },
   "references": [{ "path": "../config"}]
 }
