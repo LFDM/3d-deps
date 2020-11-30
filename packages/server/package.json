@@ -1,5 +1,5 @@
 {
-  "name": "3d-deps",
+  "name": "@3d-deps/server",
   "version": "0.1.0",
   "repository": "https://github.com/lfdm/3d-deps.git",
   "author": "LFDM <1986gh@gmail.com> (https://github.com/LFDM)",
