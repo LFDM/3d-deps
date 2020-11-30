@@ -6,6 +6,7 @@ import { keyBy } from "lodash";
 import React, { useMemo, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Graph } from "./components/Graph";
+import { Helmet } from "./components/Helmet";
 import { Hud } from "./components/Hud";
 import { CssBaseline } from "./CssBaseline";
 import { usePromise } from "./hooks/usePromise";
@@ -116,6 +117,7 @@ const AppReady = ({
   config: Config;
   data: DependencyNode[];
 }) => {
+  const { current } = useDatasets();
   const [config, setConfig] = useState(originalConfig);
   const g = useGraphData(data, {
     includeByPath: config.graph.includeByPath,
@@ -131,6 +133,7 @@ const AppReady = ({
     >
       <ThemeProvider theme={config.theme}>
         <UiStateProvider data={g}>
+          <Helmet title={current.name} />
           <Main as="main">
             <Hud />
             <Graph />
@@ -141,7 +144,7 @@ const AppReady = ({
   );
 };
 
-const InitCanvas: React.FC = ({ children }) => {
+const InitCanvas: React.FC<{ title?: string }> = ({ title, children }) => {
   const t = CONFIG.theme;
   return (
     <div
@@ -156,6 +159,7 @@ const InitCanvas: React.FC = ({ children }) => {
         color: t.typography.color,
       }}
     >
+      <Helmet title={title} />
       <div>{children}</div>
     </div>
   );
@@ -163,7 +167,7 @@ const InitCanvas: React.FC = ({ children }) => {
 
 const AppLoading = ({ name }: { name: string }) => {
   return (
-    <InitCanvas>
+    <InitCanvas title={name}>
       Loading <b>{name}</b>...
     </InitCanvas>
   );
@@ -172,7 +176,7 @@ const AppLoading = ({ name }: { name: string }) => {
 const AppError = ({ name, error }: { name: string; error: string }) => {
   console.log(error);
   return (
-    <InitCanvas>
+    <InitCanvas title={name}>
       Something went wrong while loading <b>{name}</b>!
     </InitCanvas>
   );
