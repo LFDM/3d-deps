@@ -1,3 +1,4 @@
+import { MAX_GRAPH_HIGHLIGHT_DEPTH } from "@3d-deps/config";
 import { groupBy, keyBy, mapValues, sortBy } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useEffect, useMemo, useRef } from "react";
@@ -176,7 +177,7 @@ export const Graph = () => {
         "dependsOn",
         emptyContainer(),
         0,
-        graphConfig.dependents.maxDepth
+        Math.min(graphConfig.dependents.maxDepth, MAX_GRAPH_HIGHLIGHT_DEPTH)
       );
       const dependedBy = traverseDependencies(
         data,
@@ -184,7 +185,7 @@ export const Graph = () => {
         "dependedBy",
         emptyContainer(),
         0,
-        graphConfig.dependencies.maxDepth
+        Math.min(graphConfig.dependencies.maxDepth, MAX_GRAPH_HIGHLIGHT_DEPTH)
       );
 
       const colorForLevel = (c: tinycolor.Instance, level: number) =>
