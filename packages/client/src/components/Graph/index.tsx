@@ -78,10 +78,10 @@ const traverseDependencies = (
   if (level < maxDepth) {
     const treeNode = d.asTree[current];
     treeNode[mode].nodes.forEach((n) => {
-      // always use the most direct level!
       if (n.exclude) {
         return;
       }
+      // always use the most direct level!
       if ((result.nodes[n.id] || Infinity) > level) {
         result.nodes[n.id] = level;
         const links =
@@ -89,8 +89,9 @@ const traverseDependencies = (
             ? d.linksBySource[current]?.[n.id] || []
             : d.linksByTarget[current]?.[n.id] || [];
         links.forEach((l) => (result.links[l.id] = level));
+
+        traverseDependencies(d, n.id, mode, result, level + 1, maxDepth);
       }
-      traverseDependencies(d, n.id, mode, result, level + 1, maxDepth);
     });
   }
   return result;
