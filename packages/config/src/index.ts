@@ -1,3 +1,5 @@
+export const MAX_GRAPH_HIGHLIGHT_DEPTH = 15;
+
 export type Theme = {
   typography: {
     font: string;

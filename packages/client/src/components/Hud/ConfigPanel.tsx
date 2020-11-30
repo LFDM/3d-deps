@@ -1,4 +1,4 @@
-import { GraphConfig, Theme } from "@3d-deps/config";
+import { GraphConfig, MAX_GRAPH_HIGHLIGHT_DEPTH, Theme } from "@3d-deps/config";
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import copy from "copy-to-clipboard";
@@ -476,7 +476,7 @@ const GraphSection = ({
           <div>Max Depth</div>
           <InputSliderWithValue
             min={0}
-            max={10}
+            max={MAX_GRAPH_HIGHLIGHT_DEPTH}
             value={value.dependencies.maxDepth}
             blurOnEscape
             onChange={(ev) =>
@@ -497,7 +497,7 @@ const GraphSection = ({
           <div>Max Depth</div>
           <InputSliderWithValue
             min={0}
-            max={10}
+            max={MAX_GRAPH_HIGHLIGHT_DEPTH}
             value={value.dependents.maxDepth}
             blurOnEscape
             onChange={(ev) =>
