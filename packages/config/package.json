@@ -5,5 +5,8 @@
   "types": "dist/index.d.ts",
   "author": "LFDM <1986gh@gmail.com> (https://github.com/LFDM)",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "typescript": "^4.1.2"
+  }
 }
