@@ -5,7 +5,10 @@
     "module": "commonjs",
     "rootDir": "./src",
     "outDir": "./dist",
+    "composite": true
   },
-  "references": [{ "path": "../../config"}]
+  "references": [
+    { "path": "../base" }
+  ]
 }
 
