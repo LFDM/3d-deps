@@ -5,11 +5,6 @@ import * as path from "path";
 
 const SRC = __dirname;
 
-const madgeAnalzer = new MadgeAnalyzer({
-  entry: path.join(SRC, "index.ts"),
-  tsConfig: path.join(SRC, "..", "tsconfig.json"),
-});
-
 const server = createServer({
   version: 1,
   loadDatasets: async () => {
@@ -18,7 +13,10 @@ const server = createServer({
         name: "Simple Example",
         fetch: async () => ({
           config: CONFIG,
-          data: await madgeAnalzer.analyze(),
+          data: await new MadgeAnalyzer({
+            entry: path.join(SRC, "index.ts"),
+            tsConfig: path.join(SRC, "..", "tsconfig.json"),
+          }).analyze(),
         }),
       },
     ];
