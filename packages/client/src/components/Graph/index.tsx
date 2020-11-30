@@ -1,4 +1,4 @@
-import { groupBy, keyBy, mapValues } from "lodash";
+import { groupBy, keyBy, mapValues, sortBy } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useEffect, useMemo, useRef } from "react";
 import { ForceGraph3D } from "react-force-graph";
@@ -169,13 +169,7 @@ export const Graph = () => {
     const linkColors = theme.graph.links.colors;
     const emptyContainer = () => ({ nodes: {}, links: {} });
 
-    if (selectedNodeId) {
-      if (!data.nodesById[selectedNodeId]) {
-        console.warn(
-          `Unknown node ${selectedNodeId} encountered - continuing without selection`
-        );
-        return ss;
-      }
+    if (selectedNodeId && data.nodesById[selectedNodeId]) {
       const dependsOn = traverseDependencies(
         data,
         selectedNodeId,
@@ -262,8 +256,31 @@ export const Graph = () => {
         size: 5,
         label: true,
       });
+      return ss;
     }
 
+    if (selectedNodeId && !data.nodesById[selectedNodeId]) {
+      console.warn(
+        `Unknown node ${selectedNodeId} encountered - continuing without selection`
+      );
+    }
+
+    const topNodes = sortBy(
+      data.list,
+      (d) =>
+        -(d.exclude
+          ? -Infinity
+          : d.dependedBy.countWithoutExcluded +
+            d.dependsOn.countWithoutExcluded)
+    ).slice(0, Math.max(15, Math.round(data.list.length / 100)));
+
+    topNodes.forEach((t) =>
+      addNodeStyle(ss, t.id, {
+        label: true,
+        color: theme.graph.links.colors.standard,
+      })
+    );
+    console.log(ss);
     return ss;
   }, [data, selectedNodeId, theme, graphConfig]);
 
@@ -288,6 +305,7 @@ export const Graph = () => {
       }
       nodeThreeObjectExtend={true}
       nodeThreeObject={(node: any) => {
+        console.log(styles.nodes, node.id);
         const s = styles.nodes[node.id];
         if (!s?.label) {
           return new Object3D();
