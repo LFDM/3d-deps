@@ -3,7 +3,7 @@ import { CONFIG } from "@3d-deps/config";
 import { createServer } from "@3d-deps/server";
 import * as path from "path";
 
-const SRC = __dirname;
+const SRC = path.join(__dirname, "..", "src");
 
 const server = createServer({
   version: 1,
