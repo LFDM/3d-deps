@@ -58,11 +58,18 @@ export const createServer = (conf: RunConfig): Server => {
     if (!dataset) {
       res.status(404).json({ message: "DATA_SET_NOT_FOUND" });
     }
-    const d = await dataset.fetch();
-    return res.json({
-      data: d.data,
-      config: serializeConfig(d.config),
-    });
+    try {
+      const d = await dataset.fetch();
+      return res.json({
+        data: d.data,
+        config: serializeConfig(d.config),
+      });
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json({
+        message: "ERROR_DURING_FETCHING",
+      });
+    }
   });
 
   app.get("/app/*", (req, res) => {
