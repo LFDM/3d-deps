@@ -1,5 +1,5 @@
 import { CONFIG } from "@3d-deps/config";
-import { JsonFileAnalyzer } from "./analyzers/jsonFile";
+import { FILES, JsonFileAnalyzer } from "./analyzers/jsonFile";
 import { Dataset } from "./services/dataset";
 
 const toDataset = (key: string): Dataset => ({
@@ -10,12 +10,5 @@ const toDataset = (key: string): Dataset => ({
   }),
 });
 
-export const loadDatasets: () => Promise<Dataset[]> = async () => [
-  toDataset("Affilimate CFs"),
-  toDataset("Affilimate CLI"),
-  toDataset("Affilimate App"),
-  toDataset("Syndexioi App"),
-  toDataset("Syndexioi CFs"),
-  toDataset("Self"),
-  toDataset("Material UI"),
-];
+export const loadDatasets: () => Promise<Dataset[]> = async () =>
+  Object.keys(FILES).map(toDataset);

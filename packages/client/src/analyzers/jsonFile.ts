@@ -20,7 +20,9 @@ const dependenciesToGraphData = (deps: { [key: string]: string[] }) => {
   return nodes;
 };
 
-const FILES: { [name: string]: () => Promise<{ [key: string]: string[] }> } = {
+export const FILES: {
+  [name: string]: () => Promise<{ [key: string]: string[] }>;
+} = {
   "Affilimate CFs": () =>
     import("./dependencies-affilimate-cf.json").then((f) => f.default),
   "Affilimate CLI": () =>
@@ -32,6 +34,7 @@ const FILES: { [name: string]: () => Promise<{ [key: string]: string[] }> } = {
   "Syndexioi CFs": () =>
     import("./dependencies-syndexioi-cf.json").then((f) => f.default),
   "Material UI": () => import("./dependencies-mui.json").then((f) => f.default),
+  Webpack: () => import("./dependencies-webpack.json").then((f) => f.default),
   Self: () => import("./dependencies-self.json").then((f) => f.default),
 };
 
