@@ -40,6 +40,11 @@ const ListContainer = styled("div")((p) => ({
   maxHeight: "70vh",
 }));
 
+// Mirro Button variant="list-item" style
+const PlainItem = styled("div")((p) => ({
+  padding: `${p.theme.spacing(0.5)}px ${p.theme.spacing(2)}px`,
+}));
+
 const ItemLabel = styled("span")`
   b {
     color: ${(p) =>
@@ -53,12 +58,14 @@ const Item = ({
   onSelect,
   listRef,
   label,
+  variant,
 }: {
   n: TreeNode;
   selected: boolean;
   onSelect: () => void;
   listRef: React.MutableRefObject<HTMLDivElement | null>;
   label: string; // html!
+  variant: "plain" | "normal";
 }) => {
   const ref = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
@@ -67,6 +74,9 @@ const Item = ({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
+  if (variant === "plain") {
+    return <PlainItem>{n.label}</PlainItem>;
+  }
   const l = <ItemLabel dangerouslySetInnerHTML={{ __html: label }} />;
   return (
     <Button
@@ -222,6 +232,7 @@ export const SearchModal = () => {
         <ListContainer ref={listRef}>
           {nodesWithHighlights.map((n) => (
             <Item
+              variant="normal"
               key={n.node.id}
               listRef={listRef}
               n={n.node}
