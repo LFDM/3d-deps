@@ -17,6 +17,8 @@
     "dev": "tsc-watch -b --onSuccess 'node ./dist/dev.js'",
     "dev-broken": "nodemon src/dev.ts"
   },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "bin": {
     "start": "./dist/cli.js"
   },
