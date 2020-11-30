@@ -170,7 +170,7 @@ export const CONFIG: Config = {
       maxDepth: 1,
     },
     includeByPath: null,
-    excludeByPath: /(^helpers.ts|^domainTypes|^versions|^services\/firebase)/,
+    excludeByPath: null,
   },
   hud: {
     sidebar: {
