@@ -51,7 +51,7 @@ const InputWithConfirm = ({
       }}
     >
       <Input
-        fullWidth
+        style={{ textAlign: "right" }}
         value={v}
         onChange={(ev) => setV(ev.target.value)}
         blurOnEscape
@@ -197,7 +197,7 @@ const ThemeSection = ({
                 ...value,
                 hud: {
                   ...value.hud,
-                  opacity: parseFloat(ev.target.value) / 100,
+                  opacity: parseInt(ev.target.value, 10) / 100,
                 },
               })
             }
