@@ -13,12 +13,17 @@ export const _toNodeModule = (t: string): string | null => {
     return null;
   }
   const parts = t.split("/");
+  const prefixes: string[] = [];
   const res: string[] = [];
   let foundRoot = false;
   let isScoped = false;
   for (let i = 0; i < parts.length; i++) {
     const part = parts[i];
-    if (!foundRoot && part !== "node_modules" && !part.match(/^\.+$/)) {
+    if (!foundRoot && part.match(/^\.+$/)) {
+      prefixes.push(part);
+      continue;
+    }
+    if (!foundRoot && part !== "node_modules") {
       return null;
     }
     if (part === "node_modules") {
@@ -46,7 +51,9 @@ export const _toNodeModule = (t: string): string | null => {
       }
     }
   }
-  return res.length ? `node_modules/${res.join("/")}` : null;
+  return res.length
+    ? `${prefixes.join("/")}/node_modules/${res.join("/")}`
+    : null;
 };
 
 export const _madgeTreeToNodes = (tree: MadgeTree): DependencyNode[] => {

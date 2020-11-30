@@ -35,24 +35,24 @@ describe("analyzer-madge", () => {
       const actual = _toNodeModule(
         "../node_modules/@emotion/react/types/index.d.ts"
       );
-      expect(actual).toEqual("node_modules/@emotion/react");
+      expect(actual).toEqual("../node_modules/@emotion/react");
     });
 
     it("handles unscoped modules, leading directly to an index file", () => {
       const actual = _toNodeModule("../node_modules/assert-never/index.d.ts");
-      expect(actual).toEqual("node_modules/assert-never");
+      expect(actual).toEqual("../node_modules/assert-never");
     });
 
     it("handles unscoped modules, leading to a file within", () => {
       const actual = _toNodeModule(
         "../node_modules/react-feather/dist/index.d.ts"
       );
-      expect(actual).toEqual("node_modules/react-feather");
+      expect(actual).toEqual("../node_modules/react-feather");
     });
 
     it("handles @types", () => {
       const actual = _toNodeModule("../node_modules/@types/react/index.d.ts");
-      expect(actual).toEqual("node_modules/react");
+      expect(actual).toEqual("../node_modules/react");
     });
 
     it("returns null for a random file called node_modules", () => {
