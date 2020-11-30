@@ -9,7 +9,6 @@ const shouldExcludeByPath = (
     excludeByPath?: RegExp | null;
   }
 ) => {
-  console.log(opts?.includeByPath);
   if (opts?.includeByPath && !opts.includeByPath.test(path)) {
     return true;
   }
