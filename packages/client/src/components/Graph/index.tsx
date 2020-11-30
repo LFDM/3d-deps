@@ -286,7 +286,6 @@ export const Graph = () => {
         color: theme.graph.links.colors.standard,
       })
     );
-    console.log(ss);
     return ss;
   }, [data, selectedNodeId, theme, graphConfig]);
 
@@ -311,7 +310,6 @@ export const Graph = () => {
       }
       nodeThreeObjectExtend={true}
       nodeThreeObject={(node: any) => {
-        console.log(styles.nodes, node.id);
         const s = styles.nodes[node.id];
         if (!s?.label) {
           return new Object3D();
