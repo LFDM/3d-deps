@@ -171,6 +171,7 @@ export const Graph = () => {
     const emptyContainer = () => ({ nodes: {}, links: {} });
 
     if (selectedNodeId && data.nodesById[selectedNodeId]) {
+      console.time(`${selectedNodeId}: traverse dependents`);
       const dependsOn = traverseDependencies(
         data,
         selectedNodeId,
@@ -179,6 +180,9 @@ export const Graph = () => {
         0,
         Math.min(graphConfig.dependents.maxDepth, MAX_GRAPH_HIGHLIGHT_DEPTH)
       );
+      console.timeEnd(`${selectedNodeId}: traverse dependents`);
+
+      console.time(`${selectedNodeId}: traverse dependencies`);
       const dependedBy = traverseDependencies(
         data,
         selectedNodeId,
@@ -187,6 +191,7 @@ export const Graph = () => {
         0,
         Math.min(graphConfig.dependencies.maxDepth, MAX_GRAPH_HIGHLIGHT_DEPTH)
       );
+      console.timeEnd(`${selectedNodeId}: traverse dependencies`);
 
       const colorForLevel = (c: tinycolor.Instance, level: number) =>
         c
