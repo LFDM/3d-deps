@@ -299,7 +299,7 @@ export const Graph = () => {
       nodeThreeObjectExtend={true}
       nodeThreeObject={(node: any) => {
         const s = styles.nodes[node.id];
-        if (!s.label) {
+        if (!s?.label) {
           return new Object3D();
         }
         const size = s.size || 1;
