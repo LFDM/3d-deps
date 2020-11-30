@@ -1,0 +1,104 @@
+{
+  "index.js": [
+    "lib/axios.js"
+  ],
+  "lib/adapters/http.js": [
+    "lib/core/buildFullPath.js",
+    "lib/core/createError.js",
+    "lib/core/enhanceError.js",
+    "lib/core/settle.js",
+    "lib/helpers/buildURL.js",
+    "lib/utils.js",
+    "package.json"
+  ],
+  "lib/adapters/xhr.js": [
+    "lib/core/buildFullPath.js",
+    "lib/core/createError.js",
+    "lib/core/settle.js",
+    "lib/helpers/buildURL.js",
+    "lib/helpers/cookies.js",
+    "lib/helpers/isURLSameOrigin.js",
+    "lib/helpers/parseHeaders.js",
+    "lib/utils.js"
+  ],
+  "lib/axios.js": [
+    "lib/cancel/Cancel.js",
+    "lib/cancel/CancelToken.js",
+    "lib/cancel/isCancel.js",
+    "lib/core/Axios.js",
+    "lib/core/mergeConfig.js",
+    "lib/defaults.js",
+    "lib/helpers/bind.js",
+    "lib/helpers/isAxiosError.js",
+    "lib/helpers/spread.js",
+    "lib/utils.js"
+  ],
+  "lib/cancel/Cancel.js": [],
+  "lib/cancel/CancelToken.js": [
+    "lib/cancel/Cancel.js"
+  ],
+  "lib/cancel/isCancel.js": [],
+  "lib/core/Axios.js": [
+    "lib/core/InterceptorManager.js",
+    "lib/core/dispatchRequest.js",
+    "lib/core/mergeConfig.js",
+    "lib/helpers/buildURL.js",
+    "lib/utils.js"
+  ],
+  "lib/core/InterceptorManager.js": [
+    "lib/utils.js"
+  ],
+  "lib/core/buildFullPath.js": [
+    "lib/helpers/combineURLs.js",
+    "lib/helpers/isAbsoluteURL.js"
+  ],
+  "lib/core/createError.js": [
+    "lib/core/enhanceError.js"
+  ],
+  "lib/core/dispatchRequest.js": [
+    "lib/cancel/isCancel.js",
+    "lib/core/transformData.js",
+    "lib/defaults.js",
+    "lib/utils.js"
+  ],
+  "lib/core/enhanceError.js": [],
+  "lib/core/mergeConfig.js": [
+    "lib/utils.js"
+  ],
+  "lib/core/settle.js": [
+    "lib/core/createError.js"
+  ],
+  "lib/core/transformData.js": [
+    "lib/utils.js"
+  ],
+  "lib/defaults.js": [
+    "lib/adapters/http.js",
+    "lib/adapters/xhr.js",
+    "lib/helpers/normalizeHeaderName.js",
+    "lib/utils.js"
+  ],
+  "lib/helpers/bind.js": [],
+  "lib/helpers/buildURL.js": [
+    "lib/utils.js"
+  ],
+  "lib/helpers/combineURLs.js": [],
+  "lib/helpers/cookies.js": [
+    "lib/utils.js"
+  ],
+  "lib/helpers/isAbsoluteURL.js": [],
+  "lib/helpers/isAxiosError.js": [],
+  "lib/helpers/isURLSameOrigin.js": [
+    "lib/utils.js"
+  ],
+  "lib/helpers/normalizeHeaderName.js": [
+    "lib/utils.js"
+  ],
+  "lib/helpers/parseHeaders.js": [
+    "lib/utils.js"
+  ],
+  "lib/helpers/spread.js": [],
+  "lib/utils.js": [
+    "lib/helpers/bind.js"
+  ],
+  "package.json": []
+}
