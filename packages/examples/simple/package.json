@@ -10,6 +10,7 @@
     "start": "ts-node index.ts"
   },
   "dependencies": {
+    "@3d-deps/analyzer-madge": "0.1.0",
     "@3d-deps/config": "0.1.0",
     "@3d-deps/server": "0.1.0",
     "ts-node": "^9.0.0",

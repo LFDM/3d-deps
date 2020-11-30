@@ -6,5 +6,9 @@
     "rootDir": "./src",
     "outDir": "./dist",
   },
-  "references": [{ "path": "../../server"}, { "path": "../../config"}]
+  "references": [
+    { "path": "../../server"},
+    { "path": "../../config"},
+    { "path": "../../analyzers/madge"}
+  ]
 }

@@ -1,5 +1,14 @@
+import { MadgeAnalyzer } from "@3d-deps/analyzer-madge";
 import { CONFIG } from "@3d-deps/config";
 import { createServer } from "@3d-deps/server";
+import * as path from "path";
+
+const SRC = __dirname;
+
+const madgeAnalzer = new MadgeAnalyzer({
+  entry: path.join(SRC, "index.ts"),
+  tsConfig: path.join(SRC, "..", "tsconfig.json"),
+});
 
 const server = createServer({
   version: 1,
@@ -9,7 +18,7 @@ const server = createServer({
         name: "Simple Example",
         fetch: async () => ({
           config: CONFIG,
-          data: [],
+          data: await madgeAnalzer.analyze(),
         }),
       },
     ];
