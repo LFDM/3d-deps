@@ -1,6 +1,7 @@
 import { Config } from "@3d-deps/config";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { usePromise } from "../hooks/usePromise";
+import { useQueryParam } from "../hooks/useQueryParam";
 import { DependencyNode } from "../types/DependencyAnalyzer";
 
 export type Dataset = {
@@ -64,7 +65,13 @@ export const DatasetProvider: React.FC<{ datasets: Dataset[] }> = ({
   datasets,
   children,
 }) => {
-  const [dataset, selectDataset] = useState<Dataset>(datasets[0]);
+  const [query, setQuery] = useQueryParam("dataset", "");
+  const dataset =
+    datasets.find((d) => encodeURIComponent(d.name) === query) || datasets[0];
+  const selectDataset = useCallback(
+    (d: Dataset) => setQuery(encodeURIComponent(d.name)),
+    [setQuery]
+  );
   const [state, setState] = useState<State>({
     name: dataset.name,
     state: "LOADING",
