@@ -5,6 +5,8 @@
     "rootDir": "./src",
     "outDir": "./build",
     "esModuleInterop": true,
-    "strict": true
-  }
+    "strict": true,
+
+  },
+  "references": [{ "path": "../config"}]
 }
