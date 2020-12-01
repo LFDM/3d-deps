@@ -30,10 +30,20 @@ const SubSection = styled("div")((p) => ({
   marginBottom: p.theme.spacing(2),
 }));
 
+const ConfigInput = styled(Input)((p) => ({
+  textAlign: "right",
+  border: "none",
+  color: p.theme.hud.color,
+  backgroundColor: p.theme.hud.backgroundColor,
+  fontFamily: "monospace",
+}));
+
 const InputWithConfirm = ({
+  id,
   value,
   onConfirm,
 }: {
+  id: string;
   value: string;
   onConfirm: (nextValue: string) => void;
 }) => {
@@ -50,11 +60,11 @@ const InputWithConfirm = ({
         onConfirm(v);
       }}
     >
-      <Input
-        style={{ textAlign: "right" }}
+      <ConfigInput
         value={v}
         onChange={(ev) => setV(ev.target.value)}
         blurOnEscape
+        id={id}
       />
       <Button variant="icon" disabled={v === originalValue} type="submit">
         {v === originalValue ? (
@@ -82,8 +92,9 @@ const ThemeSection = ({
       <SubSection>
         <h4>General</h4>
         <ConfigRow>
-          <label>Font</label>
+          <label htmlFor="theme-typography-font">Font</label>
           <InputWithConfirm
+            id="theme-typography-font"
             value={value.typography.font}
             onConfirm={(nextFont) =>
               onChange({
@@ -185,8 +196,9 @@ const ThemeSection = ({
         />
 
         <ConfigRow>
-          <label>Opacity</label>
+          <label htmlFor="theme-hud-opacity">Opacity</label>
           <InputSliderWithValue
+            id="theme-hud-opacity"
             min={20}
             max={100}
             value={value.hud.opacity * 100}
@@ -520,8 +532,9 @@ const GraphSection = ({
       <SubSection>
         <h4>Dependencies</h4>
         <ConfigRow>
-          <div>Max Depth</div>
+          <label htmlFor="graph-dependencies-max-depth">Max Depth</label>
           <InputSliderWithValue
+            id="graph-dependencies-max-depth"
             min={0}
             max={MAX_GRAPH_HIGHLIGHT_DEPTH}
             value={value.dependencies.maxDepth}
@@ -541,8 +554,9 @@ const GraphSection = ({
       <SubSection>
         <h4>Dependents</h4>
         <ConfigRow>
-          <div>Max Depth</div>
+          <label htmlFor="graph-dependents-max-depth">Max Depth</label>
           <InputSliderWithValue
+            id="graph-dependents-max-depth"
             min={0}
             max={MAX_GRAPH_HIGHLIGHT_DEPTH}
             value={value.dependents.maxDepth}
