@@ -41,15 +41,30 @@ export type JsAnalyzerConfig = {
   };
 };
 
-const mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
+const mapTreeToNodes = (
+  tree: FlatTree,
+  workspaceEntries: string[]
+): DependencyNode[] => {
   const nodes: DependencyNode[] = [];
+  const wsEntries = new Set(workspaceEntries);
   Object.entries(tree).forEach(([k, vs]) => {
-    nodes.push({
+    const groups: string[] = [];
+    if (wsEntries.has(k)) {
+      groups.push("workspace_entries");
+    }
+    if (k.includes("node_modules")) {
+      groups.push("node_modules");
+    }
+    const node: DependencyNode = {
       id: k,
       path: k,
       label: k,
       dependsOn: vs,
-    });
+    };
+    if (groups.length) {
+      node.groups = groups;
+    }
+    nodes.push(node);
   });
   return nodes;
 };
@@ -120,10 +135,11 @@ export class JsAnalyzer implements IDependencyAnalyzer {
           rootConfig.entries.main,
           ...workspaceConfigs.map((w) => w.entries.main),
         ])
+      ),
+      compact(workspaceConfigs.map((w) => w.entries.main)).map((e) =>
+        path.relative(rootDir, e)
       )
     );
-    console.log(workspaces);
-    console.log(rootConfig, workspaceConfigs);
     console.log(nodes);
     return nodes;
   }
