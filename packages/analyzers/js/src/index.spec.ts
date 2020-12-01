@@ -11,9 +11,9 @@ describe("analyzer-js", () => {
 
     it("warns when pointing to a dir without pkg.json but a index.js/ts", () => {});
 
-    it.only("pkg-main-transform", async () => {
+    it.only("can transform main prop", async () => {
       const a = new JsAnalyzer({
-        rootDir: path.join(SPEC_DIR, "pkg-main-transform"),
+        rootDir: path.join(SPEC_DIR, "pkg-main-transform"), // has dist/index.js as it's main
       });
       const expected = [
         {
