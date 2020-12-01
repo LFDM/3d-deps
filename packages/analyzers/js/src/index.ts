@@ -3,8 +3,13 @@ import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
 import { TRANSFORMERS } from "./transformers";
-import { mapToRelativePaths, toTree } from "./tree";
-import { ConfigTransformer, FlatTree, PackageJson } from "./types";
+import {
+  getDependencies,
+  mapToRelativePaths,
+  mergeTrees,
+  VisitedCache,
+} from "./tree";
+import { ConfigTransformer, FlatTree } from "./types";
 import { getWorkspacesInfo } from "./yarn";
 
 const readFile = promisify(fs.readFile);
@@ -107,21 +112,10 @@ const getPackageJson = async (dir: string) => {
   return JSON.parse(pkgFile.toString());
 };
 
-const getDependencies = async (
-  dir: string,
-  pkg: PackageJson,
-  transform: ConfigTransformer
-) => {
-  const cfg = await transform({
-    dir: dir,
-    packageJson: pkg,
-  });
-
-  return toTree(dir, cfg.entries);
-};
-
 export class JsAnalyzer implements IDependencyAnalyzer {
   private config: JsAnalyzerConfig;
+  private visited: VisitedCache = {};
+
   constructor(config: JsAnalyzerConfig) {
     this.config = config;
   }
@@ -137,9 +131,20 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     const workspaces = rootPkg.workspaces
       ? await getWorkspacesInfo(rootDir)
       : {};
-    console.log(workspaces);
+    const workspaceTrees = await Promise.all(
+      Object.values(workspaces).map(async (w) => {
+        const pkg = await getPackageJson(w.path);
+        return getDependencies(w.path, pkg, transform, this.visited);
+      })
+    );
 
-    const tree = await getDependencies(rootDir, rootPkg, transform);
+    const rootTree = await getDependencies(
+      rootDir,
+      rootPkg,
+      transform,
+      this.visited
+    );
+    const tree = mergeTrees([rootTree, ...workspaceTrees]);
     const nodes = _mapTreeToNodes(mapToRelativePaths(rootDir, tree));
     console.log(nodes);
     return nodes;

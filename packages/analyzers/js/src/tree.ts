@@ -1,6 +1,8 @@
 import dependencyTree, { DependencyObj } from "dependency-tree";
 import * as path from "path";
-import { FlatTree } from "./types";
+import { ConfigTransformer, FlatTree, PackageJson } from "./types";
+
+export type VisitedCache = { [key: string]: any };
 
 export const mapToRelativePaths = (
   rootDir: string,
@@ -16,7 +18,7 @@ export const mapToRelativePaths = (
   return res;
 };
 
-const mergeTrees = (trees: FlatTree[]) => {
+export const mergeTrees = (trees: FlatTree[]) => {
   return trees.reduce<FlatTree>((m, t) => {
     Object.entries(t).forEach(([k, v]) => {
       const present = m[k];
@@ -40,20 +42,43 @@ const flattenTree = (tree: DependencyObj, res: FlatTree = {}): FlatTree => {
 };
 
 // TODO - pass other config
-const parseEntry = (dir: string, entry: string): FlatTree => {
+const parseEntry = (
+  dir: string,
+  entry: string,
+  visited: VisitedCache
+): FlatTree => {
   // TODO pass nonExistant and report on them
   const deepTree = dependencyTree({
     filename: entry,
     directory: dir,
+    visited,
   });
   const flatTree = flattenTree(deepTree);
   return flatTree;
 };
 
 // TODO - pass other config
-export const toTree = (dir: string, entries: string[]): FlatTree => {
+export const toTree = (
+  dir: string,
+  entries: string[],
+  visited: VisitedCache
+): FlatTree => {
   const tree = mergeTrees(
-    entries.map((e) => parseEntry(dir, path.join(dir, e)))
+    entries.map((e) => parseEntry(dir, path.join(dir, e), visited))
   );
   return tree;
+};
+
+export const getDependencies = async (
+  dir: string,
+  pkg: PackageJson,
+  transform: ConfigTransformer,
+  visited: VisitedCache
+) => {
+  const cfg = await transform({
+    dir: dir,
+    packageJson: pkg,
+  });
+
+  return toTree(dir, cfg.entries, visited);
 };
