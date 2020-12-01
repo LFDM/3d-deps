@@ -6,68 +6,21 @@ import { promisify } from "util";
 
 const readFile = promisify(fs.readFile);
 const access = promisify(fs.access);
-const isDir = async (p: string) => {
-  try {
-    await access(p, fs.constants.R_OK);
-    return true;
-  } catch {
-    return false;
-  }
-};
-
-type MadgeTree = { [key: string]: string[] };
 
 type Config = {
   entries: string[];
   // ... other stuff like tsConfig
 };
 
-type ConfigTransformer = (
-  config: Config,
-  args: {
-    dir: string;
-    packageJson: object;
-  }
-) => Promise<Config | null>;
+type ConfigTransformer = (args: {
+  dir: string;
+  packageJson: PackageJson;
+}) => Promise<Config | null>;
 
-const chainTransformers = (
-  transformers: ConfigTransformer[]
-): ConfigTransformer => {
-  const x: ConfigTransformer = async (cfg, args) => {
-    let finalConfig: Config = cfg;
-    for (const t of transformers) {
-      const nextConf = await t(finalConfig, args);
-      if (nextConf === null) {
-        return null;
-      }
-    }
-    return finalConfig;
-  };
-  return x;
-};
-
-export const TRANSFORMERS: {
-  BUILD_TO_SOURCE: (dist: string, src: string) => ConfigTransformer;
-  MAP_ENTRY: (mapper: (entry: string) => string | null) => ConfigTransformer;
-} = {
-  BUILD_TO_SOURCE: (dist, src) => async (cfg) => ({
-    ...cfg,
-    entries: cfg.entries.map((e) => e.replace(dist, src)),
-  }),
-  MAP_ENTRY: (mapper) => async (cfg) => {
-    const entries: string[] = [];
-    for (const e of cfg.entries) {
-      const nextE = mapper(e);
-      if (nextE === null) {
-        return null;
-      }
-      entries.push(nextE);
-    }
-    return {
-      ...cfg,
-      entries,
-    };
-  },
+type PackageJson = object & {
+  main?: string;
+  bin?: string | { [key: string]: string };
+  workspaces?: string[];
 };
 
 export type JsAnalyzerConfig = {
@@ -82,11 +35,7 @@ export type JsAnalyzerConfig = {
   // tsConfig?: string;
 
   rootDir: string;
-  configTransformer?: (args: {
-    dir: string;
-    pkgJson: object;
-    inferredConfig: Config;
-  }) => Promise<Config | null>;
+  configTransformer?: ConfigTransformer;
 };
 
 export const _toNodeModule = (t: string): string | null => {
@@ -165,19 +114,6 @@ const _mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
   });
   return nodes;
 };
-// convertTree(depTree, tree, pathCache) {
-// 	for (const key in depTree) {
-// 		const id = this.processPath(key, pathCache);
-// 		if (!tree[id]) {
-// 			tree[id] = [];
-// 			for (const dep in depTree[key]) {
-// 				tree[id].push(this.processPath(dep, pathCache));
-// 			}
-// 			this.convertTree(depTree[key], tree, pathCache);
-// 		}
-// 	}
-// 	return tree;
-// }
 
 const flattenTree = (tree: DependencyObj, res: FlatTree = {}): FlatTree => {
   for (const key in tree) {
@@ -199,6 +135,73 @@ const mapToRelativePaths = (rootDir: string, tree: FlatTree): FlatTree => {
   return res;
 };
 
+const mergeTrees = (trees: FlatTree[]) => {
+  return trees.reduce<FlatTree>((m, t) => {
+    Object.entries(t).forEach(([k, v]) => {
+      const present = m[k];
+      if (present) {
+        m[k] = [...new Set([...present, ...v])];
+      } else {
+        m[k] = v;
+      }
+    });
+    return m;
+  }, {});
+};
+
+// TODO - pass other config
+const parseEntry = (dir: string, entry: string) => {
+  const deepTree = dependencyTree({
+    filename: entry,
+    directory: dir,
+  });
+  const flatTree = flattenTree(deepTree);
+  return flatTree;
+};
+
+const getEntries = (pkg: PackageJson) => {
+  const entries: string[] = [];
+  if (pkg.main) {
+    entries.push(pkg.main);
+  }
+  if (typeof pkg.bin === "string") {
+    entries.push(pkg.bin);
+  }
+  if (typeof pkg.bin === "object") {
+    entries.push(...Object.values(pkg.bin));
+  }
+  return entries;
+};
+
+const DEFAULT_TRANSFORMER = (): ConfigTransformer => {
+  return async ({ packageJson }) => {
+    const entries = getEntries(packageJson);
+    return entries.length ? { entries } : null;
+  };
+};
+
+export const TRANSFORMERS: {
+  DEFAULT: () => ConfigTransformer;
+  MAP_ENTRY: (mapper: (entry: string) => string | null) => ConfigTransformer;
+} = {
+  DEFAULT: DEFAULT_TRANSFORMER,
+  MAP_ENTRY: (mapper) => async (args) => {
+    const cfg = await DEFAULT_TRANSFORMER()(args);
+    if (!cfg) {
+      return null;
+    }
+    const entries: string[] = [];
+    for (const e of cfg.entries) {
+      const nextE = mapper(e);
+      if (nextE === null) {
+        return null;
+      }
+      entries.push(nextE);
+    }
+    return entries.length ? { entries } : null;
+  },
+};
+
 export class JsAnalyzer implements IDependencyAnalyzer {
   private config: JsAnalyzerConfig;
   constructor(config: JsAnalyzerConfig) {
@@ -207,16 +210,22 @@ export class JsAnalyzer implements IDependencyAnalyzer {
 
   async analyze() {
     const { rootDir } = this.config;
-    const p = path.join(rootDir, "src", "index.ts");
-    const pkkFile = readFile(path.join(rootDir, "package.json"));
-    console.log(p);
-    const deepTree = dependencyTree({
-      filename: p,
-      directory: rootDir,
-    });
-    const flatTree = flattenTree(deepTree);
-    const withRelPaths = mapToRelativePaths(rootDir, flatTree);
+    const pkgFile = await readFile(path.join(rootDir, "package.json"));
+    const pkg = JSON.parse(pkgFile.toString());
+    const transform = this.config.configTransformer || DEFAULT_TRANSFORMER();
 
+    const cfg = await transform({
+      dir: rootDir,
+      packageJson: pkg,
+    });
+
+    if (!cfg) {
+      return [];
+    }
+    const tree = mergeTrees(
+      cfg.entries.map((e) => parseEntry(rootDir, path.join(rootDir, e)))
+    );
+    const withRelPaths = mapToRelativePaths(rootDir, tree);
     const nodes = _mapTreeToNodes(withRelPaths);
     return nodes;
   }

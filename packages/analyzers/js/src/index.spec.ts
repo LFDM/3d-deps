@@ -1,5 +1,5 @@
 import * as path from "path";
-import { JsAnalyzer, _toNodeModule } from ".";
+import { JsAnalyzer, TRANSFORMERS, _toNodeModule } from ".";
 
 const SPEC_DIR = path.join(__dirname, "..", "spec-pkgs");
 
@@ -14,6 +14,9 @@ describe("analyzer-js", () => {
     it.only("can transform main prop", async () => {
       const a = new JsAnalyzer({
         rootDir: path.join(SPEC_DIR, "pkg-main-transform"), // has dist/index.js as it's main
+        configTransformer: TRANSFORMERS.MAP_ENTRY((entry) =>
+          entry.replace("dist/index.js", "src/index.ts")
+        ),
       });
       const expected = [
         {
