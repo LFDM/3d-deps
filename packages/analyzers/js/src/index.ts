@@ -93,6 +93,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     const workspaces = rootPkg.workspaces
       ? await getWorkspacesInfo(rootDir)
       : {};
+
     const resolution = this.config.nodeModules?.resolution || "shallow";
     const {
       trees: workspaceTrees,
@@ -140,7 +141,6 @@ export class JsAnalyzer implements IDependencyAnalyzer {
         path.relative(rootDir, e)
       )
     );
-    console.log(nodes);
     return nodes;
   }
 }

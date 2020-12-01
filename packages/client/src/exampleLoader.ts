@@ -16,5 +16,21 @@ const toDataset = (key: string): Dataset => ({
   }),
 });
 
-export const loadDatasets: () => Promise<Dataset[]> = async () =>
-  Object.keys(FILES).map(toDataset);
+export const loadDatasets: () => Promise<Dataset[]> = async () => [
+  ...Object.keys(FILES).map(toDataset),
+  {
+    name: "self-workspace",
+    fetch: async () => ({
+      config: {
+        ...CONFIG,
+        graph: {
+          ...CONFIG.graph,
+          excludeByPath: /((^|\/)node_modules\/)/,
+        },
+      },
+      data: await import("./analyzers/dependencies-self-workspace.json").then(
+        (x) => x.default
+      ),
+    }),
+  },
+];

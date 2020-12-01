@@ -1,0 +1,412 @@
+[
+  {
+    "id": "packages/analyzers/base/src/index.ts",
+    "path": "packages/analyzers/base/src/index.ts",
+    "label": "packages/analyzers/base/src/index.ts",
+    "dependsOn": [],
+    "groups": [
+      "workspace_entries"
+    ]
+  },
+  {
+    "id": "packages/analyzers/js/src/index.ts",
+    "path": "packages/analyzers/js/src/index.ts",
+    "label": "packages/analyzers/js/src/index.ts",
+    "dependsOn": [
+      "packages/analyzers/js/src/postprocessor.ts",
+      "packages/analyzers/js/src/transformers.ts",
+      "packages/analyzers/js/src/tree.ts",
+      "packages/analyzers/js/src/types.ts",
+      "packages/analyzers/js/src/util.ts",
+      "packages/analyzers/js/src/yarn.ts"
+    ],
+    "groups": [
+      "workspace_entries"
+    ]
+  },
+  {
+    "id": "packages/analyzers/js/src/postprocessor.ts",
+    "path": "packages/analyzers/js/src/postprocessor.ts",
+    "label": "packages/analyzers/js/src/postprocessor.ts",
+    "dependsOn": [
+      "packages/analyzers/js/src/types.ts"
+    ]
+  },
+  {
+    "id": "packages/analyzers/js/src/types.ts",
+    "path": "packages/analyzers/js/src/types.ts",
+    "label": "packages/analyzers/js/src/types.ts",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/analyzers/js/src/transformers.ts",
+    "path": "packages/analyzers/js/src/transformers.ts",
+    "label": "packages/analyzers/js/src/transformers.ts",
+    "dependsOn": [
+      "packages/analyzers/js/src/types.ts"
+    ]
+  },
+  {
+    "id": "packages/analyzers/js/src/tree.ts",
+    "path": "packages/analyzers/js/src/tree.ts",
+    "label": "packages/analyzers/js/src/tree.ts",
+    "dependsOn": [
+      "node_modules/@types/dependency-tree/index.d.ts",
+      "packages/analyzers/js/src/types.ts",
+      "packages/analyzers/js/src/util.ts"
+    ]
+  },
+  {
+    "id": "node_modules/dependency-tree",
+    "path": "node_modules/dependency-tree",
+    "label": "node_modules/dependency-tree",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
+    "id": "packages/analyzers/js/src/util.ts",
+    "path": "packages/analyzers/js/src/util.ts",
+    "label": "packages/analyzers/js/src/util.ts",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/analyzers/js/src/yarn.ts",
+    "path": "packages/analyzers/js/src/yarn.ts",
+    "label": "packages/analyzers/js/src/yarn.ts",
+    "dependsOn": [
+      "packages/analyzers/js/src/types.ts"
+    ]
+  },
+  {
+    "id": "packages/analyzers/madge/src/index.ts",
+    "path": "packages/analyzers/madge/src/index.ts",
+    "label": "packages/analyzers/madge/src/index.ts",
+    "dependsOn": [],
+    "groups": [
+      "workspace_entries"
+    ]
+  },
+  {
+    "id": "packages/client/src/index.tsx",
+    "path": "packages/client/src/index.tsx",
+    "label": "packages/client/src/index.tsx",
+    "dependsOn": [
+      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/@types/react-dom/index.d.ts",
+      "packages/client/src/App.tsx",
+      "packages/client/src/index.css",
+      "packages/client/src/reportWebVitals.ts",
+      "packages/client/src/services/dataset.tsx",
+      "packages/client/src/exampleLoader.ts"
+    ],
+    "groups": [
+      "workspace_entries"
+    ]
+  },
+  {
+    "id": "packages/client/node_modules/@types/react/index.d.ts",
+    "path": "packages/client/node_modules/@types/react/index.d.ts",
+    "label": "packages/client/node_modules/@types/react/index.d.ts",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
+    "id": "node_modules/react-dom",
+    "path": "node_modules/react-dom",
+    "label": "node_modules/react-dom",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
+    "id": "packages/client/src/App.tsx",
+    "path": "packages/client/src/App.tsx",
+    "label": "packages/client/src/App.tsx",
+    "dependsOn": [
+      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/@types/react-router-dom/index.d.ts",
+      "packages/client/src/components/Helmet.tsx",
+      "packages/client/src/CssBaseline.tsx",
+      "packages/client/src/hooks/usePromise.ts",
+      "packages/client/src/services/config.tsx",
+      "packages/client/src/services/dataset.tsx",
+      "packages/client/src/services/graph.ts",
+      "packages/client/src/services/uiState.tsx",
+      "packages/client/src/types/DependencyAnalyzer.ts",
+      "packages/client/src/types/GraphData.ts"
+    ]
+  },
+  {
+    "id": "node_modules/react-router-dom",
+    "path": "node_modules/react-router-dom",
+    "label": "node_modules/react-router-dom",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
+    "id": "packages/client/src/components/Helmet.tsx",
+    "path": "packages/client/src/components/Helmet.tsx",
+    "label": "packages/client/src/components/Helmet.tsx",
+    "dependsOn": [
+      "node_modules/@types/react-helmet/index.d.ts"
+    ]
+  },
+  {
+    "id": "node_modules/react-helmet",
+    "path": "node_modules/react-helmet",
+    "label": "node_modules/react-helmet",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
+    "id": "packages/client/src/CssBaseline.tsx",
+    "path": "packages/client/src/CssBaseline.tsx",
+    "label": "packages/client/src/CssBaseline.tsx",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/hooks/usePromise.ts",
+    "path": "packages/client/src/hooks/usePromise.ts",
+    "label": "packages/client/src/hooks/usePromise.ts",
+    "dependsOn": [
+      "packages/client/node_modules/@types/react/index.d.ts"
+    ]
+  },
+  {
+    "id": "packages/client/src/services/config.tsx",
+    "path": "packages/client/src/services/config.tsx",
+    "label": "packages/client/src/services/config.tsx",
+    "dependsOn": [
+      "packages/client/node_modules/@types/react/index.d.ts"
+    ]
+  },
+  {
+    "id": "packages/client/src/services/dataset.tsx",
+    "path": "packages/client/src/services/dataset.tsx",
+    "label": "packages/client/src/services/dataset.tsx",
+    "dependsOn": [
+      "packages/client/node_modules/@types/react/index.d.ts",
+      "packages/client/src/hooks/usePromise.ts",
+      "packages/client/src/hooks/useQueryParam.ts",
+      "packages/client/src/types/DependencyAnalyzer.ts"
+    ]
+  },
+  {
+    "id": "packages/client/src/hooks/useQueryParam.ts",
+    "path": "packages/client/src/hooks/useQueryParam.ts",
+    "label": "packages/client/src/hooks/useQueryParam.ts",
+    "dependsOn": [
+      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/@types/react-router-dom/index.d.ts"
+    ]
+  },
+  {
+    "id": "packages/client/src/types/DependencyAnalyzer.ts",
+    "path": "packages/client/src/types/DependencyAnalyzer.ts",
+    "label": "packages/client/src/types/DependencyAnalyzer.ts",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/services/graph.ts",
+    "path": "packages/client/src/services/graph.ts",
+    "label": "packages/client/src/services/graph.ts",
+    "dependsOn": [
+      "node_modules/@types/lodash/index.d.ts",
+      "packages/client/src/types/DependencyAnalyzer.ts",
+      "packages/client/src/types/GraphData.ts"
+    ]
+  },
+  {
+    "id": "node_modules/lodash",
+    "path": "node_modules/lodash",
+    "label": "node_modules/lodash",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
+    "id": "packages/client/src/types/GraphData.ts",
+    "path": "packages/client/src/types/GraphData.ts",
+    "label": "packages/client/src/types/GraphData.ts",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/services/uiState.tsx",
+    "path": "packages/client/src/services/uiState.tsx",
+    "label": "packages/client/src/services/uiState.tsx",
+    "dependsOn": [
+      "packages/client/node_modules/@types/react/index.d.ts",
+      "packages/client/src/hooks/useQueryParam.ts",
+      "packages/client/src/types/GraphData.ts",
+      "packages/client/src/services/undoHistory.ts"
+    ]
+  },
+  {
+    "id": "packages/client/src/services/undoHistory.ts",
+    "path": "packages/client/src/services/undoHistory.ts",
+    "label": "packages/client/src/services/undoHistory.ts",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/index.css",
+    "path": "packages/client/src/index.css",
+    "label": "packages/client/src/index.css",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/reportWebVitals.ts",
+    "path": "packages/client/src/reportWebVitals.ts",
+    "label": "packages/client/src/reportWebVitals.ts",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/exampleLoader.ts",
+    "path": "packages/client/src/exampleLoader.ts",
+    "label": "packages/client/src/exampleLoader.ts",
+    "dependsOn": [
+      "packages/client/src/analyzers/jsonFile.ts",
+      "packages/client/src/services/dataset.tsx"
+    ]
+  },
+  {
+    "id": "packages/client/src/analyzers/jsonFile.ts",
+    "path": "packages/client/src/analyzers/jsonFile.ts",
+    "label": "packages/client/src/analyzers/jsonFile.ts",
+    "dependsOn": [
+      "packages/client/src/types/DependencyAnalyzer.ts",
+      "packages/client/src/analyzers/dependencies-affilimate-cf.json",
+      "packages/client/src/analyzers/dependencies-affilimate-cli.json",
+      "packages/client/src/analyzers/dependencies-affilimate-app.json",
+      "packages/client/src/analyzers/dependencies-syndexioi-app.json",
+      "packages/client/src/analyzers/dependencies-syndexioi-cf.json",
+      "packages/client/src/analyzers/dependencies-mui.json",
+      "packages/client/src/analyzers/dependencies-webpack.json",
+      "packages/client/src/analyzers/dependencies-axios.json",
+      "packages/client/src/analyzers/dependencies-express.json",
+      "packages/client/src/analyzers/dependencies-self.json"
+    ]
+  },
+  {
+    "id": "packages/client/src/analyzers/dependencies-affilimate-cf.json",
+    "path": "packages/client/src/analyzers/dependencies-affilimate-cf.json",
+    "label": "packages/client/src/analyzers/dependencies-affilimate-cf.json",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/analyzers/dependencies-affilimate-cli.json",
+    "path": "packages/client/src/analyzers/dependencies-affilimate-cli.json",
+    "label": "packages/client/src/analyzers/dependencies-affilimate-cli.json",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/analyzers/dependencies-affilimate-app.json",
+    "path": "packages/client/src/analyzers/dependencies-affilimate-app.json",
+    "label": "packages/client/src/analyzers/dependencies-affilimate-app.json",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/analyzers/dependencies-syndexioi-app.json",
+    "path": "packages/client/src/analyzers/dependencies-syndexioi-app.json",
+    "label": "packages/client/src/analyzers/dependencies-syndexioi-app.json",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/analyzers/dependencies-syndexioi-cf.json",
+    "path": "packages/client/src/analyzers/dependencies-syndexioi-cf.json",
+    "label": "packages/client/src/analyzers/dependencies-syndexioi-cf.json",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/analyzers/dependencies-mui.json",
+    "path": "packages/client/src/analyzers/dependencies-mui.json",
+    "label": "packages/client/src/analyzers/dependencies-mui.json",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/analyzers/dependencies-webpack.json",
+    "path": "packages/client/src/analyzers/dependencies-webpack.json",
+    "label": "packages/client/src/analyzers/dependencies-webpack.json",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/analyzers/dependencies-axios.json",
+    "path": "packages/client/src/analyzers/dependencies-axios.json",
+    "label": "packages/client/src/analyzers/dependencies-axios.json",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/analyzers/dependencies-express.json",
+    "path": "packages/client/src/analyzers/dependencies-express.json",
+    "label": "packages/client/src/analyzers/dependencies-express.json",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/analyzers/dependencies-self.json",
+    "path": "packages/client/src/analyzers/dependencies-self.json",
+    "label": "packages/client/src/analyzers/dependencies-self.json",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/config/src/index.ts",
+    "path": "packages/config/src/index.ts",
+    "label": "packages/config/src/index.ts",
+    "dependsOn": [],
+    "groups": [
+      "workspace_entries"
+    ]
+  },
+  {
+    "id": "packages/examples/simple/src/index.ts",
+    "path": "packages/examples/simple/src/index.ts",
+    "label": "packages/examples/simple/src/index.ts",
+    "dependsOn": [],
+    "groups": [
+      "workspace_entries"
+    ]
+  },
+  {
+    "id": "packages/server/src/index.ts",
+    "path": "packages/server/src/index.ts",
+    "label": "packages/server/src/index.ts",
+    "dependsOn": [
+      "node_modules/@types/express/index.d.ts",
+      "packages/server/src/types/RunConfig.ts"
+    ],
+    "groups": [
+      "workspace_entries"
+    ]
+  },
+  {
+    "id": "node_modules/express",
+    "path": "node_modules/express",
+    "label": "node_modules/express",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
+    "id": "packages/server/src/types/RunConfig.ts",
+    "path": "packages/server/src/types/RunConfig.ts",
+    "label": "packages/server/src/types/RunConfig.ts",
+    "dependsOn": [
+      "packages/server/src/types/DependencyAnalyzer.ts"
+    ]
+  },
+  {
+    "id": "packages/server/src/types/DependencyAnalyzer.ts",
+    "path": "packages/server/src/types/DependencyAnalyzer.ts",
+    "label": "packages/server/src/types/DependencyAnalyzer.ts",
+    "dependsOn": []
+  }
+]
