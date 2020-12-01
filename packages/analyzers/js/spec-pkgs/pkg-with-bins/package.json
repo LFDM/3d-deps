@@ -1,0 +1,9 @@
+{
+  "name": "spec-pkg-with-bins",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "bin": {
+    "start": "bin/start.js",
+    "stop": "bin/stop.js"
+  }
+}
