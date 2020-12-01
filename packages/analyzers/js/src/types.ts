@@ -6,7 +6,7 @@ export type Config = {
 export type ConfigTransformer = (args: {
   dir: string;
   packageJson: PackageJson;
-}) => Promise<Config | null>;
+}) => Promise<Config>;
 
 export type PackageJson = object & {
   main?: string;

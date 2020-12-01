@@ -16,7 +16,7 @@ const getEntries = (pkg: PackageJson) => {
 const DEFAULT_TRANSFORMER = (): ConfigTransformer => {
   return async ({ packageJson }) => {
     const entries = getEntries(packageJson);
-    return entries.length ? { entries } : null;
+    return { entries };
   };
 };
 
@@ -27,17 +27,13 @@ export const TRANSFORMERS: {
   DEFAULT: DEFAULT_TRANSFORMER,
   MAP_ENTRY: (mapper) => async (args) => {
     const cfg = await DEFAULT_TRANSFORMER()(args);
-    if (!cfg) {
-      return null;
-    }
     const entries: string[] = [];
     for (const e of cfg.entries) {
       const nextE = mapper(e);
-      if (nextE === null) {
-        return null;
+      if (nextE) {
+        entries.push(nextE);
       }
-      entries.push(nextE);
     }
-    return entries.length ? { entries } : null;
+    return { entries };
   },
 };
