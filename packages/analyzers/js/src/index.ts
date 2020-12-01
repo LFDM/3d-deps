@@ -1,20 +1,77 @@
 import { DependencyNode, IDependencyAnalyzer } from "@3d-deps/analyzer-base";
 import dependencyTree, { DependencyObj } from "dependency-tree";
+import fs from "fs";
 import * as path from "path";
+import { promisify } from "util";
+
+const readFile = promisify(fs.readFile);
+const access = promisify(fs.access);
+const isDir = async (p: string) => {
+  try {
+    await access(p, fs.constants.R_OK);
+    return true;
+  } catch {
+    return false;
+  }
+};
 
 type MadgeTree = { [key: string]: string[] };
 
+type Config = {
+  entries: string[];
+  // ... other stuff like tsConfig
+};
+
+type ConfigTransformer = (
+  config: Config,
+  args: {
+    dir: string;
+    packageJson: object;
+  }
+) => Promise<Config | null>;
+
+const chainTransformers = (
+  transformers: ConfigTransformer[]
+): ConfigTransformer => {
+  const x: ConfigTransformer = async (cfg, args) => {
+    let finalConfig: Config = cfg;
+    for (const t of transformers) {
+      const nextConf = await t(finalConfig, args);
+      if (nextConf === null) {
+        return null;
+      }
+    }
+    return finalConfig;
+  };
+  return x;
+};
+
+export const TRANSFORMERS: {
+  BUILD_TO_SOURCE: (dist: string, src: string) => ConfigTransformer;
+} = {
+  BUILD_TO_SOURCE: (dist, src) => async (cfg) => ({
+    ...cfg,
+    entries: cfg.entries.map((e) => e.replace(dist, src)),
+  }),
+};
+
 export type JsAnalyzerConfig = {
-  rootDir: string;
   // entry: string | string[];
 
-  baseDir?: string;
-  includeNpm?: boolean;
-  fileExtensions?: string[];
-  excludeRegExp?: string;
-  requireConfig?: string;
-  webpackConfig?: string;
-  tsConfig?: string;
+  // baseDir?: string;
+  // includeNpm?: boolean;
+  // fileExtensions?: string[];
+  // excludeRegExp?: string;
+  // requireConfig?: string;
+  // webpackConfig?: string;
+  // tsConfig?: string;
+
+  rootDir: string;
+  configTransformer?: (args: {
+    dir: string;
+    pkgJson: object;
+    inferredConfig: Config;
+  }) => Promise<Config | null>;
 };
 
 export const _toNodeModule = (t: string): string | null => {
@@ -136,6 +193,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
   async analyze() {
     const { rootDir } = this.config;
     const p = path.join(rootDir, "src", "index.ts");
+    const pkkFile = readFile(path.join(rootDir, "package.json"));
     console.log(p);
     const deepTree = dependencyTree({
       filename: p,
