@@ -1,5 +1,7 @@
+import debugFn from "debug";
 import dependencyTree, { DependencyObj } from "dependency-tree";
 import * as path from "path";
+import ts from "typescript";
 import {
   ConfigTransformer,
   FlatTree,
@@ -7,6 +9,8 @@ import {
   PackageJson,
 } from "./types";
 import { compact } from "./util";
+
+const debug = debugFn("analyzer-js");
 
 export type VisitedCache = { [key: string]: any };
 
@@ -43,11 +47,21 @@ const parseEntry = (
   resolution: NodeModulesResolution
 ): FlatTree => {
   // TODO pass nonExistant and report on them
+  const nonExistent: string[] = [];
+  const tsConfigPath = path.join(dir, "tsconfig.json");
+  const tsParsedConfig = ts.readJsonConfigFile(tsConfigPath, ts.sys.readFile);
+  const tsCompilerOptions = ts.parseJsonSourceFileConfigFileContent(
+    tsParsedConfig,
+    ts.sys,
+    dir
+  ).options;
+
   const deepTree = dependencyTree({
     filename: entry,
     directory: dir,
     visited,
     filter: ((dependency: string, parent: string) => {
+      // console.log(dependency, parent);
       if (resolution === "shallow") {
         if (isNodeModule(dependency) && isNodeModule(parent)) {
           return false;
@@ -55,7 +69,13 @@ const parseEntry = (
       }
       return true;
     }) as any, // looks like old type definition, expects only one arg, while it's really two
-  });
+    nonExistent,
+    tsCompilerOptions,
+  } as any); // new propertyTsCompilerOptions
+  if (nonExistent.length) {
+    debug(`nonExistent modules for ${path.join(dir, entry)}`, nonExistent);
+  }
+  // console.log(JSON.stringify(nonExistent, null, 2));
   const flatTree = flattenTree(deepTree);
   return flatTree;
 };
