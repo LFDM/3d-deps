@@ -1,0 +1,2 @@
+- These are spec packages to run tests against
+- They need to live outside of `packages`, otherwise their dependencies will be hoisted up to our actual workspace root.
