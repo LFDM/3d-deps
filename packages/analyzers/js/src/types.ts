@@ -13,3 +13,5 @@ export type PackageJson = object & {
   bin?: string | { [key: string]: string };
   workspaces?: string[];
 };
+
+export type FlatTree = { [key: string]: string[] };
