@@ -71,14 +71,17 @@ export const getDependencies = async (
     dir: dir,
     packageJson: pkg,
   });
+  config.entries.main = config.entries.main
+    ? path.join(dir, config.entries.main)
+    : null;
+  config.entries.bin.map((p) => path.join(dir, p));
+
   const entryFiles: string[] = [];
   config.entries.main && entryFiles.push(config.entries.main);
   entryFiles.push(...config.entries.bin);
 
   const tree = mergeTrees(
-    entryFiles.map((e) =>
-      parseEntry(dir, path.join(dir, e), visited, resolution)
-    )
+    entryFiles.map((e) => parseEntry(dir, e, visited, resolution))
   );
   return { tree, config };
 };

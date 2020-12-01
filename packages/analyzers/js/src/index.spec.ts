@@ -93,7 +93,7 @@ describe("analyzer-js", () => {
       expect(deps).toEqual(expected);
     });
 
-    it("handles monorepos through yarn workspace", async () => {
+    it.only("handles monorepos through yarn workspace", async () => {
       const a = new JsAnalyzer({
         rootDir: path.join(SPEC_DIR, "monorepo-yarn-workspaces"),
       });
