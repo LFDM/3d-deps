@@ -64,7 +64,9 @@ export const cleanupNodeModuleName = (t: string): string | null => {
 export const cleanupNodeModuleNames = (tree: FlatTree) => {
   const res: FlatTree = {};
   Object.entries(tree).forEach(([k, v]) => {
-    res[cleanupNodeModuleName(k) || k] = v;
+    res[cleanupNodeModuleName(k) || k] = v.map(
+      (x) => cleanupNodeModuleName(x) || x
+    );
   });
   return res;
 };
