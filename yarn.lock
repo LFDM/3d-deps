@@ -4732,6 +4732,16 @@ dependency-tree@^7.2.2:
     precinct "^6.3.1"
     typescript "^3.9.7"
 
+dependency-tree@lfdm/node-dependency-tree#master:
+  version "7.2.2"
+  resolved "https://codeload.github.com/lfdm/node-dependency-tree/tar.gz/973f9134695d7ae21e34cd571757b36adbbc507f"
+  dependencies:
+    commander "^2.20.3"
+    debug "^4.2.1"
+    filing-cabinet "^2.6.0"
+    precinct "^6.3.1"
+    typescript "^3.9.7"
+
 des.js@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/des.js/-/des.js-1.0.1.tgz#5382142e1bdc53f85d86d53e5f4aa7deb91e0843"
