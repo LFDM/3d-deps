@@ -1,32 +1,44 @@
-import { _madgeTreeToNodes, _toNodeModule } from ".";
+import * as path from "path";
+import { JsAnalyzer, _toNodeModule } from ".";
 
-describe("analyzer-madge", () => {
-  describe("_madgeTreeToNodes", () => {
-    const tree = {
-      "App.tsx": [
-        "../node_modules/@emotion/react/types/index.d.ts",
-        "../node_modules/@emotion/styled/types/index.d.ts",
-        "../node_modules/@types/react-router-dom/index.d.ts",
-        "../node_modules/@types/react/index.d.ts",
-        "../node_modules/assert-never/index.d.ts",
-        "../node_modules/react-feather/dist/index.d.ts",
-        "CssBaseline.tsx",
-        "components/Graph/index.tsx",
-      ],
-      "CssBaseline.tsx": ["../node_modules/@emotion/styled/types/index.d.ts"],
-      "components/Graph/index.tsx": ["hooks/useWindowSize.ts"],
-      "hooks/useWindowSize.ts": [],
-    };
+const SPEC_DIR = path.join(__dirname, "..", "spec-pkgs");
 
-    it("every link has a node", () => {
-      const actual = _madgeTreeToNodes(tree);
-      const links = actual
-        .map((x) => x.dependsOn)
-        .reduce<string[]>((m, s) => m.concat(s), []);
-      const nodes = actual.map((a) => a.id);
-      for (const link of links) {
-        expect(nodes).toContain(link);
-      }
+describe("analyzer-js", () => {
+  describe("JsAnalyzer", () => {
+    it.only("pkg-main-transform", async () => {
+      const a = new JsAnalyzer({
+        rootDir: path.join(SPEC_DIR, "pkg-main-transform"),
+      });
+      const expected = [
+        {
+          id: "src/index.ts",
+          path: "src/index.ts",
+          label: "src/index.ts",
+          dependsOn: ["src/a.ts", "src/aa.ts"],
+        },
+        {
+          id: "src/a.ts",
+          path: "src/a.ts",
+          label: "src/a.ts",
+          dependsOn: ["src/b.ts"],
+        },
+        {
+          id: "src/b.ts",
+          path: "src/b.ts",
+          label: "src/b.ts",
+          dependsOn: ["src/c.ts"],
+        },
+        { id: "src/c.ts", path: "src/c.ts", label: "src/c.ts", dependsOn: [] },
+        {
+          id: "src/aa.ts",
+          path: "src/aa.ts",
+          label: "src/aa.ts",
+          dependsOn: ["src/b.ts"],
+        },
+      ];
+      const deps = await a.analyze();
+
+      expect(deps).toEqual(expected);
     });
   });
 

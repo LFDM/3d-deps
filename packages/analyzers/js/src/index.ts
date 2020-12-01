@@ -1,11 +1,12 @@
 import { DependencyNode, IDependencyAnalyzer } from "@3d-deps/analyzer-base";
-// @ts-ignore
-import madge from "madge";
+import dependencyTree, { DependencyObj } from "dependency-tree";
+import * as path from "path";
 
 type MadgeTree = { [key: string]: string[] };
 
-export type MadgeAnalyzerConfig = {
-  entry: string | string[];
+export type JsAnalyzerConfig = {
+  rootDir: string;
+  // entry: string | string[];
 
   baseDir?: string;
   includeNpm?: boolean;
@@ -64,7 +65,9 @@ export const _toNodeModule = (t: string): string | null => {
     : null;
 };
 
-export const _madgeTreeToNodes = (tree: MadgeTree): DependencyNode[] => {
+type FlatTree = { [key: string]: string[] };
+
+const _mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
   const nodes: DependencyNode[] = [];
   const nodeModules: Set<string> = new Set();
   Object.entries(tree).forEach(([k, vs]) => {
@@ -90,19 +93,58 @@ export const _madgeTreeToNodes = (tree: MadgeTree): DependencyNode[] => {
   });
   return nodes;
 };
+// convertTree(depTree, tree, pathCache) {
+// 	for (const key in depTree) {
+// 		const id = this.processPath(key, pathCache);
+// 		if (!tree[id]) {
+// 			tree[id] = [];
+// 			for (const dep in depTree[key]) {
+// 				tree[id].push(this.processPath(dep, pathCache));
+// 			}
+// 			this.convertTree(depTree[key], tree, pathCache);
+// 		}
+// 	}
+// 	return tree;
+// }
 
-export class MadgeAnalyzer implements IDependencyAnalyzer {
-  private config: MadgeAnalyzerConfig;
-  constructor(config: MadgeAnalyzerConfig) {
+const flattenTree = (tree: DependencyObj, res: FlatTree = {}): FlatTree => {
+  for (const key in tree) {
+    const children = tree[key];
+    res[key] = Object.keys(children);
+    flattenTree(children, res);
+  }
+  return res;
+};
+
+const mapToRelativePaths = (rootDir: string, tree: FlatTree): FlatTree => {
+  const visited: { [key: string]: string } = {};
+  const res: FlatTree = {};
+  const toRelative = (p: string) =>
+    (visited[p] = visited[p] || path.relative(rootDir, p));
+  Object.entries(tree).forEach(([k, v]) => {
+    res[toRelative(k)] = v.map(toRelative);
+  });
+  return res;
+};
+
+export class JsAnalyzer implements IDependencyAnalyzer {
+  private config: JsAnalyzerConfig;
+  constructor(config: JsAnalyzerConfig) {
     this.config = config;
   }
 
   async analyze() {
-    const { entry, ...config } = this.config;
-    const deps: MadgeTree = await madge(entry, {
-      ...config,
-      includeNpm: true,
-    }).then((r: any) => r.obj());
-    return _madgeTreeToNodes(deps);
+    const { rootDir } = this.config;
+    const p = path.join(rootDir, "src", "index.ts");
+    console.log(p);
+    const deepTree = dependencyTree({
+      filename: p,
+      directory: rootDir,
+    });
+    const flatTree = flattenTree(deepTree);
+    const withRelPaths = mapToRelativePaths(rootDir, flatTree);
+
+    const nodes = _mapTreeToNodes(withRelPaths);
+    return nodes;
   }
 }
