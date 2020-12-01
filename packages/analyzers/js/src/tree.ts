@@ -64,18 +64,6 @@ const parseEntry = (
 };
 
 // TODO - pass other config
-export const toTree = (
-  dir: string,
-  entries: string[],
-  visited: VisitedCache,
-  resolution: NodeModulesResolution
-): FlatTree => {
-  const tree = mergeTrees(
-    entries.map((e) => parseEntry(dir, path.join(dir, e), visited, resolution))
-  );
-  return tree;
-};
-
 export const getDependencies = async (
   dir: string,
   pkg: PackageJson,
@@ -88,5 +76,10 @@ export const getDependencies = async (
     packageJson: pkg,
   });
 
-  return toTree(dir, cfg.entries, visited, resolution);
+  const tree = mergeTrees(
+    cfg.entries.map((e) =>
+      parseEntry(dir, path.join(dir, e), visited, resolution)
+    )
+  );
+  return tree;
 };
