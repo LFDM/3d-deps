@@ -5,6 +5,12 @@ const SPEC_DIR = path.join(__dirname, "..", "spec-pkgs");
 
 describe("analyzer-js", () => {
   describe("JsAnalyzer", () => {
+    it("fails when pointing to a directory which does not exists", () => {});
+
+    it("fails when pointing to a dir without a pkg json or an index.ts/js", () => {});
+
+    it("warns when pointing to a dir without pkg.json but a index.js/ts", () => {});
+
     it.only("pkg-main-transform", async () => {
       const a = new JsAnalyzer({
         rootDir: path.join(SPEC_DIR, "pkg-main-transform"),
