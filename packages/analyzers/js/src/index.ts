@@ -3,25 +3,10 @@ import dependencyTree, { DependencyObj } from "dependency-tree";
 import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
+import { TRANSFORMERS } from "./transformers";
+import { ConfigTransformer } from "./types";
 
 const readFile = promisify(fs.readFile);
-const access = promisify(fs.access);
-
-type Config = {
-  entries: string[];
-  // ... other stuff like tsConfig
-};
-
-type ConfigTransformer = (args: {
-  dir: string;
-  packageJson: PackageJson;
-}) => Promise<Config | null>;
-
-type PackageJson = object & {
-  main?: string;
-  bin?: string | { [key: string]: string };
-  workspaces?: string[];
-};
 
 export type JsAnalyzerConfig = {
   // entry: string | string[];
@@ -159,49 +144,6 @@ const parseEntry = (dir: string, entry: string) => {
   return flatTree;
 };
 
-const getEntries = (pkg: PackageJson) => {
-  const entries: string[] = [];
-  if (pkg.main) {
-    entries.push(pkg.main);
-  }
-  if (typeof pkg.bin === "string") {
-    entries.push(pkg.bin);
-  }
-  if (typeof pkg.bin === "object") {
-    entries.push(...Object.values(pkg.bin));
-  }
-  return entries;
-};
-
-const DEFAULT_TRANSFORMER = (): ConfigTransformer => {
-  return async ({ packageJson }) => {
-    const entries = getEntries(packageJson);
-    return entries.length ? { entries } : null;
-  };
-};
-
-export const TRANSFORMERS: {
-  DEFAULT: () => ConfigTransformer;
-  MAP_ENTRY: (mapper: (entry: string) => string | null) => ConfigTransformer;
-} = {
-  DEFAULT: DEFAULT_TRANSFORMER,
-  MAP_ENTRY: (mapper) => async (args) => {
-    const cfg = await DEFAULT_TRANSFORMER()(args);
-    if (!cfg) {
-      return null;
-    }
-    const entries: string[] = [];
-    for (const e of cfg.entries) {
-      const nextE = mapper(e);
-      if (nextE === null) {
-        return null;
-      }
-      entries.push(nextE);
-    }
-    return entries.length ? { entries } : null;
-  },
-};
-
 export class JsAnalyzer implements IDependencyAnalyzer {
   private config: JsAnalyzerConfig;
   constructor(config: JsAnalyzerConfig) {
@@ -212,7 +154,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     const { rootDir } = this.config;
     const pkgFile = await readFile(path.join(rootDir, "package.json"));
     const pkg = JSON.parse(pkgFile.toString());
-    const transform = this.config.configTransformer || DEFAULT_TRANSFORMER();
+    const transform = this.config.configTransformer || TRANSFORMERS.DEFAULT();
 
     const cfg = await transform({
       dir: rootDir,

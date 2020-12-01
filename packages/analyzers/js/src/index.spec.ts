@@ -1,5 +1,7 @@
+import { DependencyNode } from "@3d-deps/analyzer-base";
 import * as path from "path";
-import { JsAnalyzer, TRANSFORMERS, _toNodeModule } from ".";
+import { JsAnalyzer, _toNodeModule } from ".";
+import { TRANSFORMERS } from "./transformers";
 
 const SPEC_DIR = path.join(__dirname, "..", "spec-pkgs");
 
@@ -52,7 +54,7 @@ describe("analyzer-js", () => {
 
     it("can handle bins", async () => {
       const a = new JsAnalyzer({
-        rootDir: path.join(SPEC_DIR, "pkg-with-bins"), // has dist/index.js as it's main
+        rootDir: path.join(SPEC_DIR, "pkg-with-bins"),
       });
       const expected = [
         {
@@ -86,6 +88,16 @@ describe("analyzer-js", () => {
           dependsOn: ["src/stop.js"],
         },
       ];
+      const deps = await a.analyze();
+
+      expect(deps).toEqual(expected);
+    });
+
+    it("handles monorepos through yarn workspace", async () => {
+      const a = new JsAnalyzer({
+        rootDir: path.join(SPEC_DIR, "monorepo-yarn-workspaces"),
+      });
+      const expected: DependencyNode[] = [];
       const deps = await a.analyze();
 
       expect(deps).toEqual(expected);
