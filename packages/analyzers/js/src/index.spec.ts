@@ -11,7 +11,7 @@ describe("analyzer-js", () => {
 
     it("warns when pointing to a dir without pkg.json but a index.js/ts", () => {});
 
-    it.only("can transform main prop", async () => {
+    it("can transform main prop", async () => {
       const a = new JsAnalyzer({
         rootDir: path.join(SPEC_DIR, "pkg-main-transform"), // has dist/index.js as it's main
         configTransformer: TRANSFORMERS.MAP_ENTRY((entry) =>
@@ -43,6 +43,47 @@ describe("analyzer-js", () => {
           path: "src/aa.ts",
           label: "src/aa.ts",
           dependsOn: ["src/b.ts"],
+        },
+      ];
+      const deps = await a.analyze();
+
+      expect(deps).toEqual(expected);
+    });
+
+    it("can handle bins", async () => {
+      const a = new JsAnalyzer({
+        rootDir: path.join(SPEC_DIR, "pkg-with-bins"), // has dist/index.js as it's main
+      });
+      const expected = [
+        {
+          id: "src/index.js",
+          path: "src/index.js",
+          label: "src/index.js",
+          dependsOn: ["src/stop.js", "src/start.js"],
+        },
+        {
+          id: "src/stop.js",
+          path: "src/stop.js",
+          label: "src/stop.js",
+          dependsOn: [],
+        },
+        {
+          id: "src/start.js",
+          path: "src/start.js",
+          label: "src/start.js",
+          dependsOn: [],
+        },
+        {
+          id: "bin/start.js",
+          path: "bin/start.js",
+          label: "bin/start.js",
+          dependsOn: ["src/start.js"],
+        },
+        {
+          id: "bin/stop.js",
+          path: "bin/stop.js",
+          label: "bin/stop.js",
+          dependsOn: ["src/stop.js"],
         },
       ];
       const deps = await a.analyze();
