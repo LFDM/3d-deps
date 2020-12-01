@@ -91,7 +91,7 @@ const ThemeSection = ({
       <h3>Theme</h3>
       <SubSection>
         <h4>General</h4>
-        <ConfigRow>
+        <ConfigRow padding>
           <label htmlFor="theme-typography-font">Font</label>
           <InputWithConfirm
             id="theme-typography-font"
@@ -195,7 +195,7 @@ const ThemeSection = ({
           }
         />
 
-        <ConfigRow>
+        <ConfigRow padding>
           <label htmlFor="theme-hud-opacity">Opacity</label>
           <InputSliderWithValue
             id="theme-hud-opacity"
@@ -440,7 +440,7 @@ const RegExpRow = ({
   const [v, setV] = useState(originalValue);
   return (
     <>
-      <ConfigRow>
+      <ConfigRow padding>
         <RegexpValue>{`${value?.toString()}`}</RegexpValue>
         <Button variant="icon" onClick={() => setDialogOpen(true)}>
           <Edit size={14} />
@@ -531,7 +531,7 @@ const GraphSection = ({
       </SubSection>
       <SubSection>
         <h4>Dependencies</h4>
-        <ConfigRow>
+        <ConfigRow padding>
           <label htmlFor="graph-dependencies-max-depth">Max Depth</label>
           <InputSliderWithValue
             id="graph-dependencies-max-depth"
@@ -553,7 +553,7 @@ const GraphSection = ({
       </SubSection>
       <SubSection>
         <h4>Dependents</h4>
-        <ConfigRow>
+        <ConfigRow padding>
           <label htmlFor="graph-dependents-max-depth">Max Depth</label>
           <InputSliderWithValue
             id="graph-dependents-max-depth"
