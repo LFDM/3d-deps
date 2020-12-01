@@ -82,7 +82,10 @@ const traverseDependencies = (
         return;
       }
       // always use the most direct level!
-      if ((result.nodes[n.id] || Infinity) > level) {
+      if (
+        (result.nodes[n.id] === undefined ? Infinity : result.nodes[n.id]) >
+        level
+      ) {
         result.nodes[n.id] = level;
         const links =
           mode === "dependsOn"
