@@ -38,6 +38,7 @@ const flattenTree = (tree: DependencyObj, res: FlatTree = {}): FlatTree => {
 
 // TODO - pass other config
 const parseEntry = (dir: string, entry: string): FlatTree => {
+  // TODO pass nonExistant and report on them
   const deepTree = dependencyTree({
     filename: entry,
     directory: dir,
