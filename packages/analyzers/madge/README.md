@@ -6,6 +6,7 @@
     - main
     - bin
     - workspaces
+  - add the package.json as own node, which dependsOn main and bin files (maybe don't do this for workspaces, might create an unnecessary connection?)
 
 - automatically collect tsconfig/webpack/require config for module aliasing
 
