@@ -46,6 +46,8 @@ const flattenTree = (tree: DependencyObj, res: FlatTree = {}): FlatTree => {
   return res;
 };
 
+const isNodeModule = (p: string) => p.includes("node_modules");
+
 // TODO - pass other config
 const parseEntry = (
   dir: string,
@@ -58,6 +60,14 @@ const parseEntry = (
     filename: entry,
     directory: dir,
     visited,
+    filter: ((dependency: string, parent: string) => {
+      if (resolution === "shallow") {
+        if (isNodeModule(dependency) && isNodeModule(parent)) {
+          return false;
+        }
+      }
+      return true;
+    }) as any, // looks like old type definition, expects only one arg, while it's really two
   });
   const flatTree = flattenTree(deepTree);
   return flatTree;
