@@ -10,7 +10,8 @@
     "@3d-deps/analyzer-base": "0.1.0",
     "@types/dependency-tree": "^7.2.0",
     "dependency-tree": "^7.2.2",
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",
