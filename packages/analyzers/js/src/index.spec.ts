@@ -97,7 +97,67 @@ describe("analyzer-js", () => {
       const a = new JsAnalyzer({
         rootDir: path.join(SPEC_DIR, "monorepo-yarn-workspaces"),
       });
-      const expected: DependencyNode[] = [];
+      const expected: DependencyNode[] = [
+        {
+          id: "pkgs/a/src/index.js",
+          path: "pkgs/a/src/index.js",
+          label: "pkgs/a/src/index.js",
+          dependsOn: ["pkgs/b/bb/src/index.js", "pkgs/a/src/a.js"],
+          groups: ["workspace_entries"],
+        },
+        {
+          id: "pkgs/a/src/a.js",
+          path: "pkgs/a/src/a.js",
+          label: "pkgs/a/src/a.js",
+          dependsOn: [],
+        },
+        {
+          id: "pkgs/b/ba/src/index.js",
+          path: "pkgs/b/ba/src/index.js",
+          label: "pkgs/b/ba/src/index.js",
+          dependsOn: ["pkgs/b/bb/src/index.js", "pkgs/b/ba/src/a.js"],
+          groups: ["workspace_entries"],
+        },
+        {
+          id: "pkgs/b/ba/src/a.js",
+          path: "pkgs/b/ba/src/a.js",
+          label: "pkgs/b/ba/src/a.js",
+          dependsOn: [],
+        },
+        {
+          id: "pkgs/b/bb/src/index.js",
+          path: "pkgs/b/bb/src/index.js",
+          label: "pkgs/b/bb/src/index.js",
+          dependsOn: ["node_modules/glob/glob.js", "pkgs/b/bb/src/a.js"],
+          groups: ["workspace_entries"],
+        },
+        {
+          id: "node_modules/glob",
+          path: "node_modules/glob",
+          label: "node_modules/glob",
+          dependsOn: [],
+          groups: ["node_modules"],
+        },
+        {
+          id: "pkgs/b/bb/src/a.js",
+          path: "pkgs/b/bb/src/a.js",
+          label: "pkgs/b/bb/src/a.js",
+          dependsOn: [],
+        },
+        {
+          id: "pkg/src/index.js",
+          path: "pkg/src/index.js",
+          label: "pkg/src/index.js",
+          dependsOn: ["pkg/src/a.js"],
+          groups: ["workspace_entries"],
+        },
+        {
+          id: "pkg/src/a.js",
+          path: "pkg/src/a.js",
+          label: "pkg/src/a.js",
+          dependsOn: [],
+        },
+      ];
       const deps = await a.analyze();
 
       expect(deps).toEqual(expected);
