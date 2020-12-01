@@ -78,9 +78,7 @@ export const _toNodeModule = (t: string): string | null => {
       }
     }
   }
-  return res.length
-    ? `${prefixes.join("/")}/node_modules/${res.join("/")}`
-    : null;
+  return res.length ? [...prefixes, "node_modules", ...res].join("/") : null;
 };
 
 const mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
