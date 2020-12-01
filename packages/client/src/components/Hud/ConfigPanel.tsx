@@ -530,9 +530,9 @@ const GraphSection = ({
         />
       </SubSection>
       <SubSection>
-        <h4>Dependencies</h4>
+        <h4>Max Depth</h4>
         <ConfigRow padding>
-          <label htmlFor="graph-dependencies-max-depth">Max Depth</label>
+          <label htmlFor="graph-dependencies-max-depth">Dependencies</label>
           <InputSliderWithValue
             id="graph-dependencies-max-depth"
             min={0}
@@ -550,11 +550,8 @@ const GraphSection = ({
             }
           />
         </ConfigRow>
-      </SubSection>
-      <SubSection>
-        <h4>Dependents</h4>
         <ConfigRow padding>
-          <label htmlFor="graph-dependents-max-depth">Max Depth</label>
+          <label htmlFor="graph-dependents-max-depth">Dependents</label>
           <InputSliderWithValue
             id="graph-dependents-max-depth"
             min={0}
