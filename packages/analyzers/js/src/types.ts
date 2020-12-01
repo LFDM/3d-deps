@@ -21,7 +21,7 @@ export type PackageJson = object & {
 
 export type FlatTree = { [key: string]: string[] };
 
-export type YarnWorkspace = {
+export type Yarn1Workspace = {
   location: string;
   workspaceDependencies: string[];
   mismatchedWorkspaceDependencies: string[];
