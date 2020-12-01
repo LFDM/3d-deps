@@ -1,5 +1,5 @@
 import * as path from "path";
-import { FlatTree } from "./types";
+import { FlatTree, Workspaces } from "./types";
 
 export const mapToRelativePaths = (
   rootDir: string,
@@ -67,4 +67,12 @@ export const cleanupNodeModuleNames = (tree: FlatTree) => {
     res[cleanupNodeModuleName(k) || k] = v;
   });
   return res;
+};
+
+export const linkWorkspaces = (
+  tree: FlatTree,
+  workspaces: Workspaces,
+  entries: string[]
+): FlatTree => {
+  return tree;
 };

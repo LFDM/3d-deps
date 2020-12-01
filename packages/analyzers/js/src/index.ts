@@ -2,7 +2,11 @@ import { DependencyNode, IDependencyAnalyzer } from "@3d-deps/analyzer-base";
 import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
-import { cleanupNodeModuleNames, mapToRelativePaths } from "./postprocessor";
+import {
+  cleanupNodeModuleNames,
+  linkWorkspaces,
+  mapToRelativePaths,
+} from "./postprocessor";
 import { TRANSFORMERS } from "./transformers";
 import { getDependencies, mergeTrees, VisitedCache } from "./tree";
 import {
@@ -11,6 +15,7 @@ import {
   FlatTree,
   NodeModulesResolution,
 } from "./types";
+import { compact } from "./util";
 import { getWorkspacesInfo } from "./yarn";
 
 const readFile = promisify(fs.readFile);
@@ -107,10 +112,18 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     );
     const tree = mergeTrees([rootTree, ...workspaceTrees]);
     const nodes = mapTreeToNodes(
-      cleanupNodeModuleNames(mapToRelativePaths(rootDir, tree))
+      linkWorkspaces(
+        cleanupNodeModuleNames(mapToRelativePaths(rootDir, tree)),
+        workspaces,
+        compact([
+          rootConfig.entries.main,
+          ...workspaceConfigs.map((w) => w.entries.main),
+        ])
+      )
     );
     console.log(workspaces);
     console.log(rootConfig, workspaceConfigs);
+    console.log(nodes);
     return nodes;
   }
 }

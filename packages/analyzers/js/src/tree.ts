@@ -6,6 +6,7 @@ import {
   NodeModulesResolution,
   PackageJson,
 } from "./types";
+import { compact } from "./util";
 
 export type VisitedCache = { [key: string]: any };
 
@@ -76,9 +77,10 @@ export const getDependencies = async (
     : null;
   config.entries.bin.map((p) => path.join(dir, p));
 
-  const entryFiles: string[] = [];
-  config.entries.main && entryFiles.push(config.entries.main);
-  entryFiles.push(...config.entries.bin);
+  const entryFiles: string[] = compact([
+    config.entries.main,
+    ...config.entries.bin,
+  ]);
 
   const tree = mergeTrees(
     entryFiles.map((e) => parseEntry(dir, e, visited, resolution))
