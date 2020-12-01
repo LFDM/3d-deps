@@ -48,6 +48,7 @@ const parseEntry = (
 ): FlatTree => {
   // TODO pass nonExistant and report on them
   const nonExistent: string[] = [];
+  // TODO - cache it!
   const tsConfigPath = path.join(dir, "tsconfig.json");
   const tsParsedConfig = ts.readJsonConfigFile(tsConfigPath, ts.sys.readFile);
   const tsCompilerOptions = ts.parseJsonSourceFileConfigFileContent(
