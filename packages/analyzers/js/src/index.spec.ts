@@ -1,6 +1,6 @@
 import { DependencyNode } from "@3d-deps/analyzer-base";
 import * as path from "path";
-import { JsAnalyzer, _toNodeModule } from ".";
+import { JsAnalyzer } from ".";
 import { TRANSFORMERS } from "./transformers";
 
 const SPEC_DIR = path.join(__dirname, "..", "..", "..", "..", "spec-pkgs");
@@ -101,42 +101,6 @@ describe("analyzer-js", () => {
       const deps = await a.analyze();
 
       expect(deps).toEqual(expected);
-    });
-  });
-
-  describe("_toNodeModule", () => {
-    it("handles scoped modules", () => {
-      const actual = _toNodeModule(
-        "../node_modules/@emotion/react/types/index.d.ts"
-      );
-      expect(actual).toEqual("../node_modules/@emotion/react");
-    });
-
-    it("handles unscoped modules, leading directly to an index file", () => {
-      const actual = _toNodeModule("../node_modules/assert-never/index.d.ts");
-      expect(actual).toEqual("../node_modules/assert-never");
-    });
-
-    it("handles unscoped modules, leading to a file within", () => {
-      const actual = _toNodeModule(
-        "../node_modules/react-feather/dist/index.d.ts"
-      );
-      expect(actual).toEqual("../node_modules/react-feather");
-    });
-
-    it("handles @types", () => {
-      const actual = _toNodeModule("../node_modules/@types/react/index.d.ts");
-      expect(actual).toEqual("../node_modules/react");
-    });
-
-    it("returns null for a random file called node_modules", () => {
-      const actual = _toNodeModule("xxx/node_modules.ts");
-      expect(actual).toEqual(null);
-    });
-
-    it("returns null when not a node module", () => {
-      const actual = _toNodeModule("hooks/useWindowSize.ts");
-      expect(actual).toBe(null);
     });
   });
 });

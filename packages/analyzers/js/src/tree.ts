@@ -9,20 +9,6 @@ import {
 
 export type VisitedCache = { [key: string]: any };
 
-export const mapToRelativePaths = (
-  rootDir: string,
-  tree: FlatTree
-): FlatTree => {
-  const visited: { [key: string]: string } = {};
-  const res: FlatTree = {};
-  const toRelative = (p: string) =>
-    (visited[p] = visited[p] || path.relative(rootDir, p));
-  Object.entries(tree).forEach(([k, v]) => {
-    res[toRelative(k)] = v.map(toRelative);
-  });
-  return res;
-};
-
 export const mergeTrees = (trees: FlatTree[]) => {
   return trees.reduce<FlatTree>((m, t) => {
     Object.entries(t).forEach(([k, v]) => {

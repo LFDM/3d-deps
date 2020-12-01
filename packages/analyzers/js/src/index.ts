@@ -2,13 +2,9 @@ import { DependencyNode, IDependencyAnalyzer } from "@3d-deps/analyzer-base";
 import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
+import { cleanupNodeModuleNames, mapToRelativePaths } from "./postprocessor";
 import { TRANSFORMERS } from "./transformers";
-import {
-  getDependencies,
-  mapToRelativePaths,
-  mergeTrees,
-  VisitedCache,
-} from "./tree";
+import { getDependencies, mergeTrees, VisitedCache } from "./tree";
 import { ConfigTransformer, FlatTree, NodeModulesResolution } from "./types";
 import { getWorkspacesInfo } from "./yarn";
 
@@ -35,60 +31,13 @@ export type JsAnalyzerConfig = {
   };
 };
 
-export const _toNodeModule = (t: string): string | null => {
-  if (!t.includes("node_modules")) {
-    return null;
-  }
-  const parts = t.split("/");
-  const prefixes: string[] = [];
-  const res: string[] = [];
-  let foundRoot = false;
-  let isScoped = false;
-  for (let i = 0; i < parts.length; i++) {
-    const part = parts[i];
-    if (!foundRoot && part.match(/^\.+$/)) {
-      prefixes.push(part);
-      continue;
-    }
-    if (!foundRoot && part !== "node_modules") {
-      return null;
-    }
-    if (part === "node_modules") {
-      foundRoot = true;
-      continue;
-    }
-    if (foundRoot) {
-      if (part === "@types") {
-        continue;
-      }
-      if (part.startsWith("@")) {
-        isScoped = true;
-        res.push(part);
-        continue;
-      }
-      if (isScoped && res.length === 1) {
-        res.push(part);
-      }
-      if (res.length === 0) {
-        res.push(part);
-        continue;
-      }
-      if (res.length === 2) {
-        break;
-      }
-    }
-  }
-  return res.length ? [...prefixes, "node_modules", ...res].join("/") : null;
-};
-
 const mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
   const nodes: DependencyNode[] = [];
   Object.entries(tree).forEach(([k, vs]) => {
-    const clean = _toNodeModule(k) || k;
     nodes.push({
-      id: clean,
-      path: clean,
-      label: clean,
+      id: k,
+      path: k,
+      label: k,
       dependsOn: vs,
     });
   });
@@ -141,7 +90,9 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       resolution
     );
     const tree = mergeTrees([rootTree, ...workspaceTrees]);
-    const nodes = mapTreeToNodes(mapToRelativePaths(rootDir, tree));
+    const nodes = mapTreeToNodes(
+      cleanupNodeModuleNames(mapToRelativePaths(rootDir, tree))
+    );
     console.log(nodes);
     return nodes;
   }
