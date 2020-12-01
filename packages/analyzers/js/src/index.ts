@@ -127,7 +127,10 @@ export class JsAnalyzer implements IDependencyAnalyzer {
   }
 
   async analyze() {
-    const { rootDir } = this.config;
+    const { rootDir: origRootDir } = this.config;
+    const rootDir = path.isAbsolute(origRootDir)
+      ? origRootDir
+      : path.join(process.cwd(), origRootDir);
     const rootPkg = await getPackageJson(rootDir);
     const transform = this.config.configTransformer || TRANSFORMERS.DEFAULT();
 
