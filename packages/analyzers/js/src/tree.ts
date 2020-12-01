@@ -2,7 +2,10 @@ import dependencyTree, { DependencyObj } from "dependency-tree";
 import * as path from "path";
 import { FlatTree } from "./types";
 
-const mapToRelativePaths = (rootDir: string, tree: FlatTree): FlatTree => {
+export const mapToRelativePaths = (
+  rootDir: string,
+  tree: FlatTree
+): FlatTree => {
   const visited: { [key: string]: string } = {};
   const res: FlatTree = {};
   const toRelative = (p: string) =>
@@ -52,6 +55,5 @@ export const toTree = (dir: string, entries: string[]): FlatTree => {
   const tree = mergeTrees(
     entries.map((e) => parseEntry(dir, path.join(dir, e)))
   );
-  const withRelPaths = mapToRelativePaths(dir, tree);
-  return withRelPaths;
+  return tree;
 };

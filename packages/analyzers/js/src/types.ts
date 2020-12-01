@@ -22,4 +22,8 @@ export type YarnWorkspace = {
   mismatchedWorkspaceDependencies: string[];
 };
 
-export type YarnWorkspacesInfo = { [key: string]: YarnWorkspace };
+export type Workspaces = {
+  [key: string]: {
+    path: string;
+  };
+};

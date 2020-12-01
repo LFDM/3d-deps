@@ -3,8 +3,9 @@ import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
 import { TRANSFORMERS } from "./transformers";
-import { toTree } from "./tree";
-import { ConfigTransformer, FlatTree } from "./types";
+import { mapToRelativePaths, toTree } from "./tree";
+import { ConfigTransformer, FlatTree, PackageJson } from "./types";
+import { getWorkspacesInfo } from "./yarn";
 
 const readFile = promisify(fs.readFile);
 
@@ -21,6 +22,9 @@ export type JsAnalyzerConfig = {
 
   rootDir: string;
   configTransformer?: ConfigTransformer;
+  workspaces?: {
+    unhoist?: boolean;
+  };
 };
 
 export const _toNodeModule = (t: string): string | null => {
@@ -98,6 +102,24 @@ const _mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
   return nodes;
 };
 
+const getPackageJson = async (dir: string) => {
+  const pkgFile = await readFile(path.join(dir, "package.json"));
+  return JSON.parse(pkgFile.toString());
+};
+
+const getDependencies = async (
+  dir: string,
+  pkg: PackageJson,
+  transform: ConfigTransformer
+) => {
+  const cfg = await transform({
+    dir: dir,
+    packageJson: pkg,
+  });
+
+  return toTree(dir, cfg.entries);
+};
+
 export class JsAnalyzer implements IDependencyAnalyzer {
   private config: JsAnalyzerConfig;
   constructor(config: JsAnalyzerConfig) {
@@ -106,20 +128,17 @@ export class JsAnalyzer implements IDependencyAnalyzer {
 
   async analyze() {
     const { rootDir } = this.config;
-    const pkgFile = await readFile(path.join(rootDir, "package.json"));
-    const pkg = JSON.parse(pkgFile.toString());
+    const rootPkg = await getPackageJson(rootDir);
     const transform = this.config.configTransformer || TRANSFORMERS.DEFAULT();
 
-    const cfg = await transform({
-      dir: rootDir,
-      packageJson: pkg,
-    });
+    const workspaces = rootPkg.workspaces
+      ? await getWorkspacesInfo(rootDir)
+      : {};
+    console.log(workspaces);
 
-    if (!cfg) {
-      return [];
-    }
-    const tree = toTree(rootDir, cfg.entries);
-    const nodes = _mapTreeToNodes(tree);
+    const tree = await getDependencies(rootDir, rootPkg, transform);
+    const nodes = _mapTreeToNodes(mapToRelativePaths(rootDir, tree));
+    console.log(nodes);
     return nodes;
   }
 }
