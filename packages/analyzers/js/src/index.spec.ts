@@ -3,7 +3,7 @@ import * as path from "path";
 import { JsAnalyzer, _toNodeModule } from ".";
 import { TRANSFORMERS } from "./transformers";
 
-const SPEC_DIR = path.join(__dirname, "..", "spec-pkgs");
+const SPEC_DIR = path.join(__dirname, "..", "..", "..", "..", "spec-pkgs");
 
 describe("analyzer-js", () => {
   describe("JsAnalyzer", () => {

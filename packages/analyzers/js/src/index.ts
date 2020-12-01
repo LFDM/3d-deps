@@ -9,7 +9,7 @@ import {
   mergeTrees,
   VisitedCache,
 } from "./tree";
-import { ConfigTransformer, FlatTree } from "./types";
+import { ConfigTransformer, FlatTree, NodeModulesResolution } from "./types";
 import { getWorkspacesInfo } from "./yarn";
 
 const readFile = promisify(fs.readFile);
@@ -27,6 +27,9 @@ export type JsAnalyzerConfig = {
 
   rootDir: string;
   configTransformer?: ConfigTransformer;
+  nodeModules?: {
+    resolution?: NodeModulesResolution;
+  };
   workspaces?: {
     unhoist?: boolean;
   };
@@ -131,10 +134,17 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     const workspaces = rootPkg.workspaces
       ? await getWorkspacesInfo(rootDir)
       : {};
+    const resolution = this.config.nodeModules?.resolution || "shallow";
     const workspaceTrees = await Promise.all(
       Object.values(workspaces).map(async (w) => {
         const pkg = await getPackageJson(w.path);
-        return getDependencies(w.path, pkg, transform, this.visited);
+        return getDependencies(
+          w.path,
+          pkg,
+          transform,
+          this.visited,
+          resolution
+        );
       })
     );
 
@@ -142,7 +152,8 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       rootDir,
       rootPkg,
       transform,
-      this.visited
+      this.visited,
+      resolution
     );
     const tree = mergeTrees([rootTree, ...workspaceTrees]);
     const nodes = _mapTreeToNodes(mapToRelativePaths(rootDir, tree));

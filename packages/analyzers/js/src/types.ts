@@ -27,3 +27,5 @@ export type Workspaces = {
     path: string;
   };
 };
+
+export type NodeModulesResolution = "shallow" | "deep";

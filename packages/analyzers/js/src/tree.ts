@@ -1,6 +1,11 @@
 import dependencyTree, { DependencyObj } from "dependency-tree";
 import * as path from "path";
-import { ConfigTransformer, FlatTree, PackageJson } from "./types";
+import {
+  ConfigTransformer,
+  FlatTree,
+  NodeModulesResolution,
+  PackageJson,
+} from "./types";
 
 export type VisitedCache = { [key: string]: any };
 
@@ -45,7 +50,8 @@ const flattenTree = (tree: DependencyObj, res: FlatTree = {}): FlatTree => {
 const parseEntry = (
   dir: string,
   entry: string,
-  visited: VisitedCache
+  visited: VisitedCache,
+  resolution: NodeModulesResolution
 ): FlatTree => {
   // TODO pass nonExistant and report on them
   const deepTree = dependencyTree({
@@ -61,10 +67,11 @@ const parseEntry = (
 export const toTree = (
   dir: string,
   entries: string[],
-  visited: VisitedCache
+  visited: VisitedCache,
+  resolution: NodeModulesResolution
 ): FlatTree => {
   const tree = mergeTrees(
-    entries.map((e) => parseEntry(dir, path.join(dir, e), visited))
+    entries.map((e) => parseEntry(dir, path.join(dir, e), visited, resolution))
   );
   return tree;
 };
@@ -73,12 +80,13 @@ export const getDependencies = async (
   dir: string,
   pkg: PackageJson,
   transform: ConfigTransformer,
-  visited: VisitedCache
+  visited: VisitedCache,
+  resolution: NodeModulesResolution
 ) => {
   const cfg = await transform({
     dir: dir,
     packageJson: pkg,
   });
 
-  return toTree(dir, cfg.entries, visited);
+  return toTree(dir, cfg.entries, visited, resolution);
 };
