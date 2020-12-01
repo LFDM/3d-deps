@@ -1,0 +1,5 @@
+{
+  "name": "@spec-monorepo-yarn-workspaces/pkgs-ba",
+  "version": "0.1.0",
+  "main": "src/index.js"
+}

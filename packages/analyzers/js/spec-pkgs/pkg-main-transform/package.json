@@ -1,0 +1,5 @@
+{
+  "name": "spec-pkg-with-main-transform",
+  "version": "0.1.0",
+  "main": "dist/index.js"
+}

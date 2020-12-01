@@ -1,0 +1,9 @@
+{
+  "name": "space-monorepo-yarn-workspaces",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "pkgs/**/*",
+    "pkg"
+  ]
+}
