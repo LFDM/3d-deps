@@ -15,3 +15,11 @@ export type PackageJson = object & {
 };
 
 export type FlatTree = { [key: string]: string[] };
+
+export type YarnWorkspace = {
+  location: string;
+  workspaceDependencies: string[];
+  mismatchedWorkspaceDependencies: string[];
+};
+
+export type YarnWorkspacesInfo = { [key: string]: YarnWorkspace };
