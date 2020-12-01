@@ -67,15 +67,18 @@ export const getDependencies = async (
   visited: VisitedCache,
   resolution: NodeModulesResolution
 ) => {
-  const cfg = await transform({
+  const config = await transform({
     dir: dir,
     packageJson: pkg,
   });
+  const entryFiles: string[] = [];
+  config.entries.main && entryFiles.push(config.entries.main);
+  entryFiles.push(...config.entries.bin);
 
   const tree = mergeTrees(
-    cfg.entries.map((e) =>
+    entryFiles.map((e) =>
       parseEntry(dir, path.join(dir, e), visited, resolution)
     )
   );
-  return tree;
+  return { tree, config };
 };

@@ -5,7 +5,12 @@ import { promisify } from "util";
 import { cleanupNodeModuleNames, mapToRelativePaths } from "./postprocessor";
 import { TRANSFORMERS } from "./transformers";
 import { getDependencies, mergeTrees, VisitedCache } from "./tree";
-import { ConfigTransformer, FlatTree, NodeModulesResolution } from "./types";
+import {
+  Config,
+  ConfigTransformer,
+  FlatTree,
+  NodeModulesResolution,
+} from "./types";
 import { getWorkspacesInfo } from "./yarn";
 
 const readFile = promisify(fs.readFile);
@@ -69,7 +74,10 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       ? await getWorkspacesInfo(rootDir)
       : {};
     const resolution = this.config.nodeModules?.resolution || "shallow";
-    const workspaceTrees = await Promise.all(
+    const {
+      trees: workspaceTrees,
+      configs: workspaceConfigs,
+    } = await Promise.all(
       Object.values(workspaces).map(async (w) => {
         const pkg = await getPackageJson(w.path);
         return getDependencies(
@@ -80,9 +88,17 @@ export class JsAnalyzer implements IDependencyAnalyzer {
           resolution
         );
       })
-    );
+    ).then((ws) => {
+      const trees: FlatTree[] = [];
+      const configs: Config[] = [];
+      ws.forEach(({ tree, config }) => {
+        trees.push(tree);
+        configs.push(config);
+      });
+      return { trees, configs };
+    });
 
-    const rootTree = await getDependencies(
+    const { tree: rootTree, config: rootConfig } = await getDependencies(
       rootDir,
       rootPkg,
       transform,

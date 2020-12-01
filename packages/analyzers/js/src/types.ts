@@ -1,5 +1,10 @@
+export type Entries = {
+  main: string | null;
+  bin: string[];
+};
+
 export type Config = {
-  entries: string[];
+  entries: Entries;
   // ... other stuff like tsConfig
 };
 
