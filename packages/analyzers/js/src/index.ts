@@ -48,11 +48,26 @@ const chainTransformers = (
 
 export const TRANSFORMERS: {
   BUILD_TO_SOURCE: (dist: string, src: string) => ConfigTransformer;
+  MAP_ENTRY: (mapper: (entry: string) => string | null) => ConfigTransformer;
 } = {
   BUILD_TO_SOURCE: (dist, src) => async (cfg) => ({
     ...cfg,
     entries: cfg.entries.map((e) => e.replace(dist, src)),
   }),
+  MAP_ENTRY: (mapper) => async (cfg) => {
+    const entries: string[] = [];
+    for (const e of cfg.entries) {
+      const nextE = mapper(e);
+      if (nextE === null) {
+        return null;
+      }
+      entries.push(nextE);
+    }
+    return {
+      ...cfg,
+      entries,
+    };
+  },
 };
 
 export type JsAnalyzerConfig = {
