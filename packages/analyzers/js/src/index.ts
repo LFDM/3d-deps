@@ -83,28 +83,15 @@ export const _toNodeModule = (t: string): string | null => {
     : null;
 };
 
-const _mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
+const mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
   const nodes: DependencyNode[] = [];
-  const nodeModules: Set<string> = new Set();
   Object.entries(tree).forEach(([k, vs]) => {
+    const clean = _toNodeModule(k) || k;
     nodes.push({
-      id: k,
-      path: k,
-      label: k,
-      dependsOn: vs.map((v) => {
-        const nodeModule = _toNodeModule(v);
-        if (nodeModule && !nodeModules.has(nodeModule)) {
-          nodeModules.add(nodeModule);
-          nodes.push({
-            id: nodeModule,
-            path: nodeModule,
-            label: nodeModule,
-            dependsOn: [],
-          });
-          return nodeModule;
-        }
-        return nodeModule || v;
-      }),
+      id: clean,
+      path: clean,
+      label: clean,
+      dependsOn: vs,
     });
   });
   return nodes;
@@ -156,7 +143,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       resolution
     );
     const tree = mergeTrees([rootTree, ...workspaceTrees]);
-    const nodes = _mapTreeToNodes(mapToRelativePaths(rootDir, tree));
+    const nodes = mapTreeToNodes(mapToRelativePaths(rootDir, tree));
     console.log(nodes);
     return nodes;
   }
