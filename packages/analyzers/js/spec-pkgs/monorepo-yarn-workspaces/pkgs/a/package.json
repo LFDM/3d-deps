@@ -1,5 +1,9 @@
 {
   "name": "@spec-monorepo-yarn-workspaces/pkgs-a",
   "version": "0.1.0",
-  "main": "src/index.js"
+  "main": "src/index.js",
+  "dependencies": {
+    "@spec-monorepo-yarn-workspaces/pkg": "0.1.0",
+    "@spec-monorepo-yarn-workspaces/pkgs-bb": "0.1.0"
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@spec-monorepo-yarn-workspaces/pkg-bb",
+  "name": "@spec-monorepo-yarn-workspaces/pkgs-bb",
   "version": "0.1.0",
   "main": "src/index.js",
   "dependencies": {
