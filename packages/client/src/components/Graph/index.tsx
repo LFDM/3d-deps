@@ -310,7 +310,8 @@ export const Graph = () => {
         styles.nodes[node.id]?.color || theme.graph.nodes.colors.standard
       }
       nodeThreeObjectExtend={true}
-      nodeThreeObject={(node: any) => {
+      // TODO dependency mismatch for three
+      nodeThreeObject={(node: any): any => {
         const s = styles.nodes[node.id];
         if (!s?.label) {
           return new Object3D();
