@@ -9,6 +9,6 @@
   "references": [
     { "path": "../../server"},
     { "path": "../../config"},
-    { "path": "../../analyzers/madge"}
+    { "path": "../../analyzers/js"}
   ]
 }
