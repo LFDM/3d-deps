@@ -8,5 +8,8 @@
   "private": false,
   "devDependencies": {
     "typescript": "^4.1.2"
+  },
+  "scripts": {
+    "build": "tsc -b"
   }
 }
