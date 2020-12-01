@@ -70,9 +70,42 @@ export const cleanupNodeModuleNames = (tree: FlatTree) => {
 };
 
 export const linkWorkspaces = (
+  rootDir: string,
   tree: FlatTree,
   workspaces: Workspaces,
-  entries: string[]
+  entries: string[] // probably not needed after all!
 ): FlatTree => {
-  return tree;
+  const wsByModName: { [key: string]: string } = {};
+  Object.entries(workspaces).forEach(([k, v]) => {
+    const modName = path.join("node_modules", k);
+    const entry = path.relative(rootDir, v.path);
+    wsByModName[modName] = entry;
+  });
+  const modNames = Object.keys(wsByModName);
+  const mappedTree: FlatTree = {};
+  const dependencyResolverCache: { [key: string]: string } = {};
+  Object.entries(tree).forEach(([k, vs]) => {
+    const entry = wsByModName[k];
+    if (entry) {
+      return;
+    }
+    const nextVs = vs.map((v) => {
+      const resolved = dependencyResolverCache[v];
+      if (resolved) {
+        return resolved;
+      }
+      if (v.startsWith("node_modules")) {
+        for (const modName of modNames) {
+          if (v.startsWith(modName)) {
+            const entry = wsByModName[modName];
+            return (dependencyResolverCache[v] = v.replace(modName, entry));
+          }
+        }
+      }
+      return v;
+    });
+
+    mappedTree[k] = nextVs;
+  });
+  return mappedTree;
 };

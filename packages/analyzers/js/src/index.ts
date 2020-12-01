@@ -113,6 +113,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     const tree = mergeTrees([rootTree, ...workspaceTrees]);
     const nodes = mapTreeToNodes(
       linkWorkspaces(
+        rootDir,
         cleanupNodeModuleNames(mapToRelativePaths(rootDir, tree)),
         workspaces,
         compact([
