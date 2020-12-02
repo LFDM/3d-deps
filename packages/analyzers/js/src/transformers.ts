@@ -15,10 +15,13 @@ const canRead = async (p: string) => {
 };
 
 const getEntries = (pkg: PackageJson): Entries => {
-  const entries: Entries = { main: null, bin: [] };
+  const entries: Entries = { main: null, browser: null, bin: [] };
 
   if (pkg.main) {
     entries.main = pkg.main;
+  }
+  if (pkg.browser) {
+    entries.browser = pkg.browser;
   }
   if (typeof pkg.bin === "string") {
     entries.bin.push(pkg.bin);
@@ -49,8 +52,9 @@ export const TRANSFORMERS: {
   DEFAULT: DEFAULT_TRANSFORMER,
   MAP_ENTRY: (mapper) => async (args) => {
     const cfg = await DEFAULT_TRANSFORMER()(args);
-    const entries: Entries = { main: null, bin: [] };
+    const entries: Entries = { main: null, browser: null, bin: [] };
     entries.main = cfg.entries.main ? mapper(cfg.entries.main) : null;
+    entries.browser = cfg.entries.browser ? mapper(cfg.entries.browser) : null;
 
     for (const e of cfg.entries.bin) {
       const nextE = mapper(e);

@@ -80,6 +80,7 @@ const collectPackageInfo = async (
   const pkg = await getPackageJson(dir);
   const config = await transform({ dir, packageJson: pkg });
   const mainAbs = toNullableAbsolutePath(dir, config.entries.main);
+  const browser = toNullableAbsolutePath(dir, config.entries.browser);
   return {
     pkg,
     location: {
@@ -90,6 +91,10 @@ const collectPackageInfo = async (
       main: {
         abs: mainAbs,
         rel: mainAbs === null ? null : path.relative(rootDir, mainAbs),
+      },
+      browser: {
+        abs: browser,
+        rel: browser === null ? null : path.relative(rootDir, browser),
       },
       bin: config.entries.bin.map((e) => {
         const abs = toAbsolutePath(dir, e);

@@ -2,6 +2,7 @@ import { CompilerOptions } from "typescript";
 
 export type Entries = {
   main: string | null;
+  browser: string | null;
   bin: string[];
 };
 
@@ -23,6 +24,7 @@ export type ConfigTransformer = (args: {
 export type PackageJson = object & {
   name: string;
   main?: string;
+  browser?: string;
   bin?: string | { [key: string]: string };
   typings?: string;
   workspaces?: string[];
@@ -47,6 +49,10 @@ export type PackageInfo = {
 
   mappedEntries: {
     main: {
+      abs: string | null;
+      rel: string | null;
+    };
+    browser: {
       abs: string | null;
       rel: string | null;
     };
