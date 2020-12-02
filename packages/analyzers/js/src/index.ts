@@ -141,6 +141,12 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       )
     ).then(mergeTrees);
 
+    // hoist all node modules
+    // map workspaces, so that e.g. node_modules/x -> packages/x
+    // cleanup node module imports (e.g. lodash/dist/x -> lodash). We might wanna allow this later
+    // try remap of workspace dependencies, when resolved to dist instead of src file
+    // mapToTreeNodes and label tree
+
     const nodes = mapTreeToNodes(
       linkWorkspaces(
         rootDir,
