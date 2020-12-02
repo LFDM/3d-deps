@@ -17,7 +17,6 @@ import {
   NodeModulesResolution,
   PackageInfo,
 } from "./types";
-import { compact } from "./util";
 import { getWorkspacesInfo } from "./yarn";
 
 const readFile = promisify(fs.readFile);
@@ -43,12 +42,8 @@ export type JsAnalyzerConfig = {
   };
 };
 
-const mapTreeToNodes = (
-  tree: FlatTree,
-  workspaceEntries: string[]
-): DependencyNode[] => {
+const mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
   const nodes: DependencyNode[] = [];
-  const wsEntries = new Set(workspaceEntries);
   Object.entries(tree).forEach(([k, vs]) => {
     const node: DependencyNode = {
       id: k,
@@ -57,12 +52,6 @@ const mapTreeToNodes = (
       labels: [],
       dependsOn: vs,
     };
-    if (wsEntries.has(k)) {
-      node.labels.push("workspace_entries");
-    }
-    if (k.includes("node_modules")) {
-      node.labels.push("node_modules");
-    }
     nodes.push(node);
   });
   return nodes;
@@ -141,14 +130,14 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     ).then(mergeTrees);
 
     const nodes = mapTreeToNodes(
-      preProcess(tree, [
-        PreProcessorRelativePaths(rootDir),
-        PreProcessorHoistNodeModules(),
-        PreProcessorLinkWorkspaces(rootDir, wsPkgInfos),
-        PreProcessorCleanupNodeModuleNames(),
-      ]),
-      compact(allPkgInfos.map((p) => p.mappedEntries.main)).map((e) =>
-        path.relative(rootDir, e)
+      preProcess(
+        [
+          PreProcessorRelativePaths(rootDir),
+          PreProcessorHoistNodeModules(),
+          PreProcessorLinkWorkspaces(rootDir, wsPkgInfos),
+          PreProcessorCleanupNodeModuleNames(),
+        ],
+        tree
       )
     );
     return nodes;

@@ -115,10 +115,10 @@ export const linkWorkspaces = (
   return mappedTree;
 };
 
-type PreProcessor = {
+export interface PreProcessor {
   onParent: (p: string) => string | null; // null to discard
   onChild: (p: string) => string | null; // null to discard
-};
+}
 
 // make all paths relative
 // hoist all node modules
@@ -182,7 +182,7 @@ export const PreProcessorCleanupNodeModuleNames = (): PreProcessor => {
   };
 };
 
-export const preProcess = (tree: FlatTree, processors: PreProcessor[]) => {
+export const preProcess = (processors: PreProcessor[], tree: FlatTree) => {
   const cache: {
     parents: { [parent: string]: string | null };
     children: { [child: string]: string | null };
