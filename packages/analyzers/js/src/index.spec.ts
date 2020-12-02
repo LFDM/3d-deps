@@ -110,6 +110,7 @@ describe("analyzer-js", () => {
           path: "pkgs/a/src/a.js",
           name: "pkgs/a/src/a.js",
           dependsOn: [],
+          labels: [],
         },
         {
           id: "pkgs/b/ba/src/index.js",
@@ -123,6 +124,7 @@ describe("analyzer-js", () => {
           path: "pkgs/b/ba/src/a.js",
           name: "pkgs/b/ba/src/a.js",
           dependsOn: [],
+          labels: [],
         },
         {
           id: "pkgs/b/bb/src/index.js",
@@ -143,6 +145,7 @@ describe("analyzer-js", () => {
           path: "pkgs/b/bb/src/a.js",
           name: "pkgs/b/bb/src/a.js",
           dependsOn: [],
+          labels: [],
         },
         {
           id: "pkg/src/index.js",
@@ -156,6 +159,7 @@ describe("analyzer-js", () => {
           path: "pkg/src/a.js",
           name: "pkg/src/a.js",
           dependsOn: [],
+          labels: [],
         },
       ];
       const deps = await a.analyze();
