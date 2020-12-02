@@ -1,6 +1,6 @@
 import debug from "debug";
 import * as path from "path";
-import { FlatTree, Workspaces } from "./types";
+import { FlatTree, PackageInfo, Workspaces } from "./types";
 import { compact } from "./util";
 
 export const mapToRelativePaths = (
@@ -118,6 +118,55 @@ export const linkWorkspaces = (
 type PostProcessor = {
   onParent: (p: string) => string | null; // null to discard
   onChild: (p: string) => string | null; // null to discard
+};
+
+// make all paths relative
+// hoist all node modules
+// map workspaces, so that e.g. node_modules/x -> packages/x
+// cleanup node module imports (e.g. lodash/dist/x -> lodash). We might wanna allow this later
+// try remap of workspace dependencies, when resolved to dist instead of src file
+// mapToTreeNodes and label tree
+
+const HoistNodeModuleProcessor = (): PostProcessor => {
+  const identifier = "node_modules/";
+  const hoist = (x: string) => {
+    const i = x.indexOf(identifier);
+    if (i === -1) {
+      return x;
+    }
+    return x.slice(i + identifier.length);
+  };
+  return {
+    onParent: hoist,
+    onChild: hoist,
+  };
+};
+
+const LinkWorkspaceProcessor = (
+  rootDir: string,
+  wsPkgInfos: PackageInfo[]
+): PostProcessor => {
+  const wsByModName: { [key: string]: string } = {};
+  wsPkgInfos.forEach((p) => {
+    const modName = path.join("node_modules", p.pkg.name);
+    const entry = path.relative(rootDir, p.location);
+  });
+  const modNames = Object.keys(wsByModName);
+
+  return {
+    onParent: (k) => k,
+    onChild: (v) => {
+      if (v.startsWith("node_modules")) {
+        for (const modName of modNames) {
+          if (v.startsWith(modName)) {
+            const entry = wsByModName[modName];
+            return v.replace(modName, entry);
+          }
+        }
+      }
+      return v;
+    },
+  };
 };
 
 const postprocess = (tree: FlatTree, processors: PostProcessor[]) => {
