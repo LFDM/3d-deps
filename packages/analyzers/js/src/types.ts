@@ -1,3 +1,5 @@
+import { CompilerOptions } from "typescript";
+
 export type Entries = {
   main: string | null;
   bin: string[];
@@ -16,6 +18,7 @@ export type ConfigTransformer = (args: {
 export type PackageJson = object & {
   main?: string;
   bin?: string | { [key: string]: string };
+  typings?: string;
   workspaces?: string[];
 };
 
@@ -34,3 +37,16 @@ export type Workspaces = {
 };
 
 export type NodeModulesResolution = "shallow" | "deep";
+
+export type PackageInfo = {
+  pkg: PackageJson;
+  location: string;
+
+  mappedEntries: Entries;
+
+  configs: {
+    ts?: {
+      compilerOptions: CompilerOptions;
+    };
+  };
+};
