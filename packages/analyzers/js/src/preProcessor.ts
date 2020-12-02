@@ -153,7 +153,7 @@ export const preProcess = (processors: PreProcessor[], tree: FlatTree) => {
             }, v));
         })
       );
-      result[nextK] = uniq(nextVs);
+      result[nextK] = uniq([...nextVs, ...result[nextK]]); // merge in case a manipulated key is already present
     }
   });
   return result;
