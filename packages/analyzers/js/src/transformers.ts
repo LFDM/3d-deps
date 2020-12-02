@@ -1,4 +1,18 @@
-import { ConfigTransformer, Entries, PackageJson } from "./types";
+import * as fs from "fs";
+import * as path from "path";
+import { promisify } from "util";
+import { getCompilerOptions } from "./ts";
+import { Config, ConfigTransformer, Entries, PackageJson } from "./types";
+
+const access = promisify(fs.access);
+const canRead = async (p: string) => {
+  try {
+    await access(p, fs.constants.R_OK);
+    return true;
+  } catch {
+    return false;
+  }
+};
 
 const getEntries = (pkg: PackageJson): Entries => {
   const entries: Entries = { main: null, bin: [] };
@@ -15,9 +29,16 @@ const getEntries = (pkg: PackageJson): Entries => {
   return entries;
 };
 const DEFAULT_TRANSFORMER = (): ConfigTransformer => {
-  return async ({ packageJson }) => {
+  return async ({ dir, packageJson }) => {
     const entries = getEntries(packageJson);
-    return { entries };
+    const configs: Config["configs"] = {};
+    const defaultTsConfigPath = path.join(dir, "tsconfig.json");
+    if (await canRead(defaultTsConfigPath)) {
+      configs.ts = {
+        compilerOptions: getCompilerOptions(defaultTsConfigPath),
+      };
+    }
+    return { entries, configs };
   };
 };
 
@@ -37,6 +58,6 @@ export const TRANSFORMERS: {
         entries.bin.push(nextE);
       }
     }
-    return { entries };
+    return { ...cfg, entries };
   },
 };
