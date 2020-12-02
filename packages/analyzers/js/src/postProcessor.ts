@@ -15,17 +15,24 @@ export interface PostProcessor {
 export const PostProcessorLabeller = (
   workspaces: PackageInfo[]
 ): PostProcessor => {
+  // sort workspaces by longest to shorted location, so that we can return early
+  // and avoid double labelling
+  const sortedWorkspaces = [...workspaces].sort(
+    (a, b) => b.location.rel.length - a.location.rel.length
+  );
   return {
     onNode: (n) => {
       if (n.path.startsWith("node_modules")) {
         n.labels.push("node_module");
       }
-      for (const ws of workspaces) {
+      for (const ws of sortedWorkspaces) {
         if (n.path.startsWith(ws.location.rel)) {
           n.labels.push(`workspace:${ws.pkg.name}`);
-        }
-        if (n.path === ws.mappedEntries.main.rel) {
-          n.labels.push("workspace_entry");
+
+          if (n.path === ws.mappedEntries.main.rel) {
+            n.labels.push("workspace_entry");
+          }
+          break;
         }
       }
       return n;
