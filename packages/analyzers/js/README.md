@@ -16,3 +16,25 @@
 - allow multiple exclusion regexp
 
 - allow custom config mode, defining your own entries (similar to how it's working now)
+
+#### TODOS
+
+- Rename label to name, so that we can have a labels property
+- Add a LabellerPostProcessor
+
+  - auto-labels node modules
+  - entry points
+  - each individual workspace
+
+- The UI shall allow to colorize based on these labels through
+  config options
+
+- Expose metadata about the trees creation
+
+  - which analyzer was used
+  - which version
+  - maybe it's config options
+
+- Expose debug information
+  - nodes that couldn't be resolved
+  - entry points that couldn't be found
