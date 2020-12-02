@@ -53,7 +53,7 @@ const parseEntry = (
   const nonExistent: string[] = [];
   const depTreeOptions: FixedDependencyTreeOptions = {
     filename: entry,
-    directory: pkgInfo.location,
+    directory: pkgInfo.location.abs,
     visited: caches.visited,
     filter: (dependency: string, parent: string) => {
       if (options.resolution === "shallow") {
@@ -88,8 +88,8 @@ export const getDependencies = async (
   }
 ) => {
   const allEntryFiles: string[] = compact([
-    pkgInfo.mappedEntries.main,
-    ...pkgInfo.mappedEntries.bin,
+    pkgInfo.mappedEntries.main.abs,
+    ...pkgInfo.mappedEntries.bin.map((b) => b.abs),
   ]);
 
   const tree = mergeTrees(
