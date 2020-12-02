@@ -50,21 +50,18 @@ const mapTreeToNodes = (
   const nodes: DependencyNode[] = [];
   const wsEntries = new Set(workspaceEntries);
   Object.entries(tree).forEach(([k, vs]) => {
-    const groups: string[] = [];
-    if (wsEntries.has(k)) {
-      groups.push("workspace_entries");
-    }
-    if (k.includes("node_modules")) {
-      groups.push("node_modules");
-    }
     const node: DependencyNode = {
       id: k,
       path: k,
       name: k,
+      labels: [],
       dependsOn: vs,
     };
-    if (groups.length) {
-      node.labels = groups;
+    if (wsEntries.has(k)) {
+      node.labels.push("workspace_entries");
+    }
+    if (k.includes("node_modules")) {
+      node.labels.push("node_modules");
     }
     nodes.push(node);
   });
