@@ -63,7 +63,7 @@ export const CurrentSelection = () => {
   return (
     <Container>
       <Title excluded={d.exclude}>
-        <div>{d.exclude ? <s>{d.label}</s> : d.label}</div>
+        <div>{d.exclude ? <s>{d.name}</s> : d.name}</div>
         <NodeStats d={d} />
       </Title>
       {showDetails && <Details d={d} />}

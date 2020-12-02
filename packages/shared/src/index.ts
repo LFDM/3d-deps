@@ -1,7 +1,7 @@
 export type DependencyNode = {
   id: string;
   path: string;
-  label?: string;
+  name?: string;
   groups?: string[];
   dependsOn: string[];
 };

@@ -29,7 +29,7 @@ const Item = React.forwardRef<
         !t.exclude && onClick();
       }}
     >
-      {t.exclude ? <s>{t.label}</s> : <span>{t.label}</span>}
+      {t.exclude ? <s>{t.name}</s> : <span>{t.name}</span>}
       <NodeStats d={t} />
     </Button>
   );

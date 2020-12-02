@@ -60,7 +60,7 @@ const mapTreeToNodes = (
     const node: DependencyNode = {
       id: k,
       path: k,
-      label: k,
+      name: k,
       dependsOn: vs,
     };
     if (groups.length) {

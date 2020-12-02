@@ -75,7 +75,7 @@ const Item = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
   if (variant === "plain") {
-    return <PlainItem>{n.label}</PlainItem>;
+    return <PlainItem>{n.name}</PlainItem>;
   }
   const l = <ItemLabel dangerouslySetInnerHTML={{ __html: label }} />;
   return (

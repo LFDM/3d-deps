@@ -20,7 +20,7 @@ export type GraphData = {
 
 export type TreeNode = {
   id: string;
-  label: string;
+  name: string;
   path: string;
   group?: string; // probably don't need this
   color?: string; // probably don't need this

@@ -30,7 +30,7 @@ export const depsToGraphData = (
       const exclude = shouldExcludeByPath(d.path, opts || {});
       const t: TreeNode = {
         id: d.id,
-        label: d.label || d.id,
+        name: d.name || d.id,
         path: d.path,
         // initialize empty, so that we can collect the object
         // before we start recursing, preventing issues with circular dependencies

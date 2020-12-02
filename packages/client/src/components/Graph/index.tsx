@@ -111,7 +111,7 @@ const useData = (g: GraphData): Data => {
       }
       const node: IGraphNode = {
         id: t.id,
-        label: t.label,
+        label: t.name,
         path: t.path,
       };
       nodes.push(node);

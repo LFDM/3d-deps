@@ -60,7 +60,7 @@ export const _madgeTreeToNodes = (tree: MadgeTree): DependencyNode[] => {
     nodes.push({
       id: k,
       path: k,
-      label: k,
+      name: k,
       dependsOn: vs.map((v) => {
         const nodeModule = _toNodeModule(v);
         if (nodeModule && !nodeModules.has(nodeModule)) {
@@ -68,7 +68,7 @@ export const _madgeTreeToNodes = (tree: MadgeTree): DependencyNode[] => {
           nodes.push({
             id: nodeModule,
             path: nodeModule,
-            label: nodeModule,
+            name: nodeModule,
             dependsOn: [],
           });
           return nodeModule;
