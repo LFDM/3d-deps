@@ -7,3 +7,7 @@ export const compact = <T>(list: (T | undefined | null)[]): T[] => {
   }
   return result;
 };
+
+export const uniq = <T>(list: T[]): T[] => {
+  return [...new Set(list)];
+};
