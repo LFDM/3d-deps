@@ -29,7 +29,10 @@ export const PostProcessorLabeller = (
         if (n.path.startsWith(ws.location.rel)) {
           n.labels.push(`workspace:${ws.pkg.name}`);
 
-          if (n.path === ws.mappedEntries.main.rel) {
+          if (
+            n.path === ws.mappedEntries.main.rel ||
+            n.path === ws.mappedEntries.browser.rel
+          ) {
             n.labels.push("workspace_entry");
           }
           break;
