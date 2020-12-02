@@ -1,48 +1,53 @@
 [
   {
-    "id": "packages/analyzers/base/src/index.ts",
-    "path": "packages/analyzers/base/src/index.ts",
-    "label": "packages/analyzers/base/src/index.ts",
-    "dependsOn": [],
-    "groups": [
-      "workspace_entries"
-    ]
-  },
-  {
     "id": "packages/analyzers/js/src/index.ts",
     "path": "packages/analyzers/js/src/index.ts",
-    "label": "packages/analyzers/js/src/index.ts",
+    "name": "packages/analyzers/js/src/index.ts",
+    "labels": [
+      "workspace_entries"
+    ],
     "dependsOn": [
-      "packages/analyzers/base/dist/index.d.ts",
+      "packages/shared/dist/index.d.ts",
       "packages/analyzers/js/src/postprocessor.ts",
       "packages/analyzers/js/src/transformers.ts",
       "packages/analyzers/js/src/tree.ts",
       "packages/analyzers/js/src/types.ts",
       "packages/analyzers/js/src/util.ts",
       "packages/analyzers/js/src/yarn.ts"
-    ],
-    "groups": [
-      "workspace_entries"
     ]
   },
   {
-    "id": "packages/analyzers/base/dist/index.d.ts",
-    "path": "packages/analyzers/base/dist/index.d.ts",
-    "label": "packages/analyzers/base/dist/index.d.ts",
+    "id": "packages/shared/dist/index.d.ts",
+    "path": "packages/shared/dist/index.d.ts",
+    "name": "packages/shared/dist/index.d.ts",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/analyzers/js/src/postprocessor.ts",
     "path": "packages/analyzers/js/src/postprocessor.ts",
-    "label": "packages/analyzers/js/src/postprocessor.ts",
+    "name": "packages/analyzers/js/src/postprocessor.ts",
+    "labels": [],
     "dependsOn": [
-      "packages/analyzers/js/src/types.ts"
+      "node_modules/debug",
+      "packages/analyzers/js/src/types.ts",
+      "packages/analyzers/js/src/util.ts"
     ]
+  },
+  {
+    "id": "node_modules/debug",
+    "path": "node_modules/debug",
+    "name": "node_modules/debug",
+    "labels": [
+      "node_modules"
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/analyzers/js/src/types.ts",
     "path": "packages/analyzers/js/src/types.ts",
-    "label": "packages/analyzers/js/src/types.ts",
+    "name": "packages/analyzers/js/src/types.ts",
+    "labels": [],
     "dependsOn": [
       "node_modules/typescript"
     ]
@@ -50,16 +55,24 @@
   {
     "id": "node_modules/typescript",
     "path": "node_modules/typescript",
-    "label": "node_modules/typescript",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/typescript",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
+  },
+  {
+    "id": "packages/analyzers/js/src/util.ts",
+    "path": "packages/analyzers/js/src/util.ts",
+    "name": "packages/analyzers/js/src/util.ts",
+    "labels": [],
+    "dependsOn": []
   },
   {
     "id": "packages/analyzers/js/src/transformers.ts",
     "path": "packages/analyzers/js/src/transformers.ts",
-    "label": "packages/analyzers/js/src/transformers.ts",
+    "name": "packages/analyzers/js/src/transformers.ts",
+    "labels": [],
     "dependsOn": [
       "packages/analyzers/js/src/ts.ts",
       "packages/analyzers/js/src/types.ts"
@@ -68,7 +81,8 @@
   {
     "id": "packages/analyzers/js/src/ts.ts",
     "path": "packages/analyzers/js/src/ts.ts",
-    "label": "packages/analyzers/js/src/ts.ts",
+    "name": "packages/analyzers/js/src/ts.ts",
+    "labels": [],
     "dependsOn": [
       "node_modules/typescript"
     ]
@@ -76,7 +90,8 @@
   {
     "id": "packages/analyzers/js/src/tree.ts",
     "path": "packages/analyzers/js/src/tree.ts",
-    "label": "packages/analyzers/js/src/tree.ts",
+    "name": "packages/analyzers/js/src/tree.ts",
+    "labels": [],
     "dependsOn": [
       "node_modules/debug",
       "node_modules/dependency-tree",
@@ -86,34 +101,21 @@
     ]
   },
   {
-    "id": "node_modules/debug",
-    "path": "node_modules/debug",
-    "label": "node_modules/debug",
-    "dependsOn": [],
-    "groups": [
-      "node_modules"
-    ]
-  },
-  {
     "id": "node_modules/dependency-tree",
     "path": "node_modules/dependency-tree",
-    "label": "node_modules/dependency-tree",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/dependency-tree",
+    "labels": [
       "node_modules"
-    ]
-  },
-  {
-    "id": "packages/analyzers/js/src/util.ts",
-    "path": "packages/analyzers/js/src/util.ts",
-    "label": "packages/analyzers/js/src/util.ts",
+    ],
     "dependsOn": []
   },
   {
     "id": "packages/analyzers/js/src/yarn.ts",
     "path": "packages/analyzers/js/src/yarn.ts",
-    "label": "packages/analyzers/js/src/yarn.ts",
+    "name": "packages/analyzers/js/src/yarn.ts",
+    "labels": [],
     "dependsOn": [
+      "node_modules/debug",
       "node_modules/strip-ansi",
       "packages/analyzers/js/src/types.ts"
     ]
@@ -121,64 +123,67 @@
   {
     "id": "node_modules/strip-ansi",
     "path": "node_modules/strip-ansi",
-    "label": "node_modules/strip-ansi",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/strip-ansi",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/client/src/index.tsx",
     "path": "packages/client/src/index.tsx",
-    "label": "packages/client/src/index.tsx",
+    "name": "packages/client/src/index.tsx",
+    "labels": [
+      "workspace_entries"
+    ],
     "dependsOn": [
       "packages/config/dist/index.d.ts",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/react-dom",
       "packages/client/src/App.tsx",
       "packages/client/src/index.css",
       "packages/client/src/reportWebVitals.ts",
       "packages/client/src/services/dataset.tsx",
       "packages/client/src/exampleLoader.ts"
-    ],
-    "groups": [
-      "workspace_entries"
     ]
   },
   {
     "id": "packages/config/dist/index.d.ts",
     "path": "packages/config/dist/index.d.ts",
-    "label": "packages/config/dist/index.d.ts",
+    "name": "packages/config/dist/index.d.ts",
+    "labels": [],
     "dependsOn": []
   },
   {
-    "id": "packages/client/node_modules/@types/react/index.d.ts",
-    "path": "packages/client/node_modules/@types/react/index.d.ts",
-    "label": "packages/client/node_modules/@types/react/index.d.ts",
-    "dependsOn": [],
-    "groups": [
+    "id": "node_modules/react",
+    "path": "node_modules/react",
+    "name": "node_modules/react",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "node_modules/react-dom",
     "path": "node_modules/react-dom",
-    "label": "node_modules/react-dom",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/react-dom",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/client/src/App.tsx",
     "path": "packages/client/src/App.tsx",
-    "label": "packages/client/src/App.tsx",
+    "name": "packages/client/src/App.tsx",
+    "labels": [],
     "dependsOn": [
       "packages/config/dist/index.d.ts",
+      "packages/shared/dist/index.d.ts",
       "node_modules/@emotion/react",
       "node_modules/@emotion/styled",
       "node_modules/assert-never",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/react-router-dom",
       "packages/client/src/components/Graph/index.tsx",
       "packages/client/src/components/Helmet.tsx",
@@ -189,58 +194,58 @@
       "packages/client/src/services/dataset.tsx",
       "packages/client/src/services/graph.ts",
       "packages/client/src/services/uiState.tsx",
-      "packages/client/src/types/DependencyAnalyzer.ts",
       "packages/client/src/types/GraphData.ts"
     ]
   },
   {
     "id": "node_modules/@emotion/react",
     "path": "node_modules/@emotion/react",
-    "label": "node_modules/@emotion/react",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/@emotion/react",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "node_modules/@emotion/styled",
     "path": "node_modules/@emotion/styled",
-    "label": "node_modules/@emotion/styled",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/@emotion/styled",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "node_modules/assert-never",
     "path": "node_modules/assert-never",
-    "label": "node_modules/assert-never",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/assert-never",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "node_modules/react-router-dom",
     "path": "node_modules/react-router-dom",
-    "label": "node_modules/react-router-dom",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/react-router-dom",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/client/src/components/Graph/index.tsx",
     "path": "packages/client/src/components/Graph/index.tsx",
-    "label": "packages/client/src/components/Graph/index.tsx",
+    "name": "packages/client/src/components/Graph/index.tsx",
+    "labels": [],
     "dependsOn": [
       "packages/config/dist/index.d.ts",
       "node_modules/lodash",
       "node_modules/nanoid",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/react-force-graph",
-      "packages/client/node_modules/three/src/Three.d.ts",
-      "packages/client/node_modules/three-spritetext/dist/three-spritetext.d.ts",
+      "node_modules/three",
+      "node_modules/three-spritetext",
       "node_modules/tinycolor2",
       "packages/client/src/hooks/useWindowSize.ts",
       "packages/client/src/services/config.tsx",
@@ -251,80 +256,83 @@
   {
     "id": "node_modules/lodash",
     "path": "node_modules/lodash",
-    "label": "node_modules/lodash",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/lodash",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "node_modules/nanoid",
     "path": "node_modules/nanoid",
-    "label": "node_modules/nanoid",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/nanoid",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "node_modules/react-force-graph",
     "path": "node_modules/react-force-graph",
-    "label": "node_modules/react-force-graph",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/react-force-graph",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
-    "id": "packages/client/node_modules/three/src/Three.d.ts",
-    "path": "packages/client/node_modules/three/src/Three.d.ts",
-    "label": "packages/client/node_modules/three/src/Three.d.ts",
-    "dependsOn": [],
-    "groups": [
+    "id": "node_modules/three",
+    "path": "node_modules/three",
+    "name": "node_modules/three",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
-    "id": "packages/client/node_modules/three-spritetext/dist/three-spritetext.d.ts",
-    "path": "packages/client/node_modules/three-spritetext/dist/three-spritetext.d.ts",
-    "label": "packages/client/node_modules/three-spritetext/dist/three-spritetext.d.ts",
-    "dependsOn": [],
-    "groups": [
+    "id": "node_modules/three-spritetext",
+    "path": "node_modules/three-spritetext",
+    "name": "node_modules/three-spritetext",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "node_modules/tinycolor2",
     "path": "node_modules/tinycolor2",
-    "label": "node_modules/tinycolor2",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/tinycolor2",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/client/src/hooks/useWindowSize.ts",
     "path": "packages/client/src/hooks/useWindowSize.ts",
-    "label": "packages/client/src/hooks/useWindowSize.ts",
+    "name": "packages/client/src/hooks/useWindowSize.ts",
+    "labels": [],
     "dependsOn": [
-      "packages/client/node_modules/@types/react/index.d.ts"
+      "node_modules/react"
     ]
   },
   {
     "id": "packages/client/src/services/config.tsx",
     "path": "packages/client/src/services/config.tsx",
-    "label": "packages/client/src/services/config.tsx",
+    "name": "packages/client/src/services/config.tsx",
+    "labels": [],
     "dependsOn": [
       "packages/config/dist/index.d.ts",
-      "packages/client/node_modules/@types/react/index.d.ts"
+      "node_modules/react"
     ]
   },
   {
     "id": "packages/client/src/services/uiState.tsx",
     "path": "packages/client/src/services/uiState.tsx",
-    "label": "packages/client/src/services/uiState.tsx",
+    "name": "packages/client/src/services/uiState.tsx",
+    "labels": [],
     "dependsOn": [
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "packages/client/src/hooks/useQueryParam.ts",
       "packages/client/src/types/GraphData.ts",
       "packages/client/src/services/undoHistory.ts"
@@ -333,28 +341,32 @@
   {
     "id": "packages/client/src/hooks/useQueryParam.ts",
     "path": "packages/client/src/hooks/useQueryParam.ts",
-    "label": "packages/client/src/hooks/useQueryParam.ts",
+    "name": "packages/client/src/hooks/useQueryParam.ts",
+    "labels": [],
     "dependsOn": [
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/react-router-dom"
     ]
   },
   {
     "id": "packages/client/src/types/GraphData.ts",
     "path": "packages/client/src/types/GraphData.ts",
-    "label": "packages/client/src/types/GraphData.ts",
+    "name": "packages/client/src/types/GraphData.ts",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/services/undoHistory.ts",
     "path": "packages/client/src/services/undoHistory.ts",
-    "label": "packages/client/src/services/undoHistory.ts",
+    "name": "packages/client/src/services/undoHistory.ts",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/components/Helmet.tsx",
     "path": "packages/client/src/components/Helmet.tsx",
-    "label": "packages/client/src/components/Helmet.tsx",
+    "name": "packages/client/src/components/Helmet.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/react-helmet"
     ]
@@ -362,19 +374,20 @@
   {
     "id": "node_modules/react-helmet",
     "path": "node_modules/react-helmet",
-    "label": "node_modules/react-helmet",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/react-helmet",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/client/src/components/Hud/index.tsx",
     "path": "packages/client/src/components/Hud/index.tsx",
-    "label": "packages/client/src/components/Hud/index.tsx",
+    "name": "packages/client/src/components/Hud/index.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "packages/client/src/services/config.tsx",
       "packages/client/src/services/uiState.tsx",
       "packages/client/src/components/Button.tsx",
@@ -393,20 +406,22 @@
   {
     "id": "packages/client/src/components/Button.tsx",
     "path": "packages/client/src/components/Button.tsx",
-    "label": "packages/client/src/components/Button.tsx",
+    "name": "packages/client/src/components/Button.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/tinycolor2"
     ]
   },
   {
     "id": "packages/client/src/components/Hotkeys.tsx",
     "path": "packages/client/src/components/Hotkeys.tsx",
-    "label": "packages/client/src/components/Hotkeys.tsx",
+    "name": "packages/client/src/components/Hotkeys.tsx",
+    "labels": [],
     "dependsOn": [
       "packages/config/dist/index.d.ts",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/react-hotkeys",
       "packages/client/src/services/config.tsx",
       "packages/client/src/services/uiState.tsx"
@@ -415,22 +430,23 @@
   {
     "id": "node_modules/react-hotkeys",
     "path": "node_modules/react-hotkeys",
-    "label": "node_modules/react-hotkeys",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/react-hotkeys",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/client/src/components/Hud/ConfigPanel.tsx",
     "path": "packages/client/src/components/Hud/ConfigPanel.tsx",
-    "label": "packages/client/src/components/Hud/ConfigPanel.tsx",
+    "name": "packages/client/src/components/Hud/ConfigPanel.tsx",
+    "labels": [],
     "dependsOn": [
       "packages/config/dist/index.d.ts",
       "node_modules/@emotion/react",
       "node_modules/@emotion/styled",
       "node_modules/copy-to-clipboard",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/react-feather",
       "packages/client/src/services/config.tsx",
       "packages/client/src/components/Button.tsx",
@@ -443,28 +459,29 @@
   {
     "id": "node_modules/copy-to-clipboard",
     "path": "node_modules/copy-to-clipboard",
-    "label": "node_modules/copy-to-clipboard",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/copy-to-clipboard",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "node_modules/react-feather",
     "path": "node_modules/react-feather",
-    "label": "node_modules/react-feather",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/react-feather",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/client/src/components/ColorPicker.tsx",
     "path": "packages/client/src/components/ColorPicker.tsx",
-    "label": "packages/client/src/components/ColorPicker.tsx",
+    "name": "packages/client/src/components/ColorPicker.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/react-color",
       "node_modules/react-feather",
       "packages/client/src/hooks/useOnClickOutside.ts",
@@ -476,24 +493,26 @@
   {
     "id": "node_modules/react-color",
     "path": "node_modules/react-color",
-    "label": "node_modules/react-color",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/react-color",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/client/src/hooks/useOnClickOutside.ts",
     "path": "packages/client/src/hooks/useOnClickOutside.ts",
-    "label": "packages/client/src/hooks/useOnClickOutside.ts",
+    "name": "packages/client/src/hooks/useOnClickOutside.ts",
+    "labels": [],
     "dependsOn": [
-      "packages/client/node_modules/@types/react/index.d.ts"
+      "node_modules/react"
     ]
   },
   {
     "id": "packages/client/src/components/ConfigRow.tsx",
     "path": "packages/client/src/components/ConfigRow.tsx",
-    "label": "packages/client/src/components/ConfigRow.tsx",
+    "name": "packages/client/src/components/ConfigRow.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled"
     ]
@@ -501,19 +520,21 @@
   {
     "id": "packages/client/src/components/Hud/OverlayContext.tsx",
     "path": "packages/client/src/components/Hud/OverlayContext.tsx",
-    "label": "packages/client/src/components/Hud/OverlayContext.tsx",
+    "name": "packages/client/src/components/Hud/OverlayContext.tsx",
+    "labels": [],
     "dependsOn": [
-      "packages/client/node_modules/@types/react/index.d.ts"
+      "node_modules/react"
     ]
   },
   {
     "id": "packages/client/src/components/Dialog.tsx",
     "path": "packages/client/src/components/Dialog.tsx",
-    "label": "packages/client/src/components/Dialog.tsx",
+    "name": "packages/client/src/components/Dialog.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/react",
       "node_modules/@emotion/styled",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/react-modal",
       "node_modules/tinycolor2",
       "packages/client/src/CssBaseline.tsx"
@@ -522,16 +543,17 @@
   {
     "id": "node_modules/react-modal",
     "path": "node_modules/react-modal",
-    "label": "node_modules/react-modal",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/react-modal",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/client/src/CssBaseline.tsx",
     "path": "packages/client/src/CssBaseline.tsx",
-    "label": "packages/client/src/CssBaseline.tsx",
+    "name": "packages/client/src/CssBaseline.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled"
     ]
@@ -539,19 +561,21 @@
   {
     "id": "packages/client/src/components/Input.tsx",
     "path": "packages/client/src/components/Input.tsx",
-    "label": "packages/client/src/components/Input.tsx",
+    "name": "packages/client/src/components/Input.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled",
-      "packages/client/node_modules/@types/react/index.d.ts"
+      "node_modules/react"
     ]
   },
   {
     "id": "packages/client/src/components/Hud/CurrentSelection.tsx",
     "path": "packages/client/src/components/Hud/CurrentSelection.tsx",
-    "label": "packages/client/src/components/Hud/CurrentSelection.tsx",
+    "name": "packages/client/src/components/Hud/CurrentSelection.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "packages/client/src/services/uiState.tsx",
       "packages/client/src/types/GraphData.ts",
       "packages/client/src/components/NodeStats.tsx",
@@ -561,7 +585,8 @@
   {
     "id": "packages/client/src/components/NodeStats.tsx",
     "path": "packages/client/src/components/NodeStats.tsx",
-    "label": "packages/client/src/components/NodeStats.tsx",
+    "name": "packages/client/src/components/NodeStats.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/react",
       "node_modules/@emotion/styled",
@@ -572,7 +597,8 @@
   {
     "id": "packages/client/src/components/Hud/HudSegment.tsx",
     "path": "packages/client/src/components/Hud/HudSegment.tsx",
-    "label": "packages/client/src/components/Hud/HudSegment.tsx",
+    "name": "packages/client/src/components/Hud/HudSegment.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled"
     ]
@@ -580,10 +606,11 @@
   {
     "id": "packages/client/src/components/Hud/DatasetExplorer.tsx",
     "path": "packages/client/src/components/Hud/DatasetExplorer.tsx",
-    "label": "packages/client/src/components/Hud/DatasetExplorer.tsx",
+    "name": "packages/client/src/components/Hud/DatasetExplorer.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "packages/client/src/services/dataset.tsx",
       "packages/client/src/components/Select.tsx",
       "packages/client/src/components/Hud/HudSegment.tsx"
@@ -592,33 +619,30 @@
   {
     "id": "packages/client/src/services/dataset.tsx",
     "path": "packages/client/src/services/dataset.tsx",
-    "label": "packages/client/src/services/dataset.tsx",
+    "name": "packages/client/src/services/dataset.tsx",
+    "labels": [],
     "dependsOn": [
       "packages/config/dist/index.d.ts",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "packages/shared/dist/index.d.ts",
+      "node_modules/react",
       "packages/client/src/hooks/usePromise.ts",
-      "packages/client/src/hooks/useQueryParam.ts",
-      "packages/client/src/types/DependencyAnalyzer.ts"
+      "packages/client/src/hooks/useQueryParam.ts"
     ]
   },
   {
     "id": "packages/client/src/hooks/usePromise.ts",
     "path": "packages/client/src/hooks/usePromise.ts",
-    "label": "packages/client/src/hooks/usePromise.ts",
+    "name": "packages/client/src/hooks/usePromise.ts",
+    "labels": [],
     "dependsOn": [
-      "packages/client/node_modules/@types/react/index.d.ts"
+      "node_modules/react"
     ]
-  },
-  {
-    "id": "packages/client/src/types/DependencyAnalyzer.ts",
-    "path": "packages/client/src/types/DependencyAnalyzer.ts",
-    "label": "packages/client/src/types/DependencyAnalyzer.ts",
-    "dependsOn": []
   },
   {
     "id": "packages/client/src/components/Select.tsx",
     "path": "packages/client/src/components/Select.tsx",
-    "label": "packages/client/src/components/Select.tsx",
+    "name": "packages/client/src/components/Select.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled"
     ]
@@ -626,10 +650,11 @@
   {
     "id": "packages/client/src/components/Hud/HistoryPanel.tsx",
     "path": "packages/client/src/components/Hud/HistoryPanel.tsx",
-    "label": "packages/client/src/components/Hud/HistoryPanel.tsx",
+    "name": "packages/client/src/components/Hud/HistoryPanel.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "packages/client/src/services/scroll.ts",
       "packages/client/src/services/uiState.tsx",
       "packages/client/src/types/GraphData.ts",
@@ -640,16 +665,18 @@
   {
     "id": "packages/client/src/services/scroll.ts",
     "path": "packages/client/src/services/scroll.ts",
-    "label": "packages/client/src/services/scroll.ts",
+    "name": "packages/client/src/services/scroll.ts",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/components/Hud/HotkeyInfoModal.tsx",
     "path": "packages/client/src/components/Hud/HotkeyInfoModal.tsx",
-    "label": "packages/client/src/components/Hud/HotkeyInfoModal.tsx",
+    "name": "packages/client/src/components/Hud/HotkeyInfoModal.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/react-hotkeys",
       "packages/client/src/services/uiState.tsx",
       "packages/client/src/components/Dialog.tsx"
@@ -658,11 +685,12 @@
   {
     "id": "packages/client/src/components/Hud/NodesPanel.tsx",
     "path": "packages/client/src/components/Hud/NodesPanel.tsx",
-    "label": "packages/client/src/components/Hud/NodesPanel.tsx",
+    "name": "packages/client/src/components/Hud/NodesPanel.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled",
       "node_modules/lodash",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "packages/client/src/types/GraphData.ts",
       "packages/client/src/components/FileTree/index.tsx"
     ]
@@ -670,10 +698,11 @@
   {
     "id": "packages/client/src/components/FileTree/index.tsx",
     "path": "packages/client/src/components/FileTree/index.tsx",
-    "label": "packages/client/src/components/FileTree/index.tsx",
+    "name": "packages/client/src/components/FileTree/index.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/tinycolor2",
       "packages/client/src/hooks/useScrollIntoView.ts",
       "packages/client/src/types/GraphData.ts",
@@ -685,27 +714,30 @@
   {
     "id": "packages/client/src/hooks/useScrollIntoView.ts",
     "path": "packages/client/src/hooks/useScrollIntoView.ts",
-    "label": "packages/client/src/hooks/useScrollIntoView.ts",
+    "name": "packages/client/src/hooks/useScrollIntoView.ts",
+    "labels": [],
     "dependsOn": [
-      "packages/client/node_modules/@types/react/index.d.ts"
+      "node_modules/react"
     ]
   },
   {
     "id": "packages/client/src/components/FileTree/icons.tsx",
     "path": "packages/client/src/components/FileTree/icons.tsx",
-    "label": "packages/client/src/components/FileTree/icons.tsx",
+    "name": "packages/client/src/components/FileTree/icons.tsx",
+    "labels": [],
     "dependsOn": [
-      "packages/client/node_modules/@types/react/index.d.ts"
+      "node_modules/react"
     ]
   },
   {
     "id": "packages/client/src/components/Hud/SearchModal.tsx",
     "path": "packages/client/src/components/Hud/SearchModal.tsx",
-    "label": "packages/client/src/components/Hud/SearchModal.tsx",
+    "name": "packages/client/src/components/Hud/SearchModal.tsx",
+    "labels": [],
     "dependsOn": [
       "node_modules/@emotion/styled",
       "node_modules/fuzzysort",
-      "packages/client/node_modules/@types/react/index.d.ts",
+      "node_modules/react",
       "node_modules/react-feather",
       "node_modules/tinycolor2",
       "packages/client/src/services/config.tsx",
@@ -721,32 +753,35 @@
   {
     "id": "node_modules/fuzzysort",
     "path": "node_modules/fuzzysort",
-    "label": "node_modules/fuzzysort",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/fuzzysort",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/client/src/services/graph.ts",
     "path": "packages/client/src/services/graph.ts",
-    "label": "packages/client/src/services/graph.ts",
+    "name": "packages/client/src/services/graph.ts",
+    "labels": [],
     "dependsOn": [
+      "packages/shared/dist/index.d.ts",
       "node_modules/lodash",
-      "packages/client/src/types/DependencyAnalyzer.ts",
       "packages/client/src/types/GraphData.ts"
     ]
   },
   {
     "id": "packages/client/src/index.css",
     "path": "packages/client/src/index.css",
-    "label": "packages/client/src/index.css",
+    "name": "packages/client/src/index.css",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/reportWebVitals.ts",
     "path": "packages/client/src/reportWebVitals.ts",
-    "label": "packages/client/src/reportWebVitals.ts",
+    "name": "packages/client/src/reportWebVitals.ts",
+    "labels": [],
     "dependsOn": [
       "node_modules/web-vitals"
     ]
@@ -754,30 +789,32 @@
   {
     "id": "node_modules/web-vitals",
     "path": "node_modules/web-vitals",
-    "label": "node_modules/web-vitals",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/web-vitals",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/client/src/exampleLoader.ts",
     "path": "packages/client/src/exampleLoader.ts",
-    "label": "packages/client/src/exampleLoader.ts",
+    "name": "packages/client/src/exampleLoader.ts",
+    "labels": [],
     "dependsOn": [
       "packages/config/dist/index.d.ts",
       "packages/client/src/analyzers/jsonFile.ts",
       "packages/client/src/services/dataset.tsx",
       "packages/client/src/analyzers/dependencies-self-workspace.json",
-      "packages/client/src/analyzers/dependencies-react-workspace.json"
+      "packages/client/src/analyzers/dependencies-react-workspace2.json"
     ]
   },
   {
     "id": "packages/client/src/analyzers/jsonFile.ts",
     "path": "packages/client/src/analyzers/jsonFile.ts",
-    "label": "packages/client/src/analyzers/jsonFile.ts",
+    "name": "packages/client/src/analyzers/jsonFile.ts",
+    "labels": [],
     "dependsOn": [
-      "packages/client/src/types/DependencyAnalyzer.ts",
+      "packages/shared/dist/index.d.ts",
       "packages/client/src/analyzers/dependencies-affilimate-cf.json",
       "packages/client/src/analyzers/dependencies-affilimate-cli.json",
       "packages/client/src/analyzers/dependencies-affilimate-app.json",
@@ -793,100 +830,113 @@
   {
     "id": "packages/client/src/analyzers/dependencies-affilimate-cf.json",
     "path": "packages/client/src/analyzers/dependencies-affilimate-cf.json",
-    "label": "packages/client/src/analyzers/dependencies-affilimate-cf.json",
+    "name": "packages/client/src/analyzers/dependencies-affilimate-cf.json",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/analyzers/dependencies-affilimate-cli.json",
     "path": "packages/client/src/analyzers/dependencies-affilimate-cli.json",
-    "label": "packages/client/src/analyzers/dependencies-affilimate-cli.json",
+    "name": "packages/client/src/analyzers/dependencies-affilimate-cli.json",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/analyzers/dependencies-affilimate-app.json",
     "path": "packages/client/src/analyzers/dependencies-affilimate-app.json",
-    "label": "packages/client/src/analyzers/dependencies-affilimate-app.json",
+    "name": "packages/client/src/analyzers/dependencies-affilimate-app.json",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/analyzers/dependencies-syndexioi-app.json",
     "path": "packages/client/src/analyzers/dependencies-syndexioi-app.json",
-    "label": "packages/client/src/analyzers/dependencies-syndexioi-app.json",
+    "name": "packages/client/src/analyzers/dependencies-syndexioi-app.json",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/analyzers/dependencies-syndexioi-cf.json",
     "path": "packages/client/src/analyzers/dependencies-syndexioi-cf.json",
-    "label": "packages/client/src/analyzers/dependencies-syndexioi-cf.json",
+    "name": "packages/client/src/analyzers/dependencies-syndexioi-cf.json",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/analyzers/dependencies-mui.json",
     "path": "packages/client/src/analyzers/dependencies-mui.json",
-    "label": "packages/client/src/analyzers/dependencies-mui.json",
+    "name": "packages/client/src/analyzers/dependencies-mui.json",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/analyzers/dependencies-webpack.json",
     "path": "packages/client/src/analyzers/dependencies-webpack.json",
-    "label": "packages/client/src/analyzers/dependencies-webpack.json",
+    "name": "packages/client/src/analyzers/dependencies-webpack.json",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/analyzers/dependencies-axios.json",
     "path": "packages/client/src/analyzers/dependencies-axios.json",
-    "label": "packages/client/src/analyzers/dependencies-axios.json",
+    "name": "packages/client/src/analyzers/dependencies-axios.json",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/analyzers/dependencies-express.json",
     "path": "packages/client/src/analyzers/dependencies-express.json",
-    "label": "packages/client/src/analyzers/dependencies-express.json",
+    "name": "packages/client/src/analyzers/dependencies-express.json",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/analyzers/dependencies-self.json",
     "path": "packages/client/src/analyzers/dependencies-self.json",
-    "label": "packages/client/src/analyzers/dependencies-self.json",
+    "name": "packages/client/src/analyzers/dependencies-self.json",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/client/src/analyzers/dependencies-self-workspace.json",
     "path": "packages/client/src/analyzers/dependencies-self-workspace.json",
-    "label": "packages/client/src/analyzers/dependencies-self-workspace.json",
+    "name": "packages/client/src/analyzers/dependencies-self-workspace.json",
+    "labels": [],
     "dependsOn": []
   },
   {
-    "id": "packages/client/src/analyzers/dependencies-react-workspace.json",
-    "path": "packages/client/src/analyzers/dependencies-react-workspace.json",
-    "label": "packages/client/src/analyzers/dependencies-react-workspace.json",
+    "id": "packages/client/src/analyzers/dependencies-react-workspace2.json",
+    "path": "packages/client/src/analyzers/dependencies-react-workspace2.json",
+    "name": "packages/client/src/analyzers/dependencies-react-workspace2.json",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/config/src/index.ts",
     "path": "packages/config/src/index.ts",
-    "label": "packages/config/src/index.ts",
-    "dependsOn": [],
-    "groups": [
+    "name": "packages/config/src/index.ts",
+    "labels": [
       "workspace_entries"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/examples/simple/src/index.ts",
     "path": "packages/examples/simple/src/index.ts",
-    "label": "packages/examples/simple/src/index.ts",
+    "name": "packages/examples/simple/src/index.ts",
+    "labels": [
+      "workspace_entries"
+    ],
     "dependsOn": [
       "packages/examples/simple/src/a/index.ts",
       "packages/examples/simple/src/b/index.ts"
-    ],
-    "groups": [
-      "workspace_entries"
     ]
   },
   {
     "id": "packages/examples/simple/src/a/index.ts",
     "path": "packages/examples/simple/src/a/index.ts",
-    "label": "packages/examples/simple/src/a/index.ts",
+    "name": "packages/examples/simple/src/a/index.ts",
+    "labels": [],
     "dependsOn": [
       "packages/examples/simple/src/a/aa/index.ts",
       "packages/examples/simple/src/a/ab/index.ts"
@@ -895,13 +945,15 @@
   {
     "id": "packages/examples/simple/src/a/aa/index.ts",
     "path": "packages/examples/simple/src/a/aa/index.ts",
-    "label": "packages/examples/simple/src/a/aa/index.ts",
+    "name": "packages/examples/simple/src/a/aa/index.ts",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/examples/simple/src/a/ab/index.ts",
     "path": "packages/examples/simple/src/a/ab/index.ts",
-    "label": "packages/examples/simple/src/a/ab/index.ts",
+    "name": "packages/examples/simple/src/a/ab/index.ts",
+    "labels": [],
     "dependsOn": [
       "packages/examples/simple/src/a/ab/abc/index.ts"
     ]
@@ -909,84 +961,83 @@
   {
     "id": "packages/examples/simple/src/a/ab/abc/index.ts",
     "path": "packages/examples/simple/src/a/ab/abc/index.ts",
-    "label": "packages/examples/simple/src/a/ab/abc/index.ts",
+    "name": "packages/examples/simple/src/a/ab/abc/index.ts",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/examples/simple/src/b/index.ts",
     "path": "packages/examples/simple/src/b/index.ts",
-    "label": "packages/examples/simple/src/b/index.ts",
+    "name": "packages/examples/simple/src/b/index.ts",
+    "labels": [],
     "dependsOn": []
   },
   {
     "id": "packages/server/src/index.ts",
     "path": "packages/server/src/index.ts",
-    "label": "packages/server/src/index.ts",
+    "name": "packages/server/src/index.ts",
+    "labels": [
+      "workspace_entries"
+    ],
     "dependsOn": [
       "packages/config/dist/index.d.ts",
       "node_modules/express",
       "node_modules/open",
       "packages/server/src/types/RunConfig.ts"
-    ],
-    "groups": [
-      "workspace_entries"
     ]
   },
   {
     "id": "node_modules/express",
     "path": "node_modules/express",
-    "label": "node_modules/express",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/express",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "node_modules/open",
     "path": "node_modules/open",
-    "label": "node_modules/open",
-    "dependsOn": [],
-    "groups": [
+    "name": "node_modules/open",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/server/src/types/RunConfig.ts",
     "path": "packages/server/src/types/RunConfig.ts",
-    "label": "packages/server/src/types/RunConfig.ts",
+    "name": "packages/server/src/types/RunConfig.ts",
+    "labels": [],
     "dependsOn": [
       "packages/config/dist/index.d.ts",
-      "packages/server/src/types/DependencyAnalyzer.ts"
+      "packages/shared/dist/index.d.ts"
     ]
-  },
-  {
-    "id": "packages/server/src/types/DependencyAnalyzer.ts",
-    "path": "packages/server/src/types/DependencyAnalyzer.ts",
-    "label": "packages/server/src/types/DependencyAnalyzer.ts",
-    "dependsOn": []
   },
   {
     "id": "packages/server/dist/cli.js",
     "path": "packages/server/dist/cli.js",
-    "label": "packages/server/dist/cli.js",
+    "name": "packages/server/dist/cli.js",
+    "labels": [],
     "dependsOn": [
-      "packages/server/node_modules/yargs/index.cjs",
+      "node_modules/yargs",
       "packages/server/dist/index.js"
     ]
   },
   {
-    "id": "packages/server/node_modules/yargs/index.cjs",
-    "path": "packages/server/node_modules/yargs/index.cjs",
-    "label": "packages/server/node_modules/yargs/index.cjs",
-    "dependsOn": [],
-    "groups": [
+    "id": "node_modules/yargs",
+    "path": "node_modules/yargs",
+    "name": "node_modules/yargs",
+    "labels": [
       "node_modules"
-    ]
+    ],
+    "dependsOn": []
   },
   {
     "id": "packages/server/dist/index.js",
     "path": "packages/server/dist/index.js",
-    "label": "packages/server/dist/index.js",
+    "name": "packages/server/dist/index.js",
+    "labels": [],
     "dependsOn": [
       "node_modules/express",
       "node_modules/open",
@@ -996,7 +1047,17 @@
   {
     "id": "packages/server/dist/services/config.js",
     "path": "packages/server/dist/services/config.js",
-    "label": "packages/server/dist/services/config.js",
+    "name": "packages/server/dist/services/config.js",
+    "labels": [],
+    "dependsOn": []
+  },
+  {
+    "id": "packages/shared/src/index.ts",
+    "path": "packages/shared/src/index.ts",
+    "name": "packages/shared/src/index.ts",
+    "labels": [
+      "workspace_entries"
+    ],
     "dependsOn": []
   }
 ]
