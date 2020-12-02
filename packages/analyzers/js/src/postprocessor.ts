@@ -1,5 +1,7 @@
+import debug from "debug";
 import * as path from "path";
 import { FlatTree, Workspaces } from "./types";
+import { compact } from "./util";
 
 export const mapToRelativePaths = (
   rootDir: string,
@@ -65,7 +67,7 @@ export const cleanupNodeModuleNames = (tree: FlatTree) => {
   const res: FlatTree = {};
   Object.entries(tree).forEach(([k, v]) => {
     res[cleanupNodeModuleName(k) || k] = v.map(
-      (x) => cleanupNodeModuleName(x) || x
+      (x) => x // cleanupNodeModuleName(x) || x
     );
   });
   return res;
@@ -100,6 +102,7 @@ export const linkWorkspaces = (
         for (const modName of modNames) {
           if (v.startsWith(modName)) {
             const entry = wsByModName[modName];
+            debug("ajs")("replaced", modName, entry);
             return (dependencyResolverCache[v] = v.replace(modName, entry));
           }
         }
@@ -110,4 +113,40 @@ export const linkWorkspaces = (
     mappedTree[k] = nextVs;
   });
   return mappedTree;
+};
+
+type PostProcessor = {
+  onParent: (p: string) => string | null; // null to discard
+  onChild: (p: string) => string | null; // null to discard
+};
+
+const postprocess = (tree: FlatTree, processors: PostProcessor[]) => {
+  const cache: {
+    parents: { [parent: string]: string | null };
+    children: { [child: string]: string | null };
+  } = {
+    parents: {},
+    children: {},
+  };
+  const result: FlatTree = {};
+  Object.entries(tree).forEach(([k, vs]) => {
+    const nextK = (cache.parents[k] =
+      cache.parents[k] ||
+      processors.reduce<string | null>((m, s) => {
+        return m === null ? null : s.onParent(m);
+      }, k));
+    if (nextK) {
+      const nextVs = compact(
+        vs.map((v) => {
+          return (cache.children[v] =
+            cache.children[v] ||
+            processors.reduce<string | null>((m, s) => {
+              return m === null ? null : s.onChild(m);
+            }, v));
+        })
+      );
+      result[nextK] = nextVs;
+    }
+  });
+  return result;
 };
