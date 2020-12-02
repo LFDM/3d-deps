@@ -7,6 +7,11 @@ export type Entries = {
 
 export type Config = {
   entries: Entries;
+  configs: {
+    ts?: {
+      compilerOptions: CompilerOptions;
+    };
+  };
   // ... other stuff like tsConfig
 };
 
