@@ -22,8 +22,7 @@ export type TreeNode = {
   id: string;
   name: string;
   path: string;
-  group?: string; // probably don't need this
-  color?: string; // probably don't need this
+  labels: string[]; // probably don't need this
 
   dependsOn: { nodes: TreeNode[]; countWithoutExcluded: number };
   dependedBy: { nodes: TreeNode[]; countWithoutExcluded: number };

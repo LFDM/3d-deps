@@ -103,7 +103,7 @@ describe("analyzer-js", () => {
           path: "pkgs/a/src/index.js",
           name: "pkgs/a/src/index.js",
           dependsOn: ["pkgs/b/bb/src/index.js", "pkgs/a/src/a.js"],
-          groups: ["workspace_entries"],
+          labels: ["workspace_entries"],
         },
         {
           id: "pkgs/a/src/a.js",
@@ -116,7 +116,7 @@ describe("analyzer-js", () => {
           path: "pkgs/b/ba/src/index.js",
           name: "pkgs/b/ba/src/index.js",
           dependsOn: ["pkgs/b/bb/src/index.js", "pkgs/b/ba/src/a.js"],
-          groups: ["workspace_entries"],
+          labels: ["workspace_entries"],
         },
         {
           id: "pkgs/b/ba/src/a.js",
@@ -129,14 +129,14 @@ describe("analyzer-js", () => {
           path: "pkgs/b/bb/src/index.js",
           name: "pkgs/b/bb/src/index.js",
           dependsOn: ["node_modules/glob", "pkgs/b/bb/src/a.js"],
-          groups: ["workspace_entries"],
+          labels: ["workspace_entries"],
         },
         {
           id: "node_modules/glob",
           path: "node_modules/glob",
           name: "node_modules/glob",
           dependsOn: [],
-          groups: ["node_modules"],
+          labels: ["node_modules"],
         },
         {
           id: "pkgs/b/bb/src/a.js",
@@ -149,7 +149,7 @@ describe("analyzer-js", () => {
           path: "pkg/src/index.js",
           name: "pkg/src/index.js",
           dependsOn: ["pkg/src/a.js"],
-          groups: ["workspace_entries"],
+          labels: ["workspace_entries"],
         },
         {
           id: "pkg/src/a.js",

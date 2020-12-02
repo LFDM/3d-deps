@@ -64,7 +64,7 @@ const mapTreeToNodes = (
       dependsOn: vs,
     };
     if (groups.length) {
-      node.groups = groups;
+      node.labels = groups;
     }
     nodes.push(node);
   });
