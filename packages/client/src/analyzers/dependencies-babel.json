@@ -1,0 +1,35 @@
+[
+  {
+    "id": "eslint/babel-eslint-config-internal/index.js",
+    "path": "eslint/babel-eslint-config-internal/index.js",
+    "label": "eslint/babel-eslint-config-internal/index.js",
+    "dependsOn": [],
+    "groups": [
+      "workspace_entries"
+    ]
+  },
+  {
+    "id": "packages/babel-cli/bin/babel.js",
+    "path": "packages/babel-cli/bin/babel.js",
+    "label": "packages/babel-cli/bin/babel.js",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/babel-cli/bin/babel-external-helpers.js",
+    "path": "packages/babel-cli/bin/babel-external-helpers.js",
+    "label": "packages/babel-cli/bin/babel-external-helpers.js",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/babel-node/bin/babel-node.js",
+    "path": "packages/babel-node/bin/babel-node.js",
+    "label": "packages/babel-node/bin/babel-node.js",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/babel-parser/bin/babel-parser.js",
+    "path": "packages/babel-parser/bin/babel-parser.js",
+    "label": "packages/babel-parser/bin/babel-parser.js",
+    "dependsOn": []
+  }
+]
