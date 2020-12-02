@@ -43,7 +43,7 @@ export const loadDatasets: () => Promise<Dataset[]> = async () => [
           excludeByPath: /((^|\/)node_modules\/)/,
         },
       },
-      data: await import("./analyzers/dependencies-react-workspace.json").then(
+      data: await import("./analyzers/dependencies-react-workspace2.json").then(
         (x) => x.default
       ),
     }),

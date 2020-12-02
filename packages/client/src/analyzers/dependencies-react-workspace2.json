@@ -20,6 +20,15 @@
     ]
   },
   {
+    "id": "node_modules/shared",
+    "path": "node_modules/shared",
+    "label": "node_modules/shared",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
     "id": "packages/react-art/index.js",
     "path": "packages/react-art/index.js",
     "label": "packages/react-art/index.js",
@@ -39,10 +48,26 @@
       "packages/shared/ReactVersion.js",
       "packages/react-reconciler/src/ReactRootTags.js",
       "packages/react-reconciler/src/ReactFiberReconciler.js",
-      "node_modules/art/core/transform.js",
-      "node_modules/art/modes/current.js",
-      "node_modules/art/modes/fast-noSideEffects.js",
+      "node_modules/art",
       "packages/react-art/src/ReactARTInternals.js"
+    ]
+  },
+  {
+    "id": "node_modules/react",
+    "path": "node_modules/react",
+    "label": "node_modules/react",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
+    "id": "node_modules/react-reconciler",
+    "path": "node_modules/react-reconciler",
+    "label": "node_modules/react-reconciler",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
     ]
   },
   {
@@ -88,7 +113,7 @@
       "packages/react-reconciler/src/ReactInternalTypes.js",
       "packages/react-reconciler/src/ReactFiberHostConfig.js",
       "packages/react-reconciler/src/ReactTypeOfMode.js",
-      "node_modules/error-stack-parser/error-stack-parser.js",
+      "node_modules/error-stack-parser",
       "packages/shared/ReactSharedInternals.js",
       "packages/shared/ReactSymbols.js",
       "packages/react-reconciler/src/ReactWorkTags.js"
@@ -108,10 +133,10 @@
     "path": "packages/react-devtools/bin.js",
     "label": "packages/react-devtools/bin.js",
     "dependsOn": [
-      "node_modules/electron/index.js",
-      "node_modules/cross-spawn/index.js",
+      "node_modules/electron",
+      "node_modules/cross-spawn",
       "packages/react-devtools/package.json",
-      "node_modules/update-notifier/index.js"
+      "node_modules/update-notifier"
     ]
   },
   {
@@ -338,6 +363,15 @@
     "dependsOn": []
   },
   {
+    "id": "node_modules/scheduler",
+    "path": "node_modules/scheduler",
+    "label": "node_modules/scheduler",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
     "id": "packages/react-dom/src/events/ReactDOMEventReplaying.js",
     "path": "packages/react-dom/src/events/ReactDOMEventReplaying.js",
     "label": "packages/react-dom/src/events/ReactDOMEventReplaying.js",
@@ -524,12 +558,20 @@
       "packages/react-dom/src/events/DOMPluginEventSystem.js",
       "packages/react-dom/src/events/EventSystemFlags.js",
       "packages/react-dom/src/events/EventRegistry.js",
-      "packages/react-dom/src/events/EventSystemFlags.js",
       "packages/react-dom/src/events/SyntheticEvent.js",
       "packages/react-dom/src/client/ReactDOMComponentTree.js",
       "packages/react-dom/src/events/ReactSyntheticEventType.js",
       "packages/react-reconciler/src/ReactWorkTags.js",
       "packages/react-reconciler/src/ReactFiberTreeReflection.js"
+    ]
+  },
+  {
+    "id": "node_modules/react-dom",
+    "path": "node_modules/react-dom",
+    "label": "node_modules/react-dom",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
     ]
   },
   {
@@ -2077,6 +2119,15 @@
     ]
   },
   {
+    "id": "node_modules/react-client",
+    "path": "node_modules/react-client",
+    "label": "node_modules/react-client",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
     "id": "packages/react/index.js",
     "path": "packages/react/index.js",
     "label": "packages/react/index.js",
@@ -2252,7 +2303,7 @@
     "path": "packages/react/src/ReactSharedInternals.js",
     "label": "packages/react/src/ReactSharedInternals.js",
     "dependsOn": [
-      "node_modules/object-assign/index.js",
+      "node_modules/object-assign",
       "packages/react/src/ReactCurrentDispatcher.js",
       "packages/react/src/ReactCurrentBatchConfig.js",
       "packages/react/src/ReactCurrentOwner.js",
