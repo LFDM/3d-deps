@@ -3948,5 +3948,12 @@
         "packages/react/index.js"
       ]
     }
-  ]
+  ],
+  "meta": {
+    "analyzer": {
+      "name": "analyzer-js",
+      "version": "0.1.0"
+    },
+    "createdAt": "2020-12-02T22:12:21.853Z"
+  }
 }
