@@ -76,7 +76,6 @@ const parseEntry = (
   return flatTree;
 };
 
-// TODO - pass other config
 export const getDependencies = async (
   pkgInfo: PackageInfo,
   options: {
@@ -89,6 +88,7 @@ export const getDependencies = async (
 ) => {
   const allEntryFiles: string[] = compact([
     pkgInfo.mappedEntries.main.abs,
+    pkgInfo.mappedEntries.browser.abs,
     ...pkgInfo.mappedEntries.bin.map((b) => b.abs),
   ]);
 
