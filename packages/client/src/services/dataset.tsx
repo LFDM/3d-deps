@@ -1,8 +1,8 @@
 import { Config } from "@3d-deps/config";
+import { DependencyNode } from "@3d-deps/shared";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { usePromise } from "../hooks/usePromise";
 import { useQueryParam } from "../hooks/useQueryParam";
-import { DependencyNode } from "../types/DependencyAnalyzer";
 
 export type Dataset = {
   name: string;

@@ -1,9 +1,6 @@
 // // @ts-ignore
 // import * as madge from "madge";
-import {
-  DependencyNode,
-  IDependencyAnalyzer,
-} from "../types/DependencyAnalyzer";
+import { DependencyNode, IDependencyAnalyzer } from "@3d-deps/shared";
 // import DEPS from "./dependencies-affilimate-cli.json";
 
 type MadgeTree = { [key: string]: string[] };

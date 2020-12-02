@@ -1,4 +1,5 @@
 import { CONFIG, Config } from "@3d-deps/config";
+import { DependencyNode } from "@3d-deps/shared";
 import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
 import assertNever from "assert-never";
@@ -13,7 +14,6 @@ import { ConfigContext } from "./services/config";
 import { Dataset, DatasetProvider, useDatasets } from "./services/dataset";
 import { depsToGraphData } from "./services/graph";
 import { UiStateProvider } from "./services/uiState";
-import { DependencyNode } from "./types/DependencyAnalyzer";
 import { GraphData } from "./types/GraphData";
 
 const Main = styled(CssBaseline)((p) => ({

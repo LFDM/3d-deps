@@ -1,5 +1,5 @@
 import { Config } from "@3d-deps/config";
-import { DependencyNode } from "./DependencyAnalyzer";
+import { DependencyNode } from "@3d-deps/shared";
 
 export type Dataset = {
   name: string;

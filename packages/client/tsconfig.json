@@ -21,5 +21,8 @@
   "include": [
     "src"
   ],
-  "references": [{ "path": "../config"}]
+  "references": [
+    { "path": "../config" },
+    { "path": "../shared"}
+  ]
 }

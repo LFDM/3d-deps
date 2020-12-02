@@ -1,5 +1,5 @@
+import { DependencyNode } from "@3d-deps/shared";
 import { keyBy } from "lodash";
-import { DependencyNode } from "../types/DependencyAnalyzer";
 import { TreeNode } from "../types/GraphData";
 
 const shouldExcludeByPath = (
