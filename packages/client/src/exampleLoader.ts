@@ -28,11 +28,9 @@ export const loadDatasets: () => Promise<Dataset[]> = async () => [
           excludeByPath: /((^|\/)node_modules\/)/,
         },
       },
-      data: {
-        nodes: await import(
-          "./analyzers/dependencies-self-workspace.json"
-        ).then((x) => x.default),
-      },
+      data: await import("./analyzers/dependencies-self-workspace.json").then(
+        (x) => x.default
+      ),
     }),
   },
   {
