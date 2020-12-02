@@ -32,6 +32,7 @@ export const depsToGraphData = (
         id: d.id,
         name: d.name || d.id,
         path: d.path,
+        labels: d.labels,
         // initialize empty, so that we can collect the object
         // before we start recursing, preventing issues with circular dependencies
         dependedBy: { nodes: [], countWithoutExcluded: 0 },
