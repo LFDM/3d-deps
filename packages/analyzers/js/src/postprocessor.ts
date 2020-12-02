@@ -127,6 +127,14 @@ type PostProcessor = {
 // try remap of workspace dependencies, when resolved to dist instead of src file
 // mapToTreeNodes and label tree
 
+const RelativePathProcessor = (rootDir: string): PostProcessor => {
+  const toRel = (p: string) => path.relative(rootDir, p);
+  return {
+    onParent: toRel,
+    onChild: toRel,
+  };
+};
+
 const HoistNodeModuleProcessor = (): PostProcessor => {
   const identifier = "node_modules/";
   const hoist = (x: string) => {
