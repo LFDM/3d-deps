@@ -1,5 +1,8 @@
-import { DependencyNode, IDependencyAnalyzer } from "@3d-deps/shared";
-import debugFn from "debug";
+import {
+  DependencyAnalyzerResult,
+  DependencyNode,
+  IDependencyAnalyzer,
+} from "@3d-deps/shared";
 import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
@@ -18,10 +21,10 @@ import {
   FlatTree,
   NodeModulesResolution,
   PackageInfo,
+  PackageJson,
 } from "./types";
+import { getVersion } from "./version";
 import { getWorkspacesInfo } from "./yarn";
-
-const debug = debugFn("analyzer-js");
 
 const readFile = promisify(fs.readFile);
 
@@ -62,6 +65,17 @@ const mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
 const getPackageJson = async (dir: string) => {
   const pkgFile = await readFile(path.join(dir, "package.json"));
   return JSON.parse(pkgFile.toString());
+};
+
+export const getRepository = (pkg: PackageJson) => {
+  const repo = pkg.repository;
+  if (typeof repo === "string") {
+    return { url: repo };
+  }
+  if (typeof repo === "object") {
+    return { url: repo.url };
+  }
+  return undefined;
 };
 
 const toNullableAbsolutePath = (dir: string, p: string | null) => {
@@ -168,13 +182,18 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       preprocessed
     );
 
-    debug(
-      "Non-existent:",
-      JSON.stringify(this.caches.unresolvableModules, null, 2)
-    );
-
-    return {
+    const res: DependencyAnalyzerResult = {
       nodes,
+      meta: {
+        analyzer: {
+          name: "analyzer-js",
+          version: getVersion(),
+        },
+        repository: getRepository(rootPkgInfo.pkg),
+        createdAt: new Date().toISOString(),
+      },
     };
+
+    return res;
   }
 }

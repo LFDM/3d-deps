@@ -1390,6 +1390,160 @@
       ]
     },
     {
+      "id": "packages/react-dom/server.browser.js",
+      "path": "packages/react-dom/server.browser.js",
+      "name": "packages/react-dom/server.browser.js",
+      "labels": [
+        "workspace:react-dom",
+        "workspace_entry"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/server/ReactDOMServerBrowser.js"
+      ]
+    },
+    {
+      "id": "packages/react-dom/src/server/ReactDOMServerBrowser.js",
+      "path": "packages/react-dom/src/server/ReactDOMServerBrowser.js",
+      "name": "packages/react-dom/src/server/ReactDOMServerBrowser.js",
+      "labels": [
+        "workspace:react-dom"
+      ],
+      "dependsOn": [
+        "packages/shared/ReactVersion.js",
+        "packages/shared/invariant.js",
+        "packages/react-dom/src/server/ReactDOMStringRenderer.js"
+      ]
+    },
+    {
+      "id": "packages/react-dom/src/server/ReactDOMStringRenderer.js",
+      "path": "packages/react-dom/src/server/ReactDOMStringRenderer.js",
+      "name": "packages/react-dom/src/server/ReactDOMStringRenderer.js",
+      "labels": [
+        "workspace:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/server/ReactPartialRenderer.js"
+      ]
+    },
+    {
+      "id": "packages/react-dom/src/server/ReactPartialRenderer.js",
+      "path": "packages/react-dom/src/server/ReactPartialRenderer.js",
+      "name": "packages/react-dom/src/server/ReactPartialRenderer.js",
+      "labels": [
+        "workspace:react-dom"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/react-dom/src/server/ReactThreadIDAllocator.js",
+      "path": "packages/react-dom/src/server/ReactThreadIDAllocator.js",
+      "name": "packages/react-dom/src/server/ReactThreadIDAllocator.js",
+      "labels": [
+        "workspace:react-dom"
+      ],
+      "dependsOn": [
+        "packages/shared/invariant.js"
+      ]
+    },
+    {
+      "id": "packages/react-dom/src/server/ReactPartialRendererContext.js",
+      "path": "packages/react-dom/src/server/ReactPartialRendererContext.js",
+      "name": "packages/react-dom/src/server/ReactPartialRendererContext.js",
+      "labels": [
+        "workspace:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/server/ReactThreadIDAllocator.js",
+        "packages/shared/ReactTypes.js",
+        "packages/shared/ReactFeatureFlags.js",
+        "packages/shared/ReactSymbols.js",
+        "packages/shared/getComponentName.js",
+        "packages/shared/checkPropTypes.js"
+      ]
+    },
+    {
+      "id": "packages/react-dom/src/server/DOMMarkupOperations.js",
+      "path": "packages/react-dom/src/server/DOMMarkupOperations.js",
+      "name": "packages/react-dom/src/server/DOMMarkupOperations.js",
+      "labels": [
+        "workspace:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/shared/DOMProperty.js",
+        "packages/react-dom/src/shared/sanitizeURL.js",
+        "packages/react-dom/src/server/quoteAttributeValueForBrowser.js"
+      ]
+    },
+    {
+      "id": "packages/react-dom/src/server/quoteAttributeValueForBrowser.js",
+      "path": "packages/react-dom/src/server/quoteAttributeValueForBrowser.js",
+      "name": "packages/react-dom/src/server/quoteAttributeValueForBrowser.js",
+      "labels": [
+        "workspace:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/server/escapeTextForBrowser.js"
+      ]
+    },
+    {
+      "id": "packages/react-dom/src/server/escapeTextForBrowser.js",
+      "path": "packages/react-dom/src/server/escapeTextForBrowser.js",
+      "name": "packages/react-dom/src/server/escapeTextForBrowser.js",
+      "labels": [
+        "workspace:react-dom"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/react-dom/src/server/ReactPartialRendererHooks.js",
+      "path": "packages/react-dom/src/server/ReactPartialRendererHooks.js",
+      "name": "packages/react-dom/src/server/ReactPartialRendererHooks.js",
+      "labels": [
+        "workspace:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-reconciler/src/ReactInternalTypes.js",
+        "packages/shared/ReactTypes.js",
+        "packages/react-dom/src/server/ReactPartialRenderer.js",
+        "packages/react-dom/src/server/ReactPartialRendererContext.js",
+        "packages/shared/invariant.js",
+        "packages/shared/objectIs.js"
+      ]
+    },
+    {
+      "id": "packages/react-dom/unstable-fizz.browser.js",
+      "path": "packages/react-dom/unstable-fizz.browser.js",
+      "name": "packages/react-dom/unstable-fizz.browser.js",
+      "labels": [
+        "workspace:react-dom",
+        "workspace_entry"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/server/ReactDOMFizzServerBrowser.js"
+      ]
+    },
+    {
+      "id": "packages/react-dom/src/server/ReactDOMFizzServerBrowser.js",
+      "path": "packages/react-dom/src/server/ReactDOMFizzServerBrowser.js",
+      "name": "packages/react-dom/src/server/ReactDOMFizzServerBrowser.js",
+      "labels": [
+        "workspace:react-dom"
+      ],
+      "dependsOn": [
+        "packages/shared/ReactTypes.js",
+        "packages/react-server/src/ReactFizzServer.js"
+      ]
+    },
+    {
+      "id": "node_modules/react-server",
+      "path": "node_modules/react-server",
+      "name": "node_modules/react-server",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
       "id": "packages/react-fetch/index.js",
       "path": "packages/react-fetch/index.js",
       "name": "packages/react-fetch/index.js",
@@ -1416,6 +1570,30 @@
       "id": "packages/react-fetch/src/ReactFetchNode.js",
       "path": "packages/react-fetch/src/ReactFetchNode.js",
       "name": "packages/react-fetch/src/ReactFetchNode.js",
+      "labels": [
+        "workspace:react-fetch"
+      ],
+      "dependsOn": [
+        "packages/shared/ReactTypes.js",
+        "packages/react/unstable-cache.js"
+      ]
+    },
+    {
+      "id": "packages/react-fetch/index.browser.js",
+      "path": "packages/react-fetch/index.browser.js",
+      "name": "packages/react-fetch/index.browser.js",
+      "labels": [
+        "workspace:react-fetch",
+        "workspace_entry"
+      ],
+      "dependsOn": [
+        "packages/react-fetch/src/ReactFetchBrowser.js"
+      ]
+    },
+    {
+      "id": "packages/react-fetch/src/ReactFetchBrowser.js",
+      "path": "packages/react-fetch/src/ReactFetchBrowser.js",
+      "name": "packages/react-fetch/src/ReactFetchBrowser.js",
       "labels": [
         "workspace:react-fetch"
       ],
@@ -3319,6 +3497,39 @@
       "dependsOn": [
         "packages/react-client/src/ReactFlightClientStream.js"
       ]
+    },
+    {
+      "id": "packages/react-transport-dom-webpack/server.browser.js",
+      "path": "packages/react-transport-dom-webpack/server.browser.js",
+      "name": "packages/react-transport-dom-webpack/server.browser.js",
+      "labels": [
+        "workspace:react-transport-dom-webpack",
+        "workspace_entry"
+      ],
+      "dependsOn": [
+        "packages/react-transport-dom-webpack/src/ReactFlightDOMServerBrowser.js"
+      ]
+    },
+    {
+      "id": "packages/react-transport-dom-webpack/src/ReactFlightDOMServerBrowser.js",
+      "path": "packages/react-transport-dom-webpack/src/ReactFlightDOMServerBrowser.js",
+      "name": "packages/react-transport-dom-webpack/src/ReactFlightDOMServerBrowser.js",
+      "labels": [
+        "workspace:react-transport-dom-webpack"
+      ],
+      "dependsOn": [
+        "packages/react-server/src/ReactFlightServer.js",
+        "packages/react-transport-dom-webpack/src/ReactFlightServerWebpackBundlerConfig.js"
+      ]
+    },
+    {
+      "id": "packages/react-transport-dom-webpack/src/ReactFlightServerWebpackBundlerConfig.js",
+      "path": "packages/react-transport-dom-webpack/src/ReactFlightServerWebpackBundlerConfig.js",
+      "name": "packages/react-transport-dom-webpack/src/ReactFlightServerWebpackBundlerConfig.js",
+      "labels": [
+        "workspace:react-transport-dom-webpack"
+      ],
+      "dependsOn": []
     },
     {
       "id": "packages/react-transport-native-relay/index.js",

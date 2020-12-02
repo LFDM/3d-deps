@@ -1,10 +1,7 @@
-import debugFn from "debug";
 import dependencyTree, { DependencyObj, Options } from "dependency-tree";
 import { CompilerOptions } from "typescript";
 import { FlatTree, NodeModulesResolution, PackageInfo } from "./types";
 import { compact } from "./util";
-
-const debug = debugFn("analyzer-js");
 
 export type VisitedCache = { [key: string]: any };
 
@@ -68,10 +65,6 @@ const parseEntry = (
   };
 
   const deepTree = dependencyTree(depTreeOptions as any);
-  if (nonExistent.length) {
-    caches.unresolvableModules.push({ entry, fs: nonExistent });
-    debug(`nonExistent modules for ${entry}`, nonExistent);
-  }
   const flatTree = flattenTree(deepTree);
   return flatTree;
 };

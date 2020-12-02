@@ -19,6 +19,9 @@ export type DependencyAnalyzerMeta = {
     name: string;
     version?: string;
   };
+  repository?: {
+    url: string;
+  };
   createdAt: string; // iso 8601
 };
 

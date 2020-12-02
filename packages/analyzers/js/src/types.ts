@@ -23,11 +23,13 @@ export type ConfigTransformer = (args: {
 
 export type PackageJson = object & {
   name: string;
+  version: string;
   main?: string;
   browser?: string | { [key: string]: string };
   bin?: string | { [key: string]: string };
   typings?: string;
   workspaces?: string[];
+  repository?: string | { url: string; type: string; directory?: string };
 };
 
 export type FlatTree = { [key: string]: string[] };
