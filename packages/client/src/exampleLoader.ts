@@ -19,7 +19,7 @@ const toDataset = (key: string): Dataset => ({
 export const loadDatasets: () => Promise<Dataset[]> = async () => [
   ...Object.keys(FILES).map(toDataset),
   {
-    name: "self-workspace",
+    name: "Self (Workspace)",
     fetch: async () => ({
       config: {
         ...CONFIG,
@@ -29,6 +29,21 @@ export const loadDatasets: () => Promise<Dataset[]> = async () => [
         },
       },
       data: await import("./analyzers/dependencies-self-workspace.json").then(
+        (x) => x.default
+      ),
+    }),
+  },
+  {
+    name: "React (Workspace)",
+    fetch: async () => ({
+      config: {
+        ...CONFIG,
+        graph: {
+          ...CONFIG.graph,
+          excludeByPath: /((^|\/)node_modules\/)/,
+        },
+      },
+      data: await import("./analyzers/dependencies-react-workspace.json").then(
         (x) => x.default
       ),
     }),

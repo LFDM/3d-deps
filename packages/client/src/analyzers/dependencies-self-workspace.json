@@ -43,14 +43,34 @@
     "id": "packages/analyzers/js/src/types.ts",
     "path": "packages/analyzers/js/src/types.ts",
     "label": "packages/analyzers/js/src/types.ts",
-    "dependsOn": []
+    "dependsOn": [
+      "node_modules/typescript"
+    ]
+  },
+  {
+    "id": "node_modules/typescript",
+    "path": "node_modules/typescript",
+    "label": "node_modules/typescript",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
   },
   {
     "id": "packages/analyzers/js/src/transformers.ts",
     "path": "packages/analyzers/js/src/transformers.ts",
     "label": "packages/analyzers/js/src/transformers.ts",
     "dependsOn": [
+      "packages/analyzers/js/src/ts.ts",
       "packages/analyzers/js/src/types.ts"
+    ]
+  },
+  {
+    "id": "packages/analyzers/js/src/ts.ts",
+    "path": "packages/analyzers/js/src/ts.ts",
+    "label": "packages/analyzers/js/src/ts.ts",
+    "dependsOn": [
+      "node_modules/typescript"
     ]
   },
   {
@@ -78,15 +98,6 @@
     "id": "node_modules/dependency-tree",
     "path": "node_modules/dependency-tree",
     "label": "node_modules/dependency-tree",
-    "dependsOn": [],
-    "groups": [
-      "node_modules"
-    ]
-  },
-  {
-    "id": "node_modules/typescript",
-    "path": "node_modules/typescript",
-    "label": "node_modules/typescript",
     "dependsOn": [],
     "groups": [
       "node_modules"
@@ -757,7 +768,8 @@
       "packages/config/dist/index.d.ts",
       "packages/client/src/analyzers/jsonFile.ts",
       "packages/client/src/services/dataset.tsx",
-      "packages/client/src/analyzers/dependencies-self-workspace.json"
+      "packages/client/src/analyzers/dependencies-self-workspace.json",
+      "packages/client/src/analyzers/dependencies-react-workspace.json"
     ]
   },
   {
@@ -842,6 +854,12 @@
     "id": "packages/client/src/analyzers/dependencies-self-workspace.json",
     "path": "packages/client/src/analyzers/dependencies-self-workspace.json",
     "label": "packages/client/src/analyzers/dependencies-self-workspace.json",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/client/src/analyzers/dependencies-react-workspace.json",
+    "path": "packages/client/src/analyzers/dependencies-react-workspace.json",
+    "label": "packages/client/src/analyzers/dependencies-react-workspace.json",
     "dependsOn": []
   },
   {
@@ -945,6 +963,40 @@
     "id": "packages/server/src/types/DependencyAnalyzer.ts",
     "path": "packages/server/src/types/DependencyAnalyzer.ts",
     "label": "packages/server/src/types/DependencyAnalyzer.ts",
+    "dependsOn": []
+  },
+  {
+    "id": "packages/server/dist/cli.js",
+    "path": "packages/server/dist/cli.js",
+    "label": "packages/server/dist/cli.js",
+    "dependsOn": [
+      "packages/server/node_modules/yargs/index.cjs",
+      "packages/server/dist/index.js"
+    ]
+  },
+  {
+    "id": "packages/server/node_modules/yargs/index.cjs",
+    "path": "packages/server/node_modules/yargs/index.cjs",
+    "label": "packages/server/node_modules/yargs/index.cjs",
+    "dependsOn": [],
+    "groups": [
+      "node_modules"
+    ]
+  },
+  {
+    "id": "packages/server/dist/index.js",
+    "path": "packages/server/dist/index.js",
+    "label": "packages/server/dist/index.js",
+    "dependsOn": [
+      "node_modules/express",
+      "node_modules/open",
+      "packages/server/dist/services/config.js"
+    ]
+  },
+  {
+    "id": "packages/server/dist/services/config.js",
+    "path": "packages/server/dist/services/config.js",
+    "label": "packages/server/dist/services/config.js",
     "dependsOn": []
   }
 ]
