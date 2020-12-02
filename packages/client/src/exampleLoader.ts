@@ -28,9 +28,11 @@ export const loadDatasets: () => Promise<Dataset[]> = async () => [
           excludeByPath: /((^|\/)node_modules\/)/,
         },
       },
-      data: await import("./analyzers/dependencies-self-workspace.json").then(
-        (x) => x.default
-      ),
+      data: {
+        nodes: await import(
+          "./analyzers/dependencies-self-workspace.json"
+        ).then((x) => x.default),
+      },
     }),
   },
   {
@@ -43,9 +45,11 @@ export const loadDatasets: () => Promise<Dataset[]> = async () => [
           excludeByPath: /((^|\/)node_modules\/)/,
         },
       },
-      data: await import("./analyzers/dependencies-react-workspace.json").then(
-        (x) => x.default
-      ),
+      data: {
+        nodes: await import(
+          "./analyzers/dependencies-react-workspace.json"
+        ).then((x) => x.default),
+      },
     }),
   },
 ];

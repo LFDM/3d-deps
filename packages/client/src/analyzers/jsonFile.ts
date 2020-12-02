@@ -117,6 +117,8 @@ export class JsonFileAnalyzer implements IDependencyAnalyzer {
     if (!x) {
       throw new Error("UNKNWON_FILE");
     }
-    return _madgeTreeToNodes(await x());
+    return {
+      nodes: _madgeTreeToNodes(await x()),
+    };
   }
 }

@@ -6,6 +6,29 @@ export type DependencyNode = {
   dependsOn: string[];
 };
 
+export type DebugMessage = {
+  type: string;
+  msg: string;
+  data?: any;
+};
+
+export type Issue = any; // TBD
+
+export type DependencyAnalyzerMeta = {
+  analyzer?: {
+    name: string;
+    version?: string;
+  };
+  createdAt: string; // iso 8601
+};
+
+export type DependencyAnalyzerResult = {
+  nodes: DependencyNode[];
+  debug?: DebugMessage[];
+  issues?: Issue[];
+  meta?: DependencyAnalyzerMeta;
+};
+
 export interface IDependencyAnalyzer {
-  analyze: () => Promise<DependencyNode[]>;
+  analyze: () => Promise<DependencyAnalyzerResult>;
 }

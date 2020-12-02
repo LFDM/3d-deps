@@ -1,9 +1,9 @@
 import { Config } from "@3d-deps/config";
-import { DependencyNode } from "@3d-deps/shared";
+import { DependencyAnalyzerResult } from "@3d-deps/shared";
 
 export type Dataset = {
   name: string;
-  fetch: () => Promise<{ config: Config; data: DependencyNode[] }>;
+  fetch: () => Promise<{ config: Config; data: DependencyAnalyzerResult }>;
 };
 
 export type RunConfig = {

@@ -1,5 +1,5 @@
 import { Config } from "@3d-deps/config";
-import { DependencyNode } from "@3d-deps/shared";
+import { DependencyAnalyzerResult } from "@3d-deps/shared";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { usePromise } from "../hooks/usePromise";
 import { useQueryParam } from "../hooks/useQueryParam";
@@ -8,7 +8,7 @@ export type Dataset = {
   name: string;
   fetch: () => Promise<{
     config: Config;
-    data: DependencyNode[];
+    data: DependencyAnalyzerResult;
   }>;
 };
 
@@ -27,7 +27,7 @@ type ReadyState = {
   name: string;
   state: "READY";
   config: Config;
-  data: DependencyNode[];
+  data: DependencyAnalyzerResult;
 };
 
 type State = LoadingState | ErrorState | ReadyState;
@@ -35,7 +35,7 @@ type State = LoadingState | ErrorState | ReadyState;
 const DATASET_CACHE: {
   [key: string]: {
     config: Config;
-    data: DependencyNode[];
+    data: DependencyAnalyzerResult;
   };
 } = {};
 

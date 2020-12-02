@@ -1,5 +1,5 @@
 import { CONFIG, Config } from "@3d-deps/config";
-import { DependencyNode } from "@3d-deps/shared";
+import { DependencyAnalyzerResult, DependencyNode } from "@3d-deps/shared";
 import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
 import assertNever from "assert-never";
@@ -50,11 +50,11 @@ const AppReady = ({
 }: {
   name: string;
   config: Config;
-  data: DependencyNode[];
+  data: DependencyAnalyzerResult;
 }) => {
   const { current } = useDatasets();
   const [config, setConfig] = useState(originalConfig);
-  const g = useGraphData(data, {
+  const g = useGraphData(data.nodes, {
     includeByPath: config.graph.includeByPath,
     excludeByPath: config.graph.excludeByPath,
   });

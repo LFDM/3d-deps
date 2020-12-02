@@ -142,7 +142,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       )
     ).then(mergeTrees);
 
-    const nodes = mapTreeToNodes(
+    const preprocessed = mapTreeToNodes(
       preProcess(
         [
           PreProcessorRelativePaths(rootDir),
@@ -153,6 +153,13 @@ export class JsAnalyzer implements IDependencyAnalyzer {
         tree
       )
     );
-    return postProcess([PostProcessorLabeller(wsPkgInfos)], nodes);
+    const nodes = postProcess(
+      [PostProcessorLabeller(wsPkgInfos)],
+      preprocessed
+    );
+
+    return {
+      nodes,
+    };
   }
 }
