@@ -115,7 +115,7 @@ export const linkWorkspaces = (
   return mappedTree;
 };
 
-type PostProcessor = {
+type PreProcessor = {
   onParent: (p: string) => string | null; // null to discard
   onChild: (p: string) => string | null; // null to discard
 };
@@ -127,7 +127,7 @@ type PostProcessor = {
 // try remap of workspace dependencies, when resolved to dist instead of src file
 // mapToTreeNodes and label tree
 
-export const RelativePathProcessor = (rootDir: string): PostProcessor => {
+export const PreProcessorRelativePaths = (rootDir: string): PreProcessor => {
   const toRel = (p: string) => path.relative(rootDir, p);
   return {
     onParent: toRel,
@@ -135,7 +135,7 @@ export const RelativePathProcessor = (rootDir: string): PostProcessor => {
   };
 };
 
-export const HoistNodeModuleProcessor = (): PostProcessor => {
+export const PreProcessorHoistNodeModules = (): PreProcessor => {
   const identifier = "node_modules/";
   const hoist = (x: string) => {
     const i = x.indexOf(identifier);
@@ -147,10 +147,10 @@ export const HoistNodeModuleProcessor = (): PostProcessor => {
   };
 };
 
-export const LinkWorkspaceProcessor = (
+export const PreProcessorLinkWorkspaces = (
   rootDir: string,
   wsPkgInfos: PackageInfo[]
-): PostProcessor => {
+): PreProcessor => {
   const wsByModName: { [key: string]: string } = {};
   wsPkgInfos.forEach((p) => {
     const modName = path.join("node_modules", p.pkg.name);
@@ -175,14 +175,14 @@ export const LinkWorkspaceProcessor = (
   };
 };
 
-export const CleanupNodeModuleNameProcessor = (): PostProcessor => {
+export const PreProcessorCleanupNodeModuleNames = (): PreProcessor => {
   return {
     onParent: (p) => cleanupNodeModuleName(p) || p,
     onChild: (p) => cleanupNodeModuleName(p) || p,
   };
 };
 
-export const postProcess = (tree: FlatTree, processors: PostProcessor[]) => {
+export const preProcess = (tree: FlatTree, processors: PreProcessor[]) => {
   const cache: {
     parents: { [parent: string]: string | null };
     children: { [child: string]: string | null };

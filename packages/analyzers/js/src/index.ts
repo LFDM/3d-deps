@@ -3,12 +3,12 @@ import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
 import {
-  CleanupNodeModuleNameProcessor,
-  HoistNodeModuleProcessor,
-  LinkWorkspaceProcessor,
-  postProcess,
-  RelativePathProcessor,
-} from "./postprocessor";
+  preProcess,
+  PreProcessorCleanupNodeModuleNames,
+  PreProcessorHoistNodeModules,
+  PreProcessorLinkWorkspaces,
+  PreProcessorRelativePaths,
+} from "./preProcessor";
 import { TRANSFORMERS } from "./transformers";
 import { getDependencies, mergeTrees, VisitedCache } from "./tree";
 import {
@@ -141,11 +141,11 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     ).then(mergeTrees);
 
     const nodes = mapTreeToNodes(
-      postProcess(tree, [
-        RelativePathProcessor(rootDir),
-        HoistNodeModuleProcessor(),
-        LinkWorkspaceProcessor(rootDir, wsPkgInfos),
-        CleanupNodeModuleNameProcessor(),
+      preProcess(tree, [
+        PreProcessorRelativePaths(rootDir),
+        PreProcessorHoistNodeModules(),
+        PreProcessorLinkWorkspaces(rootDir, wsPkgInfos),
+        PreProcessorCleanupNodeModuleNames(),
       ]),
       compact(allPkgInfos.map((p) => p.mappedEntries.main)).map((e) =>
         path.relative(rootDir, e)
