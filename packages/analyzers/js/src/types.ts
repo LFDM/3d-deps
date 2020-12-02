@@ -21,6 +21,7 @@ export type ConfigTransformer = (args: {
 }) => Promise<Config>;
 
 export type PackageJson = object & {
+  name: string;
   main?: string;
   bin?: string | { [key: string]: string };
   typings?: string;
@@ -37,7 +38,7 @@ export type Yarn1Workspace = {
 
 export type Workspaces = {
   [key: string]: {
-    path: string;
+    location: string;
   };
 };
 

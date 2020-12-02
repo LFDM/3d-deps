@@ -10,10 +10,10 @@ import {
 import { TRANSFORMERS } from "./transformers";
 import { getDependencies, mergeTrees, VisitedCache } from "./tree";
 import {
-  Config,
   ConfigTransformer,
   FlatTree,
   NodeModulesResolution,
+  PackageInfo,
 } from "./types";
 import { compact } from "./util";
 import { getWorkspacesInfo } from "./yarn";
@@ -74,70 +74,81 @@ const getPackageJson = async (dir: string) => {
   return JSON.parse(pkgFile.toString());
 };
 
+const toNullableAbsolutePath = (dir: string, p: string | null) => {
+  if (p === null) {
+    return null;
+  }
+  return path.isAbsolute(p) ? p : path.join(dir, p);
+};
+
+const toAbsolutePath = (dir: string, p: string) => {
+  return path.isAbsolute(p) ? p : path.join(dir, p);
+};
+
+const collectPackageInfo = async (
+  dir: string,
+  transform: ConfigTransformer
+): Promise<PackageInfo> => {
+  const pkg = await getPackageJson(dir);
+  const config = await transform({ dir, packageJson: pkg });
+  return {
+    pkg,
+    location: dir,
+    mappedEntries: {
+      main: toNullableAbsolutePath(dir, config.entries.main),
+      bin: config.entries.bin.map((e) => toAbsolutePath(dir, e)),
+    },
+    configs: config.configs,
+  };
+};
+
 export class JsAnalyzer implements IDependencyAnalyzer {
   private config: JsAnalyzerConfig;
-  private visited: VisitedCache = {};
+  private caches: {
+    visited: VisitedCache;
+    unresolvableModules: { entry: string; fs: string[] }[];
+  } = {
+    visited: [],
+    unresolvableModules: [],
+  };
 
   constructor(config: JsAnalyzerConfig) {
     this.config = config;
   }
 
   async analyze() {
+    const resolution = this.config.nodeModules?.resolution || "shallow";
     const { rootDir: origRootDir } = this.config;
-    const rootDir = path.isAbsolute(origRootDir)
-      ? origRootDir
-      : path.join(process.cwd(), origRootDir);
-    const rootPkg = await getPackageJson(rootDir);
+    const rootDir = toAbsolutePath(process.cwd(), origRootDir);
     const transform = this.config.configTransformer || TRANSFORMERS.DEFAULT();
+    const rootPkgInfo = await collectPackageInfo(rootDir, transform);
 
-    const workspaces = rootPkg.workspaces
+    const workspaces = rootPkgInfo.pkg.workspaces
       ? await getWorkspacesInfo(rootDir)
       : {};
 
-    const resolution = this.config.nodeModules?.resolution || "shallow";
-    const {
-      trees: workspaceTrees,
-      configs: workspaceConfigs,
-    } = await Promise.all(
-      Object.values(workspaces).map(async (w) => {
-        const pkg = await getPackageJson(w.path);
-        return getDependencies(
-          w.path,
-          pkg,
-          transform,
-          this.visited,
-          resolution
-        );
-      })
-    ).then((ws) => {
-      const trees: FlatTree[] = [];
-      const configs: Config[] = [];
-      ws.forEach(({ tree, config }) => {
-        trees.push(tree);
-        configs.push(config);
-      });
-      return { trees, configs };
-    });
-
-    const { tree: rootTree, config: rootConfig } = await getDependencies(
-      rootDir,
-      rootPkg,
-      transform,
-      this.visited,
-      resolution
+    const wsPkgInfos = await Promise.all(
+      Object.values(workspaces).map(async (w) =>
+        collectPackageInfo(w.location, transform)
+      )
     );
-    const tree = mergeTrees([rootTree, ...workspaceTrees]);
+
+    const allPkgInfos = [rootPkgInfo, ...wsPkgInfos];
+
+    const tree = await Promise.all(
+      allPkgInfos.map((pkgInfo) =>
+        getDependencies(pkgInfo, { resolution }, this.caches)
+      )
+    ).then(mergeTrees);
+
     const nodes = mapTreeToNodes(
       linkWorkspaces(
         rootDir,
         cleanupNodeModuleNames(mapToRelativePaths(rootDir, tree)),
         workspaces,
-        compact([
-          rootConfig.entries.main,
-          ...workspaceConfigs.map((w) => w.entries.main),
-        ])
+        compact(allPkgInfos.map((p) => p.mappedEntries.main))
       ),
-      compact(workspaceConfigs.map((w) => w.entries.main)).map((e) =>
+      compact(allPkgInfos.map((p) => p.mappedEntries.main)).map((e) =>
         path.relative(rootDir, e)
       )
     );

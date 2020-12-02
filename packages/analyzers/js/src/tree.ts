@@ -1,13 +1,7 @@
 import debugFn from "debug";
-import dependencyTree, { DependencyObj } from "dependency-tree";
-import * as path from "path";
-import ts from "typescript";
-import {
-  ConfigTransformer,
-  FlatTree,
-  NodeModulesResolution,
-  PackageJson,
-} from "./types";
+import dependencyTree, { DependencyObj, Options } from "dependency-tree";
+import { CompilerOptions } from "typescript";
+import { FlatTree, NodeModulesResolution, PackageInfo } from "./types";
 import { compact } from "./util";
 
 const debug = debugFn("analyzer-js");
@@ -39,72 +33,67 @@ const flattenTree = (tree: DependencyObj, res: FlatTree = {}): FlatTree => {
 
 const isNodeModule = (p: string) => p.includes("node_modules");
 
+type FixedDependencyTreeOptions = Omit<Options, "filter"> & {
+  tsCompilerOptions?: CompilerOptions;
+  filter?: (dependencyPath: string, parentPath: string) => boolean;
+};
+
 // TODO - pass other config
 const parseEntry = (
-  dir: string,
   entry: string,
-  visited: VisitedCache,
-  resolution: NodeModulesResolution
+  pkgInfo: PackageInfo,
+  options: {
+    resolution: NodeModulesResolution;
+  },
+  caches: {
+    visited: VisitedCache;
+    unresolvableModules: { entry: string; fs: string[] }[];
+  }
 ): FlatTree => {
-  // TODO pass nonExistant and report on them
   const nonExistent: string[] = [];
-  // TODO - cache it!
-  const tsConfigPath = path.join(dir, "tsconfig.json");
-  const tsParsedConfig = ts.readJsonConfigFile(tsConfigPath, ts.sys.readFile);
-  const tsCompilerOptions = ts.parseJsonSourceFileConfigFileContent(
-    tsParsedConfig,
-    ts.sys,
-    dir
-  ).options;
-
-  const deepTree = dependencyTree({
+  const depTreeOptions: FixedDependencyTreeOptions = {
     filename: entry,
-    directory: dir,
-    visited,
-    filter: ((dependency: string, parent: string) => {
-      // console.log(dependency, parent);
-      if (resolution === "shallow") {
+    directory: pkgInfo.location,
+    visited: caches.visited,
+    filter: (dependency: string, parent: string) => {
+      if (options.resolution === "shallow") {
         if (isNodeModule(dependency) && isNodeModule(parent)) {
           return false;
         }
       }
       return true;
-    }) as any, // looks like old type definition, expects only one arg, while it's really two
-    nonExistent,
-    tsCompilerOptions,
-  } as any); // new propertyTsCompilerOptions
+    },
+    tsCompilerOptions: pkgInfo.configs?.ts?.compilerOptions,
+    nonExistent: nonExistent,
+  };
+
+  const deepTree = dependencyTree(depTreeOptions as any);
   if (nonExistent.length) {
-    debug(`nonExistent modules for ${path.join(dir, entry)}`, nonExistent);
+    caches.unresolvableModules.push({ entry, fs: nonExistent });
+    debug(`nonExistent modules for ${entry}`, nonExistent);
   }
-  // console.log(JSON.stringify(nonExistent, null, 2));
   const flatTree = flattenTree(deepTree);
   return flatTree;
 };
 
 // TODO - pass other config
 export const getDependencies = async (
-  dir: string,
-  pkg: PackageJson,
-  transform: ConfigTransformer,
-  visited: VisitedCache,
-  resolution: NodeModulesResolution
+  pkgInfo: PackageInfo,
+  options: {
+    resolution: NodeModulesResolution;
+  },
+  caches: {
+    visited: VisitedCache;
+    unresolvableModules: { entry: string; fs: string[] }[];
+  }
 ) => {
-  const config = await transform({
-    dir: dir,
-    packageJson: pkg,
-  });
-  config.entries.main = config.entries.main
-    ? path.join(dir, config.entries.main)
-    : null;
-  config.entries.bin.map((p) => path.join(dir, p));
-
-  const entryFiles: string[] = compact([
-    config.entries.main,
-    ...config.entries.bin,
+  const allEntryFiles: string[] = compact([
+    pkgInfo.mappedEntries.main,
+    ...pkgInfo.mappedEntries.bin,
   ]);
 
   const tree = mergeTrees(
-    entryFiles.map((e) => parseEntry(dir, e, visited, resolution))
+    allEntryFiles.map((e) => parseEntry(e, pkgInfo, options, caches))
   );
-  return { tree, config };
+  return tree;
 };

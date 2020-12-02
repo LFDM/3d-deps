@@ -15,7 +15,7 @@ export const getWorkspacesInfo = async (
   const ws: { [key: string]: Yarn1Workspace } = JSON.parse(stripAnsi(stdout));
   const result: Workspaces = {};
   Object.entries(ws).map(([k, v]) => {
-    result[k] = { path: path.join(rootDir, v.location) };
+    result[k] = { location: path.join(rootDir, v.location) };
   });
   return result;
 };

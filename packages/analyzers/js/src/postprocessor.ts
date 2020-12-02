@@ -80,7 +80,7 @@ export const linkWorkspaces = (
   const wsByModName: { [key: string]: string } = {};
   Object.entries(workspaces).forEach(([k, v]) => {
     const modName = path.join("node_modules", k);
-    const entry = path.relative(rootDir, v.path);
+    const entry = path.relative(rootDir, v.location);
     wsByModName[modName] = entry;
   });
   const modNames = Object.keys(wsByModName);
