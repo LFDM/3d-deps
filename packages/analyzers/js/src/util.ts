@@ -11,3 +11,12 @@ export const compact = <T>(list: (T | undefined | null)[]): T[] => {
 export const uniq = <T>(list: T[]): T[] => {
   return [...new Set(list)];
 };
+
+export const keyBy = <T>(
+  list: T[],
+  toKey: (el: T) => string
+): { [key: string]: T } => {
+  const res: { [key: string]: T } = {};
+  list.forEach((el) => (res[toKey(el)] = el));
+  return res;
+};
