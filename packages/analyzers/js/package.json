@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@3d-deps/analyzer-base": "0.1.0",
+    "@3d-deps/shared": "0.1.0",
     "@types/dependency-tree": "^7.2.0",
     "debug": "^4.3.1",
     "dependency-tree": "lfdm/node-dependency-tree#master",

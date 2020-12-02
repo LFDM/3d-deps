@@ -1,4 +1,4 @@
-import { DependencyNode, IDependencyAnalyzer } from "@3d-deps/analyzer-base";
+import { DependencyNode, IDependencyAnalyzer } from "@3d-deps/shared";
 import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
