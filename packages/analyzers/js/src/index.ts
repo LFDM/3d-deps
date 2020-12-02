@@ -43,8 +43,7 @@ export type JsAnalyzerConfig = {
 };
 
 const mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
-  const nodes: DependencyNode[] = [];
-  Object.entries(tree).forEach(([k, vs]) => {
+  return Object.entries(tree).map(([k, vs]) => {
     const node: DependencyNode = {
       id: k,
       path: k,
@@ -52,9 +51,8 @@ const mapTreeToNodes = (tree: FlatTree): DependencyNode[] => {
       labels: [],
       dependsOn: vs,
     };
-    nodes.push(node);
+    return node;
   });
-  return nodes;
 };
 
 const getPackageJson = async (dir: string) => {
