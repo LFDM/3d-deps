@@ -128,7 +128,7 @@ describe("analyzer-js", () => {
           id: "pkgs/b/bb/src/index.js",
           path: "pkgs/b/bb/src/index.js",
           label: "pkgs/b/bb/src/index.js",
-          dependsOn: ["node_modules/glob/glob.js", "pkgs/b/bb/src/a.js"],
+          dependsOn: ["node_modules/glob", "pkgs/b/bb/src/a.js"],
           groups: ["workspace_entries"],
         },
         {
