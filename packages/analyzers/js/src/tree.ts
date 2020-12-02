@@ -88,7 +88,7 @@ export const getDependencies = async (
 ) => {
   const allEntryFiles: string[] = compact([
     pkgInfo.mappedEntries.main.abs,
-    pkgInfo.mappedEntries.browser.abs,
+    ...pkgInfo.mappedEntries.browser.map((b) => b.abs),
     ...pkgInfo.mappedEntries.bin.map((b) => b.abs),
   ]);
 

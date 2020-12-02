@@ -31,7 +31,7 @@ export const PostProcessorLabeller = (
 
           if (
             n.path === ws.mappedEntries.main.rel ||
-            n.path === ws.mappedEntries.browser.rel
+            !!ws.mappedEntries.browser.find((b) => b.rel === n.path)
           ) {
             n.labels.push("workspace_entry");
           }

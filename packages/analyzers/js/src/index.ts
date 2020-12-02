@@ -1,4 +1,5 @@
 import { DependencyNode, IDependencyAnalyzer } from "@3d-deps/shared";
+import debugFn from "debug";
 import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
@@ -19,6 +20,8 @@ import {
   PackageInfo,
 } from "./types";
 import { getWorkspacesInfo } from "./yarn";
+
+const debug = debugFn("analyzer-js");
 
 const readFile = promisify(fs.readFile);
 
@@ -80,7 +83,6 @@ const collectPackageInfo = async (
   const pkg = await getPackageJson(dir);
   const config = await transform({ dir, packageJson: pkg });
   const mainAbs = toNullableAbsolutePath(dir, config.entries.main);
-  const browser = toNullableAbsolutePath(dir, config.entries.browser);
   return {
     pkg,
     location: {
@@ -92,10 +94,13 @@ const collectPackageInfo = async (
         abs: mainAbs,
         rel: mainAbs === null ? null : path.relative(rootDir, mainAbs),
       },
-      browser: {
-        abs: browser,
-        rel: browser === null ? null : path.relative(rootDir, browser),
-      },
+      browser: config.entries.browser.map((e) => {
+        const abs = toAbsolutePath(dir, e);
+        return {
+          abs,
+          rel: path.relative(rootDir, abs),
+        };
+      }),
       bin: config.entries.bin.map((e) => {
         const abs = toAbsolutePath(dir, e);
         return {
@@ -161,6 +166,11 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     const nodes = postProcess(
       [PostProcessorLabeller(wsPkgInfos)],
       preprocessed
+    );
+
+    debug(
+      "Non-existent:",
+      JSON.stringify(this.caches.unresolvableModules, null, 2)
     );
 
     return {
