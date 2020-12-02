@@ -3,9 +3,11 @@ import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
 import {
-  cleanupNodeModuleNames,
-  linkWorkspaces,
-  mapToRelativePaths,
+  CleanupNodeModuleNameProcessor,
+  HoistNodeModuleProcessor,
+  LinkWorkspaceProcessor,
+  postProcess,
+  RelativePathProcessor,
 } from "./postprocessor";
 import { TRANSFORMERS } from "./transformers";
 import { getDependencies, mergeTrees, VisitedCache } from "./tree";
@@ -141,19 +143,13 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       )
     ).then(mergeTrees);
 
-    // hoist all node modules
-    // map workspaces, so that e.g. node_modules/x -> packages/x
-    // cleanup node module imports (e.g. lodash/dist/x -> lodash). We might wanna allow this later
-    // try remap of workspace dependencies, when resolved to dist instead of src file
-    // mapToTreeNodes and label tree
-
     const nodes = mapTreeToNodes(
-      linkWorkspaces(
-        rootDir,
-        cleanupNodeModuleNames(mapToRelativePaths(rootDir, tree)),
-        workspaces,
-        compact(allPkgInfos.map((p) => p.mappedEntries.main))
-      ),
+      postProcess(tree, [
+        RelativePathProcessor(rootDir),
+        HoistNodeModuleProcessor(),
+        LinkWorkspaceProcessor(rootDir, wsPkgInfos),
+        CleanupNodeModuleNameProcessor(),
+      ]),
       compact(allPkgInfos.map((p) => p.mappedEntries.main)).map((e) =>
         path.relative(rootDir, e)
       )
