@@ -19,14 +19,7 @@
 
 #### TODOS
 
-- Rename label to name, so that we can have a labels property
-- Add a LabellerPostProcessor
-
-  - auto-labels node modules
-  - entry points
-  - each individual workspace
-
-- The UI shall allow to colorize based on these labels through
+- The UI shall allow to colorize based on labels through
   config options
 
 - Expose metadata about the trees creation
@@ -36,5 +29,9 @@
   - maybe it's config options
 
 - Expose debug information
+
   - nodes that couldn't be resolved
   - entry points that couldn't be found
+
+- Resolve a package.json's browser field. Treat as alternative to main
+- If a webpack.config.js is present, check it's entries as well.
