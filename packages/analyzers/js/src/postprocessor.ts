@@ -1,7 +1,7 @@
 import debug from "debug";
 import * as path from "path";
 import { FlatTree, PackageInfo, Workspaces } from "./types";
-import { compact } from "./util";
+import { compact, uniq } from "./util";
 
 export const mapToRelativePaths = (
   rootDir: string,
@@ -127,7 +127,7 @@ type PostProcessor = {
 // try remap of workspace dependencies, when resolved to dist instead of src file
 // mapToTreeNodes and label tree
 
-const RelativePathProcessor = (rootDir: string): PostProcessor => {
+export const RelativePathProcessor = (rootDir: string): PostProcessor => {
   const toRel = (p: string) => path.relative(rootDir, p);
   return {
     onParent: toRel,
@@ -135,14 +135,11 @@ const RelativePathProcessor = (rootDir: string): PostProcessor => {
   };
 };
 
-const HoistNodeModuleProcessor = (): PostProcessor => {
+export const HoistNodeModuleProcessor = (): PostProcessor => {
   const identifier = "node_modules/";
   const hoist = (x: string) => {
     const i = x.indexOf(identifier);
-    if (i === -1) {
-      return x;
-    }
-    return x.slice(i + identifier.length);
+    return i === -1 ? x : x.slice(i);
   };
   return {
     onParent: hoist,
@@ -150,7 +147,7 @@ const HoistNodeModuleProcessor = (): PostProcessor => {
   };
 };
 
-const LinkWorkspaceProcessor = (
+export const LinkWorkspaceProcessor = (
   rootDir: string,
   wsPkgInfos: PackageInfo[]
 ): PostProcessor => {
@@ -158,6 +155,7 @@ const LinkWorkspaceProcessor = (
   wsPkgInfos.forEach((p) => {
     const modName = path.join("node_modules", p.pkg.name);
     const entry = path.relative(rootDir, p.location);
+    wsByModName[modName] = entry;
   });
   const modNames = Object.keys(wsByModName);
 
@@ -177,7 +175,14 @@ const LinkWorkspaceProcessor = (
   };
 };
 
-const postprocess = (tree: FlatTree, processors: PostProcessor[]) => {
+export const CleanupNodeModuleNameProcessor = (): PostProcessor => {
+  return {
+    onParent: (p) => cleanupNodeModuleName(p) || p,
+    onChild: (p) => cleanupNodeModuleName(p) || p,
+  };
+};
+
+export const postProcess = (tree: FlatTree, processors: PostProcessor[]) => {
   const cache: {
     parents: { [parent: string]: string | null };
     children: { [child: string]: string | null };
@@ -202,7 +207,7 @@ const postprocess = (tree: FlatTree, processors: PostProcessor[]) => {
             }, v));
         })
       );
-      result[nextK] = nextVs;
+      result[nextK] = uniq(nextVs);
     }
   });
   return result;
