@@ -1,4 +1,5 @@
 import { DependencyNode } from "@3d-deps/shared";
+import { PackageInfo } from "./types";
 import { keyBy } from "./util";
 
 export interface PostProcessor {
@@ -10,6 +11,27 @@ export interface PostProcessor {
     }
   ) => DependencyNode;
 }
+
+export const PostProcessorLabeller = (
+  workspaces: PackageInfo[]
+): PostProcessor => {
+  return {
+    onNode: (n) => {
+      if (n.path.startsWith("node_modules")) {
+        n.labels.push("node_module");
+      }
+      for (const ws of workspaces) {
+        if (n.path.startsWith(ws.location.rel)) {
+          n.labels.push(`workspace:${ws.pkg.name}`);
+        }
+        if (n.path === ws.mappedEntries.main.rel) {
+          n.labels.push("workspace_entry");
+        }
+      }
+      return n;
+    },
+  };
+};
 
 export const postProcess = (
   processors: PostProcessor[],

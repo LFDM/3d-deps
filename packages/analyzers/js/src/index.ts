@@ -2,6 +2,7 @@ import { DependencyNode, IDependencyAnalyzer } from "@3d-deps/shared";
 import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
+import { postProcess, PostProcessorLabeller } from "./postProcessor";
 import {
   preProcess,
   PreProcessorCleanupNodeModuleNames,
@@ -72,17 +73,31 @@ const toAbsolutePath = (dir: string, p: string) => {
 };
 
 const collectPackageInfo = async (
+  rootDir: string,
   dir: string,
   transform: ConfigTransformer
 ): Promise<PackageInfo> => {
   const pkg = await getPackageJson(dir);
   const config = await transform({ dir, packageJson: pkg });
+  const mainAbs = toNullableAbsolutePath(dir, config.entries.main);
   return {
     pkg,
-    location: dir,
+    location: {
+      abs: dir,
+      rel: path.relative(rootDir, dir),
+    },
     mappedEntries: {
-      main: toNullableAbsolutePath(dir, config.entries.main),
-      bin: config.entries.bin.map((e) => toAbsolutePath(dir, e)),
+      main: {
+        abs: mainAbs,
+        rel: mainAbs === null ? null : path.relative(rootDir, mainAbs),
+      },
+      bin: config.entries.bin.map((e) => {
+        const abs = toAbsolutePath(dir, e);
+        return {
+          abs,
+          rel: path.relative(rootDir, abs),
+        };
+      }),
     },
     configs: config.configs,
   };
@@ -107,7 +122,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     const { rootDir: origRootDir } = this.config;
     const rootDir = toAbsolutePath(process.cwd(), origRootDir);
     const transform = this.config.configTransformer || TRANSFORMERS.DEFAULT();
-    const rootPkgInfo = await collectPackageInfo(rootDir, transform);
+    const rootPkgInfo = await collectPackageInfo(rootDir, rootDir, transform);
 
     const workspaces = rootPkgInfo.pkg.workspaces
       ? await getWorkspacesInfo(rootDir)
@@ -115,7 +130,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
 
     const wsPkgInfos = await Promise.all(
       Object.values(workspaces).map(async (w) =>
-        collectPackageInfo(w.location, transform)
+        collectPackageInfo(rootDir, w.location, transform)
       )
     );
 
@@ -132,12 +147,12 @@ export class JsAnalyzer implements IDependencyAnalyzer {
         [
           PreProcessorRelativePaths(rootDir),
           PreProcessorHoistNodeModules(),
-          PreProcessorLinkWorkspaces(rootDir, wsPkgInfos),
+          PreProcessorLinkWorkspaces(wsPkgInfos),
           PreProcessorCleanupNodeModuleNames(),
         ],
         tree
       )
     );
-    return nodes;
+    return postProcess([PostProcessorLabeller(wsPkgInfos)], nodes);
   }
 }

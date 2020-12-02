@@ -148,13 +148,12 @@ export const PreProcessorHoistNodeModules = (): PreProcessor => {
 };
 
 export const PreProcessorLinkWorkspaces = (
-  rootDir: string,
   wsPkgInfos: PackageInfo[]
 ): PreProcessor => {
   const wsByModName: { [key: string]: string } = {};
   wsPkgInfos.forEach((p) => {
     const modName = path.join("node_modules", p.pkg.name);
-    const entry = path.relative(rootDir, p.location);
+    const entry = p.location.rel;
     wsByModName[modName] = entry;
   });
   const modNames = Object.keys(wsByModName);

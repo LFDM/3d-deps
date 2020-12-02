@@ -40,9 +40,21 @@ export type NodeModulesResolution = "shallow" | "deep";
 
 export type PackageInfo = {
   pkg: PackageJson;
-  location: string;
+  location: {
+    abs: string;
+    rel: string;
+  };
 
-  mappedEntries: Entries;
+  mappedEntries: {
+    main: {
+      abs: string | null;
+      rel: string | null;
+    };
+    bin: {
+      abs: string;
+      rel: string;
+    }[];
+  };
 
   configs: {
     ts?: {
