@@ -1,6 +1,5 @@
-import debug from "debug";
 import * as path from "path";
-import { FlatTree, PackageInfo, Workspaces } from "./types";
+import { FlatTree, PackageInfo } from "./types";
 import { compact, uniq } from "./util";
 
 export const mapToRelativePaths = (
@@ -61,58 +60,6 @@ export const cleanupNodeModuleName = (t: string): string | null => {
     }
   }
   return res.length ? [...prefixes, "node_modules", ...res].join("/") : null;
-};
-
-export const cleanupNodeModuleNames = (tree: FlatTree) => {
-  const res: FlatTree = {};
-  Object.entries(tree).forEach(([k, v]) => {
-    res[cleanupNodeModuleName(k) || k] = v.map(
-      (x) => x // cleanupNodeModuleName(x) || x
-    );
-  });
-  return res;
-};
-
-export const linkWorkspaces = (
-  rootDir: string,
-  tree: FlatTree,
-  workspaces: Workspaces,
-  entries: string[] // probably not needed after all!
-): FlatTree => {
-  const wsByModName: { [key: string]: string } = {};
-  Object.entries(workspaces).forEach(([k, v]) => {
-    const modName = path.join("node_modules", k);
-    const entry = path.relative(rootDir, v.location);
-    wsByModName[modName] = entry;
-  });
-  const modNames = Object.keys(wsByModName);
-  const mappedTree: FlatTree = {};
-  const dependencyResolverCache: { [key: string]: string } = {};
-  Object.entries(tree).forEach(([k, vs]) => {
-    const entry = wsByModName[k];
-    if (entry) {
-      return;
-    }
-    const nextVs = vs.map((v) => {
-      const resolved = dependencyResolverCache[v];
-      if (resolved) {
-        return resolved;
-      }
-      if (v.startsWith("node_modules")) {
-        for (const modName of modNames) {
-          if (v.startsWith(modName)) {
-            const entry = wsByModName[modName];
-            debug("ajs")("replaced", modName, entry);
-            return (dependencyResolverCache[v] = v.replace(modName, entry));
-          }
-        }
-      }
-      return v;
-    });
-
-    mappedTree[k] = nextVs;
-  });
-  return mappedTree;
 };
 
 export interface PreProcessor {
