@@ -108,7 +108,7 @@ const useGeneratedLabels = (
   const labelKeys = useMemo(() => {
     const set: Set<string> = new Set();
     list.forEach((t) => t.labels.forEach((l) => set.add(l)));
-    return [...set];
+    return [...set].sort();
   }, [list]);
   const [disabled, setDisabled] = useState<{ [key: string]: boolean }>({});
   const toggle = useCallback(
