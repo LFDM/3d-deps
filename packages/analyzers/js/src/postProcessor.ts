@@ -27,13 +27,13 @@ export const PostProcessorLabeller = (
       }
       for (const ws of sortedWorkspaces) {
         if (n.path.startsWith(ws.location.rel)) {
-          n.labels.push(`workspace:${ws.pkg.name}`);
+          n.labels.push(`pkg:${ws.pkg.name}`);
 
           if (
             n.path === ws.mappedEntries.main.rel ||
             !!ws.mappedEntries.browser.find((b) => b.rel === n.path)
           ) {
-            n.labels.push("workspace_entry");
+            n.labels.push("pkg_entry");
           }
           break;
         }
