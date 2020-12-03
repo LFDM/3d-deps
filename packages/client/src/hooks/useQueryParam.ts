@@ -1,11 +1,12 @@
 import { useMemo } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 export const useQueryParam = (
   param: string,
   defaultValue = ""
 ): [string, (nextValue: string | null) => void] => {
   const history = useHistory();
+  const location = useLocation();
 
   return useMemo(() => {
     const u = new URL(window.location.toString());
@@ -23,5 +24,8 @@ export const useQueryParam = (
         return history.push(nextUrl.search);
       },
     ];
-  }, [param, history, defaultValue]);
+    // location is only here to trigger updated, we need to use
+    // window location inside
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [param, location, history]);
 };
