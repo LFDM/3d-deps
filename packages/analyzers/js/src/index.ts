@@ -13,6 +13,7 @@ import {
   PreProcessorHoistNodeModules,
   PreProcessorLinkWorkspaces,
   PreProcessorRelativePaths,
+  PreProcessorResolveMappedEntryFiles,
 } from "./preProcessor";
 import { TRANSFORMERS } from "./transformers";
 import { getDependencies, mergeTrees, VisitedCache } from "./tree";
@@ -173,6 +174,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
           PreProcessorHoistNodeModules(),
           PreProcessorLinkWorkspaces(wsPkgInfos),
           PreProcessorCleanupNodeModuleNames(),
+          PreProcessorResolveMappedEntryFiles(wsPkgInfos),
         ],
         tree
       )

@@ -121,6 +121,31 @@ export const PreProcessorLinkWorkspaces = (
   };
 };
 
+export const PreProcessorResolveMappedEntryFiles = (
+  wsPkgInfos: PackageInfo[]
+): PreProcessor => {
+  const dict: { [key: string]: string } = {};
+  wsPkgInfos.forEach((w) => {
+    const main = w.mappedEntries.main.rel;
+    if (main) {
+      const types = w.pkg.types; // or try to assume it's the main entry with a d.ts ext?
+      if (types) {
+        dict[path.join(w.location.rel, types)] = main;
+      }
+      const origMain = w.pkg.main;
+      if (origMain) {
+        dict[path.join(w.location.rel, origMain)] = main;
+      }
+    }
+  });
+  const typeDefs = new Set(Object.keys(dict));
+  const mapFn = (t: string) => (typeDefs.has(t) ? dict[t] : t);
+  return {
+    onParent: mapFn,
+    onChild: mapFn,
+  };
+};
+
 export const PreProcessorCleanupNodeModuleNames = (): PreProcessor => {
   return {
     onParent: (p) => cleanupNodeModuleName(p) || p,
@@ -153,7 +178,7 @@ export const preProcess = (processors: PreProcessor[], tree: FlatTree) => {
             }, v));
         })
       );
-      result[nextK] = uniq([...nextVs, ...result[nextK]]); // merge in case a manipulated key is already present
+      result[nextK] = uniq([...nextVs, ...(result[nextK] || [])]); // merge in case a manipulated key is already present
     }
   });
   return result;
