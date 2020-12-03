@@ -12,6 +12,7 @@ const Chip = styled("div")<{ color: string; active: boolean }>((p) => ({
   padding: p.theme.spacing(0.5),
   borderRadius: p.theme.spacing(0.25),
   opacity: p.active ? 1 : 0.4,
+  textDecoration: p.active ? "inherit" : "line-through",
 }));
 
 export const NodeLabelChip = ({ d }: { d: NodeLabel }) => {
