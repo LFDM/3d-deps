@@ -32,6 +32,7 @@ const toSequence = (
 const ALL_HOTKEYS: Hotkey[] = [
   "hud.sidebar.toggle",
   "hud.sidebar.openNodesPanel",
+  "hud.sidebar.openLabelsPanel",
   "hud.sidebar.openHistoryPanel",
   "hud.sidebar.openConfigPanel",
   "hud.search",
@@ -49,6 +50,10 @@ const toKeyMap = (hs: HotkeyConfig): KeyMap => {
   return {
     "hud.sidebar.toggle": toSequence(hs, "hud.sidebar.toggle"),
     "hud.sidebar.openNodesPanel": toSequence(hs, "hud.sidebar.openNodesPanel"),
+    "hud.sidebar.openLabelsPanel": toSequence(
+      hs,
+      "hud.sidebar.openLabelsPanel"
+    ),
     "hud.sidebar.openHistoryPanel": toSequence(
       hs,
       "hud.sidebar.openHistoryPanel"
@@ -113,6 +118,7 @@ export const Hotkeys = () => {
     return {
       "hud.sidebar.toggle": () => toggleSidebar(current, onChange),
       "hud.sidebar.openNodesPanel": () => openSideBarTab("nodes"),
+      "hud.sidebar.openLabelsPanel": () => openSideBarTab("labels"),
       "hud.sidebar.openHistoryPanel": () => openSideBarTab("history"),
       "hud.sidebar.openConfigPanel": () => openSideBarTab("config"),
       "hud.search": () => as.setSearchOpen(true),
