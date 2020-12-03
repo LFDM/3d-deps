@@ -26,6 +26,7 @@ const InnerChip = styled(Button)((p) => ({
   display: "flex",
   alignItems: "center",
   width: "100%",
+  padding: p.theme.spacing(0.5),
 
   "> :not(:first-child)": {
     marginLeft: p.theme.spacing(),
