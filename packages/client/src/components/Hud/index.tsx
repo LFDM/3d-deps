@@ -10,7 +10,6 @@ import { DatasetExplorer } from "./DatasetExplorer";
 import { HistoryPanel } from "./HistoryPanel";
 import { HotkeyInfoModal } from "./HotkeyInfoModal";
 import { HudSegment } from "./HudSegment";
-import { LabelInfoModal } from "./LabelInfoModal";
 import { LabelPanel } from "./LabelPanel";
 import { NodesPanel } from "./NodesPanel";
 import { OverlayContextProvider, useOverlayContext } from "./OverlayContext";
@@ -169,11 +168,10 @@ const Controls = () => {
       hud: {
         hotkeyInfo: { open: hotkeyInfoOpen },
         search: { open: searchOpen },
-        labelInfo: { open: labelInfoOpen },
       },
       graph: { showDetails },
     },
-    { setHotkeyInfoOpen, setLabelInfoOpen, setSearchOpen, toggleDetails },
+    { setHotkeyInfoOpen, setSearchOpen, toggleDetails },
   ] = useUiState();
   return (
     <ControlsContainer>
@@ -185,12 +183,6 @@ const Controls = () => {
       </ControlButton>
       <ControlButton active={showDetails} onClick={() => toggleDetails()}>
         Details
-      </ControlButton>
-      <ControlButton
-        active={labelInfoOpen}
-        onClick={() => setLabelInfoOpen(!labelInfoOpen)}
-      >
-        Labels
       </ControlButton>
       <ControlButton
         active={searchOpen}
@@ -230,7 +222,6 @@ export const Hud = () => {
     <OverlayContextProvider>
       <Hotkeys />
       <HotkeyInfoModal />
-      <LabelInfoModal />
       <SearchModal />
       <Body />
     </OverlayContextProvider>

@@ -27,9 +27,6 @@ export type UiState = {
     hotkeyInfo: {
       open: boolean;
     };
-    labelInfo: {
-      open: boolean;
-    };
     search: {
       open: boolean;
     };
@@ -52,9 +49,6 @@ const DEFAULT_STATE: UiState = {
     hotkeyInfo: {
       open: false,
     },
-    labelInfo: {
-      open: false,
-    },
     search: {
       open: false,
     },
@@ -73,7 +67,6 @@ export type UiStateActions = {
   setSelectedNodeId: (nodeId: string | null) => void;
   toggleSelectedNodeId: () => void;
   setHotkeyInfoOpen: (nextState: boolean) => void;
-  setLabelInfoOpen: (nextState: boolean) => void;
   setSearchOpen: (nextState: boolean) => void;
   toggleDetails: (nextState?: boolean) => void;
   selectionHistoryMove: (steps: number) => void;
@@ -87,7 +80,6 @@ const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
     setSelectedNodeId: () => undefined,
     toggleSelectedNodeId: () => undefined,
     setHotkeyInfoOpen: () => undefined,
-    setLabelInfoOpen: () => undefined,
     setSearchOpen: () => undefined,
     toggleDetails: () => undefined,
     selectionHistoryMove: () => undefined,
@@ -207,11 +199,6 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
             ...s,
             hotkeyInfoOpen: next,
           })),
-        setLabelInfoOpen: (next) =>
-          setState((s) => ({
-            ...s,
-            labelInfoOpen: next,
-          })),
         setSearchOpen: (next) =>
           setState((s) => ({
             ...s,
@@ -236,7 +223,6 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
       tab,
       selectedNodeId,
       hotkeyInfoOpen,
-      labelInfoOpen,
       searchOpen,
       showDetails,
       labels,
