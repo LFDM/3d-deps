@@ -128,17 +128,12 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
   const history = useRef(
     new UndoHistory<string>(25, { present: selectedNodeId || undefined })
   );
-  const [
-    { hotkeyInfoOpen, labelInfoOpen, searchOpen, showDetails },
-    setState,
-  ] = useState<{
+  const [{ hotkeyInfoOpen, searchOpen, showDetails }, setState] = useState<{
     hotkeyInfoOpen: boolean;
-    labelInfoOpen: boolean;
     searchOpen: boolean;
     showDetails: boolean;
   }>({
     hotkeyInfoOpen: false,
-    labelInfoOpen: false,
     searchOpen: false,
     showDetails: false,
   });
@@ -163,9 +158,6 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
           },
           search: {
             open: searchOpen,
-          },
-          labelInfo: {
-            open: labelInfoOpen,
           },
         },
         graph: {
