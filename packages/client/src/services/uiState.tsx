@@ -1,9 +1,23 @@
-import React, { useContext, useMemo, useRef, useState } from "react";
+import { useTheme } from "@emotion/react";
+import { keyBy } from "lodash";
+import React, {
+  useCallback,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useQueryParam } from "../hooks/useQueryParam";
-import { GraphData } from "../types/GraphData";
+import { GraphData, TreeNode } from "../types/GraphData";
 import { UndoHistory } from "./undoHistory";
 
 export type TabName = "nodes" | "history" | "config";
+
+export type NodeLabel = {
+  key: string;
+  color: string;
+  active: boolean;
+};
 
 export type UiState = {
   hud: {
@@ -22,6 +36,8 @@ export type UiState = {
     history: UndoHistory<string>;
     selectedNodeId: string | null;
     showDetails: boolean;
+
+    labels: { [key: string]: NodeLabel };
   };
 };
 
@@ -42,6 +58,7 @@ const DEFAULT_STATE: UiState = {
     history: new UndoHistory(0),
     selectedNodeId: null,
     showDetails: true,
+    labels: {},
   },
 };
 
@@ -53,6 +70,7 @@ export type UiStateActions = {
   setSearchOpen: (nextState: boolean) => void;
   toggleDetails: (nextState?: boolean) => void;
   selectionHistoryMove: (steps: number) => void;
+  toggleLabel: (key: string, active: boolean) => void;
 };
 
 const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
@@ -65,10 +83,41 @@ const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
     setSearchOpen: () => undefined,
     toggleDetails: () => undefined,
     selectionHistoryMove: () => undefined,
+    toggleLabel: () => undefined,
   },
 ]);
 
 export const useUiState = () => useContext(UiStateContext);
+
+const useGeneratedLabels = (
+  list: TreeNode[],
+  labelPalette: string[]
+): [
+  labels: { [key: string]: NodeLabel },
+  toggleLabel: (key: string, active: boolean) => void
+] => {
+  // approach negatively, as we want everything turned on by default
+  const labelKeys = useMemo(() => {
+    const set: Set<string> = new Set();
+    list.forEach((t) => t.labels.forEach((l) => set.add(l)));
+    return [...set];
+  }, [list]);
+  const [disabled, setDisabled] = useState<{ [key: string]: boolean }>({});
+  const toggle = useCallback(
+    (key: string, active: boolean) =>
+      setDisabled((s) => ({ ...s, [key]: active })),
+    []
+  );
+  const labels = useMemo(() => {
+    const ls = labelKeys.map<NodeLabel>((key, i) => ({
+      key,
+      color: labelPalette[i % labelPalette.length],
+      active: !disabled[key],
+    }));
+    return keyBy(ls, (l) => l.key);
+  }, [labelKeys, labelPalette, disabled]);
+  return [labels, toggle];
+};
 
 export const UiStateProvider: React.FC<{ data: GraphData }> = ({
   data,
@@ -88,6 +137,11 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
     searchOpen: false,
     showDetails: false,
   });
+
+  const theme = useTheme();
+  const labelPalette = theme.graph.labels.palette;
+
+  const [labels, toggleLabel] = useGeneratedLabels(data.list, labelPalette);
 
   // TODO optimize so that only what changes really changes. Right now we're
   // blasing the whole object with every change
@@ -111,6 +165,8 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
           history: history.current,
           selectedNodeId: selectedNodeId || null,
           showDetails,
+
+          labels,
         },
       },
       {
@@ -151,9 +207,19 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
             setSelectedNodeId(nextSel);
           }
         },
+        toggleLabel,
       },
     ],
-    [data, tab, selectedNodeId, hotkeyInfoOpen, searchOpen, showDetails]
+    [
+      data,
+      tab,
+      selectedNodeId,
+      hotkeyInfoOpen,
+      searchOpen,
+      showDetails,
+      labels,
+      toggleLabel,
+    ]
   );
   return (
     <UiStateContext.Provider value={value}>{children}</UiStateContext.Provider>
