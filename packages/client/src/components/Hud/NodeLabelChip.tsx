@@ -26,7 +26,6 @@ export const NodeLabelChip = ({ d }: { d: NodeLabel }) => {
 const InnerChip = styled(Button)((p) => ({
   display: "flex",
   alignItems: "center",
-  width: "100%",
   padding: p.theme.spacing(0.5),
 
   "> :not(:first-child)": {
@@ -43,7 +42,7 @@ export const SelectableNodeLabelChip = ({
 }) => {
   return (
     <Chip color={d.color} active={d.active}>
-      <InnerChip variant="none" onClick={() => onChange(!d.active)}>
+      <InnerChip variant="none" onClick={() => onChange(!d.active)} fullWidth>
         {d.active ? <Check size={14} /> : <Minus size={14} />}
         <div>{d.key}</div>
       </InnerChip>
