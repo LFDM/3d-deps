@@ -276,7 +276,7 @@ export const Graph = () => {
     }
 
     data.list.forEach((t) => {
-      const labelKey = t.labels[0];
+      const labelKey = t.labels.find((l) => labels[l]?.active);
       if (labelKey) {
         const l = labels[labelKey];
         if (l?.active) {
