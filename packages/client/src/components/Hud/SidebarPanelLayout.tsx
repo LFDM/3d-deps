@@ -25,3 +25,11 @@ export const SidebarPanelFooter = styled("footer")`
   padding: ${(p) => p.theme.spacing(2)}px;
   border-top: 1px dashed currentcolor;
 `;
+
+export const SidebarPanelEmptyState = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: 200,
+  opacity: 0.5,
+}));

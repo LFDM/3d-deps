@@ -5,6 +5,7 @@ import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
 import { NodeStats } from "../NodeStats";
+import { SidebarPanelEmptyState } from "./SidebarPanelLayout";
 
 const List = styled("div")((p) => ({
   paddingBottom: p.theme.spacing(2),
@@ -34,14 +35,6 @@ const Item = React.forwardRef<
     </Button>
   );
 });
-
-const EmptyState = styled("div")((p) => ({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  height: 200,
-  opacity: 0.5,
-}));
 
 export const HistoryPanel = ({
   scrollContainer,
@@ -100,9 +93,9 @@ export const HistoryPanel = ({
       })}
       <></>
       {!present && !future.length && !past.length && (
-        <EmptyState>
+        <SidebarPanelEmptyState>
           <em>No selections recorded yet.</em>
-        </EmptyState>
+        </SidebarPanelEmptyState>
       )}
     </List>
   );
