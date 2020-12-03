@@ -1,13 +1,15 @@
+import styled from "@emotion/styled";
 import React from "react";
 import { useUiState } from "../../services/uiState";
 import { Dialog, DialogTitle } from "../Dialog";
+import { SelectableNodeLabelChip } from "./NodeLabelChip";
 
-// const HotkeyGrid = styled("div")((p) => ({
-//   display: "grid",
-//   gridTemplateColumns: "1fr max-content",
-//   gridColumnGap: p.theme.spacing(4),
-//   gridRowGap: p.theme.spacing(1),
-// }));
+const Grid = styled("div")((p) => ({
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gridColumnGap: p.theme.spacing(4),
+  gridRowGap: p.theme.spacing(1),
+}));
 
 // const HotkeyValues = styled("div")`
 //   text-align: right;
@@ -39,14 +41,22 @@ export const LabelInfoModal = () => {
       hud: {
         labelInfo: { open: labelInfoOpen },
       },
-      graph: {},
+      graph: { labels },
     },
-    { setLabelInfoOpen },
+    { setLabelInfoOpen, toggleLabel },
   ] = useUiState();
   const close = () => setLabelInfoOpen(false);
   return (
     <Dialog open={labelInfoOpen} onClose={close} center>
       <DialogTitle>Labels</DialogTitle>
+      <Grid>
+        {Object.values(labels).map((l) => (
+          <SelectableNodeLabelChip
+            d={l}
+            onChange={(active) => toggleLabel(l.key, active)}
+          />
+        ))}
+      </Grid>
     </Dialog>
   );
 };
