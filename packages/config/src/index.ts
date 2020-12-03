@@ -35,6 +35,43 @@ export type Theme = {
   };
 };
 
+// Type it out instead of using a recursive type - as this is a primary way
+// for users to define Configs, it enhances readability.
+export type PartialTheme = {
+  typography?: {
+    font?: string;
+    backgroundColor?: string;
+    color?: string;
+  };
+  hud?: {
+    color?: string;
+    primaryColor?: string;
+    secondaryColor?: string;
+    backgroundColor?: string;
+    opacity?: number;
+  };
+  spacing?: (multiplier?: number) => number;
+  graph?: {
+    nodes?: {
+      colors?: {
+        standard?: string;
+        selected?: string;
+        unselected?: string;
+        dependent?: string;
+        dependency?: string;
+      };
+    };
+    links?: {
+      colors?: {
+        standard?: string;
+        dependent?: string;
+        dependency?: string;
+        unselected?: string;
+      };
+    };
+  };
+};
+
 export type NodeLabel = {
   id: string;
   name: string;
@@ -56,12 +93,36 @@ export type GraphConfig = {
   };
 };
 
+export type PartialGraphConfig = {
+  dependencies?: {
+    maxDepth?: number;
+  };
+  dependents?: {
+    maxDepth?: number;
+  };
+  excludeByPath?: RegExp | null;
+  includeByPath?: RegExp | null;
+
+  labels?: {
+    nodes?: NodeLabel[];
+  };
+};
+
 export type HudConfig = {
   sidebar: {
     open: boolean;
   };
   search: {
     showExcludedNodes: boolean;
+  };
+};
+
+export type PartialHudConfig = {
+  sidebar?: {
+    open?: boolean;
+  };
+  search?: {
+    showExcludedNodes?: boolean;
   };
 };
 
@@ -83,12 +144,20 @@ export type Hotkey =
   | "graph.selectedNode.history.backward";
 
 export type HotkeyConfig = { [K in Hotkey]: string[] };
+export type PartialHotkeyConfig = { [K in Hotkey]?: string[] };
 
 export type Config = {
   theme: Theme;
   graph: GraphConfig;
   hud: HudConfig;
   hotkeys: HotkeyConfig;
+};
+
+export type PartialConfig = {
+  theme?: PartialTheme;
+  graph?: PartialGraphConfig;
+  hud?: PartialHudConfig;
+  hotkeys?: PartialHotkeyConfig;
 };
 
 export type SerializedConfig = {
@@ -135,6 +204,83 @@ export const deserializeConfig = (conf: SerializedConfig): Config => {
     hud: conf.hud,
     hotkeys: conf.hotkeys,
   };
+};
+
+export const mergeConfigs = (config: Config, ...partials: PartialConfig[]) => {
+  return partials.reduce<Config>((m, p) => {
+    const merged: Config = {
+      ...m,
+      theme: {
+        ...m.theme,
+        ...p.theme,
+        typography: {
+          ...m.theme.typography,
+          ...p.theme?.typography,
+        },
+        hud: {
+          ...m.theme.hud,
+          ...p.theme?.hud,
+        },
+        graph: {
+          ...m.theme.graph,
+          nodes: {
+            ...m.theme.graph.nodes,
+            colors: {
+              ...m.theme.graph.nodes.colors,
+              ...p.theme?.graph?.nodes?.colors,
+            },
+          },
+          links: {
+            ...m.theme.graph.links,
+            colors: {
+              ...m.theme.graph.links.colors,
+              ...p.theme?.graph?.links?.colors,
+            },
+          },
+        },
+      },
+      graph: {
+        ...m.graph,
+        ...p.graph,
+        dependencies: {
+          ...m.graph.dependencies,
+          ...p.graph?.dependencies,
+        },
+        dependents: {
+          ...m.graph.dependents,
+          ...p.graph?.dependents,
+        },
+        labels: {
+          ...m.graph.labels,
+          nodes: {
+            ...m.graph.labels.nodes,
+            ...p.graph?.labels?.nodes,
+          },
+        },
+      },
+      hud: {
+        ...m.hud,
+        ...p.hud,
+        sidebar: {
+          ...m.hud.sidebar,
+          ...p.hud?.sidebar,
+        },
+        search: {
+          ...m.hud.search,
+          ...p.hud?.search,
+        },
+      },
+      hotkeys: {
+        ...m.hotkeys,
+        ...p.hotkeys,
+      },
+    };
+    return merged;
+  }, config);
+};
+
+export const mergeWithDefaultConfig = (...partials: PartialConfig[]) => {
+  return mergeConfigs(CONFIG, ...partials);
 };
 
 export const CONFIG: Config = {
