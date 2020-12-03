@@ -4,6 +4,7 @@ import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
 import { NodeStats } from "../NodeStats";
 import { HudSegment } from "./HudSegment";
+import { NodeLabelChip } from "./NodeLabelChip";
 
 const Container = styled(HudSegment)((p) => ({
   position: "absolute",
@@ -46,10 +47,21 @@ const Details = ({ d }: { d: TreeNode }) => {
   );
 };
 
+const LabelContainer = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  fontSize: "1rem",
+
+  "> :not(:first-child)": {
+    marginLeft: p.theme.spacing(),
+  },
+}));
+
 export const CurrentSelection = () => {
   const [
     {
-      graph: { data, selectedNodeId, showDetails },
+      graph: { data, selectedNodeId, showDetails, labels },
     },
   ] = useUiState();
   if (!selectedNodeId) {
@@ -60,12 +72,19 @@ export const CurrentSelection = () => {
     console.log("Node not found", selectedNodeId, data.byId);
     return null;
   }
+  console.log(d, labels);
   return (
     <Container>
       <Title excluded={d.exclude}>
+        <LabelContainer>
+          {d.labels.map(
+            (l) => labels[l] && <NodeLabelChip key={l} d={labels[l]} />
+          )}
+        </LabelContainer>
         <div>{d.exclude ? <s>{d.name}</s> : d.name}</div>
         <NodeStats d={d} />
       </Title>
+
       {showDetails && <Details d={d} />}
     </Container>
   );
