@@ -67,6 +67,15 @@ const Tabs = styled("div")((p) => ({
   borderBottom: `1px solid currentcolor`,
 }));
 
+const TabButton: React.FC<{
+  active: boolean;
+  onClick: () => void;
+}> = ({ active, onClick, children }) => (
+  <Button variant={active ? "outlined" : "standard"} onClick={onClick}>
+    {children}
+  </Button>
+);
+
 export const Sidebar = ({ open }: { open: boolean }) => {
   const [
     {
@@ -82,30 +91,18 @@ export const Sidebar = ({ open }: { open: boolean }) => {
   return (
     <SidebarContainer open={open} ref={containerRef} as="nav">
       <Tabs>
-        <Button
-          variant={tab === "nodes" ? "outlined" : "standard"}
-          onClick={() => setTab("nodes")}
-        >
+        <TabButton active={tab === "nodes"} onClick={() => setTab("nodes")}>
           Nodes
-        </Button>
-        <Button
-          variant={tab === "labels" ? "outlined" : "standard"}
-          onClick={() => setTab("labels")}
-        >
+        </TabButton>
+        <TabButton active={tab === "labels"} onClick={() => setTab("labels")}>
           Labels
-        </Button>
-        <Button
-          variant={tab === "history" ? "outlined" : "standard"}
-          onClick={() => setTab("history")}
-        >
+        </TabButton>
+        <TabButton active={tab === "history"} onClick={() => setTab("history")}>
           History
-        </Button>
-        <Button
-          variant={tab === "config" ? "outlined" : "standard"}
-          onClick={() => setTab("config")}
-        >
+        </TabButton>
+        <TabButton active={tab === "config"} onClick={() => setTab("config")}>
           Config
-        </Button>
+        </TabButton>
       </Tabs>
       {tab === "nodes" && (
         <Tab>
