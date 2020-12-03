@@ -48,4 +48,19 @@ export const loadDatasets: () => Promise<Dataset[]> = async () => [
       ),
     }),
   },
+  {
+    name: "Next.js (Workspace)",
+    fetch: async () => ({
+      config: {
+        ...CONFIG,
+        graph: {
+          ...CONFIG.graph,
+          excludeByPath: /((^|\/)node_modules\/)/,
+        },
+      },
+      data: await import("./analyzers/dependencies-nextjs-workspace.json").then(
+        (x) => x.default
+      ),
+    }),
+  },
 ];
