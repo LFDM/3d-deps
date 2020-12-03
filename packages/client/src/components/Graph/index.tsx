@@ -154,7 +154,7 @@ const useData = (g: GraphData): Data => {
 export const Graph = () => {
   const [
     {
-      graph: { selectedNodeId, data: g },
+      graph: { selectedNodeId, data: g, labels },
     },
     { setSelectedNodeId },
   ] = useUiState();
@@ -275,6 +275,18 @@ export const Graph = () => {
       );
     }
 
+    data.list.forEach((t) => {
+      const labelKey = t.labels[0];
+      if (labelKey) {
+        const l = labels[labelKey];
+        if (l?.active) {
+          addNodeStyle(ss, t.id, {
+            color: l.color,
+          });
+        }
+      }
+    });
+
     const topNodes = sortBy(
       data.list,
       (d) =>
@@ -290,8 +302,9 @@ export const Graph = () => {
         color: theme.graph.links.colors.standard,
       })
     );
+
     return ss;
-  }, [data, selectedNodeId, theme, graphConfig]);
+  }, [data, selectedNodeId, theme, graphConfig, labels]);
 
   useEffect(() => {
     setTimeout(() => {
