@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import { keyBy } from "lodash";
+import { keyBy, mapValues } from "lodash";
 import React, {
   useCallback,
   useContext,
@@ -70,7 +70,7 @@ export type UiStateActions = {
   setSearchOpen: (nextState: boolean) => void;
   toggleDetails: (nextState?: boolean) => void;
   selectionHistoryMove: (steps: number) => void;
-  toggleLabel: (key: string, active: boolean) => void;
+  setLabelsActive: (nextState: { [key: string]: boolean }) => void;
 };
 
 const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
@@ -83,7 +83,7 @@ const UiStateContext = React.createContext<readonly [UiState, UiStateActions]>([
     setSearchOpen: () => undefined,
     toggleDetails: () => undefined,
     selectionHistoryMove: () => undefined,
-    toggleLabel: () => undefined,
+    setLabelsActive: () => undefined,
   },
 ]);
 
@@ -94,7 +94,7 @@ const useGeneratedLabels = (
   labelPalette: string[]
 ): [
   labels: { [key: string]: NodeLabel },
-  toggleLabel: (key: string, active: boolean) => void
+  setLabelsActive: (nextStates: { [key: string]: boolean }) => void
 ] => {
   // approach negatively, as we want everything turned on by default
   const labelKeys = useMemo(() => {
@@ -103,9 +103,9 @@ const useGeneratedLabels = (
     return [...set].sort();
   }, [list]);
   const [disabled, setDisabled] = useState<{ [key: string]: boolean }>({});
-  const toggle = useCallback(
-    (key: string, active: boolean) =>
-      setDisabled((s) => ({ ...s, [key]: !active })),
+  const setLabelsActive = useCallback(
+    (nextStates: { [key: string]: boolean }) =>
+      setDisabled((s) => ({ ...s, ...mapValues(nextStates, (v) => !v) })),
     []
   );
   const labels = useMemo(() => {
@@ -116,7 +116,7 @@ const useGeneratedLabels = (
     }));
     return keyBy(ls, (l) => l.key);
   }, [labelKeys, labelPalette, disabled]);
-  return [labels, toggle];
+  return [labels, setLabelsActive];
 };
 
 export const UiStateProvider: React.FC<{ data: GraphData }> = ({
@@ -146,7 +146,7 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
   const theme = useTheme();
   const labelPalette = theme.graph.labels.palette;
 
-  const [labels, toggleLabel] = useGeneratedLabels(data.list, labelPalette);
+  const [labels, setLabelsActive] = useGeneratedLabels(data.list, labelPalette);
 
   // TODO optimize so that only what changes really changes. Right now we're
   // blasing the whole object with every change
@@ -215,7 +215,7 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
             setSelectedNodeId(nextSel);
           }
         },
-        toggleLabel,
+        setLabelsActive,
       },
     ],
     [
@@ -226,7 +226,7 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
       searchOpen,
       showDetails,
       labels,
-      toggleLabel,
+      setLabelsActive,
       setSelectedNodeId,
       setTab,
     ]
