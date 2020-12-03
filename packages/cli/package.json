@@ -1,0 +1,15 @@
+{
+  "name": "@3d-deps/cli",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "LFDM <1986gh@gmail.com> (https://github.com/LFDM)",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "typescript": "^4.1.2"
+  },
+  "scripts": {
+    "build": "tsc -b"
+  }
+}
