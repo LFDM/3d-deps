@@ -9,6 +9,9 @@
   "scripts": {
     "start": "tsc -b && node dist/example.js"
   },
+  "bin": {
+    "3d-deps": "./dist/example.js"
+  },
   "dependencies": {
     "@3d-deps/analyzer-js": "0.1.0",
     "@3d-deps/config": "0.1.0",
