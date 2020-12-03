@@ -25,7 +25,7 @@ export const LabelPanel = () => {
   ] = useUiState();
   return (
     <SidebarPanelContainer>
-      <SidebarPanelBody>
+      <SidebarPanelBody noPadding>
         <div>
           {Object.values(labels).map((l) => (
             <SelectableNodeLabelChip
