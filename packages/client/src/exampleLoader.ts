@@ -63,4 +63,19 @@ export const loadDatasets: () => Promise<Dataset[]> = async () => [
       ),
     }),
   },
+  {
+    name: "Nivo (Workspace)",
+    fetch: async () => ({
+      config: {
+        ...CONFIG,
+        graph: {
+          ...CONFIG.graph,
+          excludeByPath: /((^|\/)node_modules\/)/,
+        },
+      },
+      data: await import("./analyzers/dependencies-nivo-workspace.json").then(
+        (x) => x.default
+      ),
+    }),
+  },
 ];
