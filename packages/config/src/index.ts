@@ -35,6 +35,12 @@ export type Theme = {
   };
 };
 
+export type NodeLabel = {
+  id: string;
+  name: string;
+  color: string;
+};
+
 export type GraphConfig = {
   dependencies: {
     maxDepth: number;
@@ -44,6 +50,10 @@ export type GraphConfig = {
   };
   excludeByPath?: RegExp | null;
   includeByPath?: RegExp | null;
+
+  labels: {
+    nodes: NodeLabel[];
+  };
 };
 
 export type HudConfig = {
@@ -171,6 +181,10 @@ export const CONFIG: Config = {
     },
     includeByPath: null,
     excludeByPath: null,
+
+    labels: {
+      nodes: [],
+    },
   },
   hud: {
     sidebar: {
