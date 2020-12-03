@@ -29,10 +29,12 @@ export const usePopupState = (initialState: boolean = false) => {
     if (initialState) {
       setActive(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const setOpen = useCallback((nextOpen: boolean) => {
     setActive(nextOpen);
     _setOpen(nextOpen);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return [open, setOpen] as const;

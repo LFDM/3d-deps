@@ -62,7 +62,7 @@ export const HistoryPanel = ({
     if (selectedNodeId && scrollContainer && selectionRef.current) {
       scrollElementIntoView(scrollContainer, selectionRef.current);
     }
-  }, [selectedNodeId]);
+  }, [selectedNodeId, scrollContainer]);
   return (
     <List>
       {past.map((id, i) => {

@@ -1,11 +1,10 @@
 import { useMemo } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export const useQueryParam = (
   param: string,
   defaultValue = ""
 ): [string, (nextValue: string | null) => void] => {
-  const location = useLocation();
   const history = useHistory();
 
   return useMemo(() => {
@@ -24,5 +23,5 @@ export const useQueryParam = (
         return history.push(nextUrl.search);
       },
     ];
-  }, [param, location, history]);
+  }, [param, history, defaultValue]);
 };

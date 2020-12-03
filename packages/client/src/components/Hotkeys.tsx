@@ -28,6 +28,7 @@ const toSequence = (
   };
 };
 
+// eslint-disable-next-line
 const ALL_HOTKEYS: Hotkey[] = [
   "hud.sidebar.toggle",
   "hud.sidebar.openNodesPanel",
@@ -97,7 +98,7 @@ const toKeyMap = (hs: HotkeyConfig): KeyMap => {
 const NOOP = (ev?: KeyboardEvent) => console.log(ev?.key);
 
 export const Hotkeys = () => {
-  const [state, as] = useUiState();
+  const as = useUiState()[1];
   const cfg = useConfig();
   const {
     current: { hotkeys },

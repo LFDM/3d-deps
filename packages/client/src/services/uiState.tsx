@@ -219,6 +219,8 @@ export const UiStateProvider: React.FC<{ data: GraphData }> = ({
       showDetails,
       labels,
       toggleLabel,
+      setSelectedNodeId,
+      setTab,
     ]
   );
   return (
