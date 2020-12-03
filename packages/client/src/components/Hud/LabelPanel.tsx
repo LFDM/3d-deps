@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { fromPairs } from "lodash";
 import React from "react";
 import { useUiState } from "../../services/uiState";
 import { Button } from "../Button";
@@ -20,7 +21,7 @@ export const LabelPanel = () => {
     {
       graph: { labels },
     },
-    { toggleLabel },
+    { setLabelsActive },
   ] = useUiState();
   return (
     <SidebarPanelContainer>
@@ -30,15 +31,33 @@ export const LabelPanel = () => {
             <SelectableNodeLabelChip
               key={l.key}
               d={l}
-              onChange={(active) => toggleLabel(l.key, active)}
+              onChange={(active) => setLabelsActive({ [l.key]: active })}
             />
           ))}
         </div>
       </SidebarPanelBody>
       <SidebarPanelFooter>
         <ControlsGrid>
-          <Button fullWidth>Enable all</Button>
-          <Button fullWidth>Disable all</Button>
+          <Button
+            fullWidth
+            onClick={() =>
+              setLabelsActive(
+                fromPairs(Object.keys(labels).map((k) => [k, true]))
+              )
+            }
+          >
+            Enable all
+          </Button>
+          <Button
+            fullWidth
+            onClick={() =>
+              setLabelsActive(
+                fromPairs(Object.keys(labels).map((k) => [k, false]))
+              )
+            }
+          >
+            Disable all
+          </Button>
         </ControlsGrid>
       </SidebarPanelFooter>
     </SidebarPanelContainer>
