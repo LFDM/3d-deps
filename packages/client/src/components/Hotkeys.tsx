@@ -130,7 +130,7 @@ export const Hotkeys = () => {
       "graph.selectedNode.history.backward": () => as.selectionHistoryMove(-1),
       "graph.selectedNode.history.forward": () => as.selectionHistoryMove(1),
     };
-  }, [cfg, state, as]);
+  }, [cfg, as]);
 
   return (
     <GlobalHotKeys
