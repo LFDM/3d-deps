@@ -327,6 +327,7 @@ export const CONFIG: Config = {
           "#e8a838",
           "#61cdbb",
           "#97e3d5",
+          "#009bc1",
         ],
       },
     },
