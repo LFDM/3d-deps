@@ -32,9 +32,9 @@ export type Theme = {
         unselected: string;
       };
     };
-  };
-  labels: {
-    palette: string[];
+    labels: {
+      palette: string[];
+    };
   };
 };
 
@@ -319,16 +319,16 @@ export const CONFIG: Config = {
           unselected: "#343434", //  "#050505" darker, basically black
         },
       },
-    },
-    labels: {
-      palette: [
-        "#e8c1a0",
-        "#f47560",
-        "#f1e15b",
-        "#e8a838",
-        "#61cdbb",
-        "#97e3d5",
-      ],
+      labels: {
+        palette: [
+          "#e8c1a0",
+          "#f47560",
+          "#f1e15b",
+          "#e8a838",
+          "#61cdbb",
+          "#97e3d5",
+        ],
+      },
     },
   },
   graph: {
