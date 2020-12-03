@@ -11,6 +11,7 @@ import { HistoryPanel } from "./HistoryPanel";
 import { HotkeyInfoModal } from "./HotkeyInfoModal";
 import { HudSegment } from "./HudSegment";
 import { LabelInfoModal } from "./LabelInfoModal";
+import { LabelPanel } from "./LabelPanel";
 import { NodesPanel } from "./NodesPanel";
 import { OverlayContextProvider, useOverlayContext } from "./OverlayContext";
 import { SearchModal } from "./SearchModal";
@@ -60,7 +61,7 @@ const Tab = styled("div")((p) => ({
 const Tabs = styled("div")((p) => ({
   gridArea: "tabs",
   display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
+  gridTemplateColumns: "repeat(4, 1fr)",
   gridColumnGap: p.theme.spacing(3),
   padding: p.theme.spacing(2),
   marginBottom: p.theme.spacing(2),
@@ -89,6 +90,12 @@ export const Sidebar = ({ open }: { open: boolean }) => {
           Nodes
         </Button>
         <Button
+          variant={tab === "labels" ? "outlined" : "standard"}
+          onClick={() => setTab("labels")}
+        >
+          Labels
+        </Button>
+        <Button
           variant={tab === "history" ? "outlined" : "standard"}
           onClick={() => setTab("history")}
         >
@@ -110,6 +117,11 @@ export const Sidebar = ({ open }: { open: boolean }) => {
             openNodes={openNodes}
             setOpenNodes={setOpenNodes}
           />
+        </Tab>
+      )}
+      {tab === "labels" && (
+        <Tab>
+          <LabelPanel />
         </Tab>
       )}
       {tab === "history" && (

@@ -11,7 +11,7 @@ import { useQueryParam } from "../hooks/useQueryParam";
 import { GraphData, TreeNode } from "../types/GraphData";
 import { UndoHistory } from "./undoHistory";
 
-export type TabName = "nodes" | "history" | "config";
+export type TabName = "nodes" | "history" | "config" | "labels";
 
 export type NodeLabel = {
   key: string;
