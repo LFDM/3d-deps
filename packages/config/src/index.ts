@@ -33,6 +33,9 @@ export type Theme = {
       };
     };
   };
+  labels: {
+    palette: string[];
+  };
 };
 
 // Type it out instead of using a recursive type - as this is a primary way
@@ -72,11 +75,11 @@ export type PartialTheme = {
   };
 };
 
-export type NodeLabel = {
-  id: string;
-  name: string;
-  color: string;
-};
+// export type NodeLabel = {
+//   id: string;
+//   name: string;
+//   color: string;
+// };
 
 export type GraphConfig = {
   dependencies: {
@@ -88,9 +91,9 @@ export type GraphConfig = {
   excludeByPath?: RegExp | null;
   includeByPath?: RegExp | null;
 
-  labels: {
-    nodes: NodeLabel[];
-  };
+  // labels: {
+  //   nodes: NodeLabel[];
+  // };
 };
 
 export type PartialGraphConfig = {
@@ -103,9 +106,9 @@ export type PartialGraphConfig = {
   excludeByPath?: RegExp | null;
   includeByPath?: RegExp | null;
 
-  labels?: {
-    nodes?: NodeLabel[];
-  };
+  // labels?: {
+  //   nodes?: NodeLabel[];
+  // };
 };
 
 export type HudConfig = {
@@ -250,13 +253,13 @@ export const mergeConfigs = (config: Config, ...partials: PartialConfig[]) => {
           ...m.graph.dependents,
           ...p.graph?.dependents,
         },
-        labels: {
-          ...m.graph.labels,
-          nodes: {
-            ...m.graph.labels.nodes,
-            ...p.graph?.labels?.nodes,
-          },
-        },
+        // labels: {
+        //   ...m.graph.labels,
+        //   nodes: {
+        //     ...m.graph.labels.nodes,
+        //     ...p.graph?.labels?.nodes,
+        //   },
+        // },
       },
       hud: {
         ...m.hud,
@@ -317,6 +320,16 @@ export const CONFIG: Config = {
         },
       },
     },
+    labels: {
+      palette: [
+        "#e8c1a0",
+        "#f47560",
+        "#f1e15b",
+        "#e8a838",
+        "#61cdbb",
+        "#97e3d5",
+      ],
+    },
   },
   graph: {
     dependencies: {
@@ -328,9 +341,9 @@ export const CONFIG: Config = {
     includeByPath: null,
     excludeByPath: null,
 
-    labels: {
-      nodes: [],
-    },
+    // labels: {
+    //   nodes: [],
+    // },
   },
   hud: {
     sidebar: {
