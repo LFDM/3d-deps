@@ -580,16 +580,11 @@ const Footer = () => {
   return (
     <SidebarPanelFooter>
       <ControlsGrid>
-        <Button
-          fullWidth
-          variant="outlined"
-          onClick={() => cfg.onChange(cfg.original)}
-        >
+        <Button fullWidth onClick={() => cfg.onChange(cfg.original)}>
           Reset all
         </Button>
         <Button
           fullWidth
-          variant="outlined"
           onClick={() => {
             const json = JSON.stringify(cfg.current, null, 2);
             console.log(json);
