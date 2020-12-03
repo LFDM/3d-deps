@@ -137,6 +137,30 @@ export const PreProcessorResolveMappedEntryFiles = (
         dict[path.join(w.location.rel, origMain)] = main;
       }
     }
+
+    // this duplicates knowledge of transformer and relies on list indices. need to find a better way
+    const browserEntries =
+      typeof w.pkg.browser === "string"
+        ? [w.pkg.browser]
+        : typeof w.pkg.browser === "object"
+        ? Object.values(w.pkg.browser)
+        : [];
+    browserEntries.forEach((b, i) => {
+      if (w.mappedEntries.browser[i].rel) {
+        dict[path.join(w.location.rel, b)] = w.mappedEntries.browser[i].rel;
+      }
+    });
+    const binEntries =
+      typeof w.pkg.bin === "string"
+        ? [w.pkg.bin]
+        : typeof w.pkg.bin === "object"
+        ? Object.values(w.pkg.bin)
+        : [];
+    binEntries.forEach((b, i) => {
+      if (w.mappedEntries.bin[i].rel) {
+        dict[path.join(w.location.rel, b)] = w.mappedEntries.bin[i].rel;
+      }
+    });
   });
   const typeDefs = new Set(Object.keys(dict));
   const mapFn = (t: string) => (typeDefs.has(t) ? dict[t] : t);
