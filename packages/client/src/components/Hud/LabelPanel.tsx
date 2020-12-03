@@ -7,6 +7,7 @@ import { SelectableNodeLabelChip } from "./NodeLabelChip";
 import {
   SidebarPanelBody,
   SidebarPanelContainer,
+  SidebarPanelEmptyState,
   SidebarPanelFooter,
 } from "./SidebarPanelLayout";
 
@@ -23,18 +24,23 @@ export const LabelPanel = () => {
     },
     { setLabelsActive },
   ] = useUiState();
+  const ls = Object.values(labels);
   return (
     <SidebarPanelContainer>
       <SidebarPanelBody noPadding>
-        <div>
-          {Object.values(labels).map((l) => (
-            <SelectableNodeLabelChip
-              key={l.key}
-              d={l}
-              onChange={(active) => setLabelsActive({ [l.key]: active })}
-            />
-          ))}
-        </div>
+        {ls.length ? (
+          <div>
+            {ls.map((l) => (
+              <SelectableNodeLabelChip
+                key={l.key}
+                d={l}
+                onChange={(active) => setLabelsActive({ [l.key]: active })}
+              />
+            ))}
+          </div>
+        ) : (
+          <SidebarPanelEmptyState>No labels defined.</SidebarPanelEmptyState>
+        )}
       </SidebarPanelBody>
       <SidebarPanelFooter>
         <ControlsGrid>
