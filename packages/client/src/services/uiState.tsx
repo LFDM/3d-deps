@@ -113,7 +113,7 @@ const useGeneratedLabels = (
   const [disabled, setDisabled] = useState<{ [key: string]: boolean }>({});
   const toggle = useCallback(
     (key: string, active: boolean) =>
-      setDisabled((s) => ({ ...s, [key]: active })),
+      setDisabled((s) => ({ ...s, [key]: !active })),
     []
   );
   const labels = useMemo(() => {
