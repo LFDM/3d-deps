@@ -15,16 +15,11 @@ import {
   DialogActionsRightSection,
 } from "../Dialog";
 import { Input, InputSliderWithValue } from "../Input";
-
-const Container = styled("div")`
-  display: grid;
-  grid-template-rows: 1fr min-content;
-  grid-row-gap: ${(p) => p.theme.spacing()}px;
-  height: 100%;
-  grid-template-areas:
-    "body"
-    "footer";
-`;
+import {
+  SidebarPanelBody,
+  SidebarPanelContainer,
+  SidebarPanelFooter,
+} from "./SidebarPanelLayout";
 
 const SubSection = styled("div")((p) => ({
   marginBottom: p.theme.spacing(2),
@@ -580,16 +575,10 @@ const ControlsGrid = styled("div")((p) => ({
   gridColumnGap: p.theme.spacing(3),
 }));
 
-const FooterContainer = styled("footer")`
-  grid-area: footer;
-  padding: ${(p) => p.theme.spacing(2)}px;
-  border-top: 1px dashed currentcolor;
-`;
-
 const Footer = () => {
   const cfg = useConfig();
   return (
-    <FooterContainer>
+    <SidebarPanelFooter>
       <ControlsGrid>
         <Button
           fullWidth
@@ -612,25 +601,15 @@ const Footer = () => {
           Copy to Clipboard
         </Button>
       </ControlsGrid>
-    </FooterContainer>
+    </SidebarPanelFooter>
   );
 };
-
-const Body = styled("div")`
-  overflow: auto;
-  padding: 0 ${(p) => p.theme.spacing(2)}px;
-  grid-area: "body";
-
-  > :not(:first-child) {
-    margin-top: ${(p) => p.theme.spacing(4)}px;
-  }
-`;
 
 export const ConfigPanel = () => {
   const cfg = useConfig();
   return (
-    <Container>
-      <Body>
+    <SidebarPanelContainer>
+      <SidebarPanelBody>
         <GraphSection
           value={cfg.current.graph}
           originalValue={cfg.original.graph}
@@ -651,8 +630,8 @@ export const ConfigPanel = () => {
             })
           }
         />
-      </Body>
+      </SidebarPanelBody>
       <Footer />
-    </Container>
+    </SidebarPanelContainer>
   );
 };
