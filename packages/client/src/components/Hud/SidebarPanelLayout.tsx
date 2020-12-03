@@ -10,9 +10,9 @@ export const SidebarPanelContainer = styled("div")`
     "footer";
 `;
 
-export const SidebarPanelBody = styled("div")`
+export const SidebarPanelBody = styled("div")<{ noPadding?: boolean }>`
   overflow: auto;
-  padding: 0 ${(p) => p.theme.spacing(2)}px;
+  padding: 0 ${(p) => p.theme.spacing(p.noPadding ? 0 : 2)}px;
   grid-area: "body";
 
   > :not(:first-child) {
