@@ -1,4 +1,4 @@
-import { JsAnalyzer } from "@3d-deps/analyzer-js";
+import { JsAnalyzer, TRANSFORMERS } from "@3d-deps/analyzer-js";
 import { CONFIG } from "@3d-deps/core";
 import { createServer } from "@3d-deps/server";
 import * as path from "path";
@@ -15,6 +15,7 @@ const server = createServer({
           config: CONFIG,
           data: await new JsAnalyzer({
             rootDir: ROOT,
+            configTransformer: TRANSFORMERS.MAP_ENTRY(() => "./src/index.ts"),
           }).analyze(),
         }),
       },
