@@ -8,6 +8,17 @@
         "pkg:@emotion/babel-plugin-jsx-pragmatic",
         "pkg_entry"
       ],
+      "dependsOn": [
+        "node_modules/@babel/plugin-syntax-jsx"
+      ]
+    },
+    {
+      "id": "node_modules/@babel/plugin-syntax-jsx",
+      "path": "node_modules/@babel/plugin-syntax-jsx",
+      "name": "node_modules/@babel/plugin-syntax-jsx",
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
@@ -19,6 +30,7 @@
         "pkg_entry"
       ],
       "dependsOn": [
+        "node_modules/@babel/plugin-syntax-jsx",
         "packages/babel-plugin/src/emotion-macro.js",
         "packages/babel-plugin/src/styled-macro.js",
         "packages/babel-plugin/src/core-macro.js",
@@ -71,6 +83,27 @@
       "labels": [
         "pkg:@emotion/babel-plugin"
       ],
+      "dependsOn": [
+        "node_modules/source-map",
+        "node_modules/convert-source-map"
+      ]
+    },
+    {
+      "id": "node_modules/source-map",
+      "path": "node_modules/source-map",
+      "name": "node_modules/source-map",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/convert-source-map",
+      "path": "node_modules/convert-source-map",
+      "name": "node_modules/convert-source-map",
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
@@ -80,6 +113,47 @@
       "labels": [
         "pkg:@emotion/babel-plugin"
       ],
+      "dependsOn": [
+        "node_modules/find-root",
+        "packages/memoize/src/index.js",
+        "packages/hash/src/index.js",
+        "node_modules/escape-string-regexp"
+      ]
+    },
+    {
+      "id": "node_modules/find-root",
+      "path": "node_modules/find-root",
+      "name": "node_modules/find-root",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/@emotion/memoize",
+      "path": "node_modules/@emotion/memoize",
+      "name": "node_modules/@emotion/memoize",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/@emotion/hash",
+      "path": "node_modules/@emotion/hash",
+      "name": "node_modules/@emotion/hash",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/escape-string-regexp",
+      "path": "node_modules/escape-string-regexp",
+      "name": "node_modules/escape-string-regexp",
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
@@ -88,6 +162,17 @@
       "name": "packages/babel-plugin/src/utils/object-to-string.js",
       "labels": [
         "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": [
+        "packages/serialize/src/index.js"
+      ]
+    },
+    {
+      "id": "node_modules/@emotion/serialize",
+      "path": "node_modules/@emotion/serialize",
+      "name": "node_modules/@emotion/serialize",
+      "labels": [
+        "node_module"
       ],
       "dependsOn": []
     },
@@ -99,6 +184,7 @@
         "pkg:@emotion/babel-plugin"
       ],
       "dependsOn": [
+        "packages/serialize/src/index.js",
         "packages/babel-plugin/src/utils/minify.js",
         "packages/babel-plugin/src/utils/label.js",
         "packages/babel-plugin/src/utils/source-maps.js",
@@ -112,6 +198,17 @@
       "name": "packages/babel-plugin/src/utils/minify.js",
       "labels": [
         "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": [
+        "node_modules/stylis"
+      ]
+    },
+    {
+      "id": "node_modules/stylis",
+      "path": "node_modules/stylis",
+      "name": "node_modules/stylis",
+      "labels": [
+        "node_module"
       ],
       "dependsOn": []
     },
@@ -154,6 +251,17 @@
       "labels": [
         "pkg:@emotion/babel-plugin"
       ],
+      "dependsOn": [
+        "node_modules/@babel/helper-module-imports"
+      ]
+    },
+    {
+      "id": "node_modules/@babel/helper-module-imports",
+      "path": "node_modules/@babel/helper-module-imports",
+      "name": "node_modules/@babel/helper-module-imports",
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
@@ -162,6 +270,17 @@
       "name": "packages/babel-plugin/src/utils/transformer-macro.js",
       "labels": [
         "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": [
+        "node_modules/babel-plugin-macros"
+      ]
+    },
+    {
+      "id": "node_modules/babel-plugin-macros",
+      "path": "node_modules/babel-plugin-macros",
+      "name": "node_modules/babel-plugin-macros",
+      "labels": [
+        "node_module"
       ],
       "dependsOn": []
     },
@@ -195,6 +314,37 @@
         "pkg:@emotion/babel-preset-css-prop",
         "pkg_entry"
       ],
+      "dependsOn": [
+        "node_modules/@babel/plugin-transform-react-jsx",
+        "packages/babel-plugin-jsx-pragmatic/src/index.js",
+        "packages/babel-plugin/src/index.js"
+      ]
+    },
+    {
+      "id": "node_modules/@babel/plugin-transform-react-jsx",
+      "path": "node_modules/@babel/plugin-transform-react-jsx",
+      "name": "node_modules/@babel/plugin-transform-react-jsx",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/@emotion/babel-plugin-jsx-pragmatic",
+      "path": "node_modules/@emotion/babel-plugin-jsx-pragmatic",
+      "name": "node_modules/@emotion/babel-plugin-jsx-pragmatic",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/@emotion/babel-plugin",
+      "path": "node_modules/@emotion/babel-plugin",
+      "name": "node_modules/@emotion/babel-plugin",
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
@@ -206,9 +356,41 @@
         "pkg_entry"
       ],
       "dependsOn": [
+        "packages/sheet/src/index.js",
+        "packages/utils/src/index.js",
+        "node_modules/stylis",
+        "packages/weak-memoize/src/index.js",
+        "packages/memoize/src/index.js",
         "packages/cache/src/stylis-plugins.js",
         "packages/cache/src/types.js"
       ]
+    },
+    {
+      "id": "node_modules/@emotion/sheet",
+      "path": "node_modules/@emotion/sheet",
+      "name": "node_modules/@emotion/sheet",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/@emotion/utils",
+      "path": "node_modules/@emotion/utils",
+      "name": "node_modules/@emotion/utils",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/@emotion/weak-memoize",
+      "path": "node_modules/@emotion/weak-memoize",
+      "name": "node_modules/@emotion/weak-memoize",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
     },
     {
       "id": "packages/cache/src/stylis-plugins.js",
@@ -217,7 +399,9 @@
       "labels": [
         "pkg:@emotion/cache"
       ],
-      "dependsOn": []
+      "dependsOn": [
+        "node_modules/stylis"
+      ]
     },
     {
       "id": "packages/cache/src/types.js",
@@ -236,7 +420,10 @@
         "pkg:@emotion/css-prettifier",
         "pkg_entry"
       ],
-      "dependsOn": []
+      "dependsOn": [
+        "packages/memoize/src/index.js",
+        "node_modules/stylis"
+      ]
     },
     {
       "id": "packages/css/src/index.js",
@@ -256,6 +443,19 @@
       "name": "packages/css/src/create-instance.js",
       "labels": [
         "pkg:@emotion/css"
+      ],
+      "dependsOn": [
+        "packages/cache/src/index.js",
+        "packages/serialize/src/index.js",
+        "packages/utils/src/index.js"
+      ]
+    },
+    {
+      "id": "node_modules/@emotion/cache",
+      "path": "node_modules/@emotion/cache",
+      "name": "node_modules/@emotion/cache",
+      "labels": [
+        "node_module"
       ],
       "dependsOn": []
     },
@@ -348,7 +548,9 @@
         "pkg:@emotion/is-prop-valid",
         "pkg_entry"
       ],
-      "dependsOn": []
+      "dependsOn": [
+        "packages/memoize/src/index.js"
+      ]
     },
     {
       "id": "packages/jest/src/index.js",
@@ -371,9 +573,19 @@
         "pkg:@emotion/jest"
       ],
       "dependsOn": [
+        "packages/css-prettifier/src/index.js",
         "packages/jest/src/replace-class-names.js",
         "packages/jest/src/utils.js"
       ]
+    },
+    {
+      "id": "node_modules/@emotion/css-prettifier",
+      "path": "node_modules/@emotion/css-prettifier",
+      "name": "node_modules/@emotion/css-prettifier",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
     },
     {
       "id": "packages/jest/src/replace-class-names.js",
@@ -401,8 +613,29 @@
         "pkg:@emotion/jest"
       ],
       "dependsOn": [
+        "node_modules/chalk",
+        "node_modules/stylis",
+        "node_modules/specificity",
         "packages/jest/src/utils.js"
       ]
+    },
+    {
+      "id": "node_modules/chalk",
+      "path": "node_modules/chalk",
+      "name": "node_modules/chalk",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/specificity",
+      "path": "node_modules/specificity",
+      "name": "node_modules/specificity",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
     },
     {
       "id": "packages/memoize/src/index.js",
@@ -423,8 +656,28 @@
         "pkg_entry"
       ],
       "dependsOn": [
+        "node_modules/react-native",
+        "packages/primitives-core/src/index.js",
         "packages/native/src/base.js"
       ]
+    },
+    {
+      "id": "node_modules/react-native",
+      "path": "node_modules/react-native",
+      "name": "node_modules/react-native",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/@emotion/primitives-core",
+      "path": "node_modules/@emotion/primitives-core",
+      "name": "node_modules/@emotion/primitives-core",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
     },
     {
       "id": "packages/native/src/base.js",
@@ -433,7 +686,10 @@
       "labels": [
         "pkg:@emotion/native"
       ],
-      "dependsOn": []
+      "dependsOn": [
+        "node_modules/react-native",
+        "packages/primitives-core/src/index.js"
+      ]
     },
     {
       "id": "packages/primitives-core/src/index.js",
@@ -456,8 +712,18 @@
         "pkg:@emotion/primitives-core"
       ],
       "dependsOn": [
+        "node_modules/css-to-react-native",
         "packages/primitives-core/src/utils.js"
       ]
+    },
+    {
+      "id": "node_modules/css-to-react-native",
+      "path": "node_modules/css-to-react-native",
+      "name": "node_modules/css-to-react-native",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
     },
     {
       "id": "packages/primitives-core/src/utils.js",
@@ -476,9 +742,29 @@
         "pkg:@emotion/primitives-core"
       ],
       "dependsOn": [
+        "node_modules/react",
         "packages/primitives-core/src/utils.js",
+        "packages/react/src/index.js",
         "packages/primitives-core/src/css.js"
       ]
+    },
+    {
+      "id": "node_modules/react",
+      "path": "node_modules/react",
+      "name": "node_modules/react",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/@emotion/react",
+      "path": "node_modules/@emotion/react",
+      "name": "node_modules/@emotion/react",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
     },
     {
       "id": "packages/primitives/src/index.js",
@@ -489,8 +775,19 @@
         "pkg_entry"
       ],
       "dependsOn": [
+        "node_modules/react-primitives",
+        "packages/primitives-core/src/index.js",
         "packages/primitives/src/styled.js"
       ]
+    },
+    {
+      "id": "node_modules/react-primitives",
+      "path": "node_modules/react-primitives",
+      "name": "node_modules/react-primitives",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
     },
     {
       "id": "packages/primitives/src/styled.js",
@@ -500,6 +797,9 @@
         "pkg:@emotion/primitives"
       ],
       "dependsOn": [
+        "node_modules/react",
+        "node_modules/react-primitives",
+        "packages/primitives-core/src/index.js",
         "packages/primitives/src/test-props.js"
       ]
     },
@@ -509,6 +809,17 @@
       "name": "packages/primitives/src/test-props.js",
       "labels": [
         "pkg:@emotion/primitives"
+      ],
+      "dependsOn": [
+        "packages/is-prop-valid/src/index.js"
+      ]
+    },
+    {
+      "id": "node_modules/@emotion/is-prop-valid",
+      "path": "node_modules/@emotion/is-prop-valid",
+      "name": "node_modules/@emotion/is-prop-valid",
+      "labels": [
+        "node_module"
       ],
       "dependsOn": []
     },
@@ -548,6 +859,9 @@
         "pkg:@emotion/react"
       ],
       "dependsOn": [
+        "packages/utils/src/index.js",
+        "node_modules/react",
+        "packages/cache/src/index.js",
         "packages/react/src/utils.js"
       ]
     },
@@ -568,6 +882,7 @@
         "pkg:@emotion/react"
       ],
       "dependsOn": [
+        "node_modules/react",
         "packages/react/src/emotion-element.js",
         "packages/react/src/utils.js"
       ]
@@ -580,9 +895,12 @@
         "pkg:@emotion/react"
       ],
       "dependsOn": [
+        "node_modules/react",
         "packages/react/src/context.js",
         "packages/react/src/theming.js",
-        "packages/react/src/utils.js"
+        "packages/utils/src/index.js",
+        "packages/react/src/utils.js",
+        "packages/serialize/src/index.js"
       ]
     },
     {
@@ -593,6 +911,8 @@
         "pkg:@emotion/react"
       ],
       "dependsOn": [
+        "node_modules/react",
+        "packages/weak-memoize/src/index.js",
         "packages/react/src/isolated-hoist-non-react-statics-do-not-use-this-in-your-code.js"
       ]
     },
@@ -602,6 +922,17 @@
       "name": "packages/react/src/isolated-hoist-non-react-statics-do-not-use-this-in-your-code.js",
       "labels": [
         "pkg:@emotion/react"
+      ],
+      "dependsOn": [
+        "node_modules/hoist-non-react-statics"
+      ]
+    },
+    {
+      "id": "node_modules/hoist-non-react-statics",
+      "path": "node_modules/hoist-non-react-statics",
+      "name": "node_modules/hoist-non-react-statics",
+      "labels": [
+        "node_module"
       ],
       "dependsOn": []
     },
@@ -613,9 +944,13 @@
         "pkg:@emotion/react"
       ],
       "dependsOn": [
+        "node_modules/react",
         "packages/react/src/context.js",
         "packages/react/src/theming.js",
-        "packages/react/src/utils.js"
+        "packages/utils/src/index.js",
+        "packages/react/src/utils.js",
+        "packages/sheet/src/index.js",
+        "packages/serialize/src/index.js"
       ]
     },
     {
@@ -636,7 +971,10 @@
       "labels": [
         "pkg:@emotion/react"
       ],
-      "dependsOn": []
+      "dependsOn": [
+        "packages/utils/src/index.js",
+        "packages/serialize/src/index.js"
+      ]
     },
     {
       "id": "packages/react/src/class-names.js",
@@ -646,6 +984,9 @@
         "pkg:@emotion/react"
       ],
       "dependsOn": [
+        "node_modules/react",
+        "packages/utils/src/index.js",
+        "packages/serialize/src/index.js",
         "packages/react/src/context.js",
         "packages/react/src/theming.js",
         "packages/react/src/utils.js"
@@ -659,6 +1000,20 @@
         "pkg:@emotion/serialize",
         "pkg_entry"
       ],
+      "dependsOn": [
+        "packages/utils/src/index.js",
+        "packages/hash/src/index.js",
+        "packages/unitless/src/index.js",
+        "packages/memoize/src/index.js"
+      ]
+    },
+    {
+      "id": "node_modules/@emotion/unitless",
+      "path": "node_modules/@emotion/unitless",
+      "name": "node_modules/@emotion/unitless",
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
@@ -670,7 +1025,8 @@
         "pkg_entry"
       ],
       "dependsOn": [
-        "packages/server/src/create-instance/index.js"
+        "packages/server/src/create-instance/index.js",
+        "packages/css/src/index.js"
       ]
     },
     {
@@ -681,6 +1037,7 @@
         "pkg:@emotion/server"
       ],
       "dependsOn": [
+        "packages/utils/src/index.js",
         "packages/server/src/create-instance/extract-critical.js",
         "packages/server/src/create-instance/inline.js",
         "packages/server/src/create-instance/stream.js"
@@ -693,7 +1050,9 @@
       "labels": [
         "pkg:@emotion/server"
       ],
-      "dependsOn": []
+      "dependsOn": [
+        "packages/utils/src/index.js"
+      ]
     },
     {
       "id": "packages/server/src/create-instance/inline.js",
@@ -702,7 +1061,9 @@
       "labels": [
         "pkg:@emotion/server"
       ],
-      "dependsOn": []
+      "dependsOn": [
+        "packages/utils/src/index.js"
+      ]
     },
     {
       "id": "packages/server/src/create-instance/stream.js",
@@ -710,6 +1071,47 @@
       "name": "packages/server/src/create-instance/stream.js",
       "labels": [
         "pkg:@emotion/server"
+      ],
+      "dependsOn": [
+        "packages/utils/src/index.js",
+        "node_modules/through",
+        "node_modules/html-tokenize",
+        "node_modules/multipipe"
+      ]
+    },
+    {
+      "id": "node_modules/through",
+      "path": "node_modules/through",
+      "name": "node_modules/through",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/html-tokenize",
+      "path": "node_modules/html-tokenize",
+      "name": "node_modules/html-tokenize",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/multipipe",
+      "path": "node_modules/multipipe",
+      "name": "node_modules/multipipe",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/@emotion/css",
+      "path": "node_modules/@emotion/css",
+      "name": "node_modules/@emotion/css",
+      "labels": [
+        "node_module"
       ],
       "dependsOn": []
     },
@@ -744,7 +1146,11 @@
         "pkg:@emotion/styled"
       ],
       "dependsOn": [
-        "packages/styled/src/utils.js"
+        "node_modules/react",
+        "packages/styled/src/utils.js",
+        "packages/react/src/index.js",
+        "packages/utils/src/index.js",
+        "packages/serialize/src/index.js"
       ]
     },
     {
@@ -754,7 +1160,10 @@
       "labels": [
         "pkg:@emotion/styled"
       ],
-      "dependsOn": []
+      "dependsOn": [
+        "node_modules/react",
+        "packages/is-prop-valid/src/index.js"
+      ]
     },
     {
       "id": "packages/styled/src/tags.js",
@@ -794,7 +1203,9 @@
       "labels": [
         "pkg:@emotion/utils"
       ],
-      "dependsOn": []
+      "dependsOn": [
+        "packages/sheet/src/index.js"
+      ]
     },
     {
       "id": "packages/weak-memoize/src/index.js",
@@ -814,6 +1225,17 @@
         "pkg:babel-preset-emotion-dev",
         "pkg_entry"
       ],
+      "dependsOn": [
+        "node_modules/@babel/runtime"
+      ]
+    },
+    {
+      "id": "node_modules/@babel/runtime",
+      "path": "node_modules/@babel/runtime",
+      "name": "node_modules/@babel/runtime",
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
@@ -823,6 +1245,37 @@
       "labels": [
         "pkg:babel-tester",
         "pkg_entry"
+      ],
+      "dependsOn": [
+        "node_modules/jest-in-case",
+        "node_modules/@babel/core",
+        "node_modules/babel-check-duplicated-nodes"
+      ]
+    },
+    {
+      "id": "node_modules/jest-in-case",
+      "path": "node_modules/jest-in-case",
+      "name": "node_modules/jest-in-case",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/@babel/core",
+      "path": "node_modules/@babel/core",
+      "name": "node_modules/@babel/core",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/babel-check-duplicated-nodes",
+      "path": "node_modules/babel-check-duplicated-nodes",
+      "name": "node_modules/babel-check-duplicated-nodes",
+      "labels": [
+        "node_module"
       ],
       "dependsOn": []
     },
@@ -845,6 +1298,6 @@
     "repository": {
       "url": "git+https://github.com/emotion-js/emotion.git"
     },
-    "createdAt": "2020-12-04T19:39:32.905Z"
+    "createdAt": "2020-12-04T19:52:38.141Z"
   }
 }
