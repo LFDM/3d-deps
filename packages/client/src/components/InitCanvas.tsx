@@ -6,8 +6,8 @@ const InitCanvasContainer = styled("div")((p) => ({
   justifyContent: "center",
   alignItems: "center",
   font: p.theme.typography.font,
-  height: "100vh",
-  width: "100vw",
+  minHeight: "100vh",
+  minWidth: "100vw",
   backgroundColor: p.theme.typography.backgroundColor,
   color: p.theme.typography.color,
 
