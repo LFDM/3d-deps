@@ -39,12 +39,16 @@ const useResolveDataset = (dataset: Dataset) => {
   );
 };
 
-export const Datasets = React.createContext<{
+const DatasetsContext = React.createContext<{
   datasets: Dataset[];
+}>({
+  datasets: [],
+});
+
+const CurrentDatasetContext = React.createContext<{
   current: State;
   selectDataset: (nextDataset: Dataset) => void;
 }>({
-  datasets: [],
   current: {
     name: "...",
     state: "LOADING",
@@ -52,10 +56,8 @@ export const Datasets = React.createContext<{
   selectDataset: () => undefined,
 });
 
-export const DatasetProvider: React.FC<{ datasets: Dataset[] }> = ({
-  datasets,
-  children,
-}) => {
+export const DatasetProvider: React.FC = ({ children }) => {
+  const { datasets } = useDatasets();
   const [query, setQuery] = useQueryParam("dataset", "");
   const dataset =
     datasets.find((d) => encodeURIComponent(d.name) === query) || datasets[0];
@@ -94,10 +96,22 @@ export const DatasetProvider: React.FC<{ datasets: Dataset[] }> = ({
   }, [d, loading, error, dataset]);
 
   return (
-    <Datasets.Provider value={{ current: state, datasets, selectDataset }}>
+    <CurrentDatasetContext.Provider value={{ current: state, selectDataset }}>
       {children}
-    </Datasets.Provider>
+    </CurrentDatasetContext.Provider>
   );
 };
 
-export const useDatasets = () => useContext(Datasets);
+export const DatasetsProvider: React.FC<{ datasets: Dataset[] }> = ({
+  datasets,
+  children,
+}) => {
+  return (
+    <DatasetsContext.Provider value={{ datasets }}>
+      {children}
+    </DatasetsContext.Provider>
+  );
+};
+
+export const useDatasets = () => useContext(DatasetsContext);
+export const useDataset = () => useContext(CurrentDatasetContext);

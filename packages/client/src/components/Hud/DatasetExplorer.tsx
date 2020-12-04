@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import React from "react";
 import { Maximize } from "react-feather";
 import { Link } from "react-router-dom";
-import { useDatasets } from "../../services/dataset";
+import { useDataset, useDatasets } from "../../services/dataset";
 import { Button } from "../Button";
 import { Select } from "../Select";
 import { HudSegment } from "./HudSegment";
@@ -24,7 +24,8 @@ const Container = styled(HudSegment)((p) => ({
 }));
 
 export const DatasetExplorer = () => {
-  const { current, datasets, selectDataset } = useDatasets();
+  const { datasets } = useDatasets();
+  const { current, selectDataset } = useDataset();
   const t = useTheme();
   if (datasets.length < 2) {
     return null;

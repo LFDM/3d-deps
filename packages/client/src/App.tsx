@@ -6,7 +6,7 @@ import { InitCanvas } from "./components/InitCanvas";
 import { usePromise } from "./hooks/usePromise";
 import { PageBrowser } from "./pages/Browser";
 import { PageMain } from "./pages/Main";
-import { DatasetProvider } from "./services/dataset";
+import { DatasetsProvider } from "./services/dataset";
 
 const PAGES: { path: string; render: () => React.ReactNode }[] = [
   {
@@ -35,11 +35,11 @@ function App({ loadDatasets }: { loadDatasets: () => Promise<Dataset[]> }) {
           <InitCanvas>No datasets provided.</InitCanvas>
         )}
         {datasets && datasets.length && (
-          <DatasetProvider datasets={datasets}>
+          <DatasetsProvider datasets={datasets}>
             {PAGES.map((p) => (
               <Route key={p.path} path={p.path} exact render={p.render} />
             ))}
-          </DatasetProvider>
+          </DatasetsProvider>
         )}
       </Router>
     </ThemeProvider>

@@ -13,7 +13,7 @@ import { Hud } from "../../components/Hud";
 import { InitCanvas } from "../../components/InitCanvas";
 import { CssBaseline } from "../../CssBaseline";
 import { ConfigContext } from "../../services/config";
-import { useDatasets } from "../../services/dataset";
+import { DatasetProvider, useDataset } from "../../services/dataset";
 import { depsToGraphData } from "../../services/graph";
 import { UiStateProvider } from "../../services/uiState";
 import { GraphData } from "../../types/GraphData";
@@ -98,8 +98,8 @@ const AppError = ({ name, error }: { name: string; error: string }) => {
   );
 };
 
-export const PageMain = () => {
-  const { current } = useDatasets();
+const Body = () => {
+  const { current } = useDataset();
   switch (current.state) {
     case "LOADING":
       return <AppLoading name={current.name} />;
@@ -116,4 +116,12 @@ export const PageMain = () => {
     default:
       return assertNever(current);
   }
+};
+
+export const PageMain = () => {
+  return (
+    <DatasetProvider>
+      <Body />
+    </DatasetProvider>
+  );
 };
