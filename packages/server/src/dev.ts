@@ -9,7 +9,9 @@ const server = createServer({
         fetch: async () => {
           return {
             config: CONFIG,
-            data: [],
+            data: {
+              nodes: [],
+            },
           };
         },
       },
@@ -18,7 +20,9 @@ const server = createServer({
         fetch: async () => {
           return {
             config: CONFIG,
-            data: [],
+            data: {
+              nodes: [],
+            },
           };
         },
       },

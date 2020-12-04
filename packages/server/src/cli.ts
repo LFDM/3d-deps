@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
+import { RunConfig } from "@3d-deps/core";
 import * as path from "path";
 import yargs from "yargs";
 import { createServer } from ".";
-import { RunConfig } from "./types/RunConfig";
 
 const argv = yargs(process.argv)
   .option("port", {
