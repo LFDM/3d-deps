@@ -72,7 +72,7 @@ export const PageBrowser = () => {
     <InitCanvas>
       <Centered>
         <Grid>
-          {sortBy(datasets, (d) => d.name).map((d) => (
+          {sortBy(datasets, (d) => d.name.toLowerCase()).map((d) => (
             <DatasetR key={d.name} d={d} />
           ))}
         </Grid>
