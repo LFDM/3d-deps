@@ -96,7 +96,7 @@ export const FILES: {
   "Syndexioi CFs": () =>
     import("./dependencies-syndexioi-cf.json").then((f) => f.default),
   "Material UI": () => import("./dependencies-mui.json").then((f) => f.default),
-  Webpack: () => import("./dependencies-webpack.json").then((f) => f.default),
+  webpack: () => import("./dependencies-webpack.json").then((f) => f.default),
   Axios: () => import("./dependencies-axios.json").then((f) => f.default),
   Express: () => import("./dependencies-express.json").then((f) => f.default),
   Self: () => import("./dependencies-self.json").then((f) => f.default),
