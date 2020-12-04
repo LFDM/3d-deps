@@ -299,7 +299,6 @@ export const Graph = () => {
     topNodes.forEach((t) =>
       addNodeStyle(ss, t.id, {
         label: true,
-        color: theme.graph.links.colors.standard,
       })
     );
 
