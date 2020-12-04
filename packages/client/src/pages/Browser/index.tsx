@@ -12,6 +12,10 @@ const Grid = styled("div")((p) => ({
   gridTemplateColumns: "repeat(3, 1fr)",
   gridColumnGap: p.theme.spacing(6),
   gridRowGap: p.theme.spacing(6),
+
+  "@media (max-width: 1000px)": {
+    gridTemplateColumns: "repeat(2, 1fr)",
+  },
 }));
 
 const Centered = styled("div")((p) => ({
@@ -19,6 +23,7 @@ const Centered = styled("div")((p) => ({
   justifyContent: "center",
   alignItems: "center",
   margin: p.theme.spacing(3),
+  maxWidth: 1200,
 }));
 
 const DatasetContainer = styled("div")((p) => ({
