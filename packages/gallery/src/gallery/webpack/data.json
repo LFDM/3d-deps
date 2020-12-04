@@ -1,0 +1,5340 @@
+{
+  "nodes": [
+    {
+      "id": "lib/index.js",
+      "path": "lib/index.js",
+      "name": "lib/index.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/util/memorize.js",
+      "path": "lib/util/memorize.js",
+      "name": "lib/util/memorize.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/webpack.js",
+      "path": "lib/webpack.js",
+      "name": "lib/webpack.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/WebpackOptions.json",
+        "lib/Compiler.js",
+        "lib/MultiCompiler.js",
+        "lib/WebpackOptionsApply.js",
+        "lib/config/defaults.js",
+        "lib/config/normalization.js",
+        "lib/node/NodeEnvironmentPlugin.js",
+        "lib/validateSchema.js"
+      ]
+    },
+    {
+      "id": "schemas/WebpackOptions.json",
+      "path": "schemas/WebpackOptions.json",
+      "name": "schemas/WebpackOptions.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/Compiler.js",
+      "path": "lib/Compiler.js",
+      "name": "lib/Compiler.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/Cache.js",
+      "path": "lib/Cache.js",
+      "name": "lib/Cache.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/HookWebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/HookWebpackError.js",
+      "path": "lib/HookWebpackError.js",
+      "name": "lib/HookWebpackError.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/WebpackError.js",
+      "path": "lib/WebpackError.js",
+      "name": "lib/WebpackError.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/util/makeSerializable.js",
+      "path": "lib/util/makeSerializable.js",
+      "name": "lib/util/makeSerializable.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/util/serialization.js",
+      "path": "lib/util/serialization.js",
+      "name": "lib/util/serialization.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/serialization/BinaryMiddleware.js",
+      "path": "lib/serialization/BinaryMiddleware.js",
+      "name": "lib/serialization/BinaryMiddleware.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/memorize.js",
+        "lib/serialization/SerializerMiddleware.js"
+      ]
+    },
+    {
+      "id": "lib/serialization/SerializerMiddleware.js",
+      "path": "lib/serialization/SerializerMiddleware.js",
+      "name": "lib/serialization/SerializerMiddleware.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/memorize.js",
+        "lib/AbstractMethodError.js"
+      ]
+    },
+    {
+      "id": "lib/AbstractMethodError.js",
+      "path": "lib/AbstractMethodError.js",
+      "name": "lib/AbstractMethodError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/serialization/FileMiddleware.js",
+      "path": "lib/serialization/FileMiddleware.js",
+      "name": "lib/serialization/FileMiddleware.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/createHash.js",
+        "lib/util/fs.js",
+        "lib/util/memorize.js",
+        "lib/serialization/SerializerMiddleware.js"
+      ]
+    },
+    {
+      "id": "lib/util/createHash.js",
+      "path": "lib/util/createHash.js",
+      "name": "lib/util/createHash.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/Hash.js"
+      ]
+    },
+    {
+      "id": "lib/util/Hash.js",
+      "path": "lib/util/Hash.js",
+      "name": "lib/util/Hash.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AbstractMethodError.js"
+      ]
+    },
+    {
+      "id": "lib/util/fs.js",
+      "path": "lib/util/fs.js",
+      "name": "lib/util/fs.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/serialization/ObjectMiddleware.js",
+      "path": "lib/serialization/ObjectMiddleware.js",
+      "name": "lib/serialization/ObjectMiddleware.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/serialization/ArraySerializer.js",
+        "lib/serialization/DateObjectSerializer.js",
+        "lib/serialization/ErrorObjectSerializer.js",
+        "lib/serialization/MapObjectSerializer.js",
+        "lib/serialization/NullPrototypeObjectSerializer.js",
+        "lib/serialization/PlainObjectSerializer.js",
+        "lib/serialization/RegExpObjectSerializer.js",
+        "lib/serialization/SerializerMiddleware.js",
+        "lib/serialization/SetObjectSerializer.js"
+      ]
+    },
+    {
+      "id": "lib/serialization/ArraySerializer.js",
+      "path": "lib/serialization/ArraySerializer.js",
+      "name": "lib/serialization/ArraySerializer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/serialization/DateObjectSerializer.js",
+      "path": "lib/serialization/DateObjectSerializer.js",
+      "name": "lib/serialization/DateObjectSerializer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/serialization/ErrorObjectSerializer.js",
+      "path": "lib/serialization/ErrorObjectSerializer.js",
+      "name": "lib/serialization/ErrorObjectSerializer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/serialization/MapObjectSerializer.js",
+      "path": "lib/serialization/MapObjectSerializer.js",
+      "name": "lib/serialization/MapObjectSerializer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/serialization/NullPrototypeObjectSerializer.js",
+      "path": "lib/serialization/NullPrototypeObjectSerializer.js",
+      "name": "lib/serialization/NullPrototypeObjectSerializer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/serialization/PlainObjectSerializer.js",
+      "path": "lib/serialization/PlainObjectSerializer.js",
+      "name": "lib/serialization/PlainObjectSerializer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/serialization/RegExpObjectSerializer.js",
+      "path": "lib/serialization/RegExpObjectSerializer.js",
+      "name": "lib/serialization/RegExpObjectSerializer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/serialization/SetObjectSerializer.js",
+      "path": "lib/serialization/SetObjectSerializer.js",
+      "name": "lib/serialization/SetObjectSerializer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/serialization/Serializer.js",
+      "path": "lib/serialization/Serializer.js",
+      "name": "lib/serialization/Serializer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/serialization/SingleItemMiddleware.js",
+      "path": "lib/serialization/SingleItemMiddleware.js",
+      "name": "lib/serialization/SingleItemMiddleware.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/serialization/SerializerMiddleware.js"
+      ]
+    },
+    {
+      "id": "lib/util/internalSerializables.js",
+      "path": "lib/util/internalSerializables.js",
+      "name": "lib/util/internalSerializables.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AsyncDependenciesBlock.js",
+        "lib/CommentCompilationWarning.js",
+        "lib/ContextModule.js",
+        "lib/cache/PackFileCacheStrategy.js",
+        "lib/cache/ResolverCachePlugin.js",
+        "lib/container/ContainerEntryDependency.js",
+        "lib/container/ContainerEntryModule.js",
+        "lib/container/ContainerExposedDependency.js",
+        "lib/container/FallbackDependency.js",
+        "lib/container/FallbackItemDependency.js",
+        "lib/container/FallbackModule.js",
+        "lib/container/RemoteModule.js",
+        "lib/container/RemoteToExternalDependency.js",
+        "lib/dependencies/AMDDefineDependency.js",
+        "lib/dependencies/AMDRequireArrayDependency.js",
+        "lib/dependencies/AMDRequireContextDependency.js",
+        "lib/dependencies/AMDRequireDependenciesBlock.js",
+        "lib/dependencies/AMDRequireDependency.js",
+        "lib/dependencies/AMDRequireItemDependency.js",
+        "lib/dependencies/CachedConstDependency.js",
+        "lib/dependencies/CommonJsRequireContextDependency.js",
+        "lib/dependencies/CommonJsExportRequireDependency.js",
+        "lib/dependencies/CommonJsExportsDependency.js",
+        "lib/dependencies/CommonJsFullRequireDependency.js",
+        "lib/dependencies/CommonJsRequireDependency.js",
+        "lib/dependencies/CommonJsSelfReferenceDependency.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/ContextDependency.js",
+        "lib/dependencies/ContextElementDependency.js",
+        "lib/dependencies/CriticalDependencyWarning.js",
+        "lib/dependencies/DelegatedSourceDependency.js",
+        "lib/dependencies/DllEntryDependency.js",
+        "lib/dependencies/EntryDependency.js",
+        "lib/dependencies/ExportsInfoDependency.js",
+        "lib/dependencies/HarmonyAcceptDependency.js",
+        "lib/dependencies/HarmonyAcceptImportDependency.js",
+        "lib/dependencies/HarmonyCompatibilityDependency.js",
+        "lib/dependencies/HarmonyExportExpressionDependency.js",
+        "lib/dependencies/HarmonyExportHeaderDependency.js",
+        "lib/dependencies/HarmonyExportImportedSpecifierDependency.js",
+        "lib/dependencies/HarmonyExportSpecifierDependency.js",
+        "lib/dependencies/HarmonyImportSideEffectDependency.js",
+        "lib/dependencies/HarmonyImportSpecifierDependency.js",
+        "lib/dependencies/ImportContextDependency.js",
+        "lib/dependencies/ImportDependency.js",
+        "lib/dependencies/ImportEagerDependency.js",
+        "lib/dependencies/ImportWeakDependency.js",
+        "lib/dependencies/JsonExportsDependency.js",
+        "lib/dependencies/LocalModule.js",
+        "lib/dependencies/LocalModuleDependency.js",
+        "lib/dependencies/ModuleDecoratorDependency.js",
+        "lib/dependencies/ModuleHotAcceptDependency.js",
+        "lib/dependencies/ModuleHotDeclineDependency.js",
+        "lib/dependencies/ImportMetaHotAcceptDependency.js",
+        "lib/dependencies/ImportMetaHotDeclineDependency.js",
+        "lib/dependencies/ProvidedDependency.js",
+        "lib/dependencies/PureExpressionDependency.js",
+        "lib/dependencies/RequireContextDependency.js",
+        "lib/dependencies/RequireEnsureDependenciesBlock.js",
+        "lib/dependencies/RequireEnsureDependency.js",
+        "lib/dependencies/RequireEnsureItemDependency.js",
+        "lib/dependencies/RequireHeaderDependency.js",
+        "lib/dependencies/RequireIncludeDependency.js",
+        "lib/dependencies/RequireIncludeDependencyParserPlugin.js",
+        "lib/dependencies/RequireResolveContextDependency.js",
+        "lib/dependencies/RequireResolveDependency.js",
+        "lib/dependencies/RequireResolveHeaderDependency.js",
+        "lib/dependencies/RuntimeRequirementsDependency.js",
+        "lib/dependencies/StaticExportsDependency.js",
+        "lib/dependencies/SystemPlugin.js",
+        "lib/dependencies/UnsupportedDependency.js",
+        "lib/dependencies/URLDependency.js",
+        "lib/dependencies/WebAssemblyExportImportedDependency.js",
+        "lib/dependencies/WebAssemblyImportDependency.js",
+        "lib/dependencies/WorkerDependency.js",
+        "lib/optimize/ConcatenatedModule.js",
+        "lib/DelegatedModule.js",
+        "lib/DependenciesBlock.js",
+        "lib/DllModule.js",
+        "lib/ExternalModule.js",
+        "lib/FileSystemInfo.js",
+        "lib/Module.js",
+        "lib/ModuleBuildError.js",
+        "lib/ModuleError.js",
+        "lib/ModuleGraph.js",
+        "lib/ModuleParseError.js",
+        "lib/ModuleWarning.js",
+        "lib/NormalModule.js",
+        "lib/RawModule.js",
+        "lib/sharing/ConsumeSharedModule.js",
+        "lib/sharing/ConsumeSharedFallbackDependency.js",
+        "lib/sharing/ProvideSharedModule.js",
+        "lib/sharing/ProvideSharedDependency.js",
+        "lib/sharing/ProvideForSharedDependency.js",
+        "lib/UnsupportedFeatureWarning.js",
+        "lib/util/LazySet.js",
+        "lib/UnhandledSchemeError.js",
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/AsyncDependenciesBlock.js",
+      "path": "lib/AsyncDependenciesBlock.js",
+      "name": "lib/AsyncDependenciesBlock.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/DependenciesBlock.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/DependenciesBlock.js",
+      "path": "lib/DependenciesBlock.js",
+      "name": "lib/DependenciesBlock.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/CommentCompilationWarning.js",
+      "path": "lib/CommentCompilationWarning.js",
+      "name": "lib/CommentCompilationWarning.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/ContextModule.js",
+      "path": "lib/ContextModule.js",
+      "name": "lib/ContextModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AsyncDependenciesBlock.js",
+        "lib/HookWebpackError.js",
+        "lib/Module.js",
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/WebpackError.js",
+        "lib/util/comparators.js",
+        "lib/util/identifier.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/Module.js",
+      "path": "lib/Module.js",
+      "name": "lib/Module.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ChunkGraph.js",
+        "lib/DependenciesBlock.js",
+        "lib/ModuleGraph.js",
+        "lib/RuntimeGlobals.js",
+        "lib/util/comparators.js",
+        "lib/util/makeSerializable.js",
+        "lib/AbstractMethodError.js"
+      ]
+    },
+    {
+      "id": "lib/ChunkGraph.js",
+      "path": "lib/ChunkGraph.js",
+      "name": "lib/ChunkGraph.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/SortableSet.js",
+        "lib/util/comparators.js",
+        "lib/util/findGraphRoots.js",
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/util/SortableSet.js",
+      "path": "lib/util/SortableSet.js",
+      "name": "lib/util/SortableSet.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/util/comparators.js",
+      "path": "lib/util/comparators.js",
+      "name": "lib/util/comparators.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/util/runtime.js",
+      "path": "lib/util/runtime.js",
+      "name": "lib/util/runtime.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/SortableSet.js"
+      ]
+    },
+    {
+      "id": "lib/util/findGraphRoots.js",
+      "path": "lib/util/findGraphRoots.js",
+      "name": "lib/util/findGraphRoots.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/ModuleGraph.js",
+      "path": "lib/ModuleGraph.js",
+      "name": "lib/ModuleGraph.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExportsInfo.js",
+        "lib/ModuleGraphConnection.js"
+      ]
+    },
+    {
+      "id": "lib/ExportsInfo.js",
+      "path": "lib/ExportsInfo.js",
+      "name": "lib/ExportsInfo.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/ArrayHelpers.js",
+        "lib/util/SortableSet.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/util/ArrayHelpers.js",
+      "path": "lib/util/ArrayHelpers.js",
+      "name": "lib/util/ArrayHelpers.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/ModuleGraphConnection.js",
+      "path": "lib/ModuleGraphConnection.js",
+      "name": "lib/ModuleGraphConnection.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/RuntimeGlobals.js",
+      "path": "lib/RuntimeGlobals.js",
+      "name": "lib/RuntimeGlobals.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/Template.js",
+      "path": "lib/Template.js",
+      "name": "lib/Template.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/util/identifier.js",
+      "path": "lib/util/identifier.js",
+      "name": "lib/util/identifier.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/cache/PackFileCacheStrategy.js",
+      "path": "lib/cache/PackFileCacheStrategy.js",
+      "name": "lib/cache/PackFileCacheStrategy.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/FileSystemInfo.js",
+        "lib/ProgressPlugin.js",
+        "lib/SizeFormatHelpers.js",
+        "lib/util/LazySet.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/memorize.js",
+        "lib/util/serialization.js"
+      ]
+    },
+    {
+      "id": "lib/FileSystemInfo.js",
+      "path": "lib/FileSystemInfo.js",
+      "name": "lib/FileSystemInfo.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/AsyncQueue.js",
+        "lib/util/createHash.js",
+        "lib/util/fs.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/util/AsyncQueue.js",
+      "path": "lib/util/AsyncQueue.js",
+      "name": "lib/util/AsyncQueue.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/ProgressPlugin.js",
+      "path": "lib/ProgressPlugin.js",
+      "name": "lib/ProgressPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/ProgressPlugin.json",
+        "lib/Compiler.js",
+        "lib/MultiCompiler.js",
+        "lib/NormalModule.js",
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/ProgressPlugin.json",
+      "path": "schemas/plugins/ProgressPlugin.json",
+      "name": "schemas/plugins/ProgressPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/MultiCompiler.js",
+      "path": "lib/MultiCompiler.js",
+      "name": "lib/MultiCompiler.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ConcurrentCompilationError.js",
+        "lib/MultiStats.js",
+        "lib/MultiWatching.js"
+      ]
+    },
+    {
+      "id": "lib/ConcurrentCompilationError.js",
+      "path": "lib/ConcurrentCompilationError.js",
+      "name": "lib/ConcurrentCompilationError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/MultiStats.js",
+      "path": "lib/MultiStats.js",
+      "name": "lib/MultiStats.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "lib/MultiWatching.js",
+      "path": "lib/MultiWatching.js",
+      "name": "lib/MultiWatching.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/NormalModule.js",
+      "path": "lib/NormalModule.js",
+      "name": "lib/NormalModule.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/Compilation.js",
+      "path": "lib/Compilation.js",
+      "name": "lib/Compilation.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/CacheFacade.js",
+      "path": "lib/CacheFacade.js",
+      "name": "lib/CacheFacade.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/cache/getLazyHashedEtag.js",
+        "lib/cache/mergeEtags.js"
+      ]
+    },
+    {
+      "id": "lib/cache/getLazyHashedEtag.js",
+      "path": "lib/cache/getLazyHashedEtag.js",
+      "name": "lib/cache/getLazyHashedEtag.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/createHash.js"
+      ]
+    },
+    {
+      "id": "lib/cache/mergeEtags.js",
+      "path": "lib/cache/mergeEtags.js",
+      "name": "lib/cache/mergeEtags.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/Chunk.js",
+      "path": "lib/Chunk.js",
+      "name": "lib/Chunk.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ChunkGraph.js",
+        "lib/Entrypoint.js",
+        "lib/util/SetHelpers.js",
+        "lib/util/SortableSet.js",
+        "lib/util/StringXor.js",
+        "lib/util/comparators.js",
+        "lib/util/deprecation.js",
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/Entrypoint.js",
+      "path": "lib/Entrypoint.js",
+      "name": "lib/Entrypoint.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ChunkGroup.js"
+      ]
+    },
+    {
+      "id": "lib/ChunkGroup.js",
+      "path": "lib/ChunkGroup.js",
+      "name": "lib/ChunkGroup.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/SortableSet.js",
+        "lib/util/comparators.js"
+      ]
+    },
+    {
+      "id": "lib/util/SetHelpers.js",
+      "path": "lib/util/SetHelpers.js",
+      "name": "lib/util/SetHelpers.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/util/StringXor.js",
+      "path": "lib/util/StringXor.js",
+      "name": "lib/util/StringXor.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/util/deprecation.js",
+      "path": "lib/util/deprecation.js",
+      "name": "lib/util/deprecation.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/ChunkRenderError.js",
+      "path": "lib/ChunkRenderError.js",
+      "name": "lib/ChunkRenderError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/ChunkTemplate.js",
+      "path": "lib/ChunkTemplate.js",
+      "name": "lib/ChunkTemplate.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/memorize.js",
+        "lib/javascript/JavascriptModulesPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/javascript/JavascriptModulesPlugin.js",
+      "path": "lib/javascript/JavascriptModulesPlugin.js",
+      "name": "lib/javascript/JavascriptModulesPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Compilation.js",
+        "lib/HookWebpackError.js",
+        "lib/HotUpdateChunk.js",
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/util/StringXor.js",
+        "lib/util/comparators.js",
+        "lib/util/createHash.js",
+        "lib/util/runtime.js",
+        "lib/javascript/JavascriptGenerator.js",
+        "lib/javascript/JavascriptParser.js"
+      ]
+    },
+    {
+      "id": "lib/HotUpdateChunk.js",
+      "path": "lib/HotUpdateChunk.js",
+      "name": "lib/HotUpdateChunk.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Chunk.js"
+      ]
+    },
+    {
+      "id": "lib/javascript/JavascriptGenerator.js",
+      "path": "lib/javascript/JavascriptGenerator.js",
+      "name": "lib/javascript/JavascriptGenerator.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Generator.js",
+        "lib/InitFragment.js",
+        "lib/dependencies/HarmonyCompatibilityDependency.js"
+      ]
+    },
+    {
+      "id": "lib/Generator.js",
+      "path": "lib/Generator.js",
+      "name": "lib/Generator.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AbstractMethodError.js"
+      ]
+    },
+    {
+      "id": "lib/InitFragment.js",
+      "path": "lib/InitFragment.js",
+      "name": "lib/InitFragment.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/dependencies/HarmonyCompatibilityDependency.js",
+      "path": "lib/dependencies/HarmonyCompatibilityDependency.js",
+      "name": "lib/dependencies/HarmonyCompatibilityDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExportsInfo.js",
+        "lib/InitFragment.js",
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/NullDependency.js",
+      "path": "lib/dependencies/NullDependency.js",
+      "name": "lib/dependencies/NullDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/DependencyTemplate.js"
+      ]
+    },
+    {
+      "id": "lib/Dependency.js",
+      "path": "lib/Dependency.js",
+      "name": "lib/Dependency.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/DependencyTemplate.js",
+      "path": "lib/DependencyTemplate.js",
+      "name": "lib/DependencyTemplate.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AbstractMethodError.js"
+      ]
+    },
+    {
+      "id": "lib/javascript/JavascriptParser.js",
+      "path": "lib/javascript/JavascriptParser.js",
+      "name": "lib/javascript/JavascriptParser.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Parser.js",
+        "lib/util/StackedMap.js",
+        "lib/util/memorize.js",
+        "lib/javascript/BasicEvaluatedExpression.js"
+      ]
+    },
+    {
+      "id": "lib/Parser.js",
+      "path": "lib/Parser.js",
+      "name": "lib/Parser.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AbstractMethodError.js"
+      ]
+    },
+    {
+      "id": "lib/util/StackedMap.js",
+      "path": "lib/util/StackedMap.js",
+      "name": "lib/util/StackedMap.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/javascript/BasicEvaluatedExpression.js",
+      "path": "lib/javascript/BasicEvaluatedExpression.js",
+      "name": "lib/javascript/BasicEvaluatedExpression.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/CodeGenerationError.js",
+      "path": "lib/CodeGenerationError.js",
+      "name": "lib/CodeGenerationError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/CodeGenerationResults.js",
+      "path": "lib/CodeGenerationResults.js",
+      "name": "lib/CodeGenerationResults.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/DependencyTemplates.js",
+      "path": "lib/DependencyTemplates.js",
+      "name": "lib/DependencyTemplates.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/createHash.js"
+      ]
+    },
+    {
+      "id": "lib/ErrorHelpers.js",
+      "path": "lib/ErrorHelpers.js",
+      "name": "lib/ErrorHelpers.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/GraphHelpers.js",
+      "path": "lib/GraphHelpers.js",
+      "name": "lib/GraphHelpers.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/MainTemplate.js",
+      "path": "lib/MainTemplate.js",
+      "name": "lib/MainTemplate.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/util/memorize.js",
+        "lib/javascript/JavascriptModulesPlugin.js",
+        "lib/web/JsonpTemplatePlugin.js",
+        "lib/runtime/LoadScriptRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/web/JsonpTemplatePlugin.js",
+      "path": "lib/web/JsonpTemplatePlugin.js",
+      "name": "lib/web/JsonpTemplatePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/javascript/ArrayPushCallbackChunkFormatPlugin.js",
+        "lib/javascript/EnableChunkLoadingPlugin.js",
+        "lib/web/JsonpChunkLoadingRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/javascript/ArrayPushCallbackChunkFormatPlugin.js",
+      "path": "lib/javascript/ArrayPushCallbackChunkFormatPlugin.js",
+      "name": "lib/javascript/ArrayPushCallbackChunkFormatPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/HotUpdateChunk.js",
+        "lib/Template.js",
+        "lib/web/JsonpHelpers.js",
+        "lib/javascript/JavascriptModulesPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/web/JsonpHelpers.js",
+      "path": "lib/web/JsonpHelpers.js",
+      "name": "lib/web/JsonpHelpers.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/javascript/EnableChunkLoadingPlugin.js",
+      "path": "lib/javascript/EnableChunkLoadingPlugin.js",
+      "name": "lib/javascript/EnableChunkLoadingPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/web/JsonpChunkLoadingPlugin.js",
+        "lib/webworker/ImportScriptsChunkLoadingPlugin.js",
+        "lib/node/CommonJsChunkLoadingPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/web/JsonpChunkLoadingPlugin.js",
+      "path": "lib/web/JsonpChunkLoadingPlugin.js",
+      "name": "lib/web/JsonpChunkLoadingPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/web/JsonpChunkLoadingRuntimeModule.js",
+        "lib/web/JsonpHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/web/JsonpChunkLoadingRuntimeModule.js",
+      "path": "lib/web/JsonpChunkLoadingRuntimeModule.js",
+      "name": "lib/web/JsonpChunkLoadingRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Compilation.js",
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js",
+        "lib/javascript/JavascriptModulesPlugin.js",
+        "lib/util/compileBooleanMatcher.js",
+        "lib/web/JsonpHelpers.js",
+        "lib/hmr/JavascriptHotModuleReplacement.runtime.js"
+      ]
+    },
+    {
+      "id": "lib/RuntimeModule.js",
+      "path": "lib/RuntimeModule.js",
+      "name": "lib/RuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Module.js",
+        "lib/AbstractMethodError.js"
+      ]
+    },
+    {
+      "id": "lib/util/compileBooleanMatcher.js",
+      "path": "lib/util/compileBooleanMatcher.js",
+      "name": "lib/util/compileBooleanMatcher.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/hmr/JavascriptHotModuleReplacement.runtime.js",
+      "path": "lib/hmr/JavascriptHotModuleReplacement.runtime.js",
+      "name": "lib/hmr/JavascriptHotModuleReplacement.runtime.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/webworker/ImportScriptsChunkLoadingPlugin.js",
+      "path": "lib/webworker/ImportScriptsChunkLoadingPlugin.js",
+      "name": "lib/webworker/ImportScriptsChunkLoadingPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/runtime/StartupChunkDependenciesPlugin.js",
+        "lib/webworker/ImportScriptsChunkLoadingRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/StartupChunkDependenciesPlugin.js",
+      "path": "lib/runtime/StartupChunkDependenciesPlugin.js",
+      "name": "lib/runtime/StartupChunkDependenciesPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/runtime/StartupChunkDependenciesRuntimeModule.js",
+        "lib/runtime/StartupEntrypointRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/StartupChunkDependenciesRuntimeModule.js",
+      "path": "lib/runtime/StartupChunkDependenciesRuntimeModule.js",
+      "name": "lib/runtime/StartupChunkDependenciesRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/StartupEntrypointRuntimeModule.js",
+      "path": "lib/runtime/StartupEntrypointRuntimeModule.js",
+      "name": "lib/runtime/StartupEntrypointRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/webworker/ImportScriptsChunkLoadingRuntimeModule.js",
+      "path": "lib/webworker/ImportScriptsChunkLoadingRuntimeModule.js",
+      "name": "lib/webworker/ImportScriptsChunkLoadingRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js",
+        "lib/javascript/JavascriptModulesPlugin.js",
+        "lib/util/identifier.js",
+        "lib/hmr/JavascriptHotModuleReplacement.runtime.js"
+      ]
+    },
+    {
+      "id": "lib/node/CommonJsChunkLoadingPlugin.js",
+      "path": "lib/node/CommonJsChunkLoadingPlugin.js",
+      "name": "lib/node/CommonJsChunkLoadingPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/runtime/StartupChunkDependenciesPlugin.js",
+        "lib/node/ReadFileChunkLoadingRuntimeModule.js",
+        "lib/node/RequireChunkLoadingRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/node/ReadFileChunkLoadingRuntimeModule.js",
+      "path": "lib/node/ReadFileChunkLoadingRuntimeModule.js",
+      "name": "lib/node/ReadFileChunkLoadingRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js",
+        "lib/javascript/JavascriptModulesPlugin.js",
+        "lib/util/compileBooleanMatcher.js",
+        "lib/util/identifier.js",
+        "lib/hmr/JavascriptHotModuleReplacement.runtime.js"
+      ]
+    },
+    {
+      "id": "lib/node/RequireChunkLoadingRuntimeModule.js",
+      "path": "lib/node/RequireChunkLoadingRuntimeModule.js",
+      "name": "lib/node/RequireChunkLoadingRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js",
+        "lib/javascript/JavascriptModulesPlugin.js",
+        "lib/util/compileBooleanMatcher.js",
+        "lib/util/identifier.js",
+        "lib/hmr/JavascriptHotModuleReplacement.runtime.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/LoadScriptRuntimeModule.js",
+      "path": "lib/runtime/LoadScriptRuntimeModule.js",
+      "name": "lib/runtime/LoadScriptRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Compilation.js",
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/runtime/HelperRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/HelperRuntimeModule.js",
+      "path": "lib/runtime/HelperRuntimeModule.js",
+      "name": "lib/runtime/HelperRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleDependencyError.js",
+      "path": "lib/ModuleDependencyError.js",
+      "name": "lib/ModuleDependencyError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleDependencyWarning.js",
+      "path": "lib/ModuleDependencyWarning.js",
+      "name": "lib/ModuleDependencyWarning.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleNotFoundError.js",
+      "path": "lib/ModuleNotFoundError.js",
+      "name": "lib/ModuleNotFoundError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleProfile.js",
+      "path": "lib/ModuleProfile.js",
+      "name": "lib/ModuleProfile.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/ModuleRestoreError.js",
+      "path": "lib/ModuleRestoreError.js",
+      "name": "lib/ModuleRestoreError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleStoreError.js",
+      "path": "lib/ModuleStoreError.js",
+      "name": "lib/ModuleStoreError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleTemplate.js",
+      "path": "lib/ModuleTemplate.js",
+      "name": "lib/ModuleTemplate.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/memorize.js",
+        "lib/javascript/JavascriptModulesPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/RuntimeTemplate.js",
+      "path": "lib/RuntimeTemplate.js",
+      "name": "lib/RuntimeTemplate.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/InitFragment.js",
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/util/ArrayHelpers.js",
+        "lib/util/compileBooleanMatcher.js",
+        "lib/util/propertyAccess.js",
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/util/propertyAccess.js",
+      "path": "lib/util/propertyAccess.js",
+      "name": "lib/util/propertyAccess.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/Stats.js",
+      "path": "lib/Stats.js",
+      "name": "lib/Stats.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/buildChunkGraph.js",
+      "path": "lib/buildChunkGraph.js",
+      "name": "lib/buildChunkGraph.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AsyncDependencyToInitialChunkError.js",
+        "lib/GraphHelpers.js",
+        "lib/ModuleGraphConnection.js",
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/AsyncDependencyToInitialChunkError.js",
+      "path": "lib/AsyncDependencyToInitialChunkError.js",
+      "name": "lib/AsyncDependencyToInitialChunkError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/errors/BuildCycleError.js",
+      "path": "lib/errors/BuildCycleError.js",
+      "name": "lib/errors/BuildCycleError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/logging/Logger.js",
+      "path": "lib/logging/Logger.js",
+      "name": "lib/logging/Logger.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/stats/StatsFactory.js",
+      "path": "lib/stats/StatsFactory.js",
+      "name": "lib/stats/StatsFactory.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/comparators.js",
+        "lib/util/smartGrouping.js"
+      ]
+    },
+    {
+      "id": "lib/util/smartGrouping.js",
+      "path": "lib/util/smartGrouping.js",
+      "name": "lib/util/smartGrouping.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/stats/StatsPrinter.js",
+      "path": "lib/stats/StatsPrinter.js",
+      "name": "lib/stats/StatsPrinter.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/util/LazySet.js",
+      "path": "lib/util/LazySet.js",
+      "name": "lib/util/LazySet.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/util/cleverMerge.js",
+      "path": "lib/util/cleverMerge.js",
+      "name": "lib/util/cleverMerge.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/ModuleBuildError.js",
+      "path": "lib/ModuleBuildError.js",
+      "name": "lib/ModuleBuildError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ErrorHelpers.js",
+        "lib/WebpackError.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleError.js",
+      "path": "lib/ModuleError.js",
+      "name": "lib/ModuleError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ErrorHelpers.js",
+        "lib/WebpackError.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleParseError.js",
+      "path": "lib/ModuleParseError.js",
+      "name": "lib/ModuleParseError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleWarning.js",
+      "path": "lib/ModuleWarning.js",
+      "name": "lib/ModuleWarning.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ErrorHelpers.js",
+        "lib/WebpackError.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/UnhandledSchemeError.js",
+      "path": "lib/UnhandledSchemeError.js",
+      "name": "lib/UnhandledSchemeError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/formatLocation.js",
+      "path": "lib/formatLocation.js",
+      "name": "lib/formatLocation.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/util/URLAbsoluteSpecifier.js",
+      "path": "lib/util/URLAbsoluteSpecifier.js",
+      "name": "lib/util/URLAbsoluteSpecifier.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/SizeFormatHelpers.js",
+      "path": "lib/SizeFormatHelpers.js",
+      "name": "lib/SizeFormatHelpers.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/cache/ResolverCachePlugin.js",
+      "path": "lib/cache/ResolverCachePlugin.js",
+      "name": "lib/cache/ResolverCachePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/LazySet.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/container/ContainerEntryDependency.js",
+      "path": "lib/container/ContainerEntryDependency.js",
+      "name": "lib/container/ContainerEntryDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/container/ContainerEntryModule.js",
+      "path": "lib/container/ContainerEntryModule.js",
+      "name": "lib/container/ContainerEntryModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AsyncDependenciesBlock.js",
+        "lib/Module.js",
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/util/makeSerializable.js",
+        "lib/container/ContainerExposedDependency.js"
+      ]
+    },
+    {
+      "id": "lib/container/ContainerExposedDependency.js",
+      "path": "lib/container/ContainerExposedDependency.js",
+      "name": "lib/container/ContainerExposedDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ModuleDependency.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ModuleDependency.js",
+      "path": "lib/dependencies/ModuleDependency.js",
+      "name": "lib/dependencies/ModuleDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/DependencyTemplate.js"
+      ]
+    },
+    {
+      "id": "lib/container/FallbackDependency.js",
+      "path": "lib/container/FallbackDependency.js",
+      "name": "lib/container/FallbackDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/container/FallbackItemDependency.js",
+      "path": "lib/container/FallbackItemDependency.js",
+      "name": "lib/container/FallbackItemDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ModuleDependency.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/container/FallbackModule.js",
+      "path": "lib/container/FallbackModule.js",
+      "name": "lib/container/FallbackModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Module.js",
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/util/makeSerializable.js",
+        "lib/container/FallbackItemDependency.js"
+      ]
+    },
+    {
+      "id": "lib/container/RemoteModule.js",
+      "path": "lib/container/RemoteModule.js",
+      "name": "lib/container/RemoteModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Module.js",
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/container/FallbackDependency.js",
+        "lib/container/RemoteToExternalDependency.js"
+      ]
+    },
+    {
+      "id": "lib/container/RemoteToExternalDependency.js",
+      "path": "lib/container/RemoteToExternalDependency.js",
+      "name": "lib/container/RemoteToExternalDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ModuleDependency.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/AMDDefineDependency.js",
+      "path": "lib/dependencies/AMDDefineDependency.js",
+      "name": "lib/dependencies/AMDDefineDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/AMDRequireArrayDependency.js",
+      "path": "lib/dependencies/AMDRequireArrayDependency.js",
+      "name": "lib/dependencies/AMDRequireArrayDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/DependencyTemplate.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/AMDRequireContextDependency.js",
+      "path": "lib/dependencies/AMDRequireContextDependency.js",
+      "name": "lib/dependencies/AMDRequireContextDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ContextDependency.js",
+        "lib/dependencies/ContextDependencyTemplateAsRequireCall.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ContextDependency.js",
+      "path": "lib/dependencies/ContextDependency.js",
+      "name": "lib/dependencies/ContextDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/DependencyTemplate.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/memorize.js",
+        "lib/dependencies/CriticalDependencyWarning.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/CriticalDependencyWarning.js",
+      "path": "lib/dependencies/CriticalDependencyWarning.js",
+      "name": "lib/dependencies/CriticalDependencyWarning.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ContextDependencyTemplateAsRequireCall.js",
+      "path": "lib/dependencies/ContextDependencyTemplateAsRequireCall.js",
+      "name": "lib/dependencies/ContextDependencyTemplateAsRequireCall.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ContextDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/AMDRequireDependenciesBlock.js",
+      "path": "lib/dependencies/AMDRequireDependenciesBlock.js",
+      "name": "lib/dependencies/AMDRequireDependenciesBlock.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AsyncDependenciesBlock.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/AMDRequireDependency.js",
+      "path": "lib/dependencies/AMDRequireDependency.js",
+      "name": "lib/dependencies/AMDRequireDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/AMDRequireItemDependency.js",
+      "path": "lib/dependencies/AMDRequireItemDependency.js",
+      "name": "lib/dependencies/AMDRequireItemDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js",
+        "lib/dependencies/ModuleDependencyTemplateAsRequireId.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ModuleDependencyTemplateAsRequireId.js",
+      "path": "lib/dependencies/ModuleDependencyTemplateAsRequireId.js",
+      "name": "lib/dependencies/ModuleDependencyTemplateAsRequireId.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/CachedConstDependency.js",
+      "path": "lib/dependencies/CachedConstDependency.js",
+      "name": "lib/dependencies/CachedConstDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/DependencyTemplate.js",
+        "lib/InitFragment.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/CommonJsRequireContextDependency.js",
+      "path": "lib/dependencies/CommonJsRequireContextDependency.js",
+      "name": "lib/dependencies/CommonJsRequireContextDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ContextDependency.js",
+        "lib/dependencies/ContextDependencyTemplateAsRequireCall.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/CommonJsExportRequireDependency.js",
+      "path": "lib/dependencies/CommonJsExportRequireDependency.js",
+      "name": "lib/dependencies/CommonJsExportRequireDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/ExportsInfo.js",
+        "lib/Template.js",
+        "lib/util/ArrayHelpers.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/propertyAccess.js",
+        "lib/dependencies/CommonJsDependencyHelpers.js",
+        "lib/dependencies/ModuleDependency.js",
+        "lib/dependencies/processExportInfo.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/CommonJsDependencyHelpers.js",
+      "path": "lib/dependencies/CommonJsDependencyHelpers.js",
+      "name": "lib/dependencies/CommonJsDependencyHelpers.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/processExportInfo.js",
+      "path": "lib/dependencies/processExportInfo.js",
+      "name": "lib/dependencies/processExportInfo.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExportsInfo.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/CommonJsExportsDependency.js",
+      "path": "lib/dependencies/CommonJsExportsDependency.js",
+      "name": "lib/dependencies/CommonJsExportsDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/InitFragment.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/propertyAccess.js",
+        "lib/dependencies/CommonJsDependencyHelpers.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/CommonJsFullRequireDependency.js",
+      "path": "lib/dependencies/CommonJsFullRequireDependency.js",
+      "name": "lib/dependencies/CommonJsFullRequireDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Template.js",
+        "lib/util/ArrayHelpers.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/propertyAccess.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/CommonJsRequireDependency.js",
+      "path": "lib/dependencies/CommonJsRequireDependency.js",
+      "name": "lib/dependencies/CommonJsRequireDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js",
+        "lib/dependencies/ModuleDependencyTemplateAsId.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ModuleDependencyTemplateAsId.js",
+      "path": "lib/dependencies/ModuleDependencyTemplateAsId.js",
+      "name": "lib/dependencies/ModuleDependencyTemplateAsId.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/CommonJsSelfReferenceDependency.js",
+      "path": "lib/dependencies/CommonJsSelfReferenceDependency.js",
+      "name": "lib/dependencies/CommonJsSelfReferenceDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/util/ArrayHelpers.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/propertyAccess.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ConstDependency.js",
+      "path": "lib/dependencies/ConstDependency.js",
+      "name": "lib/dependencies/ConstDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ContextElementDependency.js",
+      "path": "lib/dependencies/ContextElementDependency.js",
+      "name": "lib/dependencies/ContextElementDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/DelegatedSourceDependency.js",
+      "path": "lib/dependencies/DelegatedSourceDependency.js",
+      "name": "lib/dependencies/DelegatedSourceDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/DllEntryDependency.js",
+      "path": "lib/dependencies/DllEntryDependency.js",
+      "name": "lib/dependencies/DllEntryDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/EntryDependency.js",
+      "path": "lib/dependencies/EntryDependency.js",
+      "name": "lib/dependencies/EntryDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ExportsInfoDependency.js",
+      "path": "lib/dependencies/ExportsInfoDependency.js",
+      "name": "lib/dependencies/ExportsInfoDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExportsInfo.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyAcceptDependency.js",
+      "path": "lib/dependencies/HarmonyAcceptDependency.js",
+      "name": "lib/dependencies/HarmonyAcceptDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Template.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/HarmonyImportDependency.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyImportDependency.js",
+      "path": "lib/dependencies/HarmonyImportDependency.js",
+      "name": "lib/dependencies/HarmonyImportDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ConditionalInitFragment.js",
+        "lib/Dependency.js",
+        "lib/HarmonyLinkingError.js",
+        "lib/InitFragment.js",
+        "lib/Template.js",
+        "lib/async-modules/AwaitDependenciesInitFragment.js",
+        "lib/util/runtime.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/ConditionalInitFragment.js",
+      "path": "lib/ConditionalInitFragment.js",
+      "name": "lib/ConditionalInitFragment.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/InitFragment.js",
+        "lib/Template.js",
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/HarmonyLinkingError.js",
+      "path": "lib/HarmonyLinkingError.js",
+      "name": "lib/HarmonyLinkingError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/async-modules/AwaitDependenciesInitFragment.js",
+      "path": "lib/async-modules/AwaitDependenciesInitFragment.js",
+      "name": "lib/async-modules/AwaitDependenciesInitFragment.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/InitFragment.js",
+        "lib/RuntimeGlobals.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyAcceptImportDependency.js",
+      "path": "lib/dependencies/HarmonyAcceptImportDependency.js",
+      "name": "lib/dependencies/HarmonyAcceptImportDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/HarmonyImportDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyExportExpressionDependency.js",
+      "path": "lib/dependencies/HarmonyExportExpressionDependency.js",
+      "name": "lib/dependencies/HarmonyExportExpressionDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ConcatenationScope.js",
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/HarmonyExportInitFragment.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/ConcatenationScope.js",
+      "path": "lib/ConcatenationScope.js",
+      "name": "lib/ConcatenationScope.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/dependencies/HarmonyExportInitFragment.js",
+      "path": "lib/dependencies/HarmonyExportInitFragment.js",
+      "name": "lib/dependencies/HarmonyExportInitFragment.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/InitFragment.js",
+        "lib/RuntimeGlobals.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyExportHeaderDependency.js",
+      "path": "lib/dependencies/HarmonyExportHeaderDependency.js",
+      "name": "lib/dependencies/HarmonyExportHeaderDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyExportImportedSpecifierDependency.js",
+      "path": "lib/dependencies/HarmonyExportImportedSpecifierDependency.js",
+      "name": "lib/dependencies/HarmonyExportImportedSpecifierDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/ExportsInfo.js",
+        "lib/HarmonyLinkingError.js",
+        "lib/InitFragment.js",
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/propertyAccess.js",
+        "lib/dependencies/HarmonyExportInitFragment.js",
+        "lib/dependencies/HarmonyImportDependency.js",
+        "lib/dependencies/processExportInfo.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyExportSpecifierDependency.js",
+      "path": "lib/dependencies/HarmonyExportSpecifierDependency.js",
+      "name": "lib/dependencies/HarmonyExportSpecifierDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/HarmonyExportInitFragment.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyImportSideEffectDependency.js",
+      "path": "lib/dependencies/HarmonyImportSideEffectDependency.js",
+      "name": "lib/dependencies/HarmonyImportSideEffectDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/HarmonyImportDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyImportSpecifierDependency.js",
+      "path": "lib/dependencies/HarmonyImportSpecifierDependency.js",
+      "name": "lib/dependencies/HarmonyImportSpecifierDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/ExportsInfo.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/propertyAccess.js",
+        "lib/dependencies/HarmonyImportDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ImportContextDependency.js",
+      "path": "lib/dependencies/ImportContextDependency.js",
+      "name": "lib/dependencies/ImportContextDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ContextDependency.js",
+        "lib/dependencies/ContextDependencyTemplateAsRequireCall.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ImportDependency.js",
+      "path": "lib/dependencies/ImportDependency.js",
+      "name": "lib/dependencies/ImportDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ImportEagerDependency.js",
+      "path": "lib/dependencies/ImportEagerDependency.js",
+      "name": "lib/dependencies/ImportEagerDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ImportDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ImportWeakDependency.js",
+      "path": "lib/dependencies/ImportWeakDependency.js",
+      "name": "lib/dependencies/ImportWeakDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ImportDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/JsonExportsDependency.js",
+      "path": "lib/dependencies/JsonExportsDependency.js",
+      "name": "lib/dependencies/JsonExportsDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/LocalModule.js",
+      "path": "lib/dependencies/LocalModule.js",
+      "name": "lib/dependencies/LocalModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/LocalModuleDependency.js",
+      "path": "lib/dependencies/LocalModuleDependency.js",
+      "name": "lib/dependencies/LocalModuleDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ModuleDecoratorDependency.js",
+      "path": "lib/dependencies/ModuleDecoratorDependency.js",
+      "name": "lib/dependencies/ModuleDecoratorDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/InitFragment.js",
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ModuleHotAcceptDependency.js",
+      "path": "lib/dependencies/ModuleHotAcceptDependency.js",
+      "name": "lib/dependencies/ModuleHotAcceptDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js",
+        "lib/dependencies/ModuleDependencyTemplateAsId.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ModuleHotDeclineDependency.js",
+      "path": "lib/dependencies/ModuleHotDeclineDependency.js",
+      "name": "lib/dependencies/ModuleHotDeclineDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js",
+        "lib/dependencies/ModuleDependencyTemplateAsId.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ImportMetaHotAcceptDependency.js",
+      "path": "lib/dependencies/ImportMetaHotAcceptDependency.js",
+      "name": "lib/dependencies/ImportMetaHotAcceptDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js",
+        "lib/dependencies/ModuleDependencyTemplateAsId.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ImportMetaHotDeclineDependency.js",
+      "path": "lib/dependencies/ImportMetaHotDeclineDependency.js",
+      "name": "lib/dependencies/ImportMetaHotDeclineDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js",
+        "lib/dependencies/ModuleDependencyTemplateAsId.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ProvidedDependency.js",
+      "path": "lib/dependencies/ProvidedDependency.js",
+      "name": "lib/dependencies/ProvidedDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/InitFragment.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/PureExpressionDependency.js",
+      "path": "lib/dependencies/PureExpressionDependency.js",
+      "name": "lib/dependencies/PureExpressionDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExportsInfo.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/runtime.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireContextDependency.js",
+      "path": "lib/dependencies/RequireContextDependency.js",
+      "name": "lib/dependencies/RequireContextDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ContextDependency.js",
+        "lib/dependencies/ModuleDependencyTemplateAsRequireId.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireEnsureDependenciesBlock.js",
+      "path": "lib/dependencies/RequireEnsureDependenciesBlock.js",
+      "name": "lib/dependencies/RequireEnsureDependenciesBlock.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AsyncDependenciesBlock.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireEnsureDependency.js",
+      "path": "lib/dependencies/RequireEnsureDependency.js",
+      "name": "lib/dependencies/RequireEnsureDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireEnsureItemDependency.js",
+      "path": "lib/dependencies/RequireEnsureItemDependency.js",
+      "name": "lib/dependencies/RequireEnsureItemDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireHeaderDependency.js",
+      "path": "lib/dependencies/RequireHeaderDependency.js",
+      "name": "lib/dependencies/RequireHeaderDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireIncludeDependency.js",
+      "path": "lib/dependencies/RequireIncludeDependency.js",
+      "name": "lib/dependencies/RequireIncludeDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/Template.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireIncludeDependencyParserPlugin.js",
+      "path": "lib/dependencies/RequireIncludeDependencyParserPlugin.js",
+      "name": "lib/dependencies/RequireIncludeDependencyParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js",
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/RequireIncludeDependency.js"
+      ]
+    },
+    {
+      "id": "lib/javascript/JavascriptParserHelpers.js",
+      "path": "lib/javascript/JavascriptParserHelpers.js",
+      "name": "lib/javascript/JavascriptParserHelpers.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/UnsupportedFeatureWarning.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/javascript/BasicEvaluatedExpression.js"
+      ]
+    },
+    {
+      "id": "lib/UnsupportedFeatureWarning.js",
+      "path": "lib/UnsupportedFeatureWarning.js",
+      "name": "lib/UnsupportedFeatureWarning.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireResolveContextDependency.js",
+      "path": "lib/dependencies/RequireResolveContextDependency.js",
+      "name": "lib/dependencies/RequireResolveContextDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ContextDependency.js",
+        "lib/dependencies/ContextDependencyTemplateAsId.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ContextDependencyTemplateAsId.js",
+      "path": "lib/dependencies/ContextDependencyTemplateAsId.js",
+      "name": "lib/dependencies/ContextDependencyTemplateAsId.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ContextDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireResolveDependency.js",
+      "path": "lib/dependencies/RequireResolveDependency.js",
+      "name": "lib/dependencies/RequireResolveDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js",
+        "lib/dependencies/ModuleDependencyTemplateAsId.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireResolveHeaderDependency.js",
+      "path": "lib/dependencies/RequireResolveHeaderDependency.js",
+      "name": "lib/dependencies/RequireResolveHeaderDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RuntimeRequirementsDependency.js",
+      "path": "lib/dependencies/RuntimeRequirementsDependency.js",
+      "name": "lib/dependencies/RuntimeRequirementsDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/StaticExportsDependency.js",
+      "path": "lib/dependencies/StaticExportsDependency.js",
+      "name": "lib/dependencies/StaticExportsDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/SystemPlugin.js",
+      "path": "lib/dependencies/SystemPlugin.js",
+      "name": "lib/dependencies/SystemPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/WebpackError.js",
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/SystemRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/SystemRuntimeModule.js",
+      "path": "lib/dependencies/SystemRuntimeModule.js",
+      "name": "lib/dependencies/SystemRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/UnsupportedDependency.js",
+      "path": "lib/dependencies/UnsupportedDependency.js",
+      "name": "lib/dependencies/UnsupportedDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/NullDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/URLDependency.js",
+      "path": "lib/dependencies/URLDependency.js",
+      "name": "lib/dependencies/URLDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/WebAssemblyExportImportedDependency.js",
+      "path": "lib/dependencies/WebAssemblyExportImportedDependency.js",
+      "name": "lib/dependencies/WebAssemblyExportImportedDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/WebAssemblyImportDependency.js",
+      "path": "lib/dependencies/WebAssemblyImportDependency.js",
+      "name": "lib/dependencies/WebAssemblyImportDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/makeSerializable.js",
+        "lib/wasm-sync/UnsupportedWebAssemblyFeatureError.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-sync/UnsupportedWebAssemblyFeatureError.js",
+      "path": "lib/wasm-sync/UnsupportedWebAssemblyFeatureError.js",
+      "name": "lib/wasm-sync/UnsupportedWebAssemblyFeatureError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/WorkerDependency.js",
+      "path": "lib/dependencies/WorkerDependency.js",
+      "name": "lib/dependencies/WorkerDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/ConcatenatedModule.js",
+      "path": "lib/optimize/ConcatenatedModule.js",
+      "name": "lib/optimize/ConcatenatedModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ConcatenationScope.js",
+        "lib/ExportsInfo.js",
+        "lib/Module.js",
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/dependencies/HarmonyImportDependency.js",
+        "lib/javascript/JavascriptParser.js",
+        "lib/util/ArrayHelpers.js",
+        "lib/util/LazySet.js",
+        "lib/util/comparators.js",
+        "lib/util/createHash.js",
+        "lib/util/identifier.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/propertyAccess.js",
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/DelegatedModule.js",
+      "path": "lib/DelegatedModule.js",
+      "name": "lib/DelegatedModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Module.js",
+        "lib/RuntimeGlobals.js",
+        "lib/dependencies/DelegatedSourceDependency.js",
+        "lib/dependencies/StaticExportsDependency.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/DllModule.js",
+      "path": "lib/DllModule.js",
+      "name": "lib/DllModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Module.js",
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/ExternalModule.js",
+      "path": "lib/ExternalModule.js",
+      "name": "lib/ExternalModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ConcatenationScope.js",
+        "lib/Module.js",
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/dependencies/StaticExportsDependency.js",
+        "lib/util/extractUrlAndGlobal.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/propertyAccess.js"
+      ]
+    },
+    {
+      "id": "lib/util/extractUrlAndGlobal.js",
+      "path": "lib/util/extractUrlAndGlobal.js",
+      "name": "lib/util/extractUrlAndGlobal.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/RawModule.js",
+      "path": "lib/RawModule.js",
+      "name": "lib/RawModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Module.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/sharing/ConsumeSharedModule.js",
+      "path": "lib/sharing/ConsumeSharedModule.js",
+      "name": "lib/sharing/ConsumeSharedModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AsyncDependenciesBlock.js",
+        "lib/Module.js",
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/util/semver.js",
+        "lib/sharing/ConsumeSharedFallbackDependency.js"
+      ]
+    },
+    {
+      "id": "lib/util/semver.js",
+      "path": "lib/util/semver.js",
+      "name": "lib/util/semver.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/sharing/ConsumeSharedFallbackDependency.js",
+      "path": "lib/sharing/ConsumeSharedFallbackDependency.js",
+      "name": "lib/sharing/ConsumeSharedFallbackDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ModuleDependency.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/sharing/ProvideSharedModule.js",
+      "path": "lib/sharing/ProvideSharedModule.js",
+      "name": "lib/sharing/ProvideSharedModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AsyncDependenciesBlock.js",
+        "lib/Module.js",
+        "lib/RuntimeGlobals.js",
+        "lib/util/makeSerializable.js",
+        "lib/sharing/ProvideForSharedDependency.js"
+      ]
+    },
+    {
+      "id": "lib/sharing/ProvideForSharedDependency.js",
+      "path": "lib/sharing/ProvideForSharedDependency.js",
+      "name": "lib/sharing/ProvideForSharedDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ModuleDependency.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/sharing/ProvideSharedDependency.js",
+      "path": "lib/sharing/ProvideSharedDependency.js",
+      "name": "lib/sharing/ProvideSharedDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/util/makeSerializable.js"
+      ]
+    },
+    {
+      "id": "lib/util/registerExternalSerializer.js",
+      "path": "lib/util/registerExternalSerializer.js",
+      "name": "lib/util/registerExternalSerializer.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/serialization.js"
+      ]
+    },
+    {
+      "id": "lib/ContextModuleFactory.js",
+      "path": "lib/ContextModuleFactory.js",
+      "name": "lib/ContextModuleFactory.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ContextModule.js",
+        "lib/ModuleFactory.js",
+        "lib/dependencies/ContextElementDependency.js",
+        "lib/util/cleverMerge.js",
+        "lib/util/deprecation.js",
+        "lib/util/fs.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleFactory.js",
+      "path": "lib/ModuleFactory.js",
+      "name": "lib/ModuleFactory.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AbstractMethodError.js"
+      ]
+    },
+    {
+      "id": "lib/NormalModuleFactory.js",
+      "path": "lib/NormalModuleFactory.js",
+      "name": "lib/NormalModuleFactory.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Module.js",
+        "lib/ModuleFactory.js",
+        "lib/NormalModule.js",
+        "lib/RawModule.js",
+        "lib/rules/BasicEffectRulePlugin.js",
+        "lib/rules/BasicMatcherRulePlugin.js",
+        "lib/rules/DescriptionDataMatcherRulePlugin.js",
+        "lib/rules/RuleSetCompiler.js",
+        "lib/rules/UseEffectRulePlugin.js",
+        "lib/util/LazySet.js",
+        "lib/util/URLAbsoluteSpecifier.js",
+        "lib/util/cleverMerge.js",
+        "lib/util/fs.js",
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "lib/rules/BasicEffectRulePlugin.js",
+      "path": "lib/rules/BasicEffectRulePlugin.js",
+      "name": "lib/rules/BasicEffectRulePlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/rules/BasicMatcherRulePlugin.js",
+      "path": "lib/rules/BasicMatcherRulePlugin.js",
+      "name": "lib/rules/BasicMatcherRulePlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/rules/DescriptionDataMatcherRulePlugin.js",
+      "path": "lib/rules/DescriptionDataMatcherRulePlugin.js",
+      "name": "lib/rules/DescriptionDataMatcherRulePlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/rules/RuleSetCompiler.js",
+      "path": "lib/rules/RuleSetCompiler.js",
+      "name": "lib/rules/RuleSetCompiler.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/rules/UseEffectRulePlugin.js",
+      "path": "lib/rules/UseEffectRulePlugin.js",
+      "name": "lib/rules/UseEffectRulePlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/RequestShortener.js",
+      "path": "lib/RequestShortener.js",
+      "name": "lib/RequestShortener.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "lib/ResolverFactory.js",
+      "path": "lib/ResolverFactory.js",
+      "name": "lib/ResolverFactory.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/cleverMerge.js"
+      ]
+    },
+    {
+      "id": "lib/Watching.js",
+      "path": "lib/Watching.js",
+      "name": "lib/Watching.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Stats.js"
+      ]
+    },
+    {
+      "id": "lib/WebpackOptionsApply.js",
+      "path": "lib/WebpackOptionsApply.js",
+      "name": "lib/WebpackOptionsApply.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/OptionsApply.js",
+        "lib/asset/AssetModulesPlugin.js",
+        "lib/javascript/JavascriptModulesPlugin.js",
+        "lib/json/JsonModulesPlugin.js",
+        "lib/prefetch/ChunkPrefetchPreloadPlugin.js",
+        "lib/EntryOptionPlugin.js",
+        "lib/RecordIdsPlugin.js",
+        "lib/RuntimePlugin.js",
+        "lib/APIPlugin.js",
+        "lib/CompatibilityPlugin.js",
+        "lib/ConstPlugin.js",
+        "lib/ExportsInfoApiPlugin.js",
+        "lib/TemplatedPathPlugin.js",
+        "lib/UseStrictPlugin.js",
+        "lib/WarnCaseSensitiveModulesPlugin.js",
+        "lib/schemes/DataUriPlugin.js",
+        "lib/schemes/FileUriPlugin.js",
+        "lib/cache/ResolverCachePlugin.js",
+        "lib/dependencies/CommonJsPlugin.js",
+        "lib/dependencies/HarmonyModulesPlugin.js",
+        "lib/dependencies/ImportMetaPlugin.js",
+        "lib/dependencies/ImportPlugin.js",
+        "lib/dependencies/LoaderPlugin.js",
+        "lib/dependencies/RequireContextPlugin.js",
+        "lib/dependencies/RequireEnsurePlugin.js",
+        "lib/dependencies/RequireIncludePlugin.js",
+        "lib/dependencies/SystemPlugin.js",
+        "lib/dependencies/URLPlugin.js",
+        "lib/async-modules/InferAsyncModulesPlugin.js",
+        "lib/FlagUsingEvalPlugin.js",
+        "lib/stats/DefaultStatsFactoryPlugin.js",
+        "lib/stats/DefaultStatsPresetPlugin.js",
+        "lib/stats/DefaultStatsPrinterPlugin.js",
+        "lib/util/cleverMerge.js",
+        "lib/node/NodeTargetPlugin.js",
+        "lib/electron/ElectronTargetPlugin.js",
+        "lib/ExternalsPlugin.js",
+        "lib/javascript/ArrayPushCallbackChunkFormatPlugin.js",
+        "lib/javascript/CommonJsChunkFormatPlugin.js",
+        "lib/javascript/EnableChunkLoadingPlugin.js",
+        "lib/wasm/EnableWasmLoadingPlugin.js",
+        "lib/library/EnableLibraryPlugin.js",
+        "lib/ModuleInfoHeaderPlugin.js",
+        "lib/EvalSourceMapDevToolPlugin.js",
+        "lib/SourceMapDevToolPlugin.js",
+        "lib/EvalDevToolModulePlugin.js",
+        "lib/wasm-sync/WebAssemblyModulesPlugin.js",
+        "lib/wasm-async/AsyncWebAssemblyModulesPlugin.js",
+        "lib/dependencies/AMDPlugin.js",
+        "lib/RequireJsStuffPlugin.js",
+        "lib/NodeStuffPlugin.js",
+        "lib/dependencies/WorkerPlugin.js",
+        "lib/WarnNoModeSetPlugin.js",
+        "lib/optimize/EnsureChunkConditionsPlugin.js",
+        "lib/optimize/RemoveParentModulesPlugin.js",
+        "lib/optimize/RemoveEmptyChunksPlugin.js",
+        "lib/optimize/MergeDuplicateChunksPlugin.js",
+        "lib/optimize/FlagIncludedChunksPlugin.js",
+        "lib/optimize/SideEffectsFlagPlugin.js",
+        "lib/FlagDependencyExportsPlugin.js",
+        "lib/FlagDependencyUsagePlugin.js",
+        "lib/optimize/InnerGraphPlugin.js",
+        "lib/optimize/MangleExportsPlugin.js",
+        "lib/optimize/ModuleConcatenationPlugin.js",
+        "lib/optimize/SplitChunksPlugin.js",
+        "lib/optimize/RuntimeChunkPlugin.js",
+        "lib/NoEmitOnErrorsPlugin.js",
+        "lib/optimize/RealContentHashPlugin.js",
+        "lib/wasm-sync/WasmFinalizeExportsPlugin.js",
+        "lib/ids/NaturalModuleIdsPlugin.js",
+        "lib/ids/NamedModuleIdsPlugin.js",
+        "lib/WarnDeprecatedOptionPlugin.js",
+        "lib/ids/HashedModuleIdsPlugin.js",
+        "lib/ids/DeterministicModuleIdsPlugin.js",
+        "lib/ids/OccurrenceModuleIdsPlugin.js",
+        "lib/ids/NaturalChunkIdsPlugin.js",
+        "lib/ids/NamedChunkIdsPlugin.js",
+        "lib/ids/DeterministicChunkIdsPlugin.js",
+        "lib/ids/OccurrenceChunkIdsPlugin.js",
+        "lib/DefinePlugin.js",
+        "lib/performance/SizeLimitsPlugin.js",
+        "lib/cache/AddManagedPathsPlugin.js",
+        "lib/cache/MemoryCachePlugin.js",
+        "lib/cache/AddBuildDependenciesPlugin.js",
+        "lib/cache/IdleFileCachePlugin.js",
+        "lib/cache/PackFileCacheStrategy.js",
+        "lib/IgnoreWarningsPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/OptionsApply.js",
+      "path": "lib/OptionsApply.js",
+      "name": "lib/OptionsApply.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/asset/AssetModulesPlugin.js",
+      "path": "lib/asset/AssetModulesPlugin.js",
+      "name": "lib/asset/AssetModulesPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/comparators.js",
+        "lib/util/memorize.js",
+        "schemas/plugins/AssetModulesPluginGenerator.json",
+        "schemas/plugins/AssetModulesPluginParser.json",
+        "lib/asset/AssetGenerator.js",
+        "lib/asset/AssetParser.js",
+        "lib/asset/AssetSourceGenerator.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/AssetModulesPluginGenerator.json",
+      "path": "schemas/plugins/AssetModulesPluginGenerator.json",
+      "name": "schemas/plugins/AssetModulesPluginGenerator.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "schemas/plugins/AssetModulesPluginParser.json",
+      "path": "schemas/plugins/AssetModulesPluginParser.json",
+      "name": "schemas/plugins/AssetModulesPluginParser.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/asset/AssetGenerator.js",
+      "path": "lib/asset/AssetGenerator.js",
+      "name": "lib/asset/AssetGenerator.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Generator.js",
+        "lib/RuntimeGlobals.js",
+        "lib/util/createHash.js",
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "lib/asset/AssetParser.js",
+      "path": "lib/asset/AssetParser.js",
+      "name": "lib/asset/AssetParser.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Parser.js"
+      ]
+    },
+    {
+      "id": "lib/asset/AssetSourceGenerator.js",
+      "path": "lib/asset/AssetSourceGenerator.js",
+      "name": "lib/asset/AssetSourceGenerator.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Generator.js",
+        "lib/RuntimeGlobals.js"
+      ]
+    },
+    {
+      "id": "lib/json/JsonModulesPlugin.js",
+      "path": "lib/json/JsonModulesPlugin.js",
+      "name": "lib/json/JsonModulesPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/memorize.js",
+        "lib/json/JsonGenerator.js",
+        "lib/json/JsonParser.js",
+        "schemas/plugins/JsonModulesPluginParser.json"
+      ]
+    },
+    {
+      "id": "lib/json/JsonGenerator.js",
+      "path": "lib/json/JsonGenerator.js",
+      "name": "lib/json/JsonGenerator.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ConcatenationScope.js",
+        "lib/ExportsInfo.js",
+        "lib/Generator.js",
+        "lib/RuntimeGlobals.js"
+      ]
+    },
+    {
+      "id": "lib/json/JsonParser.js",
+      "path": "lib/json/JsonParser.js",
+      "name": "lib/json/JsonParser.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Parser.js",
+        "lib/dependencies/JsonExportsDependency.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/JsonModulesPluginParser.json",
+      "path": "schemas/plugins/JsonModulesPluginParser.json",
+      "name": "schemas/plugins/JsonModulesPluginParser.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/prefetch/ChunkPrefetchPreloadPlugin.js",
+      "path": "lib/prefetch/ChunkPrefetchPreloadPlugin.js",
+      "name": "lib/prefetch/ChunkPrefetchPreloadPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/prefetch/ChunkPrefetchFunctionRuntimeModule.js",
+        "lib/prefetch/ChunkPrefetchStartupRuntimeModule.js",
+        "lib/prefetch/ChunkPrefetchTriggerRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/prefetch/ChunkPrefetchFunctionRuntimeModule.js",
+      "path": "lib/prefetch/ChunkPrefetchFunctionRuntimeModule.js",
+      "name": "lib/prefetch/ChunkPrefetchFunctionRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/prefetch/ChunkPrefetchStartupRuntimeModule.js",
+      "path": "lib/prefetch/ChunkPrefetchStartupRuntimeModule.js",
+      "name": "lib/prefetch/ChunkPrefetchStartupRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/prefetch/ChunkPrefetchTriggerRuntimeModule.js",
+      "path": "lib/prefetch/ChunkPrefetchTriggerRuntimeModule.js",
+      "name": "lib/prefetch/ChunkPrefetchTriggerRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/EntryOptionPlugin.js",
+      "path": "lib/EntryOptionPlugin.js",
+      "name": "lib/EntryOptionPlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/DynamicEntryPlugin.js",
+      "path": "lib/DynamicEntryPlugin.js",
+      "name": "lib/DynamicEntryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/EntryOptionPlugin.js",
+        "lib/EntryPlugin.js",
+        "lib/dependencies/EntryDependency.js"
+      ]
+    },
+    {
+      "id": "lib/EntryPlugin.js",
+      "path": "lib/EntryPlugin.js",
+      "name": "lib/EntryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/EntryDependency.js"
+      ]
+    },
+    {
+      "id": "lib/wasm/EnableWasmLoadingPlugin.js",
+      "path": "lib/wasm/EnableWasmLoadingPlugin.js",
+      "name": "lib/wasm/EnableWasmLoadingPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/web/FetchCompileWasmPlugin.js",
+        "lib/web/FetchCompileAsyncWasmPlugin.js",
+        "lib/node/ReadFileCompileWasmPlugin.js",
+        "lib/node/ReadFileCompileAsyncWasmPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/web/FetchCompileWasmPlugin.js",
+      "path": "lib/web/FetchCompileWasmPlugin.js",
+      "name": "lib/web/FetchCompileWasmPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/wasm-sync/WasmChunkLoadingRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-sync/WasmChunkLoadingRuntimeModule.js",
+      "path": "lib/wasm-sync/WasmChunkLoadingRuntimeModule.js",
+      "name": "lib/wasm-sync/WasmChunkLoadingRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js",
+        "lib/util/comparators.js",
+        "lib/wasm-sync/WebAssemblyUtils.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-sync/WebAssemblyUtils.js",
+      "path": "lib/wasm-sync/WebAssemblyUtils.js",
+      "name": "lib/wasm-sync/WebAssemblyUtils.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Template.js",
+        "lib/dependencies/WebAssemblyImportDependency.js"
+      ]
+    },
+    {
+      "id": "lib/web/FetchCompileAsyncWasmPlugin.js",
+      "path": "lib/web/FetchCompileAsyncWasmPlugin.js",
+      "name": "lib/web/FetchCompileAsyncWasmPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/wasm-async/AsyncWasmChunkLoadingRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-async/AsyncWasmChunkLoadingRuntimeModule.js",
+      "path": "lib/wasm-async/AsyncWasmChunkLoadingRuntimeModule.js",
+      "name": "lib/wasm-async/AsyncWasmChunkLoadingRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/node/ReadFileCompileWasmPlugin.js",
+      "path": "lib/node/ReadFileCompileWasmPlugin.js",
+      "name": "lib/node/ReadFileCompileWasmPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/wasm-sync/WasmChunkLoadingRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/node/ReadFileCompileAsyncWasmPlugin.js",
+      "path": "lib/node/ReadFileCompileAsyncWasmPlugin.js",
+      "name": "lib/node/ReadFileCompileAsyncWasmPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/wasm-async/AsyncWasmChunkLoadingRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/library/EnableLibraryPlugin.js",
+      "path": "lib/library/EnableLibraryPlugin.js",
+      "name": "lib/library/EnableLibraryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/library/ExportPropertyLibraryPlugin.js",
+        "lib/library/AssignLibraryPlugin.js",
+        "lib/library/AmdLibraryPlugin.js",
+        "lib/library/UmdLibraryPlugin.js",
+        "lib/library/SystemLibraryPlugin.js",
+        "lib/library/JsonpLibraryPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/library/ExportPropertyLibraryPlugin.js",
+      "path": "lib/library/ExportPropertyLibraryPlugin.js",
+      "name": "lib/library/ExportPropertyLibraryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExportsInfo.js",
+        "lib/util/propertyAccess.js",
+        "lib/util/runtime.js",
+        "lib/library/AbstractLibraryPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/library/AbstractLibraryPlugin.js",
+      "path": "lib/library/AbstractLibraryPlugin.js",
+      "name": "lib/library/AbstractLibraryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/javascript/JavascriptModulesPlugin.js",
+        "lib/AbstractMethodError.js"
+      ]
+    },
+    {
+      "id": "lib/library/AssignLibraryPlugin.js",
+      "path": "lib/library/AssignLibraryPlugin.js",
+      "name": "lib/library/AssignLibraryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/propertyAccess.js",
+        "lib/library/AbstractLibraryPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/library/AmdLibraryPlugin.js",
+      "path": "lib/library/AmdLibraryPlugin.js",
+      "name": "lib/library/AmdLibraryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExternalModule.js",
+        "lib/Template.js",
+        "lib/library/AbstractLibraryPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/library/UmdLibraryPlugin.js",
+      "path": "lib/library/UmdLibraryPlugin.js",
+      "name": "lib/library/UmdLibraryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExternalModule.js",
+        "lib/Template.js",
+        "lib/library/AbstractLibraryPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/library/SystemLibraryPlugin.js",
+      "path": "lib/library/SystemLibraryPlugin.js",
+      "name": "lib/library/SystemLibraryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExportsInfo.js",
+        "lib/ExternalModule.js",
+        "lib/Template.js",
+        "lib/util/propertyAccess.js",
+        "lib/library/AbstractLibraryPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/library/JsonpLibraryPlugin.js",
+      "path": "lib/library/JsonpLibraryPlugin.js",
+      "name": "lib/library/JsonpLibraryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/library/AbstractLibraryPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/RecordIdsPlugin.js",
+      "path": "lib/RecordIdsPlugin.js",
+      "name": "lib/RecordIdsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/comparators.js",
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "lib/RuntimePlugin.js",
+      "path": "lib/RuntimePlugin.js",
+      "name": "lib/RuntimePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/dependencies/RuntimeRequirementsDependency.js",
+        "lib/javascript/JavascriptModulesPlugin.js",
+        "lib/runtime/AutoPublicPathRuntimeModule.js",
+        "lib/runtime/CompatGetDefaultExportRuntimeModule.js",
+        "lib/runtime/CompatRuntimeModule.js",
+        "lib/runtime/CreateFakeNamespaceObjectRuntimeModule.js",
+        "lib/runtime/DefinePropertyGettersRuntimeModule.js",
+        "lib/runtime/EnsureChunkRuntimeModule.js",
+        "lib/runtime/GetChunkFilenameRuntimeModule.js",
+        "lib/runtime/GetMainFilenameRuntimeModule.js",
+        "lib/runtime/GlobalRuntimeModule.js",
+        "lib/runtime/HasOwnPropertyRuntimeModule.js",
+        "lib/runtime/LoadScriptRuntimeModule.js",
+        "lib/runtime/MakeNamespaceObjectRuntimeModule.js",
+        "lib/runtime/PublicPathRuntimeModule.js",
+        "lib/runtime/RuntimeIdRuntimeModule.js",
+        "lib/runtime/SystemContextRuntimeModule.js",
+        "lib/sharing/ShareRuntimeModule.js",
+        "lib/util/StringXor.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/AutoPublicPathRuntimeModule.js",
+      "path": "lib/runtime/AutoPublicPathRuntimeModule.js",
+      "name": "lib/runtime/AutoPublicPathRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js",
+        "lib/javascript/JavascriptModulesPlugin.js",
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/CompatGetDefaultExportRuntimeModule.js",
+      "path": "lib/runtime/CompatGetDefaultExportRuntimeModule.js",
+      "name": "lib/runtime/CompatGetDefaultExportRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/runtime/HelperRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/CompatRuntimeModule.js",
+      "path": "lib/runtime/CompatRuntimeModule.js",
+      "name": "lib/runtime/CompatRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/CreateFakeNamespaceObjectRuntimeModule.js",
+      "path": "lib/runtime/CreateFakeNamespaceObjectRuntimeModule.js",
+      "name": "lib/runtime/CreateFakeNamespaceObjectRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/runtime/HelperRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/DefinePropertyGettersRuntimeModule.js",
+      "path": "lib/runtime/DefinePropertyGettersRuntimeModule.js",
+      "name": "lib/runtime/DefinePropertyGettersRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/runtime/HelperRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/EnsureChunkRuntimeModule.js",
+      "path": "lib/runtime/EnsureChunkRuntimeModule.js",
+      "name": "lib/runtime/EnsureChunkRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/GetChunkFilenameRuntimeModule.js",
+      "path": "lib/runtime/GetChunkFilenameRuntimeModule.js",
+      "name": "lib/runtime/GetChunkFilenameRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/GetMainFilenameRuntimeModule.js",
+      "path": "lib/runtime/GetMainFilenameRuntimeModule.js",
+      "name": "lib/runtime/GetMainFilenameRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/GlobalRuntimeModule.js",
+      "path": "lib/runtime/GlobalRuntimeModule.js",
+      "name": "lib/runtime/GlobalRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/HasOwnPropertyRuntimeModule.js",
+      "path": "lib/runtime/HasOwnPropertyRuntimeModule.js",
+      "name": "lib/runtime/HasOwnPropertyRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/MakeNamespaceObjectRuntimeModule.js",
+      "path": "lib/runtime/MakeNamespaceObjectRuntimeModule.js",
+      "name": "lib/runtime/MakeNamespaceObjectRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/runtime/HelperRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/PublicPathRuntimeModule.js",
+      "path": "lib/runtime/PublicPathRuntimeModule.js",
+      "name": "lib/runtime/PublicPathRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/RuntimeIdRuntimeModule.js",
+      "path": "lib/runtime/RuntimeIdRuntimeModule.js",
+      "name": "lib/runtime/RuntimeIdRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/SystemContextRuntimeModule.js",
+      "path": "lib/runtime/SystemContextRuntimeModule.js",
+      "name": "lib/runtime/SystemContextRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/sharing/ShareRuntimeModule.js",
+      "path": "lib/sharing/ShareRuntimeModule.js",
+      "name": "lib/sharing/ShareRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js",
+        "lib/util/comparators.js"
+      ]
+    },
+    {
+      "id": "lib/APIPlugin.js",
+      "path": "lib/APIPlugin.js",
+      "name": "lib/APIPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/WebpackError.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/runtime/ChunkNameRuntimeModule.js",
+        "lib/runtime/GetFullHashRuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/ChunkNameRuntimeModule.js",
+      "path": "lib/runtime/ChunkNameRuntimeModule.js",
+      "name": "lib/runtime/ChunkNameRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/runtime/GetFullHashRuntimeModule.js",
+      "path": "lib/runtime/GetFullHashRuntimeModule.js",
+      "name": "lib/runtime/GetFullHashRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js"
+      ]
+    },
+    {
+      "id": "lib/CompatibilityPlugin.js",
+      "path": "lib/CompatibilityPlugin.js",
+      "name": "lib/CompatibilityPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ConstDependency.js"
+      ]
+    },
+    {
+      "id": "lib/ConstPlugin.js",
+      "path": "lib/ConstPlugin.js",
+      "name": "lib/ConstPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/CachedConstDependency.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "lib/ExportsInfoApiPlugin.js",
+      "path": "lib/ExportsInfoApiPlugin.js",
+      "name": "lib/ExportsInfoApiPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/ExportsInfoDependency.js"
+      ]
+    },
+    {
+      "id": "lib/TemplatedPathPlugin.js",
+      "path": "lib/TemplatedPathPlugin.js",
+      "name": "lib/TemplatedPathPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Chunk.js",
+        "lib/Module.js",
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "lib/UseStrictPlugin.js",
+      "path": "lib/UseStrictPlugin.js",
+      "name": "lib/UseStrictPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ConstDependency.js"
+      ]
+    },
+    {
+      "id": "lib/WarnCaseSensitiveModulesPlugin.js",
+      "path": "lib/WarnCaseSensitiveModulesPlugin.js",
+      "name": "lib/WarnCaseSensitiveModulesPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/CaseSensitiveModulesWarning.js"
+      ]
+    },
+    {
+      "id": "lib/CaseSensitiveModulesWarning.js",
+      "path": "lib/CaseSensitiveModulesWarning.js",
+      "name": "lib/CaseSensitiveModulesWarning.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/schemes/DataUriPlugin.js",
+      "path": "lib/schemes/DataUriPlugin.js",
+      "name": "lib/schemes/DataUriPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/NormalModule.js",
+        "lib/util/DataURI.js"
+      ]
+    },
+    {
+      "id": "lib/util/DataURI.js",
+      "path": "lib/util/DataURI.js",
+      "name": "lib/util/DataURI.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/schemes/FileUriPlugin.js",
+      "path": "lib/schemes/FileUriPlugin.js",
+      "name": "lib/schemes/FileUriPlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/dependencies/CommonJsPlugin.js",
+      "path": "lib/dependencies/CommonJsPlugin.js",
+      "name": "lib/dependencies/CommonJsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/SelfModuleFactory.js",
+        "lib/Template.js",
+        "lib/dependencies/CommonJsExportsDependency.js",
+        "lib/dependencies/CommonJsFullRequireDependency.js",
+        "lib/dependencies/CommonJsRequireContextDependency.js",
+        "lib/dependencies/CommonJsRequireDependency.js",
+        "lib/dependencies/CommonJsSelfReferenceDependency.js",
+        "lib/dependencies/ModuleDecoratorDependency.js",
+        "lib/dependencies/RequireHeaderDependency.js",
+        "lib/dependencies/RequireResolveContextDependency.js",
+        "lib/dependencies/RequireResolveDependency.js",
+        "lib/dependencies/RequireResolveHeaderDependency.js",
+        "lib/dependencies/RuntimeRequirementsDependency.js",
+        "lib/dependencies/CommonJsExportsParserPlugin.js",
+        "lib/dependencies/CommonJsImportsParserPlugin.js",
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/dependencies/CommonJsExportRequireDependency.js"
+      ]
+    },
+    {
+      "id": "lib/SelfModuleFactory.js",
+      "path": "lib/SelfModuleFactory.js",
+      "name": "lib/SelfModuleFactory.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/dependencies/CommonJsExportsParserPlugin.js",
+      "path": "lib/dependencies/CommonJsExportsParserPlugin.js",
+      "name": "lib/dependencies/CommonJsExportsParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/formatLocation.js",
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/util/propertyAccess.js",
+        "lib/dependencies/CommonJsExportRequireDependency.js",
+        "lib/dependencies/CommonJsExportsDependency.js",
+        "lib/dependencies/CommonJsSelfReferenceDependency.js",
+        "lib/dependencies/DynamicExports.js",
+        "lib/dependencies/HarmonyExports.js",
+        "lib/dependencies/ModuleDecoratorDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/DynamicExports.js",
+      "path": "lib/dependencies/DynamicExports.js",
+      "name": "lib/dependencies/DynamicExports.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/dependencies/HarmonyExports.js",
+      "path": "lib/dependencies/HarmonyExports.js",
+      "name": "lib/dependencies/HarmonyExports.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/dependencies/CommonJsImportsParserPlugin.js",
+      "path": "lib/dependencies/CommonJsImportsParserPlugin.js",
+      "name": "lib/dependencies/CommonJsImportsParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/dependencies/CommonJsFullRequireDependency.js",
+        "lib/dependencies/CommonJsRequireContextDependency.js",
+        "lib/dependencies/CommonJsRequireDependency.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/ContextDependencyHelpers.js",
+        "lib/dependencies/LocalModuleDependency.js",
+        "lib/dependencies/LocalModulesHelpers.js",
+        "lib/dependencies/RequireHeaderDependency.js",
+        "lib/dependencies/RequireResolveContextDependency.js",
+        "lib/dependencies/RequireResolveDependency.js",
+        "lib/dependencies/RequireResolveHeaderDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ContextDependencyHelpers.js",
+      "path": "lib/dependencies/ContextDependencyHelpers.js",
+      "name": "lib/dependencies/ContextDependencyHelpers.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/LocalModulesHelpers.js",
+      "path": "lib/dependencies/LocalModulesHelpers.js",
+      "name": "lib/dependencies/LocalModulesHelpers.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/LocalModule.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyModulesPlugin.js",
+      "path": "lib/dependencies/HarmonyModulesPlugin.js",
+      "name": "lib/dependencies/HarmonyModulesPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/HarmonyAcceptDependency.js",
+        "lib/dependencies/HarmonyAcceptImportDependency.js",
+        "lib/dependencies/HarmonyCompatibilityDependency.js",
+        "lib/dependencies/HarmonyExportExpressionDependency.js",
+        "lib/dependencies/HarmonyExportHeaderDependency.js",
+        "lib/dependencies/HarmonyExportImportedSpecifierDependency.js",
+        "lib/dependencies/HarmonyExportSpecifierDependency.js",
+        "lib/dependencies/HarmonyImportSideEffectDependency.js",
+        "lib/dependencies/HarmonyImportSpecifierDependency.js",
+        "lib/dependencies/HarmonyDetectionParserPlugin.js",
+        "lib/dependencies/HarmonyExportDependencyParserPlugin.js",
+        "lib/dependencies/HarmonyImportDependencyParserPlugin.js",
+        "lib/dependencies/HarmonyTopLevelThisParserPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyDetectionParserPlugin.js",
+      "path": "lib/dependencies/HarmonyDetectionParserPlugin.js",
+      "name": "lib/dependencies/HarmonyDetectionParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/DynamicExports.js",
+        "lib/dependencies/HarmonyCompatibilityDependency.js",
+        "lib/dependencies/HarmonyExports.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/HarmonyExportDependencyParserPlugin.js",
+      "path": "lib/dependencies/HarmonyExportDependencyParserPlugin.js",
+      "name": "lib/dependencies/HarmonyExportDependencyParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/optimize/InnerGraph.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/HarmonyExportExpressionDependency.js",
+        "lib/dependencies/HarmonyExportHeaderDependency.js",
+        "lib/dependencies/HarmonyExportImportedSpecifierDependency.js",
+        "lib/dependencies/HarmonyExportSpecifierDependency.js",
+        "lib/dependencies/HarmonyImportDependencyParserPlugin.js",
+        "lib/dependencies/HarmonyImportSideEffectDependency.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/InnerGraph.js",
+      "path": "lib/optimize/InnerGraph.js",
+      "name": "lib/optimize/InnerGraph.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/dependencies/HarmonyImportDependencyParserPlugin.js",
+      "path": "lib/dependencies/HarmonyImportDependencyParserPlugin.js",
+      "name": "lib/dependencies/HarmonyImportDependencyParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/HotModuleReplacementPlugin.js",
+        "lib/optimize/InnerGraph.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/HarmonyAcceptDependency.js",
+        "lib/dependencies/HarmonyAcceptImportDependency.js",
+        "lib/dependencies/HarmonyExports.js",
+        "lib/dependencies/HarmonyImportSideEffectDependency.js",
+        "lib/dependencies/HarmonyImportSpecifierDependency.js"
+      ]
+    },
+    {
+      "id": "lib/HotModuleReplacementPlugin.js",
+      "path": "lib/HotModuleReplacementPlugin.js",
+      "name": "lib/HotModuleReplacementPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ChunkGraph.js",
+        "lib/Compilation.js",
+        "lib/HotUpdateChunk.js",
+        "lib/NormalModule.js",
+        "lib/RuntimeGlobals.js",
+        "lib/WebpackError.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/ImportMetaHotAcceptDependency.js",
+        "lib/dependencies/ImportMetaHotDeclineDependency.js",
+        "lib/dependencies/ModuleHotAcceptDependency.js",
+        "lib/dependencies/ModuleHotDeclineDependency.js",
+        "lib/hmr/HotModuleReplacementRuntimeModule.js",
+        "lib/javascript/JavascriptParser.js",
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/util/SetHelpers.js",
+        "lib/util/TupleSet.js",
+        "lib/util/comparators.js",
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/hmr/HotModuleReplacementRuntimeModule.js",
+      "path": "lib/hmr/HotModuleReplacementRuntimeModule.js",
+      "name": "lib/hmr/HotModuleReplacementRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js",
+        "lib/hmr/HotModuleReplacement.runtime.js"
+      ]
+    },
+    {
+      "id": "lib/hmr/HotModuleReplacement.runtime.js",
+      "path": "lib/hmr/HotModuleReplacement.runtime.js",
+      "name": "lib/hmr/HotModuleReplacement.runtime.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/util/TupleSet.js",
+      "path": "lib/util/TupleSet.js",
+      "name": "lib/util/TupleSet.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/dependencies/HarmonyTopLevelThisParserPlugin.js",
+      "path": "lib/dependencies/HarmonyTopLevelThisParserPlugin.js",
+      "name": "lib/dependencies/HarmonyTopLevelThisParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/HarmonyExports.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ImportMetaPlugin.js",
+      "path": "lib/dependencies/ImportMetaPlugin.js",
+      "name": "lib/dependencies/ImportMetaPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ModuleDependencyWarning.js",
+        "lib/Template.js",
+        "lib/javascript/BasicEvaluatedExpression.js",
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/util/memorize.js",
+        "lib/util/propertyAccess.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/CriticalDependencyWarning.js",
+        "package.json"
+      ]
+    },
+    {
+      "id": "package.json",
+      "path": "package.json",
+      "name": "package.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/dependencies/ImportPlugin.js",
+      "path": "lib/dependencies/ImportPlugin.js",
+      "name": "lib/dependencies/ImportPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ImportContextDependency.js",
+        "lib/dependencies/ImportDependency.js",
+        "lib/dependencies/ImportEagerDependency.js",
+        "lib/dependencies/ImportParserPlugin.js",
+        "lib/dependencies/ImportWeakDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/ImportParserPlugin.js",
+      "path": "lib/dependencies/ImportParserPlugin.js",
+      "name": "lib/dependencies/ImportParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AsyncDependenciesBlock.js",
+        "lib/CommentCompilationWarning.js",
+        "lib/UnsupportedFeatureWarning.js",
+        "lib/dependencies/ContextDependencyHelpers.js",
+        "lib/dependencies/ImportContextDependency.js",
+        "lib/dependencies/ImportDependency.js",
+        "lib/dependencies/ImportEagerDependency.js",
+        "lib/dependencies/ImportWeakDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/LoaderPlugin.js",
+      "path": "lib/dependencies/LoaderPlugin.js",
+      "name": "lib/dependencies/LoaderPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/NormalModule.js",
+        "lib/util/LazySet.js",
+        "lib/dependencies/LoaderDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/LoaderDependency.js",
+      "path": "lib/dependencies/LoaderDependency.js",
+      "name": "lib/dependencies/LoaderDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireContextPlugin.js",
+      "path": "lib/dependencies/RequireContextPlugin.js",
+      "name": "lib/dependencies/RequireContextPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/cleverMerge.js",
+        "lib/dependencies/ContextElementDependency.js",
+        "lib/dependencies/RequireContextDependency.js",
+        "lib/dependencies/RequireContextDependencyParserPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireContextDependencyParserPlugin.js",
+      "path": "lib/dependencies/RequireContextDependencyParserPlugin.js",
+      "name": "lib/dependencies/RequireContextDependencyParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/RequireContextDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireEnsurePlugin.js",
+      "path": "lib/dependencies/RequireEnsurePlugin.js",
+      "name": "lib/dependencies/RequireEnsurePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/RequireEnsureDependency.js",
+        "lib/dependencies/RequireEnsureItemDependency.js",
+        "lib/dependencies/RequireEnsureDependenciesBlockParserPlugin.js",
+        "lib/javascript/JavascriptParserHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/RequireEnsureDependenciesBlockParserPlugin.js",
+      "path": "lib/dependencies/RequireEnsureDependenciesBlockParserPlugin.js",
+      "name": "lib/dependencies/RequireEnsureDependenciesBlockParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/RequireEnsureDependenciesBlock.js",
+        "lib/dependencies/RequireEnsureDependency.js",
+        "lib/dependencies/RequireEnsureItemDependency.js",
+        "lib/dependencies/getFunctionExpression.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/getFunctionExpression.js",
+      "path": "lib/dependencies/getFunctionExpression.js",
+      "name": "lib/dependencies/getFunctionExpression.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/dependencies/RequireIncludePlugin.js",
+      "path": "lib/dependencies/RequireIncludePlugin.js",
+      "name": "lib/dependencies/RequireIncludePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/RequireIncludeDependency.js",
+        "lib/dependencies/RequireIncludeDependencyParserPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/URLPlugin.js",
+      "path": "lib/dependencies/URLPlugin.js",
+      "name": "lib/dependencies/URLPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/dependencies/URLDependency.js"
+      ]
+    },
+    {
+      "id": "lib/async-modules/InferAsyncModulesPlugin.js",
+      "path": "lib/async-modules/InferAsyncModulesPlugin.js",
+      "name": "lib/async-modules/InferAsyncModulesPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/HarmonyImportDependency.js"
+      ]
+    },
+    {
+      "id": "lib/FlagUsingEvalPlugin.js",
+      "path": "lib/FlagUsingEvalPlugin.js",
+      "name": "lib/FlagUsingEvalPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/optimize/InnerGraph.js"
+      ]
+    },
+    {
+      "id": "lib/stats/DefaultStatsFactoryPlugin.js",
+      "path": "lib/stats/DefaultStatsFactoryPlugin.js",
+      "name": "lib/stats/DefaultStatsFactoryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ModuleDependency.js",
+        "lib/formatLocation.js",
+        "lib/logging/Logger.js",
+        "lib/optimize/AggressiveSplittingPlugin.js",
+        "lib/optimize/ConcatenatedModule.js",
+        "lib/performance/SizeLimitsPlugin.js",
+        "lib/util/comparators.js",
+        "lib/util/identifier.js",
+        "package.json"
+      ]
+    },
+    {
+      "id": "lib/optimize/AggressiveSplittingPlugin.js",
+      "path": "lib/optimize/AggressiveSplittingPlugin.js",
+      "name": "lib/optimize/AggressiveSplittingPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/optimize/AggressiveSplittingPlugin.json",
+        "lib/OptimizationStages.js",
+        "lib/util/SetHelpers.js",
+        "lib/util/comparators.js",
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/optimize/AggressiveSplittingPlugin.json",
+      "path": "schemas/plugins/optimize/AggressiveSplittingPlugin.json",
+      "name": "schemas/plugins/optimize/AggressiveSplittingPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/OptimizationStages.js",
+      "path": "lib/OptimizationStages.js",
+      "name": "lib/OptimizationStages.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/performance/SizeLimitsPlugin.js",
+      "path": "lib/performance/SizeLimitsPlugin.js",
+      "name": "lib/performance/SizeLimitsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/SetHelpers.js",
+        "lib/performance/AssetsOverSizeLimitWarning.js",
+        "lib/performance/EntrypointsOverSizeLimitWarning.js",
+        "lib/performance/NoAsyncChunksWarning.js"
+      ]
+    },
+    {
+      "id": "lib/performance/AssetsOverSizeLimitWarning.js",
+      "path": "lib/performance/AssetsOverSizeLimitWarning.js",
+      "name": "lib/performance/AssetsOverSizeLimitWarning.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/SizeFormatHelpers.js",
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/performance/EntrypointsOverSizeLimitWarning.js",
+      "path": "lib/performance/EntrypointsOverSizeLimitWarning.js",
+      "name": "lib/performance/EntrypointsOverSizeLimitWarning.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/SizeFormatHelpers.js",
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/performance/NoAsyncChunksWarning.js",
+      "path": "lib/performance/NoAsyncChunksWarning.js",
+      "name": "lib/performance/NoAsyncChunksWarning.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/stats/DefaultStatsPresetPlugin.js",
+      "path": "lib/stats/DefaultStatsPresetPlugin.js",
+      "name": "lib/stats/DefaultStatsPresetPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RequestShortener.js"
+      ]
+    },
+    {
+      "id": "lib/stats/DefaultStatsPrinterPlugin.js",
+      "path": "lib/stats/DefaultStatsPrinterPlugin.js",
+      "name": "lib/stats/DefaultStatsPrinterPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/SizeFormatHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/node/NodeTargetPlugin.js",
+      "path": "lib/node/NodeTargetPlugin.js",
+      "name": "lib/node/NodeTargetPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExternalsPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/ExternalsPlugin.js",
+      "path": "lib/ExternalsPlugin.js",
+      "name": "lib/ExternalsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExternalModuleFactoryPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/ExternalModuleFactoryPlugin.js",
+      "path": "lib/ExternalModuleFactoryPlugin.js",
+      "name": "lib/ExternalModuleFactoryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExternalModule.js"
+      ]
+    },
+    {
+      "id": "lib/electron/ElectronTargetPlugin.js",
+      "path": "lib/electron/ElectronTargetPlugin.js",
+      "name": "lib/electron/ElectronTargetPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExternalsPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/javascript/CommonJsChunkFormatPlugin.js",
+      "path": "lib/javascript/CommonJsChunkFormatPlugin.js",
+      "name": "lib/javascript/CommonJsChunkFormatPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/web/JsonpHelpers.js",
+        "lib/javascript/JavascriptModulesPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleInfoHeaderPlugin.js",
+      "path": "lib/ModuleInfoHeaderPlugin.js",
+      "name": "lib/ModuleInfoHeaderPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExportsInfo.js",
+        "lib/Template.js",
+        "lib/javascript/JavascriptModulesPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/EvalSourceMapDevToolPlugin.js",
+      "path": "lib/EvalSourceMapDevToolPlugin.js",
+      "name": "lib/EvalSourceMapDevToolPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ModuleFilenameHelpers.js",
+        "lib/NormalModule.js",
+        "lib/SourceMapDevToolModuleOptionsPlugin.js",
+        "lib/javascript/JavascriptModulesPlugin.js",
+        "lib/optimize/ConcatenatedModule.js",
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "lib/ModuleFilenameHelpers.js",
+      "path": "lib/ModuleFilenameHelpers.js",
+      "name": "lib/ModuleFilenameHelpers.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/createHash.js"
+      ]
+    },
+    {
+      "id": "lib/SourceMapDevToolModuleOptionsPlugin.js",
+      "path": "lib/SourceMapDevToolModuleOptionsPlugin.js",
+      "name": "lib/SourceMapDevToolModuleOptionsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/javascript/JavascriptModulesPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/SourceMapDevToolPlugin.js",
+      "path": "lib/SourceMapDevToolPlugin.js",
+      "name": "lib/SourceMapDevToolPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Compilation.js",
+        "lib/ModuleFilenameHelpers.js",
+        "lib/ProgressPlugin.js",
+        "lib/SourceMapDevToolModuleOptionsPlugin.js",
+        "lib/util/createHash.js",
+        "lib/util/fs.js",
+        "lib/util/identifier.js",
+        "schemas/plugins/SourceMapDevToolPlugin.json"
+      ]
+    },
+    {
+      "id": "schemas/plugins/SourceMapDevToolPlugin.json",
+      "path": "schemas/plugins/SourceMapDevToolPlugin.json",
+      "name": "schemas/plugins/SourceMapDevToolPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/EvalDevToolModulePlugin.js",
+      "path": "lib/EvalDevToolModulePlugin.js",
+      "name": "lib/EvalDevToolModulePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ModuleFilenameHelpers.js",
+        "lib/javascript/JavascriptModulesPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-sync/WebAssemblyModulesPlugin.js",
+      "path": "lib/wasm-sync/WebAssemblyModulesPlugin.js",
+      "name": "lib/wasm-sync/WebAssemblyModulesPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Generator.js",
+        "lib/dependencies/WebAssemblyExportImportedDependency.js",
+        "lib/dependencies/WebAssemblyImportDependency.js",
+        "lib/util/comparators.js",
+        "lib/util/memorize.js",
+        "lib/wasm-sync/WebAssemblyInInitialChunkError.js",
+        "lib/wasm-sync/WebAssemblyGenerator.js",
+        "lib/wasm-sync/WebAssemblyJavascriptGenerator.js",
+        "lib/wasm-sync/WebAssemblyParser.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-sync/WebAssemblyInInitialChunkError.js",
+      "path": "lib/wasm-sync/WebAssemblyInInitialChunkError.js",
+      "name": "lib/wasm-sync/WebAssemblyInInitialChunkError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-sync/WebAssemblyGenerator.js",
+      "path": "lib/wasm-sync/WebAssemblyGenerator.js",
+      "name": "lib/wasm-sync/WebAssemblyGenerator.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Generator.js",
+        "lib/wasm-sync/WebAssemblyUtils.js",
+        "lib/dependencies/WebAssemblyExportImportedDependency.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-sync/WebAssemblyJavascriptGenerator.js",
+      "path": "lib/wasm-sync/WebAssemblyJavascriptGenerator.js",
+      "name": "lib/wasm-sync/WebAssemblyJavascriptGenerator.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExportsInfo.js",
+        "lib/Generator.js",
+        "lib/InitFragment.js",
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/dependencies/ModuleDependency.js",
+        "lib/dependencies/WebAssemblyExportImportedDependency.js",
+        "lib/dependencies/WebAssemblyImportDependency.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-sync/WebAssemblyParser.js",
+      "path": "lib/wasm-sync/WebAssemblyParser.js",
+      "name": "lib/wasm-sync/WebAssemblyParser.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Parser.js",
+        "lib/dependencies/StaticExportsDependency.js",
+        "lib/dependencies/WebAssemblyExportImportedDependency.js",
+        "lib/dependencies/WebAssemblyImportDependency.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-async/AsyncWebAssemblyModulesPlugin.js",
+      "path": "lib/wasm-async/AsyncWebAssemblyModulesPlugin.js",
+      "name": "lib/wasm-async/AsyncWebAssemblyModulesPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Compilation.js",
+        "lib/Generator.js",
+        "lib/HookWebpackError.js",
+        "lib/dependencies/WebAssemblyImportDependency.js",
+        "lib/util/comparators.js",
+        "lib/util/memorize.js",
+        "lib/wasm-async/AsyncWebAssemblyGenerator.js",
+        "lib/wasm-async/AsyncWebAssemblyJavascriptGenerator.js",
+        "lib/wasm-async/AsyncWebAssemblyParser.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-async/AsyncWebAssemblyGenerator.js",
+      "path": "lib/wasm-async/AsyncWebAssemblyGenerator.js",
+      "name": "lib/wasm-async/AsyncWebAssemblyGenerator.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Generator.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-async/AsyncWebAssemblyJavascriptGenerator.js",
+      "path": "lib/wasm-async/AsyncWebAssemblyJavascriptGenerator.js",
+      "name": "lib/wasm-async/AsyncWebAssemblyJavascriptGenerator.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Generator.js",
+        "lib/InitFragment.js",
+        "lib/RuntimeGlobals.js",
+        "lib/Template.js",
+        "lib/dependencies/WebAssemblyImportDependency.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-async/AsyncWebAssemblyParser.js",
+      "path": "lib/wasm-async/AsyncWebAssemblyParser.js",
+      "name": "lib/wasm-async/AsyncWebAssemblyParser.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Parser.js",
+        "lib/dependencies/StaticExportsDependency.js",
+        "lib/dependencies/WebAssemblyImportDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/AMDPlugin.js",
+      "path": "lib/dependencies/AMDPlugin.js",
+      "name": "lib/dependencies/AMDPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/dependencies/AMDDefineDependency.js",
+        "lib/dependencies/AMDDefineDependencyParserPlugin.js",
+        "lib/dependencies/AMDRequireArrayDependency.js",
+        "lib/dependencies/AMDRequireContextDependency.js",
+        "lib/dependencies/AMDRequireDependenciesBlockParserPlugin.js",
+        "lib/dependencies/AMDRequireDependency.js",
+        "lib/dependencies/AMDRequireItemDependency.js",
+        "lib/dependencies/AMDRuntimeModules.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/LocalModuleDependency.js",
+        "lib/dependencies/UnsupportedDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/AMDDefineDependencyParserPlugin.js",
+      "path": "lib/dependencies/AMDDefineDependencyParserPlugin.js",
+      "name": "lib/dependencies/AMDDefineDependencyParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/dependencies/AMDDefineDependency.js",
+        "lib/dependencies/AMDRequireArrayDependency.js",
+        "lib/dependencies/AMDRequireContextDependency.js",
+        "lib/dependencies/AMDRequireItemDependency.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/ContextDependencyHelpers.js",
+        "lib/dependencies/DynamicExports.js",
+        "lib/dependencies/LocalModuleDependency.js",
+        "lib/dependencies/LocalModulesHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/AMDRequireDependenciesBlockParserPlugin.js",
+      "path": "lib/dependencies/AMDRequireDependenciesBlockParserPlugin.js",
+      "name": "lib/dependencies/AMDRequireDependenciesBlockParserPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/UnsupportedFeatureWarning.js",
+        "lib/dependencies/AMDRequireArrayDependency.js",
+        "lib/dependencies/AMDRequireContextDependency.js",
+        "lib/dependencies/AMDRequireDependenciesBlock.js",
+        "lib/dependencies/AMDRequireDependency.js",
+        "lib/dependencies/AMDRequireItemDependency.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/ContextDependencyHelpers.js",
+        "lib/dependencies/LocalModuleDependency.js",
+        "lib/dependencies/LocalModulesHelpers.js",
+        "lib/dependencies/UnsupportedDependency.js",
+        "lib/dependencies/getFunctionExpression.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/AMDRuntimeModules.js",
+      "path": "lib/dependencies/AMDRuntimeModules.js",
+      "name": "lib/dependencies/AMDRuntimeModules.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/RequireJsStuffPlugin.js",
+      "path": "lib/RequireJsStuffPlugin.js",
+      "name": "lib/RequireJsStuffPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/javascript/JavascriptParserHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/NodeStuffPlugin.js",
+      "path": "lib/NodeStuffPlugin.js",
+      "name": "lib/NodeStuffPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/dependencies/CachedConstDependency.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/javascript/JavascriptParserHelpers.js",
+        "lib/util/fs.js",
+        "lib/util/identifier.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/WorkerPlugin.js",
+      "path": "lib/dependencies/WorkerPlugin.js",
+      "name": "lib/dependencies/WorkerPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/AsyncDependenciesBlock.js",
+        "lib/CommentCompilationWarning.js",
+        "lib/UnsupportedFeatureWarning.js",
+        "lib/formatLocation.js",
+        "lib/javascript/EnableChunkLoadingPlugin.js",
+        "lib/util/ArrayHelpers.js",
+        "lib/util/identifier.js",
+        "lib/dependencies/HarmonyImportDependencyParserPlugin.js",
+        "lib/dependencies/WorkerDependency.js"
+      ]
+    },
+    {
+      "id": "lib/WarnNoModeSetPlugin.js",
+      "path": "lib/WarnNoModeSetPlugin.js",
+      "name": "lib/WarnNoModeSetPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/NoModeWarning.js"
+      ]
+    },
+    {
+      "id": "lib/NoModeWarning.js",
+      "path": "lib/NoModeWarning.js",
+      "name": "lib/NoModeWarning.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/EnsureChunkConditionsPlugin.js",
+      "path": "lib/optimize/EnsureChunkConditionsPlugin.js",
+      "name": "lib/optimize/EnsureChunkConditionsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/OptimizationStages.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/RemoveParentModulesPlugin.js",
+      "path": "lib/optimize/RemoveParentModulesPlugin.js",
+      "name": "lib/optimize/RemoveParentModulesPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/OptimizationStages.js",
+        "lib/util/Queue.js",
+        "lib/util/SetHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/util/Queue.js",
+      "path": "lib/util/Queue.js",
+      "name": "lib/util/Queue.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/optimize/RemoveEmptyChunksPlugin.js",
+      "path": "lib/optimize/RemoveEmptyChunksPlugin.js",
+      "name": "lib/optimize/RemoveEmptyChunksPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/OptimizationStages.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/MergeDuplicateChunksPlugin.js",
+      "path": "lib/optimize/MergeDuplicateChunksPlugin.js",
+      "name": "lib/optimize/MergeDuplicateChunksPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/OptimizationStages.js",
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/FlagIncludedChunksPlugin.js",
+      "path": "lib/optimize/FlagIncludedChunksPlugin.js",
+      "name": "lib/optimize/FlagIncludedChunksPlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/optimize/SideEffectsFlagPlugin.js",
+      "path": "lib/optimize/SideEffectsFlagPlugin.js",
+      "name": "lib/optimize/SideEffectsFlagPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/OptimizationStages.js",
+        "lib/dependencies/HarmonyExportImportedSpecifierDependency.js",
+        "lib/dependencies/HarmonyImportSpecifierDependency.js",
+        "lib/formatLocation.js"
+      ]
+    },
+    {
+      "id": "lib/FlagDependencyExportsPlugin.js",
+      "path": "lib/FlagDependencyExportsPlugin.js",
+      "name": "lib/FlagDependencyExportsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/Queue.js"
+      ]
+    },
+    {
+      "id": "lib/FlagDependencyUsagePlugin.js",
+      "path": "lib/FlagDependencyUsagePlugin.js",
+      "name": "lib/FlagDependencyUsagePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Dependency.js",
+        "lib/ExportsInfo.js",
+        "lib/ModuleGraphConnection.js",
+        "lib/OptimizationStages.js",
+        "lib/util/TupleQueue.js",
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/util/TupleQueue.js",
+      "path": "lib/util/TupleQueue.js",
+      "name": "lib/util/TupleQueue.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/TupleSet.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/InnerGraphPlugin.js",
+      "path": "lib/optimize/InnerGraphPlugin.js",
+      "name": "lib/optimize/InnerGraphPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/PureExpressionDependency.js",
+        "lib/optimize/InnerGraph.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/MangleExportsPlugin.js",
+      "path": "lib/optimize/MangleExportsPlugin.js",
+      "name": "lib/optimize/MangleExportsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ExportsInfo.js",
+        "lib/Template.js",
+        "lib/ids/IdHelpers.js",
+        "lib/util/comparators.js"
+      ]
+    },
+    {
+      "id": "lib/ids/IdHelpers.js",
+      "path": "lib/ids/IdHelpers.js",
+      "name": "lib/ids/IdHelpers.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/createHash.js",
+        "lib/util/identifier.js",
+        "lib/util/numberHash.js"
+      ]
+    },
+    {
+      "id": "lib/util/numberHash.js",
+      "path": "lib/util/numberHash.js",
+      "name": "lib/util/numberHash.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/optimize/ModuleConcatenationPlugin.js",
+      "path": "lib/optimize/ModuleConcatenationPlugin.js",
+      "name": "lib/optimize/ModuleConcatenationPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ChunkGraph.js",
+        "lib/ModuleGraph.js",
+        "lib/ModuleRestoreError.js",
+        "lib/ModuleStoreError.js",
+        "lib/OptimizationStages.js",
+        "lib/dependencies/HarmonyImportDependency.js",
+        "lib/util/StackedMap.js",
+        "lib/util/comparators.js",
+        "lib/util/runtime.js",
+        "lib/optimize/ConcatenatedModule.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/SplitChunksPlugin.js",
+      "path": "lib/optimize/SplitChunksPlugin.js",
+      "name": "lib/optimize/SplitChunksPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Chunk.js",
+        "lib/OptimizationStages.js",
+        "lib/WebpackError.js",
+        "lib/ids/IdHelpers.js",
+        "lib/util/SetHelpers.js",
+        "lib/util/SortableSet.js",
+        "lib/util/comparators.js",
+        "lib/util/createHash.js",
+        "lib/util/deterministicGrouping.js",
+        "lib/util/identifier.js",
+        "lib/util/memorize.js",
+        "lib/optimize/MinMaxSizeWarning.js"
+      ]
+    },
+    {
+      "id": "lib/util/deterministicGrouping.js",
+      "path": "lib/util/deterministicGrouping.js",
+      "name": "lib/util/deterministicGrouping.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/optimize/MinMaxSizeWarning.js",
+      "path": "lib/optimize/MinMaxSizeWarning.js",
+      "name": "lib/optimize/MinMaxSizeWarning.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/SizeFormatHelpers.js",
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/RuntimeChunkPlugin.js",
+      "path": "lib/optimize/RuntimeChunkPlugin.js",
+      "name": "lib/optimize/RuntimeChunkPlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/NoEmitOnErrorsPlugin.js",
+      "path": "lib/NoEmitOnErrorsPlugin.js",
+      "name": "lib/NoEmitOnErrorsPlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/optimize/RealContentHashPlugin.js",
+      "path": "lib/optimize/RealContentHashPlugin.js",
+      "name": "lib/optimize/RealContentHashPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Compilation.js",
+        "lib/WebpackError.js",
+        "lib/util/comparators.js",
+        "lib/util/createHash.js"
+      ]
+    },
+    {
+      "id": "lib/wasm-sync/WasmFinalizeExportsPlugin.js",
+      "path": "lib/wasm-sync/WasmFinalizeExportsPlugin.js",
+      "name": "lib/wasm-sync/WasmFinalizeExportsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/formatLocation.js",
+        "lib/wasm-sync/UnsupportedWebAssemblyFeatureError.js"
+      ]
+    },
+    {
+      "id": "lib/ids/NaturalModuleIdsPlugin.js",
+      "path": "lib/ids/NaturalModuleIdsPlugin.js",
+      "name": "lib/ids/NaturalModuleIdsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/comparators.js",
+        "lib/ids/IdHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/ids/NamedModuleIdsPlugin.js",
+      "path": "lib/ids/NamedModuleIdsPlugin.js",
+      "name": "lib/ids/NamedModuleIdsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/comparators.js",
+        "lib/ids/IdHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/WarnDeprecatedOptionPlugin.js",
+      "path": "lib/WarnDeprecatedOptionPlugin.js",
+      "name": "lib/WarnDeprecatedOptionPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/ids/HashedModuleIdsPlugin.js",
+      "path": "lib/ids/HashedModuleIdsPlugin.js",
+      "name": "lib/ids/HashedModuleIdsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/HashedModuleIdsPlugin.json",
+        "lib/util/comparators.js",
+        "lib/util/createHash.js",
+        "lib/ids/IdHelpers.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/HashedModuleIdsPlugin.json",
+      "path": "schemas/plugins/HashedModuleIdsPlugin.json",
+      "name": "schemas/plugins/HashedModuleIdsPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/ids/DeterministicModuleIdsPlugin.js",
+      "path": "lib/ids/DeterministicModuleIdsPlugin.js",
+      "name": "lib/ids/DeterministicModuleIdsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/comparators.js",
+        "lib/ids/IdHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/ids/OccurrenceModuleIdsPlugin.js",
+      "path": "lib/ids/OccurrenceModuleIdsPlugin.js",
+      "name": "lib/ids/OccurrenceModuleIdsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/ids/OccurrenceModuleIdsPlugin.json",
+        "lib/util/comparators.js",
+        "lib/ids/IdHelpers.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/ids/OccurrenceModuleIdsPlugin.json",
+      "path": "schemas/plugins/ids/OccurrenceModuleIdsPlugin.json",
+      "name": "schemas/plugins/ids/OccurrenceModuleIdsPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/ids/NaturalChunkIdsPlugin.js",
+      "path": "lib/ids/NaturalChunkIdsPlugin.js",
+      "name": "lib/ids/NaturalChunkIdsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/comparators.js",
+        "lib/ids/IdHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/ids/NamedChunkIdsPlugin.js",
+      "path": "lib/ids/NamedChunkIdsPlugin.js",
+      "name": "lib/ids/NamedChunkIdsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/comparators.js",
+        "lib/ids/IdHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/ids/DeterministicChunkIdsPlugin.js",
+      "path": "lib/ids/DeterministicChunkIdsPlugin.js",
+      "name": "lib/ids/DeterministicChunkIdsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/comparators.js",
+        "lib/ids/IdHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/ids/OccurrenceChunkIdsPlugin.js",
+      "path": "lib/ids/OccurrenceChunkIdsPlugin.js",
+      "name": "lib/ids/OccurrenceChunkIdsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/ids/OccurrenceChunkIdsPlugin.json",
+        "lib/util/comparators.js",
+        "lib/ids/IdHelpers.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/ids/OccurrenceChunkIdsPlugin.json",
+      "path": "schemas/plugins/ids/OccurrenceChunkIdsPlugin.json",
+      "name": "schemas/plugins/ids/OccurrenceChunkIdsPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/DefinePlugin.js",
+      "path": "lib/DefinePlugin.js",
+      "name": "lib/DefinePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/dependencies/ConstDependency.js",
+        "lib/javascript/BasicEvaluatedExpression.js",
+        "lib/javascript/JavascriptParserHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/cache/AddManagedPathsPlugin.js",
+      "path": "lib/cache/AddManagedPathsPlugin.js",
+      "name": "lib/cache/AddManagedPathsPlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/cache/MemoryCachePlugin.js",
+      "path": "lib/cache/MemoryCachePlugin.js",
+      "name": "lib/cache/MemoryCachePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Cache.js"
+      ]
+    },
+    {
+      "id": "lib/cache/AddBuildDependenciesPlugin.js",
+      "path": "lib/cache/AddBuildDependenciesPlugin.js",
+      "name": "lib/cache/AddBuildDependenciesPlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/cache/IdleFileCachePlugin.js",
+      "path": "lib/cache/IdleFileCachePlugin.js",
+      "name": "lib/cache/IdleFileCachePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Cache.js",
+        "lib/ProgressPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/IgnoreWarningsPlugin.js",
+      "path": "lib/IgnoreWarningsPlugin.js",
+      "name": "lib/IgnoreWarningsPlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/config/defaults.js",
+      "path": "lib/config/defaults.js",
+      "name": "lib/config/defaults.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Template.js",
+        "lib/util/cleverMerge.js",
+        "lib/config/target.js",
+        "schemas/WebpackOptions.json"
+      ]
+    },
+    {
+      "id": "lib/config/target.js",
+      "path": "lib/config/target.js",
+      "name": "lib/config/target.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/config/browserslistTargetHandler.js"
+      ]
+    },
+    {
+      "id": "lib/config/browserslistTargetHandler.js",
+      "path": "lib/config/browserslistTargetHandler.js",
+      "name": "lib/config/browserslistTargetHandler.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/config/normalization.js",
+      "path": "lib/config/normalization.js",
+      "name": "lib/config/normalization.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/node/NodeEnvironmentPlugin.js",
+      "path": "lib/node/NodeEnvironmentPlugin.js",
+      "name": "lib/node/NodeEnvironmentPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/logging/createConsoleLogger.js",
+        "lib/node/NodeWatchFileSystem.js",
+        "lib/node/nodeConsole.js"
+      ]
+    },
+    {
+      "id": "lib/logging/createConsoleLogger.js",
+      "path": "lib/logging/createConsoleLogger.js",
+      "name": "lib/logging/createConsoleLogger.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/logging/Logger.js"
+      ]
+    },
+    {
+      "id": "lib/node/NodeWatchFileSystem.js",
+      "path": "lib/node/NodeWatchFileSystem.js",
+      "name": "lib/node/NodeWatchFileSystem.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/node/nodeConsole.js",
+      "path": "lib/node/nodeConsole.js",
+      "name": "lib/node/nodeConsole.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/logging/truncateArgs.js"
+      ]
+    },
+    {
+      "id": "lib/logging/truncateArgs.js",
+      "path": "lib/logging/truncateArgs.js",
+      "name": "lib/logging/truncateArgs.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/validateSchema.js",
+      "path": "lib/validateSchema.js",
+      "name": "lib/validateSchema.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/cli.js",
+      "path": "lib/cli.js",
+      "name": "lib/cli.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/WebpackOptions.json"
+      ]
+    },
+    {
+      "id": "lib/AutomaticPrefetchPlugin.js",
+      "path": "lib/AutomaticPrefetchPlugin.js",
+      "name": "lib/AutomaticPrefetchPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/NormalModule.js",
+        "lib/dependencies/PrefetchDependency.js"
+      ]
+    },
+    {
+      "id": "lib/dependencies/PrefetchDependency.js",
+      "path": "lib/dependencies/PrefetchDependency.js",
+      "name": "lib/dependencies/PrefetchDependency.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ModuleDependency.js"
+      ]
+    },
+    {
+      "id": "lib/BannerPlugin.js",
+      "path": "lib/BannerPlugin.js",
+      "name": "lib/BannerPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/Compilation.js",
+        "lib/ModuleFilenameHelpers.js",
+        "lib/Template.js",
+        "schemas/plugins/BannerPlugin.json"
+      ]
+    },
+    {
+      "id": "schemas/plugins/BannerPlugin.json",
+      "path": "schemas/plugins/BannerPlugin.json",
+      "name": "schemas/plugins/BannerPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/ContextExclusionPlugin.js",
+      "path": "lib/ContextExclusionPlugin.js",
+      "name": "lib/ContextExclusionPlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/ContextReplacementPlugin.js",
+      "path": "lib/ContextReplacementPlugin.js",
+      "name": "lib/ContextReplacementPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ContextElementDependency.js",
+        "lib/util/fs.js"
+      ]
+    },
+    {
+      "id": "lib/DelegatedPlugin.js",
+      "path": "lib/DelegatedPlugin.js",
+      "name": "lib/DelegatedPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/DelegatedModuleFactoryPlugin.js",
+        "lib/dependencies/DelegatedSourceDependency.js"
+      ]
+    },
+    {
+      "id": "lib/DelegatedModuleFactoryPlugin.js",
+      "path": "lib/DelegatedModuleFactoryPlugin.js",
+      "name": "lib/DelegatedModuleFactoryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/DelegatedModule.js"
+      ]
+    },
+    {
+      "id": "lib/DllPlugin.js",
+      "path": "lib/DllPlugin.js",
+      "name": "lib/DllPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/DllEntryPlugin.js",
+        "lib/FlagAllModulesAsUsedPlugin.js",
+        "lib/LibManifestPlugin.js",
+        "schemas/plugins/DllPlugin.json"
+      ]
+    },
+    {
+      "id": "lib/DllEntryPlugin.js",
+      "path": "lib/DllEntryPlugin.js",
+      "name": "lib/DllEntryPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/DllModuleFactory.js",
+        "lib/dependencies/DllEntryDependency.js",
+        "lib/dependencies/EntryDependency.js"
+      ]
+    },
+    {
+      "id": "lib/DllModuleFactory.js",
+      "path": "lib/DllModuleFactory.js",
+      "name": "lib/DllModuleFactory.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/DllModule.js",
+        "lib/ModuleFactory.js"
+      ]
+    },
+    {
+      "id": "lib/FlagAllModulesAsUsedPlugin.js",
+      "path": "lib/FlagAllModulesAsUsedPlugin.js",
+      "name": "lib/FlagAllModulesAsUsedPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/runtime.js"
+      ]
+    },
+    {
+      "id": "lib/LibManifestPlugin.js",
+      "path": "lib/LibManifestPlugin.js",
+      "name": "lib/LibManifestPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/EntryDependency.js",
+        "lib/util/comparators.js",
+        "lib/util/fs.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/DllPlugin.json",
+      "path": "schemas/plugins/DllPlugin.json",
+      "name": "schemas/plugins/DllPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/DllReferencePlugin.js",
+      "path": "lib/DllReferencePlugin.js",
+      "name": "lib/DllReferencePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/DelegatedModuleFactoryPlugin.js",
+        "lib/ExternalModuleFactoryPlugin.js",
+        "lib/WebpackError.js",
+        "lib/dependencies/DelegatedSourceDependency.js",
+        "lib/util/identifier.js",
+        "schemas/plugins/DllReferencePlugin.json"
+      ]
+    },
+    {
+      "id": "schemas/plugins/DllReferencePlugin.json",
+      "path": "schemas/plugins/DllReferencePlugin.json",
+      "name": "schemas/plugins/DllReferencePlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/EnvironmentPlugin.js",
+      "path": "lib/EnvironmentPlugin.js",
+      "name": "lib/EnvironmentPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/DefinePlugin.js",
+        "lib/WebpackError.js"
+      ]
+    },
+    {
+      "id": "lib/IgnorePlugin.js",
+      "path": "lib/IgnorePlugin.js",
+      "name": "lib/IgnorePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/IgnorePlugin.json"
+      ]
+    },
+    {
+      "id": "schemas/plugins/IgnorePlugin.json",
+      "path": "schemas/plugins/IgnorePlugin.json",
+      "name": "schemas/plugins/IgnorePlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/LibraryTemplatePlugin.js",
+      "path": "lib/LibraryTemplatePlugin.js",
+      "name": "lib/LibraryTemplatePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/library/EnableLibraryPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/LoaderOptionsPlugin.js",
+      "path": "lib/LoaderOptionsPlugin.js",
+      "name": "lib/LoaderOptionsPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ModuleFilenameHelpers.js",
+        "lib/NormalModule.js",
+        "schemas/plugins/LoaderOptionsPlugin.json"
+      ]
+    },
+    {
+      "id": "schemas/plugins/LoaderOptionsPlugin.json",
+      "path": "schemas/plugins/LoaderOptionsPlugin.json",
+      "name": "schemas/plugins/LoaderOptionsPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/LoaderTargetPlugin.js",
+      "path": "lib/LoaderTargetPlugin.js",
+      "name": "lib/LoaderTargetPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/NormalModule.js"
+      ]
+    },
+    {
+      "id": "lib/NormalModuleReplacementPlugin.js",
+      "path": "lib/NormalModuleReplacementPlugin.js",
+      "name": "lib/NormalModuleReplacementPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/fs.js"
+      ]
+    },
+    {
+      "id": "lib/PrefetchPlugin.js",
+      "path": "lib/PrefetchPlugin.js",
+      "name": "lib/PrefetchPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/PrefetchDependency.js"
+      ]
+    },
+    {
+      "id": "lib/ProvidePlugin.js",
+      "path": "lib/ProvidePlugin.js",
+      "name": "lib/ProvidePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/dependencies/ConstDependency.js",
+        "lib/dependencies/ProvidedDependency.js",
+        "lib/javascript/JavascriptParserHelpers.js"
+      ]
+    },
+    {
+      "id": "lib/WatchIgnorePlugin.js",
+      "path": "lib/WatchIgnorePlugin.js",
+      "name": "lib/WatchIgnorePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/WatchIgnorePlugin.json"
+      ]
+    },
+    {
+      "id": "schemas/plugins/WatchIgnorePlugin.json",
+      "path": "schemas/plugins/WatchIgnorePlugin.json",
+      "name": "schemas/plugins/WatchIgnorePlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/WebpackOptionsDefaulter.js",
+      "path": "lib/WebpackOptionsDefaulter.js",
+      "name": "lib/WebpackOptionsDefaulter.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/config/defaults.js",
+        "lib/config/normalization.js"
+      ]
+    },
+    {
+      "id": "lib/ids/ChunkModuleIdRangePlugin.js",
+      "path": "lib/ids/ChunkModuleIdRangePlugin.js",
+      "name": "lib/ids/ChunkModuleIdRangePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/SetHelpers.js",
+        "lib/util/comparators.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/AggressiveMergingPlugin.js",
+      "path": "lib/optimize/AggressiveMergingPlugin.js",
+      "name": "lib/optimize/AggressiveMergingPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/OptimizationStages.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/LimitChunkCountPlugin.js",
+      "path": "lib/optimize/LimitChunkCountPlugin.js",
+      "name": "lib/optimize/LimitChunkCountPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/optimize/LimitChunkCountPlugin.json",
+        "lib/OptimizationStages.js",
+        "lib/util/LazyBucketSortedSet.js",
+        "lib/util/comparators.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/optimize/LimitChunkCountPlugin.json",
+      "path": "schemas/plugins/optimize/LimitChunkCountPlugin.json",
+      "name": "schemas/plugins/optimize/LimitChunkCountPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/util/LazyBucketSortedSet.js",
+      "path": "lib/util/LazyBucketSortedSet.js",
+      "name": "lib/util/LazyBucketSortedSet.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/SortableSet.js"
+      ]
+    },
+    {
+      "id": "lib/optimize/MinChunkSizePlugin.js",
+      "path": "lib/optimize/MinChunkSizePlugin.js",
+      "name": "lib/optimize/MinChunkSizePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/optimize/MinChunkSizePlugin.json",
+        "lib/OptimizationStages.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/optimize/MinChunkSizePlugin.json",
+      "path": "schemas/plugins/optimize/MinChunkSizePlugin.json",
+      "name": "schemas/plugins/optimize/MinChunkSizePlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/webworker/WebWorkerTemplatePlugin.js",
+      "path": "lib/webworker/WebWorkerTemplatePlugin.js",
+      "name": "lib/webworker/WebWorkerTemplatePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/javascript/ArrayPushCallbackChunkFormatPlugin.js",
+        "lib/javascript/EnableChunkLoadingPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/node/NodeSourcePlugin.js",
+      "path": "lib/node/NodeSourcePlugin.js",
+      "name": "lib/node/NodeSourcePlugin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/node/NodeTemplatePlugin.js",
+      "path": "lib/node/NodeTemplatePlugin.js",
+      "name": "lib/node/NodeTemplatePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/javascript/CommonJsChunkFormatPlugin.js",
+        "lib/javascript/EnableChunkLoadingPlugin.js"
+      ]
+    },
+    {
+      "id": "lib/container/ContainerPlugin.js",
+      "path": "lib/container/ContainerPlugin.js",
+      "name": "lib/container/ContainerPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/container/ContainerPlugin.json",
+        "lib/container/ContainerEntryDependency.js",
+        "lib/container/ContainerEntryModuleFactory.js",
+        "lib/container/ContainerExposedDependency.js",
+        "lib/container/options.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/container/ContainerPlugin.json",
+      "path": "schemas/plugins/container/ContainerPlugin.json",
+      "name": "schemas/plugins/container/ContainerPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/container/ContainerEntryModuleFactory.js",
+      "path": "lib/container/ContainerEntryModuleFactory.js",
+      "name": "lib/container/ContainerEntryModuleFactory.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ModuleFactory.js",
+        "lib/container/ContainerEntryModule.js"
+      ]
+    },
+    {
+      "id": "lib/container/options.js",
+      "path": "lib/container/options.js",
+      "name": "lib/container/options.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/container/ContainerReferencePlugin.js",
+      "path": "lib/container/ContainerReferencePlugin.js",
+      "name": "lib/container/ContainerReferencePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/container/ContainerReferencePlugin.json",
+        "lib/ExternalsPlugin.js",
+        "lib/RuntimeGlobals.js",
+        "lib/container/FallbackDependency.js",
+        "lib/container/FallbackItemDependency.js",
+        "lib/container/FallbackModuleFactory.js",
+        "lib/container/RemoteModule.js",
+        "lib/container/RemoteRuntimeModule.js",
+        "lib/container/RemoteToExternalDependency.js",
+        "lib/container/options.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/container/ContainerReferencePlugin.json",
+      "path": "schemas/plugins/container/ContainerReferencePlugin.json",
+      "name": "schemas/plugins/container/ContainerReferencePlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/container/FallbackModuleFactory.js",
+      "path": "lib/container/FallbackModuleFactory.js",
+      "name": "lib/container/FallbackModuleFactory.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ModuleFactory.js",
+        "lib/container/FallbackModule.js"
+      ]
+    },
+    {
+      "id": "lib/container/RemoteRuntimeModule.js",
+      "path": "lib/container/RemoteRuntimeModule.js",
+      "name": "lib/container/RemoteRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js"
+      ]
+    },
+    {
+      "id": "lib/container/ModuleFederationPlugin.js",
+      "path": "lib/container/ModuleFederationPlugin.js",
+      "name": "lib/container/ModuleFederationPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/container/ModuleFederationPlugin.json",
+        "lib/sharing/SharePlugin.js",
+        "lib/container/ContainerPlugin.js",
+        "lib/container/ContainerReferencePlugin.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/container/ModuleFederationPlugin.json",
+      "path": "schemas/plugins/container/ModuleFederationPlugin.json",
+      "name": "schemas/plugins/container/ModuleFederationPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/sharing/SharePlugin.js",
+      "path": "lib/sharing/SharePlugin.js",
+      "name": "lib/sharing/SharePlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/container/options.js",
+        "lib/sharing/ConsumeSharedPlugin.js",
+        "lib/sharing/ProvideSharedPlugin.js",
+        "lib/sharing/utils.js"
+      ]
+    },
+    {
+      "id": "lib/sharing/ConsumeSharedPlugin.js",
+      "path": "lib/sharing/ConsumeSharedPlugin.js",
+      "name": "lib/sharing/ConsumeSharedPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/sharing/ConsumeSharedPlugin.json",
+        "lib/ModuleNotFoundError.js",
+        "lib/RuntimeGlobals.js",
+        "lib/WebpackError.js",
+        "lib/container/options.js",
+        "lib/util/LazySet.js",
+        "lib/util/semver.js",
+        "lib/sharing/ConsumeSharedFallbackDependency.js",
+        "lib/sharing/ConsumeSharedModule.js",
+        "lib/sharing/ConsumeSharedRuntimeModule.js",
+        "lib/sharing/ProvideForSharedDependency.js",
+        "lib/sharing/resolveMatchedConfigs.js",
+        "lib/sharing/utils.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/sharing/ConsumeSharedPlugin.json",
+      "path": "schemas/plugins/sharing/ConsumeSharedPlugin.json",
+      "name": "schemas/plugins/sharing/ConsumeSharedPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/sharing/ConsumeSharedRuntimeModule.js",
+      "path": "lib/sharing/ConsumeSharedRuntimeModule.js",
+      "name": "lib/sharing/ConsumeSharedRuntimeModule.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/RuntimeGlobals.js",
+        "lib/RuntimeModule.js",
+        "lib/Template.js",
+        "lib/util/semver.js"
+      ]
+    },
+    {
+      "id": "lib/sharing/resolveMatchedConfigs.js",
+      "path": "lib/sharing/resolveMatchedConfigs.js",
+      "name": "lib/sharing/resolveMatchedConfigs.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ModuleNotFoundError.js",
+        "lib/util/LazySet.js"
+      ]
+    },
+    {
+      "id": "lib/sharing/utils.js",
+      "path": "lib/sharing/utils.js",
+      "name": "lib/sharing/utils.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/util/fs.js"
+      ]
+    },
+    {
+      "id": "lib/sharing/ProvideSharedPlugin.js",
+      "path": "lib/sharing/ProvideSharedPlugin.js",
+      "name": "lib/sharing/ProvideSharedPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/sharing/ProvideSharedPlugin.json",
+        "lib/WebpackError.js",
+        "lib/container/options.js",
+        "lib/sharing/ProvideForSharedDependency.js",
+        "lib/sharing/ProvideSharedDependency.js",
+        "lib/sharing/ProvideSharedModuleFactory.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/sharing/ProvideSharedPlugin.json",
+      "path": "schemas/plugins/sharing/ProvideSharedPlugin.json",
+      "name": "schemas/plugins/sharing/ProvideSharedPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/sharing/ProvideSharedModuleFactory.js",
+      "path": "lib/sharing/ProvideSharedModuleFactory.js",
+      "name": "lib/sharing/ProvideSharedModuleFactory.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/ModuleFactory.js",
+        "lib/sharing/ProvideSharedModule.js"
+      ]
+    },
+    {
+      "id": "lib/debug/ProfilingPlugin.js",
+      "path": "lib/debug/ProfilingPlugin.js",
+      "name": "lib/debug/ProfilingPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "schemas/plugins/debug/ProfilingPlugin.json",
+        "lib/util/fs.js",
+        "lib/javascript/JavascriptModulesPlugin.js"
+      ]
+    },
+    {
+      "id": "schemas/plugins/debug/ProfilingPlugin.json",
+      "path": "schemas/plugins/debug/ProfilingPlugin.json",
+      "name": "schemas/plugins/debug/ProfilingPlugin.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/schemes/HttpUriPlugin.js",
+      "path": "lib/schemes/HttpUriPlugin.js",
+      "name": "lib/schemes/HttpUriPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/NormalModule.js"
+      ]
+    },
+    {
+      "id": "lib/schemes/HttpsUriPlugin.js",
+      "path": "lib/schemes/HttpsUriPlugin.js",
+      "name": "lib/schemes/HttpsUriPlugin.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/NormalModule.js"
+      ]
+    },
+    {
+      "id": "bin/webpack.js",
+      "path": "bin/webpack.js",
+      "name": "bin/webpack.js",
+      "labels": [],
+      "dependsOn": []
+    }
+  ],
+  "meta": {
+    "analyzer": {
+      "name": "analyzer-js",
+      "version": "0.1.0"
+    },
+    "repository": {
+      "url": "https://github.com/webpack/webpack.git"
+    },
+    "createdAt": "2020-12-04T14:11:11.492Z"
+  }
+}
