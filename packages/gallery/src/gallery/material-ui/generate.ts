@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
-import { JsAnalyzer } from "@3d-deps/analyzer-js";
+import { JsAnalyzer, TRANSFORMERS } from "@3d-deps/analyzer-js";
 import * as path from "path";
 import { getRootDir, writeJsonFile } from "../util";
 
 const analyzer = new JsAnalyzer({
   rootDir: getRootDir(process.argv),
+  configTransformer: TRANSFORMERS.MAP_ENTRY((e) => e.replace(/\.ts$/, ".js")),
 });
 
 analyzer

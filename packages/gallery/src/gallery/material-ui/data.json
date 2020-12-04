@@ -82117,299 +82117,4651 @@
       ]
     },
     {
-      "id": "packages/material-ui-utils/src/index.ts",
-      "path": "packages/material-ui-utils/src/index.ts",
-      "name": "packages/material-ui-utils/src/index.ts",
+      "id": "packages/material-ui/src/index.js",
+      "path": "packages/material-ui/src/index.js",
+      "name": "packages/material-ui/src/index.js",
       "labels": [
-        "pkg:@material-ui/utils",
+        "pkg:@material-ui/core",
         "pkg_entry"
       ],
       "dependsOn": [
-        "packages/material-ui-utils/src/chainPropTypes.ts",
-        "packages/material-ui-utils/src/deepmerge.ts",
-        "packages/material-ui-utils/src/elementAcceptingRef.ts",
-        "packages/material-ui-utils/src/elementTypeAcceptingRef.ts",
-        "packages/material-ui-utils/src/exactProp.ts",
-        "packages/material-ui-utils/src/formatMuiErrorMessage.ts",
-        "packages/material-ui-utils/src/getDisplayName.ts",
-        "packages/material-ui-utils/src/HTMLElementType.ts",
-        "packages/material-ui-utils/src/ponyfillGlobal.ts",
-        "packages/material-ui-utils/src/refType.ts",
-        "packages/material-ui-utils/src/capitalize.d.ts",
-        "packages/material-ui-utils/src/createChainedFunction.d.ts",
-        "packages/material-ui-utils/src/debounce.d.ts",
-        "packages/material-ui-utils/src/deprecatedPropType.d.ts",
-        "packages/material-ui-utils/src/isMuiElement.d.ts",
-        "packages/material-ui-utils/src/ownerDocument.ts",
-        "packages/material-ui-utils/src/ownerWindow.ts",
-        "packages/material-ui-utils/src/requirePropFactory.d.ts",
-        "packages/material-ui-utils/src/setRef.ts",
-        "packages/material-ui-utils/src/useEnhancedEffect.d.ts",
-        "packages/material-ui-utils/src/useId.d.ts",
-        "packages/material-ui-utils/src/unsupportedProp.d.ts",
-        "packages/material-ui-utils/src/useControlled.d.ts",
-        "packages/material-ui-utils/src/useEventCallback.d.ts",
-        "packages/material-ui-utils/src/useForkRef.d.ts",
-        "packages/material-ui-utils/src/useIsFocusVisible.d.ts",
-        "packages/material-ui-utils/src/getScrollbarSize.ts",
-        "packages/material-ui-utils/src/scrollLeft.d.ts"
+        "packages/material-ui/src/colors/index.js",
+        "packages/material-ui/src/styles/index.js",
+        "packages/material-ui/src/utils/index.js",
+        "packages/material-ui/src/Accordion/index.js",
+        "packages/material-ui/src/AccordionActions/index.js",
+        "packages/material-ui/src/AccordionDetails/index.js",
+        "packages/material-ui/src/AccordionSummary/index.js",
+        "packages/material-ui/src/Alert/index.js",
+        "packages/material-ui/src/AlertTitle/index.js",
+        "packages/material-ui/src/AppBar/index.js",
+        "packages/material-ui/src/Autocomplete/index.js",
+        "packages/material-ui/src/Avatar/index.js",
+        "packages/material-ui/src/AvatarGroup/index.js",
+        "packages/material-ui/src/Backdrop/index.js",
+        "packages/material-ui/src/Badge/index.js",
+        "packages/material-ui/src/BottomNavigation/index.js",
+        "packages/material-ui/src/BottomNavigationAction/index.js",
+        "packages/material-ui/src/Box/index.js",
+        "packages/material-ui/src/Breadcrumbs/index.js",
+        "packages/material-ui/src/Button/index.js",
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/ButtonGroup/index.js",
+        "packages/material-ui/src/Card/index.js",
+        "packages/material-ui/src/CardActionArea/index.js",
+        "packages/material-ui/src/CardActions/index.js",
+        "packages/material-ui/src/CardContent/index.js",
+        "packages/material-ui/src/CardHeader/index.js",
+        "packages/material-ui/src/CardMedia/index.js",
+        "packages/material-ui/src/Checkbox/index.js",
+        "packages/material-ui/src/Chip/index.js",
+        "packages/material-ui/src/CircularProgress/index.js",
+        "packages/material-ui/src/ClickAwayListener/index.js",
+        "packages/material-ui/src/Collapse/index.js",
+        "packages/material-ui/src/Container/index.js",
+        "packages/material-ui/src/CssBaseline/index.js",
+        "packages/material-ui/src/Dialog/index.js",
+        "packages/material-ui/src/DialogActions/index.js",
+        "packages/material-ui/src/DialogContent/index.js",
+        "packages/material-ui/src/DialogContentText/index.js",
+        "packages/material-ui/src/DialogTitle/index.js",
+        "packages/material-ui/src/Divider/index.js",
+        "packages/material-ui/src/Drawer/index.js",
+        "packages/material-ui/src/Fab/index.js",
+        "packages/material-ui/src/Fade/index.js",
+        "packages/material-ui/src/FilledInput/index.js",
+        "packages/material-ui/src/FormControl/index.js",
+        "packages/material-ui/src/FormControlLabel/index.js",
+        "packages/material-ui/src/FormGroup/index.js",
+        "packages/material-ui/src/FormHelperText/index.js",
+        "packages/material-ui/src/FormLabel/index.js",
+        "packages/material-ui/src/Grid/index.js",
+        "packages/material-ui/src/Grow/index.js",
+        "packages/material-ui/src/Hidden/index.js",
+        "packages/material-ui/src/Icon/index.js",
+        "packages/material-ui/src/IconButton/index.js",
+        "packages/material-ui/src/ImageList/index.js",
+        "packages/material-ui/src/ImageListItem/index.js",
+        "packages/material-ui/src/ImageListItemBar/index.js",
+        "packages/material-ui/src/Input/index.js",
+        "packages/material-ui/src/InputAdornment/index.js",
+        "packages/material-ui/src/InputBase/index.js",
+        "packages/material-ui/src/InputLabel/index.js",
+        "packages/material-ui/src/LinearProgress/index.js",
+        "packages/material-ui/src/Link/index.js",
+        "packages/material-ui/src/List/index.js",
+        "packages/material-ui/src/ListItem/index.js",
+        "packages/material-ui/src/ListItemAvatar/index.js",
+        "packages/material-ui/src/ListItemIcon/index.js",
+        "packages/material-ui/src/ListItemSecondaryAction/index.js",
+        "packages/material-ui/src/ListItemText/index.js",
+        "packages/material-ui/src/ListSubheader/index.js",
+        "packages/material-ui/src/Menu/index.js",
+        "packages/material-ui/src/MenuItem/index.js",
+        "packages/material-ui/src/MenuList/index.js",
+        "packages/material-ui/src/MobileStepper/index.js",
+        "packages/material-ui/src/Modal/index.js",
+        "packages/material-ui/src/NativeSelect/index.js",
+        "packages/material-ui/src/NoSsr/index.js",
+        "packages/material-ui/src/OutlinedInput/index.js",
+        "packages/material-ui/src/Pagination/index.js",
+        "packages/material-ui/src/PaginationItem/index.js",
+        "packages/material-ui/src/Paper/index.js",
+        "packages/material-ui/src/Popover/index.js",
+        "packages/material-ui/src/Popper/index.js",
+        "packages/material-ui/src/Portal/index.js",
+        "packages/material-ui/src/Radio/index.js",
+        "packages/material-ui/src/RadioGroup/index.js",
+        "packages/material-ui/src/Rating/index.js",
+        "packages/material-ui/src/ScopedCssBaseline/index.js",
+        "packages/material-ui/src/Select/index.js",
+        "packages/material-ui/src/Skeleton/index.js",
+        "packages/material-ui/src/Slide/index.js",
+        "packages/material-ui/src/Slider/index.js",
+        "packages/material-ui/src/Snackbar/index.js",
+        "packages/material-ui/src/SnackbarContent/index.js",
+        "packages/material-ui/src/SpeedDial/index.js",
+        "packages/material-ui/src/SpeedDialAction/index.js",
+        "packages/material-ui/src/SpeedDialIcon/index.js",
+        "packages/material-ui/src/Step/index.js",
+        "packages/material-ui/src/StepButton/index.js",
+        "packages/material-ui/src/StepConnector/index.js",
+        "packages/material-ui/src/StepContent/index.js",
+        "packages/material-ui/src/StepIcon/index.js",
+        "packages/material-ui/src/StepLabel/index.js",
+        "packages/material-ui/src/Stepper/index.js",
+        "packages/material-ui/src/SvgIcon/index.js",
+        "packages/material-ui/src/SwipeableDrawer/index.js",
+        "packages/material-ui/src/Switch/index.js",
+        "packages/material-ui/src/Tab/index.js",
+        "packages/material-ui/src/Table/index.js",
+        "packages/material-ui/src/TableBody/index.js",
+        "packages/material-ui/src/TableCell/index.js",
+        "packages/material-ui/src/TableContainer/index.js",
+        "packages/material-ui/src/TableFooter/index.js",
+        "packages/material-ui/src/TableHead/index.js",
+        "packages/material-ui/src/TablePagination/index.js",
+        "packages/material-ui/src/TableRow/index.js",
+        "packages/material-ui/src/TableSortLabel/index.js",
+        "packages/material-ui/src/Tabs/index.js",
+        "packages/material-ui/src/TabScrollButton/index.js",
+        "packages/material-ui/src/TextField/index.js",
+        "packages/material-ui/src/TextareaAutosize/index.js",
+        "packages/material-ui/src/ToggleButton/index.js",
+        "packages/material-ui/src/ToggleButtonGroup/index.js",
+        "packages/material-ui/src/Toolbar/index.js",
+        "packages/material-ui/src/Tooltip/index.js",
+        "packages/material-ui/src/Typography/index.js",
+        "packages/material-ui/src/Unstable_TrapFocus/index.js",
+        "packages/material-ui/src/useMediaQuery/index.js",
+        "packages/material-ui/src/usePagination/index.js",
+        "packages/material-ui/src/useScrollTrigger/index.js",
+        "packages/material-ui/src/withWidth/index.js",
+        "packages/material-ui/src/Zoom/index.js",
+        "packages/material-ui/src/useAutocomplete/index.js"
       ]
     },
     {
-      "id": "packages/material-ui-utils/src/chainPropTypes.ts",
-      "path": "packages/material-ui-utils/src/chainPropTypes.ts",
-      "name": "packages/material-ui-utils/src/chainPropTypes.ts",
+      "id": "packages/material-ui/src/colors/index.js",
+      "path": "packages/material-ui/src/colors/index.js",
+      "name": "packages/material-ui/src/colors/index.js",
       "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/deepmerge.ts",
-      "path": "packages/material-ui-utils/src/deepmerge.ts",
-      "name": "packages/material-ui-utils/src/deepmerge.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/elementAcceptingRef.ts",
-      "path": "packages/material-ui-utils/src/elementAcceptingRef.ts",
-      "name": "packages/material-ui-utils/src/elementAcceptingRef.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
       ],
       "dependsOn": [
-        "packages/material-ui-utils/src/chainPropTypes.ts"
+        "packages/material-ui/src/colors/common.js",
+        "packages/material-ui/src/colors/red.js",
+        "packages/material-ui/src/colors/pink.js",
+        "packages/material-ui/src/colors/purple.js",
+        "packages/material-ui/src/colors/deepPurple.js",
+        "packages/material-ui/src/colors/indigo.js",
+        "packages/material-ui/src/colors/blue.js",
+        "packages/material-ui/src/colors/lightBlue.js",
+        "packages/material-ui/src/colors/cyan.js",
+        "packages/material-ui/src/colors/teal.js",
+        "packages/material-ui/src/colors/green.js",
+        "packages/material-ui/src/colors/lightGreen.js",
+        "packages/material-ui/src/colors/lime.js",
+        "packages/material-ui/src/colors/yellow.js",
+        "packages/material-ui/src/colors/amber.js",
+        "packages/material-ui/src/colors/orange.js",
+        "packages/material-ui/src/colors/deepOrange.js",
+        "packages/material-ui/src/colors/brown.js",
+        "packages/material-ui/src/colors/grey.js",
+        "packages/material-ui/src/colors/blueGrey.js"
       ]
     },
     {
-      "id": "packages/material-ui-utils/src/elementTypeAcceptingRef.ts",
-      "path": "packages/material-ui-utils/src/elementTypeAcceptingRef.ts",
-      "name": "packages/material-ui-utils/src/elementTypeAcceptingRef.ts",
+      "id": "packages/material-ui/src/colors/common.js",
+      "path": "packages/material-ui/src/colors/common.js",
+      "name": "packages/material-ui/src/colors/common.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/red.js",
+      "path": "packages/material-ui/src/colors/red.js",
+      "name": "packages/material-ui/src/colors/red.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/pink.js",
+      "path": "packages/material-ui/src/colors/pink.js",
+      "name": "packages/material-ui/src/colors/pink.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/purple.js",
+      "path": "packages/material-ui/src/colors/purple.js",
+      "name": "packages/material-ui/src/colors/purple.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/deepPurple.js",
+      "path": "packages/material-ui/src/colors/deepPurple.js",
+      "name": "packages/material-ui/src/colors/deepPurple.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/indigo.js",
+      "path": "packages/material-ui/src/colors/indigo.js",
+      "name": "packages/material-ui/src/colors/indigo.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/blue.js",
+      "path": "packages/material-ui/src/colors/blue.js",
+      "name": "packages/material-ui/src/colors/blue.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/lightBlue.js",
+      "path": "packages/material-ui/src/colors/lightBlue.js",
+      "name": "packages/material-ui/src/colors/lightBlue.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/cyan.js",
+      "path": "packages/material-ui/src/colors/cyan.js",
+      "name": "packages/material-ui/src/colors/cyan.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/teal.js",
+      "path": "packages/material-ui/src/colors/teal.js",
+      "name": "packages/material-ui/src/colors/teal.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/green.js",
+      "path": "packages/material-ui/src/colors/green.js",
+      "name": "packages/material-ui/src/colors/green.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/lightGreen.js",
+      "path": "packages/material-ui/src/colors/lightGreen.js",
+      "name": "packages/material-ui/src/colors/lightGreen.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/lime.js",
+      "path": "packages/material-ui/src/colors/lime.js",
+      "name": "packages/material-ui/src/colors/lime.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/yellow.js",
+      "path": "packages/material-ui/src/colors/yellow.js",
+      "name": "packages/material-ui/src/colors/yellow.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/amber.js",
+      "path": "packages/material-ui/src/colors/amber.js",
+      "name": "packages/material-ui/src/colors/amber.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/orange.js",
+      "path": "packages/material-ui/src/colors/orange.js",
+      "name": "packages/material-ui/src/colors/orange.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/deepOrange.js",
+      "path": "packages/material-ui/src/colors/deepOrange.js",
+      "name": "packages/material-ui/src/colors/deepOrange.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/brown.js",
+      "path": "packages/material-ui/src/colors/brown.js",
+      "name": "packages/material-ui/src/colors/brown.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/grey.js",
+      "path": "packages/material-ui/src/colors/grey.js",
+      "name": "packages/material-ui/src/colors/grey.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/colors/blueGrey.js",
+      "path": "packages/material-ui/src/colors/blueGrey.js",
+      "name": "packages/material-ui/src/colors/blueGrey.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/styles/index.js",
+      "path": "packages/material-ui/src/styles/index.js",
+      "name": "packages/material-ui/src/styles/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
       ],
       "dependsOn": [
-        "packages/material-ui-utils/src/chainPropTypes.ts"
+        "packages/material-ui/src/styles/adaptV4Theme.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/styles/createMuiTheme.js",
+        "packages/material-ui/src/styles/createMuiStrictModeTheme.js",
+        "packages/material-ui/src/styles/createStyles.js",
+        "packages/material-ui/src/styles/cssUtils.js",
+        "packages/material-ui/src/styles/makeStyles.js",
+        "packages/material-ui/src/styles/responsiveFontSizes.js",
+        "packages/material-ui/src/styles/styled.js",
+        "packages/material-ui/src/styles/transitions.js",
+        "packages/material-ui/src/styles/useTheme.js",
+        "packages/material-ui/src/styles/useThemeProps.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/withTheme.js",
+        "packages/material-ui/src/styles/experimentalStyled.js",
+        "packages/material-ui/src/styles/ThemeProvider.js"
       ]
     },
     {
-      "id": "packages/material-ui-utils/src/exactProp.ts",
-      "path": "packages/material-ui-utils/src/exactProp.ts",
-      "name": "packages/material-ui-utils/src/exactProp.ts",
+      "id": "packages/material-ui/src/styles/adaptV4Theme.js",
+      "path": "packages/material-ui/src/styles/adaptV4Theme.js",
+      "name": "packages/material-ui/src/styles/adaptV4Theme.js",
       "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/formatMuiErrorMessage.ts",
-      "path": "packages/material-ui-utils/src/formatMuiErrorMessage.ts",
-      "name": "packages/material-ui-utils/src/formatMuiErrorMessage.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/getDisplayName.ts",
-      "path": "packages/material-ui-utils/src/getDisplayName.ts",
-      "name": "packages/material-ui-utils/src/getDisplayName.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/HTMLElementType.ts",
-      "path": "packages/material-ui-utils/src/HTMLElementType.ts",
-      "name": "packages/material-ui-utils/src/HTMLElementType.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/ponyfillGlobal.ts",
-      "path": "packages/material-ui-utils/src/ponyfillGlobal.ts",
-      "name": "packages/material-ui-utils/src/ponyfillGlobal.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/refType.ts",
-      "path": "packages/material-ui-utils/src/refType.ts",
-      "name": "packages/material-ui-utils/src/refType.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/capitalize.d.ts",
-      "path": "packages/material-ui-utils/src/capitalize.d.ts",
-      "name": "packages/material-ui-utils/src/capitalize.d.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/createChainedFunction.d.ts",
-      "path": "packages/material-ui-utils/src/createChainedFunction.d.ts",
-      "name": "packages/material-ui-utils/src/createChainedFunction.d.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/debounce.d.ts",
-      "path": "packages/material-ui-utils/src/debounce.d.ts",
-      "name": "packages/material-ui-utils/src/debounce.d.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/deprecatedPropType.d.ts",
-      "path": "packages/material-ui-utils/src/deprecatedPropType.d.ts",
-      "name": "packages/material-ui-utils/src/deprecatedPropType.d.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/isMuiElement.d.ts",
-      "path": "packages/material-ui-utils/src/isMuiElement.d.ts",
-      "name": "packages/material-ui-utils/src/isMuiElement.d.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/ownerDocument.ts",
-      "path": "packages/material-ui-utils/src/ownerDocument.ts",
-      "name": "packages/material-ui-utils/src/ownerDocument.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/material-ui-utils/src/ownerWindow.ts",
-      "path": "packages/material-ui-utils/src/ownerWindow.ts",
-      "name": "packages/material-ui-utils/src/ownerWindow.ts",
-      "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
       ],
       "dependsOn": [
-        "packages/material-ui-utils/src/ownerDocument.ts"
+        "packages/material-ui/src/styles/createBreakpoints.js",
+        "packages/material-ui/src/styles/createV4Spacing.js"
       ]
     },
     {
-      "id": "packages/material-ui-utils/src/requirePropFactory.d.ts",
-      "path": "packages/material-ui-utils/src/requirePropFactory.d.ts",
-      "name": "packages/material-ui-utils/src/requirePropFactory.d.ts",
+      "id": "packages/material-ui/src/styles/createBreakpoints.js",
+      "path": "packages/material-ui/src/styles/createBreakpoints.js",
+      "name": "packages/material-ui/src/styles/createBreakpoints.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/material-ui-utils/src/setRef.ts",
-      "path": "packages/material-ui-utils/src/setRef.ts",
-      "name": "packages/material-ui-utils/src/setRef.ts",
+      "id": "packages/material-ui/src/styles/createV4Spacing.js",
+      "path": "packages/material-ui/src/styles/createV4Spacing.js",
+      "name": "packages/material-ui/src/styles/createV4Spacing.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/material-ui-utils/src/useEnhancedEffect.d.ts",
-      "path": "packages/material-ui-utils/src/useEnhancedEffect.d.ts",
-      "name": "packages/material-ui-utils/src/useEnhancedEffect.d.ts",
+      "id": "packages/material-ui/src/styles/colorManipulator.js",
+      "path": "packages/material-ui/src/styles/colorManipulator.js",
+      "name": "packages/material-ui/src/styles/colorManipulator.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/material-ui-utils/src/useId.d.ts",
-      "path": "packages/material-ui-utils/src/useId.d.ts",
-      "name": "packages/material-ui-utils/src/useId.d.ts",
+      "id": "packages/material-ui/src/styles/createMuiTheme.js",
+      "path": "packages/material-ui/src/styles/createMuiTheme.js",
+      "name": "packages/material-ui/src/styles/createMuiTheme.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/createBreakpoints.js",
+        "packages/material-ui/src/styles/createMixins.js",
+        "packages/material-ui/src/styles/createPalette.js",
+        "packages/material-ui/src/styles/createTypography.js",
+        "packages/material-ui/src/styles/shadows.js",
+        "packages/material-ui/src/styles/shape.js",
+        "packages/material-ui/src/styles/transitions.js",
+        "packages/material-ui/src/styles/zIndex.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/createMixins.js",
+      "path": "packages/material-ui/src/styles/createMixins.js",
+      "name": "packages/material-ui/src/styles/createMixins.js",
+      "labels": [
+        "pkg:@material-ui/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/material-ui-utils/src/unsupportedProp.d.ts",
-      "path": "packages/material-ui-utils/src/unsupportedProp.d.ts",
-      "name": "packages/material-ui-utils/src/unsupportedProp.d.ts",
+      "id": "packages/material-ui/src/styles/createPalette.js",
+      "path": "packages/material-ui/src/styles/createPalette.js",
+      "name": "packages/material-ui/src/styles/createPalette.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/colors/common.js",
+        "packages/material-ui/src/colors/grey.js",
+        "packages/material-ui/src/colors/indigo.js",
+        "packages/material-ui/src/colors/pink.js",
+        "packages/material-ui/src/colors/red.js",
+        "packages/material-ui/src/colors/orange.js",
+        "packages/material-ui/src/colors/blue.js",
+        "packages/material-ui/src/colors/green.js",
+        "packages/material-ui/src/styles/colorManipulator.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/createTypography.js",
+      "path": "packages/material-ui/src/styles/createTypography.js",
+      "name": "packages/material-ui/src/styles/createTypography.js",
+      "labels": [
+        "pkg:@material-ui/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/material-ui-utils/src/useControlled.d.ts",
-      "path": "packages/material-ui-utils/src/useControlled.d.ts",
-      "name": "packages/material-ui-utils/src/useControlled.d.ts",
+      "id": "packages/material-ui/src/styles/shadows.js",
+      "path": "packages/material-ui/src/styles/shadows.js",
+      "name": "packages/material-ui/src/styles/shadows.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/material-ui-utils/src/useEventCallback.d.ts",
-      "path": "packages/material-ui-utils/src/useEventCallback.d.ts",
-      "name": "packages/material-ui-utils/src/useEventCallback.d.ts",
+      "id": "packages/material-ui/src/styles/shape.js",
+      "path": "packages/material-ui/src/styles/shape.js",
+      "name": "packages/material-ui/src/styles/shape.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/material-ui-utils/src/useForkRef.d.ts",
-      "path": "packages/material-ui-utils/src/useForkRef.d.ts",
-      "name": "packages/material-ui-utils/src/useForkRef.d.ts",
+      "id": "packages/material-ui/src/styles/transitions.js",
+      "path": "packages/material-ui/src/styles/transitions.js",
+      "name": "packages/material-ui/src/styles/transitions.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/material-ui-utils/src/useIsFocusVisible.d.ts",
-      "path": "packages/material-ui-utils/src/useIsFocusVisible.d.ts",
-      "name": "packages/material-ui-utils/src/useIsFocusVisible.d.ts",
+      "id": "packages/material-ui/src/styles/zIndex.js",
+      "path": "packages/material-ui/src/styles/zIndex.js",
+      "name": "packages/material-ui/src/styles/zIndex.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/material-ui-utils/src/getScrollbarSize.ts",
-      "path": "packages/material-ui-utils/src/getScrollbarSize.ts",
-      "name": "packages/material-ui-utils/src/getScrollbarSize.ts",
+      "id": "packages/material-ui/src/styles/createMuiStrictModeTheme.js",
+      "path": "packages/material-ui/src/styles/createMuiStrictModeTheme.js",
+      "name": "packages/material-ui/src/styles/createMuiStrictModeTheme.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/createMuiTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/createStyles.js",
+      "path": "packages/material-ui/src/styles/createStyles.js",
+      "name": "packages/material-ui/src/styles/createStyles.js",
+      "labels": [
+        "pkg:@material-ui/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/material-ui-utils/src/scrollLeft.d.ts",
-      "path": "packages/material-ui-utils/src/scrollLeft.d.ts",
-      "name": "packages/material-ui-utils/src/scrollLeft.d.ts",
+      "id": "packages/material-ui/src/styles/cssUtils.js",
+      "path": "packages/material-ui/src/styles/cssUtils.js",
+      "name": "packages/material-ui/src/styles/cssUtils.js",
       "labels": [
-        "pkg:@material-ui/utils"
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/styles/makeStyles.js",
+      "path": "packages/material-ui/src/styles/makeStyles.js",
+      "name": "packages/material-ui/src/styles/makeStyles.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/defaultTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/defaultTheme.js",
+      "path": "packages/material-ui/src/styles/defaultTheme.js",
+      "name": "packages/material-ui/src/styles/defaultTheme.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/createMuiTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/responsiveFontSizes.js",
+      "path": "packages/material-ui/src/styles/responsiveFontSizes.js",
+      "name": "packages/material-ui/src/styles/responsiveFontSizes.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/cssUtils.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/styled.js",
+      "path": "packages/material-ui/src/styles/styled.js",
+      "name": "packages/material-ui/src/styles/styled.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/defaultTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/useTheme.js",
+      "path": "packages/material-ui/src/styles/useTheme.js",
+      "name": "packages/material-ui/src/styles/useTheme.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/defaultTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/useThemeProps.js",
+      "path": "packages/material-ui/src/styles/useThemeProps.js",
+      "name": "packages/material-ui/src/styles/useThemeProps.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/useTheme.js",
+        "packages/material-ui/src/styles/defaultTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/withStyles.js",
+      "path": "packages/material-ui/src/styles/withStyles.js",
+      "name": "packages/material-ui/src/styles/withStyles.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/defaultTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/withTheme.js",
+      "path": "packages/material-ui/src/styles/withTheme.js",
+      "name": "packages/material-ui/src/styles/withTheme.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/defaultTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/experimentalStyled.js",
+      "path": "packages/material-ui/src/styles/experimentalStyled.js",
+      "name": "packages/material-ui/src/styles/experimentalStyled.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/defaultTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/styles/ThemeProvider.js",
+      "path": "packages/material-ui/src/styles/ThemeProvider.js",
+      "name": "packages/material-ui/src/styles/ThemeProvider.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/useTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/utils/index.js",
+      "path": "packages/material-ui/src/utils/index.js",
+      "name": "packages/material-ui/src/utils/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/utils/createChainedFunction.js",
+        "packages/material-ui/src/utils/createSvgIcon.js",
+        "packages/material-ui/src/utils/debounce.js",
+        "packages/material-ui/src/utils/deprecatedPropType.js",
+        "packages/material-ui/src/utils/isMuiElement.js",
+        "packages/material-ui/src/utils/requirePropFactory.js",
+        "packages/material-ui/src/utils/useEnhancedEffect.js",
+        "packages/material-ui/src/utils/useId.js",
+        "packages/material-ui/src/utils/unsupportedProp.js",
+        "packages/material-ui/src/utils/useControlled.js",
+        "packages/material-ui/src/utils/useEventCallback.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useIsFocusVisible.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/utils/capitalize.js",
+      "path": "packages/material-ui/src/utils/capitalize.js",
+      "name": "packages/material-ui/src/utils/capitalize.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/createChainedFunction.js",
+      "path": "packages/material-ui/src/utils/createChainedFunction.js",
+      "name": "packages/material-ui/src/utils/createChainedFunction.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/createSvgIcon.js",
+      "path": "packages/material-ui/src/utils/createSvgIcon.js",
+      "name": "packages/material-ui/src/utils/createSvgIcon.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/SvgIcon/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SvgIcon/index.js",
+      "path": "packages/material-ui/src/SvgIcon/index.js",
+      "name": "packages/material-ui/src/SvgIcon/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/SvgIcon/SvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SvgIcon/SvgIcon.js",
+      "path": "packages/material-ui/src/SvgIcon/SvgIcon.js",
+      "name": "packages/material-ui/src/SvgIcon/SvgIcon.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/utils/debounce.js",
+      "path": "packages/material-ui/src/utils/debounce.js",
+      "name": "packages/material-ui/src/utils/debounce.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/deprecatedPropType.js",
+      "path": "packages/material-ui/src/utils/deprecatedPropType.js",
+      "name": "packages/material-ui/src/utils/deprecatedPropType.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/isMuiElement.js",
+      "path": "packages/material-ui/src/utils/isMuiElement.js",
+      "name": "packages/material-ui/src/utils/isMuiElement.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/requirePropFactory.js",
+      "path": "packages/material-ui/src/utils/requirePropFactory.js",
+      "name": "packages/material-ui/src/utils/requirePropFactory.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/useEnhancedEffect.js",
+      "path": "packages/material-ui/src/utils/useEnhancedEffect.js",
+      "name": "packages/material-ui/src/utils/useEnhancedEffect.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/useId.js",
+      "path": "packages/material-ui/src/utils/useId.js",
+      "name": "packages/material-ui/src/utils/useId.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/unsupportedProp.js",
+      "path": "packages/material-ui/src/utils/unsupportedProp.js",
+      "name": "packages/material-ui/src/utils/unsupportedProp.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/useControlled.js",
+      "path": "packages/material-ui/src/utils/useControlled.js",
+      "name": "packages/material-ui/src/utils/useControlled.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/useEventCallback.js",
+      "path": "packages/material-ui/src/utils/useEventCallback.js",
+      "name": "packages/material-ui/src/utils/useEventCallback.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/useForkRef.js",
+      "path": "packages/material-ui/src/utils/useForkRef.js",
+      "name": "packages/material-ui/src/utils/useForkRef.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/utils/useIsFocusVisible.js",
+      "path": "packages/material-ui/src/utils/useIsFocusVisible.js",
+      "name": "packages/material-ui/src/utils/useIsFocusVisible.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/Accordion/index.js",
+      "path": "packages/material-ui/src/Accordion/index.js",
+      "name": "packages/material-ui/src/Accordion/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Accordion/Accordion.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Accordion/Accordion.js",
+      "path": "packages/material-ui/src/Accordion/Accordion.js",
+      "name": "packages/material-ui/src/Accordion/Accordion.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Collapse/index.js",
+        "packages/material-ui/src/Paper/index.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Accordion/AccordionContext.js",
+        "packages/material-ui/src/utils/useControlled.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Collapse/index.js",
+      "path": "packages/material-ui/src/Collapse/index.js",
+      "name": "packages/material-ui/src/Collapse/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Collapse/Collapse.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Collapse/Collapse.js",
+      "path": "packages/material-ui/src/Collapse/Collapse.js",
+      "name": "packages/material-ui/src/Collapse/Collapse.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/transitions.js",
+        "packages/material-ui/src/transitions/utils.js",
+        "packages/material-ui/src/styles/useTheme.js",
+        "packages/material-ui/src/utils/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/transitions/utils.js",
+      "path": "packages/material-ui/src/transitions/utils.js",
+      "name": "packages/material-ui/src/transitions/utils.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/Paper/index.js",
+      "path": "packages/material-ui/src/Paper/index.js",
+      "name": "packages/material-ui/src/Paper/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Paper/Paper.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Paper/Paper.js",
+      "path": "packages/material-ui/src/Paper/Paper.js",
+      "name": "packages/material-ui/src/Paper/Paper.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/useTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Accordion/AccordionContext.js",
+      "path": "packages/material-ui/src/Accordion/AccordionContext.js",
+      "name": "packages/material-ui/src/Accordion/AccordionContext.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/AccordionActions/index.js",
+      "path": "packages/material-ui/src/AccordionActions/index.js",
+      "name": "packages/material-ui/src/AccordionActions/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/AccordionActions/AccordionActions.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/AccordionActions/AccordionActions.js",
+      "path": "packages/material-ui/src/AccordionActions/AccordionActions.js",
+      "name": "packages/material-ui/src/AccordionActions/AccordionActions.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/AccordionDetails/index.js",
+      "path": "packages/material-ui/src/AccordionDetails/index.js",
+      "name": "packages/material-ui/src/AccordionDetails/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/AccordionDetails/AccordionDetails.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/AccordionDetails/AccordionDetails.js",
+      "path": "packages/material-ui/src/AccordionDetails/AccordionDetails.js",
+      "name": "packages/material-ui/src/AccordionDetails/AccordionDetails.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/AccordionSummary/index.js",
+      "path": "packages/material-ui/src/AccordionSummary/index.js",
+      "name": "packages/material-ui/src/AccordionSummary/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/AccordionSummary/AccordionSummary.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/AccordionSummary/AccordionSummary.js",
+      "path": "packages/material-ui/src/AccordionSummary/AccordionSummary.js",
+      "name": "packages/material-ui/src/AccordionSummary/AccordionSummary.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Accordion/AccordionContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ButtonBase/index.js",
+      "path": "packages/material-ui/src/ButtonBase/index.js",
+      "name": "packages/material-ui/src/ButtonBase/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ButtonBase/ButtonBase.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ButtonBase/ButtonBase.js",
+      "path": "packages/material-ui/src/ButtonBase/ButtonBase.js",
+      "name": "packages/material-ui/src/ButtonBase/ButtonBase.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useEventCallback.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/useIsFocusVisible.js",
+        "packages/material-ui/src/ButtonBase/TouchRipple.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ButtonBase/TouchRipple.js",
+      "path": "packages/material-ui/src/ButtonBase/TouchRipple.js",
+      "name": "packages/material-ui/src/ButtonBase/TouchRipple.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/ButtonBase/Ripple.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ButtonBase/Ripple.js",
+      "path": "packages/material-ui/src/ButtonBase/Ripple.js",
+      "name": "packages/material-ui/src/ButtonBase/Ripple.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/useEventCallback.js",
+        "packages/material-ui/src/utils/useEnhancedEffect.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Alert/index.js",
+      "path": "packages/material-ui/src/Alert/index.js",
+      "name": "packages/material-ui/src/Alert/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Alert/Alert.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Alert/Alert.js",
+      "path": "packages/material-ui/src/Alert/Alert.js",
+      "name": "packages/material-ui/src/Alert/Alert.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/Paper/index.js",
+        "packages/material-ui/src/IconButton/index.js",
+        "packages/material-ui/src/internal/svg-icons/SuccessOutlined.js",
+        "packages/material-ui/src/internal/svg-icons/ReportProblemOutlined.js",
+        "packages/material-ui/src/internal/svg-icons/ErrorOutline.js",
+        "packages/material-ui/src/internal/svg-icons/InfoOutlined.js",
+        "packages/material-ui/src/internal/svg-icons/Close.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/IconButton/index.js",
+      "path": "packages/material-ui/src/IconButton/index.js",
+      "name": "packages/material-ui/src/IconButton/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/IconButton/IconButton.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/IconButton/IconButton.js",
+      "path": "packages/material-ui/src/IconButton/IconButton.js",
+      "name": "packages/material-ui/src/IconButton/IconButton.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/SuccessOutlined.js",
+      "path": "packages/material-ui/src/internal/svg-icons/SuccessOutlined.js",
+      "name": "packages/material-ui/src/internal/svg-icons/SuccessOutlined.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/ReportProblemOutlined.js",
+      "path": "packages/material-ui/src/internal/svg-icons/ReportProblemOutlined.js",
+      "name": "packages/material-ui/src/internal/svg-icons/ReportProblemOutlined.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/ErrorOutline.js",
+      "path": "packages/material-ui/src/internal/svg-icons/ErrorOutline.js",
+      "name": "packages/material-ui/src/internal/svg-icons/ErrorOutline.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/InfoOutlined.js",
+      "path": "packages/material-ui/src/internal/svg-icons/InfoOutlined.js",
+      "name": "packages/material-ui/src/internal/svg-icons/InfoOutlined.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/Close.js",
+      "path": "packages/material-ui/src/internal/svg-icons/Close.js",
+      "name": "packages/material-ui/src/internal/svg-icons/Close.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/AlertTitle/index.js",
+      "path": "packages/material-ui/src/AlertTitle/index.js",
+      "name": "packages/material-ui/src/AlertTitle/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/AlertTitle/AlertTitle.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/AlertTitle/AlertTitle.js",
+      "path": "packages/material-ui/src/AlertTitle/AlertTitle.js",
+      "name": "packages/material-ui/src/AlertTitle/AlertTitle.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Typography/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Typography/index.js",
+      "path": "packages/material-ui/src/Typography/index.js",
+      "name": "packages/material-ui/src/Typography/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Typography/Typography.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Typography/Typography.js",
+      "path": "packages/material-ui/src/Typography/Typography.js",
+      "name": "packages/material-ui/src/Typography/Typography.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/AppBar/index.js",
+      "path": "packages/material-ui/src/AppBar/index.js",
+      "name": "packages/material-ui/src/AppBar/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/AppBar/AppBar.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/AppBar/AppBar.js",
+      "path": "packages/material-ui/src/AppBar/AppBar.js",
+      "name": "packages/material-ui/src/AppBar/AppBar.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/Paper/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Autocomplete/index.js",
+      "path": "packages/material-ui/src/Autocomplete/index.js",
+      "name": "packages/material-ui/src/Autocomplete/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Autocomplete/Autocomplete.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Autocomplete/Autocomplete.js",
+      "path": "packages/material-ui/src/Autocomplete/Autocomplete.js",
+      "name": "packages/material-ui/src/Autocomplete/Autocomplete.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/index.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/Popper/index.js",
+        "packages/material-ui/src/ListSubheader/index.js",
+        "packages/material-ui/src/Paper/index.js",
+        "packages/material-ui/src/IconButton/index.js",
+        "packages/material-ui/src/Chip/index.js",
+        "packages/material-ui/src/internal/svg-icons/Close.js",
+        "packages/material-ui/src/internal/svg-icons/ArrowDropDown.js",
+        "packages/material-ui/src/useAutocomplete/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Popper/index.js",
+      "path": "packages/material-ui/src/Popper/index.js",
+      "name": "packages/material-ui/src/Popper/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Popper/Popper.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Popper/Popper.js",
+      "path": "packages/material-ui/src/Popper/Popper.js",
+      "name": "packages/material-ui/src/Popper/Popper.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Portal/index.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useEnhancedEffect.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Portal/index.js",
+      "path": "packages/material-ui/src/Portal/index.js",
+      "name": "packages/material-ui/src/Portal/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Portal/Portal.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Portal/Portal.js",
+      "path": "packages/material-ui/src/Portal/Portal.js",
+      "name": "packages/material-ui/src/Portal/Portal.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useEnhancedEffect.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ListSubheader/index.js",
+      "path": "packages/material-ui/src/ListSubheader/index.js",
+      "name": "packages/material-ui/src/ListSubheader/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ListSubheader/ListSubheader.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ListSubheader/ListSubheader.js",
+      "path": "packages/material-ui/src/ListSubheader/ListSubheader.js",
+      "name": "packages/material-ui/src/ListSubheader/ListSubheader.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Chip/index.js",
+      "path": "packages/material-ui/src/Chip/index.js",
+      "name": "packages/material-ui/src/Chip/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Chip/Chip.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Chip/Chip.js",
+      "path": "packages/material-ui/src/Chip/Chip.js",
+      "name": "packages/material-ui/src/Chip/Chip.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/internal/svg-icons/Cancel.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/unsupportedProp.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/ButtonBase/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/Cancel.js",
+      "path": "packages/material-ui/src/internal/svg-icons/Cancel.js",
+      "name": "packages/material-ui/src/internal/svg-icons/Cancel.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/ArrowDropDown.js",
+      "path": "packages/material-ui/src/internal/svg-icons/ArrowDropDown.js",
+      "name": "packages/material-ui/src/internal/svg-icons/ArrowDropDown.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/useAutocomplete/index.js",
+      "path": "packages/material-ui/src/useAutocomplete/index.js",
+      "name": "packages/material-ui/src/useAutocomplete/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/useAutocomplete/useAutocomplete.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/useAutocomplete/useAutocomplete.js",
+      "path": "packages/material-ui/src/useAutocomplete/useAutocomplete.js",
+      "name": "packages/material-ui/src/useAutocomplete/useAutocomplete.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Avatar/index.js",
+      "path": "packages/material-ui/src/Avatar/index.js",
+      "name": "packages/material-ui/src/Avatar/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Avatar/Avatar.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Avatar/Avatar.js",
+      "path": "packages/material-ui/src/Avatar/Avatar.js",
+      "name": "packages/material-ui/src/Avatar/Avatar.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/internal/svg-icons/Person.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/Person.js",
+      "path": "packages/material-ui/src/internal/svg-icons/Person.js",
+      "name": "packages/material-ui/src/internal/svg-icons/Person.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/AvatarGroup/index.js",
+      "path": "packages/material-ui/src/AvatarGroup/index.js",
+      "name": "packages/material-ui/src/AvatarGroup/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/AvatarGroup/AvatarGroup.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/AvatarGroup/AvatarGroup.js",
+      "path": "packages/material-ui/src/AvatarGroup/AvatarGroup.js",
+      "name": "packages/material-ui/src/AvatarGroup/AvatarGroup.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/index.js",
+        "packages/material-ui/src/Avatar/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Backdrop/index.js",
+      "path": "packages/material-ui/src/Backdrop/index.js",
+      "name": "packages/material-ui/src/Backdrop/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Backdrop/Backdrop.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Backdrop/Backdrop.js",
+      "path": "packages/material-ui/src/Backdrop/Backdrop.js",
+      "name": "packages/material-ui/src/Backdrop/Backdrop.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Fade/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Fade/index.js",
+      "path": "packages/material-ui/src/Fade/index.js",
+      "name": "packages/material-ui/src/Fade/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Fade/Fade.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Fade/Fade.js",
+      "path": "packages/material-ui/src/Fade/Fade.js",
+      "name": "packages/material-ui/src/Fade/Fade.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/transitions.js",
+        "packages/material-ui/src/styles/useTheme.js",
+        "packages/material-ui/src/transitions/utils.js",
+        "packages/material-ui/src/utils/useForkRef.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Badge/index.js",
+      "path": "packages/material-ui/src/Badge/index.js",
+      "name": "packages/material-ui/src/Badge/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Badge/Badge.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Badge/Badge.js",
+      "path": "packages/material-ui/src/Badge/Badge.js",
+      "name": "packages/material-ui/src/Badge/Badge.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/BottomNavigation/index.js",
+      "path": "packages/material-ui/src/BottomNavigation/index.js",
+      "name": "packages/material-ui/src/BottomNavigation/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/BottomNavigation/BottomNavigation.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/BottomNavigation/BottomNavigation.js",
+      "path": "packages/material-ui/src/BottomNavigation/BottomNavigation.js",
+      "name": "packages/material-ui/src/BottomNavigation/BottomNavigation.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/BottomNavigationAction/index.js",
+      "path": "packages/material-ui/src/BottomNavigationAction/index.js",
+      "name": "packages/material-ui/src/BottomNavigationAction/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/BottomNavigationAction/BottomNavigationAction.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/BottomNavigationAction/BottomNavigationAction.js",
+      "path": "packages/material-ui/src/BottomNavigationAction/BottomNavigationAction.js",
+      "name": "packages/material-ui/src/BottomNavigationAction/BottomNavigationAction.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/utils/unsupportedProp.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Box/index.js",
+      "path": "packages/material-ui/src/Box/index.js",
+      "name": "packages/material-ui/src/Box/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Box/Box.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Box/Box.js",
+      "path": "packages/material-ui/src/Box/Box.js",
+      "name": "packages/material-ui/src/Box/Box.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/experimentalStyled.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Breadcrumbs/index.js",
+      "path": "packages/material-ui/src/Breadcrumbs/index.js",
+      "name": "packages/material-ui/src/Breadcrumbs/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Breadcrumbs/Breadcrumbs.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Breadcrumbs/Breadcrumbs.js",
+      "path": "packages/material-ui/src/Breadcrumbs/Breadcrumbs.js",
+      "name": "packages/material-ui/src/Breadcrumbs/Breadcrumbs.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Typography/index.js",
+        "packages/material-ui/src/Breadcrumbs/BreadcrumbCollapsed.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Breadcrumbs/BreadcrumbCollapsed.js",
+      "path": "packages/material-ui/src/Breadcrumbs/BreadcrumbCollapsed.js",
+      "name": "packages/material-ui/src/Breadcrumbs/BreadcrumbCollapsed.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/internal/svg-icons/MoreHoriz.js",
+        "packages/material-ui/src/ButtonBase/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/MoreHoriz.js",
+      "path": "packages/material-ui/src/internal/svg-icons/MoreHoriz.js",
+      "name": "packages/material-ui/src/internal/svg-icons/MoreHoriz.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Button/index.js",
+      "path": "packages/material-ui/src/Button/index.js",
+      "name": "packages/material-ui/src/Button/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Button/Button.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Button/Button.js",
+      "path": "packages/material-ui/src/Button/Button.js",
+      "name": "packages/material-ui/src/Button/Button.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ButtonGroup/index.js",
+      "path": "packages/material-ui/src/ButtonGroup/index.js",
+      "name": "packages/material-ui/src/ButtonGroup/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ButtonGroup/ButtonGroup.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ButtonGroup/ButtonGroup.js",
+      "path": "packages/material-ui/src/ButtonGroup/ButtonGroup.js",
+      "name": "packages/material-ui/src/ButtonGroup/ButtonGroup.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Button/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Card/index.js",
+      "path": "packages/material-ui/src/Card/index.js",
+      "name": "packages/material-ui/src/Card/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Card/Card.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Card/Card.js",
+      "path": "packages/material-ui/src/Card/Card.js",
+      "name": "packages/material-ui/src/Card/Card.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Paper/index.js",
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CardActionArea/index.js",
+      "path": "packages/material-ui/src/CardActionArea/index.js",
+      "name": "packages/material-ui/src/CardActionArea/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/CardActionArea/CardActionArea.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CardActionArea/CardActionArea.js",
+      "path": "packages/material-ui/src/CardActionArea/CardActionArea.js",
+      "name": "packages/material-ui/src/CardActionArea/CardActionArea.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/ButtonBase/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CardActions/index.js",
+      "path": "packages/material-ui/src/CardActions/index.js",
+      "name": "packages/material-ui/src/CardActions/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/CardActions/CardActions.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CardActions/CardActions.js",
+      "path": "packages/material-ui/src/CardActions/CardActions.js",
+      "name": "packages/material-ui/src/CardActions/CardActions.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CardContent/index.js",
+      "path": "packages/material-ui/src/CardContent/index.js",
+      "name": "packages/material-ui/src/CardContent/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/CardContent/CardContent.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CardContent/CardContent.js",
+      "path": "packages/material-ui/src/CardContent/CardContent.js",
+      "name": "packages/material-ui/src/CardContent/CardContent.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CardHeader/index.js",
+      "path": "packages/material-ui/src/CardHeader/index.js",
+      "name": "packages/material-ui/src/CardHeader/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/CardHeader/CardHeader.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CardHeader/CardHeader.js",
+      "path": "packages/material-ui/src/CardHeader/CardHeader.js",
+      "name": "packages/material-ui/src/CardHeader/CardHeader.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Typography/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CardMedia/index.js",
+      "path": "packages/material-ui/src/CardMedia/index.js",
+      "name": "packages/material-ui/src/CardMedia/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/CardMedia/CardMedia.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CardMedia/CardMedia.js",
+      "path": "packages/material-ui/src/CardMedia/CardMedia.js",
+      "name": "packages/material-ui/src/CardMedia/CardMedia.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Checkbox/index.js",
+      "path": "packages/material-ui/src/Checkbox/index.js",
+      "name": "packages/material-ui/src/Checkbox/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Checkbox/Checkbox.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Checkbox/Checkbox.js",
+      "path": "packages/material-ui/src/Checkbox/Checkbox.js",
+      "name": "packages/material-ui/src/Checkbox/Checkbox.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/internal/SwitchBase.js",
+        "packages/material-ui/src/internal/svg-icons/CheckBoxOutlineBlank.js",
+        "packages/material-ui/src/internal/svg-icons/CheckBox.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/internal/svg-icons/IndeterminateCheckBox.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/SwitchBase.js",
+      "path": "packages/material-ui/src/internal/SwitchBase.js",
+      "name": "packages/material-ui/src/internal/SwitchBase.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/useControlled.js",
+        "packages/material-ui/src/FormControl/useFormControl.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/IconButton/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormControl/useFormControl.js",
+      "path": "packages/material-ui/src/FormControl/useFormControl.js",
+      "name": "packages/material-ui/src/FormControl/useFormControl.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormControl/FormControlContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormControl/FormControlContext.js",
+      "path": "packages/material-ui/src/FormControl/FormControlContext.js",
+      "name": "packages/material-ui/src/FormControl/FormControlContext.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/CheckBoxOutlineBlank.js",
+      "path": "packages/material-ui/src/internal/svg-icons/CheckBoxOutlineBlank.js",
+      "name": "packages/material-ui/src/internal/svg-icons/CheckBoxOutlineBlank.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/CheckBox.js",
+      "path": "packages/material-ui/src/internal/svg-icons/CheckBox.js",
+      "name": "packages/material-ui/src/internal/svg-icons/CheckBox.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/IndeterminateCheckBox.js",
+      "path": "packages/material-ui/src/internal/svg-icons/IndeterminateCheckBox.js",
+      "name": "packages/material-ui/src/internal/svg-icons/IndeterminateCheckBox.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CircularProgress/index.js",
+      "path": "packages/material-ui/src/CircularProgress/index.js",
+      "name": "packages/material-ui/src/CircularProgress/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/CircularProgress/CircularProgress.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CircularProgress/CircularProgress.js",
+      "path": "packages/material-ui/src/CircularProgress/CircularProgress.js",
+      "name": "packages/material-ui/src/CircularProgress/CircularProgress.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ClickAwayListener/index.js",
+      "path": "packages/material-ui/src/ClickAwayListener/index.js",
+      "name": "packages/material-ui/src/ClickAwayListener/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ClickAwayListener/ClickAwayListener.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ClickAwayListener/ClickAwayListener.js",
+      "path": "packages/material-ui/src/ClickAwayListener/ClickAwayListener.js",
+      "name": "packages/material-ui/src/ClickAwayListener/ClickAwayListener.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useEventCallback.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Container/index.js",
+      "path": "packages/material-ui/src/Container/index.js",
+      "name": "packages/material-ui/src/Container/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Container/Container.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Container/Container.js",
+      "path": "packages/material-ui/src/Container/Container.js",
+      "name": "packages/material-ui/src/Container/Container.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CssBaseline/index.js",
+      "path": "packages/material-ui/src/CssBaseline/index.js",
+      "name": "packages/material-ui/src/CssBaseline/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/CssBaseline/CssBaseline.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/CssBaseline/CssBaseline.js",
+      "path": "packages/material-ui/src/CssBaseline/CssBaseline.js",
+      "name": "packages/material-ui/src/CssBaseline/CssBaseline.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Dialog/index.js",
+      "path": "packages/material-ui/src/Dialog/index.js",
+      "name": "packages/material-ui/src/Dialog/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Dialog/Dialog.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Dialog/Dialog.js",
+      "path": "packages/material-ui/src/Dialog/Dialog.js",
+      "name": "packages/material-ui/src/Dialog/Dialog.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/Modal/index.js",
+        "packages/material-ui/src/Backdrop/index.js",
+        "packages/material-ui/src/Fade/index.js",
+        "packages/material-ui/src/styles/transitions.js",
+        "packages/material-ui/src/Paper/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Modal/index.js",
+      "path": "packages/material-ui/src/Modal/index.js",
+      "name": "packages/material-ui/src/Modal/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Modal/Modal.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Modal/Modal.js",
+      "path": "packages/material-ui/src/Modal/Modal.js",
+      "name": "packages/material-ui/src/Modal/Modal.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Portal/index.js",
+        "packages/material-ui/src/utils/createChainedFunction.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useEventCallback.js",
+        "packages/material-ui/src/styles/zIndex.js",
+        "packages/material-ui/src/Unstable_TrapFocus/index.js",
+        "packages/material-ui/src/Modal/SimpleBackdrop.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Unstable_TrapFocus/index.js",
+      "path": "packages/material-ui/src/Unstable_TrapFocus/index.js",
+      "name": "packages/material-ui/src/Unstable_TrapFocus/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Unstable_TrapFocus/Unstable_TrapFocus.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Unstable_TrapFocus/Unstable_TrapFocus.js",
+      "path": "packages/material-ui/src/Unstable_TrapFocus/Unstable_TrapFocus.js",
+      "name": "packages/material-ui/src/Unstable_TrapFocus/Unstable_TrapFocus.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/useForkRef.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Modal/SimpleBackdrop.js",
+      "path": "packages/material-ui/src/Modal/SimpleBackdrop.js",
+      "name": "packages/material-ui/src/Modal/SimpleBackdrop.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/DialogActions/index.js",
+      "path": "packages/material-ui/src/DialogActions/index.js",
+      "name": "packages/material-ui/src/DialogActions/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/DialogActions/DialogActions.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/DialogActions/DialogActions.js",
+      "path": "packages/material-ui/src/DialogActions/DialogActions.js",
+      "name": "packages/material-ui/src/DialogActions/DialogActions.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/DialogContent/index.js",
+      "path": "packages/material-ui/src/DialogContent/index.js",
+      "name": "packages/material-ui/src/DialogContent/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/DialogContent/DialogContent.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/DialogContent/DialogContent.js",
+      "path": "packages/material-ui/src/DialogContent/DialogContent.js",
+      "name": "packages/material-ui/src/DialogContent/DialogContent.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/DialogContentText/index.js",
+      "path": "packages/material-ui/src/DialogContentText/index.js",
+      "name": "packages/material-ui/src/DialogContentText/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/DialogContentText/DialogContentText.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/DialogContentText/DialogContentText.js",
+      "path": "packages/material-ui/src/DialogContentText/DialogContentText.js",
+      "name": "packages/material-ui/src/DialogContentText/DialogContentText.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Typography/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/DialogTitle/index.js",
+      "path": "packages/material-ui/src/DialogTitle/index.js",
+      "name": "packages/material-ui/src/DialogTitle/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/DialogTitle/DialogTitle.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/DialogTitle/DialogTitle.js",
+      "path": "packages/material-ui/src/DialogTitle/DialogTitle.js",
+      "name": "packages/material-ui/src/DialogTitle/DialogTitle.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Typography/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Divider/index.js",
+      "path": "packages/material-ui/src/Divider/index.js",
+      "name": "packages/material-ui/src/Divider/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Divider/Divider.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Divider/Divider.js",
+      "path": "packages/material-ui/src/Divider/Divider.js",
+      "name": "packages/material-ui/src/Divider/Divider.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/colorManipulator.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Drawer/index.js",
+      "path": "packages/material-ui/src/Drawer/index.js",
+      "name": "packages/material-ui/src/Drawer/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Drawer/Drawer.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Drawer/Drawer.js",
+      "path": "packages/material-ui/src/Drawer/Drawer.js",
+      "name": "packages/material-ui/src/Drawer/Drawer.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Modal/index.js",
+        "packages/material-ui/src/Backdrop/index.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Slide/index.js",
+        "packages/material-ui/src/Paper/index.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/styles/transitions.js",
+        "packages/material-ui/src/styles/useTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Slide/index.js",
+      "path": "packages/material-ui/src/Slide/index.js",
+      "name": "packages/material-ui/src/Slide/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Slide/Slide.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Slide/Slide.js",
+      "path": "packages/material-ui/src/Slide/Slide.js",
+      "name": "packages/material-ui/src/Slide/Slide.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/debounce.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/styles/useTheme.js",
+        "packages/material-ui/src/styles/transitions.js",
+        "packages/material-ui/src/transitions/utils.js",
+        "packages/material-ui/src/utils/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Fab/index.js",
+      "path": "packages/material-ui/src/Fab/index.js",
+      "name": "packages/material-ui/src/Fab/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Fab/Fab.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Fab/Fab.js",
+      "path": "packages/material-ui/src/Fab/Fab.js",
+      "name": "packages/material-ui/src/Fab/Fab.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FilledInput/index.js",
+      "path": "packages/material-ui/src/FilledInput/index.js",
+      "name": "packages/material-ui/src/FilledInput/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FilledInput/FilledInput.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FilledInput/FilledInput.js",
+      "path": "packages/material-ui/src/FilledInput/FilledInput.js",
+      "name": "packages/material-ui/src/FilledInput/FilledInput.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/InputBase/index.js",
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/InputBase/index.js",
+      "path": "packages/material-ui/src/InputBase/index.js",
+      "name": "packages/material-ui/src/InputBase/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/InputBase/InputBase.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/InputBase/InputBase.js",
+      "path": "packages/material-ui/src/InputBase/InputBase.js",
+      "name": "packages/material-ui/src/InputBase/InputBase.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormControl/formControlState.js",
+        "packages/material-ui/src/FormControl/FormControlContext.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useEnhancedEffect.js",
+        "packages/material-ui/src/TextareaAutosize/index.js",
+        "packages/material-ui/src/InputBase/utils.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormControl/formControlState.js",
+      "path": "packages/material-ui/src/FormControl/formControlState.js",
+      "name": "packages/material-ui/src/FormControl/formControlState.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/TextareaAutosize/index.js",
+      "path": "packages/material-ui/src/TextareaAutosize/index.js",
+      "name": "packages/material-ui/src/TextareaAutosize/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/TextareaAutosize/TextareaAutosize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TextareaAutosize/TextareaAutosize.js",
+      "path": "packages/material-ui/src/TextareaAutosize/TextareaAutosize.js",
+      "name": "packages/material-ui/src/TextareaAutosize/TextareaAutosize.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/debounce.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useEnhancedEffect.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/InputBase/utils.js",
+      "path": "packages/material-ui/src/InputBase/utils.js",
+      "name": "packages/material-ui/src/InputBase/utils.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/FormControl/index.js",
+      "path": "packages/material-ui/src/FormControl/index.js",
+      "name": "packages/material-ui/src/FormControl/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormControl/FormControl.js",
+        "packages/material-ui/src/FormControl/useFormControl.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormControl/FormControl.js",
+      "path": "packages/material-ui/src/FormControl/FormControl.js",
+      "name": "packages/material-ui/src/FormControl/FormControl.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/InputBase/utils.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/utils/isMuiElement.js",
+        "packages/material-ui/src/FormControl/FormControlContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormControlLabel/index.js",
+      "path": "packages/material-ui/src/FormControlLabel/index.js",
+      "name": "packages/material-ui/src/FormControlLabel/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormControlLabel/FormControlLabel.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormControlLabel/FormControlLabel.js",
+      "path": "packages/material-ui/src/FormControlLabel/FormControlLabel.js",
+      "name": "packages/material-ui/src/FormControlLabel/FormControlLabel.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormControl/index.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Typography/index.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormGroup/index.js",
+      "path": "packages/material-ui/src/FormGroup/index.js",
+      "name": "packages/material-ui/src/FormGroup/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormGroup/FormGroup.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormGroup/FormGroup.js",
+      "path": "packages/material-ui/src/FormGroup/FormGroup.js",
+      "name": "packages/material-ui/src/FormGroup/FormGroup.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormHelperText/index.js",
+      "path": "packages/material-ui/src/FormHelperText/index.js",
+      "name": "packages/material-ui/src/FormHelperText/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormHelperText/FormHelperText.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormHelperText/FormHelperText.js",
+      "path": "packages/material-ui/src/FormHelperText/FormHelperText.js",
+      "name": "packages/material-ui/src/FormHelperText/FormHelperText.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormControl/formControlState.js",
+        "packages/material-ui/src/FormControl/useFormControl.js",
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormLabel/index.js",
+      "path": "packages/material-ui/src/FormLabel/index.js",
+      "name": "packages/material-ui/src/FormLabel/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormLabel/FormLabel.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/FormLabel/FormLabel.js",
+      "path": "packages/material-ui/src/FormLabel/FormLabel.js",
+      "name": "packages/material-ui/src/FormLabel/FormLabel.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormControl/formControlState.js",
+        "packages/material-ui/src/FormControl/useFormControl.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Grid/index.js",
+      "path": "packages/material-ui/src/Grid/index.js",
+      "name": "packages/material-ui/src/Grid/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Grid/Grid.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Grid/Grid.js",
+      "path": "packages/material-ui/src/Grid/Grid.js",
+      "name": "packages/material-ui/src/Grid/Grid.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/requirePropFactory.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Grow/index.js",
+      "path": "packages/material-ui/src/Grow/index.js",
+      "name": "packages/material-ui/src/Grow/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Grow/Grow.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Grow/Grow.js",
+      "path": "packages/material-ui/src/Grow/Grow.js",
+      "name": "packages/material-ui/src/Grow/Grow.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/useTheme.js",
+        "packages/material-ui/src/transitions/utils.js",
+        "packages/material-ui/src/utils/useForkRef.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Hidden/index.js",
+      "path": "packages/material-ui/src/Hidden/index.js",
+      "name": "packages/material-ui/src/Hidden/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Hidden/Hidden.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Hidden/Hidden.js",
+      "path": "packages/material-ui/src/Hidden/Hidden.js",
+      "name": "packages/material-ui/src/Hidden/Hidden.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Hidden/HiddenJs.js",
+        "packages/material-ui/src/Hidden/HiddenCss.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Hidden/HiddenJs.js",
+      "path": "packages/material-ui/src/Hidden/HiddenJs.js",
+      "name": "packages/material-ui/src/Hidden/HiddenJs.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/withWidth/index.js",
+        "packages/material-ui/src/styles/useTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/withWidth/index.js",
+      "path": "packages/material-ui/src/withWidth/index.js",
+      "name": "packages/material-ui/src/withWidth/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/withWidth/withWidth.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/withWidth/withWidth.js",
+      "path": "packages/material-ui/src/withWidth/withWidth.js",
+      "name": "packages/material-ui/src/withWidth/withWidth.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/useTheme.js",
+        "packages/material-ui/src/styles/createBreakpoints.js",
+        "packages/material-ui/src/utils/useEnhancedEffect.js",
+        "packages/material-ui/src/useMediaQuery/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/useMediaQuery/index.js",
+      "path": "packages/material-ui/src/useMediaQuery/index.js",
+      "name": "packages/material-ui/src/useMediaQuery/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/useMediaQuery/useMediaQuery.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/useMediaQuery/useMediaQuery.js",
+      "path": "packages/material-ui/src/useMediaQuery/useMediaQuery.js",
+      "name": "packages/material-ui/src/useMediaQuery/useMediaQuery.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/Hidden/HiddenCss.js",
+      "path": "packages/material-ui/src/Hidden/HiddenCss.js",
+      "name": "packages/material-ui/src/Hidden/HiddenCss.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/useTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Icon/index.js",
+      "path": "packages/material-ui/src/Icon/index.js",
+      "name": "packages/material-ui/src/Icon/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Icon/Icon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Icon/Icon.js",
+      "path": "packages/material-ui/src/Icon/Icon.js",
+      "name": "packages/material-ui/src/Icon/Icon.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ImageList/index.js",
+      "path": "packages/material-ui/src/ImageList/index.js",
+      "name": "packages/material-ui/src/ImageList/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ImageList/ImageList.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ImageList/ImageList.js",
+      "path": "packages/material-ui/src/ImageList/ImageList.js",
+      "name": "packages/material-ui/src/ImageList/ImageList.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/ImageList/ImageListContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ImageList/ImageListContext.js",
+      "path": "packages/material-ui/src/ImageList/ImageListContext.js",
+      "name": "packages/material-ui/src/ImageList/ImageListContext.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/ImageListItem/index.js",
+      "path": "packages/material-ui/src/ImageListItem/index.js",
+      "name": "packages/material-ui/src/ImageListItem/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ImageListItem/ImageListItem.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ImageListItem/ImageListItem.js",
+      "path": "packages/material-ui/src/ImageListItem/ImageListItem.js",
+      "name": "packages/material-ui/src/ImageListItem/ImageListItem.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/isMuiElement.js",
+        "packages/material-ui/src/ImageList/ImageListContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ImageListItemBar/index.js",
+      "path": "packages/material-ui/src/ImageListItemBar/index.js",
+      "name": "packages/material-ui/src/ImageListItemBar/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ImageListItemBar/ImageListItemBar.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ImageListItemBar/ImageListItemBar.js",
+      "path": "packages/material-ui/src/ImageListItemBar/ImageListItemBar.js",
+      "name": "packages/material-ui/src/ImageListItemBar/ImageListItemBar.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Input/index.js",
+      "path": "packages/material-ui/src/Input/index.js",
+      "name": "packages/material-ui/src/Input/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Input/Input.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Input/Input.js",
+      "path": "packages/material-ui/src/Input/Input.js",
+      "name": "packages/material-ui/src/Input/Input.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/InputBase/index.js",
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/InputAdornment/index.js",
+      "path": "packages/material-ui/src/InputAdornment/index.js",
+      "name": "packages/material-ui/src/InputAdornment/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/InputAdornment/InputAdornment.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/InputAdornment/InputAdornment.js",
+      "path": "packages/material-ui/src/InputAdornment/InputAdornment.js",
+      "name": "packages/material-ui/src/InputAdornment/InputAdornment.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Typography/index.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/FormControl/FormControlContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/InputLabel/index.js",
+      "path": "packages/material-ui/src/InputLabel/index.js",
+      "name": "packages/material-ui/src/InputLabel/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/InputLabel/InputLabel.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/InputLabel/InputLabel.js",
+      "path": "packages/material-ui/src/InputLabel/InputLabel.js",
+      "name": "packages/material-ui/src/InputLabel/InputLabel.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormControl/formControlState.js",
+        "packages/material-ui/src/FormControl/useFormControl.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/FormLabel/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/LinearProgress/index.js",
+      "path": "packages/material-ui/src/LinearProgress/index.js",
+      "name": "packages/material-ui/src/LinearProgress/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/LinearProgress/LinearProgress.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/LinearProgress/LinearProgress.js",
+      "path": "packages/material-ui/src/LinearProgress/LinearProgress.js",
+      "name": "packages/material-ui/src/LinearProgress/LinearProgress.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/styles/useTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Link/index.js",
+      "path": "packages/material-ui/src/Link/index.js",
+      "name": "packages/material-ui/src/Link/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Link/Link.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Link/Link.js",
+      "path": "packages/material-ui/src/Link/Link.js",
+      "name": "packages/material-ui/src/Link/Link.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/useIsFocusVisible.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/Typography/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/List/index.js",
+      "path": "packages/material-ui/src/List/index.js",
+      "name": "packages/material-ui/src/List/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/List/List.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/List/List.js",
+      "path": "packages/material-ui/src/List/List.js",
+      "name": "packages/material-ui/src/List/List.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/List/ListContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/List/ListContext.js",
+      "path": "packages/material-ui/src/List/ListContext.js",
+      "name": "packages/material-ui/src/List/ListContext.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/ListItem/index.js",
+      "path": "packages/material-ui/src/ListItem/index.js",
+      "name": "packages/material-ui/src/ListItem/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ListItem/ListItem.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ListItem/ListItem.js",
+      "path": "packages/material-ui/src/ListItem/ListItem.js",
+      "name": "packages/material-ui/src/ListItem/ListItem.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/utils/isMuiElement.js",
+        "packages/material-ui/src/utils/useEnhancedEffect.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/List/ListContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ListItemAvatar/index.js",
+      "path": "packages/material-ui/src/ListItemAvatar/index.js",
+      "name": "packages/material-ui/src/ListItemAvatar/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ListItemAvatar/ListItemAvatar.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ListItemAvatar/ListItemAvatar.js",
+      "path": "packages/material-ui/src/ListItemAvatar/ListItemAvatar.js",
+      "name": "packages/material-ui/src/ListItemAvatar/ListItemAvatar.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/List/ListContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ListItemIcon/index.js",
+      "path": "packages/material-ui/src/ListItemIcon/index.js",
+      "name": "packages/material-ui/src/ListItemIcon/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ListItemIcon/ListItemIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ListItemIcon/ListItemIcon.js",
+      "path": "packages/material-ui/src/ListItemIcon/ListItemIcon.js",
+      "name": "packages/material-ui/src/ListItemIcon/ListItemIcon.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/List/ListContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ListItemSecondaryAction/index.js",
+      "path": "packages/material-ui/src/ListItemSecondaryAction/index.js",
+      "name": "packages/material-ui/src/ListItemSecondaryAction/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ListItemSecondaryAction/ListItemSecondaryAction.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ListItemSecondaryAction/ListItemSecondaryAction.js",
+      "path": "packages/material-ui/src/ListItemSecondaryAction/ListItemSecondaryAction.js",
+      "name": "packages/material-ui/src/ListItemSecondaryAction/ListItemSecondaryAction.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/List/ListContext.js",
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ListItemText/index.js",
+      "path": "packages/material-ui/src/ListItemText/index.js",
+      "name": "packages/material-ui/src/ListItemText/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ListItemText/ListItemText.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ListItemText/ListItemText.js",
+      "path": "packages/material-ui/src/ListItemText/ListItemText.js",
+      "name": "packages/material-ui/src/ListItemText/ListItemText.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Typography/index.js",
+        "packages/material-ui/src/List/ListContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Menu/index.js",
+      "path": "packages/material-ui/src/Menu/index.js",
+      "name": "packages/material-ui/src/Menu/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Menu/Menu.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Menu/Menu.js",
+      "path": "packages/material-ui/src/Menu/Menu.js",
+      "name": "packages/material-ui/src/Menu/Menu.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Popover/index.js",
+        "packages/material-ui/src/MenuList/index.js",
+        "packages/material-ui/src/styles/useTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Popover/index.js",
+      "path": "packages/material-ui/src/Popover/index.js",
+      "name": "packages/material-ui/src/Popover/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Popover/Popover.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Popover/Popover.js",
+      "path": "packages/material-ui/src/Popover/Popover.js",
+      "name": "packages/material-ui/src/Popover/Popover.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/debounce.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Modal/index.js",
+        "packages/material-ui/src/Grow/index.js",
+        "packages/material-ui/src/Paper/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/MenuList/index.js",
+      "path": "packages/material-ui/src/MenuList/index.js",
+      "name": "packages/material-ui/src/MenuList/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/MenuList/MenuList.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/MenuList/MenuList.js",
+      "path": "packages/material-ui/src/MenuList/MenuList.js",
+      "name": "packages/material-ui/src/MenuList/MenuList.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/List/index.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useEnhancedEffect.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/MenuItem/index.js",
+      "path": "packages/material-ui/src/MenuItem/index.js",
+      "name": "packages/material-ui/src/MenuItem/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/MenuItem/MenuItem.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/MenuItem/MenuItem.js",
+      "path": "packages/material-ui/src/MenuItem/MenuItem.js",
+      "name": "packages/material-ui/src/MenuItem/MenuItem.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/ListItem/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/MobileStepper/index.js",
+      "path": "packages/material-ui/src/MobileStepper/index.js",
+      "name": "packages/material-ui/src/MobileStepper/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/MobileStepper/MobileStepper.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/MobileStepper/MobileStepper.js",
+      "path": "packages/material-ui/src/MobileStepper/MobileStepper.js",
+      "name": "packages/material-ui/src/MobileStepper/MobileStepper.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Paper/index.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/LinearProgress/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/NativeSelect/index.js",
+      "path": "packages/material-ui/src/NativeSelect/index.js",
+      "name": "packages/material-ui/src/NativeSelect/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/NativeSelect/NativeSelect.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/NativeSelect/NativeSelect.js",
+      "path": "packages/material-ui/src/NativeSelect/NativeSelect.js",
+      "name": "packages/material-ui/src/NativeSelect/NativeSelect.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/NativeSelect/NativeSelectInput.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/FormControl/formControlState.js",
+        "packages/material-ui/src/FormControl/useFormControl.js",
+        "packages/material-ui/src/internal/svg-icons/ArrowDropDown.js",
+        "packages/material-ui/src/Input/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/NativeSelect/NativeSelectInput.js",
+      "path": "packages/material-ui/src/NativeSelect/NativeSelectInput.js",
+      "name": "packages/material-ui/src/NativeSelect/NativeSelectInput.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/NoSsr/index.js",
+      "path": "packages/material-ui/src/NoSsr/index.js",
+      "name": "packages/material-ui/src/NoSsr/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/NoSsr/NoSsr.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/NoSsr/NoSsr.js",
+      "path": "packages/material-ui/src/NoSsr/NoSsr.js",
+      "name": "packages/material-ui/src/NoSsr/NoSsr.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/useEnhancedEffect.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/OutlinedInput/index.js",
+      "path": "packages/material-ui/src/OutlinedInput/index.js",
+      "name": "packages/material-ui/src/OutlinedInput/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/OutlinedInput/OutlinedInput.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/OutlinedInput/OutlinedInput.js",
+      "path": "packages/material-ui/src/OutlinedInput/OutlinedInput.js",
+      "name": "packages/material-ui/src/OutlinedInput/OutlinedInput.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/InputBase/index.js",
+        "packages/material-ui/src/OutlinedInput/NotchedOutline.js",
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/OutlinedInput/NotchedOutline.js",
+      "path": "packages/material-ui/src/OutlinedInput/NotchedOutline.js",
+      "name": "packages/material-ui/src/OutlinedInput/NotchedOutline.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/useTheme.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Pagination/index.js",
+      "path": "packages/material-ui/src/Pagination/index.js",
+      "name": "packages/material-ui/src/Pagination/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Pagination/Pagination.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Pagination/Pagination.js",
+      "path": "packages/material-ui/src/Pagination/Pagination.js",
+      "name": "packages/material-ui/src/Pagination/Pagination.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/index.js",
+        "packages/material-ui/src/usePagination/index.js",
+        "packages/material-ui/src/PaginationItem/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/usePagination/index.js",
+      "path": "packages/material-ui/src/usePagination/index.js",
+      "name": "packages/material-ui/src/usePagination/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/usePagination/usePagination.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/usePagination/usePagination.js",
+      "path": "packages/material-ui/src/usePagination/usePagination.js",
+      "name": "packages/material-ui/src/usePagination/usePagination.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/PaginationItem/index.js",
+      "path": "packages/material-ui/src/PaginationItem/index.js",
+      "name": "packages/material-ui/src/PaginationItem/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/PaginationItem/PaginationItem.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/PaginationItem/PaginationItem.js",
+      "path": "packages/material-ui/src/PaginationItem/PaginationItem.js",
+      "name": "packages/material-ui/src/PaginationItem/PaginationItem.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/index.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/utils/index.js",
+        "packages/material-ui/src/internal/svg-icons/FirstPage.js",
+        "packages/material-ui/src/internal/svg-icons/LastPage.js",
+        "packages/material-ui/src/internal/svg-icons/NavigateBefore.js",
+        "packages/material-ui/src/internal/svg-icons/NavigateNext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/FirstPage.js",
+      "path": "packages/material-ui/src/internal/svg-icons/FirstPage.js",
+      "name": "packages/material-ui/src/internal/svg-icons/FirstPage.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/LastPage.js",
+      "path": "packages/material-ui/src/internal/svg-icons/LastPage.js",
+      "name": "packages/material-ui/src/internal/svg-icons/LastPage.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/NavigateBefore.js",
+      "path": "packages/material-ui/src/internal/svg-icons/NavigateBefore.js",
+      "name": "packages/material-ui/src/internal/svg-icons/NavigateBefore.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/NavigateNext.js",
+      "path": "packages/material-ui/src/internal/svg-icons/NavigateNext.js",
+      "name": "packages/material-ui/src/internal/svg-icons/NavigateNext.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Radio/index.js",
+      "path": "packages/material-ui/src/Radio/index.js",
+      "name": "packages/material-ui/src/Radio/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Radio/Radio.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Radio/Radio.js",
+      "path": "packages/material-ui/src/Radio/Radio.js",
+      "name": "packages/material-ui/src/Radio/Radio.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/internal/SwitchBase.js",
+        "packages/material-ui/src/Radio/RadioButtonIcon.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/utils/createChainedFunction.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/RadioGroup/useRadioGroup.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Radio/RadioButtonIcon.js",
+      "path": "packages/material-ui/src/Radio/RadioButtonIcon.js",
+      "name": "packages/material-ui/src/Radio/RadioButtonIcon.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/internal/svg-icons/RadioButtonUnchecked.js",
+        "packages/material-ui/src/internal/svg-icons/RadioButtonChecked.js",
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/RadioButtonUnchecked.js",
+      "path": "packages/material-ui/src/internal/svg-icons/RadioButtonUnchecked.js",
+      "name": "packages/material-ui/src/internal/svg-icons/RadioButtonUnchecked.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/RadioButtonChecked.js",
+      "path": "packages/material-ui/src/internal/svg-icons/RadioButtonChecked.js",
+      "name": "packages/material-ui/src/internal/svg-icons/RadioButtonChecked.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/RadioGroup/useRadioGroup.js",
+      "path": "packages/material-ui/src/RadioGroup/useRadioGroup.js",
+      "name": "packages/material-ui/src/RadioGroup/useRadioGroup.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/RadioGroup/RadioGroupContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/RadioGroup/RadioGroupContext.js",
+      "path": "packages/material-ui/src/RadioGroup/RadioGroupContext.js",
+      "name": "packages/material-ui/src/RadioGroup/RadioGroupContext.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/RadioGroup/index.js",
+      "path": "packages/material-ui/src/RadioGroup/index.js",
+      "name": "packages/material-ui/src/RadioGroup/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/RadioGroup/RadioGroup.js",
+        "packages/material-ui/src/RadioGroup/useRadioGroup.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/RadioGroup/RadioGroup.js",
+      "path": "packages/material-ui/src/RadioGroup/RadioGroup.js",
+      "name": "packages/material-ui/src/RadioGroup/RadioGroup.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/FormGroup/index.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useControlled.js",
+        "packages/material-ui/src/RadioGroup/RadioGroupContext.js",
+        "packages/material-ui/src/utils/useId.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Rating/index.js",
+      "path": "packages/material-ui/src/Rating/index.js",
+      "name": "packages/material-ui/src/Rating/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Rating/Rating.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Rating/Rating.js",
+      "path": "packages/material-ui/src/Rating/Rating.js",
+      "name": "packages/material-ui/src/Rating/Rating.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/index.js",
+        "packages/material-ui/src/utils/index.js",
+        "packages/material-ui/src/internal/svg-icons/Star.js",
+        "packages/material-ui/src/internal/svg-icons/StarBorder.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/Star.js",
+      "path": "packages/material-ui/src/internal/svg-icons/Star.js",
+      "name": "packages/material-ui/src/internal/svg-icons/Star.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/StarBorder.js",
+      "path": "packages/material-ui/src/internal/svg-icons/StarBorder.js",
+      "name": "packages/material-ui/src/internal/svg-icons/StarBorder.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ScopedCssBaseline/index.js",
+      "path": "packages/material-ui/src/ScopedCssBaseline/index.js",
+      "name": "packages/material-ui/src/ScopedCssBaseline/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ScopedCssBaseline/ScopedCssBaseline.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ScopedCssBaseline/ScopedCssBaseline.js",
+      "path": "packages/material-ui/src/ScopedCssBaseline/ScopedCssBaseline.js",
+      "name": "packages/material-ui/src/ScopedCssBaseline/ScopedCssBaseline.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/CssBaseline/CssBaseline.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Select/index.js",
+      "path": "packages/material-ui/src/Select/index.js",
+      "name": "packages/material-ui/src/Select/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Select/Select.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Select/Select.js",
+      "path": "packages/material-ui/src/Select/Select.js",
+      "name": "packages/material-ui/src/Select/Select.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Select/SelectInput.js",
+        "packages/material-ui/src/FormControl/formControlState.js",
+        "packages/material-ui/src/FormControl/useFormControl.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/internal/svg-icons/ArrowDropDown.js",
+        "packages/material-ui/src/Input/index.js",
+        "packages/material-ui/src/NativeSelect/NativeSelect.js",
+        "packages/material-ui/src/NativeSelect/NativeSelectInput.js",
+        "packages/material-ui/src/FilledInput/index.js",
+        "packages/material-ui/src/OutlinedInput/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Select/SelectInput.js",
+      "path": "packages/material-ui/src/Select/SelectInput.js",
+      "name": "packages/material-ui/src/Select/SelectInput.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/Menu/Menu.js",
+        "packages/material-ui/src/InputBase/utils.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useControlled.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Skeleton/index.js",
+      "path": "packages/material-ui/src/Skeleton/index.js",
+      "name": "packages/material-ui/src/Skeleton/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Skeleton/Skeleton.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Skeleton/Skeleton.js",
+      "path": "packages/material-ui/src/Skeleton/Skeleton.js",
+      "name": "packages/material-ui/src/Skeleton/Skeleton.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Slider/index.js",
+      "path": "packages/material-ui/src/Slider/index.js",
+      "name": "packages/material-ui/src/Slider/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Slider/Slider.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Slider/Slider.js",
+      "path": "packages/material-ui/src/Slider/Slider.js",
+      "name": "packages/material-ui/src/Slider/Slider.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/useThemeProps.js",
+        "packages/material-ui/src/styles/experimentalStyled.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Snackbar/index.js",
+      "path": "packages/material-ui/src/Snackbar/index.js",
+      "name": "packages/material-ui/src/Snackbar/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Snackbar/Snackbar.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Snackbar/Snackbar.js",
+      "path": "packages/material-ui/src/Snackbar/Snackbar.js",
+      "name": "packages/material-ui/src/Snackbar/Snackbar.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/transitions.js",
+        "packages/material-ui/src/ClickAwayListener/index.js",
+        "packages/material-ui/src/utils/useEventCallback.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/Grow/index.js",
+        "packages/material-ui/src/SnackbarContent/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SnackbarContent/index.js",
+      "path": "packages/material-ui/src/SnackbarContent/index.js",
+      "name": "packages/material-ui/src/SnackbarContent/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/SnackbarContent/SnackbarContent.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SnackbarContent/SnackbarContent.js",
+      "path": "packages/material-ui/src/SnackbarContent/SnackbarContent.js",
+      "name": "packages/material-ui/src/SnackbarContent/SnackbarContent.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Paper/index.js",
+        "packages/material-ui/src/styles/colorManipulator.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SpeedDial/index.js",
+      "path": "packages/material-ui/src/SpeedDial/index.js",
+      "name": "packages/material-ui/src/SpeedDial/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/SpeedDial/SpeedDial.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SpeedDial/SpeedDial.js",
+      "path": "packages/material-ui/src/SpeedDial/SpeedDial.js",
+      "name": "packages/material-ui/src/SpeedDial/SpeedDial.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/transitions.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Zoom/index.js",
+        "packages/material-ui/src/Fab/index.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/utils/isMuiElement.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useControlled.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Zoom/index.js",
+      "path": "packages/material-ui/src/Zoom/index.js",
+      "name": "packages/material-ui/src/Zoom/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Zoom/Zoom.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Zoom/Zoom.js",
+      "path": "packages/material-ui/src/Zoom/Zoom.js",
+      "name": "packages/material-ui/src/Zoom/Zoom.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/transitions.js",
+        "packages/material-ui/src/styles/useTheme.js",
+        "packages/material-ui/src/transitions/utils.js",
+        "packages/material-ui/src/utils/useForkRef.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SpeedDialAction/index.js",
+      "path": "packages/material-ui/src/SpeedDialAction/index.js",
+      "name": "packages/material-ui/src/SpeedDialAction/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/SpeedDialAction/SpeedDialAction.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SpeedDialAction/SpeedDialAction.js",
+      "path": "packages/material-ui/src/SpeedDialAction/SpeedDialAction.js",
+      "name": "packages/material-ui/src/SpeedDialAction/SpeedDialAction.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/Fab/index.js",
+        "packages/material-ui/src/Tooltip/index.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Tooltip/index.js",
+      "path": "packages/material-ui/src/Tooltip/index.js",
+      "name": "packages/material-ui/src/Tooltip/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Tooltip/Tooltip.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Tooltip/Tooltip.js",
+      "path": "packages/material-ui/src/Tooltip/Tooltip.js",
+      "name": "packages/material-ui/src/Tooltip/Tooltip.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/Grow/index.js",
+        "packages/material-ui/src/Popper/index.js",
+        "packages/material-ui/src/utils/useEventCallback.js",
+        "packages/material-ui/src/utils/useForkRef.js",
+        "packages/material-ui/src/utils/useId.js",
+        "packages/material-ui/src/utils/useIsFocusVisible.js",
+        "packages/material-ui/src/utils/useControlled.js",
+        "packages/material-ui/src/styles/useTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SpeedDialIcon/index.js",
+      "path": "packages/material-ui/src/SpeedDialIcon/index.js",
+      "name": "packages/material-ui/src/SpeedDialIcon/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/SpeedDialIcon/SpeedDialIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SpeedDialIcon/SpeedDialIcon.js",
+      "path": "packages/material-ui/src/SpeedDialIcon/SpeedDialIcon.js",
+      "name": "packages/material-ui/src/SpeedDialIcon/SpeedDialIcon.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/internal/svg-icons/Add.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/Add.js",
+      "path": "packages/material-ui/src/internal/svg-icons/Add.js",
+      "name": "packages/material-ui/src/internal/svg-icons/Add.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Step/index.js",
+      "path": "packages/material-ui/src/Step/index.js",
+      "name": "packages/material-ui/src/Step/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Step/Step.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Step/Step.js",
+      "path": "packages/material-ui/src/Step/Step.js",
+      "name": "packages/material-ui/src/Step/Step.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Stepper/StepperContext.js",
+        "packages/material-ui/src/Step/StepContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Stepper/StepperContext.js",
+      "path": "packages/material-ui/src/Stepper/StepperContext.js",
+      "name": "packages/material-ui/src/Stepper/StepperContext.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/Step/StepContext.js",
+      "path": "packages/material-ui/src/Step/StepContext.js",
+      "name": "packages/material-ui/src/Step/StepContext.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/StepButton/index.js",
+      "path": "packages/material-ui/src/StepButton/index.js",
+      "name": "packages/material-ui/src/StepButton/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/StepButton/StepButton.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/StepButton/StepButton.js",
+      "path": "packages/material-ui/src/StepButton/StepButton.js",
+      "name": "packages/material-ui/src/StepButton/StepButton.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/StepLabel/index.js",
+        "packages/material-ui/src/utils/isMuiElement.js",
+        "packages/material-ui/src/Stepper/StepperContext.js",
+        "packages/material-ui/src/Step/StepContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/StepLabel/index.js",
+      "path": "packages/material-ui/src/StepLabel/index.js",
+      "name": "packages/material-ui/src/StepLabel/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/StepLabel/StepLabel.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/StepLabel/StepLabel.js",
+      "path": "packages/material-ui/src/StepLabel/StepLabel.js",
+      "name": "packages/material-ui/src/StepLabel/StepLabel.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Typography/index.js",
+        "packages/material-ui/src/StepIcon/index.js",
+        "packages/material-ui/src/Stepper/StepperContext.js",
+        "packages/material-ui/src/Step/StepContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/StepIcon/index.js",
+      "path": "packages/material-ui/src/StepIcon/index.js",
+      "name": "packages/material-ui/src/StepIcon/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/StepIcon/StepIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/StepIcon/StepIcon.js",
+      "path": "packages/material-ui/src/StepIcon/StepIcon.js",
+      "name": "packages/material-ui/src/StepIcon/StepIcon.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/internal/svg-icons/CheckCircle.js",
+        "packages/material-ui/src/internal/svg-icons/Warning.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/SvgIcon/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/CheckCircle.js",
+      "path": "packages/material-ui/src/internal/svg-icons/CheckCircle.js",
+      "name": "packages/material-ui/src/internal/svg-icons/CheckCircle.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/Warning.js",
+      "path": "packages/material-ui/src/internal/svg-icons/Warning.js",
+      "name": "packages/material-ui/src/internal/svg-icons/Warning.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/StepConnector/index.js",
+      "path": "packages/material-ui/src/StepConnector/index.js",
+      "name": "packages/material-ui/src/StepConnector/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/StepConnector/StepConnector.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/StepConnector/StepConnector.js",
+      "path": "packages/material-ui/src/StepConnector/StepConnector.js",
+      "name": "packages/material-ui/src/StepConnector/StepConnector.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Stepper/StepperContext.js",
+        "packages/material-ui/src/Step/StepContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/StepContent/index.js",
+      "path": "packages/material-ui/src/StepContent/index.js",
+      "name": "packages/material-ui/src/StepContent/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/StepContent/StepContent.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/StepContent/StepContent.js",
+      "path": "packages/material-ui/src/StepContent/StepContent.js",
+      "name": "packages/material-ui/src/StepContent/StepContent.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Collapse/index.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Stepper/StepperContext.js",
+        "packages/material-ui/src/Step/StepContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Stepper/index.js",
+      "path": "packages/material-ui/src/Stepper/index.js",
+      "name": "packages/material-ui/src/Stepper/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Stepper/Stepper.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Stepper/Stepper.js",
+      "path": "packages/material-ui/src/Stepper/Stepper.js",
+      "name": "packages/material-ui/src/Stepper/Stepper.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/StepConnector/index.js",
+        "packages/material-ui/src/Stepper/StepperContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SwipeableDrawer/index.js",
+      "path": "packages/material-ui/src/SwipeableDrawer/index.js",
+      "name": "packages/material-ui/src/SwipeableDrawer/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/SwipeableDrawer/SwipeableDrawer.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SwipeableDrawer/SwipeableDrawer.js",
+      "path": "packages/material-ui/src/SwipeableDrawer/SwipeableDrawer.js",
+      "name": "packages/material-ui/src/SwipeableDrawer/SwipeableDrawer.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Drawer/Drawer.js",
+        "packages/material-ui/src/utils/useEventCallback.js",
+        "packages/material-ui/src/utils/useEnhancedEffect.js",
+        "packages/material-ui/src/styles/transitions.js",
+        "packages/material-ui/src/styles/useTheme.js",
+        "packages/material-ui/src/transitions/utils.js",
+        "packages/material-ui/src/NoSsr/index.js",
+        "packages/material-ui/src/SwipeableDrawer/SwipeArea.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/SwipeableDrawer/SwipeArea.js",
+      "path": "packages/material-ui/src/SwipeableDrawer/SwipeArea.js",
+      "name": "packages/material-ui/src/SwipeableDrawer/SwipeArea.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/Drawer/Drawer.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Switch/index.js",
+      "path": "packages/material-ui/src/Switch/index.js",
+      "name": "packages/material-ui/src/Switch/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Switch/Switch.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Switch/Switch.js",
+      "path": "packages/material-ui/src/Switch/Switch.js",
+      "name": "packages/material-ui/src/Switch/Switch.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/internal/SwitchBase.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Tab/index.js",
+      "path": "packages/material-ui/src/Tab/index.js",
+      "name": "packages/material-ui/src/Tab/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Tab/Tab.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Tab/Tab.js",
+      "path": "packages/material-ui/src/Tab/Tab.js",
+      "name": "packages/material-ui/src/Tab/Tab.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/utils/unsupportedProp.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Table/index.js",
+      "path": "packages/material-ui/src/Table/index.js",
+      "name": "packages/material-ui/src/Table/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Table/Table.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Table/Table.js",
+      "path": "packages/material-ui/src/Table/Table.js",
+      "name": "packages/material-ui/src/Table/Table.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Table/TableContext.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Table/TableContext.js",
+      "path": "packages/material-ui/src/Table/TableContext.js",
+      "name": "packages/material-ui/src/Table/TableContext.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/TableBody/index.js",
+      "path": "packages/material-ui/src/TableBody/index.js",
+      "name": "packages/material-ui/src/TableBody/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/TableBody/TableBody.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableBody/TableBody.js",
+      "path": "packages/material-ui/src/TableBody/TableBody.js",
+      "name": "packages/material-ui/src/TableBody/TableBody.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Table/Tablelvl2Context.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Table/Tablelvl2Context.js",
+      "path": "packages/material-ui/src/Table/Tablelvl2Context.js",
+      "name": "packages/material-ui/src/Table/Tablelvl2Context.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/TableCell/index.js",
+      "path": "packages/material-ui/src/TableCell/index.js",
+      "name": "packages/material-ui/src/TableCell/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/TableCell/TableCell.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableCell/TableCell.js",
+      "path": "packages/material-ui/src/TableCell/TableCell.js",
+      "name": "packages/material-ui/src/TableCell/TableCell.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js",
+        "packages/material-ui/src/styles/colorManipulator.js",
+        "packages/material-ui/src/Table/TableContext.js",
+        "packages/material-ui/src/Table/Tablelvl2Context.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableContainer/index.js",
+      "path": "packages/material-ui/src/TableContainer/index.js",
+      "name": "packages/material-ui/src/TableContainer/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/TableContainer/TableContainer.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableContainer/TableContainer.js",
+      "path": "packages/material-ui/src/TableContainer/TableContainer.js",
+      "name": "packages/material-ui/src/TableContainer/TableContainer.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableFooter/index.js",
+      "path": "packages/material-ui/src/TableFooter/index.js",
+      "name": "packages/material-ui/src/TableFooter/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/TableFooter/TableFooter.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableFooter/TableFooter.js",
+      "path": "packages/material-ui/src/TableFooter/TableFooter.js",
+      "name": "packages/material-ui/src/TableFooter/TableFooter.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Table/Tablelvl2Context.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableHead/index.js",
+      "path": "packages/material-ui/src/TableHead/index.js",
+      "name": "packages/material-ui/src/TableHead/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/TableHead/TableHead.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableHead/TableHead.js",
+      "path": "packages/material-ui/src/TableHead/TableHead.js",
+      "name": "packages/material-ui/src/TableHead/TableHead.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Table/Tablelvl2Context.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TablePagination/index.js",
+      "path": "packages/material-ui/src/TablePagination/index.js",
+      "name": "packages/material-ui/src/TablePagination/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/TablePagination/TablePagination.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TablePagination/TablePagination.js",
+      "path": "packages/material-ui/src/TablePagination/TablePagination.js",
+      "name": "packages/material-ui/src/TablePagination/TablePagination.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/InputBase/index.js",
+        "packages/material-ui/src/MenuItem/index.js",
+        "packages/material-ui/src/Select/index.js",
+        "packages/material-ui/src/TableCell/index.js",
+        "packages/material-ui/src/Toolbar/index.js",
+        "packages/material-ui/src/Typography/index.js",
+        "packages/material-ui/src/TablePagination/TablePaginationActions.js",
+        "packages/material-ui/src/utils/useId.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Toolbar/index.js",
+      "path": "packages/material-ui/src/Toolbar/index.js",
+      "name": "packages/material-ui/src/Toolbar/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Toolbar/Toolbar.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Toolbar/Toolbar.js",
+      "path": "packages/material-ui/src/Toolbar/Toolbar.js",
+      "name": "packages/material-ui/src/Toolbar/Toolbar.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TablePagination/TablePaginationActions.js",
+      "path": "packages/material-ui/src/TablePagination/TablePaginationActions.js",
+      "name": "packages/material-ui/src/TablePagination/TablePaginationActions.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/internal/svg-icons/KeyboardArrowLeft.js",
+        "packages/material-ui/src/internal/svg-icons/KeyboardArrowRight.js",
+        "packages/material-ui/src/styles/useTheme.js",
+        "packages/material-ui/src/IconButton/index.js",
+        "packages/material-ui/src/internal/svg-icons/LastPage.js",
+        "packages/material-ui/src/internal/svg-icons/FirstPage.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/KeyboardArrowLeft.js",
+      "path": "packages/material-ui/src/internal/svg-icons/KeyboardArrowLeft.js",
+      "name": "packages/material-ui/src/internal/svg-icons/KeyboardArrowLeft.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/KeyboardArrowRight.js",
+      "path": "packages/material-ui/src/internal/svg-icons/KeyboardArrowRight.js",
+      "name": "packages/material-ui/src/internal/svg-icons/KeyboardArrowRight.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableRow/index.js",
+      "path": "packages/material-ui/src/TableRow/index.js",
+      "name": "packages/material-ui/src/TableRow/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/TableRow/TableRow.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableRow/TableRow.js",
+      "path": "packages/material-ui/src/TableRow/TableRow.js",
+      "name": "packages/material-ui/src/TableRow/TableRow.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Table/Tablelvl2Context.js",
+        "packages/material-ui/src/styles/colorManipulator.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableSortLabel/index.js",
+      "path": "packages/material-ui/src/TableSortLabel/index.js",
+      "name": "packages/material-ui/src/TableSortLabel/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/TableSortLabel/TableSortLabel.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TableSortLabel/TableSortLabel.js",
+      "path": "packages/material-ui/src/TableSortLabel/TableSortLabel.js",
+      "name": "packages/material-ui/src/TableSortLabel/TableSortLabel.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/internal/svg-icons/ArrowDownward.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/internal/svg-icons/ArrowDownward.js",
+      "path": "packages/material-ui/src/internal/svg-icons/ArrowDownward.js",
+      "name": "packages/material-ui/src/internal/svg-icons/ArrowDownward.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/createSvgIcon.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Tabs/index.js",
+      "path": "packages/material-ui/src/Tabs/index.js",
+      "name": "packages/material-ui/src/Tabs/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Tabs/Tabs.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Tabs/Tabs.js",
+      "path": "packages/material-ui/src/Tabs/Tabs.js",
+      "name": "packages/material-ui/src/Tabs/Tabs.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/debounce.js",
+        "packages/material-ui/src/utils/scrollLeft.js",
+        "packages/material-ui/src/internal/animate.js",
+        "packages/material-ui/src/Tabs/ScrollbarSize.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/Tabs/TabIndicator.js",
+        "packages/material-ui/src/TabScrollButton/index.js",
+        "packages/material-ui/src/utils/useEventCallback.js",
+        "packages/material-ui/src/styles/useTheme.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/utils/scrollLeft.js",
+      "path": "packages/material-ui/src/utils/scrollLeft.js",
+      "name": "packages/material-ui/src/utils/scrollLeft.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/internal/animate.js",
+      "path": "packages/material-ui/src/internal/animate.js",
+      "name": "packages/material-ui/src/internal/animate.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/Tabs/ScrollbarSize.js",
+      "path": "packages/material-ui/src/Tabs/ScrollbarSize.js",
+      "name": "packages/material-ui/src/Tabs/ScrollbarSize.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/utils/debounce.js",
+        "packages/material-ui/src/utils/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/Tabs/TabIndicator.js",
+      "path": "packages/material-ui/src/Tabs/TabIndicator.js",
+      "name": "packages/material-ui/src/Tabs/TabIndicator.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/utils/capitalize.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TabScrollButton/index.js",
+      "path": "packages/material-ui/src/TabScrollButton/index.js",
+      "name": "packages/material-ui/src/TabScrollButton/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/TabScrollButton/TabScrollButton.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TabScrollButton/TabScrollButton.js",
+      "path": "packages/material-ui/src/TabScrollButton/TabScrollButton.js",
+      "name": "packages/material-ui/src/TabScrollButton/TabScrollButton.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/internal/svg-icons/KeyboardArrowLeft.js",
+        "packages/material-ui/src/internal/svg-icons/KeyboardArrowRight.js",
+        "packages/material-ui/src/styles/withStyles.js",
+        "packages/material-ui/src/ButtonBase/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TextField/index.js",
+      "path": "packages/material-ui/src/TextField/index.js",
+      "name": "packages/material-ui/src/TextField/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/TextField/TextField.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/TextField/TextField.js",
+      "path": "packages/material-ui/src/TextField/TextField.js",
+      "name": "packages/material-ui/src/TextField/TextField.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/Input/index.js",
+        "packages/material-ui/src/FilledInput/index.js",
+        "packages/material-ui/src/OutlinedInput/index.js",
+        "packages/material-ui/src/InputLabel/index.js",
+        "packages/material-ui/src/FormControl/index.js",
+        "packages/material-ui/src/FormHelperText/index.js",
+        "packages/material-ui/src/Select/index.js",
+        "packages/material-ui/src/styles/withStyles.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ToggleButton/index.js",
+      "path": "packages/material-ui/src/ToggleButton/index.js",
+      "name": "packages/material-ui/src/ToggleButton/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ToggleButton/ToggleButton.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ToggleButton/ToggleButton.js",
+      "path": "packages/material-ui/src/ToggleButton/ToggleButton.js",
+      "name": "packages/material-ui/src/ToggleButton/ToggleButton.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/index.js",
+        "packages/material-ui/src/ButtonBase/index.js",
+        "packages/material-ui/src/utils/index.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ToggleButtonGroup/index.js",
+      "path": "packages/material-ui/src/ToggleButtonGroup/index.js",
+      "name": "packages/material-ui/src/ToggleButtonGroup/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/ToggleButtonGroup/ToggleButtonGroup.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ToggleButtonGroup/ToggleButtonGroup.js",
+      "path": "packages/material-ui/src/ToggleButtonGroup/ToggleButtonGroup.js",
+      "name": "packages/material-ui/src/ToggleButtonGroup/ToggleButtonGroup.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/styles/index.js",
+        "packages/material-ui/src/utils/index.js",
+        "packages/material-ui/src/ToggleButtonGroup/isValueSelected.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/ToggleButtonGroup/isValueSelected.js",
+      "path": "packages/material-ui/src/ToggleButtonGroup/isValueSelected.js",
+      "name": "packages/material-ui/src/ToggleButtonGroup/isValueSelected.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/material-ui/src/useScrollTrigger/index.js",
+      "path": "packages/material-ui/src/useScrollTrigger/index.js",
+      "name": "packages/material-ui/src/useScrollTrigger/index.js",
+      "labels": [
+        "pkg:@material-ui/core"
+      ],
+      "dependsOn": [
+        "packages/material-ui/src/useScrollTrigger/useScrollTrigger.js"
+      ]
+    },
+    {
+      "id": "packages/material-ui/src/useScrollTrigger/useScrollTrigger.js",
+      "path": "packages/material-ui/src/useScrollTrigger/useScrollTrigger.js",
+      "name": "packages/material-ui/src/useScrollTrigger/useScrollTrigger.js",
+      "labels": [
+        "pkg:@material-ui/core"
       ],
       "dependsOn": []
     },
@@ -82429,6 +86781,6 @@
       "name": "analyzer-js",
       "version": "0.1.0"
     },
-    "createdAt": "2020-12-04T14:28:32.539Z"
+    "createdAt": "2020-12-04T15:57:39.535Z"
   }
 }
