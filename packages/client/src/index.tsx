@@ -10,7 +10,8 @@ import reportWebVitals from "./reportWebVitals";
 // Maybe we need to do this as a custom build step though...
 const loadDatasets: () => Promise<Dataset[]> = !!process.env
   .REACT_APP_STANDALONE
-  ? async () => import("./exampleLoader").then((m) => m.loadDatasets())
+  ? async () =>
+      import("@3d-deps/gallery").then((m) => m.getConfig().loadDatasets())
   : async () =>
       fetch("/api/datasets").then(async (r) => {
         const datasets: { name: string; id: string }[] = await r.json();
