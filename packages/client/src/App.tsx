@@ -9,10 +9,11 @@ import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
 import assertNever from "assert-never";
 import React, { useMemo, useState } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Graph } from "./components/Graph";
 import { Helmet } from "./components/Helmet";
 import { Hud } from "./components/Hud";
+import { InitCanvas } from "./components/InitCanvas";
 import { CssBaseline } from "./CssBaseline";
 import { usePromise } from "./hooks/usePromise";
 import { ConfigContext } from "./services/config";
@@ -84,27 +85,6 @@ const AppReady = ({
   );
 };
 
-const InitCanvasContainer = styled("div")((p) => ({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  font: p.theme.typography.font,
-  height: "100vh",
-  width: "100vw",
-  backgroundColor: p.theme.typography.backgroundColor,
-  color: p.theme.typography.color,
-}));
-
-const InitCanvas: React.FC<{ title?: string }> = ({ title, children }) => {
-  const t = CONFIG.theme;
-  return (
-    <InitCanvasContainer>
-      <Helmet title={title} />
-      <div>{children}</div>
-    </InitCanvasContainer>
-  );
-};
-
 const AppLoading = ({ name }: { name: string }) => {
   return (
     <InitCanvas title={name}>
@@ -159,7 +139,14 @@ function App({ loadDatasets }: { loadDatasets: () => Promise<Dataset[]> }) {
         )}
         {datasets && datasets.length && (
           <DatasetProvider datasets={datasets}>
-            <AppInit />
+            <Route path="/browser" exact>
+              <InitCanvas>
+                <div> Browser!</div>
+              </InitCanvas>
+            </Route>
+            <Route path="/" exact>
+              <AppInit />
+            </Route>
           </DatasetProvider>
         )}
       </Router>
