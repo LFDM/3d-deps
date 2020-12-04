@@ -8,7 +8,8 @@
     "composite": true,
   },
   "references": [
-    { "path": "../core"}
+    { "path": "../core" },
+    { "path": "../analyzers/js" }
   ],
   "include": ["src", "src/gallery/*/*.json"]
 }
