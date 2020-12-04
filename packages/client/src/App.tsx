@@ -50,6 +50,7 @@ const useGraphData = (
 };
 
 const AppReady = ({
+  name,
   config: originalConfig,
   data,
 }: {
@@ -57,7 +58,6 @@ const AppReady = ({
   config: Config;
   data: DependencyAnalyzerResult;
 }) => {
-  const { current } = useDatasets();
   const [config, setConfig] = useState(originalConfig);
   const g = useGraphData(data.nodes, {
     includeByPath: config.graph.includeByPath,
@@ -73,7 +73,7 @@ const AppReady = ({
     >
       <ThemeProvider theme={config.theme}>
         <UiStateProvider data={g}>
-          <Helmet title={current.name} />
+          <Helmet title={name} />
           <Main as="main">
             <Hud />
             <Graph />
