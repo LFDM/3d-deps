@@ -53,7 +53,7 @@ const DatasetR = ({ d }: { d: Dataset }) => {
     <Link to={`/?dataset=${encodeURIComponent(d.name)}`}>
       <DatasetContainer>
         <Title>
-          {d.icon && <img src={d.icon} />}
+          {d.icon && <img src={d.icon} alt={`${d.name} (logo)`} />}
           <div>{d.name}</div>
         </Title>
         <p>
