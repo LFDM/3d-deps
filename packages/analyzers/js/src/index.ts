@@ -199,3 +199,5 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     return res;
   }
 }
+
+export { TRANSFORMERS };
