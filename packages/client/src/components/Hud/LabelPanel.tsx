@@ -39,7 +39,9 @@ export const LabelPanel = () => {
             ))}
           </div>
         ) : (
-          <SidebarPanelEmptyState>No labels defined.</SidebarPanelEmptyState>
+          <SidebarPanelEmptyState>
+            <em>No labels defined.</em>
+          </SidebarPanelEmptyState>
         )}
       </SidebarPanelBody>
       <SidebarPanelFooter>
