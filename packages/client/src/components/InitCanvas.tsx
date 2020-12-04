@@ -10,6 +10,12 @@ const InitCanvasContainer = styled("div")((p) => ({
   width: "100vw",
   backgroundColor: p.theme.typography.backgroundColor,
   color: p.theme.typography.color,
+
+  a: {
+    backgroundColor: p.theme.typography.backgroundColor,
+    color: p.theme.typography.color,
+    textDecoration: "none",
+  },
 }));
 
 export const InitCanvas: React.FC<{ title?: string }> = ({
