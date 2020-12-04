@@ -1,0 +1,18 @@
+{
+  "name": "@3d-deps/gallery",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "LFDM <1986gh@gmail.com> (https://github.com/LFDM)",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@3d-deps/core": "0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.2"
+  },
+  "scripts": {
+    "build": "tsc -b"
+  }
+}

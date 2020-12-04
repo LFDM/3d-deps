@@ -9,6 +9,7 @@
     "server": "yarn workspace @3d-deps/server",
     "core": "yarn workspace @3d-deps/core",
     "client": "yarn workspace @3d-deps/client",
+    "gallery": "yarn workspace @3d-deps/gallery",
     "e-simple": "yarn workspace @3d-deps/example-simple",
     "a-js": "yarn workspace @3d-deps/analyzer-js"
   },
