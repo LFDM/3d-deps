@@ -84,24 +84,24 @@ const AppReady = ({
   );
 };
 
+const InitCanvasContainer = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  font: p.theme.typography.font,
+  height: "100vh",
+  width: "100vw",
+  backgroundColor: p.theme.typography.backgroundColor,
+  color: p.theme.typography.color,
+}));
+
 const InitCanvas: React.FC<{ title?: string }> = ({ title, children }) => {
   const t = CONFIG.theme;
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        font: t.typography.font,
-        height: "100vh",
-        width: "100vw",
-        backgroundColor: t.typography.backgroundColor,
-        color: t.typography.color,
-      }}
-    >
+    <InitCanvasContainer>
       <Helmet title={title} />
       <div>{children}</div>
-    </div>
+    </InitCanvasContainer>
   );
 };
 
@@ -145,22 +145,25 @@ const AppInit = () => {
 function App({ loadDatasets }: { loadDatasets: () => Promise<Dataset[]> }) {
   // leave router outside so that we can switch datasets through urls later
   const [datasets, loading, error] = usePromise(loadDatasets);
-  if (loading) {
-    return <InitCanvas>Loading datasets...</InitCanvas>;
-  }
-  if (error || !datasets) {
-    console.log(error);
-    return <InitCanvas>Failed to load datasets.</InitCanvas>;
-  }
-  if (!datasets.length) {
-    return <InitCanvas>No datasets provided.</InitCanvas>;
+  if (error) {
+    console.error(error);
   }
   return (
-    <Router>
-      <DatasetProvider datasets={datasets}>
-        <AppInit />
-      </DatasetProvider>
-    </Router>
+    <ThemeProvider theme={CONFIG.theme}>
+      <Router>
+        {loading && <InitCanvas>Loading datasets...</InitCanvas>}
+        {error ||
+          (!datasets && <InitCanvas>Failed to load datasets.</InitCanvas>)}
+        {datasets && !datasets.length && (
+          <InitCanvas>No datasets provided.</InitCanvas>
+        )}
+        {datasets && datasets.length && (
+          <DatasetProvider datasets={datasets}>
+            <AppInit />
+          </DatasetProvider>
+        )}
+      </Router>
+    </ThemeProvider>
   );
 }
 
