@@ -1,8 +1,7 @@
-import { serializeConfig } from "@3d-deps/core";
+import { Dataset, RunConfig, serializeConfig } from "@3d-deps/core";
 import express from "express";
 import open from "open";
 import * as path from "path";
-import { Dataset, RunConfig } from "./types/RunConfig";
 
 export type Server = {
   start: (opts: { port?: number; openBrowser?: boolean }) => Promise<void>;

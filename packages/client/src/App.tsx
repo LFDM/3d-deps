@@ -1,6 +1,7 @@
 import {
   CONFIG,
   Config,
+  Dataset,
   DependencyAnalyzerResult,
   DependencyNode,
 } from "@3d-deps/core";
@@ -15,7 +16,7 @@ import { Hud } from "./components/Hud";
 import { CssBaseline } from "./CssBaseline";
 import { usePromise } from "./hooks/usePromise";
 import { ConfigContext } from "./services/config";
-import { Dataset, DatasetProvider, useDatasets } from "./services/dataset";
+import { DatasetProvider, useDatasets } from "./services/dataset";
 import { depsToGraphData } from "./services/graph";
 import { UiStateProvider } from "./services/uiState";
 import { GraphData } from "./types/GraphData";

@@ -1,6 +1,5 @@
-import { CONFIG } from "@3d-deps/core";
+import { CONFIG, Dataset } from "@3d-deps/core";
 import { FILES, JsonFileAnalyzer } from "./analyzers/jsonFile";
-import { Dataset } from "./services/dataset";
 
 const toDataset = (key: string): Dataset => ({
   name: key,

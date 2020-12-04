@@ -1,10 +1,9 @@
-import { deserializeConfig } from "@3d-deps/core";
+import { Dataset, deserializeConfig } from "@3d-deps/core";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { Dataset } from "./services/dataset";
 
 // TODO use another env var - one that gets mangled by webpack, so
 // that the development code path is removed entirely

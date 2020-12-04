@@ -1,15 +1,7 @@
-import { Config, DependencyAnalyzerResult } from "@3d-deps/core";
+import { Config, Dataset, DependencyAnalyzerResult } from "@3d-deps/core";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { usePromise } from "../hooks/usePromise";
 import { useQueryParam } from "../hooks/useQueryParam";
-
-export type Dataset = {
-  name: string;
-  fetch: () => Promise<{
-    config: Config;
-    data: DependencyAnalyzerResult;
-  }>;
-};
 
 type LoadingState = {
   state: "LOADING";

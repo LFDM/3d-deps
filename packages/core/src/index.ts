@@ -25,6 +25,7 @@ import {
   SerializedConfig,
   Theme,
 } from "./config";
+import { Dataset, RunConfig } from "./dataset";
 
 export {
   MAX_GRAPH_HIGHLIGHT_DEPTH,
@@ -50,4 +51,6 @@ export {
   DependencyAnalyzerMeta,
   DependencyAnalyzerResult,
   IDependencyAnalyzer,
+  Dataset,
+  RunConfig,
 };
