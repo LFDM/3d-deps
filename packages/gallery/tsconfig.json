@@ -5,10 +5,11 @@
     "module": "commonjs",
     "rootDir": "./src",
     "outDir": "./dist",
-    "composite": true
+    "composite": true,
   },
   "references": [
     { "path": "../core"}
-  ]
+  ],
+  "include": ["src", "src/gallery/*/*.json"]
 }
 
