@@ -8,6 +8,6 @@ export const NEXT_JS: Dataset = {
         excludeByPath: /((^|\/)node_modules\/)/,
       },
     }),
-    data: { nodes: [] },
+    data: (await import("./data.json")).default,
   }),
 };
