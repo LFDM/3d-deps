@@ -1,4 +1,4 @@
-import { CONFIG, Config, MAX_GRAPH_HIGHLIGHT_DEPTH } from "@3d-deps/config";
+import { CONFIG, Config, MAX_GRAPH_HIGHLIGHT_DEPTH } from "@3d-deps/core";
 import React, { useContext } from "react";
 
 export const ConfigContext = React.createContext<{

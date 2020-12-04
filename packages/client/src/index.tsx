@@ -1,4 +1,4 @@
-import { deserializeConfig } from "@3d-deps/config";
+import { deserializeConfig } from "@3d-deps/core";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";

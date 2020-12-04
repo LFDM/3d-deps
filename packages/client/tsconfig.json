@@ -22,7 +22,6 @@
     "src"
   ],
   "references": [
-    { "path": "../config" },
-    { "path": "../shared"}
+    { "path": "../core"}
   ]
 }

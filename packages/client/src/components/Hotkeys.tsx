@@ -1,4 +1,4 @@
-import { Hotkey, HotkeyConfig } from "@3d-deps/config";
+import { Hotkey, HotkeyConfig } from "@3d-deps/core";
 import { useMemo } from "react";
 import { ExtendedKeyMapOptions, GlobalHotKeys } from "react-hotkeys";
 import {

@@ -12,7 +12,7 @@
   "bin": "./dist/example.js",
   "dependencies": {
     "@3d-deps/analyzer-js": "0.1.0",
-    "@3d-deps/config": "0.1.0",
+    "@3d-deps/core": "0.1.0",
     "@3d-deps/server": "0.1.0",
     "typescript": "^4.1.2"
   }

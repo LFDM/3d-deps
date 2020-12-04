@@ -2,7 +2,7 @@ import {
   DependencyAnalyzerResult,
   DependencyNode,
   IDependencyAnalyzer,
-} from "@3d-deps/shared";
+} from "@3d-deps/core";
 import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";

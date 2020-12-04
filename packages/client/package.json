@@ -10,8 +10,7 @@
   "private": false,
   "main": "./src/index.tsx",
   "dependencies": {
-    "@3d-deps/config": "0.1.0",
-    "@3d-deps/shared": "0.1.0",
+    "@3d-deps/core": "0.1.0",
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",

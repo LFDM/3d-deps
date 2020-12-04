@@ -1,4 +1,4 @@
-import { GraphConfig, MAX_GRAPH_HIGHLIGHT_DEPTH, Theme } from "@3d-deps/config";
+import { GraphConfig, MAX_GRAPH_HIGHLIGHT_DEPTH, Theme } from "@3d-deps/core";
 import { useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import copy from "copy-to-clipboard";

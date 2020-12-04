@@ -1,4 +1,4 @@
-import { MAX_GRAPH_HIGHLIGHT_DEPTH } from "@3d-deps/config";
+import { MAX_GRAPH_HIGHLIGHT_DEPTH } from "@3d-deps/core";
 import { groupBy, keyBy, mapValues, sortBy } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useEffect, useMemo, useRef } from "react";

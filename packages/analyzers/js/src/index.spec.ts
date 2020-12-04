@@ -1,4 +1,4 @@
-import { DependencyNode } from "@3d-deps/shared";
+import { DependencyNode } from "@3d-deps/core";
 import * as path from "path";
 import { JsAnalyzer } from ".";
 import { TRANSFORMERS } from "./transformers";

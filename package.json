@@ -7,9 +7,8 @@
   ],
   "scripts": {
     "server": "yarn workspace @3d-deps/server",
+    "core": "yarn workspace @3d-deps/core",
     "client": "yarn workspace @3d-deps/client",
-    "cfg": "yarn workspace @3d-deps/config",
-    "shared": "yarn workspace @3d-deps/shared",
     "e-simple": "yarn workspace @3d-deps/example-simple",
     "a-js": "yarn workspace @3d-deps/analyzer-js"
   },

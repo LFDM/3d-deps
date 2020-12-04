@@ -1,5 +1,9 @@
-import { CONFIG, Config } from "@3d-deps/config";
-import { DependencyAnalyzerResult, DependencyNode } from "@3d-deps/shared";
+import {
+  CONFIG,
+  Config,
+  DependencyAnalyzerResult,
+  DependencyNode,
+} from "@3d-deps/core";
 import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
 import assertNever from "assert-never";

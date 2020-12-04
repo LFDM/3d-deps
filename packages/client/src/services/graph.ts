@@ -1,4 +1,4 @@
-import { DependencyNode } from "@3d-deps/shared";
+import { DependencyNode } from "@3d-deps/core";
 import { keyBy } from "lodash";
 import { TreeNode } from "../types/GraphData";
 

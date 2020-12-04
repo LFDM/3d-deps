@@ -1,5 +1,5 @@
 import { JsAnalyzer } from "@3d-deps/analyzer-js";
-import { CONFIG } from "@3d-deps/config";
+import { CONFIG } from "@3d-deps/core";
 import { createServer } from "@3d-deps/server";
 import * as path from "path";
 

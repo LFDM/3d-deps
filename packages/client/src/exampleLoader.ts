@@ -1,4 +1,4 @@
-import { CONFIG } from "@3d-deps/config";
+import { CONFIG } from "@3d-deps/core";
 import { FILES, JsonFileAnalyzer } from "./analyzers/jsonFile";
 import { Dataset } from "./services/dataset";
 

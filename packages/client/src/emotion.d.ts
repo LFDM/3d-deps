@@ -1,4 +1,4 @@
-import { Theme as T } from "@3d-deps/config";
+import { Theme as T } from "@3d-deps/core";
 import "@emotion/react";
 
 declare module "@emotion/react" {

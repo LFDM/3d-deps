@@ -1,5 +1,4 @@
-import { Config } from "@3d-deps/config";
-import { DependencyAnalyzerResult } from "@3d-deps/shared";
+import { Config, DependencyAnalyzerResult } from "@3d-deps/core";
 
 export type Dataset = {
   name: string;

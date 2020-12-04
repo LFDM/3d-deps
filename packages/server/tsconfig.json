@@ -8,7 +8,6 @@
     "composite": true
   },
   "references": [
-    { "path": "../config" },
-    { "path": "../shared"}
+    { "path": "../core" },
   ]
 }
