@@ -294,7 +294,7 @@ export const Graph = () => {
           ? -Infinity
           : d.dependedBy.countWithoutExcluded +
             d.dependsOn.countWithoutExcluded)
-    ).slice(0, Math.max(15, Math.round(data.list.length / 100)));
+    ).slice(0, Math.max(15, Math.round(data.list.length / 1000)));
 
     topNodes.forEach((t) =>
       addNodeStyle(ss, t.id, {
