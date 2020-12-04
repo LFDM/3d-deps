@@ -1,0 +1,4187 @@
+{
+  "nodes": [
+    {
+      "id": "src/Three.js",
+      "path": "src/Three.js",
+      "name": "src/Three.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/renderers/WebGLMultisampleRenderTarget.js",
+        "src/renderers/WebGLCubeRenderTarget.js",
+        "src/renderers/WebGLRenderTarget.js",
+        "src/renderers/WebGLRenderer.js",
+        "src/renderers/WebGL1Renderer.js",
+        "src/renderers/shaders/ShaderLib.js",
+        "src/renderers/shaders/UniformsLib.js",
+        "src/renderers/shaders/UniformsUtils.js",
+        "src/renderers/shaders/ShaderChunk.js",
+        "src/scenes/FogExp2.js",
+        "src/scenes/Fog.js",
+        "src/scenes/Scene.js",
+        "src/objects/Sprite.js",
+        "src/objects/LOD.js",
+        "src/objects/SkinnedMesh.js",
+        "src/objects/Skeleton.js",
+        "src/objects/Bone.js",
+        "src/objects/Mesh.js",
+        "src/objects/InstancedMesh.js",
+        "src/objects/LineSegments.js",
+        "src/objects/LineLoop.js",
+        "src/objects/Line.js",
+        "src/objects/Points.js",
+        "src/objects/Group.js",
+        "src/textures/VideoTexture.js",
+        "src/textures/DataTexture.js",
+        "src/textures/DataTexture2DArray.js",
+        "src/textures/DataTexture3D.js",
+        "src/textures/CompressedTexture.js",
+        "src/textures/CubeTexture.js",
+        "src/textures/CanvasTexture.js",
+        "src/textures/DepthTexture.js",
+        "src/textures/Texture.js",
+        "src/geometries/Geometries.js",
+        "src/materials/Materials.js",
+        "src/loaders/AnimationLoader.js",
+        "src/loaders/CompressedTextureLoader.js",
+        "src/loaders/CubeTextureLoader.js",
+        "src/loaders/DataTextureLoader.js",
+        "src/loaders/TextureLoader.js",
+        "src/loaders/ObjectLoader.js",
+        "src/loaders/MaterialLoader.js",
+        "src/loaders/BufferGeometryLoader.js",
+        "src/loaders/LoadingManager.js",
+        "src/loaders/ImageLoader.js",
+        "src/loaders/ImageBitmapLoader.js",
+        "src/loaders/FontLoader.js",
+        "src/loaders/FileLoader.js",
+        "src/loaders/Loader.js",
+        "src/loaders/LoaderUtils.js",
+        "src/loaders/Cache.js",
+        "src/loaders/AudioLoader.js",
+        "src/lights/SpotLight.js",
+        "src/lights/PointLight.js",
+        "src/lights/RectAreaLight.js",
+        "src/lights/HemisphereLight.js",
+        "src/lights/HemisphereLightProbe.js",
+        "src/lights/DirectionalLight.js",
+        "src/lights/AmbientLight.js",
+        "src/lights/AmbientLightProbe.js",
+        "src/lights/Light.js",
+        "src/lights/LightProbe.js",
+        "src/cameras/StereoCamera.js",
+        "src/cameras/PerspectiveCamera.js",
+        "src/cameras/OrthographicCamera.js",
+        "src/cameras/CubeCamera.js",
+        "src/cameras/ArrayCamera.js",
+        "src/cameras/Camera.js",
+        "src/audio/AudioListener.js",
+        "src/audio/PositionalAudio.js",
+        "src/audio/AudioContext.js",
+        "src/audio/AudioAnalyser.js",
+        "src/audio/Audio.js",
+        "src/animation/tracks/VectorKeyframeTrack.js",
+        "src/animation/tracks/StringKeyframeTrack.js",
+        "src/animation/tracks/QuaternionKeyframeTrack.js",
+        "src/animation/tracks/NumberKeyframeTrack.js",
+        "src/animation/tracks/ColorKeyframeTrack.js",
+        "src/animation/tracks/BooleanKeyframeTrack.js",
+        "src/animation/PropertyMixer.js",
+        "src/animation/PropertyBinding.js",
+        "src/animation/KeyframeTrack.js",
+        "src/animation/AnimationUtils.js",
+        "src/animation/AnimationObjectGroup.js",
+        "src/animation/AnimationMixer.js",
+        "src/animation/AnimationClip.js",
+        "src/core/Uniform.js",
+        "src/core/InstancedBufferGeometry.js",
+        "src/core/BufferGeometry.js",
+        "src/core/Geometry.js",
+        "src/core/InterleavedBufferAttribute.js",
+        "src/core/InstancedInterleavedBuffer.js",
+        "src/core/InterleavedBuffer.js",
+        "src/core/InstancedBufferAttribute.js",
+        "src/core/GLBufferAttribute.js",
+        "src/core/BufferAttribute.js",
+        "src/core/Face3.js",
+        "src/core/Object3D.js",
+        "src/core/Raycaster.js",
+        "src/core/Layers.js",
+        "src/core/EventDispatcher.js",
+        "src/core/Clock.js",
+        "src/math/interpolants/QuaternionLinearInterpolant.js",
+        "src/math/interpolants/LinearInterpolant.js",
+        "src/math/interpolants/DiscreteInterpolant.js",
+        "src/math/interpolants/CubicInterpolant.js",
+        "src/math/Interpolant.js",
+        "src/math/Triangle.js",
+        "src/math/MathUtils.js",
+        "src/math/Spherical.js",
+        "src/math/Cylindrical.js",
+        "src/math/Plane.js",
+        "src/math/Frustum.js",
+        "src/math/Sphere.js",
+        "src/math/Ray.js",
+        "src/math/Matrix4.js",
+        "src/math/Matrix3.js",
+        "src/math/Box3.js",
+        "src/math/Box2.js",
+        "src/math/Line3.js",
+        "src/math/Euler.js",
+        "src/math/Vector4.js",
+        "src/math/Vector3.js",
+        "src/math/Vector2.js",
+        "src/math/Quaternion.js",
+        "src/math/Color.js",
+        "src/math/SphericalHarmonics3.js",
+        "src/extras/objects/ImmediateRenderObject.js",
+        "src/helpers/SpotLightHelper.js",
+        "src/helpers/SkeletonHelper.js",
+        "src/helpers/PointLightHelper.js",
+        "src/helpers/HemisphereLightHelper.js",
+        "src/helpers/GridHelper.js",
+        "src/helpers/PolarGridHelper.js",
+        "src/helpers/DirectionalLightHelper.js",
+        "src/helpers/CameraHelper.js",
+        "src/helpers/BoxHelper.js",
+        "src/helpers/Box3Helper.js",
+        "src/helpers/PlaneHelper.js",
+        "src/helpers/ArrowHelper.js",
+        "src/helpers/AxesHelper.js",
+        "src/extras/curves/Curves.js",
+        "src/extras/core/Shape.js",
+        "src/extras/core/Path.js",
+        "src/extras/core/ShapePath.js",
+        "src/extras/core/Font.js",
+        "src/extras/core/CurvePath.js",
+        "src/extras/core/Curve.js",
+        "src/extras/DataUtils.js",
+        "src/extras/ImageUtils.js",
+        "src/extras/ShapeUtils.js",
+        "src/extras/PMREMGenerator.js",
+        "src/renderers/webgl/WebGLUtils.js",
+        "src/Three.Legacy.js"
+      ]
+    },
+    {
+      "id": "src/constants.js",
+      "path": "src/constants.js",
+      "name": "src/constants.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/WebGLMultisampleRenderTarget.js",
+      "path": "src/renderers/WebGLMultisampleRenderTarget.js",
+      "name": "src/renderers/WebGLMultisampleRenderTarget.js",
+      "labels": [],
+      "dependsOn": [
+        "src/renderers/WebGLRenderTarget.js"
+      ]
+    },
+    {
+      "id": "src/renderers/WebGLRenderTarget.js",
+      "path": "src/renderers/WebGLRenderTarget.js",
+      "name": "src/renderers/WebGLRenderTarget.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/EventDispatcher.js",
+        "src/textures/Texture.js",
+        "src/constants.js",
+        "src/math/Vector4.js"
+      ]
+    },
+    {
+      "id": "src/core/EventDispatcher.js",
+      "path": "src/core/EventDispatcher.js",
+      "name": "src/core/EventDispatcher.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/textures/Texture.js",
+      "path": "src/textures/Texture.js",
+      "name": "src/textures/Texture.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/EventDispatcher.js",
+        "src/constants.js",
+        "src/math/MathUtils.js",
+        "src/math/Vector2.js",
+        "src/math/Matrix3.js",
+        "src/extras/ImageUtils.js"
+      ]
+    },
+    {
+      "id": "src/math/MathUtils.js",
+      "path": "src/math/MathUtils.js",
+      "name": "src/math/MathUtils.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/math/Vector2.js",
+      "path": "src/math/Vector2.js",
+      "name": "src/math/Vector2.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/math/Matrix3.js",
+      "path": "src/math/Matrix3.js",
+      "name": "src/math/Matrix3.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/extras/ImageUtils.js",
+      "path": "src/extras/ImageUtils.js",
+      "name": "src/extras/ImageUtils.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/math/Vector4.js",
+      "path": "src/math/Vector4.js",
+      "name": "src/math/Vector4.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/WebGLCubeRenderTarget.js",
+      "path": "src/renderers/WebGLCubeRenderTarget.js",
+      "name": "src/renderers/WebGLCubeRenderTarget.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/objects/Mesh.js",
+        "src/geometries/BoxBufferGeometry.js",
+        "src/materials/ShaderMaterial.js",
+        "src/renderers/shaders/UniformsUtils.js",
+        "src/renderers/WebGLRenderTarget.js",
+        "src/cameras/CubeCamera.js",
+        "src/textures/CubeTexture.js"
+      ]
+    },
+    {
+      "id": "src/objects/Mesh.js",
+      "path": "src/objects/Mesh.js",
+      "name": "src/objects/Mesh.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/math/Vector2.js",
+        "src/math/Sphere.js",
+        "src/math/Ray.js",
+        "src/math/Matrix4.js",
+        "src/core/Object3D.js",
+        "src/math/Triangle.js",
+        "src/core/Face3.js",
+        "src/constants.js",
+        "src/materials/MeshBasicMaterial.js",
+        "src/core/BufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/math/Vector3.js",
+      "path": "src/math/Vector3.js",
+      "name": "src/math/Vector3.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/MathUtils.js",
+        "src/math/Quaternion.js"
+      ]
+    },
+    {
+      "id": "src/math/Quaternion.js",
+      "path": "src/math/Quaternion.js",
+      "name": "src/math/Quaternion.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/math/Sphere.js",
+      "path": "src/math/Sphere.js",
+      "name": "src/math/Sphere.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Box3.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/math/Box3.js",
+      "path": "src/math/Box3.js",
+      "name": "src/math/Box3.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/math/Ray.js",
+      "path": "src/math/Ray.js",
+      "name": "src/math/Ray.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/math/Matrix4.js",
+      "path": "src/math/Matrix4.js",
+      "name": "src/math/Matrix4.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/core/Object3D.js",
+      "path": "src/core/Object3D.js",
+      "name": "src/core/Object3D.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Quaternion.js",
+        "src/math/Vector3.js",
+        "src/math/Matrix4.js",
+        "src/core/EventDispatcher.js",
+        "src/math/Euler.js",
+        "src/core/Layers.js",
+        "src/math/Matrix3.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/math/Euler.js",
+      "path": "src/math/Euler.js",
+      "name": "src/math/Euler.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Quaternion.js",
+        "src/math/Vector3.js",
+        "src/math/Matrix4.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/core/Layers.js",
+      "path": "src/core/Layers.js",
+      "name": "src/core/Layers.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/math/Triangle.js",
+      "path": "src/math/Triangle.js",
+      "name": "src/math/Triangle.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/math/Plane.js"
+      ]
+    },
+    {
+      "id": "src/math/Plane.js",
+      "path": "src/math/Plane.js",
+      "name": "src/math/Plane.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Matrix3.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/core/Face3.js",
+      "path": "src/core/Face3.js",
+      "name": "src/core/Face3.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Color.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/math/Color.js",
+      "path": "src/math/Color.js",
+      "name": "src/math/Color.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/materials/MeshBasicMaterial.js",
+      "path": "src/materials/MeshBasicMaterial.js",
+      "name": "src/materials/MeshBasicMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/Material.js",
+        "src/constants.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/materials/Material.js",
+      "path": "src/materials/Material.js",
+      "name": "src/materials/Material.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/EventDispatcher.js",
+        "src/constants.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/core/BufferGeometry.js",
+      "path": "src/core/BufferGeometry.js",
+      "name": "src/core/BufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/math/Box3.js",
+        "src/core/EventDispatcher.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Sphere.js",
+        "src/core/DirectGeometry.js",
+        "src/core/Object3D.js",
+        "src/math/Matrix4.js",
+        "src/math/Matrix3.js",
+        "src/math/MathUtils.js",
+        "src/utils.js"
+      ]
+    },
+    {
+      "id": "src/core/BufferAttribute.js",
+      "path": "src/core/BufferAttribute.js",
+      "name": "src/core/BufferAttribute.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector4.js",
+        "src/math/Vector3.js",
+        "src/math/Vector2.js",
+        "src/math/Color.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/core/DirectGeometry.js",
+      "path": "src/core/DirectGeometry.js",
+      "name": "src/core/DirectGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector2.js"
+      ]
+    },
+    {
+      "id": "src/utils.js",
+      "path": "src/utils.js",
+      "name": "src/utils.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/geometries/BoxBufferGeometry.js",
+      "path": "src/geometries/BoxBufferGeometry.js",
+      "name": "src/geometries/BoxBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/materials/ShaderMaterial.js",
+      "path": "src/materials/ShaderMaterial.js",
+      "name": "src/materials/ShaderMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/Material.js",
+        "src/renderers/shaders/UniformsUtils.js",
+        "src/renderers/shaders/ShaderChunk/default_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/default_fragment.glsl.js"
+      ]
+    },
+    {
+      "id": "src/renderers/shaders/UniformsUtils.js",
+      "path": "src/renderers/shaders/UniformsUtils.js",
+      "name": "src/renderers/shaders/UniformsUtils.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/default_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/default_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/default_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/default_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/default_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/default_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/cameras/CubeCamera.js",
+      "path": "src/cameras/CubeCamera.js",
+      "name": "src/cameras/CubeCamera.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Object3D.js",
+        "src/math/Vector3.js",
+        "src/cameras/PerspectiveCamera.js"
+      ]
+    },
+    {
+      "id": "src/cameras/PerspectiveCamera.js",
+      "path": "src/cameras/PerspectiveCamera.js",
+      "name": "src/cameras/PerspectiveCamera.js",
+      "labels": [],
+      "dependsOn": [
+        "src/cameras/Camera.js",
+        "src/core/Object3D.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/cameras/Camera.js",
+      "path": "src/cameras/Camera.js",
+      "name": "src/cameras/Camera.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Matrix4.js",
+        "src/core/Object3D.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/textures/CubeTexture.js",
+      "path": "src/textures/CubeTexture.js",
+      "name": "src/textures/CubeTexture.js",
+      "labels": [],
+      "dependsOn": [
+        "src/textures/Texture.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/renderers/WebGLRenderer.js",
+      "path": "src/renderers/WebGLRenderer.js",
+      "name": "src/renderers/WebGLRenderer.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/math/MathUtils.js",
+        "src/textures/DataTexture.js",
+        "src/math/Frustum.js",
+        "src/math/Matrix4.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js",
+        "src/math/Vector4.js",
+        "src/renderers/webgl/WebGLAnimation.js",
+        "src/renderers/webgl/WebGLAttributes.js",
+        "src/renderers/webgl/WebGLBackground.js",
+        "src/renderers/webgl/WebGLBindingStates.js",
+        "src/renderers/webgl/WebGLBufferRenderer.js",
+        "src/renderers/webgl/WebGLCapabilities.js",
+        "src/renderers/webgl/WebGLClipping.js",
+        "src/renderers/webgl/WebGLCubeMaps.js",
+        "src/renderers/webgl/WebGLExtensions.js",
+        "src/renderers/webgl/WebGLGeometries.js",
+        "src/renderers/webgl/WebGLIndexedBufferRenderer.js",
+        "src/renderers/webgl/WebGLInfo.js",
+        "src/renderers/webgl/WebGLMorphtargets.js",
+        "src/renderers/webgl/WebGLObjects.js",
+        "src/renderers/webgl/WebGLPrograms.js",
+        "src/renderers/webgl/WebGLProperties.js",
+        "src/renderers/webgl/WebGLRenderLists.js",
+        "src/renderers/webgl/WebGLRenderStates.js",
+        "src/renderers/webgl/WebGLShadowMap.js",
+        "src/renderers/webgl/WebGLState.js",
+        "src/renderers/webgl/WebGLTextures.js",
+        "src/renderers/webgl/WebGLUniforms.js",
+        "src/renderers/webgl/WebGLUtils.js",
+        "src/renderers/webxr/WebXRManager.js",
+        "src/renderers/webgl/WebGLMaterials.js"
+      ]
+    },
+    {
+      "id": "src/textures/DataTexture.js",
+      "path": "src/textures/DataTexture.js",
+      "name": "src/textures/DataTexture.js",
+      "labels": [],
+      "dependsOn": [
+        "src/textures/Texture.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/math/Frustum.js",
+      "path": "src/math/Frustum.js",
+      "name": "src/math/Frustum.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/math/Sphere.js",
+        "src/math/Plane.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLAnimation.js",
+      "path": "src/renderers/webgl/WebGLAnimation.js",
+      "name": "src/renderers/webgl/WebGLAnimation.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLAttributes.js",
+      "path": "src/renderers/webgl/WebGLAttributes.js",
+      "name": "src/renderers/webgl/WebGLAttributes.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLBackground.js",
+      "path": "src/renderers/webgl/WebGLBackground.js",
+      "name": "src/renderers/webgl/WebGLBackground.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/geometries/BoxBufferGeometry.js",
+        "src/geometries/PlaneBufferGeometry.js",
+        "src/materials/ShaderMaterial.js",
+        "src/math/Color.js",
+        "src/objects/Mesh.js",
+        "src/renderers/shaders/ShaderLib.js",
+        "src/renderers/shaders/UniformsUtils.js"
+      ]
+    },
+    {
+      "id": "src/geometries/PlaneBufferGeometry.js",
+      "path": "src/geometries/PlaneBufferGeometry.js",
+      "name": "src/geometries/PlaneBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js"
+      ]
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib.js",
+      "path": "src/renderers/shaders/ShaderLib.js",
+      "name": "src/renderers/shaders/ShaderLib.js",
+      "labels": [],
+      "dependsOn": [
+        "src/renderers/shaders/ShaderChunk.js",
+        "src/renderers/shaders/UniformsUtils.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js",
+        "src/renderers/shaders/UniformsLib.js",
+        "src/math/Color.js",
+        "src/math/Matrix3.js"
+      ]
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk.js",
+      "path": "src/renderers/shaders/ShaderChunk.js",
+      "name": "src/renderers/shaders/ShaderChunk.js",
+      "labels": [],
+      "dependsOn": [
+        "src/renderers/shaders/ShaderChunk/alphamap_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/alphamap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/alphatest_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/aomap_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/aomap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/begin_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/beginnormal_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/bsdfs.glsl.js",
+        "src/renderers/shaders/ShaderChunk/bumpmap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/clipping_planes_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/clipping_planes_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/clipping_planes_pars_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/clipping_planes_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/color_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/color_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/color_pars_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/color_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/common.glsl.js",
+        "src/renderers/shaders/ShaderChunk/cube_uv_reflection_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/defaultnormal_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/displacementmap_pars_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/displacementmap_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/emissivemap_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/emissivemap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/encodings_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/encodings_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/envmap_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/envmap_common_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/envmap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/envmap_pars_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/envmap_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/fog_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/fog_pars_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/fog_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/fog_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/gradientmap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lightmap_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lightmap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lights_lambert_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lights_pars_begin.glsl.js",
+        "src/renderers/shaders/ShaderChunk/envmap_physical_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lights_toon_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lights_toon_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lights_phong_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lights_phong_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lights_physical_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lights_physical_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lights_fragment_begin.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lights_fragment_maps.glsl.js",
+        "src/renderers/shaders/ShaderChunk/lights_fragment_end.glsl.js",
+        "src/renderers/shaders/ShaderChunk/logdepthbuf_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/logdepthbuf_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/logdepthbuf_pars_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/logdepthbuf_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/map_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/map_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/map_particle_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/map_particle_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/metalnessmap_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/metalnessmap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/morphnormal_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/morphtarget_pars_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/morphtarget_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/normal_fragment_begin.glsl.js",
+        "src/renderers/shaders/ShaderChunk/normal_fragment_maps.glsl.js",
+        "src/renderers/shaders/ShaderChunk/normalmap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/clearcoat_normal_fragment_begin.glsl.js",
+        "src/renderers/shaders/ShaderChunk/clearcoat_normal_fragment_maps.glsl.js",
+        "src/renderers/shaders/ShaderChunk/clearcoat_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/packing.glsl.js",
+        "src/renderers/shaders/ShaderChunk/premultiplied_alpha_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/project_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/dithering_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/dithering_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/roughnessmap_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/roughnessmap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/shadowmap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/shadowmap_pars_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/shadowmap_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/shadowmask_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/skinbase_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/skinning_pars_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/skinning_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/skinnormal_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/specularmap_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/specularmap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/tonemapping_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/tonemapping_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/transmissionmap_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/transmissionmap_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/uv_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/uv_pars_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/uv_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/uv2_pars_fragment.glsl.js",
+        "src/renderers/shaders/ShaderChunk/uv2_pars_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/uv2_vertex.glsl.js",
+        "src/renderers/shaders/ShaderChunk/worldpos_vertex.glsl.js",
+        "src/renderers/shaders/ShaderLib/background_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/background_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/cube_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/cube_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/depth_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/depth_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/distanceRGBA_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/distanceRGBA_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/equirect_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/equirect_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/linedashed_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/linedashed_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshbasic_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshbasic_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshlambert_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshlambert_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshmatcap_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshmatcap_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshtoon_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshtoon_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshphong_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshphong_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshphysical_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/meshphysical_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/normal_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/normal_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/points_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/points_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/shadow_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/shadow_vert.glsl.js",
+        "src/renderers/shaders/ShaderLib/sprite_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/sprite_vert.glsl.js"
+      ]
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/alphamap_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/alphamap_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/alphamap_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/alphamap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/alphamap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/alphamap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/alphatest_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/alphatest_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/alphatest_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/aomap_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/aomap_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/aomap_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/aomap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/aomap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/aomap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/begin_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/begin_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/begin_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/beginnormal_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/beginnormal_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/beginnormal_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/bsdfs.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/bsdfs.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/bsdfs.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/bumpmap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/bumpmap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/bumpmap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/clipping_planes_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/clipping_planes_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/clipping_planes_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/clipping_planes_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/clipping_planes_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/clipping_planes_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/clipping_planes_pars_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/clipping_planes_pars_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/clipping_planes_pars_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/clipping_planes_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/clipping_planes_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/clipping_planes_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/color_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/color_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/color_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/color_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/color_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/color_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/color_pars_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/color_pars_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/color_pars_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/color_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/color_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/color_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/common.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/common.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/common.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/cube_uv_reflection_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/cube_uv_reflection_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/cube_uv_reflection_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/defaultnormal_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/defaultnormal_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/defaultnormal_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/displacementmap_pars_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/displacementmap_pars_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/displacementmap_pars_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/displacementmap_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/displacementmap_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/displacementmap_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/emissivemap_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/emissivemap_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/emissivemap_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/emissivemap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/emissivemap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/emissivemap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/encodings_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/encodings_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/encodings_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/encodings_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/encodings_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/encodings_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/envmap_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/envmap_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/envmap_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/envmap_common_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/envmap_common_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/envmap_common_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/envmap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/envmap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/envmap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/envmap_pars_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/envmap_pars_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/envmap_pars_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/envmap_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/envmap_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/envmap_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/fog_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/fog_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/fog_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/fog_pars_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/fog_pars_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/fog_pars_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/fog_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/fog_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/fog_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/fog_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/fog_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/fog_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/gradientmap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/gradientmap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/gradientmap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lightmap_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lightmap_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lightmap_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lightmap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lightmap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lightmap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lights_lambert_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lights_lambert_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lights_lambert_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lights_pars_begin.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lights_pars_begin.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lights_pars_begin.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/envmap_physical_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/envmap_physical_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/envmap_physical_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lights_toon_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lights_toon_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lights_toon_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lights_toon_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lights_toon_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lights_toon_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lights_phong_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lights_phong_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lights_phong_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lights_phong_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lights_phong_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lights_phong_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lights_physical_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lights_physical_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lights_physical_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lights_physical_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lights_physical_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lights_physical_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lights_fragment_begin.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lights_fragment_begin.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lights_fragment_begin.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lights_fragment_maps.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lights_fragment_maps.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lights_fragment_maps.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/lights_fragment_end.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/lights_fragment_end.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/lights_fragment_end.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/logdepthbuf_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/logdepthbuf_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/logdepthbuf_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/logdepthbuf_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/logdepthbuf_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/logdepthbuf_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/logdepthbuf_pars_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/logdepthbuf_pars_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/logdepthbuf_pars_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/logdepthbuf_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/logdepthbuf_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/logdepthbuf_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/map_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/map_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/map_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/map_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/map_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/map_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/map_particle_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/map_particle_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/map_particle_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/map_particle_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/map_particle_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/map_particle_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/metalnessmap_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/metalnessmap_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/metalnessmap_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/metalnessmap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/metalnessmap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/metalnessmap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/morphnormal_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/morphnormal_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/morphnormal_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/morphtarget_pars_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/morphtarget_pars_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/morphtarget_pars_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/morphtarget_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/morphtarget_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/morphtarget_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/normal_fragment_begin.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/normal_fragment_begin.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/normal_fragment_begin.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/normal_fragment_maps.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/normal_fragment_maps.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/normal_fragment_maps.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/normalmap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/normalmap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/normalmap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/clearcoat_normal_fragment_begin.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/clearcoat_normal_fragment_begin.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/clearcoat_normal_fragment_begin.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/clearcoat_normal_fragment_maps.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/clearcoat_normal_fragment_maps.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/clearcoat_normal_fragment_maps.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/clearcoat_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/clearcoat_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/clearcoat_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/packing.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/packing.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/packing.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/premultiplied_alpha_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/premultiplied_alpha_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/premultiplied_alpha_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/project_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/project_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/project_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/dithering_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/dithering_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/dithering_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/dithering_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/dithering_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/dithering_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/roughnessmap_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/roughnessmap_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/roughnessmap_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/roughnessmap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/roughnessmap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/roughnessmap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/shadowmap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/shadowmap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/shadowmap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/shadowmap_pars_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/shadowmap_pars_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/shadowmap_pars_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/shadowmap_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/shadowmap_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/shadowmap_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/shadowmask_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/shadowmask_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/shadowmask_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/skinbase_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/skinbase_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/skinbase_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/skinning_pars_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/skinning_pars_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/skinning_pars_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/skinning_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/skinning_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/skinning_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/skinnormal_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/skinnormal_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/skinnormal_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/specularmap_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/specularmap_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/specularmap_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/specularmap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/specularmap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/specularmap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/tonemapping_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/tonemapping_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/tonemapping_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/tonemapping_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/tonemapping_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/tonemapping_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/transmissionmap_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/transmissionmap_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/transmissionmap_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/transmissionmap_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/transmissionmap_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/transmissionmap_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/uv_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/uv_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/uv_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/uv_pars_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/uv_pars_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/uv_pars_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/uv_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/uv_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/uv_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/uv2_pars_fragment.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/uv2_pars_fragment.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/uv2_pars_fragment.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/uv2_pars_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/uv2_pars_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/uv2_pars_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/uv2_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/uv2_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/uv2_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderChunk/worldpos_vertex.glsl.js",
+      "path": "src/renderers/shaders/ShaderChunk/worldpos_vertex.glsl.js",
+      "name": "src/renderers/shaders/ShaderChunk/worldpos_vertex.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/background_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/background_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/background_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/background_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/background_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/background_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/cube_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/cube_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/cube_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/cube_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/cube_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/cube_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/depth_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/depth_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/depth_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/depth_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/depth_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/depth_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/distanceRGBA_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/distanceRGBA_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/distanceRGBA_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/distanceRGBA_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/distanceRGBA_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/distanceRGBA_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/equirect_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/equirect_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/equirect_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/equirect_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/equirect_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/equirect_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/linedashed_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/linedashed_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/linedashed_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/linedashed_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/linedashed_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/linedashed_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshbasic_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshbasic_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshbasic_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshbasic_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshbasic_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshbasic_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshlambert_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshlambert_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshlambert_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshlambert_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshlambert_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshlambert_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshmatcap_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshmatcap_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshmatcap_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshmatcap_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshmatcap_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshmatcap_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshtoon_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshtoon_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshtoon_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshtoon_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshtoon_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshtoon_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshphong_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshphong_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshphong_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshphong_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshphong_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshphong_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshphysical_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshphysical_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshphysical_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/meshphysical_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/meshphysical_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/meshphysical_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/normal_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/normal_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/normal_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/normal_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/normal_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/normal_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/points_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/points_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/points_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/points_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/points_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/points_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/shadow_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/shadow_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/shadow_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/shadow_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/shadow_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/shadow_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/sprite_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/sprite_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/sprite_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/sprite_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/sprite_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/sprite_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/UniformsLib.js",
+      "path": "src/renderers/shaders/UniformsLib.js",
+      "name": "src/renderers/shaders/UniformsLib.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Color.js",
+        "src/math/Vector2.js",
+        "src/math/Matrix3.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLBindingStates.js",
+      "path": "src/renderers/webgl/WebGLBindingStates.js",
+      "name": "src/renderers/webgl/WebGLBindingStates.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLBufferRenderer.js",
+      "path": "src/renderers/webgl/WebGLBufferRenderer.js",
+      "name": "src/renderers/webgl/WebGLBufferRenderer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLCapabilities.js",
+      "path": "src/renderers/webgl/WebGLCapabilities.js",
+      "name": "src/renderers/webgl/WebGLCapabilities.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLClipping.js",
+      "path": "src/renderers/webgl/WebGLClipping.js",
+      "name": "src/renderers/webgl/WebGLClipping.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Matrix3.js",
+        "src/math/Plane.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLCubeMaps.js",
+      "path": "src/renderers/webgl/WebGLCubeMaps.js",
+      "name": "src/renderers/webgl/WebGLCubeMaps.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/renderers/WebGLCubeRenderTarget.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLExtensions.js",
+      "path": "src/renderers/webgl/WebGLExtensions.js",
+      "name": "src/renderers/webgl/WebGLExtensions.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLGeometries.js",
+      "path": "src/renderers/webgl/WebGLGeometries.js",
+      "name": "src/renderers/webgl/WebGLGeometries.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js",
+        "src/utils.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLIndexedBufferRenderer.js",
+      "path": "src/renderers/webgl/WebGLIndexedBufferRenderer.js",
+      "name": "src/renderers/webgl/WebGLIndexedBufferRenderer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLInfo.js",
+      "path": "src/renderers/webgl/WebGLInfo.js",
+      "name": "src/renderers/webgl/WebGLInfo.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLMorphtargets.js",
+      "path": "src/renderers/webgl/WebGLMorphtargets.js",
+      "name": "src/renderers/webgl/WebGLMorphtargets.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLObjects.js",
+      "path": "src/renderers/webgl/WebGLObjects.js",
+      "name": "src/renderers/webgl/WebGLObjects.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLPrograms.js",
+      "path": "src/renderers/webgl/WebGLPrograms.js",
+      "name": "src/renderers/webgl/WebGLPrograms.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/renderers/webgl/WebGLProgram.js",
+        "src/renderers/shaders/ShaderLib.js",
+        "src/renderers/shaders/UniformsUtils.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLProgram.js",
+      "path": "src/renderers/webgl/WebGLProgram.js",
+      "name": "src/renderers/webgl/WebGLProgram.js",
+      "labels": [],
+      "dependsOn": [
+        "src/renderers/webgl/WebGLUniforms.js",
+        "src/renderers/webgl/WebGLShader.js",
+        "src/renderers/shaders/ShaderChunk.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLUniforms.js",
+      "path": "src/renderers/webgl/WebGLUniforms.js",
+      "name": "src/renderers/webgl/WebGLUniforms.js",
+      "labels": [],
+      "dependsOn": [
+        "src/textures/CubeTexture.js",
+        "src/textures/Texture.js",
+        "src/textures/DataTexture2DArray.js",
+        "src/textures/DataTexture3D.js"
+      ]
+    },
+    {
+      "id": "src/textures/DataTexture2DArray.js",
+      "path": "src/textures/DataTexture2DArray.js",
+      "name": "src/textures/DataTexture2DArray.js",
+      "labels": [],
+      "dependsOn": [
+        "src/textures/Texture.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/textures/DataTexture3D.js",
+      "path": "src/textures/DataTexture3D.js",
+      "name": "src/textures/DataTexture3D.js",
+      "labels": [],
+      "dependsOn": [
+        "src/textures/Texture.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLShader.js",
+      "path": "src/renderers/webgl/WebGLShader.js",
+      "name": "src/renderers/webgl/WebGLShader.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLProperties.js",
+      "path": "src/renderers/webgl/WebGLProperties.js",
+      "name": "src/renderers/webgl/WebGLProperties.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLRenderLists.js",
+      "path": "src/renderers/webgl/WebGLRenderLists.js",
+      "name": "src/renderers/webgl/WebGLRenderLists.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLRenderStates.js",
+      "path": "src/renderers/webgl/WebGLRenderStates.js",
+      "name": "src/renderers/webgl/WebGLRenderStates.js",
+      "labels": [],
+      "dependsOn": [
+        "src/renderers/webgl/WebGLLights.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLLights.js",
+      "path": "src/renderers/webgl/WebGLLights.js",
+      "name": "src/renderers/webgl/WebGLLights.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Color.js",
+        "src/math/Matrix4.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js",
+        "src/renderers/shaders/UniformsLib.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLShadowMap.js",
+      "path": "src/renderers/webgl/WebGLShadowMap.js",
+      "name": "src/renderers/webgl/WebGLShadowMap.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/renderers/WebGLRenderTarget.js",
+        "src/materials/MeshDepthMaterial.js",
+        "src/materials/MeshDistanceMaterial.js",
+        "src/materials/ShaderMaterial.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js",
+        "src/objects/Mesh.js",
+        "src/math/Vector4.js",
+        "src/math/Vector2.js",
+        "src/math/Frustum.js",
+        "src/renderers/shaders/ShaderLib/vsm_frag.glsl.js",
+        "src/renderers/shaders/ShaderLib/vsm_vert.glsl.js"
+      ]
+    },
+    {
+      "id": "src/materials/MeshDepthMaterial.js",
+      "path": "src/materials/MeshDepthMaterial.js",
+      "name": "src/materials/MeshDepthMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/Material.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/materials/MeshDistanceMaterial.js",
+      "path": "src/materials/MeshDistanceMaterial.js",
+      "name": "src/materials/MeshDistanceMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/Material.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/vsm_frag.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/vsm_frag.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/vsm_frag.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/shaders/ShaderLib/vsm_vert.glsl.js",
+      "path": "src/renderers/shaders/ShaderLib/vsm_vert.glsl.js",
+      "name": "src/renderers/shaders/ShaderLib/vsm_vert.glsl.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/renderers/webgl/WebGLState.js",
+      "path": "src/renderers/webgl/WebGLState.js",
+      "name": "src/renderers/webgl/WebGLState.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/math/Vector4.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLTextures.js",
+      "path": "src/renderers/webgl/WebGLTextures.js",
+      "name": "src/renderers/webgl/WebGLTextures.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLUtils.js",
+      "path": "src/renderers/webgl/WebGLUtils.js",
+      "name": "src/renderers/webgl/WebGLUtils.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webxr/WebXRManager.js",
+      "path": "src/renderers/webxr/WebXRManager.js",
+      "name": "src/renderers/webxr/WebXRManager.js",
+      "labels": [],
+      "dependsOn": [
+        "src/cameras/ArrayCamera.js",
+        "src/core/EventDispatcher.js",
+        "src/cameras/PerspectiveCamera.js",
+        "src/math/Vector3.js",
+        "src/math/Vector4.js",
+        "src/renderers/webgl/WebGLAnimation.js",
+        "src/renderers/webxr/WebXRController.js"
+      ]
+    },
+    {
+      "id": "src/cameras/ArrayCamera.js",
+      "path": "src/cameras/ArrayCamera.js",
+      "name": "src/cameras/ArrayCamera.js",
+      "labels": [],
+      "dependsOn": [
+        "src/cameras/PerspectiveCamera.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webxr/WebXRController.js",
+      "path": "src/renderers/webxr/WebXRController.js",
+      "name": "src/renderers/webxr/WebXRController.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/Group.js"
+      ]
+    },
+    {
+      "id": "src/objects/Group.js",
+      "path": "src/objects/Group.js",
+      "name": "src/objects/Group.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Object3D.js"
+      ]
+    },
+    {
+      "id": "src/renderers/webgl/WebGLMaterials.js",
+      "path": "src/renderers/webgl/WebGLMaterials.js",
+      "name": "src/renderers/webgl/WebGLMaterials.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/renderers/WebGL1Renderer.js",
+      "path": "src/renderers/WebGL1Renderer.js",
+      "name": "src/renderers/WebGL1Renderer.js",
+      "labels": [],
+      "dependsOn": [
+        "src/renderers/WebGLRenderer.js"
+      ]
+    },
+    {
+      "id": "src/scenes/FogExp2.js",
+      "path": "src/scenes/FogExp2.js",
+      "name": "src/scenes/FogExp2.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/scenes/Fog.js",
+      "path": "src/scenes/Fog.js",
+      "name": "src/scenes/Fog.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/scenes/Scene.js",
+      "path": "src/scenes/Scene.js",
+      "name": "src/scenes/Scene.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Object3D.js"
+      ]
+    },
+    {
+      "id": "src/objects/Sprite.js",
+      "path": "src/objects/Sprite.js",
+      "name": "src/objects/Sprite.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector2.js",
+        "src/math/Vector3.js",
+        "src/math/Matrix4.js",
+        "src/math/Triangle.js",
+        "src/core/Object3D.js",
+        "src/core/BufferGeometry.js",
+        "src/core/InterleavedBuffer.js",
+        "src/core/InterleavedBufferAttribute.js",
+        "src/materials/SpriteMaterial.js"
+      ]
+    },
+    {
+      "id": "src/core/InterleavedBuffer.js",
+      "path": "src/core/InterleavedBuffer.js",
+      "name": "src/core/InterleavedBuffer.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/MathUtils.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/core/InterleavedBufferAttribute.js",
+      "path": "src/core/InterleavedBufferAttribute.js",
+      "name": "src/core/InterleavedBufferAttribute.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/core/BufferAttribute.js"
+      ]
+    },
+    {
+      "id": "src/materials/SpriteMaterial.js",
+      "path": "src/materials/SpriteMaterial.js",
+      "name": "src/materials/SpriteMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/Material.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/objects/LOD.js",
+      "path": "src/objects/LOD.js",
+      "name": "src/objects/LOD.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/core/Object3D.js"
+      ]
+    },
+    {
+      "id": "src/objects/SkinnedMesh.js",
+      "path": "src/objects/SkinnedMesh.js",
+      "name": "src/objects/SkinnedMesh.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/Mesh.js",
+        "src/math/Matrix4.js",
+        "src/math/Vector3.js",
+        "src/math/Vector4.js"
+      ]
+    },
+    {
+      "id": "src/objects/Skeleton.js",
+      "path": "src/objects/Skeleton.js",
+      "name": "src/objects/Skeleton.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/Bone.js",
+        "src/math/Matrix4.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/objects/Bone.js",
+      "path": "src/objects/Bone.js",
+      "name": "src/objects/Bone.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Object3D.js"
+      ]
+    },
+    {
+      "id": "src/objects/InstancedMesh.js",
+      "path": "src/objects/InstancedMesh.js",
+      "name": "src/objects/InstancedMesh.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferAttribute.js",
+        "src/objects/Mesh.js",
+        "src/math/Matrix4.js"
+      ]
+    },
+    {
+      "id": "src/objects/LineSegments.js",
+      "path": "src/objects/LineSegments.js",
+      "name": "src/objects/LineSegments.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/Line.js",
+        "src/math/Vector3.js",
+        "src/core/BufferAttribute.js"
+      ]
+    },
+    {
+      "id": "src/objects/Line.js",
+      "path": "src/objects/Line.js",
+      "name": "src/objects/Line.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Sphere.js",
+        "src/math/Ray.js",
+        "src/math/Matrix4.js",
+        "src/core/Object3D.js",
+        "src/math/Vector3.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js"
+      ]
+    },
+    {
+      "id": "src/materials/LineBasicMaterial.js",
+      "path": "src/materials/LineBasicMaterial.js",
+      "name": "src/materials/LineBasicMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/Material.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/objects/LineLoop.js",
+      "path": "src/objects/LineLoop.js",
+      "name": "src/objects/LineLoop.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/Line.js"
+      ]
+    },
+    {
+      "id": "src/objects/Points.js",
+      "path": "src/objects/Points.js",
+      "name": "src/objects/Points.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Sphere.js",
+        "src/math/Ray.js",
+        "src/math/Matrix4.js",
+        "src/core/Object3D.js",
+        "src/math/Vector3.js",
+        "src/materials/PointsMaterial.js",
+        "src/core/BufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/materials/PointsMaterial.js",
+      "path": "src/materials/PointsMaterial.js",
+      "name": "src/materials/PointsMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/Material.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/textures/VideoTexture.js",
+      "path": "src/textures/VideoTexture.js",
+      "name": "src/textures/VideoTexture.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/textures/Texture.js"
+      ]
+    },
+    {
+      "id": "src/textures/CompressedTexture.js",
+      "path": "src/textures/CompressedTexture.js",
+      "name": "src/textures/CompressedTexture.js",
+      "labels": [],
+      "dependsOn": [
+        "src/textures/Texture.js"
+      ]
+    },
+    {
+      "id": "src/textures/CanvasTexture.js",
+      "path": "src/textures/CanvasTexture.js",
+      "name": "src/textures/CanvasTexture.js",
+      "labels": [],
+      "dependsOn": [
+        "src/textures/Texture.js"
+      ]
+    },
+    {
+      "id": "src/textures/DepthTexture.js",
+      "path": "src/textures/DepthTexture.js",
+      "name": "src/textures/DepthTexture.js",
+      "labels": [],
+      "dependsOn": [
+        "src/textures/Texture.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/geometries/Geometries.js",
+      "path": "src/geometries/Geometries.js",
+      "name": "src/geometries/Geometries.js",
+      "labels": [],
+      "dependsOn": [
+        "src/geometries/BoxGeometry.js",
+        "src/geometries/BoxBufferGeometry.js",
+        "src/geometries/CircleGeometry.js",
+        "src/geometries/CircleBufferGeometry.js",
+        "src/geometries/ConeGeometry.js",
+        "src/geometries/ConeBufferGeometry.js",
+        "src/geometries/CylinderGeometry.js",
+        "src/geometries/CylinderBufferGeometry.js",
+        "src/geometries/DodecahedronGeometry.js",
+        "src/geometries/DodecahedronBufferGeometry.js",
+        "src/geometries/EdgesGeometry.js",
+        "src/geometries/ExtrudeGeometry.js",
+        "src/geometries/ExtrudeBufferGeometry.js",
+        "src/geometries/IcosahedronGeometry.js",
+        "src/geometries/IcosahedronBufferGeometry.js",
+        "src/geometries/LatheGeometry.js",
+        "src/geometries/LatheBufferGeometry.js",
+        "src/geometries/OctahedronGeometry.js",
+        "src/geometries/OctahedronBufferGeometry.js",
+        "src/geometries/ParametricGeometry.js",
+        "src/geometries/ParametricBufferGeometry.js",
+        "src/geometries/PlaneGeometry.js",
+        "src/geometries/PlaneBufferGeometry.js",
+        "src/geometries/PolyhedronGeometry.js",
+        "src/geometries/PolyhedronBufferGeometry.js",
+        "src/geometries/RingGeometry.js",
+        "src/geometries/RingBufferGeometry.js",
+        "src/geometries/ShapeGeometry.js",
+        "src/geometries/ShapeBufferGeometry.js",
+        "src/geometries/SphereGeometry.js",
+        "src/geometries/SphereBufferGeometry.js",
+        "src/geometries/TetrahedronGeometry.js",
+        "src/geometries/TetrahedronBufferGeometry.js",
+        "src/geometries/TextGeometry.js",
+        "src/geometries/TextBufferGeometry.js",
+        "src/geometries/TorusGeometry.js",
+        "src/geometries/TorusBufferGeometry.js",
+        "src/geometries/TorusKnotGeometry.js",
+        "src/geometries/TorusKnotBufferGeometry.js",
+        "src/geometries/TubeGeometry.js",
+        "src/geometries/TubeBufferGeometry.js",
+        "src/geometries/WireframeGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/BoxGeometry.js",
+      "path": "src/geometries/BoxGeometry.js",
+      "name": "src/geometries/BoxGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/BoxBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/core/Geometry.js",
+      "path": "src/core/Geometry.js",
+      "name": "src/core/Geometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/EventDispatcher.js",
+        "src/core/Face3.js",
+        "src/math/Matrix3.js",
+        "src/math/Sphere.js",
+        "src/math/Box3.js",
+        "src/math/Vector3.js",
+        "src/math/Matrix4.js",
+        "src/math/Vector2.js",
+        "src/math/Color.js",
+        "src/core/Object3D.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/geometries/CircleGeometry.js",
+      "path": "src/geometries/CircleGeometry.js",
+      "name": "src/geometries/CircleGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/CircleBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/CircleBufferGeometry.js",
+      "path": "src/geometries/CircleBufferGeometry.js",
+      "name": "src/geometries/CircleBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector3.js",
+        "src/math/Vector2.js"
+      ]
+    },
+    {
+      "id": "src/geometries/ConeGeometry.js",
+      "path": "src/geometries/ConeGeometry.js",
+      "name": "src/geometries/ConeGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/geometries/CylinderGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/CylinderGeometry.js",
+      "path": "src/geometries/CylinderGeometry.js",
+      "name": "src/geometries/CylinderGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/CylinderBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/CylinderBufferGeometry.js",
+      "path": "src/geometries/CylinderBufferGeometry.js",
+      "name": "src/geometries/CylinderBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector3.js",
+        "src/math/Vector2.js"
+      ]
+    },
+    {
+      "id": "src/geometries/ConeBufferGeometry.js",
+      "path": "src/geometries/ConeBufferGeometry.js",
+      "name": "src/geometries/ConeBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/geometries/CylinderBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/DodecahedronGeometry.js",
+      "path": "src/geometries/DodecahedronGeometry.js",
+      "name": "src/geometries/DodecahedronGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/DodecahedronBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/DodecahedronBufferGeometry.js",
+      "path": "src/geometries/DodecahedronBufferGeometry.js",
+      "name": "src/geometries/DodecahedronBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/geometries/PolyhedronBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/PolyhedronBufferGeometry.js",
+      "path": "src/geometries/PolyhedronBufferGeometry.js",
+      "name": "src/geometries/PolyhedronBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector3.js",
+        "src/math/Vector2.js"
+      ]
+    },
+    {
+      "id": "src/geometries/EdgesGeometry.js",
+      "path": "src/geometries/EdgesGeometry.js",
+      "name": "src/geometries/EdgesGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/MathUtils.js",
+        "src/math/Triangle.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/geometries/ExtrudeGeometry.js",
+      "path": "src/geometries/ExtrudeGeometry.js",
+      "name": "src/geometries/ExtrudeGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/ExtrudeBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/ExtrudeBufferGeometry.js",
+      "path": "src/geometries/ExtrudeBufferGeometry.js",
+      "name": "src/geometries/ExtrudeBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js",
+        "src/extras/ShapeUtils.js"
+      ]
+    },
+    {
+      "id": "src/extras/ShapeUtils.js",
+      "path": "src/extras/ShapeUtils.js",
+      "name": "src/extras/ShapeUtils.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/Earcut.js"
+      ]
+    },
+    {
+      "id": "src/extras/Earcut.js",
+      "path": "src/extras/Earcut.js",
+      "name": "src/extras/Earcut.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/geometries/IcosahedronGeometry.js",
+      "path": "src/geometries/IcosahedronGeometry.js",
+      "name": "src/geometries/IcosahedronGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/IcosahedronBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/IcosahedronBufferGeometry.js",
+      "path": "src/geometries/IcosahedronBufferGeometry.js",
+      "name": "src/geometries/IcosahedronBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/geometries/PolyhedronBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/LatheGeometry.js",
+      "path": "src/geometries/LatheGeometry.js",
+      "name": "src/geometries/LatheGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/LatheBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/LatheBufferGeometry.js",
+      "path": "src/geometries/LatheBufferGeometry.js",
+      "name": "src/geometries/LatheBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js",
+        "src/math/Vector3.js",
+        "src/math/Vector2.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/geometries/OctahedronGeometry.js",
+      "path": "src/geometries/OctahedronGeometry.js",
+      "name": "src/geometries/OctahedronGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/OctahedronBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/OctahedronBufferGeometry.js",
+      "path": "src/geometries/OctahedronBufferGeometry.js",
+      "name": "src/geometries/OctahedronBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/geometries/PolyhedronBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/ParametricGeometry.js",
+      "path": "src/geometries/ParametricGeometry.js",
+      "name": "src/geometries/ParametricGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/ParametricBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/ParametricBufferGeometry.js",
+      "path": "src/geometries/ParametricBufferGeometry.js",
+      "name": "src/geometries/ParametricBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/geometries/PlaneGeometry.js",
+      "path": "src/geometries/PlaneGeometry.js",
+      "name": "src/geometries/PlaneGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/PlaneBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/PolyhedronGeometry.js",
+      "path": "src/geometries/PolyhedronGeometry.js",
+      "name": "src/geometries/PolyhedronGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/PolyhedronBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/RingGeometry.js",
+      "path": "src/geometries/RingGeometry.js",
+      "name": "src/geometries/RingGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/RingBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/RingBufferGeometry.js",
+      "path": "src/geometries/RingBufferGeometry.js",
+      "name": "src/geometries/RingBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/geometries/ShapeGeometry.js",
+      "path": "src/geometries/ShapeGeometry.js",
+      "name": "src/geometries/ShapeGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/ShapeBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/ShapeBufferGeometry.js",
+      "path": "src/geometries/ShapeBufferGeometry.js",
+      "name": "src/geometries/ShapeBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/extras/ShapeUtils.js"
+      ]
+    },
+    {
+      "id": "src/geometries/SphereGeometry.js",
+      "path": "src/geometries/SphereGeometry.js",
+      "name": "src/geometries/SphereGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/SphereBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/SphereBufferGeometry.js",
+      "path": "src/geometries/SphereBufferGeometry.js",
+      "name": "src/geometries/SphereBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/geometries/TetrahedronGeometry.js",
+      "path": "src/geometries/TetrahedronGeometry.js",
+      "name": "src/geometries/TetrahedronGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/TetrahedronBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/TetrahedronBufferGeometry.js",
+      "path": "src/geometries/TetrahedronBufferGeometry.js",
+      "name": "src/geometries/TetrahedronBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/geometries/PolyhedronBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/TextGeometry.js",
+      "path": "src/geometries/TextGeometry.js",
+      "name": "src/geometries/TextGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/TextBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/TextBufferGeometry.js",
+      "path": "src/geometries/TextBufferGeometry.js",
+      "name": "src/geometries/TextBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/geometries/ExtrudeBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/TorusGeometry.js",
+      "path": "src/geometries/TorusGeometry.js",
+      "name": "src/geometries/TorusGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/TorusBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/TorusBufferGeometry.js",
+      "path": "src/geometries/TorusBufferGeometry.js",
+      "name": "src/geometries/TorusBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/geometries/TorusKnotGeometry.js",
+      "path": "src/geometries/TorusKnotGeometry.js",
+      "name": "src/geometries/TorusKnotGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/TorusKnotBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/TorusKnotBufferGeometry.js",
+      "path": "src/geometries/TorusKnotBufferGeometry.js",
+      "name": "src/geometries/TorusKnotBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/geometries/TubeGeometry.js",
+      "path": "src/geometries/TubeGeometry.js",
+      "name": "src/geometries/TubeGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Geometry.js",
+        "src/geometries/TubeBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/geometries/TubeBufferGeometry.js",
+      "path": "src/geometries/TubeBufferGeometry.js",
+      "name": "src/geometries/TubeBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/geometries/WireframeGeometry.js",
+      "path": "src/geometries/WireframeGeometry.js",
+      "name": "src/geometries/WireframeGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/materials/Materials.js",
+      "path": "src/materials/Materials.js",
+      "name": "src/materials/Materials.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/ShadowMaterial.js",
+        "src/materials/SpriteMaterial.js",
+        "src/materials/RawShaderMaterial.js",
+        "src/materials/ShaderMaterial.js",
+        "src/materials/PointsMaterial.js",
+        "src/materials/MeshPhysicalMaterial.js",
+        "src/materials/MeshStandardMaterial.js",
+        "src/materials/MeshPhongMaterial.js",
+        "src/materials/MeshToonMaterial.js",
+        "src/materials/MeshNormalMaterial.js",
+        "src/materials/MeshLambertMaterial.js",
+        "src/materials/MeshDepthMaterial.js",
+        "src/materials/MeshDistanceMaterial.js",
+        "src/materials/MeshBasicMaterial.js",
+        "src/materials/MeshMatcapMaterial.js",
+        "src/materials/LineDashedMaterial.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/materials/Material.js"
+      ]
+    },
+    {
+      "id": "src/materials/ShadowMaterial.js",
+      "path": "src/materials/ShadowMaterial.js",
+      "name": "src/materials/ShadowMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/Material.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/materials/RawShaderMaterial.js",
+      "path": "src/materials/RawShaderMaterial.js",
+      "name": "src/materials/RawShaderMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/ShaderMaterial.js"
+      ]
+    },
+    {
+      "id": "src/materials/MeshPhysicalMaterial.js",
+      "path": "src/materials/MeshPhysicalMaterial.js",
+      "name": "src/materials/MeshPhysicalMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector2.js",
+        "src/materials/MeshStandardMaterial.js",
+        "src/math/Color.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/materials/MeshStandardMaterial.js",
+      "path": "src/materials/MeshStandardMaterial.js",
+      "name": "src/materials/MeshStandardMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/materials/Material.js",
+        "src/math/Vector2.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/materials/MeshPhongMaterial.js",
+      "path": "src/materials/MeshPhongMaterial.js",
+      "name": "src/materials/MeshPhongMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/materials/Material.js",
+        "src/math/Vector2.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/materials/MeshToonMaterial.js",
+      "path": "src/materials/MeshToonMaterial.js",
+      "name": "src/materials/MeshToonMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/materials/Material.js",
+        "src/math/Vector2.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/materials/MeshNormalMaterial.js",
+      "path": "src/materials/MeshNormalMaterial.js",
+      "name": "src/materials/MeshNormalMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/materials/Material.js",
+        "src/math/Vector2.js"
+      ]
+    },
+    {
+      "id": "src/materials/MeshLambertMaterial.js",
+      "path": "src/materials/MeshLambertMaterial.js",
+      "name": "src/materials/MeshLambertMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/Material.js",
+        "src/constants.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/materials/MeshMatcapMaterial.js",
+      "path": "src/materials/MeshMatcapMaterial.js",
+      "name": "src/materials/MeshMatcapMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/materials/Material.js",
+        "src/math/Vector2.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/materials/LineDashedMaterial.js",
+      "path": "src/materials/LineDashedMaterial.js",
+      "name": "src/materials/LineDashedMaterial.js",
+      "labels": [],
+      "dependsOn": [
+        "src/materials/LineBasicMaterial.js"
+      ]
+    },
+    {
+      "id": "src/loaders/AnimationLoader.js",
+      "path": "src/loaders/AnimationLoader.js",
+      "name": "src/loaders/AnimationLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/animation/AnimationClip.js",
+        "src/loaders/FileLoader.js",
+        "src/loaders/Loader.js"
+      ]
+    },
+    {
+      "id": "src/animation/AnimationClip.js",
+      "path": "src/animation/AnimationClip.js",
+      "name": "src/animation/AnimationClip.js",
+      "labels": [],
+      "dependsOn": [
+        "src/animation/AnimationUtils.js",
+        "src/animation/KeyframeTrack.js",
+        "src/animation/tracks/BooleanKeyframeTrack.js",
+        "src/animation/tracks/ColorKeyframeTrack.js",
+        "src/animation/tracks/NumberKeyframeTrack.js",
+        "src/animation/tracks/QuaternionKeyframeTrack.js",
+        "src/animation/tracks/StringKeyframeTrack.js",
+        "src/animation/tracks/VectorKeyframeTrack.js",
+        "src/math/MathUtils.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/animation/AnimationUtils.js",
+      "path": "src/animation/AnimationUtils.js",
+      "name": "src/animation/AnimationUtils.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Quaternion.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/animation/KeyframeTrack.js",
+      "path": "src/animation/KeyframeTrack.js",
+      "name": "src/animation/KeyframeTrack.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/math/interpolants/CubicInterpolant.js",
+        "src/math/interpolants/LinearInterpolant.js",
+        "src/math/interpolants/DiscreteInterpolant.js",
+        "src/animation/AnimationUtils.js"
+      ]
+    },
+    {
+      "id": "src/math/interpolants/CubicInterpolant.js",
+      "path": "src/math/interpolants/CubicInterpolant.js",
+      "name": "src/math/interpolants/CubicInterpolant.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/math/Interpolant.js"
+      ]
+    },
+    {
+      "id": "src/math/Interpolant.js",
+      "path": "src/math/Interpolant.js",
+      "name": "src/math/Interpolant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/math/interpolants/LinearInterpolant.js",
+      "path": "src/math/interpolants/LinearInterpolant.js",
+      "name": "src/math/interpolants/LinearInterpolant.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Interpolant.js"
+      ]
+    },
+    {
+      "id": "src/math/interpolants/DiscreteInterpolant.js",
+      "path": "src/math/interpolants/DiscreteInterpolant.js",
+      "name": "src/math/interpolants/DiscreteInterpolant.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Interpolant.js"
+      ]
+    },
+    {
+      "id": "src/animation/tracks/BooleanKeyframeTrack.js",
+      "path": "src/animation/tracks/BooleanKeyframeTrack.js",
+      "name": "src/animation/tracks/BooleanKeyframeTrack.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/animation/KeyframeTrack.js"
+      ]
+    },
+    {
+      "id": "src/animation/tracks/ColorKeyframeTrack.js",
+      "path": "src/animation/tracks/ColorKeyframeTrack.js",
+      "name": "src/animation/tracks/ColorKeyframeTrack.js",
+      "labels": [],
+      "dependsOn": [
+        "src/animation/KeyframeTrack.js"
+      ]
+    },
+    {
+      "id": "src/animation/tracks/NumberKeyframeTrack.js",
+      "path": "src/animation/tracks/NumberKeyframeTrack.js",
+      "name": "src/animation/tracks/NumberKeyframeTrack.js",
+      "labels": [],
+      "dependsOn": [
+        "src/animation/KeyframeTrack.js"
+      ]
+    },
+    {
+      "id": "src/animation/tracks/QuaternionKeyframeTrack.js",
+      "path": "src/animation/tracks/QuaternionKeyframeTrack.js",
+      "name": "src/animation/tracks/QuaternionKeyframeTrack.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/animation/KeyframeTrack.js",
+        "src/math/interpolants/QuaternionLinearInterpolant.js"
+      ]
+    },
+    {
+      "id": "src/math/interpolants/QuaternionLinearInterpolant.js",
+      "path": "src/math/interpolants/QuaternionLinearInterpolant.js",
+      "name": "src/math/interpolants/QuaternionLinearInterpolant.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Interpolant.js",
+        "src/math/Quaternion.js"
+      ]
+    },
+    {
+      "id": "src/animation/tracks/StringKeyframeTrack.js",
+      "path": "src/animation/tracks/StringKeyframeTrack.js",
+      "name": "src/animation/tracks/StringKeyframeTrack.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/animation/KeyframeTrack.js"
+      ]
+    },
+    {
+      "id": "src/animation/tracks/VectorKeyframeTrack.js",
+      "path": "src/animation/tracks/VectorKeyframeTrack.js",
+      "name": "src/animation/tracks/VectorKeyframeTrack.js",
+      "labels": [],
+      "dependsOn": [
+        "src/animation/KeyframeTrack.js"
+      ]
+    },
+    {
+      "id": "src/loaders/FileLoader.js",
+      "path": "src/loaders/FileLoader.js",
+      "name": "src/loaders/FileLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/loaders/Cache.js",
+        "src/loaders/Loader.js"
+      ]
+    },
+    {
+      "id": "src/loaders/Cache.js",
+      "path": "src/loaders/Cache.js",
+      "name": "src/loaders/Cache.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/loaders/Loader.js",
+      "path": "src/loaders/Loader.js",
+      "name": "src/loaders/Loader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/loaders/LoadingManager.js"
+      ]
+    },
+    {
+      "id": "src/loaders/LoadingManager.js",
+      "path": "src/loaders/LoadingManager.js",
+      "name": "src/loaders/LoadingManager.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/loaders/CompressedTextureLoader.js",
+      "path": "src/loaders/CompressedTextureLoader.js",
+      "name": "src/loaders/CompressedTextureLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/loaders/FileLoader.js",
+        "src/textures/CompressedTexture.js",
+        "src/loaders/Loader.js"
+      ]
+    },
+    {
+      "id": "src/loaders/CubeTextureLoader.js",
+      "path": "src/loaders/CubeTextureLoader.js",
+      "name": "src/loaders/CubeTextureLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/loaders/ImageLoader.js",
+        "src/textures/CubeTexture.js",
+        "src/loaders/Loader.js"
+      ]
+    },
+    {
+      "id": "src/loaders/ImageLoader.js",
+      "path": "src/loaders/ImageLoader.js",
+      "name": "src/loaders/ImageLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/loaders/Cache.js",
+        "src/loaders/Loader.js"
+      ]
+    },
+    {
+      "id": "src/loaders/DataTextureLoader.js",
+      "path": "src/loaders/DataTextureLoader.js",
+      "name": "src/loaders/DataTextureLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/loaders/FileLoader.js",
+        "src/textures/DataTexture.js",
+        "src/loaders/Loader.js"
+      ]
+    },
+    {
+      "id": "src/loaders/TextureLoader.js",
+      "path": "src/loaders/TextureLoader.js",
+      "name": "src/loaders/TextureLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/loaders/ImageLoader.js",
+        "src/textures/Texture.js",
+        "src/loaders/Loader.js"
+      ]
+    },
+    {
+      "id": "src/loaders/ObjectLoader.js",
+      "path": "src/loaders/ObjectLoader.js",
+      "name": "src/loaders/ObjectLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/core/BufferAttribute.js",
+        "src/math/Color.js",
+        "src/core/Object3D.js",
+        "src/objects/Group.js",
+        "src/objects/InstancedMesh.js",
+        "src/objects/Sprite.js",
+        "src/objects/Points.js",
+        "src/objects/Line.js",
+        "src/objects/LineLoop.js",
+        "src/objects/LineSegments.js",
+        "src/objects/LOD.js",
+        "src/objects/Mesh.js",
+        "src/objects/SkinnedMesh.js",
+        "src/objects/Bone.js",
+        "src/objects/Skeleton.js",
+        "src/extras/core/Shape.js",
+        "src/scenes/Fog.js",
+        "src/scenes/FogExp2.js",
+        "src/lights/HemisphereLight.js",
+        "src/lights/SpotLight.js",
+        "src/lights/PointLight.js",
+        "src/lights/DirectionalLight.js",
+        "src/lights/AmbientLight.js",
+        "src/lights/RectAreaLight.js",
+        "src/lights/LightProbe.js",
+        "src/cameras/OrthographicCamera.js",
+        "src/cameras/PerspectiveCamera.js",
+        "src/scenes/Scene.js",
+        "src/textures/CubeTexture.js",
+        "src/textures/Texture.js",
+        "src/textures/DataTexture.js",
+        "src/loaders/ImageLoader.js",
+        "src/loaders/LoadingManager.js",
+        "src/animation/AnimationClip.js",
+        "src/loaders/MaterialLoader.js",
+        "src/loaders/LoaderUtils.js",
+        "src/loaders/BufferGeometryLoader.js",
+        "src/loaders/Loader.js",
+        "src/loaders/FileLoader.js",
+        "src/geometries/Geometries.js",
+        "src/extras/curves/Curves.js",
+        "src/utils.js"
+      ]
+    },
+    {
+      "id": "src/extras/core/Shape.js",
+      "path": "src/extras/core/Shape.js",
+      "name": "src/extras/core/Shape.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/core/Path.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/extras/core/Path.js",
+      "path": "src/extras/core/Path.js",
+      "name": "src/extras/core/Path.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector2.js",
+        "src/extras/core/CurvePath.js",
+        "src/extras/curves/EllipseCurve.js",
+        "src/extras/curves/SplineCurve.js",
+        "src/extras/curves/CubicBezierCurve.js",
+        "src/extras/curves/QuadraticBezierCurve.js",
+        "src/extras/curves/LineCurve.js"
+      ]
+    },
+    {
+      "id": "src/extras/core/CurvePath.js",
+      "path": "src/extras/core/CurvePath.js",
+      "name": "src/extras/core/CurvePath.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/core/Curve.js",
+        "src/extras/curves/Curves.js"
+      ]
+    },
+    {
+      "id": "src/extras/core/Curve.js",
+      "path": "src/extras/core/Curve.js",
+      "name": "src/extras/core/Curve.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/MathUtils.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js",
+        "src/math/Matrix4.js"
+      ]
+    },
+    {
+      "id": "src/extras/curves/Curves.js",
+      "path": "src/extras/curves/Curves.js",
+      "name": "src/extras/curves/Curves.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/curves/ArcCurve.js",
+        "src/extras/curves/CatmullRomCurve3.js",
+        "src/extras/curves/CubicBezierCurve.js",
+        "src/extras/curves/CubicBezierCurve3.js",
+        "src/extras/curves/EllipseCurve.js",
+        "src/extras/curves/LineCurve.js",
+        "src/extras/curves/LineCurve3.js",
+        "src/extras/curves/QuadraticBezierCurve.js",
+        "src/extras/curves/QuadraticBezierCurve3.js",
+        "src/extras/curves/SplineCurve.js"
+      ]
+    },
+    {
+      "id": "src/extras/curves/ArcCurve.js",
+      "path": "src/extras/curves/ArcCurve.js",
+      "name": "src/extras/curves/ArcCurve.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/curves/EllipseCurve.js"
+      ]
+    },
+    {
+      "id": "src/extras/curves/EllipseCurve.js",
+      "path": "src/extras/curves/EllipseCurve.js",
+      "name": "src/extras/curves/EllipseCurve.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/core/Curve.js",
+        "src/math/Vector2.js"
+      ]
+    },
+    {
+      "id": "src/extras/curves/CatmullRomCurve3.js",
+      "path": "src/extras/curves/CatmullRomCurve3.js",
+      "name": "src/extras/curves/CatmullRomCurve3.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/extras/core/Curve.js"
+      ]
+    },
+    {
+      "id": "src/extras/curves/CubicBezierCurve.js",
+      "path": "src/extras/curves/CubicBezierCurve.js",
+      "name": "src/extras/curves/CubicBezierCurve.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/core/Curve.js",
+        "src/extras/core/Interpolations.js",
+        "src/math/Vector2.js"
+      ]
+    },
+    {
+      "id": "src/extras/core/Interpolations.js",
+      "path": "src/extras/core/Interpolations.js",
+      "name": "src/extras/core/Interpolations.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/extras/curves/CubicBezierCurve3.js",
+      "path": "src/extras/curves/CubicBezierCurve3.js",
+      "name": "src/extras/curves/CubicBezierCurve3.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/core/Curve.js",
+        "src/extras/core/Interpolations.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/extras/curves/LineCurve.js",
+      "path": "src/extras/curves/LineCurve.js",
+      "name": "src/extras/curves/LineCurve.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector2.js",
+        "src/extras/core/Curve.js"
+      ]
+    },
+    {
+      "id": "src/extras/curves/LineCurve3.js",
+      "path": "src/extras/curves/LineCurve3.js",
+      "name": "src/extras/curves/LineCurve3.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/extras/core/Curve.js"
+      ]
+    },
+    {
+      "id": "src/extras/curves/QuadraticBezierCurve.js",
+      "path": "src/extras/curves/QuadraticBezierCurve.js",
+      "name": "src/extras/curves/QuadraticBezierCurve.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/core/Curve.js",
+        "src/extras/core/Interpolations.js",
+        "src/math/Vector2.js"
+      ]
+    },
+    {
+      "id": "src/extras/curves/QuadraticBezierCurve3.js",
+      "path": "src/extras/curves/QuadraticBezierCurve3.js",
+      "name": "src/extras/curves/QuadraticBezierCurve3.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/core/Curve.js",
+        "src/extras/core/Interpolations.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/extras/curves/SplineCurve.js",
+      "path": "src/extras/curves/SplineCurve.js",
+      "name": "src/extras/curves/SplineCurve.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/core/Curve.js",
+        "src/extras/core/Interpolations.js",
+        "src/math/Vector2.js"
+      ]
+    },
+    {
+      "id": "src/lights/HemisphereLight.js",
+      "path": "src/lights/HemisphereLight.js",
+      "name": "src/lights/HemisphereLight.js",
+      "labels": [],
+      "dependsOn": [
+        "src/lights/Light.js",
+        "src/math/Color.js",
+        "src/core/Object3D.js"
+      ]
+    },
+    {
+      "id": "src/lights/Light.js",
+      "path": "src/lights/Light.js",
+      "name": "src/lights/Light.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Object3D.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/lights/SpotLight.js",
+      "path": "src/lights/SpotLight.js",
+      "name": "src/lights/SpotLight.js",
+      "labels": [],
+      "dependsOn": [
+        "src/lights/Light.js",
+        "src/lights/SpotLightShadow.js",
+        "src/core/Object3D.js"
+      ]
+    },
+    {
+      "id": "src/lights/SpotLightShadow.js",
+      "path": "src/lights/SpotLightShadow.js",
+      "name": "src/lights/SpotLightShadow.js",
+      "labels": [],
+      "dependsOn": [
+        "src/lights/LightShadow.js",
+        "src/math/MathUtils.js",
+        "src/cameras/PerspectiveCamera.js"
+      ]
+    },
+    {
+      "id": "src/lights/LightShadow.js",
+      "path": "src/lights/LightShadow.js",
+      "name": "src/lights/LightShadow.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Matrix4.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js",
+        "src/math/Vector4.js",
+        "src/math/Frustum.js"
+      ]
+    },
+    {
+      "id": "src/lights/PointLight.js",
+      "path": "src/lights/PointLight.js",
+      "name": "src/lights/PointLight.js",
+      "labels": [],
+      "dependsOn": [
+        "src/lights/Light.js",
+        "src/lights/PointLightShadow.js"
+      ]
+    },
+    {
+      "id": "src/lights/PointLightShadow.js",
+      "path": "src/lights/PointLightShadow.js",
+      "name": "src/lights/PointLightShadow.js",
+      "labels": [],
+      "dependsOn": [
+        "src/lights/LightShadow.js",
+        "src/cameras/PerspectiveCamera.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js",
+        "src/math/Vector4.js"
+      ]
+    },
+    {
+      "id": "src/lights/DirectionalLight.js",
+      "path": "src/lights/DirectionalLight.js",
+      "name": "src/lights/DirectionalLight.js",
+      "labels": [],
+      "dependsOn": [
+        "src/lights/Light.js",
+        "src/lights/DirectionalLightShadow.js",
+        "src/core/Object3D.js"
+      ]
+    },
+    {
+      "id": "src/lights/DirectionalLightShadow.js",
+      "path": "src/lights/DirectionalLightShadow.js",
+      "name": "src/lights/DirectionalLightShadow.js",
+      "labels": [],
+      "dependsOn": [
+        "src/lights/LightShadow.js",
+        "src/cameras/OrthographicCamera.js"
+      ]
+    },
+    {
+      "id": "src/cameras/OrthographicCamera.js",
+      "path": "src/cameras/OrthographicCamera.js",
+      "name": "src/cameras/OrthographicCamera.js",
+      "labels": [],
+      "dependsOn": [
+        "src/cameras/Camera.js",
+        "src/core/Object3D.js"
+      ]
+    },
+    {
+      "id": "src/lights/AmbientLight.js",
+      "path": "src/lights/AmbientLight.js",
+      "name": "src/lights/AmbientLight.js",
+      "labels": [],
+      "dependsOn": [
+        "src/lights/Light.js"
+      ]
+    },
+    {
+      "id": "src/lights/RectAreaLight.js",
+      "path": "src/lights/RectAreaLight.js",
+      "name": "src/lights/RectAreaLight.js",
+      "labels": [],
+      "dependsOn": [
+        "src/lights/Light.js"
+      ]
+    },
+    {
+      "id": "src/lights/LightProbe.js",
+      "path": "src/lights/LightProbe.js",
+      "name": "src/lights/LightProbe.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/SphericalHarmonics3.js",
+        "src/lights/Light.js"
+      ]
+    },
+    {
+      "id": "src/math/SphericalHarmonics3.js",
+      "path": "src/math/SphericalHarmonics3.js",
+      "name": "src/math/SphericalHarmonics3.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/loaders/MaterialLoader.js",
+      "path": "src/loaders/MaterialLoader.js",
+      "name": "src/loaders/MaterialLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Color.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js",
+        "src/math/Vector4.js",
+        "src/math/Matrix3.js",
+        "src/math/Matrix4.js",
+        "src/loaders/FileLoader.js",
+        "src/loaders/Loader.js",
+        "src/materials/Materials.js"
+      ]
+    },
+    {
+      "id": "src/loaders/LoaderUtils.js",
+      "path": "src/loaders/LoaderUtils.js",
+      "name": "src/loaders/LoaderUtils.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/loaders/BufferGeometryLoader.js",
+      "path": "src/loaders/BufferGeometryLoader.js",
+      "name": "src/loaders/BufferGeometryLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Sphere.js",
+        "src/math/Vector3.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js",
+        "src/loaders/FileLoader.js",
+        "src/loaders/Loader.js",
+        "src/core/InstancedBufferGeometry.js",
+        "src/core/InstancedBufferAttribute.js",
+        "src/core/InterleavedBufferAttribute.js",
+        "src/core/InterleavedBuffer.js",
+        "src/utils.js"
+      ]
+    },
+    {
+      "id": "src/core/InstancedBufferGeometry.js",
+      "path": "src/core/InstancedBufferGeometry.js",
+      "name": "src/core/InstancedBufferGeometry.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/core/InstancedBufferAttribute.js",
+      "path": "src/core/InstancedBufferAttribute.js",
+      "name": "src/core/InstancedBufferAttribute.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferAttribute.js"
+      ]
+    },
+    {
+      "id": "src/loaders/ImageBitmapLoader.js",
+      "path": "src/loaders/ImageBitmapLoader.js",
+      "name": "src/loaders/ImageBitmapLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/loaders/Cache.js",
+        "src/loaders/Loader.js"
+      ]
+    },
+    {
+      "id": "src/loaders/FontLoader.js",
+      "path": "src/loaders/FontLoader.js",
+      "name": "src/loaders/FontLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/core/Font.js",
+        "src/loaders/FileLoader.js",
+        "src/loaders/Loader.js"
+      ]
+    },
+    {
+      "id": "src/extras/core/Font.js",
+      "path": "src/extras/core/Font.js",
+      "name": "src/extras/core/Font.js",
+      "labels": [],
+      "dependsOn": [
+        "src/extras/core/ShapePath.js"
+      ]
+    },
+    {
+      "id": "src/extras/core/ShapePath.js",
+      "path": "src/extras/core/ShapePath.js",
+      "name": "src/extras/core/ShapePath.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Color.js",
+        "src/extras/core/Path.js",
+        "src/extras/core/Shape.js",
+        "src/extras/ShapeUtils.js"
+      ]
+    },
+    {
+      "id": "src/loaders/AudioLoader.js",
+      "path": "src/loaders/AudioLoader.js",
+      "name": "src/loaders/AudioLoader.js",
+      "labels": [],
+      "dependsOn": [
+        "src/audio/AudioContext.js",
+        "src/loaders/FileLoader.js",
+        "src/loaders/Loader.js"
+      ]
+    },
+    {
+      "id": "src/audio/AudioContext.js",
+      "path": "src/audio/AudioContext.js",
+      "name": "src/audio/AudioContext.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/lights/HemisphereLightProbe.js",
+      "path": "src/lights/HemisphereLightProbe.js",
+      "name": "src/lights/HemisphereLightProbe.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Color.js",
+        "src/math/Vector3.js",
+        "src/lights/LightProbe.js"
+      ]
+    },
+    {
+      "id": "src/lights/AmbientLightProbe.js",
+      "path": "src/lights/AmbientLightProbe.js",
+      "name": "src/lights/AmbientLightProbe.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Color.js",
+        "src/lights/LightProbe.js"
+      ]
+    },
+    {
+      "id": "src/cameras/StereoCamera.js",
+      "path": "src/cameras/StereoCamera.js",
+      "name": "src/cameras/StereoCamera.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Matrix4.js",
+        "src/math/MathUtils.js",
+        "src/cameras/PerspectiveCamera.js"
+      ]
+    },
+    {
+      "id": "src/audio/AudioListener.js",
+      "path": "src/audio/AudioListener.js",
+      "name": "src/audio/AudioListener.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/math/Quaternion.js",
+        "src/core/Clock.js",
+        "src/core/Object3D.js",
+        "src/audio/AudioContext.js"
+      ]
+    },
+    {
+      "id": "src/core/Clock.js",
+      "path": "src/core/Clock.js",
+      "name": "src/core/Clock.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/audio/PositionalAudio.js",
+      "path": "src/audio/PositionalAudio.js",
+      "name": "src/audio/PositionalAudio.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/math/Quaternion.js",
+        "src/audio/Audio.js"
+      ]
+    },
+    {
+      "id": "src/audio/Audio.js",
+      "path": "src/audio/Audio.js",
+      "name": "src/audio/Audio.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Object3D.js"
+      ]
+    },
+    {
+      "id": "src/audio/AudioAnalyser.js",
+      "path": "src/audio/AudioAnalyser.js",
+      "name": "src/audio/AudioAnalyser.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/animation/PropertyMixer.js",
+      "path": "src/animation/PropertyMixer.js",
+      "name": "src/animation/PropertyMixer.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Quaternion.js"
+      ]
+    },
+    {
+      "id": "src/animation/PropertyBinding.js",
+      "path": "src/animation/PropertyBinding.js",
+      "name": "src/animation/PropertyBinding.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/animation/AnimationObjectGroup.js",
+      "path": "src/animation/AnimationObjectGroup.js",
+      "name": "src/animation/AnimationObjectGroup.js",
+      "labels": [],
+      "dependsOn": [
+        "src/animation/PropertyBinding.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/animation/AnimationMixer.js",
+      "path": "src/animation/AnimationMixer.js",
+      "name": "src/animation/AnimationMixer.js",
+      "labels": [],
+      "dependsOn": [
+        "src/animation/AnimationAction.js",
+        "src/core/EventDispatcher.js",
+        "src/math/interpolants/LinearInterpolant.js",
+        "src/animation/PropertyBinding.js",
+        "src/animation/PropertyMixer.js",
+        "src/animation/AnimationClip.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/animation/AnimationAction.js",
+      "path": "src/animation/AnimationAction.js",
+      "name": "src/animation/AnimationAction.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/core/Uniform.js",
+      "path": "src/core/Uniform.js",
+      "name": "src/core/Uniform.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/core/InstancedInterleavedBuffer.js",
+      "path": "src/core/InstancedInterleavedBuffer.js",
+      "name": "src/core/InstancedInterleavedBuffer.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/InterleavedBuffer.js"
+      ]
+    },
+    {
+      "id": "src/core/GLBufferAttribute.js",
+      "path": "src/core/GLBufferAttribute.js",
+      "name": "src/core/GLBufferAttribute.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/core/Raycaster.js",
+      "path": "src/core/Raycaster.js",
+      "name": "src/core/Raycaster.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Ray.js",
+        "src/core/Layers.js"
+      ]
+    },
+    {
+      "id": "src/math/Spherical.js",
+      "path": "src/math/Spherical.js",
+      "name": "src/math/Spherical.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/math/Cylindrical.js",
+      "path": "src/math/Cylindrical.js",
+      "name": "src/math/Cylindrical.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/math/Box2.js",
+      "path": "src/math/Box2.js",
+      "name": "src/math/Box2.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector2.js"
+      ]
+    },
+    {
+      "id": "src/math/Line3.js",
+      "path": "src/math/Line3.js",
+      "name": "src/math/Line3.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/math/MathUtils.js"
+      ]
+    },
+    {
+      "id": "src/extras/objects/ImmediateRenderObject.js",
+      "path": "src/extras/objects/ImmediateRenderObject.js",
+      "name": "src/extras/objects/ImmediateRenderObject.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/Object3D.js"
+      ]
+    },
+    {
+      "id": "src/helpers/SpotLightHelper.js",
+      "path": "src/helpers/SpotLightHelper.js",
+      "name": "src/helpers/SpotLightHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/core/Object3D.js",
+        "src/objects/LineSegments.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/helpers/SkeletonHelper.js",
+      "path": "src/helpers/SkeletonHelper.js",
+      "name": "src/helpers/SkeletonHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/LineSegments.js",
+        "src/math/Matrix4.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/math/Color.js",
+        "src/math/Vector3.js",
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js"
+      ]
+    },
+    {
+      "id": "src/helpers/PointLightHelper.js",
+      "path": "src/helpers/PointLightHelper.js",
+      "name": "src/helpers/PointLightHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/Mesh.js",
+        "src/materials/MeshBasicMaterial.js",
+        "src/geometries/SphereBufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/helpers/HemisphereLightHelper.js",
+      "path": "src/helpers/HemisphereLightHelper.js",
+      "name": "src/helpers/HemisphereLightHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/math/Color.js",
+        "src/core/Object3D.js",
+        "src/objects/Mesh.js",
+        "src/materials/MeshBasicMaterial.js",
+        "src/geometries/OctahedronBufferGeometry.js",
+        "src/core/BufferAttribute.js"
+      ]
+    },
+    {
+      "id": "src/helpers/GridHelper.js",
+      "path": "src/helpers/GridHelper.js",
+      "name": "src/helpers/GridHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/LineSegments.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/helpers/PolarGridHelper.js",
+      "path": "src/helpers/PolarGridHelper.js",
+      "name": "src/helpers/PolarGridHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/LineSegments.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js",
+        "src/math/Color.js"
+      ]
+    },
+    {
+      "id": "src/helpers/DirectionalLightHelper.js",
+      "path": "src/helpers/DirectionalLightHelper.js",
+      "name": "src/helpers/DirectionalLightHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Vector3.js",
+        "src/core/Object3D.js",
+        "src/objects/Line.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js",
+        "src/materials/LineBasicMaterial.js"
+      ]
+    },
+    {
+      "id": "src/helpers/CameraHelper.js",
+      "path": "src/helpers/CameraHelper.js",
+      "name": "src/helpers/CameraHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/cameras/Camera.js",
+        "src/math/Vector3.js",
+        "src/objects/LineSegments.js",
+        "src/math/Color.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/core/BufferGeometry.js",
+        "src/core/BufferAttribute.js"
+      ]
+    },
+    {
+      "id": "src/helpers/BoxHelper.js",
+      "path": "src/helpers/BoxHelper.js",
+      "name": "src/helpers/BoxHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/math/Box3.js",
+        "src/objects/LineSegments.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/helpers/Box3Helper.js",
+      "path": "src/helpers/Box3Helper.js",
+      "name": "src/helpers/Box3Helper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/LineSegments.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/helpers/PlaneHelper.js",
+      "path": "src/helpers/PlaneHelper.js",
+      "name": "src/helpers/PlaneHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/Line.js",
+        "src/objects/Mesh.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/materials/MeshBasicMaterial.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js",
+        "src/constants.js"
+      ]
+    },
+    {
+      "id": "src/helpers/ArrowHelper.js",
+      "path": "src/helpers/ArrowHelper.js",
+      "name": "src/helpers/ArrowHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js",
+        "src/core/Object3D.js",
+        "src/geometries/CylinderBufferGeometry.js",
+        "src/materials/MeshBasicMaterial.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/objects/Mesh.js",
+        "src/objects/Line.js",
+        "src/math/Vector3.js"
+      ]
+    },
+    {
+      "id": "src/helpers/AxesHelper.js",
+      "path": "src/helpers/AxesHelper.js",
+      "name": "src/helpers/AxesHelper.js",
+      "labels": [],
+      "dependsOn": [
+        "src/objects/LineSegments.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js"
+      ]
+    },
+    {
+      "id": "src/extras/DataUtils.js",
+      "path": "src/extras/DataUtils.js",
+      "name": "src/extras/DataUtils.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/extras/PMREMGenerator.js",
+      "path": "src/extras/PMREMGenerator.js",
+      "name": "src/extras/PMREMGenerator.js",
+      "labels": [],
+      "dependsOn": [
+        "src/constants.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js",
+        "src/objects/Mesh.js",
+        "src/cameras/OrthographicCamera.js",
+        "src/cameras/PerspectiveCamera.js",
+        "src/materials/RawShaderMaterial.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js",
+        "src/renderers/WebGLRenderTarget.js"
+      ]
+    },
+    {
+      "id": "src/Three.Legacy.js",
+      "path": "src/Three.Legacy.js",
+      "name": "src/Three.Legacy.js",
+      "labels": [],
+      "dependsOn": [
+        "src/audio/Audio.js",
+        "src/audio/AudioAnalyser.js",
+        "src/cameras/PerspectiveCamera.js",
+        "src/constants.js",
+        "src/core/BufferAttribute.js",
+        "src/core/BufferGeometry.js",
+        "src/core/InstancedBufferGeometry.js",
+        "src/core/InterleavedBuffer.js",
+        "src/core/Face3.js",
+        "src/core/Geometry.js",
+        "src/core/Object3D.js",
+        "src/core/Uniform.js",
+        "src/core/Raycaster.js",
+        "src/extras/core/Curve.js",
+        "src/extras/core/CurvePath.js",
+        "src/extras/core/Path.js",
+        "src/extras/curves/CatmullRomCurve3.js",
+        "src/helpers/AxesHelper.js",
+        "src/helpers/BoxHelper.js",
+        "src/helpers/GridHelper.js",
+        "src/helpers/SkeletonHelper.js",
+        "src/geometries/BoxGeometry.js",
+        "src/geometries/EdgesGeometry.js",
+        "src/geometries/ExtrudeGeometry.js",
+        "src/geometries/ExtrudeBufferGeometry.js",
+        "src/geometries/ShapeGeometry.js",
+        "src/geometries/WireframeGeometry.js",
+        "src/lights/Light.js",
+        "src/loaders/Loader.js",
+        "src/loaders/LoaderUtils.js",
+        "src/loaders/FileLoader.js",
+        "src/loaders/AudioLoader.js",
+        "src/loaders/CubeTextureLoader.js",
+        "src/loaders/DataTextureLoader.js",
+        "src/loaders/TextureLoader.js",
+        "src/materials/Material.js",
+        "src/materials/LineBasicMaterial.js",
+        "src/materials/MeshPhongMaterial.js",
+        "src/materials/MeshPhysicalMaterial.js",
+        "src/materials/PointsMaterial.js",
+        "src/materials/ShaderMaterial.js",
+        "src/math/Box2.js",
+        "src/math/Box3.js",
+        "src/math/Sphere.js",
+        "src/math/Color.js",
+        "src/math/Frustum.js",
+        "src/math/Line3.js",
+        "src/math/MathUtils.js",
+        "src/math/Matrix3.js",
+        "src/math/Matrix4.js",
+        "src/math/Plane.js",
+        "src/math/Quaternion.js",
+        "src/math/Ray.js",
+        "src/math/Triangle.js",
+        "src/math/Vector2.js",
+        "src/math/Vector3.js",
+        "src/math/Vector4.js",
+        "src/objects/Mesh.js",
+        "src/objects/LineSegments.js",
+        "src/objects/LOD.js",
+        "src/objects/Points.js",
+        "src/objects/Sprite.js",
+        "src/objects/Skeleton.js",
+        "src/objects/SkinnedMesh.js",
+        "src/renderers/WebGLRenderer.js",
+        "src/renderers/WebGLRenderTarget.js",
+        "src/renderers/WebGLCubeRenderTarget.js",
+        "src/renderers/webgl/WebGLShadowMap.js",
+        "src/extras/ImageUtils.js",
+        "src/extras/core/Shape.js",
+        "src/cameras/CubeCamera.js",
+        "src/scenes/Scene.js"
+      ]
+    }
+  ],
+  "meta": {
+    "analyzer": {
+      "name": "analyzer-js",
+      "version": "0.1.0"
+    },
+    "repository": {
+      "url": "https://github.com/mrdoob/three.js"
+    },
+    "createdAt": "2020-12-04T15:24:50.559Z"
+  }
+}
