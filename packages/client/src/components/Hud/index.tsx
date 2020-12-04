@@ -9,27 +9,12 @@ import { CurrentSelection } from "./CurrentSelection";
 import { DatasetExplorer } from "./DatasetExplorer";
 import { HistoryPanel } from "./HistoryPanel";
 import { HotkeyInfoModal } from "./HotkeyInfoModal";
+import { HudContainer } from "./HudContainer";
 import { HudSegment } from "./HudSegment";
 import { LabelPanel } from "./LabelPanel";
 import { NodesPanel } from "./NodesPanel";
 import { OverlayContextProvider, useOverlayContext } from "./OverlayContext";
 import { SearchModal } from "./SearchModal";
-
-const Container = styled("div")<{ overlayActive: boolean }>`
-  background: transparent;
-  z-index: 2;
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: ${(p) => (p.overlayActive ? "all" : "none")};
-
-  h4,
-  h5 {
-    color: ${(p) => p.theme.hud.primaryColor};
-  }
-`;
 
 const Grid = styled("div")<{ sidebar: boolean }>((p) => ({
   display: "grid",
@@ -201,7 +186,7 @@ const Body = () => {
   const [active] = useOverlayContext();
   const cfg = useConfig();
   return (
-    <Container overlayActive={active}>
+    <HudContainer overlayActive={active}>
       <Grid sidebar={cfg.current.hud.sidebar.open}>
         <Sidebar open={cfg.current.hud.sidebar.open} />
         <RightContainer>
@@ -210,7 +195,7 @@ const Body = () => {
           <DatasetExplorer />
         </RightContainer>
       </Grid>
-    </Container>
+    </HudContainer>
   );
 };
 
