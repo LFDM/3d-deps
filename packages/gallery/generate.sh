@@ -1,0 +1,1 @@
+yarn ts-node src/gallery/$1/generate.ts $2
