@@ -10,7 +10,7 @@
     "@3d-deps/core": "0.1.0",
     "@types/dependency-tree": "^7.2.0",
     "debug": "^4.3.1",
-    "dependency-tree": "lfdm/node-dependency-tree#master",
+    "dependency-tree": "lfdm/node-dependency-tree#e34650c",
     "glob": "^7.1.6",
     "strip-ansi": "^6.0.0",
     "typescript": "^4.1.2"
