@@ -4,35 +4,52 @@
       "id": "packages/create-subscription/index.js",
       "path": "packages/create-subscription/index.js",
       "name": "packages/create-subscription/index.js",
-      "labels": ["pkg:create-subscription", "pkg_entry"],
-      "dependsOn": ["packages/create-subscription/src/createSubscription.js"]
+      "labels": [
+        "pkg:create-subscription",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/create-subscription/src/createSubscription.js"
+      ]
     },
     {
       "id": "packages/create-subscription/src/createSubscription.js",
       "path": "packages/create-subscription/src/createSubscription.js",
       "name": "packages/create-subscription/src/createSubscription.js",
-      "labels": ["pkg:create-subscription"],
-      "dependsOn": ["packages/react/index.js", "packages/shared/invariant.js"]
+      "labels": [
+        "pkg:create-subscription"
+      ],
+      "dependsOn": [
+        "packages/react/index.js",
+        "packages/shared/invariant.js"
+      ]
     },
     {
       "id": "node_modules/react",
       "path": "node_modules/react",
       "name": "node_modules/react",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "node_modules/shared",
       "path": "node_modules/shared",
       "name": "node_modules/shared",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/dom-event-testing-library/index.js",
       "path": "packages/dom-event-testing-library/index.js",
       "name": "packages/dom-event-testing-library/index.js",
-      "labels": ["pkg:dom-event-testing-library", "pkg_entry"],
+      "labels": [
+        "pkg:dom-event-testing-library",
+        "pkg_entry"
+      ],
       "dependsOn": [
         "packages/dom-event-testing-library/constants.js",
         "packages/dom-event-testing-library/domEvents.js",
@@ -45,21 +62,29 @@
       "id": "packages/dom-event-testing-library/constants.js",
       "path": "packages/dom-event-testing-library/constants.js",
       "name": "packages/dom-event-testing-library/constants.js",
-      "labels": ["pkg:dom-event-testing-library"],
+      "labels": [
+        "pkg:dom-event-testing-library"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/dom-event-testing-library/domEvents.js",
       "path": "packages/dom-event-testing-library/domEvents.js",
       "name": "packages/dom-event-testing-library/domEvents.js",
-      "labels": ["pkg:dom-event-testing-library"],
-      "dependsOn": ["packages/dom-event-testing-library/constants.js"]
+      "labels": [
+        "pkg:dom-event-testing-library"
+      ],
+      "dependsOn": [
+        "packages/dom-event-testing-library/constants.js"
+      ]
     },
     {
       "id": "packages/dom-event-testing-library/domEventSequences.js",
       "path": "packages/dom-event-testing-library/domEventSequences.js",
       "name": "packages/dom-event-testing-library/domEventSequences.js",
-      "labels": ["pkg:dom-event-testing-library"],
+      "labels": [
+        "pkg:dom-event-testing-library"
+      ],
       "dependsOn": [
         "packages/dom-event-testing-library/constants.js",
         "packages/dom-event-testing-library/domEvents.js",
@@ -71,35 +96,50 @@
       "id": "packages/dom-event-testing-library/domEnvironment.js",
       "path": "packages/dom-event-testing-library/domEnvironment.js",
       "name": "packages/dom-event-testing-library/domEnvironment.js",
-      "labels": ["pkg:dom-event-testing-library"],
+      "labels": [
+        "pkg:dom-event-testing-library"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/dom-event-testing-library/touchStore.js",
       "path": "packages/dom-event-testing-library/touchStore.js",
       "name": "packages/dom-event-testing-library/touchStore.js",
-      "labels": ["pkg:dom-event-testing-library"],
+      "labels": [
+        "pkg:dom-event-testing-library"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/dom-event-testing-library/testHelpers.js",
       "path": "packages/dom-event-testing-library/testHelpers.js",
       "name": "packages/dom-event-testing-library/testHelpers.js",
-      "labels": ["pkg:dom-event-testing-library"],
-      "dependsOn": ["packages/dom-event-testing-library/domEnvironment.js"]
+      "labels": [
+        "pkg:dom-event-testing-library"
+      ],
+      "dependsOn": [
+        "packages/dom-event-testing-library/domEnvironment.js"
+      ]
     },
     {
       "id": "packages/eslint-plugin-react-hooks/index.js",
       "path": "packages/eslint-plugin-react-hooks/index.js",
       "name": "packages/eslint-plugin-react-hooks/index.js",
-      "labels": ["pkg:eslint-plugin-react-hooks", "pkg_entry"],
-      "dependsOn": ["packages/eslint-plugin-react-hooks/src/index.js"]
+      "labels": [
+        "pkg:eslint-plugin-react-hooks",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/eslint-plugin-react-hooks/src/index.js"
+      ]
     },
     {
       "id": "packages/eslint-plugin-react-hooks/src/index.js",
       "path": "packages/eslint-plugin-react-hooks/src/index.js",
       "name": "packages/eslint-plugin-react-hooks/src/index.js",
-      "labels": ["pkg:eslint-plugin-react-hooks"],
+      "labels": [
+        "pkg:eslint-plugin-react-hooks"
+      ],
       "dependsOn": [
         "packages/eslint-plugin-react-hooks/src/RulesOfHooks.js",
         "packages/eslint-plugin-react-hooks/src/ExhaustiveDeps.js"
@@ -109,28 +149,39 @@
       "id": "packages/eslint-plugin-react-hooks/src/RulesOfHooks.js",
       "path": "packages/eslint-plugin-react-hooks/src/RulesOfHooks.js",
       "name": "packages/eslint-plugin-react-hooks/src/RulesOfHooks.js",
-      "labels": ["pkg:eslint-plugin-react-hooks"],
+      "labels": [
+        "pkg:eslint-plugin-react-hooks"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/eslint-plugin-react-hooks/src/ExhaustiveDeps.js",
       "path": "packages/eslint-plugin-react-hooks/src/ExhaustiveDeps.js",
       "name": "packages/eslint-plugin-react-hooks/src/ExhaustiveDeps.js",
-      "labels": ["pkg:eslint-plugin-react-hooks"],
+      "labels": [
+        "pkg:eslint-plugin-react-hooks"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/jest-react/index.js",
       "path": "packages/jest-react/index.js",
       "name": "packages/jest-react/index.js",
-      "labels": ["pkg:jest-react", "pkg_entry"],
-      "dependsOn": ["packages/jest-react/src/JestReact.js"]
+      "labels": [
+        "pkg:jest-react",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/jest-react/src/JestReact.js"
+      ]
     },
     {
       "id": "packages/jest-react/src/JestReact.js",
       "path": "packages/jest-react/src/JestReact.js",
       "name": "packages/jest-react/src/JestReact.js",
-      "labels": ["pkg:jest-react"],
+      "labels": [
+        "pkg:jest-react"
+      ],
       "dependsOn": [
         "packages/shared/ReactSymbols.js",
         "packages/shared/invariant.js"
@@ -140,14 +191,21 @@
       "id": "packages/react-art/index.js",
       "path": "packages/react-art/index.js",
       "name": "packages/react-art/index.js",
-      "labels": ["pkg:react-art", "pkg_entry"],
-      "dependsOn": ["packages/react-art/src/ReactART.js"]
+      "labels": [
+        "pkg:react-art",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-art/src/ReactART.js"
+      ]
     },
     {
       "id": "packages/react-art/src/ReactART.js",
       "path": "packages/react-art/src/ReactART.js",
       "name": "packages/react-art/src/ReactART.js",
-      "labels": ["pkg:react-art"],
+      "labels": [
+        "pkg:react-art"
+      ],
       "dependsOn": [
         "packages/react/index.js",
         "packages/shared/ReactVersion.js",
@@ -161,35 +219,48 @@
       "id": "node_modules/react-reconciler",
       "path": "node_modules/react-reconciler",
       "name": "node_modules/react-reconciler",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "node_modules/art",
       "path": "node_modules/art",
       "name": "node_modules/art",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-art/src/ReactARTInternals.js",
       "path": "packages/react-art/src/ReactARTInternals.js",
       "name": "packages/react-art/src/ReactARTInternals.js",
-      "labels": ["pkg:react-art"],
+      "labels": [
+        "pkg:react-art"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-cache/index.js",
       "path": "packages/react-cache/index.js",
       "name": "packages/react-cache/index.js",
-      "labels": ["pkg:react-cache", "pkg_entry"],
-      "dependsOn": ["packages/react-cache/src/ReactCacheOld.js"]
+      "labels": [
+        "pkg:react-cache",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-cache/src/ReactCacheOld.js"
+      ]
     },
     {
       "id": "packages/react-cache/src/ReactCacheOld.js",
       "path": "packages/react-cache/src/ReactCacheOld.js",
       "name": "packages/react-cache/src/ReactCacheOld.js",
-      "labels": ["pkg:react-cache"],
+      "labels": [
+        "pkg:react-cache"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react/index.js",
@@ -200,35 +271,52 @@
       "id": "packages/react-cache/src/LRU.js",
       "path": "packages/react-cache/src/LRU.js",
       "name": "packages/react-cache/src/LRU.js",
-      "labels": ["pkg:react-cache"],
-      "dependsOn": ["packages/scheduler/index.js"]
+      "labels": [
+        "pkg:react-cache"
+      ],
+      "dependsOn": [
+        "packages/scheduler/index.js"
+      ]
     },
     {
       "id": "node_modules/scheduler",
       "path": "node_modules/scheduler",
       "name": "node_modules/scheduler",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-debug-tools/index.js",
       "path": "packages/react-debug-tools/index.js",
       "name": "packages/react-debug-tools/index.js",
-      "labels": ["pkg:react-debug-tools", "pkg_entry"],
-      "dependsOn": ["packages/react-debug-tools/src/ReactDebugTools.js"]
+      "labels": [
+        "pkg:react-debug-tools",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-debug-tools/src/ReactDebugTools.js"
+      ]
     },
     {
       "id": "packages/react-debug-tools/src/ReactDebugTools.js",
       "path": "packages/react-debug-tools/src/ReactDebugTools.js",
       "name": "packages/react-debug-tools/src/ReactDebugTools.js",
-      "labels": ["pkg:react-debug-tools"],
-      "dependsOn": ["packages/react-debug-tools/src/ReactDebugHooks.js"]
+      "labels": [
+        "pkg:react-debug-tools"
+      ],
+      "dependsOn": [
+        "packages/react-debug-tools/src/ReactDebugHooks.js"
+      ]
     },
     {
       "id": "packages/react-debug-tools/src/ReactDebugHooks.js",
       "path": "packages/react-debug-tools/src/ReactDebugHooks.js",
       "name": "packages/react-debug-tools/src/ReactDebugHooks.js",
-      "labels": ["pkg:react-debug-tools"],
+      "labels": [
+        "pkg:react-debug-tools"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -244,14 +332,19 @@
       "id": "node_modules/error-stack-parser",
       "path": "node_modules/error-stack-parser",
       "name": "node_modules/error-stack-parser",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-devtools-core/src/backend.js",
       "path": "packages/react-devtools-core/src/backend.js",
       "name": "packages/react-devtools-core/src/backend.js",
-      "labels": ["pkg:react-devtools-core", "pkg_entry"],
+      "labels": [
+        "pkg:react-devtools-core",
+        "pkg_entry"
+      ],
       "dependsOn": [
         "packages/react-devtools-shared/src/backend/agent.js",
         "packages/react-devtools-shared/src/bridge.js",
@@ -268,14 +361,19 @@
       "id": "node_modules/react-devtools-shared",
       "path": "node_modules/react-devtools-shared",
       "name": "node_modules/react-devtools-shared",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-devtools-inline/src/backend.js",
       "path": "packages/react-devtools-inline/src/backend.js",
       "name": "packages/react-devtools-inline/src/backend.js",
-      "labels": ["pkg:react-devtools-inline", "pkg_entry"],
+      "labels": [
+        "pkg:react-devtools-inline",
+        "pkg_entry"
+      ],
       "dependsOn": [
         "packages/react-devtools-shared/src/backend/agent.js",
         "packages/react-devtools-shared/src/bridge.js",
@@ -289,28 +387,39 @@
       "id": "packages/react-devtools-inline/src/constants.js",
       "path": "packages/react-devtools-inline/src/constants.js",
       "name": "packages/react-devtools-inline/src/constants.js",
-      "labels": ["pkg:react-devtools-inline"],
+      "labels": [
+        "pkg:react-devtools-inline"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-devtools/index.js",
       "path": "packages/react-devtools/index.js",
       "name": "packages/react-devtools/index.js",
-      "labels": ["pkg:react-devtools", "pkg_entry"],
-      "dependsOn": ["packages/react-devtools-core/backend.js"]
+      "labels": [
+        "pkg:react-devtools",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-devtools-core/backend.js"
+      ]
     },
     {
       "id": "node_modules/react-devtools-core",
       "path": "node_modules/react-devtools-core",
       "name": "node_modules/react-devtools-core",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-devtools/bin.js",
       "path": "packages/react-devtools/bin.js",
       "name": "packages/react-devtools/bin.js",
-      "labels": ["pkg:react-devtools"],
+      "labels": [
+        "pkg:react-devtools"
+      ],
       "dependsOn": [
         "node_modules/electron",
         "node_modules/cross-spawn",
@@ -322,42 +431,57 @@
       "id": "node_modules/electron",
       "path": "node_modules/electron",
       "name": "node_modules/electron",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "node_modules/cross-spawn",
       "path": "node_modules/cross-spawn",
       "name": "node_modules/cross-spawn",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-devtools/package.json",
       "path": "packages/react-devtools/package.json",
       "name": "packages/react-devtools/package.json",
-      "labels": ["pkg:react-devtools"],
+      "labels": [
+        "pkg:react-devtools"
+      ],
       "dependsOn": []
     },
     {
       "id": "node_modules/update-notifier",
       "path": "node_modules/update-notifier",
       "name": "node_modules/update-notifier",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/index.js",
       "path": "packages/react-dom/index.js",
       "name": "packages/react-dom/index.js",
-      "labels": ["pkg:react-dom", "pkg_entry"],
-      "dependsOn": ["packages/react-dom/src/client/ReactDOM.js"]
+      "labels": [
+        "pkg:react-dom",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/client/ReactDOM.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/client/ReactDOM.js",
       "path": "packages/react-dom/src/client/ReactDOM.js",
       "name": "packages/react-dom/src/client/ReactDOM.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-dom/src/client/ReactDOMHostConfig.js",
@@ -382,14 +506,18 @@
       "id": "packages/react-dom/src/client/ReactDOMHostConfig.js",
       "path": "packages/react-dom/src/client/ReactDOMHostConfig.js",
       "name": "packages/react-dom/src/client/ReactDOMHostConfig.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/DOMEventNames.js",
       "path": "packages/react-dom/src/events/DOMEventNames.js",
       "name": "packages/react-dom/src/events/DOMEventNames.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/events/getVendorPrefixedEventName.js"
       ]
@@ -398,14 +526,20 @@
       "id": "packages/react-dom/src/events/getVendorPrefixedEventName.js",
       "path": "packages/react-dom/src/events/getVendorPrefixedEventName.js",
       "name": "packages/react-dom/src/events/getVendorPrefixedEventName.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/shared/ExecutionEnvironment.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/shared/ExecutionEnvironment.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/client/ReactDOMRoot.js",
       "path": "packages/react-dom/src/client/ReactDOMRoot.js",
       "name": "packages/react-dom/src/client/ReactDOMRoot.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/client/ReactDOMHostConfig.js",
         "packages/react-reconciler/src/ReactRootTags.js",
@@ -422,7 +556,9 @@
       "id": "packages/react-dom/src/client/ReactDOMComponentTree.js",
       "path": "packages/react-dom/src/client/ReactDOMComponentTree.js",
       "name": "packages/react-dom/src/client/ReactDOMComponentTree.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactTypes.js",
@@ -437,7 +573,9 @@
       "id": "packages/react-dom/src/shared/ReactDOMTypes.js",
       "path": "packages/react-dom/src/shared/ReactDOMTypes.js",
       "name": "packages/react-dom/src/shared/ReactDOMTypes.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-dom/src/events/DOMEventNames.js"
@@ -447,28 +585,36 @@
       "id": "packages/react-dom/src/events/DOMPluginEventSystem.js",
       "path": "packages/react-dom/src/events/DOMPluginEventSystem.js",
       "name": "packages/react-dom/src/events/DOMPluginEventSystem.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/EventSystemFlags.js",
       "path": "packages/react-dom/src/events/EventSystemFlags.js",
       "name": "packages/react-dom/src/events/EventSystemFlags.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/PluginModuleType.js",
       "path": "packages/react-dom/src/events/PluginModuleType.js",
       "name": "packages/react-dom/src/events/PluginModuleType.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/ReactSyntheticEventType.js",
       "path": "packages/react-dom/src/events/ReactSyntheticEventType.js",
       "name": "packages/react-dom/src/events/ReactSyntheticEventType.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactTypes.js",
@@ -479,7 +625,9 @@
       "id": "packages/react-dom/src/events/EventRegistry.js",
       "path": "packages/react-dom/src/events/EventRegistry.js",
       "name": "packages/react-dom/src/events/EventRegistry.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/events/DOMEventNames.js",
         "packages/shared/ReactFeatureFlags.js"
@@ -489,21 +637,29 @@
       "id": "packages/react-dom/src/events/getEventTarget.js",
       "path": "packages/react-dom/src/events/getEventTarget.js",
       "name": "packages/react-dom/src/events/getEventTarget.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/react-dom/src/shared/HTMLNodeType.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/shared/HTMLNodeType.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/shared/HTMLNodeType.js",
       "path": "packages/react-dom/src/shared/HTMLNodeType.js",
       "name": "packages/react-dom/src/shared/HTMLNodeType.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/ReactDOMUpdateBatching.js",
       "path": "packages/react-dom/src/events/ReactDOMUpdateBatching.js",
       "name": "packages/react-dom/src/events/ReactDOMUpdateBatching.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/events/ReactDOMControlledComponent.js",
         "packages/shared/ReactFeatureFlags.js"
@@ -513,7 +669,9 @@
       "id": "packages/react-dom/src/events/ReactDOMControlledComponent.js",
       "path": "packages/react-dom/src/events/ReactDOMControlledComponent.js",
       "name": "packages/react-dom/src/events/ReactDOMControlledComponent.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/shared/invariant.js",
         "packages/react-dom/src/client/ReactDOMComponentTree.js"
@@ -523,7 +681,9 @@
       "id": "packages/react-dom/src/events/getListener.js",
       "path": "packages/react-dom/src/events/getListener.js",
       "name": "packages/react-dom/src/events/getListener.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-dom/src/client/ReactDOMHostConfig.js",
@@ -535,21 +695,29 @@
       "id": "packages/react-dom/src/events/checkPassiveEvents.js",
       "path": "packages/react-dom/src/events/checkPassiveEvents.js",
       "name": "packages/react-dom/src/events/checkPassiveEvents.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/shared/ExecutionEnvironment.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/shared/ExecutionEnvironment.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/events/ReactDOMEventListener.js",
       "path": "packages/react-dom/src/events/ReactDOMEventListener.js",
       "name": "packages/react-dom/src/events/ReactDOMEventListener.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/ReactDOMEventReplaying.js",
       "path": "packages/react-dom/src/events/ReactDOMEventReplaying.js",
       "name": "packages/react-dom/src/events/ReactDOMEventReplaying.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/events/PluginModuleType.js",
         "packages/react-dom/src/client/ReactDOMHostConfig.js",
@@ -569,7 +737,9 @@
       "id": "packages/react-dom/src/events/DOMEventProperties.js",
       "path": "packages/react-dom/src/events/DOMEventProperties.js",
       "name": "packages/react-dom/src/events/DOMEventProperties.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-dom/src/events/DOMEventNames.js",
@@ -581,14 +751,18 @@
       "id": "packages/react-dom/src/events/EventListener.js",
       "path": "packages/react-dom/src/events/EventListener.js",
       "name": "packages/react-dom/src/events/EventListener.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/plugins/BeforeInputEventPlugin.js",
       "path": "packages/react-dom/src/events/plugins/BeforeInputEventPlugin.js",
       "name": "packages/react-dom/src/events/plugins/BeforeInputEventPlugin.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/events/DOMEventNames.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -605,28 +779,38 @@
       "id": "packages/react-dom/src/events/FallbackCompositionState.js",
       "path": "packages/react-dom/src/events/FallbackCompositionState.js",
       "name": "packages/react-dom/src/events/FallbackCompositionState.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/SyntheticEvent.js",
       "path": "packages/react-dom/src/events/SyntheticEvent.js",
       "name": "packages/react-dom/src/events/SyntheticEvent.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/react-dom/src/events/getEventCharCode.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/events/getEventCharCode.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/events/getEventCharCode.js",
       "path": "packages/react-dom/src/events/getEventCharCode.js",
       "name": "packages/react-dom/src/events/getEventCharCode.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/plugins/ChangeEventPlugin.js",
       "path": "packages/react-dom/src/events/plugins/ChangeEventPlugin.js",
       "name": "packages/react-dom/src/events/plugins/ChangeEventPlugin.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/events/PluginModuleType.js",
         "packages/react-dom/src/events/DOMEventNames.js",
@@ -650,28 +834,38 @@
       "id": "packages/react-dom/src/events/isTextInputElement.js",
       "path": "packages/react-dom/src/events/isTextInputElement.js",
       "name": "packages/react-dom/src/events/isTextInputElement.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/isEventSupported.js",
       "path": "packages/react-dom/src/events/isEventSupported.js",
       "name": "packages/react-dom/src/events/isEventSupported.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/shared/ExecutionEnvironment.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/shared/ExecutionEnvironment.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/client/inputValueTracking.js",
       "path": "packages/react-dom/src/client/inputValueTracking.js",
       "name": "packages/react-dom/src/client/inputValueTracking.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/client/ReactDOMInput.js",
       "path": "packages/react-dom/src/client/ReactDOMInput.js",
       "name": "packages/react-dom/src/client/ReactDOMInput.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactCurrentFiber.js",
         "packages/shared/invariant.js",
@@ -688,7 +882,9 @@
       "id": "packages/react-dom/src/client/DOMPropertyOperations.js",
       "path": "packages/react-dom/src/client/DOMPropertyOperations.js",
       "name": "packages/react-dom/src/client/DOMPropertyOperations.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/shared/DOMProperty.js",
         "packages/react-dom/src/shared/sanitizeURL.js",
@@ -700,14 +896,20 @@
       "id": "packages/react-dom/src/shared/DOMProperty.js",
       "path": "packages/react-dom/src/shared/DOMProperty.js",
       "name": "packages/react-dom/src/shared/DOMProperty.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/shared/ReactFeatureFlags.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/shared/ReactFeatureFlags.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/shared/sanitizeURL.js",
       "path": "packages/react-dom/src/shared/sanitizeURL.js",
       "name": "packages/react-dom/src/shared/sanitizeURL.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/shared/invariant.js",
         "packages/shared/ReactFeatureFlags.js"
@@ -717,28 +919,36 @@
       "id": "packages/react-dom/src/client/ToStringValue.js",
       "path": "packages/react-dom/src/client/ToStringValue.js",
       "name": "packages/react-dom/src/client/ToStringValue.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/ReactControlledValuePropTypes.js",
       "path": "packages/react-dom/src/shared/ReactControlledValuePropTypes.js",
       "name": "packages/react-dom/src/shared/ReactControlledValuePropTypes.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/client/getActiveElement.js",
       "path": "packages/react-dom/src/client/getActiveElement.js",
       "name": "packages/react-dom/src/client/getActiveElement.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/plugins/EnterLeaveEventPlugin.js",
       "path": "packages/react-dom/src/events/plugins/EnterLeaveEventPlugin.js",
       "name": "packages/react-dom/src/events/plugins/EnterLeaveEventPlugin.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/events/PluginModuleType.js",
         "packages/react-dom/src/events/DOMEventNames.js",
@@ -756,14 +966,18 @@
       "id": "node_modules/react-dom",
       "path": "node_modules/react-dom",
       "name": "node_modules/react-dom",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/events/plugins/SelectEventPlugin.js",
       "path": "packages/react-dom/src/events/plugins/SelectEventPlugin.js",
       "name": "packages/react-dom/src/events/plugins/SelectEventPlugin.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/events/PluginModuleType.js",
         "packages/react-dom/src/events/DOMEventNames.js",
@@ -784,7 +998,9 @@
       "id": "packages/react-dom/src/client/ReactInputSelection.js",
       "path": "packages/react-dom/src/client/ReactInputSelection.js",
       "name": "packages/react-dom/src/client/ReactInputSelection.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/client/getActiveElement.js",
         "packages/react-dom/src/client/ReactDOMSelection.js",
@@ -795,7 +1011,9 @@
       "id": "packages/react-dom/src/client/ReactDOMSelection.js",
       "path": "packages/react-dom/src/client/ReactDOMSelection.js",
       "name": "packages/react-dom/src/client/ReactDOMSelection.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/client/getNodeForCharacterOffset.js",
         "packages/react-dom/src/shared/HTMLNodeType.js"
@@ -805,14 +1023,20 @@
       "id": "packages/react-dom/src/client/getNodeForCharacterOffset.js",
       "path": "packages/react-dom/src/client/getNodeForCharacterOffset.js",
       "name": "packages/react-dom/src/client/getNodeForCharacterOffset.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/react-dom/src/shared/HTMLNodeType.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/shared/HTMLNodeType.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/events/plugins/SimpleEventPlugin.js",
       "path": "packages/react-dom/src/events/plugins/SimpleEventPlugin.js",
       "name": "packages/react-dom/src/events/plugins/SimpleEventPlugin.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/events/DOMEventNames.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -829,14 +1053,18 @@
       "id": "packages/react-dom/src/client/DOMAccessibilityRoles.js",
       "path": "packages/react-dom/src/client/DOMAccessibilityRoles.js",
       "name": "packages/react-dom/src/client/DOMAccessibilityRoles.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/client/ReactDOMComponent.js",
       "path": "packages/react-dom/src/client/ReactDOMComponent.js",
       "name": "packages/react-dom/src/client/ReactDOMComponent.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/events/EventRegistry.js",
         "packages/shared/ExecutionEnvironment.js",
@@ -867,7 +1095,9 @@
       "id": "packages/react-dom/src/client/ReactDOMOption.js",
       "path": "packages/react-dom/src/client/ReactDOMOption.js",
       "name": "packages/react-dom/src/client/ReactDOMOption.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react/index.js",
         "packages/react-dom/src/client/ToStringValue.js"
@@ -877,7 +1107,9 @@
       "id": "packages/react-dom/src/client/ReactDOMSelect.js",
       "path": "packages/react-dom/src/client/ReactDOMSelect.js",
       "name": "packages/react-dom/src/client/ReactDOMSelect.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactCurrentFiber.js",
         "packages/react-dom/src/shared/ReactControlledValuePropTypes.js",
@@ -888,7 +1120,9 @@
       "id": "packages/react-dom/src/client/ReactDOMTextarea.js",
       "path": "packages/react-dom/src/client/ReactDOMTextarea.js",
       "name": "packages/react-dom/src/client/ReactDOMTextarea.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/shared/invariant.js",
         "packages/react-dom/src/shared/ReactControlledValuePropTypes.js",
@@ -901,7 +1135,9 @@
       "id": "packages/react-dom/src/client/setInnerHTML.js",
       "path": "packages/react-dom/src/client/setInnerHTML.js",
       "name": "packages/react-dom/src/client/setInnerHTML.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/shared/DOMNamespaces.js",
         "packages/react-dom/src/shared/createMicrosoftUnsafeLocalFunction.js",
@@ -912,28 +1148,38 @@
       "id": "packages/react-dom/src/shared/DOMNamespaces.js",
       "path": "packages/react-dom/src/shared/DOMNamespaces.js",
       "name": "packages/react-dom/src/shared/DOMNamespaces.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/createMicrosoftUnsafeLocalFunction.js",
       "path": "packages/react-dom/src/shared/createMicrosoftUnsafeLocalFunction.js",
       "name": "packages/react-dom/src/shared/createMicrosoftUnsafeLocalFunction.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/client/setTextContent.js",
       "path": "packages/react-dom/src/client/setTextContent.js",
       "name": "packages/react-dom/src/client/setTextContent.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/react-dom/src/shared/HTMLNodeType.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/shared/HTMLNodeType.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/shared/CSSPropertyOperations.js",
       "path": "packages/react-dom/src/shared/CSSPropertyOperations.js",
       "name": "packages/react-dom/src/shared/CSSPropertyOperations.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/shared/CSSShorthandProperty.js",
         "packages/react-dom/src/shared/dangerousStyleValue.js",
@@ -945,42 +1191,56 @@
       "id": "packages/react-dom/src/shared/CSSShorthandProperty.js",
       "path": "packages/react-dom/src/shared/CSSShorthandProperty.js",
       "name": "packages/react-dom/src/shared/CSSShorthandProperty.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/dangerousStyleValue.js",
       "path": "packages/react-dom/src/shared/dangerousStyleValue.js",
       "name": "packages/react-dom/src/shared/dangerousStyleValue.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/react-dom/src/shared/CSSProperty.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/shared/CSSProperty.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/shared/CSSProperty.js",
       "path": "packages/react-dom/src/shared/CSSProperty.js",
       "name": "packages/react-dom/src/shared/CSSProperty.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/hyphenateStyleName.js",
       "path": "packages/react-dom/src/shared/hyphenateStyleName.js",
       "name": "packages/react-dom/src/shared/hyphenateStyleName.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/warnValidStyle.js",
       "path": "packages/react-dom/src/shared/warnValidStyle.js",
       "name": "packages/react-dom/src/shared/warnValidStyle.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/assertValidProps.js",
       "path": "packages/react-dom/src/shared/assertValidProps.js",
       "name": "packages/react-dom/src/shared/assertValidProps.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/shared/invariant.js",
         "packages/react-dom/src/shared/voidElementTags.js"
@@ -990,35 +1250,47 @@
       "id": "packages/react-dom/src/shared/voidElementTags.js",
       "path": "packages/react-dom/src/shared/voidElementTags.js",
       "name": "packages/react-dom/src/shared/voidElementTags.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/react-dom/src/shared/omittedCloseTags.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/shared/omittedCloseTags.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/shared/omittedCloseTags.js",
       "path": "packages/react-dom/src/shared/omittedCloseTags.js",
       "name": "packages/react-dom/src/shared/omittedCloseTags.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/isCustomComponent.js",
       "path": "packages/react-dom/src/shared/isCustomComponent.js",
       "name": "packages/react-dom/src/shared/isCustomComponent.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/possibleStandardNames.js",
       "path": "packages/react-dom/src/shared/possibleStandardNames.js",
       "name": "packages/react-dom/src/shared/possibleStandardNames.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/ReactDOMInvalidARIAHook.js",
       "path": "packages/react-dom/src/shared/ReactDOMInvalidARIAHook.js",
       "name": "packages/react-dom/src/shared/ReactDOMInvalidARIAHook.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/shared/DOMProperty.js",
         "packages/react-dom/src/shared/isCustomComponent.js",
@@ -1029,21 +1301,27 @@
       "id": "packages/react-dom/src/shared/validAriaProperties.js",
       "path": "packages/react-dom/src/shared/validAriaProperties.js",
       "name": "packages/react-dom/src/shared/validAriaProperties.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/ReactDOMNullInputValuePropHook.js",
       "path": "packages/react-dom/src/shared/ReactDOMNullInputValuePropHook.js",
       "name": "packages/react-dom/src/shared/ReactDOMNullInputValuePropHook.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/ReactDOMUnknownPropertyHook.js",
       "path": "packages/react-dom/src/shared/ReactDOMUnknownPropertyHook.js",
       "name": "packages/react-dom/src/shared/ReactDOMUnknownPropertyHook.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/shared/DOMProperty.js",
         "packages/react-dom/src/shared/isCustomComponent.js",
@@ -1054,21 +1332,30 @@
       "id": "packages/react-dom/src/client/validateDOMNesting.js",
       "path": "packages/react-dom/src/client/validateDOMNesting.js",
       "name": "packages/react-dom/src/client/validateDOMNesting.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/shared/checkReact.js",
       "path": "packages/react-dom/src/shared/checkReact.js",
       "name": "packages/react-dom/src/shared/checkReact.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/react/index.js", "packages/shared/invariant.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react/index.js",
+        "packages/shared/invariant.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/client/ReactDOMLegacy.js",
       "path": "packages/react-dom/src/client/ReactDOMLegacy.js",
       "name": "packages/react-dom/src/client/ReactDOMLegacy.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/client/ReactDOMHostConfig.js",
         "packages/react-dom/src/client/ReactDOMRoot.js",
@@ -1087,7 +1374,9 @@
       "id": "packages/react-dom/src/client/ReactDOMEventHandle.js",
       "path": "packages/react-dom/src/client/ReactDOMEventHandle.js",
       "name": "packages/react-dom/src/client/ReactDOMEventHandle.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/events/DOMEventNames.js",
         "packages/shared/ReactTypes.js",
@@ -1104,14 +1393,21 @@
       "id": "packages/react-dom/server.browser.js",
       "path": "packages/react-dom/server.browser.js",
       "name": "packages/react-dom/server.browser.js",
-      "labels": ["pkg:react-dom", "pkg_entry"],
-      "dependsOn": ["packages/react-dom/src/server/ReactDOMServerBrowser.js"]
+      "labels": [
+        "pkg:react-dom",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/server/ReactDOMServerBrowser.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/server/ReactDOMServerBrowser.js",
       "path": "packages/react-dom/src/server/ReactDOMServerBrowser.js",
       "name": "packages/react-dom/src/server/ReactDOMServerBrowser.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/shared/ReactVersion.js",
         "packages/shared/invariant.js",
@@ -1122,28 +1418,40 @@
       "id": "packages/react-dom/src/server/ReactDOMStringRenderer.js",
       "path": "packages/react-dom/src/server/ReactDOMStringRenderer.js",
       "name": "packages/react-dom/src/server/ReactDOMStringRenderer.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/react-dom/src/server/ReactPartialRenderer.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/server/ReactPartialRenderer.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/server/ReactPartialRenderer.js",
       "path": "packages/react-dom/src/server/ReactPartialRenderer.js",
       "name": "packages/react-dom/src/server/ReactPartialRenderer.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/server/ReactThreadIDAllocator.js",
       "path": "packages/react-dom/src/server/ReactThreadIDAllocator.js",
       "name": "packages/react-dom/src/server/ReactThreadIDAllocator.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/shared/invariant.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/shared/invariant.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/server/ReactPartialRendererContext.js",
       "path": "packages/react-dom/src/server/ReactPartialRendererContext.js",
       "name": "packages/react-dom/src/server/ReactPartialRendererContext.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/server/ReactThreadIDAllocator.js",
         "packages/shared/ReactTypes.js",
@@ -1157,7 +1465,9 @@
       "id": "packages/react-dom/src/server/DOMMarkupOperations.js",
       "path": "packages/react-dom/src/server/DOMMarkupOperations.js",
       "name": "packages/react-dom/src/server/DOMMarkupOperations.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-dom/src/shared/DOMProperty.js",
         "packages/react-dom/src/shared/sanitizeURL.js",
@@ -1168,21 +1478,29 @@
       "id": "packages/react-dom/src/server/quoteAttributeValueForBrowser.js",
       "path": "packages/react-dom/src/server/quoteAttributeValueForBrowser.js",
       "name": "packages/react-dom/src/server/quoteAttributeValueForBrowser.js",
-      "labels": ["pkg:react-dom"],
-      "dependsOn": ["packages/react-dom/src/server/escapeTextForBrowser.js"]
+      "labels": [
+        "pkg:react-dom"
+      ],
+      "dependsOn": [
+        "packages/react-dom/src/server/escapeTextForBrowser.js"
+      ]
     },
     {
       "id": "packages/react-dom/src/server/escapeTextForBrowser.js",
       "path": "packages/react-dom/src/server/escapeTextForBrowser.js",
       "name": "packages/react-dom/src/server/escapeTextForBrowser.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-dom/src/server/ReactPartialRendererHooks.js",
       "path": "packages/react-dom/src/server/ReactPartialRendererHooks.js",
       "name": "packages/react-dom/src/server/ReactPartialRendererHooks.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactTypes.js",
@@ -1196,7 +1514,10 @@
       "id": "packages/react-dom/unstable-fizz.browser.js",
       "path": "packages/react-dom/unstable-fizz.browser.js",
       "name": "packages/react-dom/unstable-fizz.browser.js",
-      "labels": ["pkg:react-dom", "pkg_entry"],
+      "labels": [
+        "pkg:react-dom",
+        "pkg_entry"
+      ],
       "dependsOn": [
         "packages/react-dom/src/server/ReactDOMFizzServerBrowser.js"
       ]
@@ -1205,7 +1526,9 @@
       "id": "packages/react-dom/src/server/ReactDOMFizzServerBrowser.js",
       "path": "packages/react-dom/src/server/ReactDOMFizzServerBrowser.js",
       "name": "packages/react-dom/src/server/ReactDOMFizzServerBrowser.js",
-      "labels": ["pkg:react-dom"],
+      "labels": [
+        "pkg:react-dom"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-server/src/ReactFizzServer.js"
@@ -1215,28 +1538,41 @@
       "id": "node_modules/react-server",
       "path": "node_modules/react-server",
       "name": "node_modules/react-server",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-fetch/index.js",
       "path": "packages/react-fetch/index.js",
       "name": "packages/react-fetch/index.js",
-      "labels": ["pkg:react-fetch", "pkg_entry"],
-      "dependsOn": ["packages/react-fetch/index.node.js"]
+      "labels": [
+        "pkg:react-fetch",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-fetch/index.node.js"
+      ]
     },
     {
       "id": "packages/react-fetch/index.node.js",
       "path": "packages/react-fetch/index.node.js",
       "name": "packages/react-fetch/index.node.js",
-      "labels": ["pkg:react-fetch"],
-      "dependsOn": ["packages/react-fetch/src/ReactFetchNode.js"]
+      "labels": [
+        "pkg:react-fetch"
+      ],
+      "dependsOn": [
+        "packages/react-fetch/src/ReactFetchNode.js"
+      ]
     },
     {
       "id": "packages/react-fetch/src/ReactFetchNode.js",
       "path": "packages/react-fetch/src/ReactFetchNode.js",
       "name": "packages/react-fetch/src/ReactFetchNode.js",
-      "labels": ["pkg:react-fetch"],
+      "labels": [
+        "pkg:react-fetch"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react/unstable-cache.js"
@@ -1246,14 +1582,21 @@
       "id": "packages/react-fetch/index.browser.js",
       "path": "packages/react-fetch/index.browser.js",
       "name": "packages/react-fetch/index.browser.js",
-      "labels": ["pkg:react-fetch", "pkg_entry"],
-      "dependsOn": ["packages/react-fetch/src/ReactFetchBrowser.js"]
+      "labels": [
+        "pkg:react-fetch",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-fetch/src/ReactFetchBrowser.js"
+      ]
     },
     {
       "id": "packages/react-fetch/src/ReactFetchBrowser.js",
       "path": "packages/react-fetch/src/ReactFetchBrowser.js",
       "name": "packages/react-fetch/src/ReactFetchBrowser.js",
-      "labels": ["pkg:react-fetch"],
+      "labels": [
+        "pkg:react-fetch"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react/unstable-cache.js"
@@ -1263,14 +1606,21 @@
       "id": "packages/react-is/index.js",
       "path": "packages/react-is/index.js",
       "name": "packages/react-is/index.js",
-      "labels": ["pkg:react-is", "pkg_entry"],
-      "dependsOn": ["packages/react-is/src/ReactIs.js"]
+      "labels": [
+        "pkg:react-is",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-is/src/ReactIs.js"
+      ]
     },
     {
       "id": "packages/react-is/src/ReactIs.js",
       "path": "packages/react-is/src/ReactIs.js",
       "name": "packages/react-is/src/ReactIs.js",
-      "labels": ["pkg:react-is"],
+      "labels": [
+        "pkg:react-is"
+      ],
       "dependsOn": [
         "packages/shared/ReactSymbols.js",
         "packages/shared/isValidElementType.js"
@@ -1280,7 +1630,10 @@
       "id": "packages/react-native-renderer/index.js",
       "path": "packages/react-native-renderer/index.js",
       "name": "packages/react-native-renderer/index.js",
-      "labels": ["pkg:react-native-renderer", "pkg_entry"],
+      "labels": [
+        "pkg:react-native-renderer",
+        "pkg_entry"
+      ],
       "dependsOn": [
         "packages/react-native-renderer/src/ReactNativeTypes.js",
         "packages/react-native-renderer/src/ReactNativeRenderer.js"
@@ -1290,14 +1643,20 @@
       "id": "packages/react-native-renderer/src/ReactNativeTypes.js",
       "path": "packages/react-native-renderer/src/ReactNativeTypes.js",
       "name": "packages/react-native-renderer/src/ReactNativeTypes.js",
-      "labels": ["pkg:react-native-renderer"],
-      "dependsOn": ["packages/react/index.js"]
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
+      "dependsOn": [
+        "packages/react/index.js"
+      ]
     },
     {
       "id": "packages/react-native-renderer/src/ReactNativeRenderer.js",
       "path": "packages/react-native-renderer/src/ReactNativeRenderer.js",
       "name": "packages/react-native-renderer/src/ReactNativeRenderer.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-native-renderer/src/ReactNativeTypes.js",
         "packages/shared/ReactTypes.js",
@@ -1318,7 +1677,9 @@
       "id": "packages/react-native-renderer/src/ReactNativeInjection.js",
       "path": "packages/react-native-renderer/src/ReactNativeInjection.js",
       "name": "packages/react-native-renderer/src/ReactNativeInjection.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-native-renderer/src/ReactNativeInjectionShared.js",
         "packages/react-native-renderer/src/ReactNativeComponentTree.js",
@@ -1332,7 +1693,9 @@
       "id": "packages/react-native-renderer/src/ReactNativeInjectionShared.js",
       "path": "packages/react-native-renderer/src/ReactNativeInjectionShared.js",
       "name": "packages/react-native-renderer/src/ReactNativeInjectionShared.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-native-renderer/src/legacy-events/ResponderEventPlugin.js",
         "packages/react-native-renderer/src/legacy-events/EventPluginRegistry.js",
@@ -1344,7 +1707,9 @@
       "id": "packages/react-native-renderer/src/legacy-events/ResponderEventPlugin.js",
       "path": "packages/react-native-renderer/src/legacy-events/ResponderEventPlugin.js",
       "name": "packages/react-native-renderer/src/legacy-events/ResponderEventPlugin.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-native-renderer/src/legacy-events/EventPluginUtils.js",
         "packages/react-native-renderer/src/legacy-events/ResponderSyntheticEvent.js",
@@ -1361,7 +1726,9 @@
       "id": "packages/react-native-renderer/src/legacy-events/EventPluginUtils.js",
       "path": "packages/react-native-renderer/src/legacy-events/EventPluginUtils.js",
       "name": "packages/react-native-renderer/src/legacy-events/EventPluginUtils.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/shared/ReactErrorUtils.js",
         "packages/shared/invariant.js"
@@ -1371,7 +1738,9 @@
       "id": "packages/react-native-renderer/src/legacy-events/ResponderSyntheticEvent.js",
       "path": "packages/react-native-renderer/src/legacy-events/ResponderSyntheticEvent.js",
       "name": "packages/react-native-renderer/src/legacy-events/ResponderSyntheticEvent.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-native-renderer/src/legacy-events/SyntheticEvent.js"
       ]
@@ -1380,14 +1749,20 @@
       "id": "packages/react-native-renderer/src/legacy-events/SyntheticEvent.js",
       "path": "packages/react-native-renderer/src/legacy-events/SyntheticEvent.js",
       "name": "packages/react-native-renderer/src/legacy-events/SyntheticEvent.js",
-      "labels": ["pkg:react-native-renderer"],
-      "dependsOn": ["packages/shared/invariant.js"]
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
+      "dependsOn": [
+        "packages/shared/invariant.js"
+      ]
     },
     {
       "id": "packages/react-native-renderer/src/legacy-events/ResponderTouchHistoryStore.js",
       "path": "packages/react-native-renderer/src/legacy-events/ResponderTouchHistoryStore.js",
       "name": "packages/react-native-renderer/src/legacy-events/ResponderTouchHistoryStore.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/shared/invariant.js",
         "packages/react-native-renderer/src/legacy-events/ResponderTopLevelEventTypes.js"
@@ -1397,35 +1772,49 @@
       "id": "packages/react-native-renderer/src/legacy-events/ResponderTopLevelEventTypes.js",
       "path": "packages/react-native-renderer/src/legacy-events/ResponderTopLevelEventTypes.js",
       "name": "packages/react-native-renderer/src/legacy-events/ResponderTopLevelEventTypes.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-native-renderer/src/legacy-events/accumulate.js",
       "path": "packages/react-native-renderer/src/legacy-events/accumulate.js",
       "name": "packages/react-native-renderer/src/legacy-events/accumulate.js",
-      "labels": ["pkg:react-native-renderer"],
-      "dependsOn": ["packages/shared/invariant.js"]
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
+      "dependsOn": [
+        "packages/shared/invariant.js"
+      ]
     },
     {
       "id": "packages/react-native-renderer/src/legacy-events/accumulateInto.js",
       "path": "packages/react-native-renderer/src/legacy-events/accumulateInto.js",
       "name": "packages/react-native-renderer/src/legacy-events/accumulateInto.js",
-      "labels": ["pkg:react-native-renderer"],
-      "dependsOn": ["packages/shared/invariant.js"]
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
+      "dependsOn": [
+        "packages/shared/invariant.js"
+      ]
     },
     {
       "id": "packages/react-native-renderer/src/legacy-events/forEachAccumulated.js",
       "path": "packages/react-native-renderer/src/legacy-events/forEachAccumulated.js",
       "name": "packages/react-native-renderer/src/legacy-events/forEachAccumulated.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-native-renderer/src/legacy-events/EventPluginRegistry.js",
       "path": "packages/react-native-renderer/src/legacy-events/EventPluginRegistry.js",
       "name": "packages/react-native-renderer/src/legacy-events/EventPluginRegistry.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-native-renderer/src/legacy-events/ReactSyntheticEventType.js",
         "packages/react-native-renderer/src/legacy-events/PluginModuleType.js",
@@ -1436,7 +1825,9 @@
       "id": "packages/react-native-renderer/src/legacy-events/ReactSyntheticEventType.js",
       "path": "packages/react-native-renderer/src/legacy-events/ReactSyntheticEventType.js",
       "name": "packages/react-native-renderer/src/legacy-events/ReactSyntheticEventType.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactTypes.js",
@@ -1447,14 +1838,18 @@
       "id": "packages/react-native-renderer/src/legacy-events/TopLevelEventTypes.js",
       "path": "packages/react-native-renderer/src/legacy-events/TopLevelEventTypes.js",
       "name": "packages/react-native-renderer/src/legacy-events/TopLevelEventTypes.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-native-renderer/src/legacy-events/PluginModuleType.js",
       "path": "packages/react-native-renderer/src/legacy-events/PluginModuleType.js",
       "name": "packages/react-native-renderer/src/legacy-events/PluginModuleType.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-native-renderer/src/legacy-events/ReactSyntheticEventType.js",
@@ -1465,7 +1860,9 @@
       "id": "packages/react-native-renderer/src/ReactNativeBridgeEventPlugin.js",
       "path": "packages/react-native-renderer/src/ReactNativeBridgeEventPlugin.js",
       "name": "packages/react-native-renderer/src/ReactNativeBridgeEventPlugin.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-native-renderer/src/legacy-events/PluginModuleType.js",
         "packages/react-native-renderer/src/legacy-events/TopLevelEventTypes.js",
@@ -1481,7 +1878,9 @@
       "id": "packages/react-native-renderer/src/ReactNativeGetListener.js",
       "path": "packages/react-native-renderer/src/ReactNativeGetListener.js",
       "name": "packages/react-native-renderer/src/ReactNativeGetListener.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/invariant.js",
@@ -1492,21 +1891,29 @@
       "id": "packages/react-native-renderer/src/ReactNativeEventPluginOrder.js",
       "path": "packages/react-native-renderer/src/ReactNativeEventPluginOrder.js",
       "name": "packages/react-native-renderer/src/ReactNativeEventPluginOrder.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-native-renderer/src/ReactNativeComponentTree.js",
       "path": "packages/react-native-renderer/src/ReactNativeComponentTree.js",
       "name": "packages/react-native-renderer/src/ReactNativeComponentTree.js",
-      "labels": ["pkg:react-native-renderer"],
-      "dependsOn": ["packages/shared/invariant.js"]
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
+      "dependsOn": [
+        "packages/shared/invariant.js"
+      ]
     },
     {
       "id": "packages/react-native-renderer/src/ReactNativeEventEmitter.js",
       "path": "packages/react-native-renderer/src/ReactNativeEventEmitter.js",
       "name": "packages/react-native-renderer/src/ReactNativeEventEmitter.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-native-renderer/src/legacy-events/PluginModuleType.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -1524,14 +1931,18 @@
       "id": "packages/react-native-renderer/src/legacy-events/ReactGenericBatching.js",
       "path": "packages/react-native-renderer/src/legacy-events/ReactGenericBatching.js",
       "name": "packages/react-native-renderer/src/legacy-events/ReactGenericBatching.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-native-renderer/src/legacy-events/EventBatching.js",
       "path": "packages/react-native-renderer/src/legacy-events/EventBatching.js",
       "name": "packages/react-native-renderer/src/legacy-events/EventBatching.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/shared/invariant.js",
         "packages/shared/ReactErrorUtils.js",
@@ -1545,14 +1956,18 @@
       "id": "packages/react-native-renderer/src/ReactNativeGlobalResponderHandler.js",
       "path": "packages/react-native-renderer/src/ReactNativeGlobalResponderHandler.js",
       "name": "packages/react-native-renderer/src/ReactNativeGlobalResponderHandler.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-native-renderer/src/ReactNativeFiberInspector.js",
       "path": "packages/react-native-renderer/src/ReactNativeFiberInspector.js",
       "name": "packages/react-native-renderer/src/ReactNativeFiberInspector.js",
-      "labels": ["pkg:react-native-renderer"],
+      "labels": [
+        "pkg:react-native-renderer"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-native-renderer/src/ReactNativeTypes.js",
@@ -1567,14 +1982,21 @@
       "id": "packages/react-noop-renderer/index.js",
       "path": "packages/react-noop-renderer/index.js",
       "name": "packages/react-noop-renderer/index.js",
-      "labels": ["pkg:react-noop-renderer", "pkg_entry"],
-      "dependsOn": ["packages/react-noop-renderer/src/ReactNoop.js"]
+      "labels": [
+        "pkg:react-noop-renderer",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-noop-renderer/src/ReactNoop.js"
+      ]
     },
     {
       "id": "packages/react-noop-renderer/src/ReactNoop.js",
       "path": "packages/react-noop-renderer/src/ReactNoop.js",
       "name": "packages/react-noop-renderer/src/ReactNoop.js",
-      "labels": ["pkg:react-noop-renderer"],
+      "labels": [
+        "pkg:react-noop-renderer"
+      ],
       "dependsOn": [
         "packages/react-reconciler/index.js",
         "packages/react-noop-renderer/src/createReactNoop.js"
@@ -1584,7 +2006,9 @@
       "id": "packages/react-noop-renderer/src/createReactNoop.js",
       "path": "packages/react-noop-renderer/src/createReactNoop.js",
       "name": "packages/react-noop-renderer/src/createReactNoop.js",
-      "labels": ["pkg:react-noop-renderer"],
+      "labels": [
+        "pkg:react-noop-renderer"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactTypes.js",
@@ -1599,70 +2023,97 @@
       "id": "packages/react-reconciler/index.js",
       "path": "packages/react-reconciler/index.js",
       "name": "packages/react-reconciler/index.js",
-      "labels": ["pkg:react-reconciler", "pkg_entry"],
-      "dependsOn": ["packages/react-reconciler/src/ReactFiberReconciler.js"]
+      "labels": [
+        "pkg:react-reconciler",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-reconciler/src/ReactFiberReconciler.js"
+      ]
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberReconciler.js",
       "path": "packages/react-reconciler/src/ReactFiberReconciler.js",
       "name": "packages/react-reconciler/src/ReactFiberReconciler.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberReconciler.old.js",
       "path": "packages/react-reconciler/src/ReactFiberReconciler.old.js",
       "name": "packages/react-reconciler/src/ReactFiberReconciler.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactInternalTypes.js",
       "path": "packages/react-reconciler/src/ReactInternalTypes.js",
       "name": "packages/react-reconciler/src/ReactInternalTypes.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberHostConfig.js",
       "path": "packages/react-reconciler/src/ReactFiberHostConfig.js",
       "name": "packages/react-reconciler/src/ReactFiberHostConfig.js",
-      "labels": ["pkg:react-reconciler"],
-      "dependsOn": ["packages/shared/invariant.js"]
+      "labels": [
+        "pkg:react-reconciler"
+      ],
+      "dependsOn": [
+        "packages/shared/invariant.js"
+      ]
     },
     {
       "id": "packages/react-reconciler/src/ReactWorkTags.js",
       "path": "packages/react-reconciler/src/ReactWorkTags.js",
       "name": "packages/react-reconciler/src/ReactWorkTags.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactTypeOfMode.js",
       "path": "packages/react-reconciler/src/ReactTypeOfMode.js",
       "name": "packages/react-reconciler/src/ReactTypeOfMode.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberFlags.js",
       "path": "packages/react-reconciler/src/ReactFiberFlags.js",
       "name": "packages/react-reconciler/src/ReactFiberFlags.js",
-      "labels": ["pkg:react-reconciler"],
-      "dependsOn": ["packages/shared/ReactFeatureFlags.js"]
+      "labels": [
+        "pkg:react-reconciler"
+      ],
+      "dependsOn": [
+        "packages/shared/ReactFeatureFlags.js"
+      ]
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberLane.js",
       "path": "packages/react-reconciler/src/ReactFiberLane.js",
       "name": "packages/react-reconciler/src/ReactFiberLane.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/SchedulerWithReactIntegration.new.js",
       "path": "packages/react-reconciler/src/SchedulerWithReactIntegration.new.js",
       "name": "packages/react-reconciler/src/SchedulerWithReactIntegration.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/scheduler/index.js",
@@ -1676,14 +2127,18 @@
       "id": "packages/react-reconciler/src/ReactRootTags.js",
       "path": "packages/react-reconciler/src/ReactRootTags.js",
       "name": "packages/react-reconciler/src/ReactRootTags.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberSuspenseComponent.old.js",
       "path": "packages/react-reconciler/src/ReactFiberSuspenseComponent.old.js",
       "name": "packages/react-reconciler/src/ReactFiberSuspenseComponent.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -1697,7 +2152,9 @@
       "id": "packages/react-reconciler/src/ReactFiberTreeReflection.js",
       "path": "packages/react-reconciler/src/ReactFiberTreeReflection.js",
       "name": "packages/react-reconciler/src/ReactFiberTreeReflection.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberHostConfig.js",
@@ -1715,7 +2172,9 @@
       "id": "packages/react-reconciler/src/ReactFiberContext.old.js",
       "path": "packages/react-reconciler/src/ReactFiberContext.old.js",
       "name": "packages/react-reconciler/src/ReactFiberContext.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberStack.old.js",
@@ -1731,14 +2190,20 @@
       "id": "packages/react-reconciler/src/ReactFiberStack.old.js",
       "path": "packages/react-reconciler/src/ReactFiberStack.old.js",
       "name": "packages/react-reconciler/src/ReactFiberStack.old.js",
-      "labels": ["pkg:react-reconciler"],
-      "dependsOn": ["packages/react-reconciler/src/ReactInternalTypes.js"]
+      "labels": [
+        "pkg:react-reconciler"
+      ],
+      "dependsOn": [
+        "packages/react-reconciler/src/ReactInternalTypes.js"
+      ]
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberRoot.old.js",
       "path": "packages/react-reconciler/src/ReactFiberRoot.old.js",
       "name": "packages/react-reconciler/src/ReactFiberRoot.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactRootTags.js",
@@ -1754,14 +2219,18 @@
       "id": "packages/react-reconciler/src/ReactFiber.old.js",
       "path": "packages/react-reconciler/src/ReactFiber.old.js",
       "name": "packages/react-reconciler/src/ReactFiber.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberOffscreenComponent.js",
       "path": "packages/react-reconciler/src/ReactFiberOffscreenComponent.js",
       "name": "packages/react-reconciler/src/ReactFiberOffscreenComponent.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-reconciler/src/ReactFiberLane.js"
@@ -1771,7 +2240,9 @@
       "id": "packages/react-reconciler/src/ReactFiberDevToolsHook.old.js",
       "path": "packages/react-reconciler/src/ReactFiberDevToolsHook.old.js",
       "name": "packages/react-reconciler/src/ReactFiberDevToolsHook.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactFeatureFlags.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -1783,49 +2254,63 @@
       "id": "packages/react-reconciler/src/ReactFiberHotReloading.old.js",
       "path": "packages/react-reconciler/src/ReactFiberHotReloading.old.js",
       "name": "packages/react-reconciler/src/ReactFiberHotReloading.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberWorkLoop.old.js",
       "path": "packages/react-reconciler/src/ReactFiberWorkLoop.old.js",
       "name": "packages/react-reconciler/src/ReactFiberWorkLoop.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberHooks.old.js",
       "path": "packages/react-reconciler/src/ReactFiberHooks.old.js",
       "name": "packages/react-reconciler/src/ReactFiberHooks.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactHookEffectTags.js",
       "path": "packages/react-reconciler/src/ReactHookEffectTags.js",
       "name": "packages/react-reconciler/src/ReactHookEffectTags.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberNewContext.old.js",
       "path": "packages/react-reconciler/src/ReactFiberNewContext.old.js",
       "name": "packages/react-reconciler/src/ReactFiberNewContext.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/MaxInts.js",
       "path": "packages/react-reconciler/src/MaxInts.js",
       "name": "packages/react-reconciler/src/MaxInts.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactUpdateQueue.old.js",
       "path": "packages/react-reconciler/src/ReactUpdateQueue.old.js",
       "name": "packages/react-reconciler/src/ReactUpdateQueue.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberLane.js",
@@ -1842,7 +2327,9 @@
       "id": "packages/react-reconciler/src/ReactFiberBeginWork.old.js",
       "path": "packages/react-reconciler/src/ReactFiberBeginWork.old.js",
       "name": "packages/react-reconciler/src/ReactFiberBeginWork.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react/src/ReactLazy.js",
@@ -1887,7 +2374,9 @@
       "id": "packages/react-reconciler/src/ReactFiberSuspenseContext.old.js",
       "path": "packages/react-reconciler/src/ReactFiberSuspenseContext.old.js",
       "name": "packages/react-reconciler/src/ReactFiberSuspenseContext.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberStack.old.js"
@@ -1897,7 +2386,9 @@
       "id": "packages/react-reconciler/src/ReactStrictModeWarnings.old.js",
       "path": "packages/react-reconciler/src/ReactStrictModeWarnings.old.js",
       "name": "packages/react-reconciler/src/ReactStrictModeWarnings.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactCurrentFiber.js",
@@ -1909,7 +2400,9 @@
       "id": "packages/react-reconciler/src/ReactCurrentFiber.js",
       "path": "packages/react-reconciler/src/ReactCurrentFiber.js",
       "name": "packages/react-reconciler/src/ReactCurrentFiber.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactSharedInternals.js",
@@ -1921,7 +2414,9 @@
       "id": "packages/react-reconciler/src/ReactFiberComponentStack.js",
       "path": "packages/react-reconciler/src/ReactFiberComponentStack.js",
       "name": "packages/react-reconciler/src/ReactFiberComponentStack.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactWorkTags.js",
@@ -1932,7 +2427,9 @@
       "id": "packages/react-reconciler/src/ReactChildFiber.old.js",
       "path": "packages/react-reconciler/src/ReactChildFiber.old.js",
       "name": "packages/react-reconciler/src/ReactChildFiber.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactElementType.js",
         "packages/shared/ReactTypes.js",
@@ -1954,7 +2451,9 @@
       "id": "packages/react-reconciler/src/ReactFiberClassComponent.old.js",
       "path": "packages/react-reconciler/src/ReactFiberClassComponent.old.js",
       "name": "packages/react-reconciler/src/ReactFiberClassComponent.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberLane.js",
@@ -1983,14 +2482,18 @@
       "id": "packages/react-reconciler/src/ReactFiberLazyComponent.old.js",
       "path": "packages/react-reconciler/src/ReactFiberLazyComponent.old.js",
       "name": "packages/react-reconciler/src/ReactFiberLazyComponent.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/DebugTracing.js",
       "path": "packages/react-reconciler/src/DebugTracing.js",
       "name": "packages/react-reconciler/src/DebugTracing.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactFiberLane.js",
         "packages/shared/ReactTypes.js",
@@ -2001,7 +2504,9 @@
       "id": "packages/react-reconciler/src/SchedulingProfiler.js",
       "path": "packages/react-reconciler/src/SchedulingProfiler.js",
       "name": "packages/react-reconciler/src/SchedulingProfiler.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactFiberLane.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -2015,7 +2520,9 @@
       "id": "packages/react-reconciler/src/ReactFiberHostContext.old.js",
       "path": "packages/react-reconciler/src/ReactFiberHostContext.old.js",
       "name": "packages/react-reconciler/src/ReactFiberHostContext.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberStack.old.js",
@@ -2027,7 +2534,9 @@
       "id": "packages/react-reconciler/src/ReactProfilerTimer.old.js",
       "path": "packages/react-reconciler/src/ReactProfilerTimer.old.js",
       "name": "packages/react-reconciler/src/ReactProfilerTimer.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactFeatureFlags.js",
@@ -2039,7 +2548,9 @@
       "id": "packages/react-reconciler/src/ReactFiberHydrationContext.old.js",
       "path": "packages/react-reconciler/src/ReactFiberHydrationContext.old.js",
       "name": "packages/react-reconciler/src/ReactFiberHydrationContext.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberHostConfig.js",
@@ -2056,7 +2567,9 @@
       "id": "packages/react-reconciler/src/ReactMutableSource.old.js",
       "path": "packages/react-reconciler/src/ReactMutableSource.old.js",
       "name": "packages/react-reconciler/src/ReactMutableSource.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -2067,7 +2580,9 @@
       "id": "packages/react-reconciler/src/SchedulerWithReactIntegration.old.js",
       "path": "packages/react-reconciler/src/SchedulerWithReactIntegration.old.js",
       "name": "packages/react-reconciler/src/SchedulerWithReactIntegration.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/scheduler/index.js",
@@ -2081,14 +2596,20 @@
       "id": "packages/react-reconciler/src/ReactFiberTransition.js",
       "path": "packages/react-reconciler/src/ReactFiberTransition.js",
       "name": "packages/react-reconciler/src/ReactFiberTransition.js",
-      "labels": ["pkg:react-reconciler"],
-      "dependsOn": ["packages/shared/ReactSharedInternals.js"]
+      "labels": [
+        "pkg:react-reconciler"
+      ],
+      "dependsOn": [
+        "packages/shared/ReactSharedInternals.js"
+      ]
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberCompleteWork.old.js",
       "path": "packages/react-reconciler/src/ReactFiberCompleteWork.old.js",
       "name": "packages/react-reconciler/src/ReactFiberCompleteWork.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberLane.js",
@@ -2119,7 +2640,9 @@
       "id": "packages/react-reconciler/src/ReactFiberFundamental.old.js",
       "path": "packages/react-reconciler/src/ReactFiberFundamental.old.js",
       "name": "packages/react-reconciler/src/ReactFiberFundamental.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactTypes.js"
@@ -2129,7 +2652,9 @@
       "id": "packages/react-reconciler/src/ReactFiberScope.old.js",
       "path": "packages/react-reconciler/src/ReactFiberScope.old.js",
       "name": "packages/react-reconciler/src/ReactFiberScope.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactTypes.js",
@@ -2143,7 +2668,9 @@
       "id": "packages/react-reconciler/src/ReactFiberUnwindWork.old.js",
       "path": "packages/react-reconciler/src/ReactFiberUnwindWork.old.js",
       "name": "packages/react-reconciler/src/ReactFiberUnwindWork.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberLane.js",
@@ -2167,7 +2694,9 @@
       "id": "packages/react-reconciler/src/ReactFiberThrow.old.js",
       "path": "packages/react-reconciler/src/ReactFiberThrow.old.js",
       "name": "packages/react-reconciler/src/ReactFiberThrow.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberLane.js",
@@ -2192,7 +2721,9 @@
       "id": "packages/react-reconciler/src/ReactCapturedValue.js",
       "path": "packages/react-reconciler/src/ReactCapturedValue.js",
       "name": "packages/react-reconciler/src/ReactCapturedValue.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberComponentStack.js"
@@ -2202,7 +2733,9 @@
       "id": "packages/react-reconciler/src/ReactFiberErrorLogger.js",
       "path": "packages/react-reconciler/src/ReactFiberErrorLogger.js",
       "name": "packages/react-reconciler/src/ReactFiberErrorLogger.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactCapturedValue.js",
@@ -2215,7 +2748,9 @@
       "id": "packages/react-reconciler/src/ReactFiberErrorDialog.js",
       "path": "packages/react-reconciler/src/ReactFiberErrorDialog.js",
       "name": "packages/react-reconciler/src/ReactFiberErrorDialog.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactCapturedValue.js"
@@ -2225,7 +2760,9 @@
       "id": "packages/react-reconciler/src/ReactFiberCommitWork.old.js",
       "path": "packages/react-reconciler/src/ReactFiberCommitWork.old.js",
       "name": "packages/react-reconciler/src/ReactFiberCommitWork.old.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactFiberHostConfig.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -2255,7 +2792,9 @@
       "id": "packages/react-reconciler/src/ReactTestSelectors.js",
       "path": "packages/react-reconciler/src/ReactTestSelectors.js",
       "name": "packages/react-reconciler/src/ReactTestSelectors.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberHostConfig.js",
@@ -2268,7 +2807,9 @@
       "id": "packages/react-reconciler/src/ReactMutableSource.new.js",
       "path": "packages/react-reconciler/src/ReactMutableSource.new.js",
       "name": "packages/react-reconciler/src/ReactMutableSource.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -2279,7 +2820,9 @@
       "id": "packages/react-reconciler/src/ReactPortal.js",
       "path": "packages/react-reconciler/src/ReactPortal.js",
       "name": "packages/react-reconciler/src/ReactPortal.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactSymbols.js",
         "packages/shared/ReactTypes.js"
@@ -2289,14 +2832,18 @@
       "id": "packages/react-reconciler/src/ReactFiberReconciler.new.js",
       "path": "packages/react-reconciler/src/ReactFiberReconciler.new.js",
       "name": "packages/react-reconciler/src/ReactFiberReconciler.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberSuspenseComponent.new.js",
       "path": "packages/react-reconciler/src/ReactFiberSuspenseComponent.new.js",
       "name": "packages/react-reconciler/src/ReactFiberSuspenseComponent.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -2310,7 +2857,9 @@
       "id": "packages/react-reconciler/src/ReactFiberContext.new.js",
       "path": "packages/react-reconciler/src/ReactFiberContext.new.js",
       "name": "packages/react-reconciler/src/ReactFiberContext.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberStack.new.js",
@@ -2326,14 +2875,20 @@
       "id": "packages/react-reconciler/src/ReactFiberStack.new.js",
       "path": "packages/react-reconciler/src/ReactFiberStack.new.js",
       "name": "packages/react-reconciler/src/ReactFiberStack.new.js",
-      "labels": ["pkg:react-reconciler"],
-      "dependsOn": ["packages/react-reconciler/src/ReactInternalTypes.js"]
+      "labels": [
+        "pkg:react-reconciler"
+      ],
+      "dependsOn": [
+        "packages/react-reconciler/src/ReactInternalTypes.js"
+      ]
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberRoot.new.js",
       "path": "packages/react-reconciler/src/ReactFiberRoot.new.js",
       "name": "packages/react-reconciler/src/ReactFiberRoot.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactRootTags.js",
@@ -2349,14 +2904,18 @@
       "id": "packages/react-reconciler/src/ReactFiber.new.js",
       "path": "packages/react-reconciler/src/ReactFiber.new.js",
       "name": "packages/react-reconciler/src/ReactFiber.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberDevToolsHook.new.js",
       "path": "packages/react-reconciler/src/ReactFiberDevToolsHook.new.js",
       "name": "packages/react-reconciler/src/ReactFiberDevToolsHook.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactFeatureFlags.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -2368,35 +2927,45 @@
       "id": "packages/react-reconciler/src/ReactFiberHotReloading.new.js",
       "path": "packages/react-reconciler/src/ReactFiberHotReloading.new.js",
       "name": "packages/react-reconciler/src/ReactFiberHotReloading.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberWorkLoop.new.js",
       "path": "packages/react-reconciler/src/ReactFiberWorkLoop.new.js",
       "name": "packages/react-reconciler/src/ReactFiberWorkLoop.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberHooks.new.js",
       "path": "packages/react-reconciler/src/ReactFiberHooks.new.js",
       "name": "packages/react-reconciler/src/ReactFiberHooks.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberNewContext.new.js",
       "path": "packages/react-reconciler/src/ReactFiberNewContext.new.js",
       "name": "packages/react-reconciler/src/ReactFiberNewContext.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactUpdateQueue.new.js",
       "path": "packages/react-reconciler/src/ReactUpdateQueue.new.js",
       "name": "packages/react-reconciler/src/ReactUpdateQueue.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberLane.js",
@@ -2413,7 +2982,9 @@
       "id": "packages/react-reconciler/src/ReactFiberBeginWork.new.js",
       "path": "packages/react-reconciler/src/ReactFiberBeginWork.new.js",
       "name": "packages/react-reconciler/src/ReactFiberBeginWork.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react/src/ReactLazy.js",
@@ -2458,7 +3029,9 @@
       "id": "packages/react-reconciler/src/ReactFiberSuspenseContext.new.js",
       "path": "packages/react-reconciler/src/ReactFiberSuspenseContext.new.js",
       "name": "packages/react-reconciler/src/ReactFiberSuspenseContext.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberStack.new.js"
@@ -2468,7 +3041,9 @@
       "id": "packages/react-reconciler/src/ReactStrictModeWarnings.new.js",
       "path": "packages/react-reconciler/src/ReactStrictModeWarnings.new.js",
       "name": "packages/react-reconciler/src/ReactStrictModeWarnings.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactCurrentFiber.js",
@@ -2480,7 +3055,9 @@
       "id": "packages/react-reconciler/src/ReactChildFiber.new.js",
       "path": "packages/react-reconciler/src/ReactChildFiber.new.js",
       "name": "packages/react-reconciler/src/ReactChildFiber.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/shared/ReactElementType.js",
         "packages/shared/ReactTypes.js",
@@ -2502,7 +3079,9 @@
       "id": "packages/react-reconciler/src/ReactFiberClassComponent.new.js",
       "path": "packages/react-reconciler/src/ReactFiberClassComponent.new.js",
       "name": "packages/react-reconciler/src/ReactFiberClassComponent.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberLane.js",
@@ -2531,14 +3110,18 @@
       "id": "packages/react-reconciler/src/ReactFiberLazyComponent.new.js",
       "path": "packages/react-reconciler/src/ReactFiberLazyComponent.new.js",
       "name": "packages/react-reconciler/src/ReactFiberLazyComponent.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-reconciler/src/ReactFiberHostContext.new.js",
       "path": "packages/react-reconciler/src/ReactFiberHostContext.new.js",
       "name": "packages/react-reconciler/src/ReactFiberHostContext.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberStack.new.js",
@@ -2550,7 +3133,9 @@
       "id": "packages/react-reconciler/src/ReactProfilerTimer.new.js",
       "path": "packages/react-reconciler/src/ReactProfilerTimer.new.js",
       "name": "packages/react-reconciler/src/ReactProfilerTimer.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactFeatureFlags.js",
@@ -2562,7 +3147,9 @@
       "id": "packages/react-reconciler/src/ReactFiberHydrationContext.new.js",
       "path": "packages/react-reconciler/src/ReactFiberHydrationContext.new.js",
       "name": "packages/react-reconciler/src/ReactFiberHydrationContext.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberHostConfig.js",
@@ -2579,7 +3166,9 @@
       "id": "packages/react-reconciler/src/ReactFiberCompleteWork.new.js",
       "path": "packages/react-reconciler/src/ReactFiberCompleteWork.new.js",
       "name": "packages/react-reconciler/src/ReactFiberCompleteWork.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberLane.js",
@@ -2610,7 +3199,9 @@
       "id": "packages/react-reconciler/src/ReactFiberFundamental.new.js",
       "path": "packages/react-reconciler/src/ReactFiberFundamental.new.js",
       "name": "packages/react-reconciler/src/ReactFiberFundamental.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactTypes.js"
@@ -2620,7 +3211,9 @@
       "id": "packages/react-reconciler/src/ReactFiberScope.new.js",
       "path": "packages/react-reconciler/src/ReactFiberScope.new.js",
       "name": "packages/react-reconciler/src/ReactFiberScope.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/shared/ReactTypes.js",
@@ -2634,7 +3227,9 @@
       "id": "packages/react-reconciler/src/ReactFiberUnwindWork.new.js",
       "path": "packages/react-reconciler/src/ReactFiberUnwindWork.new.js",
       "name": "packages/react-reconciler/src/ReactFiberUnwindWork.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberLane.js",
@@ -2658,7 +3253,9 @@
       "id": "packages/react-reconciler/src/ReactFiberThrow.new.js",
       "path": "packages/react-reconciler/src/ReactFiberThrow.new.js",
       "name": "packages/react-reconciler/src/ReactFiberThrow.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactInternalTypes.js",
         "packages/react-reconciler/src/ReactFiberLane.js",
@@ -2683,7 +3280,9 @@
       "id": "packages/react-reconciler/src/ReactFiberCommitWork.new.js",
       "path": "packages/react-reconciler/src/ReactFiberCommitWork.new.js",
       "name": "packages/react-reconciler/src/ReactFiberCommitWork.new.js",
-      "labels": ["pkg:react-reconciler"],
+      "labels": [
+        "pkg:react-reconciler"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactFiberHostConfig.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -2713,14 +3312,21 @@
       "id": "packages/react-refresh/runtime.js",
       "path": "packages/react-refresh/runtime.js",
       "name": "packages/react-refresh/runtime.js",
-      "labels": ["pkg:react-refresh", "pkg_entry"],
-      "dependsOn": ["packages/react-refresh/src/ReactFreshRuntime.js"]
+      "labels": [
+        "pkg:react-refresh",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-refresh/src/ReactFreshRuntime.js"
+      ]
     },
     {
       "id": "packages/react-refresh/src/ReactFreshRuntime.js",
       "path": "packages/react-refresh/src/ReactFreshRuntime.js",
       "name": "packages/react-refresh/src/ReactFreshRuntime.js",
-      "labels": ["pkg:react-refresh"],
+      "labels": [
+        "pkg:react-refresh"
+      ],
       "dependsOn": [
         "packages/react-reconciler/src/ReactFiberHostConfig.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -2733,14 +3339,21 @@
       "id": "packages/react-server/index.js",
       "path": "packages/react-server/index.js",
       "name": "packages/react-server/index.js",
-      "labels": ["pkg:react-server", "pkg_entry"],
-      "dependsOn": ["packages/react-server/src/ReactFizzServer.js"]
+      "labels": [
+        "pkg:react-server",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-server/src/ReactFizzServer.js"
+      ]
     },
     {
       "id": "packages/react-server/src/ReactFizzServer.js",
       "path": "packages/react-server/src/ReactFizzServer.js",
       "name": "packages/react-server/src/ReactFizzServer.js",
-      "labels": ["pkg:react-server"],
+      "labels": [
+        "pkg:react-server"
+      ],
       "dependsOn": [
         "packages/react-server/src/ReactServerStreamConfig.js",
         "packages/shared/ReactTypes.js",
@@ -2752,28 +3365,43 @@
       "id": "packages/react-server/src/ReactServerStreamConfig.js",
       "path": "packages/react-server/src/ReactServerStreamConfig.js",
       "name": "packages/react-server/src/ReactServerStreamConfig.js",
-      "labels": ["pkg:react-server"],
-      "dependsOn": ["packages/shared/invariant.js"]
+      "labels": [
+        "pkg:react-server"
+      ],
+      "dependsOn": [
+        "packages/shared/invariant.js"
+      ]
     },
     {
       "id": "packages/react-server/src/ReactServerFormatConfig.js",
       "path": "packages/react-server/src/ReactServerFormatConfig.js",
       "name": "packages/react-server/src/ReactServerFormatConfig.js",
-      "labels": ["pkg:react-server"],
-      "dependsOn": ["packages/shared/invariant.js"]
+      "labels": [
+        "pkg:react-server"
+      ],
+      "dependsOn": [
+        "packages/shared/invariant.js"
+      ]
     },
     {
       "id": "packages/react-test-renderer/index.js",
       "path": "packages/react-test-renderer/index.js",
       "name": "packages/react-test-renderer/index.js",
-      "labels": ["pkg:react-test-renderer", "pkg_entry"],
-      "dependsOn": ["packages/react-test-renderer/src/ReactTestRenderer.js"]
+      "labels": [
+        "pkg:react-test-renderer",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react-test-renderer/src/ReactTestRenderer.js"
+      ]
     },
     {
       "id": "packages/react-test-renderer/src/ReactTestRenderer.js",
       "path": "packages/react-test-renderer/src/ReactTestRenderer.js",
       "name": "packages/react-test-renderer/src/ReactTestRenderer.js",
-      "labels": ["pkg:react-test-renderer"],
+      "labels": [
+        "pkg:react-test-renderer"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-reconciler/src/ReactInternalTypes.js",
@@ -2794,7 +3422,9 @@
       "id": "packages/react-test-renderer/src/ReactTestHostConfig.js",
       "path": "packages/react-test-renderer/src/ReactTestHostConfig.js",
       "name": "packages/react-test-renderer/src/ReactTestHostConfig.js",
-      "labels": ["pkg:react-test-renderer"],
+      "labels": [
+        "pkg:react-test-renderer"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/shared/ReactSymbols.js",
@@ -2807,7 +3437,10 @@
       "id": "packages/react-transport-dom-relay/index.js",
       "path": "packages/react-transport-dom-relay/index.js",
       "name": "packages/react-transport-dom-relay/index.js",
-      "labels": ["pkg:react-transport-dom-relay", "pkg_entry"],
+      "labels": [
+        "pkg:react-transport-dom-relay",
+        "pkg_entry"
+      ],
       "dependsOn": [
         "packages/react-transport-dom-relay/src/ReactFlightDOMRelayClient.js"
       ]
@@ -2816,7 +3449,9 @@
       "id": "packages/react-transport-dom-relay/src/ReactFlightDOMRelayClient.js",
       "path": "packages/react-transport-dom-relay/src/ReactFlightDOMRelayClient.js",
       "name": "packages/react-transport-dom-relay/src/ReactFlightDOMRelayClient.js",
-      "labels": ["pkg:react-transport-dom-relay"],
+      "labels": [
+        "pkg:react-transport-dom-relay"
+      ],
       "dependsOn": [
         "packages/react-transport-dom-relay/src/ReactFlightDOMRelayProtocol.js",
         "packages/react-client/src/ReactFlightClient.js"
@@ -2826,21 +3461,28 @@
       "id": "packages/react-transport-dom-relay/src/ReactFlightDOMRelayProtocol.js",
       "path": "packages/react-transport-dom-relay/src/ReactFlightDOMRelayProtocol.js",
       "name": "packages/react-transport-dom-relay/src/ReactFlightDOMRelayProtocol.js",
-      "labels": ["pkg:react-transport-dom-relay"],
+      "labels": [
+        "pkg:react-transport-dom-relay"
+      ],
       "dependsOn": []
     },
     {
       "id": "node_modules/react-client",
       "path": "node_modules/react-client",
       "name": "node_modules/react-client",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-transport-dom-webpack/index.js",
       "path": "packages/react-transport-dom-webpack/index.js",
       "name": "packages/react-transport-dom-webpack/index.js",
-      "labels": ["pkg:react-transport-dom-webpack", "pkg_entry"],
+      "labels": [
+        "pkg:react-transport-dom-webpack",
+        "pkg_entry"
+      ],
       "dependsOn": [
         "packages/react-transport-dom-webpack/src/ReactFlightDOMClient.js"
       ]
@@ -2849,14 +3491,21 @@
       "id": "packages/react-transport-dom-webpack/src/ReactFlightDOMClient.js",
       "path": "packages/react-transport-dom-webpack/src/ReactFlightDOMClient.js",
       "name": "packages/react-transport-dom-webpack/src/ReactFlightDOMClient.js",
-      "labels": ["pkg:react-transport-dom-webpack"],
-      "dependsOn": ["packages/react-client/src/ReactFlightClientStream.js"]
+      "labels": [
+        "pkg:react-transport-dom-webpack"
+      ],
+      "dependsOn": [
+        "packages/react-client/src/ReactFlightClientStream.js"
+      ]
     },
     {
       "id": "packages/react-transport-dom-webpack/server.browser.js",
       "path": "packages/react-transport-dom-webpack/server.browser.js",
       "name": "packages/react-transport-dom-webpack/server.browser.js",
-      "labels": ["pkg:react-transport-dom-webpack", "pkg_entry"],
+      "labels": [
+        "pkg:react-transport-dom-webpack",
+        "pkg_entry"
+      ],
       "dependsOn": [
         "packages/react-transport-dom-webpack/src/ReactFlightDOMServerBrowser.js"
       ]
@@ -2865,7 +3514,9 @@
       "id": "packages/react-transport-dom-webpack/src/ReactFlightDOMServerBrowser.js",
       "path": "packages/react-transport-dom-webpack/src/ReactFlightDOMServerBrowser.js",
       "name": "packages/react-transport-dom-webpack/src/ReactFlightDOMServerBrowser.js",
-      "labels": ["pkg:react-transport-dom-webpack"],
+      "labels": [
+        "pkg:react-transport-dom-webpack"
+      ],
       "dependsOn": [
         "packages/react-server/src/ReactFlightServer.js",
         "packages/react-transport-dom-webpack/src/ReactFlightServerWebpackBundlerConfig.js"
@@ -2875,14 +3526,19 @@
       "id": "packages/react-transport-dom-webpack/src/ReactFlightServerWebpackBundlerConfig.js",
       "path": "packages/react-transport-dom-webpack/src/ReactFlightServerWebpackBundlerConfig.js",
       "name": "packages/react-transport-dom-webpack/src/ReactFlightServerWebpackBundlerConfig.js",
-      "labels": ["pkg:react-transport-dom-webpack"],
+      "labels": [
+        "pkg:react-transport-dom-webpack"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react-transport-native-relay/index.js",
       "path": "packages/react-transport-native-relay/index.js",
       "name": "packages/react-transport-native-relay/index.js",
-      "labels": ["pkg:react-transport-native-relay", "pkg_entry"],
+      "labels": [
+        "pkg:react-transport-native-relay",
+        "pkg_entry"
+      ],
       "dependsOn": [
         "packages/react-transport-native-relay/src/ReactFlightNativeRelayClient.js"
       ]
@@ -2891,7 +3547,9 @@
       "id": "packages/react-transport-native-relay/src/ReactFlightNativeRelayClient.js",
       "path": "packages/react-transport-native-relay/src/ReactFlightNativeRelayClient.js",
       "name": "packages/react-transport-native-relay/src/ReactFlightNativeRelayClient.js",
-      "labels": ["pkg:react-transport-native-relay"],
+      "labels": [
+        "pkg:react-transport-native-relay"
+      ],
       "dependsOn": [
         "packages/react-transport-native-relay/src/ReactFlightNativeRelayProtocol.js",
         "packages/react-client/src/ReactFlightClient.js"
@@ -2901,21 +3559,30 @@
       "id": "packages/react-transport-native-relay/src/ReactFlightNativeRelayProtocol.js",
       "path": "packages/react-transport-native-relay/src/ReactFlightNativeRelayProtocol.js",
       "name": "packages/react-transport-native-relay/src/ReactFlightNativeRelayProtocol.js",
-      "labels": ["pkg:react-transport-native-relay"],
+      "labels": [
+        "pkg:react-transport-native-relay"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react/index.js",
       "path": "packages/react/index.js",
       "name": "packages/react/index.js",
-      "labels": ["pkg:react", "pkg_entry"],
-      "dependsOn": ["packages/react/src/React.js"]
+      "labels": [
+        "pkg:react",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react/src/React.js"
+      ]
     },
     {
       "id": "packages/react/src/React.js",
       "path": "packages/react/src/React.js",
       "name": "packages/react/src/React.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": [
         "packages/shared/ReactVersion.js",
         "packages/shared/ReactSymbols.js",
@@ -2939,7 +3606,9 @@
       "id": "packages/react/src/ReactBaseClasses.js",
       "path": "packages/react/src/ReactBaseClasses.js",
       "name": "packages/react/src/ReactBaseClasses.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": [
         "packages/shared/invariant.js",
         "packages/react/src/ReactNoopUpdateQueue.js"
@@ -2949,21 +3618,29 @@
       "id": "packages/react/src/ReactNoopUpdateQueue.js",
       "path": "packages/react/src/ReactNoopUpdateQueue.js",
       "name": "packages/react/src/ReactNoopUpdateQueue.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react/src/ReactCreateRef.js",
       "path": "packages/react/src/ReactCreateRef.js",
       "name": "packages/react/src/ReactCreateRef.js",
-      "labels": ["pkg:react"],
-      "dependsOn": ["packages/shared/ReactTypes.js"]
+      "labels": [
+        "pkg:react"
+      ],
+      "dependsOn": [
+        "packages/shared/ReactTypes.js"
+      ]
     },
     {
       "id": "packages/react/src/ReactChildren.js",
       "path": "packages/react/src/ReactChildren.js",
       "name": "packages/react/src/ReactChildren.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/shared/invariant.js",
@@ -2975,7 +3652,9 @@
       "id": "packages/react/src/ReactElement.js",
       "path": "packages/react/src/ReactElement.js",
       "name": "packages/react/src/ReactElement.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": [
         "packages/shared/getComponentName.js",
         "packages/shared/invariant.js",
@@ -2987,14 +3666,20 @@
       "id": "packages/react/src/ReactCurrentOwner.js",
       "path": "packages/react/src/ReactCurrentOwner.js",
       "name": "packages/react/src/ReactCurrentOwner.js",
-      "labels": ["pkg:react"],
-      "dependsOn": ["packages/react-reconciler/src/ReactInternalTypes.js"]
+      "labels": [
+        "pkg:react"
+      ],
+      "dependsOn": [
+        "packages/react-reconciler/src/ReactInternalTypes.js"
+      ]
     },
     {
       "id": "packages/react/src/ReactContext.js",
       "path": "packages/react/src/ReactContext.js",
       "name": "packages/react/src/ReactContext.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": [
         "packages/shared/ReactSymbols.js",
         "packages/shared/ReactTypes.js"
@@ -3004,7 +3689,9 @@
       "id": "packages/react/src/ReactLazy.js",
       "path": "packages/react/src/ReactLazy.js",
       "name": "packages/react/src/ReactLazy.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/shared/ReactSymbols.js"
@@ -3014,14 +3701,20 @@
       "id": "packages/react/src/ReactForwardRef.js",
       "path": "packages/react/src/ReactForwardRef.js",
       "name": "packages/react/src/ReactForwardRef.js",
-      "labels": ["pkg:react"],
-      "dependsOn": ["packages/shared/ReactSymbols.js"]
+      "labels": [
+        "pkg:react"
+      ],
+      "dependsOn": [
+        "packages/shared/ReactSymbols.js"
+      ]
     },
     {
       "id": "packages/react/src/ReactMemo.js",
       "path": "packages/react/src/ReactMemo.js",
       "name": "packages/react/src/ReactMemo.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": [
         "packages/shared/ReactSymbols.js",
         "packages/shared/isValidElementType.js"
@@ -3031,7 +3724,9 @@
       "id": "packages/react/src/ReactHooks.js",
       "path": "packages/react/src/ReactHooks.js",
       "name": "packages/react/src/ReactHooks.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/react-reconciler/src/ReactFiberHostConfig.js",
@@ -3043,14 +3738,20 @@
       "id": "packages/react/src/ReactCurrentDispatcher.js",
       "path": "packages/react/src/ReactCurrentDispatcher.js",
       "name": "packages/react/src/ReactCurrentDispatcher.js",
-      "labels": ["pkg:react"],
-      "dependsOn": ["packages/react-reconciler/src/ReactInternalTypes.js"]
+      "labels": [
+        "pkg:react"
+      ],
+      "dependsOn": [
+        "packages/react-reconciler/src/ReactInternalTypes.js"
+      ]
     },
     {
       "id": "packages/react/src/ReactElementValidator.js",
       "path": "packages/react/src/ReactElementValidator.js",
       "name": "packages/react/src/ReactElementValidator.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": [
         "packages/shared/isValidElementType.js",
         "packages/shared/getComponentName.js",
@@ -3067,21 +3768,29 @@
       "id": "packages/react/src/ReactDebugCurrentFrame.js",
       "path": "packages/react/src/ReactDebugCurrentFrame.js",
       "name": "packages/react/src/ReactDebugCurrentFrame.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react/src/ReactMutableSource.js",
       "path": "packages/react/src/ReactMutableSource.js",
       "name": "packages/react/src/ReactMutableSource.js",
-      "labels": ["pkg:react"],
-      "dependsOn": ["packages/shared/ReactTypes.js"]
+      "labels": [
+        "pkg:react"
+      ],
+      "dependsOn": [
+        "packages/shared/ReactTypes.js"
+      ]
     },
     {
       "id": "packages/react/src/ReactSharedInternals.js",
       "path": "packages/react/src/ReactSharedInternals.js",
       "name": "packages/react/src/ReactSharedInternals.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": [
         "node_modules/object-assign",
         "packages/react/src/ReactCurrentDispatcher.js",
@@ -3095,28 +3804,36 @@
       "id": "node_modules/object-assign",
       "path": "node_modules/object-assign",
       "name": "node_modules/object-assign",
-      "labels": ["node_module"],
+      "labels": [
+        "node_module"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react/src/ReactCurrentBatchConfig.js",
       "path": "packages/react/src/ReactCurrentBatchConfig.js",
       "name": "packages/react/src/ReactCurrentBatchConfig.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react/src/IsSomeRendererActing.js",
       "path": "packages/react/src/IsSomeRendererActing.js",
       "name": "packages/react/src/IsSomeRendererActing.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react/src/ReactFundamental.js",
       "path": "packages/react/src/ReactFundamental.js",
       "name": "packages/react/src/ReactFundamental.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": [
         "packages/shared/ReactTypes.js",
         "packages/shared/ReactSymbols.js",
@@ -3127,28 +3844,41 @@
       "id": "packages/react/src/BadMapPolyfill.js",
       "path": "packages/react/src/BadMapPolyfill.js",
       "name": "packages/react/src/BadMapPolyfill.js",
-      "labels": ["pkg:react"],
+      "labels": [
+        "pkg:react"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/react/src/ReactStartTransition.js",
       "path": "packages/react/src/ReactStartTransition.js",
       "name": "packages/react/src/ReactStartTransition.js",
-      "labels": ["pkg:react"],
-      "dependsOn": ["packages/react/src/ReactCurrentBatchConfig.js"]
+      "labels": [
+        "pkg:react"
+      ],
+      "dependsOn": [
+        "packages/react/src/ReactCurrentBatchConfig.js"
+      ]
     },
     {
       "id": "packages/scheduler/index.js",
       "path": "packages/scheduler/index.js",
       "name": "packages/scheduler/index.js",
-      "labels": ["pkg:scheduler", "pkg_entry"],
-      "dependsOn": ["packages/scheduler/src/forks/SchedulerDOM.js"]
+      "labels": [
+        "pkg:scheduler",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/scheduler/src/forks/SchedulerDOM.js"
+      ]
     },
     {
       "id": "packages/scheduler/src/forks/SchedulerDOM.js",
       "path": "packages/scheduler/src/forks/SchedulerDOM.js",
       "name": "packages/scheduler/src/forks/SchedulerDOM.js",
-      "labels": ["pkg:scheduler"],
+      "labels": [
+        "pkg:scheduler"
+      ],
       "dependsOn": [
         "packages/scheduler/src/SchedulerFeatureFlags.js",
         "packages/scheduler/src/SchedulerMinHeap.js",
@@ -3160,28 +3890,36 @@
       "id": "packages/scheduler/src/SchedulerFeatureFlags.js",
       "path": "packages/scheduler/src/SchedulerFeatureFlags.js",
       "name": "packages/scheduler/src/SchedulerFeatureFlags.js",
-      "labels": ["pkg:scheduler"],
+      "labels": [
+        "pkg:scheduler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/scheduler/src/SchedulerMinHeap.js",
       "path": "packages/scheduler/src/SchedulerMinHeap.js",
       "name": "packages/scheduler/src/SchedulerMinHeap.js",
-      "labels": ["pkg:scheduler"],
+      "labels": [
+        "pkg:scheduler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/scheduler/src/SchedulerPriorities.js",
       "path": "packages/scheduler/src/SchedulerPriorities.js",
       "name": "packages/scheduler/src/SchedulerPriorities.js",
-      "labels": ["pkg:scheduler"],
+      "labels": [
+        "pkg:scheduler"
+      ],
       "dependsOn": []
     },
     {
       "id": "packages/scheduler/src/SchedulerProfiling.js",
       "path": "packages/scheduler/src/SchedulerProfiling.js",
       "name": "packages/scheduler/src/SchedulerProfiling.js",
-      "labels": ["pkg:scheduler"],
+      "labels": [
+        "pkg:scheduler"
+      ],
       "dependsOn": [
         "packages/scheduler/src/SchedulerPriorities.js",
         "packages/scheduler/src/SchedulerFeatureFlags.js"
@@ -3191,15 +3929,24 @@
       "id": "packages/use-subscription/index.js",
       "path": "packages/use-subscription/index.js",
       "name": "packages/use-subscription/index.js",
-      "labels": ["pkg:use-subscription", "pkg_entry"],
-      "dependsOn": ["packages/use-subscription/src/useSubscription.js"]
+      "labels": [
+        "pkg:use-subscription",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/use-subscription/src/useSubscription.js"
+      ]
     },
     {
       "id": "packages/use-subscription/src/useSubscription.js",
       "path": "packages/use-subscription/src/useSubscription.js",
       "name": "packages/use-subscription/src/useSubscription.js",
-      "labels": ["pkg:use-subscription"],
-      "dependsOn": ["packages/react/index.js"]
+      "labels": [
+        "pkg:use-subscription"
+      ],
+      "dependsOn": [
+        "packages/react/index.js"
+      ]
     }
   ],
   "meta": {
@@ -3207,6 +3954,6 @@
       "name": "analyzer-js",
       "version": "0.1.0"
     },
-    "createdAt": "2020-12-04T12:58:28.939Z"
+    "createdAt": "2020-12-04T14:07:22.529Z"
   }
 }
