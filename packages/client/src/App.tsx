@@ -4,8 +4,20 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { InitCanvas } from "./components/InitCanvas";
 import { usePromise } from "./hooks/usePromise";
+import { PageBrowser } from "./pages/Browser";
 import { PageMain } from "./pages/Main";
 import { DatasetProvider } from "./services/dataset";
+
+const PAGES: { path: string; render: () => React.ReactNode }[] = [
+  {
+    path: "/browser",
+    render: () => <PageBrowser />,
+  },
+  {
+    path: "/",
+    render: () => <PageMain />,
+  },
+];
 
 function App({ loadDatasets }: { loadDatasets: () => Promise<Dataset[]> }) {
   // leave router outside so that we can switch datasets through urls later
@@ -24,14 +36,9 @@ function App({ loadDatasets }: { loadDatasets: () => Promise<Dataset[]> }) {
         )}
         {datasets && datasets.length && (
           <DatasetProvider datasets={datasets}>
-            <Route path="/browser" exact>
-              <InitCanvas>
-                <div> Browser!</div>
-              </InitCanvas>
-            </Route>
-            <Route path="/" exact>
-              <PageMain />
-            </Route>
+            {PAGES.map((p) => (
+              <Route key={p.path} path={p.path} exact render={p.render} />
+            ))}
           </DatasetProvider>
         )}
       </Router>
