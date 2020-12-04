@@ -1,0 +1,850 @@
+{
+  "nodes": [
+    {
+      "id": "packages/babel-plugin-jsx-pragmatic/src/index.js",
+      "path": "packages/babel-plugin-jsx-pragmatic/src/index.js",
+      "name": "packages/babel-plugin-jsx-pragmatic/src/index.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin-jsx-pragmatic",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/babel-plugin/src/index.js",
+      "path": "packages/babel-plugin/src/index.js",
+      "name": "packages/babel-plugin/src/index.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/babel-plugin/src/emotion-macro.js",
+        "packages/babel-plugin/src/styled-macro.js",
+        "packages/babel-plugin/src/core-macro.js",
+        "packages/babel-plugin/src/utils/index.js"
+      ]
+    },
+    {
+      "id": "packages/babel-plugin/src/emotion-macro.js",
+      "path": "packages/babel-plugin/src/emotion-macro.js",
+      "name": "packages/babel-plugin/src/emotion-macro.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": [
+        "packages/babel-plugin/src/utils/index.js"
+      ]
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/index.js",
+      "path": "packages/babel-plugin/src/utils/index.js",
+      "name": "packages/babel-plugin/src/utils/index.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": [
+        "packages/babel-plugin/src/utils/label.js",
+        "packages/babel-plugin/src/utils/source-maps.js",
+        "packages/babel-plugin/src/utils/get-target-class-name.js",
+        "packages/babel-plugin/src/utils/object-to-string.js",
+        "packages/babel-plugin/src/utils/transform-expression-with-styles.js",
+        "packages/babel-plugin/src/utils/get-styled-options.js",
+        "packages/babel-plugin/src/utils/strings.js",
+        "packages/babel-plugin/src/utils/add-import.js",
+        "packages/babel-plugin/src/utils/transformer-macro.js"
+      ]
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/label.js",
+      "path": "packages/babel-plugin/src/utils/label.js",
+      "name": "packages/babel-plugin/src/utils/label.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/source-maps.js",
+      "path": "packages/babel-plugin/src/utils/source-maps.js",
+      "name": "packages/babel-plugin/src/utils/source-maps.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/get-target-class-name.js",
+      "path": "packages/babel-plugin/src/utils/get-target-class-name.js",
+      "name": "packages/babel-plugin/src/utils/get-target-class-name.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/object-to-string.js",
+      "path": "packages/babel-plugin/src/utils/object-to-string.js",
+      "name": "packages/babel-plugin/src/utils/object-to-string.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/transform-expression-with-styles.js",
+      "path": "packages/babel-plugin/src/utils/transform-expression-with-styles.js",
+      "name": "packages/babel-plugin/src/utils/transform-expression-with-styles.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": [
+        "packages/babel-plugin/src/utils/minify.js",
+        "packages/babel-plugin/src/utils/label.js",
+        "packages/babel-plugin/src/utils/source-maps.js",
+        "packages/babel-plugin/src/utils/object-to-string.js",
+        "packages/babel-plugin/src/utils/strings.js"
+      ]
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/minify.js",
+      "path": "packages/babel-plugin/src/utils/minify.js",
+      "name": "packages/babel-plugin/src/utils/minify.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/strings.js",
+      "path": "packages/babel-plugin/src/utils/strings.js",
+      "name": "packages/babel-plugin/src/utils/strings.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": [
+        "packages/babel-plugin/src/utils/transpiled-output-utils.js"
+      ]
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/transpiled-output-utils.js",
+      "path": "packages/babel-plugin/src/utils/transpiled-output-utils.js",
+      "name": "packages/babel-plugin/src/utils/transpiled-output-utils.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/get-styled-options.js",
+      "path": "packages/babel-plugin/src/utils/get-styled-options.js",
+      "name": "packages/babel-plugin/src/utils/get-styled-options.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": [
+        "packages/babel-plugin/src/utils/label.js",
+        "packages/babel-plugin/src/utils/get-target-class-name.js"
+      ]
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/add-import.js",
+      "path": "packages/babel-plugin/src/utils/add-import.js",
+      "name": "packages/babel-plugin/src/utils/add-import.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/babel-plugin/src/utils/transformer-macro.js",
+      "path": "packages/babel-plugin/src/utils/transformer-macro.js",
+      "name": "packages/babel-plugin/src/utils/transformer-macro.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/babel-plugin/src/styled-macro.js",
+      "path": "packages/babel-plugin/src/styled-macro.js",
+      "name": "packages/babel-plugin/src/styled-macro.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": [
+        "packages/babel-plugin/src/utils/index.js"
+      ]
+    },
+    {
+      "id": "packages/babel-plugin/src/core-macro.js",
+      "path": "packages/babel-plugin/src/core-macro.js",
+      "name": "packages/babel-plugin/src/core-macro.js",
+      "labels": [
+        "pkg:@emotion/babel-plugin"
+      ],
+      "dependsOn": [
+        "packages/babel-plugin/src/utils/index.js"
+      ]
+    },
+    {
+      "id": "packages/babel-preset-css-prop/src/index.js",
+      "path": "packages/babel-preset-css-prop/src/index.js",
+      "name": "packages/babel-preset-css-prop/src/index.js",
+      "labels": [
+        "pkg:@emotion/babel-preset-css-prop",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/cache/src/index.js",
+      "path": "packages/cache/src/index.js",
+      "name": "packages/cache/src/index.js",
+      "labels": [
+        "pkg:@emotion/cache",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/cache/src/stylis-plugins.js",
+        "packages/cache/src/types.js"
+      ]
+    },
+    {
+      "id": "packages/cache/src/stylis-plugins.js",
+      "path": "packages/cache/src/stylis-plugins.js",
+      "name": "packages/cache/src/stylis-plugins.js",
+      "labels": [
+        "pkg:@emotion/cache"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/cache/src/types.js",
+      "path": "packages/cache/src/types.js",
+      "name": "packages/cache/src/types.js",
+      "labels": [
+        "pkg:@emotion/cache"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/css-prettifier/src/index.js",
+      "path": "packages/css-prettifier/src/index.js",
+      "name": "packages/css-prettifier/src/index.js",
+      "labels": [
+        "pkg:@emotion/css-prettifier",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/css/src/index.js",
+      "path": "packages/css/src/index.js",
+      "name": "packages/css/src/index.js",
+      "labels": [
+        "pkg:@emotion/css",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/css/src/create-instance.js"
+      ]
+    },
+    {
+      "id": "packages/css/src/create-instance.js",
+      "path": "packages/css/src/create-instance.js",
+      "name": "packages/css/src/create-instance.js",
+      "labels": [
+        "pkg:@emotion/css"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/eslint-plugin/src/index.js",
+      "path": "packages/eslint-plugin/src/index.js",
+      "name": "packages/eslint-plugin/src/index.js",
+      "labels": [
+        "pkg:@emotion/eslint-plugin",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/eslint-plugin/src/rules/import-from-emotion.js",
+        "packages/eslint-plugin/src/rules/no-vanilla.js",
+        "packages/eslint-plugin/src/rules/syntax-preference.js",
+        "packages/eslint-plugin/src/rules/styled-import.js",
+        "packages/eslint-plugin/src/rules/jsx-import.js",
+        "packages/eslint-plugin/src/rules/pkg-renaming.js"
+      ]
+    },
+    {
+      "id": "packages/eslint-plugin/src/rules/import-from-emotion.js",
+      "path": "packages/eslint-plugin/src/rules/import-from-emotion.js",
+      "name": "packages/eslint-plugin/src/rules/import-from-emotion.js",
+      "labels": [
+        "pkg:@emotion/eslint-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/eslint-plugin/src/rules/no-vanilla.js",
+      "path": "packages/eslint-plugin/src/rules/no-vanilla.js",
+      "name": "packages/eslint-plugin/src/rules/no-vanilla.js",
+      "labels": [
+        "pkg:@emotion/eslint-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/eslint-plugin/src/rules/syntax-preference.js",
+      "path": "packages/eslint-plugin/src/rules/syntax-preference.js",
+      "name": "packages/eslint-plugin/src/rules/syntax-preference.js",
+      "labels": [
+        "pkg:@emotion/eslint-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/eslint-plugin/src/rules/styled-import.js",
+      "path": "packages/eslint-plugin/src/rules/styled-import.js",
+      "name": "packages/eslint-plugin/src/rules/styled-import.js",
+      "labels": [
+        "pkg:@emotion/eslint-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/eslint-plugin/src/rules/jsx-import.js",
+      "path": "packages/eslint-plugin/src/rules/jsx-import.js",
+      "name": "packages/eslint-plugin/src/rules/jsx-import.js",
+      "labels": [
+        "pkg:@emotion/eslint-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/eslint-plugin/src/rules/pkg-renaming.js",
+      "path": "packages/eslint-plugin/src/rules/pkg-renaming.js",
+      "name": "packages/eslint-plugin/src/rules/pkg-renaming.js",
+      "labels": [
+        "pkg:@emotion/eslint-plugin"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/hash/src/index.js",
+      "path": "packages/hash/src/index.js",
+      "name": "packages/hash/src/index.js",
+      "labels": [
+        "pkg:@emotion/hash",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/is-prop-valid/src/index.js",
+      "path": "packages/is-prop-valid/src/index.js",
+      "name": "packages/is-prop-valid/src/index.js",
+      "labels": [
+        "pkg:@emotion/is-prop-valid",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/jest/src/index.js",
+      "path": "packages/jest/src/index.js",
+      "name": "packages/jest/src/index.js",
+      "labels": [
+        "pkg:@emotion/jest",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/jest/src/create-serializer.js",
+        "packages/jest/src/matchers.js"
+      ]
+    },
+    {
+      "id": "packages/jest/src/create-serializer.js",
+      "path": "packages/jest/src/create-serializer.js",
+      "name": "packages/jest/src/create-serializer.js",
+      "labels": [
+        "pkg:@emotion/jest"
+      ],
+      "dependsOn": [
+        "packages/jest/src/replace-class-names.js",
+        "packages/jest/src/utils.js"
+      ]
+    },
+    {
+      "id": "packages/jest/src/replace-class-names.js",
+      "path": "packages/jest/src/replace-class-names.js",
+      "name": "packages/jest/src/replace-class-names.js",
+      "labels": [
+        "pkg:@emotion/jest"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/jest/src/utils.js",
+      "path": "packages/jest/src/utils.js",
+      "name": "packages/jest/src/utils.js",
+      "labels": [
+        "pkg:@emotion/jest"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/jest/src/matchers.js",
+      "path": "packages/jest/src/matchers.js",
+      "name": "packages/jest/src/matchers.js",
+      "labels": [
+        "pkg:@emotion/jest"
+      ],
+      "dependsOn": [
+        "packages/jest/src/utils.js"
+      ]
+    },
+    {
+      "id": "packages/memoize/src/index.js",
+      "path": "packages/memoize/src/index.js",
+      "name": "packages/memoize/src/index.js",
+      "labels": [
+        "pkg:@emotion/memoize",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/native/src/index.js",
+      "path": "packages/native/src/index.js",
+      "name": "packages/native/src/index.js",
+      "labels": [
+        "pkg:@emotion/native",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/native/src/base.js"
+      ]
+    },
+    {
+      "id": "packages/native/src/base.js",
+      "path": "packages/native/src/base.js",
+      "name": "packages/native/src/base.js",
+      "labels": [
+        "pkg:@emotion/native"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/primitives-core/src/index.js",
+      "path": "packages/primitives-core/src/index.js",
+      "name": "packages/primitives-core/src/index.js",
+      "labels": [
+        "pkg:@emotion/primitives-core",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/primitives-core/src/css.js",
+        "packages/primitives-core/src/styled.js"
+      ]
+    },
+    {
+      "id": "packages/primitives-core/src/css.js",
+      "path": "packages/primitives-core/src/css.js",
+      "name": "packages/primitives-core/src/css.js",
+      "labels": [
+        "pkg:@emotion/primitives-core"
+      ],
+      "dependsOn": [
+        "packages/primitives-core/src/utils.js"
+      ]
+    },
+    {
+      "id": "packages/primitives-core/src/utils.js",
+      "path": "packages/primitives-core/src/utils.js",
+      "name": "packages/primitives-core/src/utils.js",
+      "labels": [
+        "pkg:@emotion/primitives-core"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/primitives-core/src/styled.js",
+      "path": "packages/primitives-core/src/styled.js",
+      "name": "packages/primitives-core/src/styled.js",
+      "labels": [
+        "pkg:@emotion/primitives-core"
+      ],
+      "dependsOn": [
+        "packages/primitives-core/src/utils.js",
+        "packages/primitives-core/src/css.js"
+      ]
+    },
+    {
+      "id": "packages/primitives/src/index.js",
+      "path": "packages/primitives/src/index.js",
+      "name": "packages/primitives/src/index.js",
+      "labels": [
+        "pkg:@emotion/primitives",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/primitives/src/styled.js"
+      ]
+    },
+    {
+      "id": "packages/primitives/src/styled.js",
+      "path": "packages/primitives/src/styled.js",
+      "name": "packages/primitives/src/styled.js",
+      "labels": [
+        "pkg:@emotion/primitives"
+      ],
+      "dependsOn": [
+        "packages/primitives/src/test-props.js"
+      ]
+    },
+    {
+      "id": "packages/primitives/src/test-props.js",
+      "path": "packages/primitives/src/test-props.js",
+      "name": "packages/primitives/src/test-props.js",
+      "labels": [
+        "pkg:@emotion/primitives"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/react/src/index.js",
+      "path": "packages/react/src/index.js",
+      "name": "packages/react/src/index.js",
+      "labels": [
+        "pkg:@emotion/react",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/react/package.json",
+        "packages/react/src/context.js",
+        "packages/react/src/jsx.js",
+        "packages/react/src/global.js",
+        "packages/react/src/keyframes.js",
+        "packages/react/src/class-names.js",
+        "packages/react/src/theming.js",
+        "packages/react/src/css.js"
+      ]
+    },
+    {
+      "id": "packages/react/package.json",
+      "path": "packages/react/package.json",
+      "name": "packages/react/package.json",
+      "labels": [
+        "pkg:@emotion/react"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/react/src/context.js",
+      "path": "packages/react/src/context.js",
+      "name": "packages/react/src/context.js",
+      "labels": [
+        "pkg:@emotion/react"
+      ],
+      "dependsOn": [
+        "packages/react/src/utils.js"
+      ]
+    },
+    {
+      "id": "packages/react/src/utils.js",
+      "path": "packages/react/src/utils.js",
+      "name": "packages/react/src/utils.js",
+      "labels": [
+        "pkg:@emotion/react"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/react/src/jsx.js",
+      "path": "packages/react/src/jsx.js",
+      "name": "packages/react/src/jsx.js",
+      "labels": [
+        "pkg:@emotion/react"
+      ],
+      "dependsOn": [
+        "packages/react/src/emotion-element.js",
+        "packages/react/src/utils.js"
+      ]
+    },
+    {
+      "id": "packages/react/src/emotion-element.js",
+      "path": "packages/react/src/emotion-element.js",
+      "name": "packages/react/src/emotion-element.js",
+      "labels": [
+        "pkg:@emotion/react"
+      ],
+      "dependsOn": [
+        "packages/react/src/context.js",
+        "packages/react/src/theming.js",
+        "packages/react/src/utils.js"
+      ]
+    },
+    {
+      "id": "packages/react/src/theming.js",
+      "path": "packages/react/src/theming.js",
+      "name": "packages/react/src/theming.js",
+      "labels": [
+        "pkg:@emotion/react"
+      ],
+      "dependsOn": [
+        "packages/react/src/isolated-hoist-non-react-statics-do-not-use-this-in-your-code.js"
+      ]
+    },
+    {
+      "id": "packages/react/src/isolated-hoist-non-react-statics-do-not-use-this-in-your-code.js",
+      "path": "packages/react/src/isolated-hoist-non-react-statics-do-not-use-this-in-your-code.js",
+      "name": "packages/react/src/isolated-hoist-non-react-statics-do-not-use-this-in-your-code.js",
+      "labels": [
+        "pkg:@emotion/react"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/react/src/global.js",
+      "path": "packages/react/src/global.js",
+      "name": "packages/react/src/global.js",
+      "labels": [
+        "pkg:@emotion/react"
+      ],
+      "dependsOn": [
+        "packages/react/src/context.js",
+        "packages/react/src/theming.js",
+        "packages/react/src/utils.js"
+      ]
+    },
+    {
+      "id": "packages/react/src/keyframes.js",
+      "path": "packages/react/src/keyframes.js",
+      "name": "packages/react/src/keyframes.js",
+      "labels": [
+        "pkg:@emotion/react"
+      ],
+      "dependsOn": [
+        "packages/react/src/css.js"
+      ]
+    },
+    {
+      "id": "packages/react/src/css.js",
+      "path": "packages/react/src/css.js",
+      "name": "packages/react/src/css.js",
+      "labels": [
+        "pkg:@emotion/react"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/react/src/class-names.js",
+      "path": "packages/react/src/class-names.js",
+      "name": "packages/react/src/class-names.js",
+      "labels": [
+        "pkg:@emotion/react"
+      ],
+      "dependsOn": [
+        "packages/react/src/context.js",
+        "packages/react/src/theming.js",
+        "packages/react/src/utils.js"
+      ]
+    },
+    {
+      "id": "packages/serialize/src/index.js",
+      "path": "packages/serialize/src/index.js",
+      "name": "packages/serialize/src/index.js",
+      "labels": [
+        "pkg:@emotion/serialize",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/server/src/index.js",
+      "path": "packages/server/src/index.js",
+      "name": "packages/server/src/index.js",
+      "labels": [
+        "pkg:@emotion/server",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/server/src/create-instance/index.js"
+      ]
+    },
+    {
+      "id": "packages/server/src/create-instance/index.js",
+      "path": "packages/server/src/create-instance/index.js",
+      "name": "packages/server/src/create-instance/index.js",
+      "labels": [
+        "pkg:@emotion/server"
+      ],
+      "dependsOn": [
+        "packages/server/src/create-instance/extract-critical.js",
+        "packages/server/src/create-instance/inline.js",
+        "packages/server/src/create-instance/stream.js"
+      ]
+    },
+    {
+      "id": "packages/server/src/create-instance/extract-critical.js",
+      "path": "packages/server/src/create-instance/extract-critical.js",
+      "name": "packages/server/src/create-instance/extract-critical.js",
+      "labels": [
+        "pkg:@emotion/server"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/server/src/create-instance/inline.js",
+      "path": "packages/server/src/create-instance/inline.js",
+      "name": "packages/server/src/create-instance/inline.js",
+      "labels": [
+        "pkg:@emotion/server"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/server/src/create-instance/stream.js",
+      "path": "packages/server/src/create-instance/stream.js",
+      "name": "packages/server/src/create-instance/stream.js",
+      "labels": [
+        "pkg:@emotion/server"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/sheet/src/index.js",
+      "path": "packages/sheet/src/index.js",
+      "name": "packages/sheet/src/index.js",
+      "labels": [
+        "pkg:@emotion/sheet",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/styled/src/index.js",
+      "path": "packages/styled/src/index.js",
+      "name": "packages/styled/src/index.js",
+      "labels": [
+        "pkg:@emotion/styled",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/styled/src/base.js",
+        "packages/styled/src/tags.js"
+      ]
+    },
+    {
+      "id": "packages/styled/src/base.js",
+      "path": "packages/styled/src/base.js",
+      "name": "packages/styled/src/base.js",
+      "labels": [
+        "pkg:@emotion/styled"
+      ],
+      "dependsOn": [
+        "packages/styled/src/utils.js"
+      ]
+    },
+    {
+      "id": "packages/styled/src/utils.js",
+      "path": "packages/styled/src/utils.js",
+      "name": "packages/styled/src/utils.js",
+      "labels": [
+        "pkg:@emotion/styled"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/styled/src/tags.js",
+      "path": "packages/styled/src/tags.js",
+      "name": "packages/styled/src/tags.js",
+      "labels": [
+        "pkg:@emotion/styled"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/unitless/src/index.js",
+      "path": "packages/unitless/src/index.js",
+      "name": "packages/unitless/src/index.js",
+      "labels": [
+        "pkg:@emotion/unitless",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/utils/src/index.js",
+      "path": "packages/utils/src/index.js",
+      "name": "packages/utils/src/index.js",
+      "labels": [
+        "pkg:@emotion/utils",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/utils/src/types.js"
+      ]
+    },
+    {
+      "id": "packages/utils/src/types.js",
+      "path": "packages/utils/src/types.js",
+      "name": "packages/utils/src/types.js",
+      "labels": [
+        "pkg:@emotion/utils"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/weak-memoize/src/index.js",
+      "path": "packages/weak-memoize/src/index.js",
+      "name": "packages/weak-memoize/src/index.js",
+      "labels": [
+        "pkg:@emotion/weak-memoize",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "scripts/babel-preset-emotion-dev/src/index.js",
+      "path": "scripts/babel-preset-emotion-dev/src/index.js",
+      "name": "scripts/babel-preset-emotion-dev/src/index.js",
+      "labels": [
+        "pkg:babel-preset-emotion-dev",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "scripts/babel-tester/src/index.js",
+      "path": "scripts/babel-tester/src/index.js",
+      "name": "scripts/babel-tester/src/index.js",
+      "labels": [
+        "pkg:babel-tester",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "scripts/test-utils/src/index.js",
+      "path": "scripts/test-utils/src/index.js",
+      "name": "scripts/test-utils/src/index.js",
+      "labels": [
+        "pkg:test-utils",
+        "pkg_entry"
+      ],
+      "dependsOn": []
+    }
+  ],
+  "meta": {
+    "analyzer": {
+      "name": "analyzer-js",
+      "version": "0.1.0"
+    },
+    "repository": {
+      "url": "git+https://github.com/emotion-js/emotion.git"
+    },
+    "createdAt": "2020-12-04T19:39:32.905Z"
+  }
+}
