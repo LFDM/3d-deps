@@ -1,0 +1,417 @@
+{
+  "nodes": [
+    {
+      "id": "lib/index.js",
+      "path": "lib/index.js",
+      "name": "lib/index.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/commander",
+        "package.json",
+        "node_modules/cli-color",
+        "lib/logger.js",
+        "lib/utils.js",
+        "node_modules/leven",
+        "lib/errorOut.js",
+        "lib/commands/index.js"
+      ]
+    },
+    {
+      "id": "node_modules/commander",
+      "path": "node_modules/commander",
+      "name": "node_modules/commander",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "package.json",
+      "path": "package.json",
+      "name": "package.json",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/cli-color",
+      "path": "node_modules/cli-color",
+      "name": "node_modules/cli-color",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/logger.js",
+      "path": "lib/logger.js",
+      "name": "lib/logger.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/winston"
+      ]
+    },
+    {
+      "id": "node_modules/winston",
+      "path": "node_modules/winston",
+      "name": "node_modules/winston",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/utils.js",
+      "path": "lib/utils.js",
+      "name": "lib/utils.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/lodash",
+      "path": "node_modules/lodash",
+      "name": "node_modules/lodash",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/ora",
+      "path": "node_modules/ora",
+      "name": "node_modules/ora",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/triple-beam",
+      "path": "node_modules/triple-beam",
+      "name": "node_modules/triple-beam",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/configstore.js",
+      "path": "lib/configstore.js",
+      "name": "lib/configstore.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/configstore",
+        "package.json"
+      ]
+    },
+    {
+      "id": "node_modules/configstore",
+      "path": "node_modules/configstore",
+      "name": "node_modules/configstore",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/error.js",
+      "path": "lib/error.js",
+      "name": "lib/error.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/lodash"
+      ]
+    },
+    {
+      "id": "lib/api.js",
+      "path": "lib/api.js",
+      "name": "lib/api.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/request",
+      "path": "node_modules/request",
+      "name": "node_modules/request",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/emulator/constants.js",
+      "path": "lib/emulator/constants.js",
+      "name": "lib/emulator/constants.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/responseToError.js",
+      "path": "lib/responseToError.js",
+      "name": "lib/responseToError.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/lodash",
+        "lib/error.js"
+      ]
+    },
+    {
+      "id": "lib/scopes.js",
+      "path": "lib/scopes.js",
+      "name": "lib/scopes.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/auth.js",
+      "path": "lib/auth.js",
+      "name": "lib/auth.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/lodash",
+        "node_modules/cli-color",
+        "node_modules/jsonwebtoken",
+        "node_modules/open",
+        "node_modules/portfinder",
+        "lib/api.js",
+        "lib/configstore.js",
+        "lib/error.js",
+        "lib/logger.js",
+        "lib/prompt.js",
+        "lib/scopes.js"
+      ]
+    },
+    {
+      "id": "node_modules/jsonwebtoken",
+      "path": "node_modules/jsonwebtoken",
+      "name": "node_modules/jsonwebtoken",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/open",
+      "path": "node_modules/open",
+      "name": "node_modules/open",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/portfinder",
+      "path": "node_modules/portfinder",
+      "name": "node_modules/portfinder",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/prompt.js",
+      "path": "lib/prompt.js",
+      "name": "lib/prompt.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/inquirer",
+        "node_modules/lodash",
+        "lib/error.js"
+      ]
+    },
+    {
+      "id": "node_modules/inquirer",
+      "path": "node_modules/inquirer",
+      "name": "node_modules/inquirer",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/leven",
+      "path": "node_modules/leven",
+      "name": "node_modules/leven",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/errorOut.js",
+      "path": "lib/errorOut.js",
+      "name": "lib/errorOut.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/logError.js",
+        "lib/error.js"
+      ]
+    },
+    {
+      "id": "lib/logError.js",
+      "path": "lib/logError.js",
+      "name": "lib/logError.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/logger.js",
+        "node_modules/cli-color"
+      ]
+    },
+    {
+      "id": "lib/commands/index.js",
+      "path": "lib/commands/index.js",
+      "name": "lib/commands/index.js",
+      "labels": [],
+      "dependsOn": [
+        "lib/previews.js"
+      ]
+    },
+    {
+      "id": "lib/previews.js",
+      "path": "lib/previews.js",
+      "name": "lib/previews.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/lodash",
+        "lib/configstore.js"
+      ]
+    },
+    {
+      "id": "lib/bin/firebase.js",
+      "path": "lib/bin/firebase.js",
+      "name": "lib/bin/firebase.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/semver",
+        "package.json",
+        "node_modules/update-notifier",
+        "node_modules/cli-color",
+        "node_modules/marked-terminal",
+        "node_modules/marked",
+        "lib/index.js",
+        "lib/errorOut.js",
+        "node_modules/winston",
+        "node_modules/triple-beam",
+        "lib/logger.js",
+        "lib/fsutils.js",
+        "lib/configstore.js",
+        "node_modules/lodash",
+        "lib/handlePreviewToggles.js",
+        "lib/utils.js",
+        "lib/fetchMOTD.js",
+        "node_modules/exit-code"
+      ]
+    },
+    {
+      "id": "node_modules/semver",
+      "path": "node_modules/semver",
+      "name": "node_modules/semver",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/update-notifier",
+      "path": "node_modules/update-notifier",
+      "name": "node_modules/update-notifier",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/marked-terminal",
+      "path": "node_modules/marked-terminal",
+      "name": "node_modules/marked-terminal",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/marked",
+      "path": "node_modules/marked",
+      "name": "node_modules/marked",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/fsutils.js",
+      "path": "lib/fsutils.js",
+      "name": "lib/fsutils.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "lib/handlePreviewToggles.js",
+      "path": "lib/handlePreviewToggles.js",
+      "name": "lib/handlePreviewToggles.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/lodash",
+        "node_modules/cli-color",
+        "lib/configstore.js",
+        "lib/previews.js"
+      ]
+    },
+    {
+      "id": "lib/fetchMOTD.js",
+      "path": "lib/fetchMOTD.js",
+      "name": "lib/fetchMOTD.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/cli-color",
+        "node_modules/semver",
+        "lib/apiv2.js",
+        "lib/configstore.js",
+        "lib/api.js",
+        "lib/utils.js",
+        "package.json"
+      ]
+    },
+    {
+      "id": "lib/apiv2.js",
+      "path": "lib/apiv2.js",
+      "name": "lib/apiv2.js",
+      "labels": [],
+      "dependsOn": [
+        "node_modules/node-fetch",
+        "lib/error.js",
+        "lib/logger.js",
+        "lib/responseToError.js",
+        "package.json",
+        "lib/auth.js"
+      ]
+    },
+    {
+      "id": "node_modules/node-fetch",
+      "path": "node_modules/node-fetch",
+      "name": "node_modules/node-fetch",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "node_modules/exit-code",
+      "path": "node_modules/exit-code",
+      "name": "node_modules/exit-code",
+      "labels": [
+        "node_module"
+      ],
+      "dependsOn": []
+    }
+  ],
+  "meta": {
+    "analyzer": {
+      "name": "analyzer-js",
+      "version": "0.1.0"
+    },
+    "repository": {
+      "url": "https://github.com/firebase/firebase-tools.git"
+    },
+    "createdAt": "2020-12-04T19:49:07.650Z"
+  }
+}
