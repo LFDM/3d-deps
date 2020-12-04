@@ -4697,13 +4697,13 @@ depd@~1.1.2:
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
 
-dependency-tree@lfdm/node-dependency-tree#e34650c:
-  version "7.4.0"
-  resolved "https://codeload.github.com/lfdm/node-dependency-tree/tar.gz/e34650cb836fa39512f04daa177b12f95a637e28"
+dependency-tree@lfdm/node-dependency-tree#a407a74:
+  version "7.5.0"
+  resolved "https://codeload.github.com/lfdm/node-dependency-tree/tar.gz/a407a74c413c51638a4cd3ab96b6cb3977c43614"
   dependencies:
     commander "^2.20.3"
     debug "^4.2.1"
-    filing-cabinet lfdm/node-filing-cabinet#497652f
+    filing-cabinet lfdm/node-filing-cabinet#7ca1c63
     precinct "^6.3.1"
     typescript "^3.9.7"
 
@@ -5805,9 +5805,9 @@ filesize@6.1.0:
   resolved "https://registry.yarnpkg.com/filesize/-/filesize-6.1.0.tgz#e81bdaa780e2451d714d71c0d7a4f3238d37ad00"
   integrity sha512-LpCHtPQ3sFx67z+uh2HnSyWSLLu5Jxo21795uRDuar/EOuYWXib5EmPaGIBuSnRqH2IODiKA2k5re/K9OnN/Yg==
 
-filing-cabinet@lfdm/node-filing-cabinet#497652f:
-  version "3.1.0"
-  resolved "https://codeload.github.com/lfdm/node-filing-cabinet/tar.gz/497652fe636378db72cafe097c1123aaf005b8b1"
+filing-cabinet@lfdm/node-filing-cabinet#7ca1c63:
+  version "3.2.0"
+  resolved "https://codeload.github.com/lfdm/node-filing-cabinet/tar.gz/7ca1c63efc5872f146e1a89f050f4223bb81f417"
   dependencies:
     app-module-path "^2.2.0"
     commander "^2.20.3"
