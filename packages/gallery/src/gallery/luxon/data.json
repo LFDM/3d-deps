@@ -1,0 +1,265 @@
+{
+  "nodes": [
+    {
+      "id": "src/luxon.js",
+      "path": "src/luxon.js",
+      "name": "src/luxon.js",
+      "labels": [],
+      "dependsOn": [
+        "src/datetime.js",
+        "src/duration.js",
+        "src/interval.js",
+        "src/info.js",
+        "src/zone.js",
+        "src/zones/fixedOffsetZone.js",
+        "src/zones/IANAZone.js",
+        "src/zones/invalidZone.js",
+        "src/zones/localZone.js",
+        "src/settings.js"
+      ]
+    },
+    {
+      "id": "src/datetime.js",
+      "path": "src/datetime.js",
+      "name": "src/datetime.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/duration.js",
+      "path": "src/duration.js",
+      "name": "src/duration.js",
+      "labels": [],
+      "dependsOn": [
+        "src/errors.js",
+        "src/impl/formatter.js",
+        "src/impl/invalid.js",
+        "src/impl/locale.js",
+        "src/impl/regexParser.js",
+        "src/impl/util.js",
+        "src/settings.js"
+      ]
+    },
+    {
+      "id": "src/errors.js",
+      "path": "src/errors.js",
+      "name": "src/errors.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/impl/formatter.js",
+      "path": "src/impl/formatter.js",
+      "name": "src/impl/formatter.js",
+      "labels": [],
+      "dependsOn": [
+        "src/impl/english.js",
+        "src/impl/formats.js",
+        "src/impl/util.js"
+      ]
+    },
+    {
+      "id": "src/impl/english.js",
+      "path": "src/impl/english.js",
+      "name": "src/impl/english.js",
+      "labels": [],
+      "dependsOn": [
+        "src/impl/formats.js",
+        "src/impl/util.js"
+      ]
+    },
+    {
+      "id": "src/impl/formats.js",
+      "path": "src/impl/formats.js",
+      "name": "src/impl/formats.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/impl/util.js",
+      "path": "src/impl/util.js",
+      "name": "src/impl/util.js",
+      "labels": [],
+      "dependsOn": [
+        "src/errors.js"
+      ]
+    },
+    {
+      "id": "src/impl/invalid.js",
+      "path": "src/impl/invalid.js",
+      "name": "src/impl/invalid.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/impl/locale.js",
+      "path": "src/impl/locale.js",
+      "name": "src/impl/locale.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/settings.js",
+      "path": "src/settings.js",
+      "name": "src/settings.js",
+      "labels": [],
+      "dependsOn": [
+        "src/zones/localZone.js",
+        "src/zones/IANAZone.js",
+        "src/impl/locale.js",
+        "src/impl/zoneUtil.js"
+      ]
+    },
+    {
+      "id": "src/zones/localZone.js",
+      "path": "src/zones/localZone.js",
+      "name": "src/zones/localZone.js",
+      "labels": [],
+      "dependsOn": [
+        "src/impl/util.js",
+        "src/zone.js"
+      ]
+    },
+    {
+      "id": "src/zone.js",
+      "path": "src/zone.js",
+      "name": "src/zone.js",
+      "labels": [],
+      "dependsOn": [
+        "src/errors.js"
+      ]
+    },
+    {
+      "id": "src/zones/IANAZone.js",
+      "path": "src/zones/IANAZone.js",
+      "name": "src/zones/IANAZone.js",
+      "labels": [],
+      "dependsOn": [
+        "src/impl/util.js",
+        "src/zone.js"
+      ]
+    },
+    {
+      "id": "src/impl/zoneUtil.js",
+      "path": "src/impl/zoneUtil.js",
+      "name": "src/impl/zoneUtil.js",
+      "labels": [],
+      "dependsOn": [
+        "src/zone.js",
+        "src/zones/IANAZone.js",
+        "src/zones/fixedOffsetZone.js",
+        "src/zones/invalidZone.js",
+        "src/impl/util.js"
+      ]
+    },
+    {
+      "id": "src/zones/fixedOffsetZone.js",
+      "path": "src/zones/fixedOffsetZone.js",
+      "name": "src/zones/fixedOffsetZone.js",
+      "labels": [],
+      "dependsOn": [
+        "src/impl/util.js",
+        "src/zone.js"
+      ]
+    },
+    {
+      "id": "src/zones/invalidZone.js",
+      "path": "src/zones/invalidZone.js",
+      "name": "src/zones/invalidZone.js",
+      "labels": [],
+      "dependsOn": [
+        "src/zone.js"
+      ]
+    },
+    {
+      "id": "src/impl/regexParser.js",
+      "path": "src/impl/regexParser.js",
+      "name": "src/impl/regexParser.js",
+      "labels": [],
+      "dependsOn": [
+        "src/impl/util.js",
+        "src/impl/english.js",
+        "src/zones/fixedOffsetZone.js",
+        "src/zones/IANAZone.js"
+      ]
+    },
+    {
+      "id": "src/interval.js",
+      "path": "src/interval.js",
+      "name": "src/interval.js",
+      "labels": [],
+      "dependsOn": [
+        "src/datetime.js",
+        "src/duration.js",
+        "src/settings.js",
+        "src/errors.js",
+        "src/impl/invalid.js"
+      ]
+    },
+    {
+      "id": "src/info.js",
+      "path": "src/info.js",
+      "name": "src/info.js",
+      "labels": [],
+      "dependsOn": [
+        "src/datetime.js",
+        "src/settings.js",
+        "src/impl/locale.js",
+        "src/zones/IANAZone.js",
+        "src/impl/zoneUtil.js",
+        "src/impl/util.js"
+      ]
+    },
+    {
+      "id": "src/impl/diff.js",
+      "path": "src/impl/diff.js",
+      "name": "src/impl/diff.js",
+      "labels": [],
+      "dependsOn": [
+        "src/duration.js"
+      ]
+    },
+    {
+      "id": "src/impl/tokenParser.js",
+      "path": "src/impl/tokenParser.js",
+      "name": "src/impl/tokenParser.js",
+      "labels": [],
+      "dependsOn": [
+        "src/impl/util.js",
+        "src/impl/formatter.js",
+        "src/zones/fixedOffsetZone.js",
+        "src/zones/IANAZone.js",
+        "src/datetime.js",
+        "src/impl/digits.js",
+        "src/errors.js"
+      ]
+    },
+    {
+      "id": "src/impl/digits.js",
+      "path": "src/impl/digits.js",
+      "name": "src/impl/digits.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "src/impl/conversions.js",
+      "path": "src/impl/conversions.js",
+      "name": "src/impl/conversions.js",
+      "labels": [],
+      "dependsOn": [
+        "src/impl/util.js",
+        "src/impl/invalid.js"
+      ]
+    }
+  ],
+  "meta": {
+    "analyzer": {
+      "name": "analyzer-js",
+      "version": "0.1.0"
+    },
+    "repository": {
+      "url": "https://github.com/moment/luxon"
+    },
+    "createdAt": "2020-12-04T19:35:07.838Z"
+  }
+}
