@@ -54,15 +54,17 @@ const DEFAULT_TRANSFORMER = (): ConfigTransformer => {
 export const TRANSFORMERS: {
   DEFAULT: () => ConfigTransformer;
   MAP_ENTRY: (
-    mapper: (entry: FullEntry) => Entry,
+    mapper: (entry: FullEntry) => Entry | Promise<Entry>,
     args: { dir: string; packageJson: PackageJson }
   ) => ConfigTransformer;
 } = {
   DEFAULT: DEFAULT_TRANSFORMER,
   MAP_ENTRY: (mapper) => async (args) => {
     const cfg = await DEFAULT_TRANSFORMER()(args);
-    const entries = cfg.entries.map((e) =>
-      typeof e === "string" ? mapper({ path: e, type: undefined }) : mapper(e)
+    const entries = await Promise.all(
+      cfg.entries.map((e) =>
+        typeof e === "string" ? mapper({ path: e, type: undefined }) : mapper(e)
+      )
     );
     return { ...cfg, entries };
   },
