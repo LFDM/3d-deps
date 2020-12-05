@@ -147,6 +147,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     const workspaces = rootPkgInfo.pkg.workspaces
       ? await getWorkspacesInfo(rootDir)
       : {};
+    const virtualWorkspaces = this.config.workspaces?.virtual || [];
 
     const wsPkgInfos = await Promise.all(
       Object.values(workspaces).map(async (w) =>
@@ -157,6 +158,9 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     const allPkgInfos = [rootPkgInfo, ...wsPkgInfos];
     const packageNodeModulePaths = [
       ...allPkgInfos.map((p) => p.nodeModulePath).filter(Boolean),
+      ...virtualWorkspaces.map((w) =>
+        path.join(rootDir, "node_modules", w.packageName)
+      ),
     ];
 
     const tree = await Promise.all(
@@ -180,6 +184,11 @@ export class JsAnalyzer implements IDependencyAnalyzer {
           path.relative(rootDir, p.nodeModulePath)
         ] = p.location.rel;
       });
+    (this.config.workspaces?.virtual || []).forEach((w) => {
+      relNodeModulesPathToRelEntryDir[
+        path.join("node_modules", w.packageName)
+      ] = path.join(w.mountPoint, w.packageName);
+    });
 
     const preprocessed = mapTreeToNodes(
       preProcess(
