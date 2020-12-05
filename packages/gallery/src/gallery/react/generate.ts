@@ -10,7 +10,7 @@ const analyzer = new JsAnalyzer({
     const cfg = await TRANSFORMERS.DEFAULT()(args);
     const main = cfg.entries.find((e) => e.type === "main");
     if (main) {
-      main.path = main.path.replace("dist/", "src");
+      main.path = main.path.replace("dist", "src");
     } else {
       cfg.entries.push({ type: "main", path: "index.js" });
     }
