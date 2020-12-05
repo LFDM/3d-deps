@@ -7,15 +7,16 @@ import { getRootDir, writeJsonFile } from "../util";
 
 const analyzer = new JsAnalyzer({
   rootDir: getRootDir(process.argv),
-  configTransformer: async ({ dir, packageJson }) => {
-    const defaults = await TRANSFORMERS.DEFAULT()({ dir, packageJson });
-    if (fs.existsSync(path.join(dir, "index.ts"))) {
-      defaults.entries.main = "index.ts";
-    } else if (fs.existsSync(path.join(dir, "src", "index.ts"))) {
-      defaults.entries.main = path.join("src/index.ts");
+  configTransformer: TRANSFORMERS.MAP_ENTRY((entry, args) => {
+    if (entry.type === "main") {
+      if (fs.existsSync(path.join(args.dir, "index.ts"))) {
+        entry.path = "index.ts";
+      } else if (fs.existsSync(path.join(args.dir, "src", "index.ts"))) {
+        entry.path = path.join("src/index.ts");
+      }
     }
-    return defaults;
-  },
+    return entry;
+  }),
 });
 
 analyzer
