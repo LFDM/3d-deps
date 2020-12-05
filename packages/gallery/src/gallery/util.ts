@@ -10,7 +10,7 @@ export const getRootDir = (argv: string[]) => {
 
 export const readFile = util.promisify(fs.readFile);
 export const readJsonFile = <T = any>(p: string) =>
-  readFile(p).then((o) => JSON.parse(p.toString()) as T);
+  readFile(p).then((o) => JSON.parse(o.toString()) as T);
 export const writeFile = util.promisify(fs.writeFile);
 export const writeJsonFile = (p: string, obj: any) =>
   writeFile(p, JSON.stringify(obj, null, 2));
