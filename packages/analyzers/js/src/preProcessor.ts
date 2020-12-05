@@ -106,8 +106,9 @@ export const PreProcessorLinkWorkspaces = (relNodeModulesPathToRelEntryDir: {
     if (x.startsWith("node_modules")) {
       for (const modName of modNames) {
         if (x.startsWith(modName)) {
-          const entry = relNodeModulesPathToRelEntryDir[modName];
-          return x.replace(modName, entry);
+          const m = modName.slice(0, -1); // remove the separator we applied earlier
+          const entry = relNodeModulesPathToRelEntryDir[m];
+          return x.replace(m, entry);
         }
       }
     }
