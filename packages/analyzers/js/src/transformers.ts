@@ -63,13 +63,15 @@ export const TRANSFORMERS: {
   DEFAULT: DEFAULT_TRANSFORMER,
   MAP_ENTRY: (mapper) => async (args) => {
     const cfg = await DEFAULT_TRANSFORMER()(args);
-    const entries = await Promise.all(
-      cfg.entries.map((e) =>
-        typeof e === "string"
-          ? mapper({ path: e, type: undefined }, args)
-          : mapper(e, args)
+    const entries = (
+      await Promise.all(
+        cfg.entries.map((e) =>
+          typeof e === "string"
+            ? mapper({ path: e, type: undefined }, args)
+            : mapper(e, args)
+        )
       )
-    );
+    ).map((e) => (typeof e === "string" ? { type: undefined, path: e } : e));
     return { ...cfg, entries };
   },
 };
