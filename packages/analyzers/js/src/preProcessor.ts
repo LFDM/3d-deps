@@ -97,7 +97,10 @@ export const PreProcessorHoistNodeModules = (): PreProcessor => {
 export const PreProcessorLinkWorkspaces = (relNodeModulesPathToRelEntryDir: {
   [nodeModulesPath: string]: string;
 }): PreProcessor => {
-  const modNames = Object.keys(relNodeModulesPathToRelEntryDir);
+  // needs a trailing slash, so that we don't do partial matches like!
+  const modNames = Object.keys(relNodeModulesPathToRelEntryDir).map(
+    (k) => k + path.sep
+  );
 
   const process = (x: string) => {
     if (x.startsWith("node_modules")) {
