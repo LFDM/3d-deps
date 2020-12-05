@@ -2,7 +2,13 @@ import * as fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
 import { getCompilerOptions } from "./ts";
-import { Config, ConfigTransformer, Entries, PackageJson } from "./types";
+import {
+  Config,
+  ConfigTransformer,
+  Entry,
+  FullEntry,
+  PackageJson,
+} from "./types";
 
 const access = promisify(fs.access);
 const canRead = async (p: string) => {
@@ -14,24 +20,21 @@ const canRead = async (p: string) => {
   }
 };
 
-const getEntries = (pkg: PackageJson): Entries => {
-  const entries: Entries = { main: null, browser: [], bin: [] };
+const getEntries = (pkg: PackageJson): FullEntry[] => {
+  const entries: FullEntry[] = [];
 
   if (pkg.main) {
-    entries.main = pkg.main;
+    entries.push({ path: pkg.main, type: "main" });
   }
-  if (typeof pkg.browser === "string") {
-    entries.browser.push(pkg.browser);
-  }
-  if (typeof pkg.browser === "object") {
-    entries.browser.push(...Object.values(pkg.browser));
-  }
-  if (typeof pkg.bin === "string") {
-    entries.bin.push(pkg.bin);
-  }
-  if (typeof pkg.bin === "object") {
-    entries.bin.push(...Object.values(pkg.bin));
-  }
+  const browser =
+    typeof pkg.browser === "string"
+      ? [pkg.browser]
+      : Object.values(pkg.browser || {});
+  browser.forEach((p) => entries.push({ path: p, type: "browser" }));
+  const bin =
+    typeof pkg.bin === "string" ? [pkg.bin] : Object.values(pkg.bin || {});
+  bin.forEach((p) => entries.push({ path: p, type: "bin" }));
+
   return entries;
 };
 const DEFAULT_TRANSFORMER = (): ConfigTransformer => {
@@ -50,26 +53,17 @@ const DEFAULT_TRANSFORMER = (): ConfigTransformer => {
 
 export const TRANSFORMERS: {
   DEFAULT: () => ConfigTransformer;
-  MAP_ENTRY: (mapper: (entry: string) => string | null) => ConfigTransformer;
+  MAP_ENTRY: (
+    mapper: (entry: FullEntry) => Entry,
+    args: { dir: string; packageJson: PackageJson }
+  ) => ConfigTransformer;
 } = {
   DEFAULT: DEFAULT_TRANSFORMER,
   MAP_ENTRY: (mapper) => async (args) => {
     const cfg = await DEFAULT_TRANSFORMER()(args);
-    const entries: Entries = { main: null, browser: [], bin: [] };
-    entries.main = cfg.entries.main ? mapper(cfg.entries.main) : null;
-
-    for (const e of cfg.entries.bin) {
-      const nextE = mapper(e);
-      if (nextE) {
-        entries.bin.push(nextE);
-      }
-    }
-    for (const e of cfg.entries.browser) {
-      const nextE = mapper(e);
-      if (nextE) {
-        entries.browser.push(nextE);
-      }
-    }
+    const entries = cfg.entries.map((e) =>
+      typeof e === "string" ? mapper({ path: e, type: undefined }) : mapper(e)
+    );
     return { ...cfg, entries };
   },
 };
