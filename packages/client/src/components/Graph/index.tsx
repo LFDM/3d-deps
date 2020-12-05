@@ -287,6 +287,13 @@ export const Graph = () => {
           });
         }
       }
+
+      const size =
+        (t.dependsOn.countWithoutExcluded || 0) +
+        (t.dependedBy.countWithoutExcluded || 0);
+      addNodeStyle(ss, t.id, {
+        size: Math.max(0.2, size / 4),
+      });
     });
 
     const topNodes = sortBy(
