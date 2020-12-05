@@ -129,6 +129,41 @@ const collectPackageInfo = async (
   };
 };
 
+const collectVirtualPackageInfo = async (
+  rootDir: string,
+  packageName: string,
+  mountPath: string,
+  transform: ConfigTransformer
+): Promise<PackageInfo> => {
+  const locationOfSrc = {
+    abs: path.join(rootDir, "node_modules", packageName),
+    rel: path.join("node_modules", packageName),
+  };
+  const pkg = await getPackageJson(locationOfSrc.abs);
+  const config = await transform({ dir: locationOfSrc.abs, packageJson: pkg });
+
+  return {
+    pkg,
+    locationOfSrc,
+    mappedEntries: config.entries.map((e) => {
+      const fullE: FullEntry =
+        typeof e === "string" ? { path: e, type: undefined } : e;
+      const abs = toAbsolutePath(locationOfSrc.abs, fullE.path);
+      return {
+        abs,
+        rel: path.relative(rootDir, abs),
+        type: fullE.type,
+      };
+    }),
+    configs: config.configs,
+    locationInNodeModules: locationOfSrc,
+    mountLocation: {
+      rel: mountPath,
+      abs: path.join(rootDir, mountPath),
+    },
+  };
+};
+
 export class JsAnalyzer implements IDependencyAnalyzer {
   private config: JsAnalyzerConfig;
   private caches: {
@@ -155,18 +190,23 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       : {};
     const virtualWorkspaces = this.config.workspaces?.virtual || [];
 
-    const wsPkgInfos = await Promise.all(
-      Object.values(workspaces).map(async (w) =>
+    const wsPkgInfos = await Promise.all([
+      ...Object.values(workspaces).map((w) =>
         collectPackageInfo(rootDir, w.location, transform)
-      )
-    );
+      ),
+      ...virtualWorkspaces.map((w) =>
+        collectVirtualPackageInfo(
+          rootDir,
+          w.packageName,
+          w.mountPoint,
+          transform
+        )
+      ),
+    ]);
 
     const allPkgInfos = [rootPkgInfo, ...wsPkgInfos];
     const packageNodeModulePaths = compact([
       ...allPkgInfos.map((p) => p.locationInNodeModules?.abs),
-      ...virtualWorkspaces.map((w) =>
-        path.join(rootDir, "node_modules", w.packageName)
-      ),
     ]);
 
     const tree = await Promise.all(
@@ -189,11 +229,6 @@ export class JsAnalyzer implements IDependencyAnalyzer {
         relNodeModulesPathToRelMountDir[p.locationInNodeModules!.rel] =
           p.mountLocation.rel;
       });
-    (this.config.workspaces?.virtual || []).forEach((w) => {
-      relNodeModulesPathToRelMountDir[
-        path.join("node_modules", w.packageName)
-      ] = path.join(w.mountPoint, w.packageName);
-    });
 
     const preprocessed = mapTreeToNodes(
       preProcess(
