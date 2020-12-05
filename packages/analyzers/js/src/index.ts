@@ -91,6 +91,9 @@ const collectPackageInfo = async (
 ): Promise<PackageInfo> => {
   const pkg = await getPackageJson(dir);
   const config = await transform({ dir, packageJson: pkg });
+  if (!pkg.name) {
+    console.log("NO_PACKAGE_NAME", dir);
+  }
   return {
     pkg,
     location: {
@@ -107,6 +110,10 @@ const collectPackageInfo = async (
       };
     }),
     configs: config.configs,
+    // the root package might not have a name!
+    nodeModulePath: pkg.name
+      ? path.join(rootDir, "node_modules", pkg.name)
+      : "",
   };
 };
 
@@ -145,7 +152,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
 
     const tree = await Promise.all(
       allPkgInfos.map((pkgInfo) =>
-        getDependencies(pkgInfo, { resolution }, this.caches)
+        getDependencies(pkgInfo, { resolution }, this.caches, allPkgInfos)
       )
     ).then(mergeTrees);
 

@@ -44,7 +44,8 @@ const parseEntry = (
   caches: {
     visited: VisitedCache;
     unresolvableModules: { entry: string; fs: string[] }[];
-  }
+  },
+  packageNodeModulePaths: string[]
 ): FlatTree => {
   const nonExistent: string[] = [];
   const depTreeOptions: FixedDependencyTreeOptions = {
@@ -53,7 +54,11 @@ const parseEntry = (
     visited: caches.visited,
     filter: (dependency: string, parent: string) => {
       if (options.resolution === "shallow") {
-        if (isNodeModule(dependency) && isNodeModule(parent)) {
+        if (
+          isNodeModule(dependency) &&
+          isNodeModule(parent) &&
+          !packageNodeModulePaths.find((p) => dependency.startsWith(p))
+        ) {
           return false;
         }
       }
@@ -76,11 +81,15 @@ export const getDependencies = async (
   caches: {
     visited: VisitedCache;
     unresolvableModules: { entry: string; fs: string[] }[];
-  }
+  },
+  otherPackages: PackageInfo[]
 ) => {
+  const packageNodeModulePaths = otherPackages
+    .map((p) => p.nodeModulePath)
+    .filter(Boolean);
   const tree = mergeTrees(
     pkgInfo.mappedEntries.map((e) =>
-      parseEntry(e.abs, pkgInfo, options, caches)
+      parseEntry(e.abs, pkgInfo, options, caches, packageNodeModulePaths)
     )
   );
   return tree;

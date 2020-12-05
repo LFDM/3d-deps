@@ -61,4 +61,5 @@ export type PackageInfo = {
       compilerOptions: CompilerOptions;
     };
   };
+  nodeModulePath: string;
 };
