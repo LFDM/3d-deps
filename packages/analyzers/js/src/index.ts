@@ -10,6 +10,7 @@ import { postProcess, PostProcessorLabeller } from "./postProcessor";
 import {
   preProcess,
   PreProcessorCleanupNodeModuleNames,
+  PreProcessorDebug,
   PreProcessorHoistNodeModules,
   PreProcessorLinkWorkspaces,
   PreProcessorRelativePaths,
@@ -156,18 +157,42 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       )
     ).then(mergeTrees);
 
+    console.log(Object.keys(tree).find((t) => t.includes("unstable_mock")));
+
     const preprocessed = mapTreeToNodes(
       preProcess(
         [
           PreProcessorRelativePaths(rootDir),
+          PreProcessorDebug({
+            onParent: (p) => {
+              if (p.includes("unstable_mock")) {
+                console.log("rel", p);
+              }
+            },
+          }),
           PreProcessorHoistNodeModules(),
+          PreProcessorDebug({
+            onParent: (p) => {
+              if (p.includes("unstable_mock")) {
+                console.log("hoist", p);
+              }
+            },
+          }),
           PreProcessorLinkWorkspaces(wsPkgInfos),
+          PreProcessorDebug({
+            onParent: (p) => {
+              if (p.includes("unstable_mock")) {
+                console.log("link", p);
+              }
+            },
+          }),
           PreProcessorCleanupNodeModuleNames(),
           PreProcessorResolveMappedEntryFiles(wsPkgInfos),
         ],
         tree
       )
     );
+    console.log(preprocessed.find((t) => t.id.includes("unstable_mock")));
     const nodes = postProcess(
       [PostProcessorLabeller(wsPkgInfos)],
       preprocessed
