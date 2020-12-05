@@ -179,6 +179,22 @@ export const PreProcessorCleanupNodeModuleNames = (): PreProcessor => {
   };
 };
 
+export const PreProcessorDebug = (callbacks?: {
+  onParent?: (p: string) => void;
+  onChild?: (p: string) => void;
+}): PreProcessor => {
+  return {
+    onParent: (p) => {
+      callbacks?.onParent && callbacks.onParent(p);
+      return p;
+    },
+    onChild: (p) => {
+      callbacks?.onChild && callbacks.onChild(p);
+      return p;
+    },
+  };
+};
+
 export const preProcess = (processors: PreProcessor[], tree: FlatTree) => {
   const cache: {
     parents: { [parent: string]: string | null };
