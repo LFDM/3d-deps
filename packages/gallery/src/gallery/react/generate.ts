@@ -8,13 +8,13 @@ const analyzer = new JsAnalyzer({
   rootDir: getRootDir(process.argv),
   configTransformer: async (args) => {
     const cfg = await TRANSFORMERS.DEFAULT()(args);
-    return {
-      ...cfg,
-      entries: {
-        ...cfg.entries,
-        main: cfg.entries.main?.replace("dist/", "src/") || "./index.js",
-      },
-    };
+    const main = cfg.entries.find((e) => e.type === "main");
+    if (main) {
+      main.path = main.path.replace("dist/", "src");
+    } else {
+      cfg.entries.push({ type: "main", path: "index.js" });
+    }
+    return cfg;
   },
 });
 

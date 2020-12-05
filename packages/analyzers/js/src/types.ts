@@ -8,7 +8,7 @@ export type FullEntry = {
 export type Entry = string | FullEntry;
 
 export type Config = {
-  entries: Entry[];
+  entries: FullEntry[];
   configs: {
     ts?: {
       compilerOptions: CompilerOptions;

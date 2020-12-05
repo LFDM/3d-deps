@@ -6,7 +6,10 @@ import { getRootDir, writeJsonFile } from "../util";
 
 const analyzer = new JsAnalyzer({
   rootDir: getRootDir(process.argv),
-  configTransformer: TRANSFORMERS.MAP_ENTRY(() => "./src/index.js"),
+  configTransformer: TRANSFORMERS.MAP_ENTRY((e) => {
+    e.path = "./src/index.js";
+    return e;
+  }),
 });
 
 analyzer
