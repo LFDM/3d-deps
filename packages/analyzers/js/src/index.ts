@@ -170,12 +170,23 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       )
     ).then(mergeTrees);
 
+    const relNodeModulesPathToRelEntryDir: {
+      [nodeModulesPath: string]: string;
+    } = {};
+    allPkgInfos
+      .filter((p) => !!p.nodeModulePath)
+      .forEach((p) => {
+        relNodeModulesPathToRelEntryDir[
+          path.relative(rootDir, p.nodeModulePath)
+        ] = p.location.rel;
+      });
+
     const preprocessed = mapTreeToNodes(
       preProcess(
         [
           PreProcessorRelativePaths(rootDir),
           PreProcessorHoistNodeModules(),
-          PreProcessorLinkWorkspaces(wsPkgInfos),
+          PreProcessorLinkWorkspaces(relNodeModulesPathToRelEntryDir),
           PreProcessorCleanupNodeModuleNames(),
           PreProcessorResolveMappedEntryFiles(wsPkgInfos),
         ],

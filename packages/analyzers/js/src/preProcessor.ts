@@ -94,22 +94,16 @@ export const PreProcessorHoistNodeModules = (): PreProcessor => {
   };
 };
 
-export const PreProcessorLinkWorkspaces = (
-  wsPkgInfos: PackageInfo[]
-): PreProcessor => {
-  const wsByModName: { [key: string]: string } = {};
-  wsPkgInfos.forEach((p) => {
-    const modName = path.join("node_modules", p.pkg.name);
-    const entry = p.location.rel;
-    wsByModName[modName] = entry;
-  });
-  const modNames = Object.keys(wsByModName);
+export const PreProcessorLinkWorkspaces = (relNodeModulesPathToRelEntryDir: {
+  [nodeModulesPath: string]: string;
+}): PreProcessor => {
+  const modNames = Object.keys(relNodeModulesPathToRelEntryDir);
 
   const process = (x: string) => {
     if (x.startsWith("node_modules")) {
       for (const modName of modNames) {
         if (x.startsWith(modName)) {
-          const entry = wsByModName[modName];
+          const entry = relNodeModulesPathToRelEntryDir[modName];
           return x.replace(modName, entry);
         }
       }
