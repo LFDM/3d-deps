@@ -155,8 +155,7 @@
       "dependsOn": [
         "node_modules/dependency-tree",
         "node_modules/typescript",
-        "packages/analyzers/js/src/types.ts",
-        "packages/analyzers/js/src/util.ts"
+        "packages/analyzers/js/src/types.ts"
       ]
     },
     {
@@ -433,7 +432,7 @@
         "node_modules/lodash",
         "node_modules/nanoid",
         "node_modules/react",
-        "node_modules/react-force-graph",
+        "node_modules/react-force-graph-3d",
         "node_modules/three",
         "node_modules/three-spritetext",
         "node_modules/tinycolor2",
@@ -453,9 +452,9 @@
       "dependsOn": []
     },
     {
-      "id": "node_modules/react-force-graph",
-      "path": "node_modules/react-force-graph",
-      "name": "node_modules/react-force-graph",
+      "id": "node_modules/react-force-graph-3d",
+      "path": "node_modules/react-force-graph-3d",
+      "name": "node_modules/react-force-graph-3d",
       "labels": [
         "node_module"
       ],
@@ -1050,7 +1049,11 @@
       "dependsOn": [
         "packages/core/src/index.ts",
         "packages/gallery/src/gallery/3d-deps/index.ts",
+        "packages/gallery/src/gallery/emotion/index.ts",
+        "packages/gallery/src/gallery/firebase-js-sdk/index.ts",
+        "packages/gallery/src/gallery/luxon/index.ts",
         "packages/gallery/src/gallery/material-ui/index.ts",
+        "packages/gallery/src/gallery/next-js/index.ts",
         "packages/gallery/src/gallery/nivo/index.ts",
         "packages/gallery/src/gallery/react/index.ts",
         "packages/gallery/src/gallery/three-js/index.ts",
@@ -1155,7 +1158,8 @@
       "path": "packages/examples/simple/src/example.ts",
       "name": "packages/examples/simple/src/example.ts",
       "labels": [
-        "pkg:@3d-deps/example-simple"
+        "pkg:@3d-deps/example-simple",
+        "pkg_entry"
       ],
       "dependsOn": [
         "packages/analyzers/js/src/index.ts",
@@ -1221,6 +1225,69 @@
       "dependsOn": []
     },
     {
+      "id": "packages/gallery/src/gallery/emotion/index.ts",
+      "path": "packages/gallery/src/gallery/emotion/index.ts",
+      "name": "packages/gallery/src/gallery/emotion/index.ts",
+      "labels": [
+        "pkg:@3d-deps/gallery"
+      ],
+      "dependsOn": [
+        "packages/core/src/index.ts",
+        "packages/gallery/src/gallery/emotion/data.json"
+      ]
+    },
+    {
+      "id": "packages/gallery/src/gallery/emotion/data.json",
+      "path": "packages/gallery/src/gallery/emotion/data.json",
+      "name": "packages/gallery/src/gallery/emotion/data.json",
+      "labels": [
+        "pkg:@3d-deps/gallery"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/gallery/src/gallery/firebase-js-sdk/index.ts",
+      "path": "packages/gallery/src/gallery/firebase-js-sdk/index.ts",
+      "name": "packages/gallery/src/gallery/firebase-js-sdk/index.ts",
+      "labels": [
+        "pkg:@3d-deps/gallery"
+      ],
+      "dependsOn": [
+        "packages/core/src/index.ts",
+        "packages/gallery/src/gallery/firebase-js-sdk/data.json"
+      ]
+    },
+    {
+      "id": "packages/gallery/src/gallery/firebase-js-sdk/data.json",
+      "path": "packages/gallery/src/gallery/firebase-js-sdk/data.json",
+      "name": "packages/gallery/src/gallery/firebase-js-sdk/data.json",
+      "labels": [
+        "pkg:@3d-deps/gallery"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/gallery/src/gallery/luxon/index.ts",
+      "path": "packages/gallery/src/gallery/luxon/index.ts",
+      "name": "packages/gallery/src/gallery/luxon/index.ts",
+      "labels": [
+        "pkg:@3d-deps/gallery"
+      ],
+      "dependsOn": [
+        "packages/core/src/index.ts",
+        "packages/gallery/src/gallery/luxon/data.json"
+      ]
+    },
+    {
+      "id": "packages/gallery/src/gallery/luxon/data.json",
+      "path": "packages/gallery/src/gallery/luxon/data.json",
+      "name": "packages/gallery/src/gallery/luxon/data.json",
+      "labels": [
+        "pkg:@3d-deps/gallery"
+      ],
+      "dependsOn": []
+    },
+    {
       "id": "packages/gallery/src/gallery/material-ui/index.ts",
       "path": "packages/gallery/src/gallery/material-ui/index.ts",
       "name": "packages/gallery/src/gallery/material-ui/index.ts",
@@ -1236,6 +1303,27 @@
       "id": "packages/gallery/src/gallery/material-ui/data.json",
       "path": "packages/gallery/src/gallery/material-ui/data.json",
       "name": "packages/gallery/src/gallery/material-ui/data.json",
+      "labels": [
+        "pkg:@3d-deps/gallery"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/gallery/src/gallery/next-js/index.ts",
+      "path": "packages/gallery/src/gallery/next-js/index.ts",
+      "name": "packages/gallery/src/gallery/next-js/index.ts",
+      "labels": [
+        "pkg:@3d-deps/gallery"
+      ],
+      "dependsOn": [
+        "packages/core/src/index.ts",
+        "packages/gallery/src/gallery/next-js/data.json"
+      ]
+    },
+    {
+      "id": "packages/gallery/src/gallery/next-js/data.json",
+      "path": "packages/gallery/src/gallery/next-js/data.json",
+      "name": "packages/gallery/src/gallery/next-js/data.json",
       "labels": [
         "pkg:@3d-deps/gallery"
       ],
@@ -1348,7 +1436,8 @@
       "path": "packages/server/src/cli.ts",
       "name": "packages/server/src/cli.ts",
       "labels": [
-        "pkg:@3d-deps/server"
+        "pkg:@3d-deps/server",
+        "pkg_entry"
       ],
       "dependsOn": [
         "packages/core/src/index.ts",
@@ -1371,6 +1460,6 @@
       "name": "analyzer-js",
       "version": "0.1.0"
     },
-    "createdAt": "2020-12-04T15:49:11.111Z"
+    "createdAt": "2020-12-05T10:19:50.004Z"
   }
 }
