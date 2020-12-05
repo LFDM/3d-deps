@@ -16,9 +16,10 @@ describe("analyzer-js", () => {
     it("can transform main prop", async () => {
       const a = new JsAnalyzer({
         rootDir: path.join(SPEC_DIR, "pkg-main-transform"), // has dist/index.js as it's main
-        configTransformer: TRANSFORMERS.MAP_ENTRY((entry) =>
-          entry.replace("dist/index.js", "src/index.ts")
-        ),
+        configTransformer: TRANSFORMERS.MAP_ENTRY((entry) => {
+          entry.path = entry.path.replace("dist/index.js", "src/index.ts");
+          return entry;
+        }),
       });
       const expected = [
         {
