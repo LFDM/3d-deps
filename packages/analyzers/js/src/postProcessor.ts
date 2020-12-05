@@ -32,7 +32,7 @@ export const PostProcessorLabeller = (
         n.labels.push("node_module");
       }
       for (const t of sortedWorkspacesWithMainEntries) {
-        if (n.path.startsWith(t.ws.locationOfSrc.rel)) {
+        if (n.path.startsWith(t.ws.mountLocation.rel)) {
           n.labels.push(`pkg:${t.ws.pkg.name}`);
 
           if (t.mainEntriesRel.includes(n.path)) {
