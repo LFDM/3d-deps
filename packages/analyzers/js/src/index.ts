@@ -20,6 +20,7 @@ import { getDependencies, mergeTrees, VisitedCache } from "./tree";
 import {
   ConfigTransformer,
   FlatTree,
+  FullEntry,
   NodeModulesResolution,
   PackageInfo,
   PackageJson,
@@ -79,13 +80,6 @@ export const getRepository = (pkg: PackageJson) => {
   return undefined;
 };
 
-const toNullableAbsolutePath = (dir: string, p: string | null) => {
-  if (p === null) {
-    return null;
-  }
-  return path.isAbsolute(p) ? p : path.join(dir, p);
-};
-
 const toAbsolutePath = (dir: string, p: string) => {
   return path.isAbsolute(p) ? p : path.join(dir, p);
 };
@@ -97,33 +91,21 @@ const collectPackageInfo = async (
 ): Promise<PackageInfo> => {
   const pkg = await getPackageJson(dir);
   const config = await transform({ dir, packageJson: pkg });
-  const mainAbs = toNullableAbsolutePath(dir, config.entries.main);
   return {
     pkg,
     location: {
       abs: dir,
       rel: path.relative(rootDir, dir),
     },
-    mappedEntries: {
-      main: {
-        abs: mainAbs,
-        rel: mainAbs === null ? null : path.relative(rootDir, mainAbs),
-      },
-      browser: config.entries.browser.map((e) => {
-        const abs = toAbsolutePath(dir, e);
-        return {
-          abs,
-          rel: path.relative(rootDir, abs),
-        };
-      }),
-      bin: config.entries.bin.map((e) => {
-        const abs = toAbsolutePath(dir, e);
-        return {
-          abs,
-          rel: path.relative(rootDir, abs),
-        };
-      }),
-    },
+    mappedEntries: config.entries.map((e) => {
+      const fullE: FullEntry =
+        typeof e === "string" ? { path: e, type: undefined } : e;
+      return {
+        abs: toAbsolutePath(dir, fullE.path),
+        rel: fullE.path,
+        type: fullE.type,
+      };
+    }),
     configs: config.configs,
   };
 };

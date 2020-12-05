@@ -1,7 +1,6 @@
 import dependencyTree, { DependencyObj, Options } from "dependency-tree";
 import { CompilerOptions } from "typescript";
 import { FlatTree, NodeModulesResolution, PackageInfo } from "./types";
-import { compact } from "./util";
 
 export type VisitedCache = { [key: string]: any };
 
@@ -79,14 +78,10 @@ export const getDependencies = async (
     unresolvableModules: { entry: string; fs: string[] }[];
   }
 ) => {
-  const allEntryFiles: string[] = compact([
-    pkgInfo.mappedEntries.main.abs,
-    ...pkgInfo.mappedEntries.browser.map((b) => b.abs),
-    ...pkgInfo.mappedEntries.bin.map((b) => b.abs),
-  ]);
-
   const tree = mergeTrees(
-    allEntryFiles.map((e) => parseEntry(e, pkgInfo, options, caches))
+    pkgInfo.mappedEntries.map((e) =>
+      parseEntry(e.abs, pkgInfo, options, caches)
+    )
   );
   return tree;
 };
