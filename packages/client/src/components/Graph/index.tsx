@@ -341,6 +341,7 @@ export const Graph = () => {
         sprite.translateY(Math.min(1.5, size) * 8);
         return sprite;
       }}
+      linkResolution={1}
       linkDirectionalParticles={(link: any) =>
         styles.links[link.id]?.particles || 0
       }
