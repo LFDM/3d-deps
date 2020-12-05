@@ -1,4 +1,5 @@
 import * as fs from "fs";
+import _glob from "glob";
 import * as path from "path";
 import * as util from "util";
 
@@ -10,3 +11,5 @@ export const getRootDir = (argv: string[]) => {
 export const writeFile = util.promisify(fs.writeFile);
 export const writeJsonFile = (p: string, obj: any) =>
   writeFile(p, JSON.stringify(obj, null, 2));
+
+export const glob = util.promisify(_glob);
