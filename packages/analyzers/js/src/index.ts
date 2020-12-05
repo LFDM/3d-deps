@@ -180,17 +180,17 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       )
     ).then(mergeTrees);
 
-    const relNodeModulesPathToRelEntryDir: {
+    const relNodeModulesPathToRelMountDir: {
       [nodeModulesPath: string]: string;
     } = {};
     allPkgInfos
       .filter((p) => !!p.locationInNodeModules)
       .forEach((p) => {
-        relNodeModulesPathToRelEntryDir[p.locationInNodeModules!.rel] =
-          p.locationOfSrc.rel;
+        relNodeModulesPathToRelMountDir[p.locationInNodeModules!.rel] =
+          p.mountLocation.rel;
       });
     (this.config.workspaces?.virtual || []).forEach((w) => {
-      relNodeModulesPathToRelEntryDir[
+      relNodeModulesPathToRelMountDir[
         path.join("node_modules", w.packageName)
       ] = path.join(w.mountPoint, w.packageName);
     });
@@ -200,7 +200,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
         [
           PreProcessorRelativePaths(rootDir),
           PreProcessorHoistNodeModules(),
-          PreProcessorLinkWorkspaces(relNodeModulesPathToRelEntryDir),
+          PreProcessorLinkWorkspaces(relNodeModulesPathToRelMountDir),
           PreProcessorCleanupNodeModuleNames(),
           PreProcessorResolveMappedEntryFiles(wsPkgInfos),
         ],
