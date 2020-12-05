@@ -104,9 +104,10 @@ const collectPackageInfo = async (
     mappedEntries: config.entries.map((e) => {
       const fullE: FullEntry =
         typeof e === "string" ? { path: e, type: undefined } : e;
+      const abs = toAbsolutePath(dir, fullE.path);
       return {
-        abs: toAbsolutePath(dir, fullE.path),
-        rel: fullE.path,
+        abs,
+        rel: path.relative(rootDir, abs),
         type: fullE.type,
       };
     }),
