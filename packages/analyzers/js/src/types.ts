@@ -1,13 +1,14 @@
 import { CompilerOptions } from "typescript";
 
-export type Entries = {
-  main: string | null;
-  browser: string[];
-  bin: string[];
+export type FullEntry = {
+  path: string;
+  type: "main" | "bin" | "browser" | "module" | undefined;
 };
 
+export type Entry = string | FullEntry;
+
 export type Config = {
-  entries: Entries;
+  entries: Entry[];
   configs: {
     ts?: {
       compilerOptions: CompilerOptions;
@@ -50,19 +51,10 @@ export type PackageInfo = {
   };
 
   mappedEntries: {
-    main: {
-      abs: string | null;
-      rel: string | null;
-    };
-    browser: {
-      abs: string;
-      rel: string;
-    }[];
-    bin: {
-      abs: string;
-      rel: string;
-    }[];
-  };
+    abs: string;
+    rel: string;
+    type: FullEntry["type"];
+  }[];
 
   configs: {
     ts?: {
