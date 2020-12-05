@@ -267,7 +267,8 @@ export const Graph = () => {
       data.ds.nodes.forEach((n) => {
         if (
           dependedBy.nodes[n.id] === undefined &&
-          dependsOn.nodes[n.id] === undefined
+          dependsOn.nodes[n.id] === undefined &&
+          n.id !== selectedNodeId
         ) {
           addNodeStyle(ss, n.id, {
             color: nodeColors.unselected,
