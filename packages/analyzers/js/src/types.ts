@@ -26,6 +26,7 @@ export type PackageJson = object & {
   name: string;
   version: string;
   main?: string;
+  module?: string;
   browser?: string | { [key: string]: string };
   bin?: string | { [key: string]: string };
   types?: string;
