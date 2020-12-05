@@ -38,14 +38,24 @@ type Styles = {
   };
 };
 
-const addNodeStyle = (styles: Styles, nodeId: string, s: NodeStyle) => {
+const addNodeStyle = (
+  styles: Styles,
+  nodeId: string,
+  s: NodeStyle | ((prevStyle: NodeStyle) => NodeStyle)
+) => {
   const v = (styles.nodes[nodeId] = styles.nodes[nodeId] || {});
-  styles.nodes[nodeId] = { ...v, ...s };
+  const nextStyle = typeof s === "function" ? s(v) : s;
+  styles.nodes[nodeId] = { ...v, ...nextStyle };
 };
 
-const addLinkStyle = (styles: Styles, linkId: string, s: LinkStyle) => {
+const addLinkStyle = (
+  styles: Styles,
+  linkId: string,
+  s: LinkStyle | ((prevStyle: LinkStyle) => LinkStyle)
+) => {
   const v = (styles.links[linkId] = styles.links[linkId] || {});
-  styles.links[linkId] = { ...v, ...s };
+  const nextStyle = typeof s === "function" ? s(v) : s;
+  styles.links[linkId] = { ...v, ...nextStyle };
 };
 
 type Data = {
@@ -276,11 +286,11 @@ export const Graph = () => {
 
       // color selectedNode last, because circular depdencies might
       // have colored it already.
-      addNodeStyle(ss, selectedNodeId, {
+      addNodeStyle(ss, selectedNodeId, (prev) => ({
         color: nodeColors.selected,
-        size: Math.max(ss.nodes[selectedNodeId]?.size || 0, 5),
+        size: Math.max(prev.size || 0, 5),
         label: true,
-      });
+      }));
       return ss;
     }
 
