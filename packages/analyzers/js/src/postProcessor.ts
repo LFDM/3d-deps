@@ -17,22 +17,25 @@ export const PostProcessorLabeller = (
 ): PostProcessor => {
   // sort workspaces by longest to shorted location, so that we can return early
   // and avoid double labelling
-  const sortedWorkspaces = [...workspaces].sort(
-    (a, b) => b.location.rel.length - a.location.rel.length
-  );
+  const sortedWorkspacesWithMainEntries = [...workspaces]
+    .sort((a, b) => b.location.rel.length - a.location.rel.length)
+    .map((ws) => ({
+      ws,
+      mainEntriesRel: ws.mappedEntries
+        .filter((e) => e.type === "main" || "browser")
+        .map((e) => e.rel),
+    }));
+
   return {
     onNode: (n) => {
       if (n.path.startsWith("node_modules")) {
         n.labels.push("node_module");
       }
-      for (const ws of sortedWorkspaces) {
-        if (n.path.startsWith(ws.location.rel)) {
-          n.labels.push(`pkg:${ws.pkg.name}`);
+      for (const t of sortedWorkspacesWithMainEntries) {
+        if (n.path.startsWith(t.ws.location.rel)) {
+          n.labels.push(`pkg:${t.ws.pkg.name}`);
 
-          if (
-            n.path === ws.mappedEntries.main.rel ||
-            !!ws.mappedEntries.browser.find((b) => b.rel === n.path)
-          ) {
+          if (t.mainEntriesRel.includes(n.path)) {
             n.labels.push("pkg_entry");
           }
           break;
