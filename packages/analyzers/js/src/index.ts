@@ -91,7 +91,8 @@ const collectPackageInfo = async (
 ): Promise<PackageInfo> => {
   const pkg = await getPackageJson(dir);
   const config = await transform({ dir, packageJson: pkg });
-  if (!pkg.name) {
+  // rootDir often lack a name, as they just delegate to other workspaces/packages
+  if (!pkg.name && rootDir !== dir) {
     console.log("NO_PACKAGE_NAME", dir);
   }
   return {
@@ -156,8 +157,6 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       )
     ).then(mergeTrees);
 
-    console.log(Object.keys(tree).find((t) => t.includes("unstable_mock")));
-
     const preprocessed = mapTreeToNodes(
       preProcess(
         [
@@ -170,7 +169,6 @@ export class JsAnalyzer implements IDependencyAnalyzer {
         tree
       )
     );
-    console.log(preprocessed.find((t) => t.id.includes("unstable_mock")));
     const nodes = postProcess(
       [PostProcessorLabeller(wsPkgInfos)],
       preprocessed
