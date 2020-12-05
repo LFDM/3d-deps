@@ -94,11 +94,11 @@ export const PreProcessorHoistNodeModules = (): PreProcessor => {
   };
 };
 
-export const PreProcessorLinkWorkspaces = (relNodeModulesPathToRelEntryDir: {
+export const PreProcessorLinkWorkspaces = (relNodeModulesPathToRelMountDir: {
   [nodeModulesPath: string]: string;
 }): PreProcessor => {
   // needs a trailing slash, so that we don't do partial matches like!
-  const modNames = Object.keys(relNodeModulesPathToRelEntryDir).map(
+  const modNames = Object.keys(relNodeModulesPathToRelMountDir).map(
     (k) => k + path.sep
   );
 
@@ -107,7 +107,7 @@ export const PreProcessorLinkWorkspaces = (relNodeModulesPathToRelEntryDir: {
       for (const modName of modNames) {
         if (x.startsWith(modName)) {
           const m = modName.slice(0, -1); // remove the separator we applied earlier
-          const entry = relNodeModulesPathToRelEntryDir[m];
+          const entry = relNodeModulesPathToRelMountDir[m];
           return x.replace(m, entry);
         }
       }
