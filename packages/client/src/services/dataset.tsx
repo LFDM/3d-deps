@@ -59,7 +59,8 @@ const CurrentDatasetContext = React.createContext<{
 export const DatasetProvider: React.FC = ({ children }) => {
   const { datasets } = useDatasets();
   const [query, setQuery] = useQueryParam("dataset", "");
-  const dataset = datasets.find((d) => d.name === query) || datasets[0];
+  const dataset =
+    datasets.find((d) => d.name === decodeURIComponent(query)) || datasets[0];
   const selectDataset = useCallback(
     (d: Dataset) => setQuery(encodeURIComponent(d.name)),
     [setQuery]
