@@ -158,8 +158,8 @@ const collectVirtualPackageInfo = async (
     configs: config.configs,
     locationInNodeModules: locationOfSrc,
     mountLocation: {
-      rel: mountPath,
-      abs: path.join(rootDir, mountPath),
+      rel: path.join(mountPath, packageName),
+      abs: path.join(rootDir, mountPath, packageName),
     },
   };
 };
