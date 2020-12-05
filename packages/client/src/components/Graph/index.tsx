@@ -2,7 +2,7 @@ import { MAX_GRAPH_HIGHLIGHT_DEPTH } from "@3d-deps/core";
 import { groupBy, keyBy, mapValues, sortBy } from "lodash";
 import { nanoid } from "nanoid";
 import React, { useEffect, useMemo, useRef } from "react";
-import { ForceGraph3D } from "react-force-graph";
+import ForceGraph3D from "react-force-graph-3d";
 import { Object3D } from "three";
 import SpriteText from "three-spritetext";
 import tinycolor from "tinycolor2";
@@ -15,6 +15,8 @@ import {
   IGraphNode,
   TreeNode,
 } from "../../types/GraphData";
+
+const OBJECT = new Object3D();
 
 type NodeStyle = Partial<{
   color: string;
@@ -329,7 +331,7 @@ export const Graph = () => {
       nodeThreeObject={(node: any): any => {
         const s = styles.nodes[node.id];
         if (!s?.label) {
-          return new Object3D();
+          return OBJECT;
         }
         const size = s.size || 1;
         const sprite = new SpriteText(node.label);
@@ -341,11 +343,6 @@ export const Graph = () => {
       }}
       linkDirectionalParticles={(link: any) =>
         styles.links[link.id]?.particles || 0
-      }
-      linkDirectionalArrowLength={3.5}
-      linkDirectionalArrowRelPos={1}
-      linkDirectionalArrowColor={(link: any) =>
-        styles.links[link.id]?.color || theme.graph.links.colors.standard
       }
       linkColor={(link: any) =>
         styles.links[link.id]?.color || theme.graph.links.colors.standard
