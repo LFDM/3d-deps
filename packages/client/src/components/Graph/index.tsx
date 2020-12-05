@@ -288,6 +288,7 @@ export const Graph = () => {
         }
       }
 
+      // TODO makes this the default behaviour, also in selected mode
       const size =
         (t.dependsOn.countWithoutExcluded || 0) +
         (t.dependedBy.countWithoutExcluded || 0);
