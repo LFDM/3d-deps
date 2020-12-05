@@ -38,6 +38,19 @@ type Styles = {
   };
 };
 
+const POSITION_CACHE: {
+  [dataset: string]: {
+    [nodeId: string]: {
+      x: number;
+      y: number;
+      z: number;
+      vx: number;
+      vy: number;
+      vz: number;
+    };
+  };
+} = {};
+
 const addNodeStyle = (
   styles: Styles,
   nodeId: string,
@@ -126,6 +139,15 @@ const useData = (g: GraphData): Data => {
         label: t.name,
         path: t.path,
       };
+      const cached = POSITION_CACHE["Nivo"]?.[node.id];
+      if (cached) {
+        node.x = cached.x;
+        node.y = cached.y;
+        node.z = cached.z;
+        node.vx = cached.vx;
+        node.vy = cached.vy;
+        node.vz = cached.vz;
+      }
       nodes.push(node);
 
       t.dependsOn.nodes.forEach((otherT) => {
@@ -287,11 +309,13 @@ export const Graph = () => {
 
       // color selectedNode last, because circular depdencies might
       // have colored it already.
-      addNodeStyle(ss, selectedNodeId, (prev) => ({
-        color: nodeColors.selected,
-        size: Math.max(prev.size || 0, 5),
-        label: true,
-      }));
+      addNodeStyle(ss, selectedNodeId, (prev) => {
+        return {
+          color: nodeColors.selected,
+          size: Math.max(prev.size || 0, 5),
+          label: true,
+        };
+      });
       return ss;
     }
 
@@ -378,6 +402,21 @@ export const Graph = () => {
       onNodeClick={(node) =>
         setSelectedNodeId(selectedNodeId === node.id! ? null : `${node.id!}`)
       }
+      onEngineStop={() => {
+        POSITION_CACHE["Nivo"] = Object.fromEntries(
+          data.ds.nodes.map((d) => [
+            d.id,
+            {
+              vx: d.vx || 0,
+              vy: d.vy || 0,
+              vz: d.vz || 0,
+              x: d.x || 0,
+              y: d.y || 0,
+              z: d.z || 0,
+            },
+          ])
+        );
+      }}
     />
   );
 };

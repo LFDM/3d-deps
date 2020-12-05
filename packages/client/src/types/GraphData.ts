@@ -2,6 +2,13 @@ export interface IGraphNode {
   id: string;
   label: string;
   path: string;
+
+  x?: number;
+  y?: number;
+  z?: number;
+  vx?: number;
+  vy?: number;
+  vz?: number;
 }
 
 export interface IGraphLink {
