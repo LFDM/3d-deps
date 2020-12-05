@@ -46,10 +46,6 @@ export type NodeModulesResolution = "shallow" | "deep";
 
 export type PackageInfo = {
   pkg: PackageJson;
-  location: {
-    abs: string;
-    rel: string;
-  };
 
   mappedEntries: {
     abs: string;
@@ -62,5 +58,17 @@ export type PackageInfo = {
       compilerOptions: CompilerOptions;
     };
   };
-  nodeModulePath: string;
+
+  locationOfSrc: {
+    abs: string;
+    rel: string;
+  };
+  locationInNodeModules: {
+    abs: string;
+    rel: string;
+  } | null;
+  mountLocation: {
+    abs: string;
+    rel: string;
+  };
 };

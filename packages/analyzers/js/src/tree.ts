@@ -50,7 +50,7 @@ const parseEntry = (
   const nonExistent: string[] = [];
   const depTreeOptions: FixedDependencyTreeOptions = {
     filename: entry,
-    directory: pkgInfo.location.abs,
+    directory: pkgInfo.locationOfSrc.abs,
     visited: caches.visited,
     filter: (dependency: string, parent: string) => {
       if (options.resolution === "shallow") {

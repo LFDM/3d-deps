@@ -25,6 +25,7 @@ import {
   PackageInfo,
   PackageJson,
 } from "./types";
+import { compact } from "./util";
 import { getVersion } from "./version";
 import { getWorkspacesInfo } from "./yarn";
 
@@ -101,7 +102,11 @@ const collectPackageInfo = async (
   }
   return {
     pkg,
-    location: {
+    locationOfSrc: {
+      abs: dir,
+      rel: path.relative(rootDir, dir),
+    },
+    mountLocation: {
       abs: dir,
       rel: path.relative(rootDir, dir),
     },
@@ -117,9 +122,10 @@ const collectPackageInfo = async (
     }),
     configs: config.configs,
     // the root package might not have a name!
-    nodeModulePath: pkg.name
-      ? path.join(rootDir, "node_modules", pkg.name)
-      : "",
+    locationInNodeModules: {
+      abs: pkg.name ? path.join(rootDir, "node_modules", pkg.name) : "",
+      rel: pkg.name ? path.join("node_modules", pkg.name) : "",
+    },
   };
 };
 
@@ -156,12 +162,12 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     );
 
     const allPkgInfos = [rootPkgInfo, ...wsPkgInfos];
-    const packageNodeModulePaths = [
-      ...allPkgInfos.map((p) => p.nodeModulePath).filter(Boolean),
+    const packageNodeModulePaths = compact([
+      ...allPkgInfos.map((p) => p.locationInNodeModules?.abs),
       ...virtualWorkspaces.map((w) =>
         path.join(rootDir, "node_modules", w.packageName)
       ),
-    ];
+    ]);
 
     const tree = await Promise.all(
       allPkgInfos.map((pkgInfo) =>
@@ -178,11 +184,10 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       [nodeModulesPath: string]: string;
     } = {};
     allPkgInfos
-      .filter((p) => !!p.nodeModulePath)
+      .filter((p) => !!p.locationInNodeModules)
       .forEach((p) => {
-        relNodeModulesPathToRelEntryDir[
-          path.relative(rootDir, p.nodeModulePath)
-        ] = p.location.rel;
+        relNodeModulesPathToRelEntryDir[p.locationInNodeModules!.rel] =
+          p.locationOfSrc.rel;
       });
     (this.config.workspaces?.virtual || []).forEach((w) => {
       relNodeModulesPathToRelEntryDir[

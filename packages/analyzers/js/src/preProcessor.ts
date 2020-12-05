@@ -130,11 +130,11 @@ export const PreProcessorResolveMappedEntryFiles = (
     if (main) {
       const types = w.pkg.types; // or try to assume it's the main entry with a d.ts ext?
       if (types) {
-        dict[path.join(w.location.rel, types)] = main;
+        dict[path.join(w.locationOfSrc.rel, types)] = main;
       }
       const origMain = w.pkg.main;
       if (origMain) {
-        dict[path.join(w.location.rel, origMain)] = main;
+        dict[path.join(w.locationOfSrc.rel, origMain)] = main;
       }
     }
 
