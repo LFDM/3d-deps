@@ -1,0 +1,5536 @@
+{
+  "nodes": [
+    {
+      "id": "index.js",
+      "path": "index.js",
+      "name": "index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-axis/dist/d3-axis.js",
+        "packages/d3-brush/dist/d3-brush.js",
+        "packages/d3-chord/dist/d3-chord.js",
+        "packages/d3-color/dist/d3-color.js",
+        "packages/d3-contour/dist/d3-contour.js",
+        "packages/d3-delaunay/dist/d3-delaunay.js",
+        "packages/d3-dispatch/dist/d3-dispatch.js",
+        "packages/d3-drag/dist/d3-drag.js",
+        "packages/d3-dsv/dist/d3-dsv.js",
+        "packages/d3-ease/dist/d3-ease.js",
+        "packages/d3-fetch/dist/d3-fetch.js",
+        "packages/d3-force/dist/d3-force.js",
+        "packages/d3-format/dist/d3-format.js",
+        "packages/d3-geo/dist/d3-geo.js",
+        "packages/d3-hierarchy/dist/d3-hierarchy.js",
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-path/dist/d3-path.js",
+        "packages/d3-polygon/dist/d3-polygon.js",
+        "packages/d3-quadtree/dist/d3-quadtree.js",
+        "packages/d3-random/dist/d3-random.js",
+        "packages/d3-scale/dist/d3-scale.js",
+        "packages/d3-scale-chromatic/dist/d3-scale-chromatic.js",
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-shape/dist/d3-shape.js",
+        "packages/d3-time/dist/d3-time.js",
+        "packages/d3-time-format/dist/d3-time-format.js",
+        "packages/d3-timer/dist/d3-timer.js",
+        "packages/d3-transition/dist/d3-transition.js",
+        "packages/d3-zoom/dist/d3-zoom.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/dist/d3-array.js",
+      "path": "packages/d3-array/dist/d3-array.js",
+      "name": "packages/d3-array/dist/d3-array.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-axis/dist/d3-axis.js",
+      "path": "packages/d3-axis/dist/d3-axis.js",
+      "name": "packages/d3-axis/dist/d3-axis.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-brush/dist/d3-brush.js",
+      "path": "packages/d3-brush/dist/d3-brush.js",
+      "name": "packages/d3-brush/dist/d3-brush.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dispatch/dist/d3-dispatch.js",
+        "packages/d3-drag/dist/d3-drag.js",
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-transition/dist/d3-transition.js"
+      ]
+    },
+    {
+      "id": "packages/d3-dispatch/dist/d3-dispatch.js",
+      "path": "packages/d3-dispatch/dist/d3-dispatch.js",
+      "name": "packages/d3-dispatch/dist/d3-dispatch.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-drag/dist/d3-drag.js",
+      "path": "packages/d3-drag/dist/d3-drag.js",
+      "name": "packages/d3-drag/dist/d3-drag.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dispatch/dist/d3-dispatch.js",
+        "packages/d3-selection/dist/d3-selection.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/dist/d3-selection.js",
+      "path": "packages/d3-selection/dist/d3-selection.js",
+      "name": "packages/d3-selection/dist/d3-selection.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-interpolate/dist/d3-interpolate.js",
+      "path": "packages/d3-interpolate/dist/d3-interpolate.js",
+      "name": "packages/d3-interpolate/dist/d3-interpolate.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/dist/d3-color.js"
+      ]
+    },
+    {
+      "id": "packages/d3-color/dist/d3-color.js",
+      "path": "packages/d3-color/dist/d3-color.js",
+      "name": "packages/d3-color/dist/d3-color.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-transition/dist/d3-transition.js",
+      "path": "packages/d3-transition/dist/d3-transition.js",
+      "name": "packages/d3-transition/dist/d3-transition.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-dispatch/dist/d3-dispatch.js",
+        "packages/d3-timer/dist/d3-timer.js",
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-color/dist/d3-color.js",
+        "packages/d3-ease/dist/d3-ease.js"
+      ]
+    },
+    {
+      "id": "packages/d3-timer/dist/d3-timer.js",
+      "path": "packages/d3-timer/dist/d3-timer.js",
+      "name": "packages/d3-timer/dist/d3-timer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-ease/dist/d3-ease.js",
+      "path": "packages/d3-ease/dist/d3-ease.js",
+      "name": "packages/d3-ease/dist/d3-ease.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-chord/dist/d3-chord.js",
+      "path": "packages/d3-chord/dist/d3-chord.js",
+      "name": "packages/d3-chord/dist/d3-chord.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-path/dist/d3-path.js"
+      ]
+    },
+    {
+      "id": "packages/d3-path/dist/d3-path.js",
+      "path": "packages/d3-path/dist/d3-path.js",
+      "name": "packages/d3-path/dist/d3-path.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-contour/dist/d3-contour.js",
+      "path": "packages/d3-contour/dist/d3-contour.js",
+      "name": "packages/d3-contour/dist/d3-contour.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js"
+      ]
+    },
+    {
+      "id": "packages/d3-delaunay/dist/d3-delaunay.js",
+      "path": "packages/d3-delaunay/dist/d3-delaunay.js",
+      "name": "packages/d3-delaunay/dist/d3-delaunay.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-dsv/dist/d3-dsv.js",
+      "path": "packages/d3-dsv/dist/d3-dsv.js",
+      "name": "packages/d3-dsv/dist/d3-dsv.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-fetch/dist/d3-fetch.js",
+      "path": "packages/d3-fetch/dist/d3-fetch.js",
+      "name": "packages/d3-fetch/dist/d3-fetch.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dsv/dist/d3-dsv.js"
+      ]
+    },
+    {
+      "id": "packages/d3-force/dist/d3-force.js",
+      "path": "packages/d3-force/dist/d3-force.js",
+      "name": "packages/d3-force/dist/d3-force.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-quadtree/dist/d3-quadtree.js",
+        "packages/d3-dispatch/dist/d3-dispatch.js",
+        "packages/d3-timer/dist/d3-timer.js"
+      ]
+    },
+    {
+      "id": "packages/d3-quadtree/dist/d3-quadtree.js",
+      "path": "packages/d3-quadtree/dist/d3-quadtree.js",
+      "name": "packages/d3-quadtree/dist/d3-quadtree.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-format/dist/d3-format.js",
+      "path": "packages/d3-format/dist/d3-format.js",
+      "name": "packages/d3-format/dist/d3-format.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-geo/dist/d3-geo.js",
+      "path": "packages/d3-geo/dist/d3-geo.js",
+      "name": "packages/d3-geo/dist/d3-geo.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/dist/d3-hierarchy.js",
+      "path": "packages/d3-hierarchy/dist/d3-hierarchy.js",
+      "name": "packages/d3-hierarchy/dist/d3-hierarchy.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-polygon/dist/d3-polygon.js",
+      "path": "packages/d3-polygon/dist/d3-polygon.js",
+      "name": "packages/d3-polygon/dist/d3-polygon.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-random/dist/d3-random.js",
+      "path": "packages/d3-random/dist/d3-random.js",
+      "name": "packages/d3-random/dist/d3-random.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-scale/dist/d3-scale.js",
+      "path": "packages/d3-scale/dist/d3-scale.js",
+      "name": "packages/d3-scale/dist/d3-scale.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-format/dist/d3-format.js",
+        "packages/d3-time/dist/d3-time.js",
+        "packages/d3-time-format/dist/d3-time-format.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/dist/d3-time.js",
+      "path": "packages/d3-time/dist/d3-time.js",
+      "name": "packages/d3-time/dist/d3-time.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-time-format/dist/d3-time-format.js",
+      "path": "packages/d3-time-format/dist/d3-time-format.js",
+      "name": "packages/d3-time-format/dist/d3-time-format.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/dist/d3-time.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/dist/d3-scale-chromatic.js",
+      "path": "packages/d3-scale-chromatic/dist/d3-scale-chromatic.js",
+      "name": "packages/d3-scale-chromatic/dist/d3-scale-chromatic.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-color/dist/d3-color.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/dist/d3-shape.js",
+      "path": "packages/d3-shape/dist/d3-shape.js",
+      "name": "packages/d3-shape/dist/d3-shape.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-path/dist/d3-path.js"
+      ]
+    },
+    {
+      "id": "packages/d3-zoom/dist/d3-zoom.js",
+      "path": "packages/d3-zoom/dist/d3-zoom.js",
+      "name": "packages/d3-zoom/dist/d3-zoom.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dispatch/dist/d3-dispatch.js",
+        "packages/d3-drag/dist/d3-drag.js",
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-transition/dist/d3-transition.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/index.js",
+      "path": "packages/d3-array/src/index.js",
+      "name": "packages/d3-array/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/bisect.js",
+        "packages/d3-array/src/ascending.js",
+        "packages/d3-array/src/bisector.js",
+        "packages/d3-array/src/count.js",
+        "packages/d3-array/src/cross.js",
+        "packages/d3-array/src/cumsum.js",
+        "packages/d3-array/src/descending.js",
+        "packages/d3-array/src/deviation.js",
+        "packages/d3-array/src/extent.js",
+        "packages/d3-array/src/fsum.js",
+        "packages/d3-array/src/group.js",
+        "packages/d3-array/src/bin.js",
+        "packages/d3-array/src/threshold/freedmanDiaconis.js",
+        "packages/d3-array/src/threshold/scott.js",
+        "packages/d3-array/src/threshold/sturges.js",
+        "packages/d3-array/src/max.js",
+        "packages/d3-array/src/maxIndex.js",
+        "packages/d3-array/src/mean.js",
+        "packages/d3-array/src/median.js",
+        "packages/d3-array/src/merge.js",
+        "packages/d3-array/src/min.js",
+        "packages/d3-array/src/minIndex.js",
+        "packages/d3-array/src/nice.js",
+        "packages/d3-array/src/pairs.js",
+        "packages/d3-array/src/permute.js",
+        "packages/d3-array/src/quantile.js",
+        "packages/d3-array/src/quickselect.js",
+        "packages/d3-array/src/range.js",
+        "packages/d3-array/src/least.js",
+        "packages/d3-array/src/leastIndex.js",
+        "packages/d3-array/src/greatest.js",
+        "packages/d3-array/src/greatestIndex.js",
+        "packages/d3-array/src/scan.js",
+        "packages/d3-array/src/shuffle.js",
+        "packages/d3-array/src/sum.js",
+        "packages/d3-array/src/ticks.js",
+        "packages/d3-array/src/transpose.js",
+        "packages/d3-array/src/variance.js",
+        "packages/d3-array/src/zip.js",
+        "packages/d3-array/src/every.js",
+        "packages/d3-array/src/some.js",
+        "packages/d3-array/src/filter.js",
+        "packages/d3-array/src/map.js",
+        "packages/d3-array/src/reduce.js",
+        "packages/d3-array/src/reverse.js",
+        "packages/d3-array/src/sort.js",
+        "packages/d3-array/src/difference.js",
+        "packages/d3-array/src/disjoint.js",
+        "packages/d3-array/src/intersection.js",
+        "packages/d3-array/src/subset.js",
+        "packages/d3-array/src/superset.js",
+        "packages/d3-array/src/union.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/bisect.js",
+      "path": "packages/d3-array/src/bisect.js",
+      "name": "packages/d3-array/src/bisect.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/ascending.js",
+        "packages/d3-array/src/bisector.js",
+        "packages/d3-array/src/number.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/ascending.js",
+      "path": "packages/d3-array/src/ascending.js",
+      "name": "packages/d3-array/src/ascending.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/bisector.js",
+      "path": "packages/d3-array/src/bisector.js",
+      "name": "packages/d3-array/src/bisector.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/ascending.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/number.js",
+      "path": "packages/d3-array/src/number.js",
+      "name": "packages/d3-array/src/number.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/count.js",
+      "path": "packages/d3-array/src/count.js",
+      "name": "packages/d3-array/src/count.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/cross.js",
+      "path": "packages/d3-array/src/cross.js",
+      "name": "packages/d3-array/src/cross.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/cumsum.js",
+      "path": "packages/d3-array/src/cumsum.js",
+      "name": "packages/d3-array/src/cumsum.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/descending.js",
+      "path": "packages/d3-array/src/descending.js",
+      "name": "packages/d3-array/src/descending.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/deviation.js",
+      "path": "packages/d3-array/src/deviation.js",
+      "name": "packages/d3-array/src/deviation.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/variance.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/variance.js",
+      "path": "packages/d3-array/src/variance.js",
+      "name": "packages/d3-array/src/variance.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/extent.js",
+      "path": "packages/d3-array/src/extent.js",
+      "name": "packages/d3-array/src/extent.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/fsum.js",
+      "path": "packages/d3-array/src/fsum.js",
+      "name": "packages/d3-array/src/fsum.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/group.js",
+      "path": "packages/d3-array/src/group.js",
+      "name": "packages/d3-array/src/group.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/identity.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/identity.js",
+      "path": "packages/d3-array/src/identity.js",
+      "name": "packages/d3-array/src/identity.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/bin.js",
+      "path": "packages/d3-array/src/bin.js",
+      "name": "packages/d3-array/src/bin.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/array.js",
+        "packages/d3-array/src/bisect.js",
+        "packages/d3-array/src/constant.js",
+        "packages/d3-array/src/extent.js",
+        "packages/d3-array/src/identity.js",
+        "packages/d3-array/src/nice.js",
+        "packages/d3-array/src/ticks.js",
+        "packages/d3-array/src/threshold/sturges.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/array.js",
+      "path": "packages/d3-array/src/array.js",
+      "name": "packages/d3-array/src/array.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/constant.js",
+      "path": "packages/d3-array/src/constant.js",
+      "name": "packages/d3-array/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/nice.js",
+      "path": "packages/d3-array/src/nice.js",
+      "name": "packages/d3-array/src/nice.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/ticks.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/ticks.js",
+      "path": "packages/d3-array/src/ticks.js",
+      "name": "packages/d3-array/src/ticks.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/threshold/sturges.js",
+      "path": "packages/d3-array/src/threshold/sturges.js",
+      "name": "packages/d3-array/src/threshold/sturges.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/count.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/threshold/freedmanDiaconis.js",
+      "path": "packages/d3-array/src/threshold/freedmanDiaconis.js",
+      "name": "packages/d3-array/src/threshold/freedmanDiaconis.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/count.js",
+        "packages/d3-array/src/quantile.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/quantile.js",
+      "path": "packages/d3-array/src/quantile.js",
+      "name": "packages/d3-array/src/quantile.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/max.js",
+        "packages/d3-array/src/min.js",
+        "packages/d3-array/src/quickselect.js",
+        "packages/d3-array/src/number.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/max.js",
+      "path": "packages/d3-array/src/max.js",
+      "name": "packages/d3-array/src/max.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/min.js",
+      "path": "packages/d3-array/src/min.js",
+      "name": "packages/d3-array/src/min.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/quickselect.js",
+      "path": "packages/d3-array/src/quickselect.js",
+      "name": "packages/d3-array/src/quickselect.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/ascending.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/threshold/scott.js",
+      "path": "packages/d3-array/src/threshold/scott.js",
+      "name": "packages/d3-array/src/threshold/scott.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/count.js",
+        "packages/d3-array/src/deviation.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/maxIndex.js",
+      "path": "packages/d3-array/src/maxIndex.js",
+      "name": "packages/d3-array/src/maxIndex.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/mean.js",
+      "path": "packages/d3-array/src/mean.js",
+      "name": "packages/d3-array/src/mean.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/median.js",
+      "path": "packages/d3-array/src/median.js",
+      "name": "packages/d3-array/src/median.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/quantile.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/merge.js",
+      "path": "packages/d3-array/src/merge.js",
+      "name": "packages/d3-array/src/merge.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/minIndex.js",
+      "path": "packages/d3-array/src/minIndex.js",
+      "name": "packages/d3-array/src/minIndex.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/pairs.js",
+      "path": "packages/d3-array/src/pairs.js",
+      "name": "packages/d3-array/src/pairs.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/permute.js",
+      "path": "packages/d3-array/src/permute.js",
+      "name": "packages/d3-array/src/permute.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/range.js",
+      "path": "packages/d3-array/src/range.js",
+      "name": "packages/d3-array/src/range.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/least.js",
+      "path": "packages/d3-array/src/least.js",
+      "name": "packages/d3-array/src/least.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/ascending.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/leastIndex.js",
+      "path": "packages/d3-array/src/leastIndex.js",
+      "name": "packages/d3-array/src/leastIndex.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/ascending.js",
+        "packages/d3-array/src/minIndex.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/greatest.js",
+      "path": "packages/d3-array/src/greatest.js",
+      "name": "packages/d3-array/src/greatest.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/ascending.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/greatestIndex.js",
+      "path": "packages/d3-array/src/greatestIndex.js",
+      "name": "packages/d3-array/src/greatestIndex.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/ascending.js",
+        "packages/d3-array/src/maxIndex.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/scan.js",
+      "path": "packages/d3-array/src/scan.js",
+      "name": "packages/d3-array/src/scan.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/leastIndex.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/shuffle.js",
+      "path": "packages/d3-array/src/shuffle.js",
+      "name": "packages/d3-array/src/shuffle.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/sum.js",
+      "path": "packages/d3-array/src/sum.js",
+      "name": "packages/d3-array/src/sum.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/transpose.js",
+      "path": "packages/d3-array/src/transpose.js",
+      "name": "packages/d3-array/src/transpose.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/min.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/zip.js",
+      "path": "packages/d3-array/src/zip.js",
+      "name": "packages/d3-array/src/zip.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/transpose.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/every.js",
+      "path": "packages/d3-array/src/every.js",
+      "name": "packages/d3-array/src/every.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/some.js",
+      "path": "packages/d3-array/src/some.js",
+      "name": "packages/d3-array/src/some.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/filter.js",
+      "path": "packages/d3-array/src/filter.js",
+      "name": "packages/d3-array/src/filter.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/map.js",
+      "path": "packages/d3-array/src/map.js",
+      "name": "packages/d3-array/src/map.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/reduce.js",
+      "path": "packages/d3-array/src/reduce.js",
+      "name": "packages/d3-array/src/reduce.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/reverse.js",
+      "path": "packages/d3-array/src/reverse.js",
+      "name": "packages/d3-array/src/reverse.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/sort.js",
+      "path": "packages/d3-array/src/sort.js",
+      "name": "packages/d3-array/src/sort.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/ascending.js",
+        "packages/d3-array/src/permute.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/difference.js",
+      "path": "packages/d3-array/src/difference.js",
+      "name": "packages/d3-array/src/difference.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/disjoint.js",
+      "path": "packages/d3-array/src/disjoint.js",
+      "name": "packages/d3-array/src/disjoint.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/intersection.js",
+      "path": "packages/d3-array/src/intersection.js",
+      "name": "packages/d3-array/src/intersection.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/set.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/set.js",
+      "path": "packages/d3-array/src/set.js",
+      "name": "packages/d3-array/src/set.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/subset.js",
+      "path": "packages/d3-array/src/subset.js",
+      "name": "packages/d3-array/src/subset.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/src/superset.js"
+      ]
+    },
+    {
+      "id": "packages/d3-array/src/superset.js",
+      "path": "packages/d3-array/src/superset.js",
+      "name": "packages/d3-array/src/superset.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-array/src/union.js",
+      "path": "packages/d3-array/src/union.js",
+      "name": "packages/d3-array/src/union.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-axis/src/index.js",
+      "path": "packages/d3-axis/src/index.js",
+      "name": "packages/d3-axis/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-axis/src/axis.js"
+      ]
+    },
+    {
+      "id": "packages/d3-axis/src/axis.js",
+      "path": "packages/d3-axis/src/axis.js",
+      "name": "packages/d3-axis/src/axis.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-axis/src/array.js",
+        "packages/d3-axis/src/identity.js"
+      ]
+    },
+    {
+      "id": "packages/d3-axis/src/array.js",
+      "path": "packages/d3-axis/src/array.js",
+      "name": "packages/d3-axis/src/array.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-axis/src/identity.js",
+      "path": "packages/d3-axis/src/identity.js",
+      "name": "packages/d3-axis/src/identity.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-brush/src/index.js",
+      "path": "packages/d3-brush/src/index.js",
+      "name": "packages/d3-brush/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-brush/src/brush.js"
+      ]
+    },
+    {
+      "id": "packages/d3-brush/src/brush.js",
+      "path": "packages/d3-brush/src/brush.js",
+      "name": "packages/d3-brush/src/brush.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dispatch/dist/d3-dispatch.js",
+        "packages/d3-drag/dist/d3-drag.js",
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-transition/dist/d3-transition.js",
+        "packages/d3-brush/src/constant.js",
+        "packages/d3-brush/src/event.js",
+        "packages/d3-brush/src/noevent.js"
+      ]
+    },
+    {
+      "id": "packages/d3-brush/src/constant.js",
+      "path": "packages/d3-brush/src/constant.js",
+      "name": "packages/d3-brush/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-brush/src/event.js",
+      "path": "packages/d3-brush/src/event.js",
+      "name": "packages/d3-brush/src/event.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-brush/src/noevent.js",
+      "path": "packages/d3-brush/src/noevent.js",
+      "name": "packages/d3-brush/src/noevent.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-chord/src/index.js",
+      "path": "packages/d3-chord/src/index.js",
+      "name": "packages/d3-chord/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-chord/src/chord.js",
+        "packages/d3-chord/src/ribbon.js"
+      ]
+    },
+    {
+      "id": "packages/d3-chord/src/chord.js",
+      "path": "packages/d3-chord/src/chord.js",
+      "name": "packages/d3-chord/src/chord.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-chord/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-chord/src/math.js",
+      "path": "packages/d3-chord/src/math.js",
+      "name": "packages/d3-chord/src/math.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-chord/src/ribbon.js",
+      "path": "packages/d3-chord/src/ribbon.js",
+      "name": "packages/d3-chord/src/ribbon.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-path/dist/d3-path.js",
+        "packages/d3-chord/src/array.js",
+        "packages/d3-chord/src/constant.js",
+        "packages/d3-chord/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-chord/src/array.js",
+      "path": "packages/d3-chord/src/array.js",
+      "name": "packages/d3-chord/src/array.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-chord/src/constant.js",
+      "path": "packages/d3-chord/src/constant.js",
+      "name": "packages/d3-chord/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-color/src/index.js",
+      "path": "packages/d3-color/src/index.js",
+      "name": "packages/d3-color/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/src/color.js",
+        "packages/d3-color/src/lab.js",
+        "packages/d3-color/src/cubehelix.js"
+      ]
+    },
+    {
+      "id": "packages/d3-color/src/color.js",
+      "path": "packages/d3-color/src/color.js",
+      "name": "packages/d3-color/src/color.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/src/define.js"
+      ]
+    },
+    {
+      "id": "packages/d3-color/src/define.js",
+      "path": "packages/d3-color/src/define.js",
+      "name": "packages/d3-color/src/define.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-color/src/lab.js",
+      "path": "packages/d3-color/src/lab.js",
+      "name": "packages/d3-color/src/lab.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/src/define.js",
+        "packages/d3-color/src/color.js",
+        "packages/d3-color/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-color/src/math.js",
+      "path": "packages/d3-color/src/math.js",
+      "name": "packages/d3-color/src/math.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-color/src/cubehelix.js",
+      "path": "packages/d3-color/src/cubehelix.js",
+      "name": "packages/d3-color/src/cubehelix.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/src/define.js",
+        "packages/d3-color/src/color.js",
+        "packages/d3-color/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-contour/src/index.js",
+      "path": "packages/d3-contour/src/index.js",
+      "name": "packages/d3-contour/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-contour/src/contours.js",
+        "packages/d3-contour/src/density.js"
+      ]
+    },
+    {
+      "id": "packages/d3-contour/src/contours.js",
+      "path": "packages/d3-contour/src/contours.js",
+      "name": "packages/d3-contour/src/contours.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-contour/src/array.js",
+        "packages/d3-contour/src/ascending.js",
+        "packages/d3-contour/src/area.js",
+        "packages/d3-contour/src/constant.js",
+        "packages/d3-contour/src/contains.js",
+        "packages/d3-contour/src/noop.js"
+      ]
+    },
+    {
+      "id": "packages/d3-contour/src/array.js",
+      "path": "packages/d3-contour/src/array.js",
+      "name": "packages/d3-contour/src/array.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-contour/src/ascending.js",
+      "path": "packages/d3-contour/src/ascending.js",
+      "name": "packages/d3-contour/src/ascending.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-contour/src/area.js",
+      "path": "packages/d3-contour/src/area.js",
+      "name": "packages/d3-contour/src/area.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-contour/src/constant.js",
+      "path": "packages/d3-contour/src/constant.js",
+      "name": "packages/d3-contour/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-contour/src/contains.js",
+      "path": "packages/d3-contour/src/contains.js",
+      "name": "packages/d3-contour/src/contains.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-contour/src/noop.js",
+      "path": "packages/d3-contour/src/noop.js",
+      "name": "packages/d3-contour/src/noop.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-contour/src/density.js",
+      "path": "packages/d3-contour/src/density.js",
+      "name": "packages/d3-contour/src/density.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-contour/src/array.js",
+        "packages/d3-contour/src/blur.js",
+        "packages/d3-contour/src/constant.js",
+        "packages/d3-contour/src/contours.js"
+      ]
+    },
+    {
+      "id": "packages/d3-contour/src/blur.js",
+      "path": "packages/d3-contour/src/blur.js",
+      "name": "packages/d3-contour/src/blur.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-delaunay/src/index.js",
+      "path": "packages/d3-delaunay/src/index.js",
+      "name": "packages/d3-delaunay/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-delaunay/src/delaunay.js",
+        "packages/d3-delaunay/src/voronoi.js"
+      ]
+    },
+    {
+      "id": "packages/d3-delaunay/src/delaunay.js",
+      "path": "packages/d3-delaunay/src/delaunay.js",
+      "name": "packages/d3-delaunay/src/delaunay.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-delaunay/src/path.js",
+        "packages/d3-delaunay/src/polygon.js",
+        "packages/d3-delaunay/src/voronoi.js"
+      ]
+    },
+    {
+      "id": "packages/d3-delaunay/src/path.js",
+      "path": "packages/d3-delaunay/src/path.js",
+      "name": "packages/d3-delaunay/src/path.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-delaunay/src/polygon.js",
+      "path": "packages/d3-delaunay/src/polygon.js",
+      "name": "packages/d3-delaunay/src/polygon.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-delaunay/src/voronoi.js",
+      "path": "packages/d3-delaunay/src/voronoi.js",
+      "name": "packages/d3-delaunay/src/voronoi.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-delaunay/src/path.js",
+        "packages/d3-delaunay/src/polygon.js"
+      ]
+    },
+    {
+      "id": "packages/d3-dispatch/src/index.js",
+      "path": "packages/d3-dispatch/src/index.js",
+      "name": "packages/d3-dispatch/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dispatch/src/dispatch.js"
+      ]
+    },
+    {
+      "id": "packages/d3-dispatch/src/dispatch.js",
+      "path": "packages/d3-dispatch/src/dispatch.js",
+      "name": "packages/d3-dispatch/src/dispatch.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-drag/src/index.js",
+      "path": "packages/d3-drag/src/index.js",
+      "name": "packages/d3-drag/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-drag/src/drag.js",
+        "packages/d3-drag/src/nodrag.js"
+      ]
+    },
+    {
+      "id": "packages/d3-drag/src/drag.js",
+      "path": "packages/d3-drag/src/drag.js",
+      "name": "packages/d3-drag/src/drag.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dispatch/dist/d3-dispatch.js",
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-drag/src/nodrag.js",
+        "packages/d3-drag/src/noevent.js",
+        "packages/d3-drag/src/constant.js",
+        "packages/d3-drag/src/event.js"
+      ]
+    },
+    {
+      "id": "packages/d3-drag/src/nodrag.js",
+      "path": "packages/d3-drag/src/nodrag.js",
+      "name": "packages/d3-drag/src/nodrag.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-drag/src/noevent.js"
+      ]
+    },
+    {
+      "id": "packages/d3-drag/src/noevent.js",
+      "path": "packages/d3-drag/src/noevent.js",
+      "name": "packages/d3-drag/src/noevent.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-drag/src/constant.js",
+      "path": "packages/d3-drag/src/constant.js",
+      "name": "packages/d3-drag/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-drag/src/event.js",
+      "path": "packages/d3-drag/src/event.js",
+      "name": "packages/d3-drag/src/event.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-dsv/src/index.js",
+      "path": "packages/d3-dsv/src/index.js",
+      "name": "packages/d3-dsv/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dsv/src/dsv.js",
+        "packages/d3-dsv/src/csv.js",
+        "packages/d3-dsv/src/tsv.js",
+        "packages/d3-dsv/src/autoType.js"
+      ]
+    },
+    {
+      "id": "packages/d3-dsv/src/dsv.js",
+      "path": "packages/d3-dsv/src/dsv.js",
+      "name": "packages/d3-dsv/src/dsv.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-dsv/src/csv.js",
+      "path": "packages/d3-dsv/src/csv.js",
+      "name": "packages/d3-dsv/src/csv.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dsv/src/dsv.js"
+      ]
+    },
+    {
+      "id": "packages/d3-dsv/src/tsv.js",
+      "path": "packages/d3-dsv/src/tsv.js",
+      "name": "packages/d3-dsv/src/tsv.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dsv/src/dsv.js"
+      ]
+    },
+    {
+      "id": "packages/d3-dsv/src/autoType.js",
+      "path": "packages/d3-dsv/src/autoType.js",
+      "name": "packages/d3-dsv/src/autoType.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-ease/src/index.js",
+      "path": "packages/d3-ease/src/index.js",
+      "name": "packages/d3-ease/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-ease/src/linear.js",
+        "packages/d3-ease/src/quad.js",
+        "packages/d3-ease/src/cubic.js",
+        "packages/d3-ease/src/poly.js",
+        "packages/d3-ease/src/sin.js",
+        "packages/d3-ease/src/exp.js",
+        "packages/d3-ease/src/circle.js",
+        "packages/d3-ease/src/bounce.js",
+        "packages/d3-ease/src/back.js",
+        "packages/d3-ease/src/elastic.js"
+      ]
+    },
+    {
+      "id": "packages/d3-ease/src/linear.js",
+      "path": "packages/d3-ease/src/linear.js",
+      "name": "packages/d3-ease/src/linear.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-ease/src/quad.js",
+      "path": "packages/d3-ease/src/quad.js",
+      "name": "packages/d3-ease/src/quad.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-ease/src/cubic.js",
+      "path": "packages/d3-ease/src/cubic.js",
+      "name": "packages/d3-ease/src/cubic.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-ease/src/poly.js",
+      "path": "packages/d3-ease/src/poly.js",
+      "name": "packages/d3-ease/src/poly.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-ease/src/sin.js",
+      "path": "packages/d3-ease/src/sin.js",
+      "name": "packages/d3-ease/src/sin.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-ease/src/exp.js",
+      "path": "packages/d3-ease/src/exp.js",
+      "name": "packages/d3-ease/src/exp.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-ease/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-ease/src/math.js",
+      "path": "packages/d3-ease/src/math.js",
+      "name": "packages/d3-ease/src/math.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-ease/src/circle.js",
+      "path": "packages/d3-ease/src/circle.js",
+      "name": "packages/d3-ease/src/circle.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-ease/src/bounce.js",
+      "path": "packages/d3-ease/src/bounce.js",
+      "name": "packages/d3-ease/src/bounce.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-ease/src/back.js",
+      "path": "packages/d3-ease/src/back.js",
+      "name": "packages/d3-ease/src/back.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-ease/src/elastic.js",
+      "path": "packages/d3-ease/src/elastic.js",
+      "name": "packages/d3-ease/src/elastic.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-ease/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-fetch/src/index.js",
+      "path": "packages/d3-fetch/src/index.js",
+      "name": "packages/d3-fetch/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-fetch/src/blob.js",
+        "packages/d3-fetch/src/buffer.js",
+        "packages/d3-fetch/src/dsv.js",
+        "packages/d3-fetch/src/image.js",
+        "packages/d3-fetch/src/json.js",
+        "packages/d3-fetch/src/text.js",
+        "packages/d3-fetch/src/xml.js"
+      ]
+    },
+    {
+      "id": "packages/d3-fetch/src/blob.js",
+      "path": "packages/d3-fetch/src/blob.js",
+      "name": "packages/d3-fetch/src/blob.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-fetch/src/buffer.js",
+      "path": "packages/d3-fetch/src/buffer.js",
+      "name": "packages/d3-fetch/src/buffer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-fetch/src/dsv.js",
+      "path": "packages/d3-fetch/src/dsv.js",
+      "name": "packages/d3-fetch/src/dsv.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dsv/dist/d3-dsv.js",
+        "packages/d3-fetch/src/text.js"
+      ]
+    },
+    {
+      "id": "packages/d3-fetch/src/text.js",
+      "path": "packages/d3-fetch/src/text.js",
+      "name": "packages/d3-fetch/src/text.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-fetch/src/image.js",
+      "path": "packages/d3-fetch/src/image.js",
+      "name": "packages/d3-fetch/src/image.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-fetch/src/json.js",
+      "path": "packages/d3-fetch/src/json.js",
+      "name": "packages/d3-fetch/src/json.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-fetch/src/xml.js",
+      "path": "packages/d3-fetch/src/xml.js",
+      "name": "packages/d3-fetch/src/xml.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-fetch/src/text.js"
+      ]
+    },
+    {
+      "id": "packages/d3-force/src/index.js",
+      "path": "packages/d3-force/src/index.js",
+      "name": "packages/d3-force/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-force/src/center.js",
+        "packages/d3-force/src/collide.js",
+        "packages/d3-force/src/link.js",
+        "packages/d3-force/src/manyBody.js",
+        "packages/d3-force/src/radial.js",
+        "packages/d3-force/src/simulation.js",
+        "packages/d3-force/src/x.js",
+        "packages/d3-force/src/y.js"
+      ]
+    },
+    {
+      "id": "packages/d3-force/src/center.js",
+      "path": "packages/d3-force/src/center.js",
+      "name": "packages/d3-force/src/center.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-force/src/collide.js",
+      "path": "packages/d3-force/src/collide.js",
+      "name": "packages/d3-force/src/collide.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-quadtree/dist/d3-quadtree.js",
+        "packages/d3-force/src/constant.js",
+        "packages/d3-force/src/jiggle.js"
+      ]
+    },
+    {
+      "id": "packages/d3-force/src/constant.js",
+      "path": "packages/d3-force/src/constant.js",
+      "name": "packages/d3-force/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-force/src/jiggle.js",
+      "path": "packages/d3-force/src/jiggle.js",
+      "name": "packages/d3-force/src/jiggle.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-force/src/link.js",
+      "path": "packages/d3-force/src/link.js",
+      "name": "packages/d3-force/src/link.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-force/src/constant.js",
+        "packages/d3-force/src/jiggle.js"
+      ]
+    },
+    {
+      "id": "packages/d3-force/src/manyBody.js",
+      "path": "packages/d3-force/src/manyBody.js",
+      "name": "packages/d3-force/src/manyBody.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-quadtree/dist/d3-quadtree.js",
+        "packages/d3-force/src/constant.js",
+        "packages/d3-force/src/jiggle.js",
+        "packages/d3-force/src/simulation.js"
+      ]
+    },
+    {
+      "id": "packages/d3-force/src/simulation.js",
+      "path": "packages/d3-force/src/simulation.js",
+      "name": "packages/d3-force/src/simulation.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dispatch/dist/d3-dispatch.js",
+        "packages/d3-timer/dist/d3-timer.js",
+        "packages/d3-force/src/lcg.js"
+      ]
+    },
+    {
+      "id": "packages/d3-force/src/lcg.js",
+      "path": "packages/d3-force/src/lcg.js",
+      "name": "packages/d3-force/src/lcg.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-force/src/radial.js",
+      "path": "packages/d3-force/src/radial.js",
+      "name": "packages/d3-force/src/radial.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-force/src/constant.js"
+      ]
+    },
+    {
+      "id": "packages/d3-force/src/x.js",
+      "path": "packages/d3-force/src/x.js",
+      "name": "packages/d3-force/src/x.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-force/src/constant.js"
+      ]
+    },
+    {
+      "id": "packages/d3-force/src/y.js",
+      "path": "packages/d3-force/src/y.js",
+      "name": "packages/d3-force/src/y.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-force/src/constant.js"
+      ]
+    },
+    {
+      "id": "packages/d3-format/src/index.js",
+      "path": "packages/d3-format/src/index.js",
+      "name": "packages/d3-format/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-format/src/defaultLocale.js",
+        "packages/d3-format/src/locale.js",
+        "packages/d3-format/src/formatSpecifier.js",
+        "packages/d3-format/src/precisionFixed.js",
+        "packages/d3-format/src/precisionPrefix.js",
+        "packages/d3-format/src/precisionRound.js"
+      ]
+    },
+    {
+      "id": "packages/d3-format/src/defaultLocale.js",
+      "path": "packages/d3-format/src/defaultLocale.js",
+      "name": "packages/d3-format/src/defaultLocale.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-format/src/locale.js"
+      ]
+    },
+    {
+      "id": "packages/d3-format/src/locale.js",
+      "path": "packages/d3-format/src/locale.js",
+      "name": "packages/d3-format/src/locale.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-format/src/exponent.js",
+        "packages/d3-format/src/formatGroup.js",
+        "packages/d3-format/src/formatNumerals.js",
+        "packages/d3-format/src/formatSpecifier.js",
+        "packages/d3-format/src/formatTrim.js",
+        "packages/d3-format/src/formatTypes.js",
+        "packages/d3-format/src/formatPrefixAuto.js",
+        "packages/d3-format/src/identity.js"
+      ]
+    },
+    {
+      "id": "packages/d3-format/src/exponent.js",
+      "path": "packages/d3-format/src/exponent.js",
+      "name": "packages/d3-format/src/exponent.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-format/src/formatDecimal.js"
+      ]
+    },
+    {
+      "id": "packages/d3-format/src/formatDecimal.js",
+      "path": "packages/d3-format/src/formatDecimal.js",
+      "name": "packages/d3-format/src/formatDecimal.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-format/src/formatGroup.js",
+      "path": "packages/d3-format/src/formatGroup.js",
+      "name": "packages/d3-format/src/formatGroup.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-format/src/formatNumerals.js",
+      "path": "packages/d3-format/src/formatNumerals.js",
+      "name": "packages/d3-format/src/formatNumerals.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-format/src/formatSpecifier.js",
+      "path": "packages/d3-format/src/formatSpecifier.js",
+      "name": "packages/d3-format/src/formatSpecifier.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-format/src/formatTrim.js",
+      "path": "packages/d3-format/src/formatTrim.js",
+      "name": "packages/d3-format/src/formatTrim.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-format/src/formatTypes.js",
+      "path": "packages/d3-format/src/formatTypes.js",
+      "name": "packages/d3-format/src/formatTypes.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-format/src/formatDecimal.js",
+        "packages/d3-format/src/formatPrefixAuto.js",
+        "packages/d3-format/src/formatRounded.js"
+      ]
+    },
+    {
+      "id": "packages/d3-format/src/formatPrefixAuto.js",
+      "path": "packages/d3-format/src/formatPrefixAuto.js",
+      "name": "packages/d3-format/src/formatPrefixAuto.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-format/src/formatDecimal.js"
+      ]
+    },
+    {
+      "id": "packages/d3-format/src/formatRounded.js",
+      "path": "packages/d3-format/src/formatRounded.js",
+      "name": "packages/d3-format/src/formatRounded.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-format/src/formatDecimal.js"
+      ]
+    },
+    {
+      "id": "packages/d3-format/src/identity.js",
+      "path": "packages/d3-format/src/identity.js",
+      "name": "packages/d3-format/src/identity.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-format/src/precisionFixed.js",
+      "path": "packages/d3-format/src/precisionFixed.js",
+      "name": "packages/d3-format/src/precisionFixed.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-format/src/exponent.js"
+      ]
+    },
+    {
+      "id": "packages/d3-format/src/precisionPrefix.js",
+      "path": "packages/d3-format/src/precisionPrefix.js",
+      "name": "packages/d3-format/src/precisionPrefix.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-format/src/exponent.js"
+      ]
+    },
+    {
+      "id": "packages/d3-format/src/precisionRound.js",
+      "path": "packages/d3-format/src/precisionRound.js",
+      "name": "packages/d3-format/src/precisionRound.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-format/src/exponent.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/index.js",
+      "path": "packages/d3-geo/src/index.js",
+      "name": "packages/d3-geo/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/area.js",
+        "packages/d3-geo/src/bounds.js",
+        "packages/d3-geo/src/centroid.js",
+        "packages/d3-geo/src/circle.js",
+        "packages/d3-geo/src/clip/antimeridian.js",
+        "packages/d3-geo/src/clip/circle.js",
+        "packages/d3-geo/src/clip/extent.js",
+        "packages/d3-geo/src/clip/rectangle.js",
+        "packages/d3-geo/src/contains.js",
+        "packages/d3-geo/src/distance.js",
+        "packages/d3-geo/src/graticule.js",
+        "packages/d3-geo/src/interpolate.js",
+        "packages/d3-geo/src/length.js",
+        "packages/d3-geo/src/path/index.js",
+        "packages/d3-geo/src/projection/albers.js",
+        "packages/d3-geo/src/projection/albersUsa.js",
+        "packages/d3-geo/src/projection/azimuthalEqualArea.js",
+        "packages/d3-geo/src/projection/azimuthalEquidistant.js",
+        "packages/d3-geo/src/projection/conicConformal.js",
+        "packages/d3-geo/src/projection/conicEqualArea.js",
+        "packages/d3-geo/src/projection/conicEquidistant.js",
+        "packages/d3-geo/src/projection/equalEarth.js",
+        "packages/d3-geo/src/projection/equirectangular.js",
+        "packages/d3-geo/src/projection/gnomonic.js",
+        "packages/d3-geo/src/projection/identity.js",
+        "packages/d3-geo/src/projection/index.js",
+        "packages/d3-geo/src/projection/mercator.js",
+        "packages/d3-geo/src/projection/naturalEarth1.js",
+        "packages/d3-geo/src/projection/orthographic.js",
+        "packages/d3-geo/src/projection/stereographic.js",
+        "packages/d3-geo/src/projection/transverseMercator.js",
+        "packages/d3-geo/src/rotation.js",
+        "packages/d3-geo/src/stream.js",
+        "packages/d3-geo/src/transform.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/area.js",
+      "path": "packages/d3-geo/src/area.js",
+      "name": "packages/d3-geo/src/area.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/noop.js",
+        "packages/d3-geo/src/stream.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/math.js",
+      "path": "packages/d3-geo/src/math.js",
+      "name": "packages/d3-geo/src/math.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-geo/src/noop.js",
+      "path": "packages/d3-geo/src/noop.js",
+      "name": "packages/d3-geo/src/noop.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-geo/src/stream.js",
+      "path": "packages/d3-geo/src/stream.js",
+      "name": "packages/d3-geo/src/stream.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-geo/src/bounds.js",
+      "path": "packages/d3-geo/src/bounds.js",
+      "name": "packages/d3-geo/src/bounds.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-geo/src/area.js",
+        "packages/d3-geo/src/cartesian.js",
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/stream.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/cartesian.js",
+      "path": "packages/d3-geo/src/cartesian.js",
+      "name": "packages/d3-geo/src/cartesian.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/centroid.js",
+      "path": "packages/d3-geo/src/centroid.js",
+      "name": "packages/d3-geo/src/centroid.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/noop.js",
+        "packages/d3-geo/src/stream.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/circle.js",
+      "path": "packages/d3-geo/src/circle.js",
+      "name": "packages/d3-geo/src/circle.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/cartesian.js",
+        "packages/d3-geo/src/constant.js",
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/rotation.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/constant.js",
+      "path": "packages/d3-geo/src/constant.js",
+      "name": "packages/d3-geo/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-geo/src/rotation.js",
+      "path": "packages/d3-geo/src/rotation.js",
+      "name": "packages/d3-geo/src/rotation.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/compose.js",
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/compose.js",
+      "path": "packages/d3-geo/src/compose.js",
+      "name": "packages/d3-geo/src/compose.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-geo/src/clip/antimeridian.js",
+      "path": "packages/d3-geo/src/clip/antimeridian.js",
+      "name": "packages/d3-geo/src/clip/antimeridian.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/clip/index.js",
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/clip/index.js",
+      "path": "packages/d3-geo/src/clip/index.js",
+      "name": "packages/d3-geo/src/clip/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/clip/buffer.js",
+        "packages/d3-geo/src/clip/rejoin.js",
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/polygonContains.js",
+        "packages/d3-array/dist/d3-array.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/clip/buffer.js",
+      "path": "packages/d3-geo/src/clip/buffer.js",
+      "name": "packages/d3-geo/src/clip/buffer.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/noop.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/clip/rejoin.js",
+      "path": "packages/d3-geo/src/clip/rejoin.js",
+      "name": "packages/d3-geo/src/clip/rejoin.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/pointEqual.js",
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/pointEqual.js",
+      "path": "packages/d3-geo/src/pointEqual.js",
+      "name": "packages/d3-geo/src/pointEqual.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/polygonContains.js",
+      "path": "packages/d3-geo/src/polygonContains.js",
+      "name": "packages/d3-geo/src/polygonContains.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-geo/src/cartesian.js",
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/clip/circle.js",
+      "path": "packages/d3-geo/src/clip/circle.js",
+      "name": "packages/d3-geo/src/clip/circle.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/cartesian.js",
+        "packages/d3-geo/src/circle.js",
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/pointEqual.js",
+        "packages/d3-geo/src/clip/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/clip/extent.js",
+      "path": "packages/d3-geo/src/clip/extent.js",
+      "name": "packages/d3-geo/src/clip/extent.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/clip/rectangle.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/clip/rectangle.js",
+      "path": "packages/d3-geo/src/clip/rectangle.js",
+      "name": "packages/d3-geo/src/clip/rectangle.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/clip/buffer.js",
+        "packages/d3-geo/src/clip/line.js",
+        "packages/d3-geo/src/clip/rejoin.js",
+        "packages/d3-array/dist/d3-array.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/clip/line.js",
+      "path": "packages/d3-geo/src/clip/line.js",
+      "name": "packages/d3-geo/src/clip/line.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-geo/src/contains.js",
+      "path": "packages/d3-geo/src/contains.js",
+      "name": "packages/d3-geo/src/contains.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/polygonContains.js",
+        "packages/d3-geo/src/distance.js",
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/distance.js",
+      "path": "packages/d3-geo/src/distance.js",
+      "name": "packages/d3-geo/src/distance.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/length.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/length.js",
+      "path": "packages/d3-geo/src/length.js",
+      "name": "packages/d3-geo/src/length.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/noop.js",
+        "packages/d3-geo/src/stream.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/graticule.js",
+      "path": "packages/d3-geo/src/graticule.js",
+      "name": "packages/d3-geo/src/graticule.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/interpolate.js",
+      "path": "packages/d3-geo/src/interpolate.js",
+      "name": "packages/d3-geo/src/interpolate.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/path/index.js",
+      "path": "packages/d3-geo/src/path/index.js",
+      "name": "packages/d3-geo/src/path/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/identity.js",
+        "packages/d3-geo/src/stream.js",
+        "packages/d3-geo/src/path/area.js",
+        "packages/d3-geo/src/path/bounds.js",
+        "packages/d3-geo/src/path/centroid.js",
+        "packages/d3-geo/src/path/context.js",
+        "packages/d3-geo/src/path/measure.js",
+        "packages/d3-geo/src/path/string.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/identity.js",
+      "path": "packages/d3-geo/src/identity.js",
+      "name": "packages/d3-geo/src/identity.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-geo/src/path/area.js",
+      "path": "packages/d3-geo/src/path/area.js",
+      "name": "packages/d3-geo/src/path/area.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/noop.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/path/bounds.js",
+      "path": "packages/d3-geo/src/path/bounds.js",
+      "name": "packages/d3-geo/src/path/bounds.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/noop.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/path/centroid.js",
+      "path": "packages/d3-geo/src/path/centroid.js",
+      "name": "packages/d3-geo/src/path/centroid.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/path/context.js",
+      "path": "packages/d3-geo/src/path/context.js",
+      "name": "packages/d3-geo/src/path/context.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/noop.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/path/measure.js",
+      "path": "packages/d3-geo/src/path/measure.js",
+      "name": "packages/d3-geo/src/path/measure.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/noop.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/path/string.js",
+      "path": "packages/d3-geo/src/path/string.js",
+      "name": "packages/d3-geo/src/path/string.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-geo/src/projection/albers.js",
+      "path": "packages/d3-geo/src/projection/albers.js",
+      "name": "packages/d3-geo/src/projection/albers.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/projection/conicEqualArea.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/conicEqualArea.js",
+      "path": "packages/d3-geo/src/projection/conicEqualArea.js",
+      "name": "packages/d3-geo/src/projection/conicEqualArea.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/projection/conic.js",
+        "packages/d3-geo/src/projection/cylindricalEqualArea.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/conic.js",
+      "path": "packages/d3-geo/src/projection/conic.js",
+      "name": "packages/d3-geo/src/projection/conic.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/projection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/index.js",
+      "path": "packages/d3-geo/src/projection/index.js",
+      "name": "packages/d3-geo/src/projection/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/clip/antimeridian.js",
+        "packages/d3-geo/src/clip/circle.js",
+        "packages/d3-geo/src/clip/rectangle.js",
+        "packages/d3-geo/src/compose.js",
+        "packages/d3-geo/src/identity.js",
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/rotation.js",
+        "packages/d3-geo/src/transform.js",
+        "packages/d3-geo/src/projection/fit.js",
+        "packages/d3-geo/src/projection/resample.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/transform.js",
+      "path": "packages/d3-geo/src/transform.js",
+      "name": "packages/d3-geo/src/transform.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-geo/src/projection/fit.js",
+      "path": "packages/d3-geo/src/projection/fit.js",
+      "name": "packages/d3-geo/src/projection/fit.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/stream.js",
+        "packages/d3-geo/src/path/bounds.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/resample.js",
+      "path": "packages/d3-geo/src/projection/resample.js",
+      "name": "packages/d3-geo/src/projection/resample.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/cartesian.js",
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/transform.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/cylindricalEqualArea.js",
+      "path": "packages/d3-geo/src/projection/cylindricalEqualArea.js",
+      "name": "packages/d3-geo/src/projection/cylindricalEqualArea.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/albersUsa.js",
+      "path": "packages/d3-geo/src/projection/albersUsa.js",
+      "name": "packages/d3-geo/src/projection/albersUsa.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/projection/albers.js",
+        "packages/d3-geo/src/projection/conicEqualArea.js",
+        "packages/d3-geo/src/projection/fit.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/azimuthalEqualArea.js",
+      "path": "packages/d3-geo/src/projection/azimuthalEqualArea.js",
+      "name": "packages/d3-geo/src/projection/azimuthalEqualArea.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/projection/azimuthal.js",
+        "packages/d3-geo/src/projection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/azimuthal.js",
+      "path": "packages/d3-geo/src/projection/azimuthal.js",
+      "name": "packages/d3-geo/src/projection/azimuthal.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/azimuthalEquidistant.js",
+      "path": "packages/d3-geo/src/projection/azimuthalEquidistant.js",
+      "name": "packages/d3-geo/src/projection/azimuthalEquidistant.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/projection/azimuthal.js",
+        "packages/d3-geo/src/projection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/conicConformal.js",
+      "path": "packages/d3-geo/src/projection/conicConformal.js",
+      "name": "packages/d3-geo/src/projection/conicConformal.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/projection/conic.js",
+        "packages/d3-geo/src/projection/mercator.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/mercator.js",
+      "path": "packages/d3-geo/src/projection/mercator.js",
+      "name": "packages/d3-geo/src/projection/mercator.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/rotation.js",
+        "packages/d3-geo/src/projection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/conicEquidistant.js",
+      "path": "packages/d3-geo/src/projection/conicEquidistant.js",
+      "name": "packages/d3-geo/src/projection/conicEquidistant.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/projection/conic.js",
+        "packages/d3-geo/src/projection/equirectangular.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/equirectangular.js",
+      "path": "packages/d3-geo/src/projection/equirectangular.js",
+      "name": "packages/d3-geo/src/projection/equirectangular.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/projection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/equalEarth.js",
+      "path": "packages/d3-geo/src/projection/equalEarth.js",
+      "name": "packages/d3-geo/src/projection/equalEarth.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/projection/index.js",
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/gnomonic.js",
+      "path": "packages/d3-geo/src/projection/gnomonic.js",
+      "name": "packages/d3-geo/src/projection/gnomonic.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/projection/azimuthal.js",
+        "packages/d3-geo/src/projection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/identity.js",
+      "path": "packages/d3-geo/src/projection/identity.js",
+      "name": "packages/d3-geo/src/projection/identity.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/clip/rectangle.js",
+        "packages/d3-geo/src/identity.js",
+        "packages/d3-geo/src/transform.js",
+        "packages/d3-geo/src/projection/fit.js",
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/naturalEarth1.js",
+      "path": "packages/d3-geo/src/projection/naturalEarth1.js",
+      "name": "packages/d3-geo/src/projection/naturalEarth1.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/projection/index.js",
+        "packages/d3-geo/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/orthographic.js",
+      "path": "packages/d3-geo/src/projection/orthographic.js",
+      "name": "packages/d3-geo/src/projection/orthographic.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/projection/azimuthal.js",
+        "packages/d3-geo/src/projection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/stereographic.js",
+      "path": "packages/d3-geo/src/projection/stereographic.js",
+      "name": "packages/d3-geo/src/projection/stereographic.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/projection/azimuthal.js",
+        "packages/d3-geo/src/projection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-geo/src/projection/transverseMercator.js",
+      "path": "packages/d3-geo/src/projection/transverseMercator.js",
+      "name": "packages/d3-geo/src/projection/transverseMercator.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-geo/src/math.js",
+        "packages/d3-geo/src/projection/mercator.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/index.js",
+      "path": "packages/d3-hierarchy/src/index.js",
+      "name": "packages/d3-hierarchy/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/cluster.js",
+        "packages/d3-hierarchy/src/hierarchy/index.js",
+        "packages/d3-hierarchy/src/pack/index.js",
+        "packages/d3-hierarchy/src/pack/siblings.js",
+        "packages/d3-hierarchy/src/pack/enclose.js",
+        "packages/d3-hierarchy/src/partition.js",
+        "packages/d3-hierarchy/src/stratify.js",
+        "packages/d3-hierarchy/src/tree.js",
+        "packages/d3-hierarchy/src/treemap/index.js",
+        "packages/d3-hierarchy/src/treemap/binary.js",
+        "packages/d3-hierarchy/src/treemap/dice.js",
+        "packages/d3-hierarchy/src/treemap/slice.js",
+        "packages/d3-hierarchy/src/treemap/sliceDice.js",
+        "packages/d3-hierarchy/src/treemap/squarify.js",
+        "packages/d3-hierarchy/src/treemap/resquarify.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/cluster.js",
+      "path": "packages/d3-hierarchy/src/cluster.js",
+      "name": "packages/d3-hierarchy/src/cluster.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/index.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/index.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/hierarchy/count.js",
+        "packages/d3-hierarchy/src/hierarchy/each.js",
+        "packages/d3-hierarchy/src/hierarchy/eachBefore.js",
+        "packages/d3-hierarchy/src/hierarchy/eachAfter.js",
+        "packages/d3-hierarchy/src/hierarchy/find.js",
+        "packages/d3-hierarchy/src/hierarchy/sum.js",
+        "packages/d3-hierarchy/src/hierarchy/sort.js",
+        "packages/d3-hierarchy/src/hierarchy/path.js",
+        "packages/d3-hierarchy/src/hierarchy/ancestors.js",
+        "packages/d3-hierarchy/src/hierarchy/descendants.js",
+        "packages/d3-hierarchy/src/hierarchy/leaves.js",
+        "packages/d3-hierarchy/src/hierarchy/links.js",
+        "packages/d3-hierarchy/src/hierarchy/iterator.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/count.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/count.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/count.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/each.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/each.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/each.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/eachBefore.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/eachBefore.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/eachBefore.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/eachAfter.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/eachAfter.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/eachAfter.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/find.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/find.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/find.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/sum.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/sum.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/sum.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/sort.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/sort.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/sort.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/path.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/path.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/path.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/ancestors.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/ancestors.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/ancestors.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/descendants.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/descendants.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/descendants.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/leaves.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/leaves.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/leaves.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/links.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/links.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/links.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/hierarchy/iterator.js",
+      "path": "packages/d3-hierarchy/src/hierarchy/iterator.js",
+      "name": "packages/d3-hierarchy/src/hierarchy/iterator.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/pack/index.js",
+      "path": "packages/d3-hierarchy/src/pack/index.js",
+      "name": "packages/d3-hierarchy/src/pack/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/pack/siblings.js",
+        "packages/d3-hierarchy/src/accessors.js",
+        "packages/d3-hierarchy/src/constant.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/pack/siblings.js",
+      "path": "packages/d3-hierarchy/src/pack/siblings.js",
+      "name": "packages/d3-hierarchy/src/pack/siblings.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/array.js",
+        "packages/d3-hierarchy/src/pack/enclose.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/array.js",
+      "path": "packages/d3-hierarchy/src/array.js",
+      "name": "packages/d3-hierarchy/src/array.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/pack/enclose.js",
+      "path": "packages/d3-hierarchy/src/pack/enclose.js",
+      "name": "packages/d3-hierarchy/src/pack/enclose.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/array.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/accessors.js",
+      "path": "packages/d3-hierarchy/src/accessors.js",
+      "name": "packages/d3-hierarchy/src/accessors.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/constant.js",
+      "path": "packages/d3-hierarchy/src/constant.js",
+      "name": "packages/d3-hierarchy/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/partition.js",
+      "path": "packages/d3-hierarchy/src/partition.js",
+      "name": "packages/d3-hierarchy/src/partition.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/treemap/round.js",
+        "packages/d3-hierarchy/src/treemap/dice.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/treemap/round.js",
+      "path": "packages/d3-hierarchy/src/treemap/round.js",
+      "name": "packages/d3-hierarchy/src/treemap/round.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/treemap/dice.js",
+      "path": "packages/d3-hierarchy/src/treemap/dice.js",
+      "name": "packages/d3-hierarchy/src/treemap/dice.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/stratify.js",
+      "path": "packages/d3-hierarchy/src/stratify.js",
+      "name": "packages/d3-hierarchy/src/stratify.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/accessors.js",
+        "packages/d3-hierarchy/src/hierarchy/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/tree.js",
+      "path": "packages/d3-hierarchy/src/tree.js",
+      "name": "packages/d3-hierarchy/src/tree.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/hierarchy/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/treemap/index.js",
+      "path": "packages/d3-hierarchy/src/treemap/index.js",
+      "name": "packages/d3-hierarchy/src/treemap/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/treemap/round.js",
+        "packages/d3-hierarchy/src/treemap/squarify.js",
+        "packages/d3-hierarchy/src/accessors.js",
+        "packages/d3-hierarchy/src/constant.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/treemap/squarify.js",
+      "path": "packages/d3-hierarchy/src/treemap/squarify.js",
+      "name": "packages/d3-hierarchy/src/treemap/squarify.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/treemap/dice.js",
+        "packages/d3-hierarchy/src/treemap/slice.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/treemap/slice.js",
+      "path": "packages/d3-hierarchy/src/treemap/slice.js",
+      "name": "packages/d3-hierarchy/src/treemap/slice.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/treemap/binary.js",
+      "path": "packages/d3-hierarchy/src/treemap/binary.js",
+      "name": "packages/d3-hierarchy/src/treemap/binary.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-hierarchy/src/treemap/sliceDice.js",
+      "path": "packages/d3-hierarchy/src/treemap/sliceDice.js",
+      "name": "packages/d3-hierarchy/src/treemap/sliceDice.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/treemap/dice.js",
+        "packages/d3-hierarchy/src/treemap/slice.js"
+      ]
+    },
+    {
+      "id": "packages/d3-hierarchy/src/treemap/resquarify.js",
+      "path": "packages/d3-hierarchy/src/treemap/resquarify.js",
+      "name": "packages/d3-hierarchy/src/treemap/resquarify.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-hierarchy/src/treemap/dice.js",
+        "packages/d3-hierarchy/src/treemap/slice.js",
+        "packages/d3-hierarchy/src/treemap/squarify.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/index.js",
+      "path": "packages/d3-interpolate/src/index.js",
+      "name": "packages/d3-interpolate/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/src/value.js",
+        "packages/d3-interpolate/src/array.js",
+        "packages/d3-interpolate/src/basis.js",
+        "packages/d3-interpolate/src/basisClosed.js",
+        "packages/d3-interpolate/src/date.js",
+        "packages/d3-interpolate/src/discrete.js",
+        "packages/d3-interpolate/src/hue.js",
+        "packages/d3-interpolate/src/number.js",
+        "packages/d3-interpolate/src/numberArray.js",
+        "packages/d3-interpolate/src/object.js",
+        "packages/d3-interpolate/src/round.js",
+        "packages/d3-interpolate/src/string.js",
+        "packages/d3-interpolate/src/transform/index.js",
+        "packages/d3-interpolate/src/zoom.js",
+        "packages/d3-interpolate/src/rgb.js",
+        "packages/d3-interpolate/src/hsl.js",
+        "packages/d3-interpolate/src/lab.js",
+        "packages/d3-interpolate/src/hcl.js",
+        "packages/d3-interpolate/src/cubehelix.js",
+        "packages/d3-interpolate/src/piecewise.js",
+        "packages/d3-interpolate/src/quantize.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/value.js",
+      "path": "packages/d3-interpolate/src/value.js",
+      "name": "packages/d3-interpolate/src/value.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-interpolate/src/rgb.js",
+      "path": "packages/d3-interpolate/src/rgb.js",
+      "name": "packages/d3-interpolate/src/rgb.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/dist/d3-color.js",
+        "packages/d3-interpolate/src/basis.js",
+        "packages/d3-interpolate/src/basisClosed.js",
+        "packages/d3-interpolate/src/color.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/basis.js",
+      "path": "packages/d3-interpolate/src/basis.js",
+      "name": "packages/d3-interpolate/src/basis.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-interpolate/src/basisClosed.js",
+      "path": "packages/d3-interpolate/src/basisClosed.js",
+      "name": "packages/d3-interpolate/src/basisClosed.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/src/basis.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/color.js",
+      "path": "packages/d3-interpolate/src/color.js",
+      "name": "packages/d3-interpolate/src/color.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/src/constant.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/constant.js",
+      "path": "packages/d3-interpolate/src/constant.js",
+      "name": "packages/d3-interpolate/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-interpolate/src/array.js",
+      "path": "packages/d3-interpolate/src/array.js",
+      "name": "packages/d3-interpolate/src/array.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/src/value.js",
+        "packages/d3-interpolate/src/numberArray.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/numberArray.js",
+      "path": "packages/d3-interpolate/src/numberArray.js",
+      "name": "packages/d3-interpolate/src/numberArray.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-interpolate/src/date.js",
+      "path": "packages/d3-interpolate/src/date.js",
+      "name": "packages/d3-interpolate/src/date.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-interpolate/src/number.js",
+      "path": "packages/d3-interpolate/src/number.js",
+      "name": "packages/d3-interpolate/src/number.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-interpolate/src/object.js",
+      "path": "packages/d3-interpolate/src/object.js",
+      "name": "packages/d3-interpolate/src/object.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/src/value.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/string.js",
+      "path": "packages/d3-interpolate/src/string.js",
+      "name": "packages/d3-interpolate/src/string.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/src/number.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/discrete.js",
+      "path": "packages/d3-interpolate/src/discrete.js",
+      "name": "packages/d3-interpolate/src/discrete.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-interpolate/src/hue.js",
+      "path": "packages/d3-interpolate/src/hue.js",
+      "name": "packages/d3-interpolate/src/hue.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/src/color.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/round.js",
+      "path": "packages/d3-interpolate/src/round.js",
+      "name": "packages/d3-interpolate/src/round.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-interpolate/src/transform/index.js",
+      "path": "packages/d3-interpolate/src/transform/index.js",
+      "name": "packages/d3-interpolate/src/transform/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/src/number.js",
+        "packages/d3-interpolate/src/transform/parse.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/transform/parse.js",
+      "path": "packages/d3-interpolate/src/transform/parse.js",
+      "name": "packages/d3-interpolate/src/transform/parse.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/src/transform/decompose.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/transform/decompose.js",
+      "path": "packages/d3-interpolate/src/transform/decompose.js",
+      "name": "packages/d3-interpolate/src/transform/decompose.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-interpolate/src/zoom.js",
+      "path": "packages/d3-interpolate/src/zoom.js",
+      "name": "packages/d3-interpolate/src/zoom.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-interpolate/src/hsl.js",
+      "path": "packages/d3-interpolate/src/hsl.js",
+      "name": "packages/d3-interpolate/src/hsl.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/dist/d3-color.js",
+        "packages/d3-interpolate/src/color.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/lab.js",
+      "path": "packages/d3-interpolate/src/lab.js",
+      "name": "packages/d3-interpolate/src/lab.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/dist/d3-color.js",
+        "packages/d3-interpolate/src/color.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/hcl.js",
+      "path": "packages/d3-interpolate/src/hcl.js",
+      "name": "packages/d3-interpolate/src/hcl.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/dist/d3-color.js",
+        "packages/d3-interpolate/src/color.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/cubehelix.js",
+      "path": "packages/d3-interpolate/src/cubehelix.js",
+      "name": "packages/d3-interpolate/src/cubehelix.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/dist/d3-color.js",
+        "packages/d3-interpolate/src/color.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/piecewise.js",
+      "path": "packages/d3-interpolate/src/piecewise.js",
+      "name": "packages/d3-interpolate/src/piecewise.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/src/value.js"
+      ]
+    },
+    {
+      "id": "packages/d3-interpolate/src/quantize.js",
+      "path": "packages/d3-interpolate/src/quantize.js",
+      "name": "packages/d3-interpolate/src/quantize.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-path/src/index.js",
+      "path": "packages/d3-path/src/index.js",
+      "name": "packages/d3-path/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-path/src/path.js"
+      ]
+    },
+    {
+      "id": "packages/d3-path/src/path.js",
+      "path": "packages/d3-path/src/path.js",
+      "name": "packages/d3-path/src/path.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-polygon/src/index.js",
+      "path": "packages/d3-polygon/src/index.js",
+      "name": "packages/d3-polygon/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-polygon/src/area.js",
+        "packages/d3-polygon/src/centroid.js",
+        "packages/d3-polygon/src/hull.js",
+        "packages/d3-polygon/src/contains.js",
+        "packages/d3-polygon/src/length.js"
+      ]
+    },
+    {
+      "id": "packages/d3-polygon/src/area.js",
+      "path": "packages/d3-polygon/src/area.js",
+      "name": "packages/d3-polygon/src/area.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-polygon/src/centroid.js",
+      "path": "packages/d3-polygon/src/centroid.js",
+      "name": "packages/d3-polygon/src/centroid.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-polygon/src/hull.js",
+      "path": "packages/d3-polygon/src/hull.js",
+      "name": "packages/d3-polygon/src/hull.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-polygon/src/cross.js"
+      ]
+    },
+    {
+      "id": "packages/d3-polygon/src/cross.js",
+      "path": "packages/d3-polygon/src/cross.js",
+      "name": "packages/d3-polygon/src/cross.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-polygon/src/contains.js",
+      "path": "packages/d3-polygon/src/contains.js",
+      "name": "packages/d3-polygon/src/contains.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-polygon/src/length.js",
+      "path": "packages/d3-polygon/src/length.js",
+      "name": "packages/d3-polygon/src/length.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-quadtree/src/index.js",
+      "path": "packages/d3-quadtree/src/index.js",
+      "name": "packages/d3-quadtree/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-quadtree/src/quadtree.js"
+      ]
+    },
+    {
+      "id": "packages/d3-quadtree/src/quadtree.js",
+      "path": "packages/d3-quadtree/src/quadtree.js",
+      "name": "packages/d3-quadtree/src/quadtree.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-quadtree/src/add.js",
+        "packages/d3-quadtree/src/cover.js",
+        "packages/d3-quadtree/src/data.js",
+        "packages/d3-quadtree/src/extent.js",
+        "packages/d3-quadtree/src/find.js",
+        "packages/d3-quadtree/src/remove.js",
+        "packages/d3-quadtree/src/root.js",
+        "packages/d3-quadtree/src/size.js",
+        "packages/d3-quadtree/src/visit.js",
+        "packages/d3-quadtree/src/visitAfter.js",
+        "packages/d3-quadtree/src/x.js",
+        "packages/d3-quadtree/src/y.js"
+      ]
+    },
+    {
+      "id": "packages/d3-quadtree/src/add.js",
+      "path": "packages/d3-quadtree/src/add.js",
+      "name": "packages/d3-quadtree/src/add.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-quadtree/src/cover.js",
+      "path": "packages/d3-quadtree/src/cover.js",
+      "name": "packages/d3-quadtree/src/cover.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-quadtree/src/data.js",
+      "path": "packages/d3-quadtree/src/data.js",
+      "name": "packages/d3-quadtree/src/data.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-quadtree/src/extent.js",
+      "path": "packages/d3-quadtree/src/extent.js",
+      "name": "packages/d3-quadtree/src/extent.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-quadtree/src/find.js",
+      "path": "packages/d3-quadtree/src/find.js",
+      "name": "packages/d3-quadtree/src/find.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-quadtree/src/quad.js"
+      ]
+    },
+    {
+      "id": "packages/d3-quadtree/src/quad.js",
+      "path": "packages/d3-quadtree/src/quad.js",
+      "name": "packages/d3-quadtree/src/quad.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-quadtree/src/remove.js",
+      "path": "packages/d3-quadtree/src/remove.js",
+      "name": "packages/d3-quadtree/src/remove.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-quadtree/src/root.js",
+      "path": "packages/d3-quadtree/src/root.js",
+      "name": "packages/d3-quadtree/src/root.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-quadtree/src/size.js",
+      "path": "packages/d3-quadtree/src/size.js",
+      "name": "packages/d3-quadtree/src/size.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-quadtree/src/visit.js",
+      "path": "packages/d3-quadtree/src/visit.js",
+      "name": "packages/d3-quadtree/src/visit.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-quadtree/src/quad.js"
+      ]
+    },
+    {
+      "id": "packages/d3-quadtree/src/visitAfter.js",
+      "path": "packages/d3-quadtree/src/visitAfter.js",
+      "name": "packages/d3-quadtree/src/visitAfter.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-quadtree/src/quad.js"
+      ]
+    },
+    {
+      "id": "packages/d3-quadtree/src/x.js",
+      "path": "packages/d3-quadtree/src/x.js",
+      "name": "packages/d3-quadtree/src/x.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-quadtree/src/y.js",
+      "path": "packages/d3-quadtree/src/y.js",
+      "name": "packages/d3-quadtree/src/y.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-random/src/index.js",
+      "path": "packages/d3-random/src/index.js",
+      "name": "packages/d3-random/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/uniform.js",
+        "packages/d3-random/src/int.js",
+        "packages/d3-random/src/normal.js",
+        "packages/d3-random/src/logNormal.js",
+        "packages/d3-random/src/bates.js",
+        "packages/d3-random/src/irwinHall.js",
+        "packages/d3-random/src/exponential.js",
+        "packages/d3-random/src/pareto.js",
+        "packages/d3-random/src/bernoulli.js",
+        "packages/d3-random/src/geometric.js",
+        "packages/d3-random/src/binomial.js",
+        "packages/d3-random/src/gamma.js",
+        "packages/d3-random/src/beta.js",
+        "packages/d3-random/src/weibull.js",
+        "packages/d3-random/src/cauchy.js",
+        "packages/d3-random/src/logistic.js",
+        "packages/d3-random/src/poisson.js",
+        "packages/d3-random/src/lcg.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/uniform.js",
+      "path": "packages/d3-random/src/uniform.js",
+      "name": "packages/d3-random/src/uniform.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/defaultSource.js",
+      "path": "packages/d3-random/src/defaultSource.js",
+      "name": "packages/d3-random/src/defaultSource.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-random/src/int.js",
+      "path": "packages/d3-random/src/int.js",
+      "name": "packages/d3-random/src/int.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/normal.js",
+      "path": "packages/d3-random/src/normal.js",
+      "name": "packages/d3-random/src/normal.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/logNormal.js",
+      "path": "packages/d3-random/src/logNormal.js",
+      "name": "packages/d3-random/src/logNormal.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js",
+        "packages/d3-random/src/normal.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/bates.js",
+      "path": "packages/d3-random/src/bates.js",
+      "name": "packages/d3-random/src/bates.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js",
+        "packages/d3-random/src/irwinHall.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/irwinHall.js",
+      "path": "packages/d3-random/src/irwinHall.js",
+      "name": "packages/d3-random/src/irwinHall.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/exponential.js",
+      "path": "packages/d3-random/src/exponential.js",
+      "name": "packages/d3-random/src/exponential.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/pareto.js",
+      "path": "packages/d3-random/src/pareto.js",
+      "name": "packages/d3-random/src/pareto.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/bernoulli.js",
+      "path": "packages/d3-random/src/bernoulli.js",
+      "name": "packages/d3-random/src/bernoulli.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/geometric.js",
+      "path": "packages/d3-random/src/geometric.js",
+      "name": "packages/d3-random/src/geometric.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/binomial.js",
+      "path": "packages/d3-random/src/binomial.js",
+      "name": "packages/d3-random/src/binomial.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js",
+        "packages/d3-random/src/beta.js",
+        "packages/d3-random/src/geometric.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/beta.js",
+      "path": "packages/d3-random/src/beta.js",
+      "name": "packages/d3-random/src/beta.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js",
+        "packages/d3-random/src/gamma.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/gamma.js",
+      "path": "packages/d3-random/src/gamma.js",
+      "name": "packages/d3-random/src/gamma.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js",
+        "packages/d3-random/src/normal.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/weibull.js",
+      "path": "packages/d3-random/src/weibull.js",
+      "name": "packages/d3-random/src/weibull.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/cauchy.js",
+      "path": "packages/d3-random/src/cauchy.js",
+      "name": "packages/d3-random/src/cauchy.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/logistic.js",
+      "path": "packages/d3-random/src/logistic.js",
+      "name": "packages/d3-random/src/logistic.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/poisson.js",
+      "path": "packages/d3-random/src/poisson.js",
+      "name": "packages/d3-random/src/poisson.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-random/src/defaultSource.js",
+        "packages/d3-random/src/binomial.js",
+        "packages/d3-random/src/gamma.js"
+      ]
+    },
+    {
+      "id": "packages/d3-random/src/lcg.js",
+      "path": "packages/d3-random/src/lcg.js",
+      "name": "packages/d3-random/src/lcg.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-scale/src/index.js",
+      "path": "packages/d3-scale/src/index.js",
+      "name": "packages/d3-scale/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale/src/band.js",
+        "packages/d3-scale/src/identity.js",
+        "packages/d3-scale/src/linear.js",
+        "packages/d3-scale/src/log.js",
+        "packages/d3-scale/src/symlog.js",
+        "packages/d3-scale/src/ordinal.js",
+        "packages/d3-scale/src/pow.js",
+        "packages/d3-scale/src/radial.js",
+        "packages/d3-scale/src/quantile.js",
+        "packages/d3-scale/src/quantize.js",
+        "packages/d3-scale/src/threshold.js",
+        "packages/d3-scale/src/time.js",
+        "packages/d3-scale/src/utcTime.js",
+        "packages/d3-scale/src/sequential.js",
+        "packages/d3-scale/src/sequentialQuantile.js",
+        "packages/d3-scale/src/diverging.js",
+        "packages/d3-scale/src/tickFormat.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/band.js",
+      "path": "packages/d3-scale/src/band.js",
+      "name": "packages/d3-scale/src/band.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-scale/src/init.js",
+        "packages/d3-scale/src/ordinal.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/init.js",
+      "path": "packages/d3-scale/src/init.js",
+      "name": "packages/d3-scale/src/init.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-scale/src/ordinal.js",
+      "path": "packages/d3-scale/src/ordinal.js",
+      "name": "packages/d3-scale/src/ordinal.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale/src/init.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/identity.js",
+      "path": "packages/d3-scale/src/identity.js",
+      "name": "packages/d3-scale/src/identity.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale/src/linear.js",
+        "packages/d3-scale/src/number.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/linear.js",
+      "path": "packages/d3-scale/src/linear.js",
+      "name": "packages/d3-scale/src/linear.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-scale/src/continuous.js",
+        "packages/d3-scale/src/init.js",
+        "packages/d3-scale/src/tickFormat.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/continuous.js",
+      "path": "packages/d3-scale/src/continuous.js",
+      "name": "packages/d3-scale/src/continuous.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-scale/src/constant.js",
+        "packages/d3-scale/src/number.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/constant.js",
+      "path": "packages/d3-scale/src/constant.js",
+      "name": "packages/d3-scale/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-scale/src/number.js",
+      "path": "packages/d3-scale/src/number.js",
+      "name": "packages/d3-scale/src/number.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-scale/src/tickFormat.js",
+      "path": "packages/d3-scale/src/tickFormat.js",
+      "name": "packages/d3-scale/src/tickFormat.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-format/dist/d3-format.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/log.js",
+      "path": "packages/d3-scale/src/log.js",
+      "name": "packages/d3-scale/src/log.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-format/dist/d3-format.js",
+        "packages/d3-scale/src/nice.js",
+        "packages/d3-scale/src/continuous.js",
+        "packages/d3-scale/src/init.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/nice.js",
+      "path": "packages/d3-scale/src/nice.js",
+      "name": "packages/d3-scale/src/nice.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-scale/src/symlog.js",
+      "path": "packages/d3-scale/src/symlog.js",
+      "name": "packages/d3-scale/src/symlog.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale/src/linear.js",
+        "packages/d3-scale/src/continuous.js",
+        "packages/d3-scale/src/init.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/pow.js",
+      "path": "packages/d3-scale/src/pow.js",
+      "name": "packages/d3-scale/src/pow.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale/src/linear.js",
+        "packages/d3-scale/src/continuous.js",
+        "packages/d3-scale/src/init.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/radial.js",
+      "path": "packages/d3-scale/src/radial.js",
+      "name": "packages/d3-scale/src/radial.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale/src/continuous.js",
+        "packages/d3-scale/src/init.js",
+        "packages/d3-scale/src/linear.js",
+        "packages/d3-scale/src/number.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/quantile.js",
+      "path": "packages/d3-scale/src/quantile.js",
+      "name": "packages/d3-scale/src/quantile.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-scale/src/init.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/quantize.js",
+      "path": "packages/d3-scale/src/quantize.js",
+      "name": "packages/d3-scale/src/quantize.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-scale/src/linear.js",
+        "packages/d3-scale/src/init.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/threshold.js",
+      "path": "packages/d3-scale/src/threshold.js",
+      "name": "packages/d3-scale/src/threshold.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-scale/src/init.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/time.js",
+      "path": "packages/d3-scale/src/time.js",
+      "name": "packages/d3-scale/src/time.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-time/dist/d3-time.js",
+        "packages/d3-time-format/dist/d3-time-format.js",
+        "packages/d3-scale/src/continuous.js",
+        "packages/d3-scale/src/init.js",
+        "packages/d3-scale/src/nice.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/utcTime.js",
+      "path": "packages/d3-scale/src/utcTime.js",
+      "name": "packages/d3-scale/src/utcTime.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale/src/time.js",
+        "packages/d3-time-format/dist/d3-time-format.js",
+        "packages/d3-time/dist/d3-time.js",
+        "packages/d3-scale/src/init.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/sequential.js",
+      "path": "packages/d3-scale/src/sequential.js",
+      "name": "packages/d3-scale/src/sequential.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-scale/src/continuous.js",
+        "packages/d3-scale/src/init.js",
+        "packages/d3-scale/src/linear.js",
+        "packages/d3-scale/src/log.js",
+        "packages/d3-scale/src/symlog.js",
+        "packages/d3-scale/src/pow.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/sequentialQuantile.js",
+      "path": "packages/d3-scale/src/sequentialQuantile.js",
+      "name": "packages/d3-scale/src/sequentialQuantile.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-array/dist/d3-array.js",
+        "packages/d3-scale/src/continuous.js",
+        "packages/d3-scale/src/init.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale/src/diverging.js",
+      "path": "packages/d3-scale/src/diverging.js",
+      "name": "packages/d3-scale/src/diverging.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-scale/src/continuous.js",
+        "packages/d3-scale/src/init.js",
+        "packages/d3-scale/src/linear.js",
+        "packages/d3-scale/src/log.js",
+        "packages/d3-scale/src/sequential.js",
+        "packages/d3-scale/src/symlog.js",
+        "packages/d3-scale/src/pow.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/index.js",
+      "path": "packages/d3-scale-chromatic/src/index.js",
+      "name": "packages/d3-scale-chromatic/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/categorical/category10.js",
+        "packages/d3-scale-chromatic/src/categorical/Accent.js",
+        "packages/d3-scale-chromatic/src/categorical/Dark2.js",
+        "packages/d3-scale-chromatic/src/categorical/Paired.js",
+        "packages/d3-scale-chromatic/src/categorical/Pastel1.js",
+        "packages/d3-scale-chromatic/src/categorical/Pastel2.js",
+        "packages/d3-scale-chromatic/src/categorical/Set1.js",
+        "packages/d3-scale-chromatic/src/categorical/Set2.js",
+        "packages/d3-scale-chromatic/src/categorical/Set3.js",
+        "packages/d3-scale-chromatic/src/categorical/Tableau10.js",
+        "packages/d3-scale-chromatic/src/diverging/BrBG.js",
+        "packages/d3-scale-chromatic/src/diverging/PRGn.js",
+        "packages/d3-scale-chromatic/src/diverging/PiYG.js",
+        "packages/d3-scale-chromatic/src/diverging/PuOr.js",
+        "packages/d3-scale-chromatic/src/diverging/RdBu.js",
+        "packages/d3-scale-chromatic/src/diverging/RdGy.js",
+        "packages/d3-scale-chromatic/src/diverging/RdYlBu.js",
+        "packages/d3-scale-chromatic/src/diverging/RdYlGn.js",
+        "packages/d3-scale-chromatic/src/diverging/Spectral.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/BuGn.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/BuPu.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/GnBu.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/OrRd.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/PuBuGn.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/PuBu.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/PuRd.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/RdPu.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/YlGnBu.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/YlGn.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/YlOrBr.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/YlOrRd.js",
+        "packages/d3-scale-chromatic/src/sequential-single/Blues.js",
+        "packages/d3-scale-chromatic/src/sequential-single/Greens.js",
+        "packages/d3-scale-chromatic/src/sequential-single/Greys.js",
+        "packages/d3-scale-chromatic/src/sequential-single/Purples.js",
+        "packages/d3-scale-chromatic/src/sequential-single/Reds.js",
+        "packages/d3-scale-chromatic/src/sequential-single/Oranges.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/cividis.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/cubehelix.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/rainbow.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/sinebow.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/turbo.js",
+        "packages/d3-scale-chromatic/src/sequential-multi/viridis.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/categorical/category10.js",
+      "path": "packages/d3-scale-chromatic/src/categorical/category10.js",
+      "name": "packages/d3-scale-chromatic/src/categorical/category10.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/colors.js",
+      "path": "packages/d3-scale-chromatic/src/colors.js",
+      "name": "packages/d3-scale-chromatic/src/colors.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/categorical/Accent.js",
+      "path": "packages/d3-scale-chromatic/src/categorical/Accent.js",
+      "name": "packages/d3-scale-chromatic/src/categorical/Accent.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/categorical/Dark2.js",
+      "path": "packages/d3-scale-chromatic/src/categorical/Dark2.js",
+      "name": "packages/d3-scale-chromatic/src/categorical/Dark2.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/categorical/Paired.js",
+      "path": "packages/d3-scale-chromatic/src/categorical/Paired.js",
+      "name": "packages/d3-scale-chromatic/src/categorical/Paired.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/categorical/Pastel1.js",
+      "path": "packages/d3-scale-chromatic/src/categorical/Pastel1.js",
+      "name": "packages/d3-scale-chromatic/src/categorical/Pastel1.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/categorical/Pastel2.js",
+      "path": "packages/d3-scale-chromatic/src/categorical/Pastel2.js",
+      "name": "packages/d3-scale-chromatic/src/categorical/Pastel2.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/categorical/Set1.js",
+      "path": "packages/d3-scale-chromatic/src/categorical/Set1.js",
+      "name": "packages/d3-scale-chromatic/src/categorical/Set1.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/categorical/Set2.js",
+      "path": "packages/d3-scale-chromatic/src/categorical/Set2.js",
+      "name": "packages/d3-scale-chromatic/src/categorical/Set2.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/categorical/Set3.js",
+      "path": "packages/d3-scale-chromatic/src/categorical/Set3.js",
+      "name": "packages/d3-scale-chromatic/src/categorical/Set3.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/categorical/Tableau10.js",
+      "path": "packages/d3-scale-chromatic/src/categorical/Tableau10.js",
+      "name": "packages/d3-scale-chromatic/src/categorical/Tableau10.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/diverging/BrBG.js",
+      "path": "packages/d3-scale-chromatic/src/diverging/BrBG.js",
+      "name": "packages/d3-scale-chromatic/src/diverging/BrBG.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/ramp.js",
+      "path": "packages/d3-scale-chromatic/src/ramp.js",
+      "name": "packages/d3-scale-chromatic/src/ramp.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/dist/d3-interpolate.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/diverging/PRGn.js",
+      "path": "packages/d3-scale-chromatic/src/diverging/PRGn.js",
+      "name": "packages/d3-scale-chromatic/src/diverging/PRGn.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/diverging/PiYG.js",
+      "path": "packages/d3-scale-chromatic/src/diverging/PiYG.js",
+      "name": "packages/d3-scale-chromatic/src/diverging/PiYG.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/diverging/PuOr.js",
+      "path": "packages/d3-scale-chromatic/src/diverging/PuOr.js",
+      "name": "packages/d3-scale-chromatic/src/diverging/PuOr.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/diverging/RdBu.js",
+      "path": "packages/d3-scale-chromatic/src/diverging/RdBu.js",
+      "name": "packages/d3-scale-chromatic/src/diverging/RdBu.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/diverging/RdGy.js",
+      "path": "packages/d3-scale-chromatic/src/diverging/RdGy.js",
+      "name": "packages/d3-scale-chromatic/src/diverging/RdGy.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/diverging/RdYlBu.js",
+      "path": "packages/d3-scale-chromatic/src/diverging/RdYlBu.js",
+      "name": "packages/d3-scale-chromatic/src/diverging/RdYlBu.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/diverging/RdYlGn.js",
+      "path": "packages/d3-scale-chromatic/src/diverging/RdYlGn.js",
+      "name": "packages/d3-scale-chromatic/src/diverging/RdYlGn.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/diverging/Spectral.js",
+      "path": "packages/d3-scale-chromatic/src/diverging/Spectral.js",
+      "name": "packages/d3-scale-chromatic/src/diverging/Spectral.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/BuGn.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/BuGn.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/BuGn.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/BuPu.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/BuPu.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/BuPu.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/GnBu.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/GnBu.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/GnBu.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/OrRd.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/OrRd.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/OrRd.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/PuBuGn.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/PuBuGn.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/PuBuGn.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/PuBu.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/PuBu.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/PuBu.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/PuRd.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/PuRd.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/PuRd.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/RdPu.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/RdPu.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/RdPu.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/YlGnBu.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/YlGnBu.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/YlGnBu.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/YlGn.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/YlGn.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/YlGn.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/YlOrBr.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/YlOrBr.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/YlOrBr.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/YlOrRd.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/YlOrRd.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/YlOrRd.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-single/Blues.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-single/Blues.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-single/Blues.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-single/Greens.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-single/Greens.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-single/Greens.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-single/Greys.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-single/Greys.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-single/Greys.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-single/Purples.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-single/Purples.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-single/Purples.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-single/Reds.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-single/Reds.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-single/Reds.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-single/Oranges.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-single/Oranges.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-single/Oranges.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js",
+        "packages/d3-scale-chromatic/src/ramp.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/cividis.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/cividis.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/cividis.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/cubehelix.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/cubehelix.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/cubehelix.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/dist/d3-color.js",
+        "packages/d3-interpolate/dist/d3-interpolate.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/rainbow.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/rainbow.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/rainbow.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/dist/d3-color.js",
+        "packages/d3-interpolate/dist/d3-interpolate.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/sinebow.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/sinebow.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/sinebow.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/dist/d3-color.js"
+      ]
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/turbo.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/turbo.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/turbo.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-scale-chromatic/src/sequential-multi/viridis.js",
+      "path": "packages/d3-scale-chromatic/src/sequential-multi/viridis.js",
+      "name": "packages/d3-scale-chromatic/src/sequential-multi/viridis.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-scale-chromatic/src/colors.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/index.js",
+      "path": "packages/d3-selection/src/index.js",
+      "name": "packages/d3-selection/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/create.js",
+        "packages/d3-selection/src/creator.js",
+        "packages/d3-selection/src/local.js",
+        "packages/d3-selection/src/matcher.js",
+        "packages/d3-selection/src/namespace.js",
+        "packages/d3-selection/src/namespaces.js",
+        "packages/d3-selection/src/pointer.js",
+        "packages/d3-selection/src/pointers.js",
+        "packages/d3-selection/src/select.js",
+        "packages/d3-selection/src/selectAll.js",
+        "packages/d3-selection/src/selection/index.js",
+        "packages/d3-selection/src/selector.js",
+        "packages/d3-selection/src/selectorAll.js",
+        "packages/d3-selection/src/selection/style.js",
+        "packages/d3-selection/src/window.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/create.js",
+      "path": "packages/d3-selection/src/create.js",
+      "name": "packages/d3-selection/src/create.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/creator.js",
+        "packages/d3-selection/src/select.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/creator.js",
+      "path": "packages/d3-selection/src/creator.js",
+      "name": "packages/d3-selection/src/creator.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/namespace.js",
+        "packages/d3-selection/src/namespaces.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/namespace.js",
+      "path": "packages/d3-selection/src/namespace.js",
+      "name": "packages/d3-selection/src/namespace.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/namespaces.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/namespaces.js",
+      "path": "packages/d3-selection/src/namespaces.js",
+      "name": "packages/d3-selection/src/namespaces.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/select.js",
+      "path": "packages/d3-selection/src/select.js",
+      "name": "packages/d3-selection/src/select.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/selection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/index.js",
+      "path": "packages/d3-selection/src/selection/index.js",
+      "name": "packages/d3-selection/src/selection/index.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/select.js",
+      "path": "packages/d3-selection/src/selection/select.js",
+      "name": "packages/d3-selection/src/selection/select.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/selection/index.js",
+        "packages/d3-selection/src/selector.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selector.js",
+      "path": "packages/d3-selection/src/selector.js",
+      "name": "packages/d3-selection/src/selector.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/selectAll.js",
+      "path": "packages/d3-selection/src/selection/selectAll.js",
+      "name": "packages/d3-selection/src/selection/selectAll.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/selection/index.js",
+        "packages/d3-selection/src/array.js",
+        "packages/d3-selection/src/selectorAll.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/array.js",
+      "path": "packages/d3-selection/src/array.js",
+      "name": "packages/d3-selection/src/array.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selectorAll.js",
+      "path": "packages/d3-selection/src/selectorAll.js",
+      "name": "packages/d3-selection/src/selectorAll.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/selectChild.js",
+      "path": "packages/d3-selection/src/selection/selectChild.js",
+      "name": "packages/d3-selection/src/selection/selectChild.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/matcher.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/matcher.js",
+      "path": "packages/d3-selection/src/matcher.js",
+      "name": "packages/d3-selection/src/matcher.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/selectChildren.js",
+      "path": "packages/d3-selection/src/selection/selectChildren.js",
+      "name": "packages/d3-selection/src/selection/selectChildren.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/matcher.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/filter.js",
+      "path": "packages/d3-selection/src/selection/filter.js",
+      "name": "packages/d3-selection/src/selection/filter.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/selection/index.js",
+        "packages/d3-selection/src/matcher.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/data.js",
+      "path": "packages/d3-selection/src/selection/data.js",
+      "name": "packages/d3-selection/src/selection/data.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/selection/index.js",
+        "packages/d3-selection/src/selection/enter.js",
+        "packages/d3-selection/src/array.js",
+        "packages/d3-selection/src/constant.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/enter.js",
+      "path": "packages/d3-selection/src/selection/enter.js",
+      "name": "packages/d3-selection/src/selection/enter.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/selection/sparse.js",
+        "packages/d3-selection/src/selection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/sparse.js",
+      "path": "packages/d3-selection/src/selection/sparse.js",
+      "name": "packages/d3-selection/src/selection/sparse.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/constant.js",
+      "path": "packages/d3-selection/src/constant.js",
+      "name": "packages/d3-selection/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/exit.js",
+      "path": "packages/d3-selection/src/selection/exit.js",
+      "name": "packages/d3-selection/src/selection/exit.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/selection/sparse.js",
+        "packages/d3-selection/src/selection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/join.js",
+      "path": "packages/d3-selection/src/selection/join.js",
+      "name": "packages/d3-selection/src/selection/join.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/merge.js",
+      "path": "packages/d3-selection/src/selection/merge.js",
+      "name": "packages/d3-selection/src/selection/merge.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/selection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/order.js",
+      "path": "packages/d3-selection/src/selection/order.js",
+      "name": "packages/d3-selection/src/selection/order.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/sort.js",
+      "path": "packages/d3-selection/src/selection/sort.js",
+      "name": "packages/d3-selection/src/selection/sort.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/selection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/call.js",
+      "path": "packages/d3-selection/src/selection/call.js",
+      "name": "packages/d3-selection/src/selection/call.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/nodes.js",
+      "path": "packages/d3-selection/src/selection/nodes.js",
+      "name": "packages/d3-selection/src/selection/nodes.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/node.js",
+      "path": "packages/d3-selection/src/selection/node.js",
+      "name": "packages/d3-selection/src/selection/node.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/size.js",
+      "path": "packages/d3-selection/src/selection/size.js",
+      "name": "packages/d3-selection/src/selection/size.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/empty.js",
+      "path": "packages/d3-selection/src/selection/empty.js",
+      "name": "packages/d3-selection/src/selection/empty.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/each.js",
+      "path": "packages/d3-selection/src/selection/each.js",
+      "name": "packages/d3-selection/src/selection/each.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/attr.js",
+      "path": "packages/d3-selection/src/selection/attr.js",
+      "name": "packages/d3-selection/src/selection/attr.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/namespace.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/style.js",
+      "path": "packages/d3-selection/src/selection/style.js",
+      "name": "packages/d3-selection/src/selection/style.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/window.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/window.js",
+      "path": "packages/d3-selection/src/window.js",
+      "name": "packages/d3-selection/src/window.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/property.js",
+      "path": "packages/d3-selection/src/selection/property.js",
+      "name": "packages/d3-selection/src/selection/property.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/classed.js",
+      "path": "packages/d3-selection/src/selection/classed.js",
+      "name": "packages/d3-selection/src/selection/classed.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/text.js",
+      "path": "packages/d3-selection/src/selection/text.js",
+      "name": "packages/d3-selection/src/selection/text.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/html.js",
+      "path": "packages/d3-selection/src/selection/html.js",
+      "name": "packages/d3-selection/src/selection/html.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/raise.js",
+      "path": "packages/d3-selection/src/selection/raise.js",
+      "name": "packages/d3-selection/src/selection/raise.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/lower.js",
+      "path": "packages/d3-selection/src/selection/lower.js",
+      "name": "packages/d3-selection/src/selection/lower.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/append.js",
+      "path": "packages/d3-selection/src/selection/append.js",
+      "name": "packages/d3-selection/src/selection/append.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/creator.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/insert.js",
+      "path": "packages/d3-selection/src/selection/insert.js",
+      "name": "packages/d3-selection/src/selection/insert.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/creator.js",
+        "packages/d3-selection/src/selector.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/remove.js",
+      "path": "packages/d3-selection/src/selection/remove.js",
+      "name": "packages/d3-selection/src/selection/remove.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/clone.js",
+      "path": "packages/d3-selection/src/selection/clone.js",
+      "name": "packages/d3-selection/src/selection/clone.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/datum.js",
+      "path": "packages/d3-selection/src/selection/datum.js",
+      "name": "packages/d3-selection/src/selection/datum.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/on.js",
+      "path": "packages/d3-selection/src/selection/on.js",
+      "name": "packages/d3-selection/src/selection/on.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/selection/dispatch.js",
+      "path": "packages/d3-selection/src/selection/dispatch.js",
+      "name": "packages/d3-selection/src/selection/dispatch.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/window.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selection/iterator.js",
+      "path": "packages/d3-selection/src/selection/iterator.js",
+      "name": "packages/d3-selection/src/selection/iterator.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/local.js",
+      "path": "packages/d3-selection/src/local.js",
+      "name": "packages/d3-selection/src/local.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/pointer.js",
+      "path": "packages/d3-selection/src/pointer.js",
+      "name": "packages/d3-selection/src/pointer.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/sourceEvent.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/sourceEvent.js",
+      "path": "packages/d3-selection/src/sourceEvent.js",
+      "name": "packages/d3-selection/src/sourceEvent.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-selection/src/pointers.js",
+      "path": "packages/d3-selection/src/pointers.js",
+      "name": "packages/d3-selection/src/pointers.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/pointer.js",
+        "packages/d3-selection/src/sourceEvent.js"
+      ]
+    },
+    {
+      "id": "packages/d3-selection/src/selectAll.js",
+      "path": "packages/d3-selection/src/selectAll.js",
+      "name": "packages/d3-selection/src/selectAll.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/src/array.js",
+        "packages/d3-selection/src/selection/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/index.js",
+      "path": "packages/d3-shape/src/index.js",
+      "name": "packages/d3-shape/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/arc.js",
+        "packages/d3-shape/src/area.js",
+        "packages/d3-shape/src/line.js",
+        "packages/d3-shape/src/pie.js",
+        "packages/d3-shape/src/areaRadial.js",
+        "packages/d3-shape/src/lineRadial.js",
+        "packages/d3-shape/src/pointRadial.js",
+        "packages/d3-shape/src/link/index.js",
+        "packages/d3-shape/src/symbol.js",
+        "packages/d3-shape/src/symbol/circle.js",
+        "packages/d3-shape/src/symbol/cross.js",
+        "packages/d3-shape/src/symbol/diamond.js",
+        "packages/d3-shape/src/symbol/square.js",
+        "packages/d3-shape/src/symbol/star.js",
+        "packages/d3-shape/src/symbol/triangle.js",
+        "packages/d3-shape/src/symbol/wye.js",
+        "packages/d3-shape/src/curve/basisClosed.js",
+        "packages/d3-shape/src/curve/basisOpen.js",
+        "packages/d3-shape/src/curve/basis.js",
+        "packages/d3-shape/src/curve/bundle.js",
+        "packages/d3-shape/src/curve/cardinalClosed.js",
+        "packages/d3-shape/src/curve/cardinalOpen.js",
+        "packages/d3-shape/src/curve/cardinal.js",
+        "packages/d3-shape/src/curve/catmullRomClosed.js",
+        "packages/d3-shape/src/curve/catmullRomOpen.js",
+        "packages/d3-shape/src/curve/catmullRom.js",
+        "packages/d3-shape/src/curve/linearClosed.js",
+        "packages/d3-shape/src/curve/linear.js",
+        "packages/d3-shape/src/curve/monotone.js",
+        "packages/d3-shape/src/curve/natural.js",
+        "packages/d3-shape/src/curve/step.js",
+        "packages/d3-shape/src/stack.js",
+        "packages/d3-shape/src/offset/expand.js",
+        "packages/d3-shape/src/offset/diverging.js",
+        "packages/d3-shape/src/offset/none.js",
+        "packages/d3-shape/src/offset/silhouette.js",
+        "packages/d3-shape/src/offset/wiggle.js",
+        "packages/d3-shape/src/order/appearance.js",
+        "packages/d3-shape/src/order/ascending.js",
+        "packages/d3-shape/src/order/descending.js",
+        "packages/d3-shape/src/order/insideOut.js",
+        "packages/d3-shape/src/order/none.js",
+        "packages/d3-shape/src/order/reverse.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/arc.js",
+      "path": "packages/d3-shape/src/arc.js",
+      "name": "packages/d3-shape/src/arc.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-path/dist/d3-path.js",
+        "packages/d3-shape/src/constant.js",
+        "packages/d3-shape/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/constant.js",
+      "path": "packages/d3-shape/src/constant.js",
+      "name": "packages/d3-shape/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/math.js",
+      "path": "packages/d3-shape/src/math.js",
+      "name": "packages/d3-shape/src/math.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/area.js",
+      "path": "packages/d3-shape/src/area.js",
+      "name": "packages/d3-shape/src/area.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-path/dist/d3-path.js",
+        "packages/d3-shape/src/array.js",
+        "packages/d3-shape/src/constant.js",
+        "packages/d3-shape/src/curve/linear.js",
+        "packages/d3-shape/src/line.js",
+        "packages/d3-shape/src/point.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/array.js",
+      "path": "packages/d3-shape/src/array.js",
+      "name": "packages/d3-shape/src/array.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/curve/linear.js",
+      "path": "packages/d3-shape/src/curve/linear.js",
+      "name": "packages/d3-shape/src/curve/linear.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/line.js",
+      "path": "packages/d3-shape/src/line.js",
+      "name": "packages/d3-shape/src/line.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-path/dist/d3-path.js",
+        "packages/d3-shape/src/array.js",
+        "packages/d3-shape/src/constant.js",
+        "packages/d3-shape/src/curve/linear.js",
+        "packages/d3-shape/src/point.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/point.js",
+      "path": "packages/d3-shape/src/point.js",
+      "name": "packages/d3-shape/src/point.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/pie.js",
+      "path": "packages/d3-shape/src/pie.js",
+      "name": "packages/d3-shape/src/pie.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/array.js",
+        "packages/d3-shape/src/constant.js",
+        "packages/d3-shape/src/descending.js",
+        "packages/d3-shape/src/identity.js",
+        "packages/d3-shape/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/descending.js",
+      "path": "packages/d3-shape/src/descending.js",
+      "name": "packages/d3-shape/src/descending.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/identity.js",
+      "path": "packages/d3-shape/src/identity.js",
+      "name": "packages/d3-shape/src/identity.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/areaRadial.js",
+      "path": "packages/d3-shape/src/areaRadial.js",
+      "name": "packages/d3-shape/src/areaRadial.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/curve/radial.js",
+        "packages/d3-shape/src/area.js",
+        "packages/d3-shape/src/lineRadial.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/curve/radial.js",
+      "path": "packages/d3-shape/src/curve/radial.js",
+      "name": "packages/d3-shape/src/curve/radial.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/curve/linear.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/lineRadial.js",
+      "path": "packages/d3-shape/src/lineRadial.js",
+      "name": "packages/d3-shape/src/lineRadial.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/curve/radial.js",
+        "packages/d3-shape/src/line.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/pointRadial.js",
+      "path": "packages/d3-shape/src/pointRadial.js",
+      "name": "packages/d3-shape/src/pointRadial.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/link/index.js",
+      "path": "packages/d3-shape/src/link/index.js",
+      "name": "packages/d3-shape/src/link/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-path/dist/d3-path.js",
+        "packages/d3-shape/src/array.js",
+        "packages/d3-shape/src/constant.js",
+        "packages/d3-shape/src/point.js",
+        "packages/d3-shape/src/pointRadial.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/symbol.js",
+      "path": "packages/d3-shape/src/symbol.js",
+      "name": "packages/d3-shape/src/symbol.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-path/dist/d3-path.js",
+        "packages/d3-shape/src/symbol/circle.js",
+        "packages/d3-shape/src/symbol/cross.js",
+        "packages/d3-shape/src/symbol/diamond.js",
+        "packages/d3-shape/src/symbol/star.js",
+        "packages/d3-shape/src/symbol/square.js",
+        "packages/d3-shape/src/symbol/triangle.js",
+        "packages/d3-shape/src/symbol/wye.js",
+        "packages/d3-shape/src/constant.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/symbol/circle.js",
+      "path": "packages/d3-shape/src/symbol/circle.js",
+      "name": "packages/d3-shape/src/symbol/circle.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/symbol/cross.js",
+      "path": "packages/d3-shape/src/symbol/cross.js",
+      "name": "packages/d3-shape/src/symbol/cross.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/symbol/diamond.js",
+      "path": "packages/d3-shape/src/symbol/diamond.js",
+      "name": "packages/d3-shape/src/symbol/diamond.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/symbol/star.js",
+      "path": "packages/d3-shape/src/symbol/star.js",
+      "name": "packages/d3-shape/src/symbol/star.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/math.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/symbol/square.js",
+      "path": "packages/d3-shape/src/symbol/square.js",
+      "name": "packages/d3-shape/src/symbol/square.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/symbol/triangle.js",
+      "path": "packages/d3-shape/src/symbol/triangle.js",
+      "name": "packages/d3-shape/src/symbol/triangle.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/symbol/wye.js",
+      "path": "packages/d3-shape/src/symbol/wye.js",
+      "name": "packages/d3-shape/src/symbol/wye.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/curve/basisClosed.js",
+      "path": "packages/d3-shape/src/curve/basisClosed.js",
+      "name": "packages/d3-shape/src/curve/basisClosed.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/noop.js",
+        "packages/d3-shape/src/curve/basis.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/noop.js",
+      "path": "packages/d3-shape/src/noop.js",
+      "name": "packages/d3-shape/src/noop.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/curve/basis.js",
+      "path": "packages/d3-shape/src/curve/basis.js",
+      "name": "packages/d3-shape/src/curve/basis.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/curve/basisOpen.js",
+      "path": "packages/d3-shape/src/curve/basisOpen.js",
+      "name": "packages/d3-shape/src/curve/basisOpen.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/curve/basis.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/curve/bundle.js",
+      "path": "packages/d3-shape/src/curve/bundle.js",
+      "name": "packages/d3-shape/src/curve/bundle.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/curve/basis.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/curve/cardinalClosed.js",
+      "path": "packages/d3-shape/src/curve/cardinalClosed.js",
+      "name": "packages/d3-shape/src/curve/cardinalClosed.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/noop.js",
+        "packages/d3-shape/src/curve/cardinal.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/curve/cardinal.js",
+      "path": "packages/d3-shape/src/curve/cardinal.js",
+      "name": "packages/d3-shape/src/curve/cardinal.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/curve/cardinalOpen.js",
+      "path": "packages/d3-shape/src/curve/cardinalOpen.js",
+      "name": "packages/d3-shape/src/curve/cardinalOpen.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/curve/cardinal.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/curve/catmullRomClosed.js",
+      "path": "packages/d3-shape/src/curve/catmullRomClosed.js",
+      "name": "packages/d3-shape/src/curve/catmullRomClosed.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/curve/cardinalClosed.js",
+        "packages/d3-shape/src/noop.js",
+        "packages/d3-shape/src/curve/catmullRom.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/curve/catmullRom.js",
+      "path": "packages/d3-shape/src/curve/catmullRom.js",
+      "name": "packages/d3-shape/src/curve/catmullRom.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/math.js",
+        "packages/d3-shape/src/curve/cardinal.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/curve/catmullRomOpen.js",
+      "path": "packages/d3-shape/src/curve/catmullRomOpen.js",
+      "name": "packages/d3-shape/src/curve/catmullRomOpen.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/curve/cardinalOpen.js",
+        "packages/d3-shape/src/curve/catmullRom.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/curve/linearClosed.js",
+      "path": "packages/d3-shape/src/curve/linearClosed.js",
+      "name": "packages/d3-shape/src/curve/linearClosed.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/noop.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/curve/monotone.js",
+      "path": "packages/d3-shape/src/curve/monotone.js",
+      "name": "packages/d3-shape/src/curve/monotone.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/curve/natural.js",
+      "path": "packages/d3-shape/src/curve/natural.js",
+      "name": "packages/d3-shape/src/curve/natural.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/curve/step.js",
+      "path": "packages/d3-shape/src/curve/step.js",
+      "name": "packages/d3-shape/src/curve/step.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/stack.js",
+      "path": "packages/d3-shape/src/stack.js",
+      "name": "packages/d3-shape/src/stack.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/array.js",
+        "packages/d3-shape/src/constant.js",
+        "packages/d3-shape/src/offset/none.js",
+        "packages/d3-shape/src/order/none.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/offset/none.js",
+      "path": "packages/d3-shape/src/offset/none.js",
+      "name": "packages/d3-shape/src/offset/none.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/order/none.js",
+      "path": "packages/d3-shape/src/order/none.js",
+      "name": "packages/d3-shape/src/order/none.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/offset/expand.js",
+      "path": "packages/d3-shape/src/offset/expand.js",
+      "name": "packages/d3-shape/src/offset/expand.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/offset/none.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/offset/diverging.js",
+      "path": "packages/d3-shape/src/offset/diverging.js",
+      "name": "packages/d3-shape/src/offset/diverging.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-shape/src/offset/silhouette.js",
+      "path": "packages/d3-shape/src/offset/silhouette.js",
+      "name": "packages/d3-shape/src/offset/silhouette.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/offset/none.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/offset/wiggle.js",
+      "path": "packages/d3-shape/src/offset/wiggle.js",
+      "name": "packages/d3-shape/src/offset/wiggle.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/offset/none.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/order/appearance.js",
+      "path": "packages/d3-shape/src/order/appearance.js",
+      "name": "packages/d3-shape/src/order/appearance.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/order/none.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/order/ascending.js",
+      "path": "packages/d3-shape/src/order/ascending.js",
+      "name": "packages/d3-shape/src/order/ascending.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/order/none.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/order/descending.js",
+      "path": "packages/d3-shape/src/order/descending.js",
+      "name": "packages/d3-shape/src/order/descending.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/order/ascending.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/order/insideOut.js",
+      "path": "packages/d3-shape/src/order/insideOut.js",
+      "name": "packages/d3-shape/src/order/insideOut.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/order/appearance.js",
+        "packages/d3-shape/src/order/ascending.js"
+      ]
+    },
+    {
+      "id": "packages/d3-shape/src/order/reverse.js",
+      "path": "packages/d3-shape/src/order/reverse.js",
+      "name": "packages/d3-shape/src/order/reverse.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-shape/src/order/none.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/index.js",
+      "path": "packages/d3-time/src/index.js",
+      "name": "packages/d3-time/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js",
+        "packages/d3-time/src/millisecond.js",
+        "packages/d3-time/src/second.js",
+        "packages/d3-time/src/minute.js",
+        "packages/d3-time/src/hour.js",
+        "packages/d3-time/src/day.js",
+        "packages/d3-time/src/week.js",
+        "packages/d3-time/src/month.js",
+        "packages/d3-time/src/year.js",
+        "packages/d3-time/src/utcMinute.js",
+        "packages/d3-time/src/utcHour.js",
+        "packages/d3-time/src/utcDay.js",
+        "packages/d3-time/src/utcWeek.js",
+        "packages/d3-time/src/utcMonth.js",
+        "packages/d3-time/src/utcYear.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/interval.js",
+      "path": "packages/d3-time/src/interval.js",
+      "name": "packages/d3-time/src/interval.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-time/src/millisecond.js",
+      "path": "packages/d3-time/src/millisecond.js",
+      "name": "packages/d3-time/src/millisecond.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/second.js",
+      "path": "packages/d3-time/src/second.js",
+      "name": "packages/d3-time/src/second.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js",
+        "packages/d3-time/src/duration.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/duration.js",
+      "path": "packages/d3-time/src/duration.js",
+      "name": "packages/d3-time/src/duration.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-time/src/minute.js",
+      "path": "packages/d3-time/src/minute.js",
+      "name": "packages/d3-time/src/minute.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js",
+        "packages/d3-time/src/duration.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/hour.js",
+      "path": "packages/d3-time/src/hour.js",
+      "name": "packages/d3-time/src/hour.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js",
+        "packages/d3-time/src/duration.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/day.js",
+      "path": "packages/d3-time/src/day.js",
+      "name": "packages/d3-time/src/day.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js",
+        "packages/d3-time/src/duration.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/week.js",
+      "path": "packages/d3-time/src/week.js",
+      "name": "packages/d3-time/src/week.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js",
+        "packages/d3-time/src/duration.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/month.js",
+      "path": "packages/d3-time/src/month.js",
+      "name": "packages/d3-time/src/month.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/year.js",
+      "path": "packages/d3-time/src/year.js",
+      "name": "packages/d3-time/src/year.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/utcMinute.js",
+      "path": "packages/d3-time/src/utcMinute.js",
+      "name": "packages/d3-time/src/utcMinute.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js",
+        "packages/d3-time/src/duration.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/utcHour.js",
+      "path": "packages/d3-time/src/utcHour.js",
+      "name": "packages/d3-time/src/utcHour.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js",
+        "packages/d3-time/src/duration.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/utcDay.js",
+      "path": "packages/d3-time/src/utcDay.js",
+      "name": "packages/d3-time/src/utcDay.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js",
+        "packages/d3-time/src/duration.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/utcWeek.js",
+      "path": "packages/d3-time/src/utcWeek.js",
+      "name": "packages/d3-time/src/utcWeek.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js",
+        "packages/d3-time/src/duration.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/utcMonth.js",
+      "path": "packages/d3-time/src/utcMonth.js",
+      "name": "packages/d3-time/src/utcMonth.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time/src/utcYear.js",
+      "path": "packages/d3-time/src/utcYear.js",
+      "name": "packages/d3-time/src/utcYear.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/src/interval.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time-format/src/index.js",
+      "path": "packages/d3-time-format/src/index.js",
+      "name": "packages/d3-time-format/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time-format/src/defaultLocale.js",
+        "packages/d3-time-format/src/locale.js",
+        "packages/d3-time-format/src/isoFormat.js",
+        "packages/d3-time-format/src/isoParse.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time-format/src/defaultLocale.js",
+      "path": "packages/d3-time-format/src/defaultLocale.js",
+      "name": "packages/d3-time-format/src/defaultLocale.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time-format/src/locale.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time-format/src/locale.js",
+      "path": "packages/d3-time-format/src/locale.js",
+      "name": "packages/d3-time-format/src/locale.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time/dist/d3-time.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time-format/src/isoFormat.js",
+      "path": "packages/d3-time-format/src/isoFormat.js",
+      "name": "packages/d3-time-format/src/isoFormat.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time-format/src/defaultLocale.js"
+      ]
+    },
+    {
+      "id": "packages/d3-time-format/src/isoParse.js",
+      "path": "packages/d3-time-format/src/isoParse.js",
+      "name": "packages/d3-time-format/src/isoParse.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-time-format/src/isoFormat.js",
+        "packages/d3-time-format/src/defaultLocale.js"
+      ]
+    },
+    {
+      "id": "packages/d3-timer/src/index.js",
+      "path": "packages/d3-timer/src/index.js",
+      "name": "packages/d3-timer/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-timer/src/timer.js",
+        "packages/d3-timer/src/timeout.js",
+        "packages/d3-timer/src/interval.js"
+      ]
+    },
+    {
+      "id": "packages/d3-timer/src/timer.js",
+      "path": "packages/d3-timer/src/timer.js",
+      "name": "packages/d3-timer/src/timer.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-timer/src/timeout.js",
+      "path": "packages/d3-timer/src/timeout.js",
+      "name": "packages/d3-timer/src/timeout.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-timer/src/timer.js"
+      ]
+    },
+    {
+      "id": "packages/d3-timer/src/interval.js",
+      "path": "packages/d3-timer/src/interval.js",
+      "name": "packages/d3-timer/src/interval.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-timer/src/timer.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/index.js",
+      "path": "packages/d3-transition/src/index.js",
+      "name": "packages/d3-transition/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/selection/index.js",
+        "packages/d3-transition/src/transition/index.js",
+        "packages/d3-transition/src/active.js",
+        "packages/d3-transition/src/interrupt.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/selection/index.js",
+      "path": "packages/d3-transition/src/selection/index.js",
+      "name": "packages/d3-transition/src/selection/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-transition/src/selection/interrupt.js",
+        "packages/d3-transition/src/selection/transition.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/selection/interrupt.js",
+      "path": "packages/d3-transition/src/selection/interrupt.js",
+      "name": "packages/d3-transition/src/selection/interrupt.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/interrupt.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/interrupt.js",
+      "path": "packages/d3-transition/src/interrupt.js",
+      "name": "packages/d3-transition/src/interrupt.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/schedule.js",
+      "path": "packages/d3-transition/src/transition/schedule.js",
+      "name": "packages/d3-transition/src/transition/schedule.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dispatch/dist/d3-dispatch.js",
+        "packages/d3-timer/dist/d3-timer.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/selection/transition.js",
+      "path": "packages/d3-transition/src/selection/transition.js",
+      "name": "packages/d3-transition/src/selection/transition.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/index.js",
+        "packages/d3-transition/src/transition/schedule.js",
+        "packages/d3-ease/dist/d3-ease.js",
+        "packages/d3-timer/dist/d3-timer.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/index.js",
+      "path": "packages/d3-transition/src/transition/index.js",
+      "name": "packages/d3-transition/src/transition/index.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-transition/src/transition/attr.js",
+      "path": "packages/d3-transition/src/transition/attr.js",
+      "name": "packages/d3-transition/src/transition/attr.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-transition/src/transition/tween.js",
+        "packages/d3-transition/src/transition/interpolate.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/tween.js",
+      "path": "packages/d3-transition/src/transition/tween.js",
+      "name": "packages/d3-transition/src/transition/tween.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/interpolate.js",
+      "path": "packages/d3-transition/src/transition/interpolate.js",
+      "name": "packages/d3-transition/src/transition/interpolate.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-color/dist/d3-color.js",
+        "packages/d3-interpolate/dist/d3-interpolate.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/attrTween.js",
+      "path": "packages/d3-transition/src/transition/attrTween.js",
+      "name": "packages/d3-transition/src/transition/attrTween.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/dist/d3-selection.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/delay.js",
+      "path": "packages/d3-transition/src/transition/delay.js",
+      "name": "packages/d3-transition/src/transition/delay.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/duration.js",
+      "path": "packages/d3-transition/src/transition/duration.js",
+      "name": "packages/d3-transition/src/transition/duration.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/ease.js",
+      "path": "packages/d3-transition/src/transition/ease.js",
+      "name": "packages/d3-transition/src/transition/ease.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/easeVarying.js",
+      "path": "packages/d3-transition/src/transition/easeVarying.js",
+      "name": "packages/d3-transition/src/transition/easeVarying.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/filter.js",
+      "path": "packages/d3-transition/src/transition/filter.js",
+      "name": "packages/d3-transition/src/transition/filter.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-transition/src/transition/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/merge.js",
+      "path": "packages/d3-transition/src/transition/merge.js",
+      "name": "packages/d3-transition/src/transition/merge.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/index.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/on.js",
+      "path": "packages/d3-transition/src/transition/on.js",
+      "name": "packages/d3-transition/src/transition/on.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/remove.js",
+      "path": "packages/d3-transition/src/transition/remove.js",
+      "name": "packages/d3-transition/src/transition/remove.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-transition/src/transition/select.js",
+      "path": "packages/d3-transition/src/transition/select.js",
+      "name": "packages/d3-transition/src/transition/select.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-transition/src/transition/index.js",
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/selectAll.js",
+      "path": "packages/d3-transition/src/transition/selectAll.js",
+      "name": "packages/d3-transition/src/transition/selectAll.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-transition/src/transition/index.js",
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/selection.js",
+      "path": "packages/d3-transition/src/transition/selection.js",
+      "name": "packages/d3-transition/src/transition/selection.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-selection/dist/d3-selection.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/style.js",
+      "path": "packages/d3-transition/src/transition/style.js",
+      "name": "packages/d3-transition/src/transition/style.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-transition/src/transition/schedule.js",
+        "packages/d3-transition/src/transition/tween.js",
+        "packages/d3-transition/src/transition/interpolate.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/styleTween.js",
+      "path": "packages/d3-transition/src/transition/styleTween.js",
+      "name": "packages/d3-transition/src/transition/styleTween.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-transition/src/transition/text.js",
+      "path": "packages/d3-transition/src/transition/text.js",
+      "name": "packages/d3-transition/src/transition/text.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/tween.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/textTween.js",
+      "path": "packages/d3-transition/src/transition/textTween.js",
+      "name": "packages/d3-transition/src/transition/textTween.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-transition/src/transition/transition.js",
+      "path": "packages/d3-transition/src/transition/transition.js",
+      "name": "packages/d3-transition/src/transition/transition.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/index.js",
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/transition/end.js",
+      "path": "packages/d3-transition/src/transition/end.js",
+      "name": "packages/d3-transition/src/transition/end.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-transition/src/active.js",
+      "path": "packages/d3-transition/src/active.js",
+      "name": "packages/d3-transition/src/active.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-transition/src/transition/index.js",
+        "packages/d3-transition/src/transition/schedule.js"
+      ]
+    },
+    {
+      "id": "packages/d3-zoom/src/index.js",
+      "path": "packages/d3-zoom/src/index.js",
+      "name": "packages/d3-zoom/src/index.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-zoom/src/zoom.js",
+        "packages/d3-zoom/src/transform.js"
+      ]
+    },
+    {
+      "id": "packages/d3-zoom/src/zoom.js",
+      "path": "packages/d3-zoom/src/zoom.js",
+      "name": "packages/d3-zoom/src/zoom.js",
+      "labels": [],
+      "dependsOn": [
+        "packages/d3-dispatch/dist/d3-dispatch.js",
+        "packages/d3-drag/dist/d3-drag.js",
+        "packages/d3-interpolate/dist/d3-interpolate.js",
+        "packages/d3-selection/dist/d3-selection.js",
+        "packages/d3-transition/dist/d3-transition.js",
+        "packages/d3-zoom/src/constant.js",
+        "packages/d3-zoom/src/event.js",
+        "packages/d3-zoom/src/transform.js",
+        "packages/d3-zoom/src/noevent.js"
+      ]
+    },
+    {
+      "id": "packages/d3-zoom/src/constant.js",
+      "path": "packages/d3-zoom/src/constant.js",
+      "name": "packages/d3-zoom/src/constant.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-zoom/src/event.js",
+      "path": "packages/d3-zoom/src/event.js",
+      "name": "packages/d3-zoom/src/event.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-zoom/src/transform.js",
+      "path": "packages/d3-zoom/src/transform.js",
+      "name": "packages/d3-zoom/src/transform.js",
+      "labels": [],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/d3-zoom/src/noevent.js",
+      "path": "packages/d3-zoom/src/noevent.js",
+      "name": "packages/d3-zoom/src/noevent.js",
+      "labels": [],
+      "dependsOn": []
+    }
+  ],
+  "meta": {
+    "analyzer": {
+      "name": "analyzer-js",
+      "version": "0.1.0"
+    },
+    "repository": {
+      "url": "https://github.com/d3/d3.git"
+    },
+    "createdAt": "2020-12-05T19:08:38.607Z"
+  }
+}
