@@ -33,6 +33,7 @@
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
     "react-force-graph": "^1.37.1",
+    "react-force-graph-3d": "^1.18.8",
     "react-helmet": "^6.1.0",
     "react-hotkeys": "^2.0.0",
     "react-intersection-list": "^0.0.3",

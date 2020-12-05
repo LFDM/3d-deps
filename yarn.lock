@@ -10497,6 +10497,15 @@ react-feather@^2.0.9:
   dependencies:
     prop-types "^15.7.2"
 
+react-force-graph-3d@^1.18.8:
+  version "1.18.8"
+  resolved "https://registry.yarnpkg.com/react-force-graph-3d/-/react-force-graph-3d-1.18.8.tgz#72124985051febefde2fb622bd6d5122303f59af"
+  integrity sha512-ZNip2B99qsdpec9DRfBufe6UCJCaGK1BmAMReEvRRjwXNdugGqh74m3uHYmaVxBMjEgEKFY8qZ3gqoPIeTQ44w==
+  dependencies:
+    "3d-force-graph" "^1.67.0"
+    prop-types "^15.7.2"
+    react-kapsule "^2.2.1"
+
 react-force-graph@^1.37.1:
   version "1.37.1"
   resolved "https://registry.yarnpkg.com/react-force-graph/-/react-force-graph-1.37.1.tgz#79f74bb36a4d3f854a0eb8451ba1549d9002da1a"
