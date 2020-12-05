@@ -331,6 +331,7 @@ export const Graph = () => {
       backgroundColor={theme.typography.backgroundColor}
       nodeId="id"
       nodeVal={(node: any) => styles.nodes[node.id]?.size || 1}
+      nodeRelSize={4}
       nodeColor={(node: any) =>
         styles.nodes[node.id]?.color || theme.graph.nodes.colors.standard
       }
