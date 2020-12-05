@@ -1,5 +1,6 @@
 import { RunConfig } from "@3d-deps/core";
 import { THREE_D_DEPS } from "./gallery/3d-deps";
+import { D3 } from "./gallery/d3";
 import { EMOTION } from "./gallery/emotion";
 import { FIREBASE_JS_SDK } from "./gallery/firebase-js-sdk";
 // import { FIREBASE_TOOLS } from "./gallery/firebase-tools";
@@ -16,6 +17,7 @@ export const getConfig = (): RunConfig => {
     version: 1,
     loadDatasets: async () => [
       THREE_D_DEPS,
+      D3,
       EMOTION,
       FIREBASE_JS_SDK,
       LUXON,
