@@ -48,6 +48,10 @@ export type JsAnalyzerConfig = {
   };
   workspaces?: {
     unhoist?: boolean;
+    virtual?: {
+      packageName: string;
+      mountPoint: string;
+    }[];
   };
 };
 
@@ -151,10 +155,18 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     );
 
     const allPkgInfos = [rootPkgInfo, ...wsPkgInfos];
+    const packageNodeModulePaths = [
+      ...allPkgInfos.map((p) => p.nodeModulePath).filter(Boolean),
+    ];
 
     const tree = await Promise.all(
       allPkgInfos.map((pkgInfo) =>
-        getDependencies(pkgInfo, { resolution }, this.caches, allPkgInfos)
+        getDependencies(
+          pkgInfo,
+          { resolution },
+          this.caches,
+          packageNodeModulePaths
+        )
       )
     ).then(mergeTrees);
 

@@ -82,11 +82,8 @@ export const getDependencies = async (
     visited: VisitedCache;
     unresolvableModules: { entry: string; fs: string[] }[];
   },
-  otherPackages: PackageInfo[]
+  packageNodeModulePaths: string[]
 ) => {
-  const packageNodeModulePaths = otherPackages
-    .map((p) => p.nodeModulePath)
-    .filter(Boolean);
   const tree = mergeTrees(
     pkgInfo.mappedEntries.map((e) =>
       parseEntry(e.abs, pkgInfo, options, caches, packageNodeModulePaths)
