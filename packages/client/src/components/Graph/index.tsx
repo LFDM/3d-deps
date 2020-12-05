@@ -153,6 +153,13 @@ const useData = (g: GraphData): Data => {
   }, [g]);
 };
 
+const getNodeSize = (t: TreeNode) => {
+  const links =
+    (t.dependsOn.countWithoutExcluded || 0) +
+    (t.dependedBy.countWithoutExcluded || 0);
+  return Math.max(0.2, links / 4);
+};
+
 export const Graph = () => {
   const [
     {
@@ -172,6 +179,12 @@ export const Graph = () => {
       nodes: {},
       links: {},
     };
+    data.list.forEach((t) => {
+      addNodeStyle(ss, t.id, {
+        size: getNodeSize(t),
+      });
+    });
+
     const nodeColors = theme.graph.nodes.colors;
     const linkColors = theme.graph.links.colors;
     const emptyContainer = () => ({ nodes: {}, links: {} });
@@ -265,7 +278,7 @@ export const Graph = () => {
       // have colored it already.
       addNodeStyle(ss, selectedNodeId, {
         color: nodeColors.selected,
-        size: 5,
+        size: Math.max(ss.nodes[selectedNodeId]?.size || 0, 5),
         label: true,
       });
       return ss;
@@ -287,14 +300,6 @@ export const Graph = () => {
           });
         }
       }
-
-      // TODO makes this the default behaviour, also in selected mode
-      const size =
-        (t.dependsOn.countWithoutExcluded || 0) +
-        (t.dependedBy.countWithoutExcluded || 0);
-      addNodeStyle(ss, t.id, {
-        size: Math.max(0.2, size / 4),
-      });
     });
 
     const topNodes = sortBy(
