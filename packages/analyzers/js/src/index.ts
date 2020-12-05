@@ -10,7 +10,6 @@ import { postProcess, PostProcessorLabeller } from "./postProcessor";
 import {
   preProcess,
   PreProcessorCleanupNodeModuleNames,
-  PreProcessorDebug,
   PreProcessorHoistNodeModules,
   PreProcessorLinkWorkspaces,
   PreProcessorRelativePaths,
@@ -163,29 +162,8 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       preProcess(
         [
           PreProcessorRelativePaths(rootDir),
-          PreProcessorDebug({
-            onParent: (p) => {
-              if (p.includes("unstable_mock")) {
-                console.log("rel", p);
-              }
-            },
-          }),
           PreProcessorHoistNodeModules(),
-          PreProcessorDebug({
-            onParent: (p) => {
-              if (p.includes("unstable_mock")) {
-                console.log("hoist", p);
-              }
-            },
-          }),
           PreProcessorLinkWorkspaces(wsPkgInfos),
-          PreProcessorDebug({
-            onParent: (p) => {
-              if (p.includes("unstable_mock")) {
-                console.log("link", p);
-              }
-            },
-          }),
           PreProcessorCleanupNodeModuleNames(),
           PreProcessorResolveMappedEntryFiles(wsPkgInfos),
         ],
