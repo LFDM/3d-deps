@@ -105,19 +105,21 @@ export const PreProcessorLinkWorkspaces = (
   });
   const modNames = Object.keys(wsByModName);
 
-  return {
-    onParent: (k) => k,
-    onChild: (v) => {
-      if (v.startsWith("node_modules")) {
-        for (const modName of modNames) {
-          if (v.startsWith(modName)) {
-            const entry = wsByModName[modName];
-            return v.replace(modName, entry);
-          }
+  const process = (x: string) => {
+    if (x.startsWith("node_modules")) {
+      for (const modName of modNames) {
+        if (x.startsWith(modName)) {
+          const entry = wsByModName[modName];
+          return x.replace(modName, entry);
         }
       }
-      return v;
-    },
+    }
+    return x;
+  };
+
+  return {
+    onParent: process,
+    onChild: process,
   };
 };
 
