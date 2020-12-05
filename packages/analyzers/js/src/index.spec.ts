@@ -165,7 +165,7 @@ describe("analyzer-js", () => {
       ];
       const deps = await a.analyze();
 
-      expect(deps).toEqual(expected);
+      expect(deps.nodes).toEqual(expected);
     });
   });
 });
