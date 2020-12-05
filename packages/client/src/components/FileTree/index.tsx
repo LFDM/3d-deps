@@ -80,15 +80,15 @@ const Title = styled("span")`
 `;
 
 const Content = styled("div")`
-  margin-left: 6px;
-  padding: 0px 0px 0px 14px;
+  margin-left: 0.3em;
+  padding: 0px 0px 0px 8px;
   border-left: 1px dashed rgba(255, 255, 255, 0.4);
   overflow: hidden;
 `;
 
 const toggle: React.CSSProperties = {
-  width: "1em",
-  height: "1em",
+  width: "0.85em",
+  height: "0.85em",
   marginRight: 10,
   cursor: "pointer",
   verticalAlign: "middle",
