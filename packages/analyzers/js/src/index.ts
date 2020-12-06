@@ -238,6 +238,8 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       ...allPkgInfos.map((p) => p.locationInNodeModules?.abs),
     ]);
 
+    console.error("Traversing...");
+
     const tree = await Promise.all(
       allPkgInfos.map((pkgInfo) =>
         getDependencies(
@@ -259,7 +261,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
           p.mountLocation.rel;
       });
 
-    console.log(tree);
+    console.error("Preprocess tree...");
 
     const preprocessed = mapTreeToNodes(
       preProcess(
@@ -273,6 +275,9 @@ export class JsAnalyzer implements IDependencyAnalyzer {
         tree
       )
     );
+
+    console.error("Postprocess nodes...");
+
     const nodes = postProcess(
       [PostProcessorLabeller(wsPkgInfos)],
       preprocessed
