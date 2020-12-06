@@ -22,6 +22,7 @@ const generate = async () => {
           },
         ],
         configs: {},
+        cleanupPath: (p, pkg) => (p === pkg.main ? pkg.module || p : p),
       };
     },
     workspaces: {
