@@ -73,5 +73,5 @@ export type PackageInfo = {
     rel: string;
   };
 
-  cleanupPath?: (p: string) => string;
+  cleanupPath?: (p: string, pkg: PackageJson) => string;
 };

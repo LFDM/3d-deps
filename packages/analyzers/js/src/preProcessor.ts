@@ -134,7 +134,7 @@ export const PreProcessorCleanupPaths = (
 
   const mapFn = (t: string) => {
     const x = cleanupFns.find((fn) => t.startsWith(fn.matchPath));
-    return x ? x.fn(t) : t;
+    return x ? x.fn(t, x.pkg) : t;
   };
   return {
     onParent: mapFn,
