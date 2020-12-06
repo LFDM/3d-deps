@@ -20,7 +20,8 @@ export const PostProcessorLabeller = (
   const sortedWorkspacesWithMainEntries = [...workspaces]
     .sort((a, b) => b.locationOfSrc.rel.length - a.locationOfSrc.rel.length)
     .map((ws) => ({
-      ws,
+      mountPoint: ws.mountLocation.rel + "/",
+      name: ws.pkg.name,
       mainEntriesRel: ws.mappedEntries
         .filter((e) => e.type === "main" || "browser")
         .map((e) => e.rel),
@@ -32,8 +33,8 @@ export const PostProcessorLabeller = (
         n.labels.push("node_module");
       }
       for (const t of sortedWorkspacesWithMainEntries) {
-        if (n.path.startsWith(t.ws.mountLocation.rel)) {
-          n.labels.push(`pkg:${t.ws.pkg.name}`);
+        if (n.path.startsWith(t.mountPoint)) {
+          n.labels.push(`pkg:${t.name}`);
 
           if (t.mainEntriesRel.includes(n.path)) {
             n.labels.push("pkg_entry");
