@@ -130,7 +130,7 @@ const collectPackageInfo = async (
         type: fullE.type,
       };
     }),
-    configs: config.configs,
+    configs: config.configs || {},
     // the root package might not have a name!
     locationInNodeModules: {
       abs: pkg.name ? path.join(rootDir, "node_modules", pkg.name) : "",
@@ -166,7 +166,7 @@ const collectVirtualPackageInfo = async (
         type: fullE.type,
       };
     }),
-    configs: config.configs,
+    configs: config.configs || {},
     locationInNodeModules: locationOfSrc,
     mountLocation: {
       rel: path.join(mountPath, packageName),
@@ -249,6 +249,8 @@ export class JsAnalyzer implements IDependencyAnalyzer {
         relNodeModulesPathToRelMountDir[p.locationInNodeModules!.rel] =
           p.mountLocation.rel;
       });
+
+    console.log(tree);
 
     const preprocessed = mapTreeToNodes(
       preProcess(

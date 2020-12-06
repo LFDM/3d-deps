@@ -10,7 +10,7 @@ export type Entry = string | FullEntry;
 export type Config = {
   entries: FullEntry[];
   cleanupPath?: (p: string, pkg: PackageJson) => string;
-  configs: {
+  configs?: {
     ts?: {
       compilerOptions: CompilerOptions;
     };
