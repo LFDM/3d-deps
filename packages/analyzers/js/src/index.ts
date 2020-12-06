@@ -55,9 +55,9 @@ export type JsAnalyzerConfig = {
           packageName: string;
           mountPoint: string;
         }[]
-      | ((
-          rootPkg: PackageJson
-        ) => Promise<
+      | ((d: {
+          rootPkg: PackageJson;
+        }) => Promise<
           {
             packageName: string;
             mountPoint: string;
@@ -193,7 +193,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
   private async getVirtualWorkspaces(rootPkg: PackageJson) {
     const v = this.config.workspaces?.virtual;
     if (typeof v === "function") {
-      return await v(rootPkg);
+      return await v({ rootPkg });
     }
     return v || [];
   }

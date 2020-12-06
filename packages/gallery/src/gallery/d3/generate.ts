@@ -19,8 +19,8 @@ const analyzer = new JsAnalyzer({
     };
   },
   workspaces: {
-    virtual: async (packageJson) => {
-      const d3Packages = Object.keys(packageJson.dependencies).filter((k) =>
+    virtual: async ({ rootPkg }) => {
+      const d3Packages = Object.keys(rootPkg.dependencies).filter((k) =>
         k.startsWith("d3")
       );
       return d3Packages.map((packageName) => ({
