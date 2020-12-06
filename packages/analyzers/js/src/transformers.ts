@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
-import { getCompilerOptions } from "./ts";
+import { getTsCompilerOptions } from "./ts";
 import {
   Config,
   ConfigTransformer,
@@ -44,7 +44,7 @@ const DEFAULT_TRANSFORMER = (): ConfigTransformer => {
     const defaultTsConfigPath = path.join(dir, "tsconfig.json");
     if (await canRead(defaultTsConfigPath)) {
       configs.ts = {
-        compilerOptions: getCompilerOptions(defaultTsConfigPath),
+        compilerOptions: getTsCompilerOptions(defaultTsConfigPath),
       };
     }
     return { entries, configs };

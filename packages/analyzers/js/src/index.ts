@@ -17,6 +17,7 @@ import {
 } from "./preProcessor";
 import { TRANSFORMERS } from "./transformers";
 import { getDependencies, mergeTrees, VisitedCache } from "./tree";
+import { getTsCompilerOptions } from "./ts";
 import {
   ConfigTransformer,
   FlatTree,
@@ -264,5 +265,4 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     return res;
   }
 }
-
-export { TRANSFORMERS };
+export { TRANSFORMERS, getTsCompilerOptions };
