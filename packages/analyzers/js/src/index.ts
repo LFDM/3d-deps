@@ -50,10 +50,19 @@ export type JsAnalyzerConfig = {
   };
   workspaces?: {
     unhoist?: boolean;
-    virtual?: {
-      packageName: string;
-      mountPoint: string;
-    }[];
+    virtual?:
+      | {
+          packageName: string;
+          mountPoint: string;
+        }[]
+      | ((
+          rootPkg: PackageJson
+        ) => Promise<
+          {
+            packageName: string;
+            mountPoint: string;
+          }[]
+        >);
   };
 };
 
@@ -181,6 +190,14 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     this.config = config;
   }
 
+  private async getVirtualWorkspaces(rootPkg: PackageJson) {
+    const v = this.config.workspaces?.virtual;
+    if (typeof v === "function") {
+      return await v(rootPkg);
+    }
+    return v || [];
+  }
+
   async analyze() {
     const resolution = this.config.nodeModules?.resolution || "shallow";
     const { rootDir: origRootDir } = this.config;
@@ -191,7 +208,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
     const workspaces = rootPkgInfo.pkg.workspaces
       ? await getWorkspacesInfo(rootDir)
       : {};
-    const virtualWorkspaces = this.config.workspaces?.virtual || [];
+    const virtualWorkspaces = await this.getVirtualWorkspaces(rootPkgInfo.pkg);
 
     const wsPkgInfos = await Promise.all([
       ...Object.values(workspaces).map((w) =>
