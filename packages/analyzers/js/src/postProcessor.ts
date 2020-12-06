@@ -1,4 +1,5 @@
 import { DependencyNode } from "@3d-deps/core";
+import * as path from "path";
 import { PackageInfo } from "./types";
 import { keyBy } from "./util";
 
@@ -20,7 +21,7 @@ export const PostProcessorLabeller = (
   const sortedWorkspacesWithMainEntries = [...workspaces]
     .sort((a, b) => b.locationOfSrc.rel.length - a.locationOfSrc.rel.length)
     .map((ws) => ({
-      mountPoint: ws.mountLocation.rel + "/",
+      mountPoint: ws.mountLocation.rel + path.sep,
       name: ws.pkg.name,
       mainEntriesRel: ws.mappedEntries
         .filter((e) => e.type === "main" || "browser")
