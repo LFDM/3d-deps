@@ -94,11 +94,11 @@ export const PreProcessorHoistNodeModules = (): PreProcessor => {
   };
 };
 
-export const PreProcessorLinkWorkspaces = (relNodeModulesPathToRelMountDir: {
+export const PreProcessorLinkWorkspaces = (relNodeModulesPathToRelEntryDir: {
   [nodeModulesPath: string]: string;
 }): PreProcessor => {
   // needs a trailing slash, so that we don't do partial matches like!
-  const modNames = Object.keys(relNodeModulesPathToRelMountDir).map(
+  const modNames = Object.keys(relNodeModulesPathToRelEntryDir).map(
     (k) => k + path.sep
   );
 
@@ -107,7 +107,7 @@ export const PreProcessorLinkWorkspaces = (relNodeModulesPathToRelMountDir: {
       for (const modName of modNames) {
         if (x.startsWith(modName)) {
           const m = modName.slice(0, -1); // remove the separator we applied earlier
-          const entry = relNodeModulesPathToRelMountDir[m];
+          const entry = relNodeModulesPathToRelEntryDir[m];
           return x.replace(m, entry);
         }
       }
@@ -121,51 +121,21 @@ export const PreProcessorLinkWorkspaces = (relNodeModulesPathToRelMountDir: {
   };
 };
 
-export const PreProcessorResolveMappedEntryFiles = (
+export const PreProcessorCleanupPaths = (
   wsPkgInfos: PackageInfo[]
 ): PreProcessor => {
-  const dict: { [key: string]: string } = {};
-  wsPkgInfos.forEach((w) => {
-    const main = w.mappedEntries.find((e) => e.type == "main")?.rel || null;
-    if (main) {
-      const types = w.pkg.types; // or try to assume it's the main entry with a d.ts ext?
-      if (types) {
-        dict[path.join(w.locationOfSrc.rel, types)] = main;
-      }
-      const origMain = w.pkg.main;
-      if (origMain) {
-        dict[path.join(w.locationOfSrc.rel, origMain)] = main;
-      }
-    }
+  const cleanupFns = wsPkgInfos
+    .filter((w) => w.cleanupPath)
+    .map((w) => ({
+      matchPath: w.mountLocation.rel + "/",
+      pkg: w.pkg,
+      fn: w.cleanupPath || ((t) => t), // always defined at this point, because we filter earlier
+    }));
 
-    // TODO not clear how to do this going forward
-
-    // this duplicates knowledge of transformer and relies on list indices. need to find a better way
-    // const browserEntries =
-    //   typeof w.pkg.browser === "string"
-    //     ? [w.pkg.browser]
-    //     : typeof w.pkg.browser === "object"
-    //     ? Object.values(w.pkg.browser)
-    //     : [];
-    // browserEntries.forEach((b, i) => {
-    //   if (w.mappedEntries.browser[i].rel) {
-    //     dict[path.join(w.location.rel, b)] = w.mappedEntries.browser[i].rel;
-    //   }
-    // });
-    // const binEntries =
-    //   typeof w.pkg.bin === "string"
-    //     ? [w.pkg.bin]
-    //     : typeof w.pkg.bin === "object"
-    //     ? Object.values(w.pkg.bin)
-    //     : [];
-    // binEntries.forEach((b, i) => {
-    //   if (w.mappedEntries.bin[i].rel) {
-    //     dict[path.join(w.location.rel, b)] = w.mappedEntries.bin[i].rel;
-    //   }
-    // });
-  });
-  const typeDefs = new Set(Object.keys(dict));
-  const mapFn = (t: string) => (typeDefs.has(t) ? dict[t] : t);
+  const mapFn = (t: string) => {
+    const x = cleanupFns.find((fn) => t.startsWith(fn.matchPath));
+    return x ? x.fn(t) : t;
+  };
   return {
     onParent: mapFn,
     onChild: mapFn,

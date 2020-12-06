@@ -9,6 +9,7 @@ export type Entry = string | FullEntry;
 
 export type Config = {
   entries: FullEntry[];
+  cleanupPath?: (p: string) => string;
   configs: {
     ts?: {
       compilerOptions: CompilerOptions;
@@ -71,4 +72,6 @@ export type PackageInfo = {
     abs: string;
     rel: string;
   };
+
+  cleanupPath?: (p: string) => string;
 };

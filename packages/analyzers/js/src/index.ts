@@ -10,10 +10,10 @@ import { postProcess, PostProcessorLabeller } from "./postProcessor";
 import {
   preProcess,
   PreProcessorCleanupNodeModuleNames,
+  PreProcessorCleanupPaths,
   PreProcessorHoistNodeModules,
   PreProcessorLinkWorkspaces,
   PreProcessorRelativePaths,
-  PreProcessorResolveMappedEntryFiles,
 } from "./preProcessor";
 import { TRANSFORMERS } from "./transformers";
 import { getDependencies, mergeTrees, VisitedCache } from "./tree";
@@ -126,6 +126,7 @@ const collectPackageInfo = async (
       abs: pkg.name ? path.join(rootDir, "node_modules", pkg.name) : "",
       rel: pkg.name ? path.join("node_modules", pkg.name) : "",
     },
+    cleanupPath: config.cleanupPath,
   };
 };
 
@@ -161,6 +162,7 @@ const collectVirtualPackageInfo = async (
       rel: path.join(mountPath, packageName),
       abs: path.join(rootDir, mountPath, packageName),
     },
+    cleanupPath: config.cleanupPath,
   };
 };
 
@@ -237,7 +239,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
           PreProcessorHoistNodeModules(),
           PreProcessorLinkWorkspaces(relNodeModulesPathToRelMountDir),
           PreProcessorCleanupNodeModuleNames(),
-          PreProcessorResolveMappedEntryFiles(wsPkgInfos),
+          PreProcessorCleanupPaths(wsPkgInfos),
         ],
         tree
       )
