@@ -53,6 +53,7 @@ export type JsAnalyzerConfig = {
     virtual?:
       | {
           packageName: string;
+          location: string;
           mountPoint: string;
         }[]
       | ((d: {
@@ -60,6 +61,7 @@ export type JsAnalyzerConfig = {
         }) => Promise<
           {
             packageName: string;
+            location: string;
             mountPoint: string;
           }[]
         >);
@@ -143,12 +145,13 @@ const collectPackageInfo = async (
 const collectVirtualPackageInfo = async (
   rootDir: string,
   packageName: string,
+  location: string,
   mountPath: string,
   transform: ConfigTransformer
 ): Promise<PackageInfo> => {
   const locationOfSrc = {
-    abs: path.join(rootDir, "node_modules", packageName),
-    rel: path.join("node_modules", packageName),
+    abs: path.join(rootDir, location),
+    rel: path.join(location),
   };
   const pkg = await getPackageJson(locationOfSrc.abs);
   const config = await transform({ dir: locationOfSrc.abs, packageJson: pkg });
@@ -169,8 +172,8 @@ const collectVirtualPackageInfo = async (
     configs: config.configs || {},
     locationInNodeModules: locationOfSrc,
     mountLocation: {
-      rel: path.join(mountPath, packageName),
-      abs: path.join(rootDir, mountPath, packageName),
+      rel: mountPath,
+      abs: path.join(rootDir, mountPath),
     },
     cleanupPath: config.cleanupPath,
   };
@@ -218,6 +221,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
         collectVirtualPackageInfo(
           rootDir,
           w.packageName,
+          w.location,
           w.mountPoint,
           transform
         )

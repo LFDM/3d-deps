@@ -25,7 +25,8 @@ const analyzer = new JsAnalyzer({
       );
       return d3Packages.map((packageName) => ({
         packageName,
-        mountPoint: "packages",
+        location: path.join("node_modules", packageName),
+        mountPoint: path.join("packages", packageName),
       }));
     },
   },
