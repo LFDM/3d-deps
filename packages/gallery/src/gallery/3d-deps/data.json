@@ -10,13 +10,13 @@
       ],
       "dependsOn": [
         "packages/core/src/index.ts",
-        "packages/analyzers/js/dist/transformers.d.ts",
-        "packages/analyzers/js/dist/types.d.ts",
         "packages/analyzers/js/src/postProcessor.ts",
         "packages/analyzers/js/src/preProcessor.ts",
         "packages/analyzers/js/src/transformers.ts",
         "packages/analyzers/js/src/tree.ts",
+        "packages/analyzers/js/src/ts.ts",
         "packages/analyzers/js/src/types.ts",
+        "packages/analyzers/js/src/util.ts",
         "packages/analyzers/js/src/version.ts",
         "packages/analyzers/js/src/yarn.ts"
       ]
@@ -32,40 +32,37 @@
       "dependsOn": [
         "packages/core/src/analyzer.ts",
         "packages/core/src/config.ts",
-        "packages/core/src/dataset.ts",
-        "packages/core/dist/analyzer.d.ts",
-        "packages/core/dist/config.d.ts",
-        "packages/core/dist/dataset.d.ts"
+        "packages/core/src/dataset.ts"
       ]
     },
     {
-      "id": "packages/core/dist/analyzer.d.ts",
-      "path": "packages/core/dist/analyzer.d.ts",
-      "name": "packages/core/dist/analyzer.d.ts",
+      "id": "packages/core/src/analyzer.ts",
+      "path": "packages/core/src/analyzer.ts",
+      "name": "packages/core/src/analyzer.ts",
       "labels": [
         "pkg:@3d-deps/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/core/dist/config.d.ts",
-      "path": "packages/core/dist/config.d.ts",
-      "name": "packages/core/dist/config.d.ts",
+      "id": "packages/core/src/config.ts",
+      "path": "packages/core/src/config.ts",
+      "name": "packages/core/src/config.ts",
       "labels": [
         "pkg:@3d-deps/core"
       ],
       "dependsOn": []
     },
     {
-      "id": "packages/core/dist/dataset.d.ts",
-      "path": "packages/core/dist/dataset.d.ts",
-      "name": "packages/core/dist/dataset.d.ts",
+      "id": "packages/core/src/dataset.ts",
+      "path": "packages/core/src/dataset.ts",
+      "name": "packages/core/src/dataset.ts",
       "labels": [
         "pkg:@3d-deps/core"
       ],
       "dependsOn": [
-        "packages/core/dist/analyzer.d.ts",
-        "packages/core/dist/config.d.ts"
+        "packages/core/src/analyzer.ts",
+        "packages/core/src/config.ts"
       ]
     },
     {
@@ -1049,6 +1046,7 @@
       "dependsOn": [
         "packages/core/src/index.ts",
         "packages/gallery/src/gallery/3d-deps/index.ts",
+        "packages/gallery/src/gallery/d3/index.ts",
         "packages/gallery/src/gallery/emotion/index.ts",
         "packages/gallery/src/gallery/firebase-js-sdk/index.ts",
         "packages/gallery/src/gallery/luxon/index.ts",
@@ -1058,36 +1056,6 @@
         "packages/gallery/src/gallery/react/index.ts",
         "packages/gallery/src/gallery/three-js/index.ts",
         "packages/gallery/src/gallery/webpack/index.ts"
-      ]
-    },
-    {
-      "id": "packages/core/src/analyzer.ts",
-      "path": "packages/core/src/analyzer.ts",
-      "name": "packages/core/src/analyzer.ts",
-      "labels": [
-        "pkg:@3d-deps/core"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/core/src/config.ts",
-      "path": "packages/core/src/config.ts",
-      "name": "packages/core/src/config.ts",
-      "labels": [
-        "pkg:@3d-deps/core"
-      ],
-      "dependsOn": []
-    },
-    {
-      "id": "packages/core/src/dataset.ts",
-      "path": "packages/core/src/dataset.ts",
-      "name": "packages/core/src/dataset.ts",
-      "labels": [
-        "pkg:@3d-deps/core"
-      ],
-      "dependsOn": [
-        "packages/core/src/analyzer.ts",
-        "packages/core/src/config.ts"
       ]
     },
     {
@@ -1154,56 +1122,6 @@
       "dependsOn": []
     },
     {
-      "id": "packages/examples/simple/src/example.ts",
-      "path": "packages/examples/simple/src/example.ts",
-      "name": "packages/examples/simple/src/example.ts",
-      "labels": [
-        "pkg:@3d-deps/example-simple",
-        "pkg_entry"
-      ],
-      "dependsOn": [
-        "packages/analyzers/js/src/index.ts",
-        "packages/core/src/index.ts",
-        "packages/server/src/index.ts"
-      ]
-    },
-    {
-      "id": "packages/analyzers/js/dist/transformers.d.ts",
-      "path": "packages/analyzers/js/dist/transformers.d.ts",
-      "name": "packages/analyzers/js/dist/transformers.d.ts",
-      "labels": [
-        "pkg:@3d-deps/analyzer-js"
-      ],
-      "dependsOn": [
-        "packages/analyzers/js/dist/types.d.ts"
-      ]
-    },
-    {
-      "id": "packages/analyzers/js/dist/types.d.ts",
-      "path": "packages/analyzers/js/dist/types.d.ts",
-      "name": "packages/analyzers/js/dist/types.d.ts",
-      "labels": [
-        "pkg:@3d-deps/analyzer-js"
-      ],
-      "dependsOn": [
-        "node_modules/typescript"
-      ]
-    },
-    {
-      "id": "packages/server/src/index.ts",
-      "path": "packages/server/src/index.ts",
-      "name": "packages/server/src/index.ts",
-      "labels": [
-        "pkg:@3d-deps/server",
-        "pkg_entry"
-      ],
-      "dependsOn": [
-        "packages/core/src/index.ts",
-        "node_modules/express",
-        "node_modules/open"
-      ]
-    },
-    {
       "id": "packages/gallery/src/gallery/3d-deps/index.ts",
       "path": "packages/gallery/src/gallery/3d-deps/index.ts",
       "name": "packages/gallery/src/gallery/3d-deps/index.ts",
@@ -1219,6 +1137,27 @@
       "id": "packages/gallery/src/gallery/3d-deps/data.json",
       "path": "packages/gallery/src/gallery/3d-deps/data.json",
       "name": "packages/gallery/src/gallery/3d-deps/data.json",
+      "labels": [
+        "pkg:@3d-deps/gallery"
+      ],
+      "dependsOn": []
+    },
+    {
+      "id": "packages/gallery/src/gallery/d3/index.ts",
+      "path": "packages/gallery/src/gallery/d3/index.ts",
+      "name": "packages/gallery/src/gallery/d3/index.ts",
+      "labels": [
+        "pkg:@3d-deps/gallery"
+      ],
+      "dependsOn": [
+        "packages/core/src/index.ts",
+        "packages/gallery/src/gallery/d3/data.json"
+      ]
+    },
+    {
+      "id": "packages/gallery/src/gallery/d3/data.json",
+      "path": "packages/gallery/src/gallery/d3/data.json",
+      "name": "packages/gallery/src/gallery/d3/data.json",
       "labels": [
         "pkg:@3d-deps/gallery"
       ],
@@ -1414,6 +1353,20 @@
       "dependsOn": []
     },
     {
+      "id": "packages/server/src/index.ts",
+      "path": "packages/server/src/index.ts",
+      "name": "packages/server/src/index.ts",
+      "labels": [
+        "pkg:@3d-deps/server",
+        "pkg_entry"
+      ],
+      "dependsOn": [
+        "packages/core/src/index.ts",
+        "node_modules/express",
+        "node_modules/open"
+      ]
+    },
+    {
       "id": "node_modules/express",
       "path": "node_modules/express",
       "name": "node_modules/express",
@@ -1430,29 +1383,6 @@
         "node_module"
       ],
       "dependsOn": []
-    },
-    {
-      "id": "packages/server/src/cli.ts",
-      "path": "packages/server/src/cli.ts",
-      "name": "packages/server/src/cli.ts",
-      "labels": [
-        "pkg:@3d-deps/server",
-        "pkg_entry"
-      ],
-      "dependsOn": [
-        "packages/core/src/index.ts",
-        "node_modules/yargs",
-        "packages/server/src/index.ts"
-      ]
-    },
-    {
-      "id": "node_modules/yargs",
-      "path": "node_modules/yargs",
-      "name": "node_modules/yargs",
-      "labels": [
-        "node_module"
-      ],
-      "dependsOn": []
     }
   ],
   "meta": {
@@ -1460,6 +1390,6 @@
       "name": "analyzer-js",
       "version": "0.1.0"
     },
-    "createdAt": "2020-12-05T10:19:50.004Z"
+    "createdAt": "2020-12-06T07:18:58.649Z"
   }
 }
