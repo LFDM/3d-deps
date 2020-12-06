@@ -21,7 +21,7 @@ export type Config = {
 export type ConfigTransformer = (args: {
   dir: string;
   packageJson: PackageJson;
-}) => Promise<Config>;
+}) => Promise<Config> | Config;
 
 export type PackageJson = object & {
   name: string;
