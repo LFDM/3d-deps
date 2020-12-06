@@ -33,6 +33,9 @@ export type PackageJson = object & {
   types?: string;
   workspaces?: string[];
   repository?: string | { url: string; type: string; directory?: string };
+  dependencies: { [key: string]: string };
+  devDependencies: { [key: string]: string };
+  peerDependencies: { [key: string]: string };
 };
 
 export type FlatTree = { [key: string]: string[] };
