@@ -170,7 +170,12 @@ const collectVirtualPackageInfo = async (
       };
     }),
     configs: config.configs || {},
-    locationInNodeModules: locationOfSrc,
+    locationInNodeModules: locationOfSrc.rel.startsWith("node_modules")
+      ? locationOfSrc
+      : {
+          rel: path.join("node_modules", packageName),
+          abs: path.join(rootDir, "node_modules", packageName),
+        },
     mountLocation: {
       rel: mountPath,
       abs: path.join(rootDir, mountPath),
