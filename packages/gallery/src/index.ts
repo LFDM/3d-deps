@@ -9,6 +9,7 @@ import { MATERIAL_UI } from "./gallery/material-ui";
 import { NEXT_JS } from "./gallery/next-js";
 import { NIVO } from "./gallery/nivo";
 import { REACT } from "./gallery/react";
+import { TENSORFLOW_JS } from "./gallery/tfjs";
 import { THREE_JS } from "./gallery/three-js";
 import { WEBPACK } from "./gallery/webpack";
 
@@ -25,6 +26,7 @@ export const getConfig = (): RunConfig => {
       NEXT_JS,
       NIVO,
       REACT,
+      TENSORFLOW_JS,
       THREE_JS,
       WEBPACK,
     ],
