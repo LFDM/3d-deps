@@ -134,7 +134,12 @@ export const PreProcessorCleanupPaths = (
 
   const mapFn = (t: string) => {
     const x = cleanupFns.find((fn) => t.startsWith(fn.matchPath));
-    return x ? x.fn(t, x.pkg) : t;
+    if (!x) {
+      return t;
+    }
+    const relPath = t.replace(x.matchPath, "");
+    const result = x.fn(relPath, x.pkg);
+    return `${x.matchPath}${result}`;
   };
   return {
     onParent: mapFn,
