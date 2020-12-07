@@ -38,6 +38,7 @@ export const lookupDependencies = (
     });
   } catch (err) {
     debug("error by precinct", err?.message, err?.stack);
+    result[fileName] = [];
     return;
   }
 
