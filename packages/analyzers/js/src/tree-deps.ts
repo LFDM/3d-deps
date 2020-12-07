@@ -71,15 +71,12 @@ export const lookupDependencies = (
       debugInfo("error by cabinet", d, err?.message, err?.stack);
     }
   }
-  result[fileName] = resolvedDependencies;
-  for (const nextD of resolvedDependencies) {
-    if (config.filter) {
-      if (!config.filter(nextD, fileName)) {
-        debugInfo("filtered out", nextD);
-        continue;
-      }
-    }
+  const finalDependencies = config.filter
+    ? resolvedDependencies.filter((nextD) => config.filter!(nextD, fileName))
+    : resolvedDependencies;
 
+  result[fileName] = finalDependencies;
+  for (const nextD of finalDependencies) {
     lookupDependencies(result, nextD, config);
   }
 };
