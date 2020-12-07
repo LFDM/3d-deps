@@ -17,7 +17,7 @@ import {
   PreProcessorRelativePaths,
 } from "./preProcessor";
 import { TRANSFORMERS } from "./transformers";
-import { getDependencies, mergeTrees, VisitedCache } from "./tree";
+import { getDependencies } from "./tree";
 import { getTsCompilerOptions } from "./ts";
 import {
   ConfigTransformer,
@@ -188,11 +188,9 @@ const collectVirtualPackageInfo = async (
 export class JsAnalyzer implements IDependencyAnalyzer {
   private config: JsAnalyzerConfig;
   private caches: {
-    visited: VisitedCache;
-    unresolvableModules: { entry: string; fs: string[] }[];
+    failedLookups: { parent: string; missing: string }[];
   } = {
-    visited: [],
-    unresolvableModules: [],
+    failedLookups: [],
   };
 
   constructor(config: JsAnalyzerConfig) {
@@ -257,18 +255,20 @@ export class JsAnalyzer implements IDependencyAnalyzer {
 
     console.error("Traversing...");
 
-    const tree = await Promise.all(
+    const tree = {};
+    await Promise.all(
       allPkgInfos.map((pkgInfo) =>
         getDependencies(
+          tree,
           pkgInfo,
           { resolution },
           this.caches,
           packageDependencyResolveData
         )
       )
-    ).then(mergeTrees);
+    );
 
-    debug("MISSED_LOOKUPS", this.caches.unresolvableModules);
+    debug("FAILED_LOOKUPS", this.caches.failedLookups);
 
     const relNodeModulesPathToRelMountDir: {
       [nodeModulesPath: string]: string;
