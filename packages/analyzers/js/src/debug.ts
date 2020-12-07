@@ -1,5 +1,6 @@
 import debugFn from "debug";
 const LABEL = "analyzer-js";
-export const debug = debugFn(LABEL);
+export const debugInfo = debugFn(LABEL);
+export const debugVerbose = debugFn(`${LABEL}-verbose`);
 export const createDebugger = (subLabel: string) =>
   debugFn(`${LABEL}-${subLabel}`);
