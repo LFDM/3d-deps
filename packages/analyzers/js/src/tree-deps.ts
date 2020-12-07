@@ -81,7 +81,6 @@ export const lookupDependencies = (
     }
   }
   result[fileName] = resolvedDependencies;
-  console.log(resolvedDependencies);
   for (const nextD of resolvedDependencies) {
     lookupDependencies(result, nextD, config);
   }
