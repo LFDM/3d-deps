@@ -1,11 +1,11 @@
 // @ts-ignore
-import * as cabinet from "filing-cabinet";
+import cabinet from "filing-cabinet";
 // @ts-ignore
 import * as precinct from "precinct";
 import { CompilerOptions } from "typescript";
-import { createDebugger } from "./debug";
+import { createDebugger, debug } from "./debug";
 
-const debug = createDebugger("deps");
+const debugVerbose = createDebugger("verbose");
 
 type Result = { [absFileName: string]: string[] };
 
@@ -27,6 +27,7 @@ export const lookupDependencies = (
   config: LookupOptions
 ): void => {
   if (result[fileName]) {
+    debugVerbose("already visited", fileName);
     return;
   }
 
@@ -52,7 +53,7 @@ export const lookupDependencies = (
     }
 
     if (config.customFileLookup) {
-      const customLookup = config.customFileLookup(d) || "";
+      const customLookup = config.customFileLookup(d);
       if (customLookup) {
         resolvedDependencies.push(customLookup);
         continue;
@@ -80,6 +81,7 @@ export const lookupDependencies = (
     }
   }
   result[fileName] = resolvedDependencies;
+  console.log(resolvedDependencies);
   for (const nextD of resolvedDependencies) {
     lookupDependencies(result, nextD, config);
   }
