@@ -21,8 +21,10 @@ export const mergeTrees = (trees: FlatTree[]) => {
 const flattenTree = (tree: DependencyObj, res: FlatTree = {}): FlatTree => {
   for (const key in tree) {
     const children = tree[key];
-    res[key] = Object.keys(children);
-    flattenTree(children, res);
+    if (!res[key]) {
+      res[key] = Object.keys(children);
+      flattenTree(children, res);
+    }
   }
   return res;
 };
@@ -32,6 +34,7 @@ const isNodeModule = (p: string) => p.includes("node_modules");
 type FixedDependencyTreeOptions = Omit<Options, "filter"> & {
   tsCompilerOptions?: CompilerOptions;
   filter?: (dependencyPath: string, parentPath: string) => boolean;
+  customFileLookup: (p: string) => string | undefined;
 };
 
 // TODO - pass other config
@@ -45,9 +48,20 @@ const parseEntry = (
     visited: VisitedCache;
     unresolvableModules: { entry: string; fs: string[] }[];
   },
-  packageNodeModulePaths: string[]
+  packageDependencyResolveData: {
+    [packageName: string]: {
+      mainPathAbs: string;
+      nodeModulesPathAbs: string;
+    };
+  }
 ): FlatTree => {
   const nonExistent: string[] = [];
+  const packageNodeModulePaths = Object.values(
+    packageDependencyResolveData
+  ).map((e) => e.nodeModulesPathAbs);
+  const customFileLookup = (p: string) => {
+    return packageDependencyResolveData[p]?.mainPathAbs || undefined;
+  };
   const depTreeOptions: FixedDependencyTreeOptions = {
     filename: entry,
     directory: pkgInfo.locationOfSrc.abs,
@@ -66,7 +80,10 @@ const parseEntry = (
     },
     tsCompilerOptions: pkgInfo.configs?.ts?.compilerOptions,
     nonExistent: nonExistent,
+    customFileLookup,
   };
+
+  caches.unresolvableModules.push({ entry, fs: nonExistent });
 
   const deepTree = dependencyTree(depTreeOptions as any);
   const flatTree = flattenTree(deepTree);
@@ -82,11 +99,16 @@ export const getDependencies = async (
     visited: VisitedCache;
     unresolvableModules: { entry: string; fs: string[] }[];
   },
-  packageNodeModulePaths: string[]
+  packageDependencyResolveData: {
+    [packageName: string]: {
+      mainPathAbs: string;
+      nodeModulesPathAbs: string;
+    };
+  }
 ) => {
   const tree = mergeTrees(
     pkgInfo.mappedEntries.map((e) =>
-      parseEntry(e.abs, pkgInfo, options, caches, packageNodeModulePaths)
+      parseEntry(e.abs, pkgInfo, options, caches, packageDependencyResolveData)
     )
   );
   return tree;

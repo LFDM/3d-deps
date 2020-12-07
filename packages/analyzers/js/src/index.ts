@@ -6,6 +6,7 @@ import {
 import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
+import { debug } from "./debug";
 import { postProcess, PostProcessorLabeller } from "./postProcessor";
 import {
   preProcess,
@@ -238,6 +239,22 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       ...allPkgInfos.map((p) => p.locationInNodeModules?.abs),
     ]);
 
+    const packageDependencyResolveData: {
+      [packageName: string]: {
+        mainPathAbs: string;
+        nodeModulesPathAbs: string;
+      };
+    } = {};
+    allPkgInfos.forEach((p) => {
+      const main = p.mappedEntries.find((e) => e.type === "main");
+      if (main && p.locationInNodeModules?.abs) {
+        packageDependencyResolveData[p.pkg.name] = {
+          mainPathAbs: main.abs,
+          nodeModulesPathAbs: p.locationInNodeModules.abs,
+        };
+      }
+    });
+
     console.error("Traversing...");
 
     const tree = await Promise.all(
@@ -246,10 +263,12 @@ export class JsAnalyzer implements IDependencyAnalyzer {
           pkgInfo,
           { resolution },
           this.caches,
-          packageNodeModulePaths
+          packageDependencyResolveData
         )
       )
     ).then(mergeTrees);
+
+    debug("MISSED_LOOKUPS", this.caches.unresolvableModules);
 
     const relNodeModulesPathToRelMountDir: {
       [nodeModulesPath: string]: string;
