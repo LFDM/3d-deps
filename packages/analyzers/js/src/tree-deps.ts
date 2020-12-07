@@ -3,9 +3,7 @@ import cabinet from "filing-cabinet";
 // @ts-ignore
 import * as precinct from "precinct";
 import { CompilerOptions } from "typescript";
-import { createDebugger, debug } from "./debug";
-
-const debugVerbose = createDebugger("verbose");
+import { debugInfo, debugVerbose } from "./debug";
 
 type Result = { [absFileName: string]: string[] };
 
@@ -38,20 +36,13 @@ export const lookupDependencies = (
       includeCore: false,
     });
   } catch (err) {
-    debug("error by precinct", err?.message, err?.stack);
+    debugInfo("error by precinct", err?.message, err?.stack);
     result[fileName] = [];
     return;
   }
 
   const resolvedDependencies: string[] = [];
   for (const d of dependencies) {
-    if (config.filter) {
-      if (!config.filter(d, fileName)) {
-        debug("filtered out", d);
-        continue;
-      }
-    }
-
     if (config.customFileLookup) {
       const customLookup = config.customFileLookup(d);
       if (customLookup) {
@@ -73,15 +64,22 @@ export const lookupDependencies = (
       if (result) {
         resolvedDependencies.push(result);
       } else {
-        debug(`empty filepath for ${d}`);
+        debugInfo(`empty filepath for ${d}`);
         config.failedLookups?.push({ parent: fileName, missing: d });
       }
     } catch (err) {
-      debug("error by cabinet", d, err?.message, err?.stack);
+      debugInfo("error by cabinet", d, err?.message, err?.stack);
     }
   }
   result[fileName] = resolvedDependencies;
   for (const nextD of resolvedDependencies) {
+    if (config.filter) {
+      if (!config.filter(nextD, fileName)) {
+        debugInfo("filtered out", nextD);
+        continue;
+      }
+    }
+
     lookupDependencies(result, nextD, config);
   }
 };
