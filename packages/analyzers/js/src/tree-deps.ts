@@ -9,7 +9,7 @@ const debug = createDebugger("deps");
 
 type Result = { [absFileName: string]: string[] };
 
-type Config = {
+export type LookupOptions = {
   directory: string;
   requireConfig?: string;
   webpackConfig?: string;
@@ -24,7 +24,7 @@ type Config = {
 export const lookupDependencies = (
   result: Result,
   fileName: string,
-  config: Config
+  config: LookupOptions
 ): void => {
   if (result[fileName]) {
     return;
