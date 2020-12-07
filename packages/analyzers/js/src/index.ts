@@ -6,7 +6,7 @@ import {
 import fs from "fs";
 import * as path from "path";
 import { promisify } from "util";
-import { debug } from "./debug";
+import { debugVerbose } from "./debug";
 import { postProcess, PostProcessorLabeller } from "./postProcessor";
 import {
   preProcess,
@@ -268,7 +268,7 @@ export class JsAnalyzer implements IDependencyAnalyzer {
       )
     );
 
-    debug("FAILED_LOOKUPS", this.caches.failedLookups);
+    debugVerbose("FAILED_LOOKUPS", this.caches.failedLookups);
 
     const relNodeModulesPathToRelMountDir: {
       [nodeModulesPath: string]: string;
