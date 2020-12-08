@@ -58,6 +58,9 @@ const NodeList = ({
   return (
     <>
       {ds.map((n) => {
+        if (n.exclude) {
+          return null;
+        }
         return (
           <Button
             key={n.id}
