@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import React from "react";
 import { useUiState } from "../../services/uiState";
 import { TreeNode } from "../../types/GraphData";
+import { Button } from "../Button";
 import { NodeStats } from "../NodeStats";
 import { HudSegment } from "./HudSegment";
 import { NodeLabelChip } from "./NodeLabelChip";
@@ -47,22 +48,33 @@ const DependencyGrid = styled("div")((p) => ({
   gridRowGap: p.theme.spacing(1),
 }));
 
+const NodeList = ({ ds }: { ds: TreeNode[] }) => {
+  return (
+    <>
+      {ds.map((n) => {
+        return (
+          <Button key={n.id} variant="listItem" disabled={n.exclude}>
+            {n.exclude ? <s>{n.name}</s> : n.name}
+            <NodeStats d={n} />
+          </Button>
+        );
+      })}
+    </>
+  );
+};
+
 const Details = ({ d }: { d: TreeNode }) => {
   return (
     <DetailsContainer>
       <DependencyGrid>
         <div>
           <h4>Depends on</h4>
-          {d.dependsOn.nodes.map((n) => {
-            return <div>{n.name}</div>;
-          })}
+          <NodeList ds={d.dependsOn.nodes} />
         </div>
 
         <div>
           <h4>Required by</h4>
-          {d.dependedBy.nodes.map((n) => {
-            return <div>{n.name}</div>;
-          })}
+          <NodeList ds={d.dependedBy.nodes} />
         </div>
       </DependencyGrid>
     </DetailsContainer>
