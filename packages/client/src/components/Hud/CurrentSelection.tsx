@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import { useUiState } from "../../services/uiState";
-import { TreeNode } from "../../types/GraphData";
+import { GraphData, TreeNode } from "../../types/GraphData";
 import { Button } from "../Button";
 import { NodeStats } from "../NodeStats";
 import { HudSegment } from "./HudSegment";
@@ -74,15 +74,47 @@ const NodeList = ({
   );
 };
 
+const coverage = (
+  d: TreeNode,
+  mode: "dependsOn" | "dependedBy"
+): { [id: string]: number } => {
+  const res: { [id: string]: number } = {};
+  const traverse = (n: TreeNode, level: number) => {
+    n[mode].nodes.forEach((t) => {
+      if (t.exclude) {
+        return;
+      }
+      if ((res[t.id] === undefined ? Infinity : res[t.id]) > level) {
+        res[t.id] = level;
+        traverse(t, level + 1);
+      }
+    });
+  };
+  traverse(d, 0);
+  return res;
+};
+
 const Details = ({
   d,
+  g,
   selectNode,
 }: {
   d: TreeNode;
+  g: GraphData;
   selectNode: (nextId: string) => void;
 }) => {
+  const allNodes = g.list.filter((t) => !t.exclude).length;
+  const dependsOn = Object.keys(coverage(d, "dependsOn")).length;
+  const dependedBy = Object.keys(coverage(d, "dependedBy")).length;
+
   return (
     <DetailsContainer>
+      <div>
+        Depends on: {dependsOn}/{allNodes} - {(dependsOn / allNodes) * 100}%
+      </div>
+      <div>
+        Required by: {dependedBy}/{allNodes} - {(dependedBy / allNodes) * 100}%
+      </div>
       <DependencyGrid>
         <div>
           <h4>Depends on</h4>
@@ -137,7 +169,7 @@ export const CurrentSelection = () => {
         <NodeStats d={d} />
       </Title>
 
-      {showDetails && <Details d={d} selectNode={setSelectedNodeId} />}
+      {showDetails && <Details d={d} selectNode={setSelectedNodeId} g={data} />}
     </Container>
   );
 };
