@@ -6,12 +6,13 @@ import { NodeStats } from "../NodeStats";
 import { HudSegment } from "./HudSegment";
 import { NodeLabelChip } from "./NodeLabelChip";
 
-const Container = styled(HudSegment)((p) => ({
+const Container = styled(HudSegment)<{ background: boolean }>((p) => ({
   position: "absolute",
   width: "100%",
   top: 0,
   left: 0,
   padding: p.theme.spacing(3),
+  backgroundColor: p.background ? p.theme.hud.backgroundColor : "transparent",
 }));
 
 const Title = styled("div")<{ excluded: boolean }>((p) => ({
@@ -39,10 +40,31 @@ const Tbd = styled("div")((p) => ({
   height: 300,
 }));
 
+const DependencyGrid = styled("div")((p) => ({
+  display: "grid",
+  gridTemplateColumns: "repeat(2, 1fr)",
+  gridColumnGap: p.theme.spacing(2),
+  gridRowGap: p.theme.spacing(1),
+}));
+
 const Details = ({ d }: { d: TreeNode }) => {
   return (
     <DetailsContainer>
-      <Tbd>Details coming soon!</Tbd>
+      <DependencyGrid>
+        <div>
+          <h4>Depends on</h4>
+          {d.dependsOn.nodes.map((n) => {
+            return <div>{n.name}</div>;
+          })}
+        </div>
+
+        <div>
+          <h4>Required by</h4>
+          {d.dependedBy.nodes.map((n) => {
+            return <div>{n.name}</div>;
+          })}
+        </div>
+      </DependencyGrid>
     </DetailsContainer>
   );
 };
@@ -74,7 +96,7 @@ export const CurrentSelection = () => {
   }
   console.log(d, labels);
   return (
-    <Container>
+    <Container background={showDetails}>
       <Title excluded={d.exclude}>
         <LabelContainer>
           {d.labels.map(
