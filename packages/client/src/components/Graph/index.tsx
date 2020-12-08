@@ -101,8 +101,8 @@ const traverseDependencies = (
         result.nodes[n.id] = level;
         const links =
           mode === "dependsOn"
-            ? d.linksBySource[current]?.[n.id] || []
-            : d.linksByTarget[current]?.[n.id] || [];
+            ? d.linksByTarget[current]?.[n.id] || []
+            : d.linksBySource[current]?.[n.id] || [];
         links.forEach((l) => (result.links[l.id] = level));
 
         traverseDependencies(d, n.id, mode, result, level + 1, maxDepth);
@@ -134,8 +134,8 @@ const useData = (g: GraphData): Data => {
         }
         const link: IGraphLink = {
           id: nanoid(), // this could probably be a more stable id?
-          source: t.id,
-          target: otherT.id,
+          target: t.id,
+          source: otherT.id,
         };
         links.push(link);
       });
