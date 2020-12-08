@@ -48,12 +48,23 @@ const DependencyGrid = styled("div")((p) => ({
   gridRowGap: p.theme.spacing(1),
 }));
 
-const NodeList = ({ ds }: { ds: TreeNode[] }) => {
+const NodeList = ({
+  ds,
+  selectNode,
+}: {
+  ds: TreeNode[];
+  selectNode: (nextId: string) => void;
+}) => {
   return (
     <>
       {ds.map((n) => {
         return (
-          <Button key={n.id} variant="listItem" disabled={n.exclude}>
+          <Button
+            key={n.id}
+            variant="listItem"
+            disabled={n.exclude}
+            onClick={() => selectNode(n.id)}
+          >
             {n.exclude ? <s>{n.name}</s> : n.name}
             <NodeStats d={n} />
           </Button>
@@ -63,18 +74,24 @@ const NodeList = ({ ds }: { ds: TreeNode[] }) => {
   );
 };
 
-const Details = ({ d }: { d: TreeNode }) => {
+const Details = ({
+  d,
+  selectNode,
+}: {
+  d: TreeNode;
+  selectNode: (nextId: string) => void;
+}) => {
   return (
     <DetailsContainer>
       <DependencyGrid>
         <div>
           <h4>Depends on</h4>
-          <NodeList ds={d.dependsOn.nodes} />
+          <NodeList ds={d.dependsOn.nodes} selectNode={selectNode} />
         </div>
 
         <div>
           <h4>Required by</h4>
-          <NodeList ds={d.dependedBy.nodes} />
+          <NodeList ds={d.dependedBy.nodes} selectNode={selectNode} />
         </div>
       </DependencyGrid>
     </DetailsContainer>
@@ -97,6 +114,7 @@ export const CurrentSelection = () => {
     {
       graph: { data, selectedNodeId, showDetails, labels },
     },
+    { setSelectedNodeId },
   ] = useUiState();
   if (!selectedNodeId) {
     return null;
@@ -119,7 +137,7 @@ export const CurrentSelection = () => {
         <NodeStats d={d} />
       </Title>
 
-      {showDetails && <Details d={d} />}
+      {showDetails && <Details d={d} selectNode={setSelectedNodeId} />}
     </Container>
   );
 };
