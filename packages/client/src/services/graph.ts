@@ -1,5 +1,5 @@
 import { DependencyNode } from "@3d-deps/core";
-import { keyBy } from "lodash";
+import { keyBy, sortBy } from "lodash";
 import { TreeNode } from "../types/GraphData";
 
 const shouldExcludeByPath = (
@@ -79,6 +79,21 @@ export const depsToGraphData = (
     t.dependsOn.countIndirectWithoutExcluded = counts.children;
     t.dependedBy.countIndirectWithoutExcluded = counts.parents;
   });
+
+  console.table(
+    sortBy(
+      list,
+      (t) =>
+        -(
+          t.dependedBy.countIndirectWithoutExcluded +
+          t.dependsOn.countIndirectWithoutExcluded
+        )
+    ).map((t) => [
+      t.path,
+      t.dependsOn.countIndirectWithoutExcluded +
+        t.dependedBy.countIndirectWithoutExcluded,
+    ])
+  );
 
   return { list, byId };
 };
