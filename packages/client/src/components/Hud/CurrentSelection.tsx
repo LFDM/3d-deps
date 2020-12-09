@@ -77,24 +77,36 @@ const NodeList = ({
   );
 };
 
-const coverage = (
-  d: TreeNode,
-  mode: "dependsOn" | "dependedBy"
-): { [id: string]: number } => {
-  const res: { [id: string]: number } = {};
-  const traverse = (n: TreeNode, level: number) => {
-    n[mode].nodes.forEach((t) => {
-      if (t.exclude) {
-        return;
-      }
-      if ((res[t.id] === undefined ? Infinity : res[t.id]) > level) {
-        res[t.id] = level;
-        traverse(t, level + 1);
-      }
-    });
-  };
-  traverse(d, 0);
-  return res;
+const InfoBoxes = styled("div")((p) => ({
+  display: "grid",
+  gridTemplateColumns: "repeat(2, 1fr)",
+  gridColumnGap: p.theme.spacing(3),
+  alignItems: "center",
+  justifyItems: "center",
+  marginBottom: p.theme.spacing(2),
+}));
+
+const InfoBoxContainer = styled("div")((p) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
+
+  padding: p.theme.spacing(2),
+  border: "1px solid currentcolor",
+  borderRadius: p.theme.spacing(0.25),
+  maxWidth: 200,
+}));
+
+const InfoBox = ({ total, part }: { total: number; part: number }) => {
+  return (
+    <InfoBoxContainer>
+      <h4>{part}</h4>
+      <div>
+        {((part / total) * 100).toFixed(0)}% of {total}
+      </div>
+    </InfoBoxContainer>
+  );
 };
 
 const Details = ({
@@ -107,25 +119,37 @@ const Details = ({
   selectNode: (nextId: string) => void;
 }) => {
   const allNodes = g.list.filter((t) => !t.exclude).length;
-  const dependsOn = Object.keys(coverage(d, "dependsOn")).length;
-  const dependedBy = Object.keys(coverage(d, "dependedBy")).length;
 
   return (
     <DetailsContainer>
-      <div>
-        Depends on: {dependsOn}/{allNodes} - {(dependsOn / allNodes) * 100}%
-      </div>
-      <div>
-        Required by: {dependedBy}/{allNodes} - {(dependedBy / allNodes) * 100}%
-      </div>
       <DependencyGrid>
         <div>
           <h4>Depends on</h4>
+          <InfoBoxes>
+            <InfoBox
+              total={allNodes}
+              part={d.dependsOn.countDirectWithoutExcluded}
+            />
+            <InfoBox
+              total={allNodes}
+              part={d.dependsOn.countIndirectWithoutExcluded}
+            />
+          </InfoBoxes>
           <NodeList ds={d.dependsOn.nodes} selectNode={selectNode} />
         </div>
 
         <div>
           <h4>Required by</h4>
+          <InfoBoxes>
+            <InfoBox
+              total={allNodes}
+              part={d.dependedBy.countDirectWithoutExcluded}
+            />
+            <InfoBox
+              total={allNodes}
+              part={d.dependedBy.countIndirectWithoutExcluded}
+            />
+          </InfoBoxes>
           <NodeList ds={d.dependedBy.nodes} selectNode={selectNode} />
         </div>
       </DependencyGrid>
