@@ -95,6 +95,78 @@ export const countIndirectDependencies = (ds: TreeNode[]) => {
   };
 };
 
+export const countIndirectConnectionsOfTreeNodes = (
+  nodes: TreeNode[]
+): { [id: string]: { children: number; parents: number } } => {
+  const c: {
+    [id: string]: { children: Set<string>; parents: Set<string> };
+  } = {};
+  let up = 0;
+  let down = 0;
+  const reportUp = (node: TreeNode, toReport: string) => {
+    up++;
+    if (node.exclude) {
+      return;
+    }
+    const counter = (c[node.id] = c[node.id] || {
+      children: new Set(),
+      parents: new Set(),
+    });
+    if (counter.parents.has(toReport)) {
+      return;
+    }
+    counter.parents.add(toReport);
+    // node.dependsOn.nodes.forEach((c) => reportUp(c, toReport));
+    for (let i = 0; i < node.dependsOn.nodes.length; i++) {
+      reportUp(node.dependsOn.nodes[i], toReport);
+    }
+  };
+  const reportDown = (node: TreeNode, toReport: string) => {
+    down++;
+    if (node.exclude) {
+      return;
+    }
+    const counter = (c[node.id] = c[node.id] || {
+      children: new Set(),
+      parents: new Set(),
+    });
+    if (counter.children.has(toReport)) {
+      return;
+    }
+    counter.children.add(toReport);
+    // node.dependedBy.nodes.forEach((c) => reportDown(c, toReport));
+    for (let i = 0; i < node.dependedBy.nodes.length; i++) {
+      reportDown(node.dependedBy.nodes[i], toReport);
+    }
+  };
+
+  nodes.forEach((n) => {
+    n.dependsOn.nodes.forEach((c) => reportUp(c, n.id));
+    n.dependedBy.nodes.forEach((p) => reportDown(p, n.id));
+  });
+
+  console.log({ up, down });
+
+  return Object.entries(c)
+    .map(
+      ([k, counts]) =>
+        [
+          k,
+          {
+            children: counts.children.size,
+            parents: counts.parents.size,
+          },
+        ] as const
+    )
+    .reduce<{ [id: string]: { children: number; parents: number } }>(
+      (m, [k, counts]) => {
+        m[k] = counts;
+        return m;
+      },
+      {}
+    );
+};
+
 export const countIndirectConnections = (
   nodes: {
     id: string;
@@ -117,6 +189,9 @@ export const countIndirectConnections = (
     }
     counter.parents.add(toReport);
     node.children.forEach((c) => reportUp(c, toReport));
+    for (let i = 0; i < node.children.length; i++) {
+      reportUp(node.children[i], toReport);
+    }
   };
   const reportDown = (id: string, toReport: string) => {
     const node = nodesById[id];
@@ -128,7 +203,11 @@ export const countIndirectConnections = (
       return;
     }
     counter.children.add(toReport);
-    node.parents.forEach((c) => reportDown(c, toReport));
+
+    // node.parents.forEach((c) => reportDown(c, toReport));
+    for (let i = 0; i < node.parents.length; i++) {
+      reportDown(node.parents[i], toReport);
+    }
   };
 
   nodes.forEach((n) => {
