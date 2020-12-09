@@ -2,7 +2,7 @@ import { countIndirectConnections } from "./graph";
 
 describe("graph", () => {
   describe("countIndirectDependencies", () => {
-    it.only("counts all child nodes", () => {
+    it("counts all child nodes", () => {
       const nodes = [
         {
           id: "a",
@@ -82,7 +82,7 @@ describe("graph", () => {
       });
     });
 
-    it.only("handles circles", () => {
+    it("handles circles", () => {
       const nodes = [
         {
           id: "a",
