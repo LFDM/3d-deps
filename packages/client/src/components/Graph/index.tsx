@@ -8,7 +8,6 @@ import SpriteText from "three-spritetext";
 import tinycolor from "tinycolor2";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { useConfig } from "../../services/config";
-import { countIndirectConnectionsOfTreeNodes } from "../../services/graph";
 import { useUiState } from "../../services/uiState";
 import {
   GraphData,
@@ -115,11 +114,6 @@ const traverseDependencies = (
 
 const useData = (g: GraphData): Data => {
   return useMemo(() => {
-    console.log("ddd");
-    console.time("countIndirectConnections");
-    console.log(countIndirectConnectionsOfTreeNodes(g.list));
-    console.timeEnd("countIndirectConnections");
-
     const nodes: IGraphNode[] = [];
     const links: IGraphLink[] = [];
 
