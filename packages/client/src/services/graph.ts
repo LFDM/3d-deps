@@ -112,6 +112,9 @@ export const countIndirectConnections = (
       children: new Set(),
       parents: new Set(),
     });
+    if (counter.parents.has(toReport)) {
+      return;
+    }
     counter.parents.add(toReport);
     node.children.forEach((c) => reportUp(c, toReport));
   };
@@ -121,6 +124,9 @@ export const countIndirectConnections = (
       children: new Set(),
       parents: new Set(),
     });
+    if (counter.children.has(toReport)) {
+      return;
+    }
     counter.children.add(toReport);
     node.parents.forEach((c) => reportDown(c, toReport));
   };
