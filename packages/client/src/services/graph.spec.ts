@@ -57,7 +57,7 @@ describe("graph", () => {
           parents: 1,
         },
         c: {
-          children: 4,
+          children: 5,
           parents: 2,
         },
         d: {
@@ -65,6 +65,18 @@ describe("graph", () => {
           parents: 2,
         },
         e: {
+          children: 0,
+          parents: 4,
+        },
+        f: {
+          children: 0,
+          parents: 3,
+        },
+        g: {
+          children: 0,
+          parents: 3,
+        },
+        h: {
           children: 0,
           parents: 3,
         },
