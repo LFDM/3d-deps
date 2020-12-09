@@ -1,5 +1,5 @@
 import { DependencyNode } from "@3d-deps/core";
-import { keyBy } from "lodash";
+import { keyBy, mapValues } from "lodash";
 import { TreeNode } from "../types/GraphData";
 
 const shouldExcludeByPath = (
@@ -113,6 +113,7 @@ export const countIndirectConnections = (
       parents: new Set(),
     });
     if (counter.parents.has(toReport)) {
+      console.log("XXX");
       return;
     }
     counter.parents.add(toReport);
@@ -154,4 +155,49 @@ export const countIndirectConnections = (
       },
       {}
     );
+};
+
+type ExpandedNode = {
+  [id: string]: ExpandedNode;
+};
+
+export const countIndirectConnections2 = (
+  nodes: {
+    id: string;
+    children: string[];
+    parents: string[];
+  }[]
+): { [id: string]: { children: number; parents: number } } => {
+  const nodesById = keyBy(nodes, (n) => n.id);
+
+  const traverse = (
+    node: { id: string; children: string[]; parents: string[] },
+    expandedTree: {
+      [id: string]: ExpandedNode;
+    }
+  ): { [id: string]: ExpandedNode } => {
+    if (expandedTree[node.id]) {
+      return expandedTree[node.id];
+    }
+    const subTree: ExpandedNode = (expandedTree[node.id] = {});
+    node.children.forEach((childId) => {
+      const childNode = nodesById[childId];
+      const childTree = traverse(childNode, expandedTree);
+      subTree[childId] = childTree;
+    });
+    return subTree;
+  };
+  const allSubTrees: { [id: string]: ExpandedNode } = {};
+  nodes.forEach((n) => traverse(n, allSubTrees));
+
+  return mapValues(allSubTrees, (subTree) => {
+    const children: Set<string> = new Set();
+    const parents: Set<string> = new Set();
+    const drillDown = ([id, nextSubTree]: [string, ExpandedNode]) => {
+      children.add(id);
+      Object.entries(nextSubTree).forEach(drillDown);
+    };
+    Object.entries(subTree).forEach(drillDown);
+    return { children: children.size, parents: 0 };
+  });
 };
