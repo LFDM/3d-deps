@@ -29,7 +29,15 @@ export type TreeNode = {
   path: string;
   labels: string[]; // probably don't need this
 
-  dependsOn: { nodes: TreeNode[]; countDirectWithoutExcluded: number };
-  dependedBy: { nodes: TreeNode[]; countDirectWithoutExcluded: number };
+  dependsOn: {
+    nodes: TreeNode[];
+    countDirectWithoutExcluded: number;
+    countIndirectWithoutExcluded: number;
+  };
+  dependedBy: {
+    nodes: TreeNode[];
+    countDirectWithoutExcluded: number;
+    countIndirectWithoutExcluded: number;
+  };
   exclude: boolean;
 };

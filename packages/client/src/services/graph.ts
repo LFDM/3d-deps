@@ -35,8 +35,16 @@ export const depsToGraphData = (
         labels: d.labels,
         // initialize empty, so that we can collect the object
         // before we start recursing, preventing issues with circular dependencies
-        dependedBy: { nodes: [], countDirectWithoutExcluded: 0 },
-        dependsOn: { nodes: [], countDirectWithoutExcluded: 0 },
+        dependedBy: {
+          nodes: [],
+          countDirectWithoutExcluded: 0,
+          countIndirectWithoutExcluded: 0,
+        },
+        dependsOn: {
+          nodes: [],
+          countDirectWithoutExcluded: 0,
+          countIndirectWithoutExcluded: 0,
+        },
         exclude,
       };
       byId[t.id] = t;
@@ -63,6 +71,14 @@ export const depsToGraphData = (
     return byId[d.id];
   };
   ds.forEach(getOrCreateTreeNode);
+  console.time("countIndirectConnections");
+  const indirectConnections = countIndirectConnectionsOfTreeNodes(list);
+  console.timeEnd("countIndirectConnections");
+  list.forEach((t) => {
+    const counts = indirectConnections[t.id] || { children: 0, parents: 0 };
+    t.dependsOn.countIndirectWithoutExcluded = counts.children;
+    t.dependedBy.countIndirectWithoutExcluded = counts.parents;
+  });
 
   return { list, byId };
 };
