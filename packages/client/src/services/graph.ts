@@ -67,34 +67,6 @@ export const depsToGraphData = (
   return { list, byId };
 };
 
-export const countIndirectDependencies = (ds: TreeNode[]) => {
-  const counts: {
-    [nodeId: string]: {
-      children: number;
-      parents: number;
-    };
-  } = {};
-
-  const counters: {
-    [nodeId: string]: {
-      children: number;
-      parents: number;
-    }[];
-  } = {};
-
-  const traverse = (n: TreeNode) => {
-    if (counts[n.id]) {
-      return;
-    }
-    const counter = {
-      children: n.dependsOn.countWithoutExcluded,
-      parents: n.dependedBy.countWithoutExcluded,
-    };
-    counts[n.id] = counter;
-    counters[n.id] = counters[n.id] || [counter];
-  };
-};
-
 export const countIndirectConnectionsOfTreeNodes = (
   nodes: TreeNode[]
 ): { [id: string]: { children: number; parents: number } } => {
