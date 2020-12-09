@@ -16,7 +16,7 @@ describe("graph", () => {
         },
         {
           id: "c",
-          children: ["e", "f", "g", "h"],
+          children: ["d", "e", "f", "g", "h"],
           parents: ["a", "b"],
         },
         {
@@ -61,7 +61,7 @@ describe("graph", () => {
         },
         d: {
           children: 1,
-          parents: 2,
+          parents: 3,
         },
         e: {
           children: 0,
