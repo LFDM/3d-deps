@@ -113,7 +113,6 @@ export const countIndirectConnections = (
       parents: new Set(),
     });
     if (counter.parents.has(toReport)) {
-      console.log("XXX");
       return;
     }
     counter.parents.add(toReport);
