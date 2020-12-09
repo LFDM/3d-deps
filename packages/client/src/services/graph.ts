@@ -35,8 +35,8 @@ export const depsToGraphData = (
         labels: d.labels,
         // initialize empty, so that we can collect the object
         // before we start recursing, preventing issues with circular dependencies
-        dependedBy: { nodes: [], countWithoutExcluded: 0 },
-        dependsOn: { nodes: [], countWithoutExcluded: 0 },
+        dependedBy: { nodes: [], countDirectWithoutExcluded: 0 },
+        dependsOn: { nodes: [], countDirectWithoutExcluded: 0 },
         exclude,
       };
       byId[t.id] = t;
@@ -53,10 +53,10 @@ export const depsToGraphData = (
         nextT.dependedBy.nodes.push(t);
 
         if (!nextT.exclude) {
-          t.dependsOn.countWithoutExcluded++;
+          t.dependsOn.countDirectWithoutExcluded++;
         }
         if (!t.exclude) {
-          nextT.dependedBy.countWithoutExcluded++;
+          nextT.dependedBy.countDirectWithoutExcluded++;
         }
       });
     }

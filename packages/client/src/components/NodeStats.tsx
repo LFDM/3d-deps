@@ -29,12 +29,12 @@ export const NodeStats = ({ d }: { d: TreeNode }) => {
       <Pill color={theme.graph.nodes.colors.dependent}>
         {d.exclude
           ? d.dependsOn.nodes.length
-          : d.dependsOn.countWithoutExcluded}
+          : d.dependsOn.countDirectWithoutExcluded}
       </Pill>
       <Pill color={theme.graph.nodes.colors.dependency}>
         {d.exclude
           ? d.dependedBy.nodes.length
-          : d.dependedBy.countWithoutExcluded}
+          : d.dependedBy.countDirectWithoutExcluded}
       </Pill>
     </Container>
   );

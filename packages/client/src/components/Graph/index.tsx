@@ -115,6 +115,7 @@ const traverseDependencies = (
 
 const useData = (g: GraphData): Data => {
   return useMemo(() => {
+    console.log("ddd");
     console.time("countIndirectConnections");
     console.log(countIndirectConnectionsOfTreeNodes(g.list));
     console.timeEnd("countIndirectConnections");
@@ -170,8 +171,8 @@ const useData = (g: GraphData): Data => {
 
 const getNodeSize = (t: TreeNode) => {
   const links =
-    (t.dependsOn.countWithoutExcluded || 0) +
-    (t.dependedBy.countWithoutExcluded || 0);
+    (t.dependsOn.countDirectWithoutExcluded || 0) +
+    (t.dependedBy.countDirectWithoutExcluded || 0);
   return Math.max(0.2, links / 4);
 };
 
@@ -325,8 +326,8 @@ export const Graph = () => {
       (d) =>
         -(d.exclude
           ? -Infinity
-          : d.dependedBy.countWithoutExcluded +
-            d.dependsOn.countWithoutExcluded)
+          : d.dependedBy.countDirectWithoutExcluded +
+            d.dependsOn.countDirectWithoutExcluded)
     ).slice(0, Math.max(15, Math.round(data.list.length / 1000)));
 
     topNodes.forEach((t) =>
